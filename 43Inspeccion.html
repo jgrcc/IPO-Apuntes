@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: los métodos de inspección (evaluación heurística, recorrido cognitivo e inspección de conformidad y accesibilidad) dentro de la Actividad D del Diseño Centrado en lo Humano. La familia de evaluación en la que un experto revisa la interfaz sin usuarios. Tema 4 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Los métodos de inspección · Apuntes Tema 4 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body class="th-row-wide">
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 4 · Evaluación de sistemas · Material de apoyo</p>
+    <h1>Los métodos de inspección
+      <span class="sub">El experto revisa la interfaz sin usuarios: la segunda familia de métodos de evaluación (Actividad D del DCH)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB03 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es inspeccionar? La familia que no necesita usuarios</a></li>
+          <li class="lvl2"><a href="#como">Cómo se inspecciona, paso a paso</a></li>
+          <li class="lvl2"><a href="#metodos">Los métodos, uno a uno</a></li>
+          <li class="lvl2"><a href="#vs-test">Inspección y test: rápido frente a real</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">Inspección que ya haces sin saberlo</a></li>
+          <li class="lvl2"><a href="#mini">Una mini-evaluación heurística</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: a quién protege la inspección de accesibilidad (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la inspección como método obligatorio</a></li>
+          <li class="lvl2"><a href="#retos">Retos de inspección para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>En la sesión anterior vimos la primera familia de métodos de evaluación, la <strong>indagación</strong> (preguntar y observar a personas). Hoy entramos en la segunda: la <strong>inspección</strong>.</p>
+    <p>Damos por sabido el mapa de las tres familias —indagación, inspección y test— y el ciclo del DCH (<strong>contexto → requisitos → diseño → evaluación</strong>, e iterar). Si no te suena, vuelve a la introducción del Tema 4.</p>
+    <p>El objetivo de hoy: entender qué es inspeccionar, cómo se hace y cuáles son sus tres métodos principales. Verás que la inspección tiene una virtud enorme: es <strong>rápida y barata</strong>, porque <strong>no necesita usuarios</strong>.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en fichas-resumen, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Cada método trae una <strong>ficha-resumen</strong> con sus características: si necesita usuarios, cuántos evaluadores, qué materiales, en qué fase sirve, etc.</li>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible; las <strong>«¿Sabías que?»</strong> añaden contexto.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los <strong>métodos de inspección</strong> son aquellos en los que una <strong>persona experta examina la interfaz</strong> comparándola con reglas conocidas, <strong>sin usuarios</strong>. Son rápidos y económicos: detectan muchos problemas <em>posibles</em> en poco tiempo. Su límite es que no sustituyen a probar con gente real.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es inspeccionar y con qué métodos</h2>
+    <p class="lead">Qué distingue a esta familia, cómo se inspecciona paso a paso, los tres métodos principales con su ficha-resumen, y por qué inspección y test se complementan.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es inspeccionar? La familia que no necesita usuarios</h3>
+
+    <p>Inspeccionar es <strong>examinar la interfaz con ojo experto</strong>, contrastándola con un conjunto de <strong>reglas o criterios</strong> de usabilidad y accesibilidad ya conocidos, para detectar dónde los incumple.</p>
+    <p>Aquí está su rasgo distintivo, el que la separa de la indagación y del test: <strong>no participan usuarios</strong>. No preguntas ni observas a nadie; eres tú, como evaluador, quien recorre el sistema buscando problemas.</p>
+    <p>Eso tiene una gran ventaja: es <strong>rápido y barato</strong>. No hay que reclutar personas, ni cuadrar agendas, ni montar sesiones. Una tarde puede bastar para una primera inspección.</p>
+
+    <h4>Su fuerza y su límite</h4>
+    <p>La inspección detecta <strong>problemas potenciales</strong>: cosas que, según las reglas, probablemente confundirán a alguien. Es ideal al principio, para limpiar los fallos evidentes <strong>antes</strong> de gastar el tiempo (más caro) de un test con usuarios.</p>
+    <p>Pero ojo: que un experto crea que algo fallará no garantiza que falle, ni que no haya otros problemas que solo aparecen al usar. Por eso la inspección <strong>no sustituye al test</strong>: lo prepara y lo complementa.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Inspeccionar = un <strong>experto revisa</strong> la interfaz contra <strong>reglas conocidas</strong>, <strong>sin usuarios</strong>. Es rápido y barato y encuentra problemas <em>potenciales</em>; por eso conviene hacerlo pronto. No sustituye al test con personas reales: lo complementa.</p>
+    </div>
+  </section>
+
+  <section id="como" aria-labelledby="como-h">
+    <h3 id="como-h"><span class="num" aria-hidden="true">1.2</span>Cómo se inspecciona, paso a paso</h3>
+
+    <p>Inspeccionar no es «mirar la pantalla a ver qué me parece». Es un procedimiento ordenado, igual para los distintos métodos, con cinco pasos.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 150" role="img" aria-labelledby="insp-title insp-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="insp-title">Los cinco pasos de una inspección</title>
+        <desc id="insp-desc">Una inspección sigue cinco pasos encadenados. Primero, definir el alcance: qué pantallas y tareas se van a revisar. Segundo, recorrer la interfaz aplicando un conjunto de criterios, como las heurísticas. Tercero, registrar cada hallazgo o problema detectado. Cuarto, valorar la gravedad de cada problema. Y quinto, redactar el informe con las recomendaciones de mejora.</desc>
+        <defs>
+          <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+        <!-- 5 pasos -->
+        <g>
+          <rect x="6" y="45" width="124" height="64" rx="9" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.2"></rect>
+          <text x="68" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0B5563">1. Definir</text>
+          <text x="68" y="91" text-anchor="middle" font-size="12" fill="#211C16">el alcance</text>
+        </g>
+        <g>
+          <rect x="154" y="45" width="124" height="64" rx="9" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.2"></rect>
+          <text x="216" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0B5563">2. Recorrer</text>
+          <text x="216" y="91" text-anchor="middle" font-size="12" fill="#211C16">con criterios</text>
+        </g>
+        <g>
+          <rect x="302" y="45" width="124" height="64" rx="9" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.2"></rect>
+          <text x="364" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0B5563">3. Registrar</text>
+          <text x="364" y="91" text-anchor="middle" font-size="12" fill="#211C16">hallazgos</text>
+        </g>
+        <g>
+          <rect x="450" y="45" width="124" height="64" rx="9" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.2"></rect>
+          <text x="512" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0B5563">4. Valorar</text>
+          <text x="512" y="91" text-anchor="middle" font-size="12" fill="#211C16">la gravedad</text>
+        </g>
+        <g>
+          <rect x="598" y="45" width="116" height="64" rx="9" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.2"></rect>
+          <text x="656" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8A3412">5. Informe</text>
+          <text x="656" y="91" text-anchor="middle" font-size="12" fill="#211C16">y mejoras</text>
+        </g>
+        <!-- flechas -->
+        <line x1="130" y1="77" x2="152" y2="77" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah3)"></line>
+        <line x1="278" y1="77" x2="300" y2="77" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah3)"></line>
+        <line x1="426" y1="77" x2="448" y2="77" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah3)"></line>
+        <line x1="574" y1="77" x2="596" y2="77" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah3)"></line>
+      </svg>
+      <figcaption>Los cinco pasos de una inspección, del alcance al informe. El mismo procedimiento sirve para la evaluación heurística, el recorrido cognitivo o la inspección de accesibilidad; lo que cambia son los criterios que se aplican en el paso 2. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <p>El paso que más cuesta aprender es el <strong>4, valorar la gravedad</strong>. No todos los problemas pesan igual: un texto con una errata molesta poco; un botón de pago que no se entiende puede arruinar la tarea. Conviene <strong>clasificar cada hallazgo</strong> (por ejemplo: cosmético, menor, grave, catastrófico) para saber qué arreglar primero.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Toda inspección sigue cinco pasos: <strong>definir el alcance, recorrer con criterios, registrar hallazgos, valorar su gravedad y redactar el informe</strong>. Valorar la gravedad es clave: permite priorizar qué se arregla antes.</p>
+    </div>
+  </section>
+
+  <section id="metodos" aria-labelledby="metodos-h">
+    <h3 id="metodos-h"><span class="num" aria-hidden="true">1.3</span>Los métodos, uno a uno</h3>
+
+    <p>Veamos los tres métodos de inspección más usados. Lo que cambia entre ellos es, sobre todo, <strong>qué criterios se aplican en el paso 2</strong>: principios generales, la mirada de un usuario nuevo, o una norma concreta.</p>
+
+    <!-- Evaluación heurística -->
+    <div class="method">
+      <h4>1. Evaluación heurística</h4>
+      <p>Es el método estrella. Consiste en revisar la interfaz comparándola con un conjunto de <strong>principios de usabilidad</strong> llamados <strong>heurísticas</strong>. Por cada pantalla, el evaluador se pregunta: «¿cumple cada heurística o la incumple?».</p>
+      <p>El conjunto más conocido son las <strong>10 heurísticas de Nielsen</strong>, una referencia clásica del Nielsen Norman Group:</p>
+      <ol class="heuristics" role="list">
+        <li><b>Visibilidad del estado del sistema.</b> El sistema informa siempre de qué está pasando (cargando, guardado, error).
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Hay una respuesta visible tras cada acción (cargando, guardado, enviado)?</li>
+            <li>¿Se indica en qué punto del proceso estoy (por ejemplo, «paso 2 de 4»)?</li>
+            <li>¿Las esperas largas muestran progreso en lugar de una pantalla congelada?</li>
+          </ul>
+        </li>
+        <li><b>Correspondencia con el mundo real.</b> Habla el idioma del usuario, con palabras y conceptos familiares, no jerga técnica.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Los textos usan palabras del usuario, sin jerga ni códigos internos?</li>
+            <li>¿La información aparece en un orden lógico para la persona, no para el sistema?</li>
+            <li>¿Los iconos y metáforas se reconocen sin explicación?</li>
+          </ul>
+        </li>
+        <li><b>Control y libertad del usuario.</b> Hay salidas claras: deshacer, cancelar, volver atrás.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Se puede deshacer o rehacer una acción?</li>
+            <li>¿Hay una forma evidente de cancelar o volver atrás en cada pantalla?</li>
+            <li>¿Se puede salir de un estado no deseado sin quedar en un callejón sin salida?</li>
+          </ul>
+        </li>
+        <li><b>Consistencia y estándares.</b> Lo mismo se llama y se ve igual en todas partes; se respetan las convenciones.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Una misma acción se llama igual en todas las pantallas?</li>
+            <li>¿Los elementos iguales (botones, colores, iconos) se comportan igual?</li>
+            <li>¿Se respetan las convenciones habituales de la plataforma?</li>
+          </ul>
+        </li>
+        <li><b>Prevención de errores.</b> Mejor evitar que el error ocurra que limitarse a avisar después.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Se impiden entradas inválidas (formatos, campos obligatorios) antes de continuar?</li>
+            <li>¿Se pide confirmación en las acciones destructivas o irreversibles?</li>
+            <li>¿Se eliminan situaciones que invitan al error (opciones ambiguas, pasos confusos)?</li>
+          </ul>
+        </li>
+        <li><b>Reconocer mejor que recordar.</b> Las opciones están a la vista; no obligar a memorizar de una pantalla a otra.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Las opciones y acciones están visibles, sin exigir memorizarlas?</li>
+            <li>¿La información necesaria aparece justo cuando se necesita?</li>
+            <li>¿Hay valores por defecto, sugerencias o pistas que descargan la memoria?</li>
+          </ul>
+        </li>
+        <li><b>Flexibilidad y eficiencia.</b> Atajos para expertos sin estorbar a quien empieza.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Existen atajos o aceleradores para usuarios frecuentes?</li>
+            <li>¿Se pueden repetir o personalizar las acciones habituales?</li>
+            <li>¿Esos atajos no entorpecen a quien usa el sistema por primera vez?</li>
+          </ul>
+        </li>
+        <li><b>Diseño estético y minimalista.</b> Solo lo necesario; cada elemento de más compite con lo importante.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Cada pantalla muestra solo lo relevante para la tarea en curso?</li>
+            <li>¿Hay elementos que compiten por la atención con lo principal?</li>
+            <li>¿La jerarquía visual deja claro qué es lo más importante?</li>
+          </ul>
+        </li>
+        <li><b>Ayuda a reconocer y recuperarse de errores.</b> Mensajes claros, en lenguaje llano, que dicen qué pasó y cómo solucionarlo.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Los mensajes de error están en lenguaje llano, sin códigos?</li>
+            <li>¿Explican qué ha pasado y cómo solucionarlo?</li>
+            <li>¿Señalan con claridad dónde está el problema?</li>
+          </ul>
+        </li>
+        <li><b>Ayuda y documentación.</b> Si hace falta, fácil de encontrar y orientada a la tarea.
+          <span class="crit-h">Criterios de validación</span>
+          <ul class="crit">
+            <li>¿Hay ayuda accesible en el punto donde se necesita?</li>
+            <li>¿Está orientada a la tarea concreta del usuario, no es genérica?</li>
+            <li>¿Ofrece pasos concretos y fáciles de seguir?</li>
+          </ul>
+        </li>
+      </ol>
+      <p>Suele hacerse con <strong>varios evaluadores por separado</strong> (sus listas de problemas se combinan después), porque cada uno detecta cosas distintas y juntos cubren mucho más.</p>
+      <div class="table-scroll">
+      <table class="data">
+        <caption>Ficha-resumen de la evaluación heurística.</caption>
+        <tbody>
+          <tr><th scope="row">¿Participación de usuario?</th><td>No (la realiza una persona experta)</td></tr>
+          <tr><th scope="row">Nº orientativo de evaluadores</th><td>3–5 (combinando sus hallazgos se detecta la mayor parte de los problemas)</td></tr>
+          <tr><th scope="row">Fase del proyecto</th><td>Ambas; muy útil pronto, sobre prototipos</td></tr>
+          <tr><th scope="row">Tipo de dato</th><td>Cualitativo (lista de problemas con su gravedad)</td></tr>
+          <tr><th scope="row">Materiales</th><td>El conjunto de heurísticas, una plantilla de registro y el sistema o prototipo</td></tr>
+          <tr><th scope="row">Esfuerzo relativo</th><td>Bajo–medio (rápido y económico)</td></tr>
+          <tr><th scope="row">Aporta sobre todo</th><td>Muchos problemas potenciales detectados deprisa</td></tr>
+          <tr><th scope="row">Hay que vigilar</th><td>Depende de la pericia del evaluador; no confirma qué problemas son reales</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="box curio">
+        <span class="label">¿Sabías que?</span>
+        <p>Las heurísticas de Nielsen no son el único conjunto. Ben Shneiderman, autor también recogido en la bibliografía de la asignatura, propuso sus <strong>«ocho reglas de oro»</strong> del diseño de interfaces. Las ideas se solapan mucho (consistencia, prevención de errores, control del usuario): son distintas formas de empaquetar la misma sabiduría acumulada sobre qué hace usable a una interfaz.</p>
+      </div>
+    </div>
+
+    <!-- Recorrido cognitivo -->
+    <div class="method">
+      <h4>2. Recorrido cognitivo</h4>
+      <p>Aquí el evaluador se pone en la piel de un <strong>usuario que llega por primera vez</strong> y recorre, paso a paso, una tarea concreta. En cada paso se hace preguntas sobre si esa persona <strong>sabría qué hacer</strong>.</p>
+      <p>Se centra en la <strong>facilidad de aprendizaje</strong>: ¿se entiende a la primera, sin manual? Por eso es ideal para productos que la gente usará de forma ocasional, donde no hay margen para aprender.</p>
+      <h5>Las cuatro preguntas en cada paso</h5>
+      <ol>
+        <li>¿La persona intentará lograr el efecto correcto? (¿Sabe qué tiene que conseguir aquí?)</li>
+        <li>¿Se dará cuenta de que la acción correcta está disponible? (¿La ve?)</li>
+        <li>¿Asociará esa acción con el efecto que busca? (¿Entiende que eso es lo que necesita?)</li>
+        <li>Tras actuar, ¿verá que avanza hacia su meta? (¿Recibe una señal de progreso?)</li>
+      </ol>
+      <p>Si en algún paso la respuesta es «no», ahí tienes un problema de aprendizaje detectado.</p>
+      <div class="table-scroll">
+      <table class="data">
+        <caption>Ficha-resumen del recorrido cognitivo.</caption>
+        <tbody>
+          <tr><th scope="row">¿Participación de usuario?</th><td>No (un experto simula al usuario novel)</td></tr>
+          <tr><th scope="row">Nº orientativo de evaluadores</th><td>1–4 (a menudo en grupo, recorriendo juntos)</td></tr>
+          <tr><th scope="row">Fase del proyecto</th><td>Ambas; útil en cuanto hay un flujo de tarea definido</td></tr>
+          <tr><th scope="row">Tipo de dato</th><td>Cualitativo (problemas de aprendizaje paso a paso)</td></tr>
+          <tr><th scope="row">Materiales</th><td>La tarea elegida, los pasos previstos y el prototipo o sistema</td></tr>
+          <tr><th scope="row">Esfuerzo relativo</th><td>Medio (hay que detallar la tarea y cada paso)</td></tr>
+          <tr><th scope="row">Aporta sobre todo</th><td>Si una persona nueva entenderá la interfaz sin ayuda</td></tr>
+          <tr><th scope="row">Hay que vigilar</th><td>Se centra en aprender la tarea; no cubre todos los aspectos de uso</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- Inspección de conformidad y accesibilidad -->
+    <div class="method">
+      <h4>3. Inspección de conformidad y accesibilidad</h4>
+      <p>En lugar de principios generales, aquí se comprueba la interfaz contra una <strong>norma o guía concreta</strong>, punto por punto, como una lista de verificación. La variante más importante para ti es la <strong>inspección de accesibilidad</strong>.</p>
+      <p>Consiste en revisar si el sistema cumple las <strong>WCAG</strong> (Pautas de Accesibilidad para el Contenido Web) en su <strong>nivel AA</strong>, la referencia que exige la normativa europea (<strong>EN 301 549</strong>, <strong>Directiva 2019/882</strong>). Se apoya en herramientas automáticas <em>y</em> en revisión manual.</p>
+      <p>Es la inspección que ya practicaste en el Tema 1 y la que tu proyecto exige de forma obligatoria. Comprueba cosas como el contraste de color, los textos alternativos de las imágenes, el etiquetado de los formularios o el manejo con teclado.</p>
+      <div class="table-scroll">
+      <table class="data">
+        <caption>Ficha-resumen de la inspección de conformidad y accesibilidad.</caption>
+        <tbody>
+          <tr><th scope="row">¿Participación de usuario?</th><td>No (conviene complementar después con usuarios con discapacidad)</td></tr>
+          <tr><th scope="row">Nº orientativo de evaluadores</th><td>1–2, apoyados en herramientas automáticas</td></tr>
+          <tr><th scope="row">Fase del proyecto</th><td>Ambas; imprescindible antes de dar por terminado</td></tr>
+          <tr><th scope="row">Tipo de dato</th><td>Cualitativo y de conformidad (cumple / no cumple cada criterio)</td></tr>
+          <tr><th scope="row">Materiales</th><td>La norma o guía (WCAG, EN 301 549), una lista de verificación y herramientas de comprobación</td></tr>
+          <tr><th scope="row">Esfuerzo relativo</th><td>Medio (parte se automatiza; parte exige revisión manual)</td></tr>
+          <tr><th scope="row">Aporta sobre todo</th><td>Si el sistema cumple los requisitos legales de accesibilidad</td></tr>
+          <tr><th scope="row">Hay que vigilar</th><td>Las herramientas automáticas no lo detectan todo; hace falta criterio humano</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tres métodos, según los criterios que apliques: la <strong>evaluación heurística</strong> (principios generales como las 10 de Nielsen), el <strong>recorrido cognitivo</strong> (la mirada de un usuario nuevo, paso a paso) y la <strong>inspección de conformidad/accesibilidad</strong> (contra una norma como las WCAG AA). Todos sin usuarios.</p>
+    </div>
+  </section>
+
+  <section id="vs-test" aria-labelledby="vs-test-h">
+    <h3 id="vs-test-h"><span class="num" aria-hidden="true">1.4</span>Inspección y test: rápido frente a real</h3>
+
+    <p>Es tentador ver la inspección y el test como rivales. No lo son: responden a preguntas distintas y se usan en momentos distintos.</p>
+    <p>La <strong>inspección</strong> contesta «¿qué problemas <em>podría</em> tener esto?», y lo hace <strong>deprisa y barato</strong>. El <strong>test</strong> contesta «¿qué problemas tiene <em>de verdad</em> con gente real?», y es más costoso.</p>
+
+    <h4>El orden inteligente</h4>
+    <p>Lo eficiente es <strong>inspeccionar primero</strong> para eliminar los fallos evidentes, y <strong>después testar</strong>. Así no gastas el valioso tiempo de tus usuarios tropezando con errores que un experto habría visto en cinco minutos.</p>
+    <p>Dicho de otro modo: la inspección <strong>limpia el camino</strong> antes de que lleguen las personas. Una y otro juntos forman una evaluación sólida.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>inspección</strong> encuentra problemas <em>posibles</em>, rápido y sin usuarios; el <strong>test</strong> confirma los <em>reales</em>, con personas. No compiten: lo inteligente es <strong>inspeccionar primero</strong> (limpiar lo evidente) y <strong>testar después</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">La inspección que ya practicas sin saberlo, un ejemplo de mini-evaluación heurística, a quién protege la inspección de accesibilidad según el INE, cómo encaja en tu proyecto y por qué te concierne profesionalmente.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>Inspección que ya haces sin saberlo</h3>
+
+    <p>Cada vez que abres una app y piensas «¿y ahora dónde le doy?», estás detectando un fallo de la heurística de <strong>visibilidad</strong> o de <strong>reconocer mejor que recordar</strong>. Sin saberlo, estás inspeccionando.</p>
+    <p>Cuando un mensaje de error te dice «Error 0x0007» y te quedas igual, has cazado un incumplimiento de la heurística número 9: <strong>ayudar a recuperarse de los errores</strong> en lenguaje claro.</p>
+    <p>Cuando un botón se llama «Aceptar» en una pantalla y «Continuar» en la siguiente, ahí está roto el principio de <strong>consistencia</strong>. Entrénate a ponerle nombre al problema: ese es el salto de «esto es raro» a «esto incumple tal heurística».</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Abre una app cualquiera y caza <strong>tres incumplimientos</strong> de heurísticas distintas. Para cada uno, anota qué heurística incumple y por qué. Acabas de hacer, en pequeño, una evaluación heurística.</p>
+    </div>
+  </section>
+
+  <section id="mini" aria-labelledby="mini-h">
+    <h3 id="mini-h"><span class="num" aria-hidden="true">2.2</span>Una mini-evaluación heurística</h3>
+
+    <p>Veamos cómo sería en concreto, sobre la app de cita médica que venimos usando como ejemplo.</p>
+
+    <h4>Ejemplo didáctico: cómo saber si se cumple cada heurística</h4>
+    <p><strong>(Ejemplo didáctico.)</strong> Recorres la app con las 10 heurísticas en la mano. Para cada una, esta tabla muestra un <strong>indicio concreto</strong> de que se cumple y otro de que no, sobre la misma app de cita médica.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Indicios concretos de cumplimiento o incumplimiento de cada heurística en la app de cita médica. Ejemplo didáctico.</caption>
+      <thead>
+        <tr><th scope="col">Heurística</th><th scope="col">Indicio de que SÍ se cumple</th><th scope="col">Indicio de que NO se cumple</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Visibilidad del estado</strong></td><td>Al pulsar «Confirmar» aparece «Guardando tu cita…» y luego «Cita confirmada».</td><td>Pulsas «Confirmar» y la pantalla queda igual; no sabes si ha funcionado.</td></tr>
+        <tr><td><strong>2. Mundo real</strong></td><td>Dice «Elige día y hora» y «Tu médico de cabecera».</td><td>Dice «Seleccione slot del recurso asignado».</td></tr>
+        <tr><td><strong>3. Control y libertad</strong></td><td>Hay un «Volver» y puedes cambiar la hora antes de confirmar.</td><td>En el paso 3 no hay forma de volver al 2 sin empezar de cero.</td></tr>
+        <tr><td><strong>4. Consistencia</strong></td><td>El botón principal se llama «Confirmar» en todas las pantallas.</td><td>Se llama «Aceptar» en una pantalla y «Enviar» en la siguiente.</td></tr>
+        <tr><td><strong>5. Prevención de errores</strong></td><td>Si no eliges hora, el botón sigue desactivado e indica qué falta.</td><td>Te deja confirmar sin hora y falla después con un error.</td></tr>
+        <tr><td><strong>6. Reconocer, no recordar</strong></td><td>Muestra el centro de salud ya elegido en las pantallas siguientes.</td><td>Te pide recordar y volver a teclear el código del centro.</td></tr>
+        <tr><td><strong>7. Flexibilidad y eficiencia</strong></td><td>Ofrece «Repetir mi última cita» a quien ya la ha usado.</td><td>Todos, expertos o no, pasan siempre por los mismos seis pasos.</td></tr>
+        <tr><td><strong>8. Estético y minimalista</strong></td><td>La pantalla de cita muestra solo día, hora y médico.</td><td>Banners y avisos promocionales tapan lo esencial.</td></tr>
+        <tr><td><strong>9. Recuperarse de errores</strong></td><td>«No hay huecos ese día; prueba con otra fecha», con botón para elegirla.</td><td>El mensaje dice «Petición rechazada (cód. 42)» y nada más.</td></tr>
+        <tr><td><strong>10. Ayuda y documentación</strong></td><td>Junto a «tarjeta sanitaria» hay un «¿Dónde encuentro este número?».</td><td>El campo «CIP» no se explica y no hay ninguna ayuda.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Fíjate en el método: no se trata de opinar, sino de <strong>buscar un indicio observable</strong> para cada heurística. Si lo encuentras del lado «no se cumple», tienes un hallazgo.</p>
+
+    <h4>De los indicios a los hallazgos priorizados</h4>
+    <p>Cada incumplimiento detectado se anota como hallazgo y se le asigna una <strong>gravedad</strong>, para saber qué arreglar primero. Por ejemplo, tres de los anteriores:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Hallazgos de la mini-evaluación, con su gravedad. Ejemplo didáctico.</caption>
+      <thead>
+        <tr><th scope="col">Hallazgo</th><th scope="col">Heurística incumplida</th><th scope="col">Gravedad</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>Grave</td></tr>
+        <tr><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>Grave</td></tr>
+        <tr><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia</td><td>Menor</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>En diez minutos y sin molestar a nadie tienes una <strong>lista de problemas con nombre y gravedad</strong>, lista para llevar al equipo. Eso es una evaluación heurística.</p>
+    <p>Y observa el límite: no sabes <em>aún</em> si esos problemas hacen fracasar a un usuario real. Eso lo dirá el test. La inspección ha hecho su trabajo: señalar dónde mirar.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una evaluación heurística produce, en poco tiempo, una <strong>lista de hallazgos con la heurística que incumplen y su gravedad</strong>. Es material directo para rediseñar. Lo que no confirma es cuáles fallarán de verdad: para eso está el test.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: a quién protege la inspección de accesibilidad (INE)</h3>
+
+    <p>La inspección de accesibilidad puede parecer una lista de requisitos fríos. No lo es: detrás de cada criterio WCAG hay personas concretas que, si no se cumple, quedan fuera.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE (EDAD 2020)</span>
+      <p>Según la <strong>Encuesta de Discapacidad, Autonomía personal y situaciones de Dependencia</strong> (EDAD-Hogares 2020) del INE:</p>
+      <div class="table-scroll">
+      <table>
+        <caption>Magnitud de la población a la que protege la accesibilidad. INE, EDAD 2020.</caption>
+        <thead>
+          <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 6 o más años con alguna discapacidad o limitación</td><td class="fig">4,38 millones</td></tr>
+          <tr><td>Prevalencia (personas con discapacidad por cada mil habitantes)</td><td class="fig">≈ 95 ‰</td></tr>
+          <tr><td>Hogares con al menos una persona con discapacidad</td><td class="fig">1 de cada 5</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia.</p>
+    <p>Cuando una inspección de accesibilidad detecta que una imagen no tiene texto alternativo o que el contraste es insuficiente, está evitando que esos millones de personas se queden fuera. Ese es el sentido de la heurística, convertido en cifras.</p>
+    <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: también a quien lleva una mano escayolada, usa el móvil al sol o envejece. Inspeccionar la accesibilidad es diseñar para todos.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La inspección de accesibilidad protege a mucha gente: según el INE (EDAD 2020), <strong>4,38 millones de personas</strong> tienen alguna discapacidad y en <strong>1 de cada 5 hogares</strong> vive alguna. Cada criterio WCAG que compruebas evita dejar a alguien fuera.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la inspección como método obligatorio</h3>
+
+    <p>Recuerda que la Actividad D de tu proyecto pide aplicar <strong>al menos un método de cada familia</strong>: indagación, inspección y test. La inspección es, por tanto, una pieza que tienes que incluir sí o sí.</p>
+    <p>Lo bueno: es la más asequible para empezar. Una <strong>evaluación heurística</strong> con tu equipo, repartiéndoos las pantallas y poniendo en común los hallazgos, es barata, rápida y muy formativa.</p>
+
+    <h4>Qué encaja bien</h4>
+    <ul>
+      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común.</li>
+      <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez.</li>
+      <li>La <strong>inspección de accesibilidad obligatoria</strong>: la revisión conforme a <strong>WCAG nivel AA</strong> que ya conoces del Tema 1 y que es requisito mínimo del bloque.</li>
+    </ul>
+    <p>Sea cual sea, documenta cada hallazgo con su <strong>gravedad</strong> y su recomendación en el <strong>informe de evaluación</strong>. Una inspección sin informe no sirve: el valor está en comunicar qué arreglar y por qué.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En tu proyecto, la inspección es <strong>obligatoria</strong> (al menos un método de cada familia). Lo más asequible: una <strong>evaluación heurística</strong> en equipo. Y no olvides la <strong>inspección de accesibilidad (WCAG AA)</strong>, que es requisito mínimo. Todo, documentado con gravedad y recomendaciones en el informe.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de inspección para esta semana</h3>
+
+    <p>Tres retos breves para afinar el ojo del evaluador. Sin usuarios: solo tú, una interfaz y los criterios.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Caza heurística</span>
+      <p>Elige una web o app y recórrela con las 10 heurísticas de Nielsen al lado. Anota cada incumplimiento indicando la heurística y una gravedad (cosmético, menor, grave). Tendrás tu primera tabla de hallazgos.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Ojos de novato</span>
+      <p>Coge una tarea concreta (darse de alta, por ejemplo) y recórrela paso a paso preguntándote las cuatro preguntas del recorrido cognitivo. ¿En qué paso alguien que llega de cero se quedaría bloqueado?</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · Contraste y teclado</span>
+      <p>Haz dos comprobaciones rápidas de accesibilidad en una página: ¿se lee bien el texto sobre su fondo (contraste)?, ¿puedes navegar y activar todo solo con el teclado, sin ratón? Acabas de iniciar una inspección de accesibilidad.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>La inspección es, probablemente, la técnica de evaluación que más vas a usar en tu vida profesional, justo por ser rápida y barata. Cualquier ingeniero debería saber hacer una evaluación heurística básica.</p>
+    <p>Y la inspección de accesibilidad va más allá de la buena práctica: es una <strong>obligación legal</strong>. La <strong>Directiva (UE) 2019/882</strong> y la <strong>EN 301 549</strong> exigen que muchos productos digitales cumplan accesibilidad, y ese cumplimiento hay que <strong>comprobarlo y documentarlo</strong>. Eso es, literalmente, una inspección.</p>
+    <p>Conecta de lleno con las competencias del título: <strong>diseñar y evaluar</strong> interfaces accesibles y usables (CI17, CG03), <strong>interpretar datos</strong> para emitir juicios (CB03) y <strong>transmitir</strong> esos resultados en un informe comprensible (CB04).</p>
+    <p>Dominar la inspección te da poder: puedes mejorar un producto en una tarde, sin presupuesto, y respaldar tus recomendaciones con criterios reconocidos en vez de con opiniones.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Saber inspeccionar es una habilidad profesional de primer orden: rápida, barata y, en accesibilidad, <strong>obligatoria por ley</strong> (Directiva 2019/882, EN 301 549). Cubre las competencias CI17, CG03, CB03 y CB04: diseñar y evaluar, interpretar datos y comunicarlos.</p>
+    </div>
+  </section>
+
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué define a los métodos de inspección frente a la indagación y el test?</summary>
+      <p>Que un <strong>experto revisa</strong> la interfaz contra <strong>reglas conocidas</strong> <strong>sin usuarios</strong>. Por eso son rápidos y baratos. La indagación pregunta y observa a personas; el test pone a usuarios a realizar tareas. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Cuáles son los cinco pasos de una inspección?</summary>
+      <p>Definir el alcance, recorrer con criterios, registrar los hallazgos, valorar su gravedad y redactar el informe. Valorar la gravedad permite priorizar qué arreglar primero. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿En qué consiste la evaluación heurística?</summary>
+      <p>En revisar la interfaz comparándola con un conjunto de principios de usabilidad (heurísticas), como las <strong>10 de Nielsen</strong>, anotando cuáles se incumplen y con qué gravedad. Suele hacerse con 3–5 evaluadores que combinan sus hallazgos. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Qué evalúa el recorrido cognitivo y cómo?</summary>
+      <p>La <strong>facilidad de aprendizaje</strong>: si un usuario nuevo sabría qué hacer. El evaluador recorre una tarea paso a paso y se hace cuatro preguntas en cada paso (si la persona buscará el efecto correcto, verá la acción, la asociará con su meta y notará el progreso). <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Qué es la inspección de accesibilidad y contra qué se comprueba?</summary>
+      <p>Es revisar si el sistema cumple una norma de accesibilidad, en concreto las <strong>WCAG nivel AA</strong> (exigidas por la EN 301 549 y la Directiva 2019/882). Combina herramientas automáticas y revisión manual: contraste, textos alternativos, formularios, manejo con teclado, etc. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Por qué inspección y test no son rivales?</summary>
+      <p>Porque responden a preguntas distintas: la inspección dice qué problemas son <strong>posibles</strong> (rápido, sin usuarios) y el test confirma cuáles son <strong>reales</strong> (con personas). Lo inteligente es inspeccionar primero para limpiar lo evidente y testar después. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿A cuánta gente protege la inspección de accesibilidad, según el INE?</summary>
+      <p>A mucha: según la EDAD 2020, <strong>4,38 millones de personas</strong> (cerca de 95 por cada mil habitantes) tienen alguna discapacidad, y en <strong>1 de cada 5 hogares</strong> vive alguna. Cada criterio WCAG comprobado evita dejarlas fuera. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo encaja la inspección en tu proyecto?</summary>
+      <p>Es obligatoria: la Actividad D pide al menos un método de cada familia. Lo más asequible es una <strong>evaluación heurística</strong> en equipo, e incluye además la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo). Todo, documentado con gravedad y recomendaciones en el informe. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Método de inspección</dt>
+      <dd>Método de evaluación en el que una persona experta examina la interfaz contra reglas conocidas, sin usuarios. Rápido y económico; detecta problemas potenciales.</dd>
+      <dt>Evaluación heurística</dt>
+      <dd>Método de inspección que revisa la interfaz comparándola con un conjunto de principios de usabilidad (heurísticas) y anota los que se incumplen.</dd>
+      <dt>Heurística</dt>
+      <dd>Principio general de usabilidad que sirve de criterio para inspeccionar una interfaz (por ejemplo, «visibilidad del estado del sistema»).</dd>
+      <dt>Las 10 heurísticas de Nielsen</dt>
+      <dd>Conjunto clásico de diez principios de usabilidad (Nielsen Norman Group) usado como criterio en la evaluación heurística.</dd>
+      <dt>Gravedad (de un hallazgo)</dt>
+      <dd>Valoración de cuánto perjudica un problema (por ejemplo: cosmético, menor, grave, catastrófico). Sirve para priorizar qué se arregla antes.</dd>
+      <dt>Recorrido cognitivo</dt>
+      <dd>Método de inspección en el que el evaluador simula a un usuario nuevo y recorre una tarea paso a paso, comprobando si sabría qué hacer en cada uno. Se centra en la facilidad de aprendizaje.</dd>
+      <dt>Inspección de conformidad</dt>
+      <dd>Inspección que comprueba la interfaz contra una norma o guía concreta, punto por punto, como una lista de verificación.</dd>
+      <dt>Inspección de accesibilidad</dt>
+      <dd>Inspección de conformidad centrada en la accesibilidad: comprueba si el sistema cumple las WCAG (nivel AA), con herramientas automáticas y revisión manual.</dd>
+      <dt>WCAG</dt>
+      <dd>Pautas de Accesibilidad para el Contenido Web. Su nivel AA es la referencia exigida por la normativa europea y por el proyecto de la asignatura.</dd>
+      <dt>EN 301 549</dt>
+      <dd>Norma europea de accesibilidad para productos y servicios TIC; remite a las WCAG nivel AA. Junto con la Directiva 2019/882, hace la accesibilidad obligatoria y verificable.</dd>
+      <dt>Reglas de oro de Shneiderman</dt>
+      <dd>Conjunto alternativo de ocho principios de diseño de interfaces, con ideas que se solapan con las heurísticas de Nielsen.</dd>
+      <dt>Actividad D (DCH)</dt>
+      <dd>Cuarta actividad del ciclo del DCH (ISO 9241-210): evaluar el diseño respecto a los requisitos. La inspección es una de sus tres familias de métodos.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>Los <strong>métodos de inspección</strong> son aquellos en los que un <strong>experto revisa</strong> la interfaz contra reglas conocidas, <strong>sin usuarios</strong>. Son rápidos y baratos.</li>
+        <li>Detectan problemas <strong>potenciales</strong>; por eso conviene hacerlos pronto. No sustituyen al test: lo complementan.</li>
+        <li>Toda inspección sigue cinco pasos: <strong>alcance, recorrer con criterios, registrar, valorar la gravedad e informar</strong>.</li>
+        <li>Tres métodos: <strong>evaluación heurística</strong> (las 10 de Nielsen), <strong>recorrido cognitivo</strong> (mirada del usuario nuevo, paso a paso) e <strong>inspección de conformidad/accesibilidad</strong> (contra norma, p. ej. WCAG AA).</li>
+        <li>Regla práctica: <strong>inspeccionar primero</strong> para limpiar lo evidente y <strong>testar después</strong> para confirmar lo real.</li>
+        <li>Los datos del <strong>INE (EDAD 2020)</strong> dan sentido a la accesibilidad: <strong>4,38 millones</strong> de personas con discapacidad y <strong>1 de cada 5 hogares</strong> con alguna.</li>
+        <li>En tu proyecto la inspección es <strong>obligatoria</strong>; la más asequible es la heurística, e incluye la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo), documentada en el informe.</li>
+        <li>Profesionalmente, la inspección de accesibilidad es <strong>obligatoria por ley</strong> (Directiva 2019/882, EN 301 549) y cubre las competencias CI17, CG03, CB03 y CB04.</li>
+        <li>En la próxima sesión cerramos las familias con el <strong>test con usuarios</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Métodos de inspección: evaluación heurística y recorrido cognitivo.)</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006. (Las ocho reglas de oro.)</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+    </ol>
+    <p>Normas técnicas y marco legal:</p>
+    <ol class="refs" start="7">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>Directiva (UE) 2019/882 del Parlamento Europeo y del Consejo, sobre los <em>requisitos de accesibilidad de los productos y servicios</em>.</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="10">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta de Discapacidad, Autonomía personal y situaciones de Dependencia</em> (EDAD-Hogares 2020). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> (las 10 heurísticas de usabilidad) · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a> (WCAG).</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>Los métodos de inspección (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

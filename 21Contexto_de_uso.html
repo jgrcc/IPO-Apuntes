@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: introducción a la Actividad A del Diseño Centrado en lo Humano (ISO 9241-210), la definición del contexto de uso. Apertura del Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>El contexto de uso (Actividad A del DCH) · Versión ampliada · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>El contexto de uso
+      <span class="sub">Actividad A del Diseño Centrado en lo Humano: entender antes de diseñar (ISO 9241-210 · ISO 9241-11)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB03 · CT09</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#del-proceso">Del proceso a la primera actividad: por qué empezamos aquí</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es el contexto de uso? Definición ISO</a></li>
+          <li class="lvl2"><a href="#partes">Las cuatro partes del contexto de uso</a></li>
+          <li class="lvl2"><a href="#norma-7-2">La Actividad A según la norma: la cláusula 7.2</a></li>
+          <li class="lvl2"><a href="#paso-a-paso">La Actividad A paso a paso: cómo se ejecuta</a></li>
+          <li class="lvl2"><a href="#resultados">Qué produce la Actividad A y cómo se enlaza con las demás</a></li>
+          <li class="lvl2"><a href="#historia">El linaje del concepto: de la usabilidad al contexto</a></li>
+          <li class="lvl2"><a href="#antipatron">El antipatrón: diseñar sin contexto</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La misma app, contextos distintos</a></li>
+          <li class="lvl2"><a href="#design-thinking">Design Thinking: empatizar y definir el problema (resumen)</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: la diversidad de contextos en España (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la Actividad A como primera entrega</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte3">Parte 3 · Apartado independiente: Design Thinking</a>
+        <ol>
+          <li class="lvl2"><a href="#dt-que-es">Qué es el Design Thinking</a></li>
+          <li class="lvl2"><a href="#dt-mentalidad">La mentalidad: seis rasgos y su eco en la norma</a></li>
+          <li class="lvl2"><a href="#dt-modelos">Cómo se organiza: dos modelos conocidos</a></li>
+          <li class="lvl2"><a href="#dt-divergir">Divergir y converger</a></li>
+          <li class="lvl2"><a href="#dt-empatizar">Empatizar en detalle: reunir evidencia</a></li>
+          <li class="lvl2"><a href="#dt-definir">Definir en detalle: del montón de datos al problema</a></li>
+          <li class="lvl2"><a href="#dt-correspondencia">Cómo usarlo para cumplir la cláusula 7.2</a></li>
+          <li class="lvl2"><a href="#dt-ejemplo">Ejemplo trabajado: cita médica en entorno rural</a></li>
+          <li class="lvl2"><a href="#dt-limites">Límites y buenas prácticas</a></li>
+          <li class="lvl2"><a href="#dt-hoja">Hoja de trabajo para el laboratorio</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes abren el <strong>Tema 2 (Actividades de análisis)</strong> y son la continuación directa de los del Tema 1. Allí cerramos con el <strong>Diseño Centrado en lo Humano (DCH)</strong> y su proceso de cuatro actividades en bucle. Aquí entramos en la primera de ellas.</p>
+    <p>Damos por sabido el ciclo del DCH: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. Si ese esquema no te suena de inmediato, vuelve un momento al Tema 1 antes de seguir.</p>
+    <p>El objetivo de hoy es modesto pero crucial: <strong>entender qué es la Actividad A y por qué es la base de todo lo demás</strong>. No vamos a definir todavía cada componente en detalle; eso lo haremos en los puntos siguientes (usuarios, tareas, recursos y entorno).</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>Actividad A — «entender y especificar el contexto de uso»</strong> es la primera del ciclo DCH y la que sostiene a las demás. Define <strong>quién</strong> usará el sistema, <strong>para qué</strong> tareas, <strong>con qué recursos</strong> y <strong>en qué entorno</strong>. La norma de referencia para este concepto es la <strong>ISO 9241-11</strong>, dentro de la familia que ya conoces.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2 · ampliada</span>
+    <h2>Contenido base: qué es y por qué se hace primero</h2>
+    <p class="lead">Por qué el proceso arranca aquí, qué cuatro partes componen el contexto de uso, qué exige exactamente la cláusula 7.2 de la norma, cómo se ejecuta la actividad, qué produce, de dónde viene el concepto y qué pasa cuando se ignora.</p>
+  </div>
+
+  <section id="del-proceso" aria-labelledby="del-proceso-h">
+    <h3 id="del-proceso-h"><span class="num" aria-hidden="true">1.1</span>Del proceso a la primera actividad: por qué empezamos aquí</h3>
+
+    <p>En el Tema 1 aprendiste que el DCH no es una buena intención, sino un <strong>proceso de ingeniería</strong> normalizado en la ISO 9241-210. Ese proceso giraba en una rueda de cuatro actividades: A, B, C y D.</p>
+    <p>También viste el orden lógico de esas actividades: <strong>A → B → C → D</strong>. Es el orden en que se encadenan sus resultados: lo que produce una actividad alimenta a la siguiente. Maquetar pantallas (C) sin haber entendido antes el problema es el error típico que este proceso quiere evitar.</p>
+    <div class="box curio">
+      <span class="label">Dos precisiones sobre la norma</span>
+      <p><strong>Las letras.</strong> Las letras A–D son la convención que usamos en esta asignatura. La propia norma identifica las actividades por su cláusula: 7.2 (contexto de uso), 7.3 (requisitos de usuario), 7.4 (soluciones de diseño) y 7.5 (evaluación). La cláusula 7.1 establece que estas cuatro actividades enlazadas deben darse en el diseño de cualquier sistema interactivo.</p>
+      <p><strong>El punto de partida.</strong> La norma no prohíbe empezar por otra actividad: admite que el proyecto arranque en cualquiera de las cuatro según la situación. Por ejemplo, si los usuarios se quejan de un sistema existente, se puede comenzar evaluándolo. Lo que sí exige es que el diseño se base en una comprensión explícita de usuarios, tareas y entornos (cláusula 5.2).</p>
+    </div>
+    <p>Pues bien, ese «entender el problema» tiene un nombre técnico: <strong>especificar el contexto de uso</strong>. Es la Actividad A, y por eso le dedicamos el arranque del Tema 2.</p>
+
+    <h4>El verbo importa: «entender y especificar»</h4>
+    <p>La norma no dice «imaginar» ni «suponer» el contexto. Dice <strong>entenderlo</strong> (observando y preguntando a personas reales) y <strong>especificarlo</strong> (dejándolo por escrito, de forma explícita y revisable).</p>
+    <p>Esa doble exigencia es lo que convierte una corazonada en una pieza de ingeniería. Un contexto de uso «que llevo en la cabeza» no sirve: tiene que poder compartirse, discutirse en equipo y contrastarse después.</p>
+    <p>Conecta directamente con el primer principio del DCH que memorizaste: <em>«basarse en una comprensión explícita de usuarios, tareas y entornos»</em>. La Actividad A es ese principio convertido en trabajo concreto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad A materializa el primer principio del DCH. No basta con intuir el contexto: hay que <strong>investigarlo</strong> y <strong>documentarlo</strong>. Es la diferencia entre diseñar con datos y diseñar a ciegas.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es el contexto de uso? Definición ISO</h3>
+
+    <p>El <strong>contexto de uso</strong> es el conjunto de circunstancias reales en las que un sistema se utiliza. La norma que lo define con precisión es la <strong>ISO 9241-11</strong>, la misma que define la usabilidad.</p>
+    <p>Y ese parentesco no es casual. Recuerda la definición de usabilidad del Tema 1: el grado en que un sistema permite a usuarios concretos lograr objetivos con <strong>eficacia, eficiencia y satisfacción</strong>… <em>en un contexto de uso especificado</em>.</p>
+    <p>Esa última cláusula es la clave. La usabilidad <strong>no existe en abstracto</strong>: solo se puede medir respecto a un contexto. Un sistema usable para un usuario en una oficina puede ser inservible para otro en la calle bajo la lluvia.</p>
+
+    <h4>Una definición operativa que puedes aplicar</h4>
+    <p>Según la ISO 9241-11, el contexto de uso lo forman los <strong>usuarios, sus objetivos y tareas, los recursos</strong> que emplean y el <strong>entorno</strong> (físico, social, técnico y organizativo) en el que actúan.</p>
+    <p>Dicho en lenguaje de aula: especificar el contexto de uso es responder con rigor a cuatro preguntas. <strong>¿Quién? ¿Para qué? ¿Con qué? ¿Dónde?</strong></p>
+    <p>No es una descripción literaria del usuario. Es una <strong>especificación de ingeniería</strong>: información concreta que después permitirá derivar requisitos verificables en la Actividad B.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Contexto de uso = <strong>usuarios + tareas/objetivos + recursos + entorno</strong>. La usabilidad solo tiene sentido <em>respecto a un contexto</em>; por eso especificarlo es el primer paso obligatorio. Norma de referencia: <strong>ISO 9241-11</strong>.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La revisión vigente de la norma de usabilidad, la <strong>ISO 9241-11:2018</strong>, amplió expresamente el concepto más allá del software: hoy se aplica a productos, sistemas y servicios de cualquier tipo. El «contexto de uso» de una app de citas médicas y el de un cajero automático en una estación se analizan con el mismo método.</p>
+    </div>
+  </section>
+
+  <section id="partes" aria-labelledby="partes-h">
+    <h3 id="partes-h"><span class="num" aria-hidden="true">1.3</span>Las cuatro partes del contexto de uso</h3>
+
+    <p>Especificar el contexto de uso significa describir, de forma ordenada, sus <strong>cuatro componentes</strong>. Cada uno será un punto propio en las próximas sesiones; aquí solo los presentamos para tener el mapa completo.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 470" role="img" aria-labelledby="ctx-title ctx-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="ctx-title">Los cuatro componentes del contexto de uso según la norma ISO 9241-11</title>
+        <desc id="ctx-desc">Un bloque central, «especificación del contexto de uso», recibe la aportación de cuatro componentes dispuestos alrededor: usuarios (quién), tareas y objetivos (para qué), recursos y equipamiento (con qué) y entorno físico, social y técnico (dónde). Los cuatro juntos definen las circunstancias reales en las que se usará el sistema y alimentan la siguiente actividad del proceso, la especificación de requisitos.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Componente: Usuarios (teal) -->
+        <rect x="40" y="30" width="270" height="74" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="175" y="60" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0B5563">USUARIOS · ¿Quién?</text>
+        <text x="175" y="82" text-anchor="middle" font-size="12.5" fill="#211C16">Directos, indirectos y grupos de interés</text>
+
+        <!-- Componente: Tareas (ochre) -->
+        <rect x="410" y="30" width="270" height="74" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="545" y="60" text-anchor="middle" font-size="14.5" font-weight="700" fill="#7A5A12">TAREAS · ¿Para qué?</text>
+        <text x="545" y="82" text-anchor="middle" font-size="12.5" fill="#211C16">Objetivos e información que manejan</text>
+
+        <!-- Componente: Recursos (green) -->
+        <rect x="40" y="366" width="270" height="74" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="175" y="396" text-anchor="middle" font-size="14.5" font-weight="700" fill="#2C5A2E">RECURSOS · ¿Con qué?</text>
+        <text x="175" y="418" text-anchor="middle" font-size="12.5" fill="#211C16">Dispositivos, software, materiales</text>
+
+        <!-- Componente: Entorno (terra) -->
+        <rect x="410" y="366" width="270" height="74" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="545" y="396" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8A3412">ENTORNO · ¿Dónde?</text>
+        <text x="545" y="418" text-anchor="middle" font-size="12.5" fill="#211C16">Físico, social, técnico, organizativo</text>
+
+        <!-- Núcleo central -->
+        <rect x="250" y="190" width="220" height="90" rx="14" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="360" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">Especificación del</text>
+        <text x="360" y="242" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">contexto de uso</text>
+        <text x="360" y="264" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Actividad A · ISO 9241-11</text>
+
+        <!-- Flechas de los componentes al núcleo -->
+        <line x1="290" y1="104" x2="318" y2="186" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="430" y1="104" x2="402" y2="186" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="290" y1="366" x2="318" y2="284" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="430" y1="366" x2="402" y2="284" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+
+        <!-- Salida hacia la actividad B -->
+        <line x1="470" y1="235" x2="612" y2="235" stroke="#0B5563" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <text x="615" y="222" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">alimenta</text>
+        <text x="615" y="251" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">la Actividad B</text>
+      </svg>
+      <figcaption>Los cuatro componentes del contexto de uso (ISO 9241-11) confluyen en una única especificación, que después alimenta la Actividad B (requisitos). La descripción completa está disponible para lectores de pantalla y se desarrolla en la lista siguiente.</figcaption>
+    </figure>
+
+    <ol class="pillars" role="list">
+      <li><b>Usuarios — ¿Quién?</b> No es «la gente» en general. Hay que identificar a los usuarios <strong>directos</strong> (los que operan el sistema), <strong>indirectos</strong> (los que reciben sus resultados) y al resto de <strong>grupos de interés</strong>. Aquí enlaza la «identificación de grupos de interés» del Tema 2.</li>
+      <li><b>Tareas y objetivos — ¿Para qué?</b> Qué quiere lograr cada usuario y qué pasos da para conseguirlo. Incluye la <strong>información</strong> que necesita y produce. Es la base del <em>análisis de tareas</em> que practicaremos en laboratorio.</li>
+      <li><b>Recursos y equipamiento — ¿Con qué?</b> Los medios disponibles: dispositivos (móvil, ordenador), software, conexión, documentos, incluso el tiempo. Un mismo objetivo cambia por completo si se hace con una mano en el móvil o sentado ante un teclado.</li>
+      <li><b>Entorno — ¿Dónde?</b> Las condiciones físicas (ruido, luz, movimiento), sociales (a solas, con público), técnicas (cobertura, navegador) y organizativas (normas, prisas) que rodean el uso.</li>
+    </ol>
+
+    <p>Fíjate en que estos cuatro componentes son las cuatro <strong>caras de un mismo análisis</strong>, no fases separadas. Se investigan a la vez y se describen juntos, porque solo tienen sentido en conjunto.</p>
+    <p>Cada uno tendrá su sesión específica. Hoy basta con que el mapa esté completo en tu cabeza: <strong>quién, para qué, con qué y dónde</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuatro componentes, cuatro preguntas: <strong>usuarios (¿quién?), tareas (¿para qué?), recursos (¿con qué?) y entorno (¿dónde?)</strong>. Juntos forman la especificación del contexto de uso. En las próximas sesiones desarrollaremos cada uno por separado.</p>
+    </div>
+  </section>
+
+  <section id="norma-7-2" aria-labelledby="norma-7-2-h">
+    <h3 id="norma-7-2-h"><span class="num" aria-hidden="true">1.4</span>La Actividad A según la norma: la cláusula 7.2</h3>
+
+    <p>La ISO 9241-210 dedica a esta actividad la cláusula <strong>7.2</strong>, «Comprender y especificar el contexto de uso», organizada en cuatro apartados. Conviene conocer cada uno, porque son lo que la norma exige o recomienda de verdad.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Estructura de la cláusula 7.2 de la ISO 9241-210:2019 (resumen con palabras propias).</caption>
+      <thead>
+        <tr><th scope="col">Apartado</th><th scope="col">Qué establece</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">7.2.1 Planteamiento general</th><td>Hay que reunir y analizar información sobre el contexto actual para comprender, y después especificar, el contexto del futuro sistema. Ayuda analizar sistemas existentes o similares, incluidos los manuales, y aprovechar datos disponibles como las incidencias del servicio de ayuda.</td></tr>
+        <tr><th scope="row">7.2.2 Descripción del contexto</th><td>Define qué debe contener la descripción: usuarios y otros grupos de interés, características de los usuarios, objetivos y tareas, y entorno.</td></tr>
+        <tr><th scope="row">7.2.3 Detalle suficiente</th><td>La descripción debe tener el detalle necesario para apoyar las actividades de requisitos, diseño y evaluación. Es un documento de trabajo que se esboza al principio y se actualiza durante el proyecto.</td></tr>
+        <tr><th scope="row">7.2.4 Contexto especificado para el diseño</th><td>El contexto previsto debe quedar declarado en la especificación de requisitos, para saber bajo qué condiciones se aplican esos requisitos.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Los cuatro bloques de la descripción (7.2.2)</h4>
+    <ol class="pillars" role="list">
+      <li><b>a) Usuarios y otros grupos de interés.</b> Hay que identificar los grupos relevantes y su relación con el desarrollo, expresada en objetivos clave y restricciones. La norma entiende por <em>usuario</em> a quien interactúa con el sistema: quien lo opera, quien usa sus resultados y quien lo mantiene o da soporte (cláusula 3.14). Un <em>grupo de interés</em> es cualquier persona u organización con un interés en el sistema (3.11).</li>
+      <li><b>b) Características de los usuarios.</b> Se identifican las que son relevantes: conocimientos, destrezas, experiencia, educación, formación, atributos físicos, hábitos y preferencias. Si hace falta, se distinguen tipos de usuario, por ejemplo con distinta experiencia o capacidad física. La norma añade que, para lograr accesibilidad, el diseño debe poder ser usado por la mayor diversidad de capacidades posible, y señala que en muchos países es una exigencia legal.</li>
+      <li><b>c) Objetivos y tareas.</b> Se identifican los objetivos de los usuarios y los del sistema. Se describen las características de las tareas que influyen en la usabilidad y la accesibilidad: cómo se hacen habitualmente, con qué frecuencia y duración, qué dependencias existen y qué actividades se hacen en paralelo. También se identifican las posibles consecuencias adversas para la salud y la seguridad (la norma pone el ejemplo de una carga excesiva por un ritmo de trabajo inadecuado) y el riesgo de completar mal una tarea (como una compra equivocada). Y un aviso clave: <strong>las tareas no deben describirse solo en términos de las funciones del producto</strong>.</li>
+      <li><b>d) Entorno.</b> Se identifica el entorno técnico, incluidos hardware, software y materiales. Se describen además las características relevantes del entorno físico (condiciones térmicas, iluminación, distribución del espacio, mobiliario) y del social y cultural (prácticas de trabajo, estructura organizativa, actitudes).</li>
+    </ol>
+
+    <h4>Objetivo y tarea no son lo mismo</h4>
+    <p>La norma distingue ambos conceptos en sus definiciones (3.6 y 3.12). El <strong>objetivo</strong> es el resultado que se pretende, y es independiente de los medios. La <strong>tarea</strong> es el conjunto de actividades que se emprenden para lograrlo, y describe un medio concreto de conseguirlo. «Tener cita con el médico» es un objetivo; «llamar al centro de salud en horario de mañana» es una tarea. Por eso conviene describir primero el objetivo: así se puede cuestionar si la tarea actual es la mejor manera de alcanzarlo.</p>
+
+    <h4>Cómo encajan los cuatro componentes de la 9241-11 con los cuatro bloques de la 7.2.2</h4>
+    <p>En la sección 1.3 viste los cinco elementos de la ISO 9241-11: usuarios, objetivos, tareas, recursos y entorno. La cláusula 7.2.2 agrupa la misma información en cuatro bloques. Los <em>recursos</em> (hardware, software, materiales) pasan a formar parte del entorno técnico del bloque d. No hay contradicción: es la misma información organizada de otro modo. Cuando entregues tu descripción, comprueba que no falta ningún elemento en ninguna de las dos formulaciones.</p>
+
+    <h4>Qué es obligatorio y qué es recomendado</h4>
+    <p>La lista de verificación del Anexo B de la norma permite distinguirlo. Entre los puntos de la 7.2.2 que aparecen como obligatorios están identificar los grupos relevantes, identificar las características relevantes de los usuarios, identificar los objetivos de los usuarios y del sistema, describir las características de las tareas que influyen en usabilidad y accesibilidad, identificar el entorno técnico y describir el entorno físico, social, organizativo y cultural. Quedan como recomendaciones, entre otras, definir tipos de usuario cuando sea necesario, diseñar para la mayor diversidad de capacidades, identificar las consecuencias para la salud y la seguridad y el riesgo de error, y no describir las tareas solo por las funciones del producto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La cláusula 7.2 pide una descripción del contexto con cuatro bloques: <strong>grupos de interés, características de los usuarios, objetivos y tareas, y entorno</strong>. Debe tener detalle suficiente, mantenerse viva durante el proyecto y declararse en los requisitos. La norma dice <em>qué</em> hay que describir; <em>cómo</em> obtenerlo lo decide el equipo.</p>
+    </div>
+  </section>
+
+  <section id="paso-a-paso" aria-labelledby="paso-a-paso-h">
+    <h3 id="paso-a-paso-h"><span class="num" aria-hidden="true">1.5</span>La Actividad A paso a paso: cómo se ejecuta</h3>
+
+    <p>La norma no prescribe una secuencia de pasos ni técnicas concretas; remite a la <strong>ISO/TR 16982</strong> para los métodos. La secuencia que sigue es una propuesta docente que se apoya en lo que la cláusula 7.2 pide, y no un texto de la norma.</p>
+
+    <ol class="cycle" role="list">
+      <li><b>1. Reunir lo que ya se sabe.</b> Antes de salir al campo, revisa sistemas existentes o similares (también los manuales), documentación, quejas, informes de incidencias y datos de uso disponibles. Así sabes qué falta por averiguar (7.2.1).</li>
+      <li><b>2. Identificar a los actores.</b> Elabora un mapa de usuarios directos, indirectos y otros grupos de interés, con su objetivo clave y su restricción principal (7.2.2 a).</li>
+      <li><b>3. Elegir cómo recoger la información.</b> Combina al menos dos técnicas, porque cada una tiene sesgos distintos. Contrastar varias fuentes se llama <em>triangulación</em>.</li>
+      <li><b>4. Recoger datos en el entorno real.</b> Observa y pregunta donde ocurre el uso, no solo en el aula. Anota hechos, no interpretaciones.</li>
+      <li><b>5. Analizar y sintetizar.</b> Agrupa lo recogido en patrones por bloque: usuarios, tareas, entorno. Separa lo que has comprobado de lo que has supuesto.</li>
+      <li><b>6. Documentar.</b> Redacta la descripción del contexto con los cuatro bloques. Los resultados típicos son perfiles de grupos de usuarios, escenarios del estado actual y personas (Tabla 1 de la norma).</li>
+      <li><b>7. Validar.</b> Contrasta la descripción con usuarios y otros grupos de interés, y registra los supuestos que quedan abiertos.</li>
+      <li><b>8. Enlazar y revisar.</b> Declara el contexto previsto en los requisitos (7.2.4) y vuelve a revisarlo en cada iteración.</li>
+    </ol>
+
+    <h4>Técnicas habituales y qué aportan</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Técnicas frecuentes en IPO para la Actividad A. Son orientativas: la norma no las prescribe.</caption>
+      <thead>
+        <tr><th scope="col">Técnica</th><th scope="col">Qué aporta</th><th scope="col">Limitación a vigilar</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Entrevista</th><td>Motivaciones, experiencias y vocabulario de las personas.</td><td>La gente cuenta lo que cree que hace, y no siempre coincide con lo que hace.</td></tr>
+        <tr><th scope="row">Observación en contexto</th><td>Conducta real: atajos, apaños, interrupciones, condiciones del entorno.</td><td>Exige tiempo y la presencia del observador puede alterar la conducta.</td></tr>
+        <tr><th scope="row">Cuestionario</th><td>Llega a muchas personas y permite cuantificar.</td><td>Poca profundidad; depende de cómo se formulen las preguntas.</td></tr>
+        <tr><th scope="row">Análisis de sistemas y documentos</th><td>Carencias conocidas, niveles de partida, procesos y restricciones.</td><td>Puede reflejar cómo debería funcionar y no cómo funciona.</td></tr>
+        <tr><th scope="row">Taller con grupos de interés</th><td>Alinea visiones y saca a la luz conflictos entre ellas.</td><td>Las voces más fuertes pueden tapar a las demás.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>La Actividad A en proyectos ágiles</h4>
+    <p>La norma también contempla los métodos ágiles. Indica que la información de contexto de uso y los objetivos del resultado centrado en las personas se establecen al comienzo del proyecto, y que en cada <em>sprint</em> se dan todas las actividades, documentadas en la medida necesaria para comunicarse dentro del equipo. Es decir, la Actividad A no se hace «de una vez»; se actualiza al ritmo del proyecto.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto</span>
+      <p>Elige un servicio público que uses poco (una cita, un trámite). Escribe tres cosas que <em>sabes</em> de quienes lo usan y tres que <em>supones</em>. ¿Qué técnica de la tabla usarías para comprobar cada suposición?</p>
+    </div>
+  </section>
+
+  <section id="resultados" aria-labelledby="resultados-h">
+    <h3 id="resultados-h"><span class="num" aria-hidden="true">1.6</span>Qué produce la Actividad A y cómo se enlaza con las demás</h3>
+
+    <p>El resultado principal es la <strong>descripción del contexto de uso</strong>. La Tabla 1 de la norma da como ejemplos de su contenido los perfiles de grupos de usuarios, los escenarios del estado actual y las personas. Son ejemplos, no una lista cerrada.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Relación de la Actividad A con las demás actividades y principios (referencias a cláusulas de la ISO 9241-210:2019).</caption>
+      <thead>
+        <tr><th scope="col">Vínculo</th><th scope="col">Qué ocurre</th><th scope="col">Cláusula</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Con la Actividad B</th><td>El contexto previsto se declara en la especificación de requisitos, y de él y de las necesidades se derivan requisitos (por ejemplo, que el producto se use en exteriores).</td><td>7.2.4 y 7.3.3</td></tr>
+        <tr><th scope="row">Con la Actividad C</th><td>Las soluciones de diseño se elaboran a partir de la descripción del contexto, entre otras fuentes.</td><td>7.4.1</td></tr>
+        <tr><th scope="row">Con la Actividad D</th><td>La evaluación se interpreta respecto al contexto en el que se pretendía usar el sistema.</td><td>7.5.4</td></tr>
+        <tr><th scope="row">Con la iteración</th><td>El feedback de los usuarios sirve para actualizar el contexto previsto, revisar requisitos y refinar soluciones.</td><td>5.5</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Retos que la norma reconoce</h4>
+    <p>La cláusula 7.1 explica por qué esta actividad no se agota en una pasada: suele haber varios grupos de usuarios y de interés con necesidades distintas; el contexto puede ser muy diverso y variar entre grupos y tareas; al comienzo los requisitos que se pueden captar no son exhaustivos; algunos solo emergen cuando existe una solución propuesta; y los requisitos de distintos grupos pueden ser contradictorios.</p>
+
+    <h4>Qué distingue una buena descripción</h4>
+    <p>Estos criterios son una síntesis docente de lo que la cláusula 7.2 pide:</p>
+    <ul>
+      <li><strong>Completa:</strong> cubre los cuatro bloques.</li>
+      <li><strong>Basada en evidencia:</strong> distingue lo comprobado de lo supuesto.</li>
+      <li><strong>De detalle suficiente:</strong> sirve para decidir requisitos, diseño y evaluación.</li>
+      <li><strong>Compartida y viva:</strong> el equipo la conoce y se actualiza con cada iteración.</li>
+      <li><strong>Trazable:</strong> cada requisito puede remitir al hallazgo de contexto que lo origina.</li>
+    </ul>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.7</span>El linaje del concepto: de la usabilidad al contexto</h3>
+
+    <p>El concepto de contexto de uso no nació de golpe. Es fruto de la misma evolución que estudiaste en el Tema 1: el paso de centrarse en la máquina a centrarse en la persona.</p>
+    <p>La pista la dejó Donald Norman: <em>si la gente se equivoca de forma sistemática, el problema es de diseño</em>. Pero para diseñar bien hace falta saber <strong>en qué situación concreta</strong> falla esa gente. Sin contexto, no hay diagnóstico.</p>
+
+    <h4>El linaje en la familia ISO 9241</h4>
+    <ul class="timeline" role="list">
+      <li><b>1998</b> — La primera ISO 9241-11 define la usabilidad ligándola, ya entonces, a un «contexto de uso especificado». El contexto deja de ser un detalle y pasa a ser parte de la definición.</li>
+      <li><b>1999</b> — La <strong>ISO 13407</strong> formaliza el proceso de diseño centrado en el operador humano e incluye «entender y especificar el contexto de uso» como su primera actividad.</li>
+      <li><b>2010</b> — La 13407 se integra en la <strong>ISO 9241-210</strong>; la actividad de contexto de uso se consolida como punto de partida del ciclo.</li>
+      <li><b>2018-2019</b> — La <strong>ISO 9241-11:2018</strong> actualiza la definición de usabilidad y contexto; la <strong>ISO 9241-210:2019</strong> los engarza con la UX, la accesibilidad y los métodos ágiles.</li>
+    </ul>
+    <p>No memorices las fechas. Quédate con la dirección: el contexto de uso pasó de ser una <strong>nota al margen</strong> de la usabilidad a ser la <strong>primera tarea formal</strong> de todo proyecto centrado en lo humano.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La palabra «ergonomía» del título de la familia ISO 9241 viene del griego <em>ergon</em> (trabajo) y <em>nomos</em> (ley): literalmente, «las leyes del trabajo». Especificar el contexto de uso es, en el fondo, estudiar las leyes reales del trabajo de una persona antes de pretender ayudarla con un sistema.</p>
+    </div>
+  </section>
+
+  <section id="antipatron" aria-labelledby="antipatron-h">
+    <h3 id="antipatron-h"><span class="num" aria-hidden="true">1.8</span>El antipatrón: diseñar sin contexto</h3>
+
+    <p>La mejor forma de entender por qué hace falta la Actividad A es ver qué ocurre cuando se salta. Y se salta mucho, por una tentación muy humana: <strong>ir directos a la solución</strong>.</p>
+    <p>El equipo se reúne, alguien dice «hagamos una app con un botón aquí y un menú allá», y todos empiezan a maquetar. Se siente productivo. Pero se está diseñando sobre una <strong>suposición no comprobada</strong> de quién, para qué, con qué y dónde.</p>
+
+    <h4>Tres síntomas de un proyecto sin contexto</h4>
+    <ul>
+      <li><strong>El «usuario» es uno mismo.</strong> El equipo diseña para alguien como él: joven, con buena vista, buen móvil y buena conexión. Olvida a quien no se le parece.</li>
+      <li><strong>Las tareas son las que el sistema permite</strong>, no las que la persona necesita. Se construye lo que es fácil de programar, no lo que resuelve el problema.</li>
+      <li><strong>El entorno se ignora.</strong> Se prueba en una oficina tranquila algo que se usará de pie, con prisa y con una sola mano en el andén del tren.</li>
+    </ul>
+    <p>El resultado es el del Tema 1: <strong>una solución preciosa para el problema equivocado</strong>. Funciona en la demo y fracasa en la calle. Y el error se descubre tarde, cuando ya es caro corregirlo.</p>
+    <p>La Actividad A es el seguro contra ese desenlace. No es burocracia: es el paso que evita gastar meses construyendo algo que nadie puede usar de verdad.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Saltarse el contexto de uso lleva a tres errores típicos: <strong>diseñar para uno mismo, programar lo fácil en vez de lo necesario e ignorar el entorno real</strong>. La Actividad A existe precisamente para impedirlo.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 3</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo se reconoce la importancia del contexto a tu alrededor, cómo se investiga con Design Thinking, qué nos dicen los datos del INE y, sobre todo, cómo será tu primera entrega del proyecto.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma app, contextos distintos</h3>
+
+    <p>El contexto de uso se entiende mejor con un ejemplo único visto desde varias circunstancias. Tomemos una <strong>app de pago del transporte público</strong>, la que usarás para validar el billete del autobús.</p>
+    <p>El objetivo de la persona es siempre el mismo: <em>pagar y subir</em>. Pero el contexto cambia radicalmente la dificultad de esa tarea idéntica.</p>
+
+    <h4>Tres contextos, una sola tarea</h4>
+    <ul>
+      <li><strong>Estudiante con prisa, de pie, una mano ocupada con la mochila.</strong> Necesita pagar en dos toques, con botones grandes y sin escribir nada. La velocidad lo es todo.</li>
+      <li><strong>Persona mayor, sentada, con gafas y sin prisa, pero con poca confianza digital.</strong> Necesita textos legibles, confirmaciones claras y que nada «desaparezca» de la pantalla sin avisar.</li>
+      <li><strong>Cualquiera de los dos en el túnel del metro, sin cobertura.</strong> El recurso «conexión» ha desaparecido. ¿La app guarda el billete para validarlo sin red, o deja a la persona tirada?</li>
+    </ul>
+    <p>Misma app, misma tarea, tres contextos. Cada uno impone decisiones de diseño distintas. Si solo pensaste en el primero —el que se parece a ti—, dejaste fuera a los otros dos.</p>
+    <p>Eso es, en una escena cotidiana, lo que captura la Actividad A: <strong>no diseñas para una tarea, diseñas para una tarea en un contexto</strong>. Cuando empieces a fijarte en el entorno de las apps que usas, habrás interiorizado la mirada del análisis.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Coge la última app que abriste de pie en la calle. ¿Funcionaría igual sin cobertura, con una sola mano y con el sol dándote en la pantalla? Cada «no» que encuentres es una decisión de contexto que su equipo pudo no haber estudiado.</p>
+    </div>
+  </section>
+
+  <section id="design-thinking" aria-labelledby="design-thinking-h">
+    <h3 id="design-thinking-h"><span class="num" aria-hidden="true">2.2</span>Design Thinking: empatizar y definir el problema</h3>
+
+    <p>¿Y cómo se «entiende» el contexto sin inventarlo? La asignatura usa para ello el <strong>Design Thinking</strong>, el enfoque que practicarás en laboratorio para definir problemas.</p>
+    <p>El Design Thinking organiza el trabajo en fases, y sus dos primeras encajan con la Actividad A (la segunda prepara además la Actividad B). No son lo mismo que la norma, pero son una <strong>caja de herramientas compatible</strong> para ejecutarla.</p>
+    <p>Esta sección es un resumen. El desarrollo completo, con modelos, técnicas, un ejemplo trabajado y una hoja de trabajo, está en la <a href="#parte3">Parte 3 (apartado independiente)</a>.</p>
+
+    <h4>Las dos fases que sirven al contexto de uso</h4>
+    <ul>
+      <li><strong>Empatizar.</strong> Acercarse a las personas reales: observarlas, entrevistarlas, acompañarlas mientras hacen la tarea. Aquí se recoge la materia prima del contexto: quién, para qué, con qué y dónde.</li>
+      <li><strong>Definir.</strong> Convertir lo observado en un <strong>enunciado claro del problema</strong>. No «hagamos una app», sino «las personas mayores no completan el alta porque no encuentran el botón de confirmar».</li>
+    </ul>
+    <p>Las otras fases del Design Thinking (idear, prototipar, probar) alimentarán las Actividades C y D del DCH más adelante. Hoy nos quedamos con las dos primeras: son las que producen un contexto de uso bien especificado.</p>
+    <p>El mensaje de fondo es el mismo del Tema 1: la información para decidir <strong>no sale de la intuición del equipo</strong>, sale de la observación y participación de personas reales. El Design Thinking es una forma estructurada de conseguirla.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Las fases <strong>empatizar</strong> y <strong>definir</strong> del Design Thinking son herramientas para ejecutar la Actividad A: primero se observa a las personas reales, después se enuncia el problema con claridad. Así el contexto de uso se <em>investiga</em>, no se inventa.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: la diversidad de contextos en España (INE)</h3>
+
+    <p>Que «el contexto importa» no es una opinión: los datos lo confirman. El <strong>Instituto Nacional de Estadística (INE)</strong>, en su <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>, retrata cómo y desde dónde se conecta la población.</p>
+    <p>Dos cifras de esa encuesta bastan para entender por qué no se puede diseñar pensando en un único usuario «de oficina».</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). Hogares con al menos una persona de 16 a 74 años.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil (sin fijo)</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Hogares que acceden a Internet solo mediante conexión móvil</td><td class="fig">10,7 %</td></tr>
+          <tr><td>Personas de 16 a 74 años que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>La lectura es directa. Para <strong>la mitad de los hogares</strong>, el móvil no es <em>un</em> dispositivo: es <em>el</em> dispositivo. Su contexto de uso es pequeño, táctil, a menudo en movimiento y con una sola mano.</p>
+    <p>Y para uno de cada diez, la conexión a internet depende por completo de la red móvil, con sus cortes y su consumo de datos. Diseñar suponiendo «buena fibra siempre» deja fuera a ese 10,7 %.</p>
+    <p>Súmale que <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por internet. Si esas pantallas se diseñaron sin estudiar el contexto real, el coste del mal diseño lo paga la <strong>ciudadanía que no consigue completar su gestión</strong>.</p>
+    <p>La Actividad A es la inversión que evita ese fallo: gastar antes en <strong>entender</strong> los contextos reales para no gastar mucho más después en soporte, rehacer pantallas y usuarios excluidos.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los datos del INE muestran que el contexto de uso español es <strong>diverso y mayoritariamente móvil</strong>: la mitad de los hogares solo tiene móvil y un 10,7 % depende solo de la red móvil para conectarse. Especificar bien el contexto no es teoría: es lo que evita excluir a millones de personas.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la Actividad A como primera entrega</h3>
+
+    <p>Esta es la transferencia más directa. Tu <strong>proyecto de la asignatura sigue el proceso de la ISO 9241-210</strong>, y la Actividad A es por donde empieza el trabajo real, después de presentar el problema y formar el equipo.</p>
+    <p>Según el plan docente, las actividades prácticas del Tema 2 son precisamente <strong>el uso de Design Thinking para definir el problema</strong> y el <strong>análisis de tareas del usuario</strong>. Son tus herramientas para producir el contexto de uso.</p>
+
+    <h4>De la norma a tu primera entrega</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué produce la Actividad A y cómo se convierte en una entrega del proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Componente del contexto</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Herramienta</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Usuarios</th><td>Identificación de usuarios directos, indirectos y grupos de interés</td><td>Empatizar</td></tr>
+        <tr><th scope="row">Tareas e información</th><td>Análisis de tareas: qué hacen los usuarios y con qué información</td><td>Análisis de tareas</td></tr>
+        <tr><th scope="row">Recursos</th><td>Dispositivos, software y medios disponibles para esas tareas</td><td>Observación</td></tr>
+        <tr><th scope="row">Entorno</th><td>Descripción del entorno físico, social y técnico de uso</td><td>Observación</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consecuencias prácticas desde hoy</h4>
+    <ul>
+      <li><strong>Esta entrega es un <em>checkpoint</em> obligatorio.</strong> Como las demás entregas parciales, no se califica una a una, pero no presentarla en plazo significa no superar el bloque del proyecto.</li>
+      <li><strong>Tienes que evidenciar el proceso, no solo el resultado.</strong> La evaluación verifica que «se ha seguido un proceso de DCH». Hay que <em>demostrar</em> que el contexto se investigó (a quién observaste, qué preguntaste), no solo afirmarlo.</li>
+      <li><strong>Aquí se siembra la accesibilidad.</strong> El nivel <strong>AA de WCAG</strong> es un requisito mínimo del proyecto; empieza a aparecer en la Actividad A, cuando identificas usuarios con distintas capacidades y entornos.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad A es tu <strong>primera entrega de fondo</strong> del proyecto: una especificación del contexto de uso con sus cuatro componentes, obtenida con Design Thinking y análisis de tareas. Lo que se valora es la <strong>evidencia de que investigaste</strong>, no solo el documento final.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de observación para esta semana</h3>
+
+    <p>El contexto de uso se aprende mirando con otros ojos lo que ya te rodea. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Las cuatro preguntas</span>
+      <p>Elige una app que uses a diario y respóndela con frases concretas: <strong>¿quién?</strong> (¿solo gente como tú?), <strong>¿para qué?</strong>, <strong>¿con qué?</strong> y <strong>¿dónde?</strong>. Acabas de hacer, a pequeña escala, una especificación del contexto de uso.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Cambia el contexto, no la tarea</span>
+      <p>Toma esa misma app y la misma tarea, pero imagina otro contexto: una persona mayor, sin cobertura o con una mano ocupada. ¿Qué decisión de diseño se rompe? Acabas de ver por qué la usabilidad depende del contexto.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Empatiza de verdad</span>
+      <p>Pide a alguien que no se parezca a ti (más mayor, menos «tecnológico») que haga delante de ti una tarea digital sencilla. <strong>No le ayudes; observa.</strong> Dónde duda es contexto real que tú no habías visto. Eso es la fase de empatizar.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente lo deja claro: una de las competencias de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la calidad del software (CG03).</p>
+    <p>Pero no puedes garantizar usabilidad ni accesibilidad de algo cuyo contexto de uso no conoces. La Actividad A es, literalmente, el punto donde esa competencia empieza a ser posible.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando especifiques requisitos sin haber observado a un solo usuario, cuando supongas que «todos tienen buen móvil y buena conexión», o cuando definas las tareas por lo que es fácil de programar, estarás <strong>volviendo a centrar el diseño en la máquina</strong>.</p>
+    <p>Entender el contexto de uso es lo que te separa de quien «hace pantallas» y te acerca a quien diseña <strong>sistemas que las personas pueden usar de verdad</strong>, en su vida real y no en la demo.</p>
+    <p>El método y la norma te dan el respaldo. Decidir empezar por entender, en cada proyecto que firmes, será tuyo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No puedes asegurar usabilidad ni accesibilidad (CI17, CG03) sin conocer el contexto de uso. La Actividad A es el punto donde esa competencia profesional empieza a ser posible: <strong>entender el problema real antes de tocar una pantalla</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 3 · DESIGN THINKING ============ -->
+  <div class="part" id="parte3">
+    <span class="tag">Parte 3 de 3 · Apartado independiente</span>
+    <h2>Design Thinking: una caja de herramientas para comprender el problema</h2>
+    <p class="lead">Qué es, de dónde viene, cómo se organiza, qué técnicas concretas ayudan a entender el problema antes de diseñar y cómo se conecta con la Actividad A. Este apartado se puede leer por separado del resto.</p>
+  </div>
+
+  <section id="dt-que-es" aria-labelledby="dt-que-es-h">
+    <h3 id="dt-que-es-h"><span class="num" aria-hidden="true">3.1</span>Qué es el Design Thinking</h3>
+
+    <p>El <strong>Design Thinking</strong> es un enfoque para resolver problemas que parte de las personas. Combina cinco ideas: comprender a quienes viven el problema, formularlo con claridad, generar alternativas, hacerlas tangibles con prototipos baratos y probarlas con usuarios. Todo ello de forma iterativa y en equipos con perfiles diversos.</p>
+    <p>Su difusión se debe sobre todo a la escuela de diseño <em>d.school</em> de la Universidad de Stanford y a la consultora IDEO. En la literatura de diseño se suele citar como antecedente intelectual el libro de Herbert Simon <em>The Sciences of the Artificial</em> (1969), y como texto divulgativo el artículo de Tim Brown en <em>Harvard Business Review</em> (2008).</p>
+
+    <div class="box curio">
+      <span class="label">Relación con la norma</span>
+      <p>El Design Thinking <strong>no forma parte de la ISO 9241-210</strong>. La propia norma aclara en su cláusula 1 que no cubre en detalle los métodos y técnicas del diseño centrado en las personas, y remite a la ISO/TR 16982 para ellos (cláusulas 6.2 y 7.2.1). En las páginas de la norma que se han revisado para estos apuntes no aparece el término. Por eso lo tratamos como una caja de herramientas compatible con el proceso, no como un requisito.</p>
+    </div>
+
+    <h4>Norma y enfoque: qué es cada cosa</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparación entre la ISO 9241-210 y el Design Thinking (elaboración docente).</caption>
+      <thead>
+        <tr><th scope="col">Aspecto</th><th scope="col">ISO 9241-210 (DCH)</th><th scope="col">Design Thinking</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Naturaleza</th><td>Norma con requisitos y recomendaciones sobre el proceso de diseño centrado en las personas.</td><td>Enfoque y conjunto de técnicas. No hay un único texto de referencia: varía según el autor o la escuela.</td></tr>
+        <tr><th scope="row">Qué ordena</th><td>Cuatro actividades enlazadas, su planificación y seis principios.</td><td>Fases o «modos» flexibles, con técnicas asociadas.</td></tr>
+        <tr><th scope="row">Cómo se demuestra</th><td>Mediante una lista de verificación de conformidad (Anexo B).</td><td>No hay conformidad certificable: se demuestra con la evidencia de lo que se ha hecho.</td></tr>
+        <tr><th scope="row">Énfasis habitual</th><td>Todo el ciclo de vida, incluida la evaluación y el seguimiento a largo plazo.</td><td>Suele insistir más en la exploración del problema y en la generación de ideas.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La norma fija <strong>qué</strong> hay que hacer (describir el contexto, especificar requisitos, diseñar, evaluar). El Design Thinking ofrece <strong>formas de hacerlo</strong>, sobre todo para entender el problema. Se complementan; no se sustituyen.</p>
+    </div>
+  </section>
+
+  <section id="dt-mentalidad" aria-labelledby="dt-mentalidad-h">
+    <h3 id="dt-mentalidad-h"><span class="num" aria-hidden="true">3.2</span>La mentalidad: seis rasgos y su eco en la norma</h3>
+
+    <p>Más que una receta, el Design Thinking es una manera de plantear el trabajo. Estos son seis rasgos que se repiten en las descripciones habituales del enfoque. La tercera columna los conecta con los principios de la ISO 9241-210; es una correspondencia orientativa, no una equivalencia oficial.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Rasgos del Design Thinking y principios afines de la ISO 9241-210 (elaboración docente).</caption>
+      <thead>
+        <tr><th scope="col">Rasgo</th><th scope="col">En qué consiste</th><th scope="col">Cláusula afín</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Empatía</th><td>Ver el problema desde la perspectiva de las personas y no desde la del equipo.</td><td>5.2</td></tr>
+        <tr><th scope="row">Implicar a las personas</th><td>Trabajar con ellas durante el proceso, no solo al final.</td><td>5.3</td></tr>
+        <tr><th scope="row">Prototipar y probar pronto</th><td>Hacer visibles las ideas con medios baratos y aprender del feedback.</td><td>5.4 y 7.4.3</td></tr>
+        <tr><th scope="row">Iterar</th><td>Repetir y refinar. El primer enunciado del problema rara vez es el definitivo.</td><td>5.5</td></tr>
+        <tr><th scope="row">Mirar la experiencia completa</th><td>No solo la pantalla: también el soporte, la documentación, lo que ocurre antes y después.</td><td>5.6</td></tr>
+        <tr><th scope="row">Equipos diversos</th><td>Combinar perfiles técnicos, de dominio, de diseño y de usuarios.</td><td>5.7</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="dt-modelos" aria-labelledby="dt-modelos-h">
+    <h3 id="dt-modelos-h"><span class="num" aria-hidden="true">3.3</span>Cómo se organiza: dos modelos conocidos</h3>
+
+    <p>No existe una única versión del proceso. Dos de las más difundidas son éstas, y ambas se pueden consultar en sus fuentes:</p>
+    <ul>
+      <li>La <strong>d.school de Stanford</strong> presenta cinco <em>modos</em>: empatizar, definir, idear, prototipar y probar. Los llama «modos» y no «pasos» porque no son una secuencia rígida.</li>
+      <li>El <strong>Doble Diamante</strong>, del Design Council británico, tiene cuatro fases: descubrir, definir, desarrollar y entregar. Según la web del propio Design Council, se creó en 2003 para describir de forma estándar su proceso de diseño.</li>
+    </ul>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Dónde está la comprensión del problema en cada modelo.</caption>
+      <thead>
+        <tr><th scope="col">Modelo</th><th scope="col">Fases dedicadas a comprender el problema</th><th scope="col">Fases dedicadas a la solución</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">d.school (Stanford)</th><td>Empatizar y definir</td><td>Idear, prototipar y probar</td></tr>
+        <tr><th scope="row">Doble Diamante (Design Council)</th><td>Descubrir y definir</td><td>Desarrollar y entregar</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 280" role="img" aria-labelledby="dt-title dt-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="dt-title">Los cinco modos del Design Thinking y su relación con las actividades de la norma</title>
+        <desc id="dt-desc">Cinco cuadros en fila, de izquierda a derecha: empatizar, definir, idear, prototipar y probar. Los dos primeros, resaltados, agrupan la comprensión del problema y se relacionan con la Actividad A (cláusula 7.2) y con la base de la Actividad B (cláusula 7.3). Los tres últimos se relacionan con las actividades de diseño y evaluación (cláusulas 7.4 y 7.5). Una nota inferior indica que el resultado de probar puede obligar a volver a empatizar y a redefinir el problema.</desc>
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <text x="150" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#0B5563">Comprender el problema</text>
+        <text x="150" y="40" text-anchor="middle" font-size="12" fill="#0B5563">Actividad A (7.2) · base de la B (7.3)</text>
+        <path d="M21,58 L21,48 L279,48 L279,58" fill="none" stroke="#0B5563" stroke-width="2.5"></path>
+
+        <rect x="21" y="64" width="118" height="70" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="80" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">1 Empatizar</text>
+        <text x="80" y="110" text-anchor="middle" font-size="11.5" fill="#211C16">Comprender a</text>
+        <text x="80" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">las personas</text>
+
+        <rect x="161" y="64" width="118" height="70" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="220" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">2 Definir</text>
+        <text x="220" y="110" text-anchor="middle" font-size="11.5" fill="#211C16">Formular el</text>
+        <text x="220" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">problema</text>
+
+        <rect x="301" y="64" width="118" height="70" rx="10" fill="#FDFBF6" stroke="#4A4136" stroke-width="2"></rect>
+        <text x="360" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">3 Idear</text>
+        <text x="360" y="110" text-anchor="middle" font-size="11.5" fill="#211C16">Generar</text>
+        <text x="360" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">alternativas</text>
+
+        <rect x="441" y="64" width="118" height="70" rx="10" fill="#FDFBF6" stroke="#4A4136" stroke-width="2"></rect>
+        <text x="500" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">4 Prototipar</text>
+        <text x="500" y="110" text-anchor="middle" font-size="11.5" fill="#211C16">Hacer tangibles</text>
+        <text x="500" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">las ideas</text>
+
+        <rect x="581" y="64" width="118" height="70" rx="10" fill="#FDFBF6" stroke="#4A4136" stroke-width="2"></rect>
+        <text x="640" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">5 Probar</text>
+        <text x="640" y="110" text-anchor="middle" font-size="11.5" fill="#211C16">Validar con</text>
+        <text x="640" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">usuarios</text>
+
+        <line x1="141" y1="99" x2="159" y2="99" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah2)"></line>
+        <line x1="281" y1="99" x2="299" y2="99" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah2)"></line>
+        <line x1="421" y1="99" x2="439" y2="99" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah2)"></line>
+        <line x1="561" y1="99" x2="579" y2="99" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah2)"></line>
+
+        <path d="M301,144 L301,154 L699,154 L699,144" fill="none" stroke="#4A4136" stroke-width="2"></path>
+        <text x="500" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#211C16">Más cerca de las actividades C y D</text>
+        <text x="500" y="194" text-anchor="middle" font-size="12" fill="#4A4136">Diseñar (7.4) y evaluar (7.5)</text>
+
+        <text x="360" y="250" text-anchor="middle" font-size="12.5" font-style="italic" fill="#4A4136">Lo que se aprende al probar puede obligar a volver a empatizar y a redefinir el problema.</text>
+      </svg>
+      <figcaption>Los cinco modos de la d.school y su relación orientativa con las actividades de la ISO 9241-210. La correspondencia es una elaboración docente, y los modos no forman una secuencia rígida.</figcaption>
+    </figure>
+  </section>
+
+  <section id="dt-divergir" aria-labelledby="dt-divergir-h">
+    <h3 id="dt-divergir-h"><span class="num" aria-hidden="true">3.4</span>Divergir y converger</h3>
+
+    <p>El Doble Diamante representa un movimiento que conviene interiorizar. En el primer diamante, el trabajo <strong>se abre</strong> mientras se descubre (se recogen muchas perspectivas) y <strong>se cierra</strong> al definir (se llega a un problema concreto). El segundo diamante hace lo mismo con las soluciones.</p>
+    <p>El error más habitual es <strong>converger demasiado pronto</strong>: quedarse con el primer problema que se oye y empezar a resolverlo. Aplicado a la Actividad A, divergir significa escuchar a grupos distintos y mirar entornos distintos; converger significa sintetizar todo en una descripción concreta del contexto.</p>
+
+    <h4>Tres reglas prácticas</h4>
+    <ul>
+      <li><strong>Mientras recoges, no juzgues.</strong> Anota sin descartar. Seleccionar viene después.</li>
+      <li><strong>Distingue lo recogido de lo concluido.</strong> Una cita textual no es una conclusión, y una conclusión necesita varias fuentes.</li>
+      <li><strong>Pacta criterios antes de elegir.</strong> Decide con el equipo en qué os fijaréis para dar un problema por definido (por ejemplo, que lo hayan mencionado varias personas o que afecte a una tarea crítica).</li>
+    </ul>
+  </section>
+
+  <section id="dt-empatizar" aria-labelledby="dt-empatizar-h">
+    <h3 id="dt-empatizar-h"><span class="num" aria-hidden="true">3.5</span>Empatizar en detalle: reunir evidencia</h3>
+
+    <p>Empatizar consiste en acercarse a las personas para <strong>reunir evidencia</strong> sobre quiénes son, qué hacen y en qué condiciones lo hacen. No significa «ponerse en su lugar» solo con la imaginación. Estas son cuatro técnicas habituales.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>Inmersión.</b> Haces tú la tarea como la haría un usuario: pedir una cita desde un móvil modesto y con mala cobertura, por ejemplo. Revela fricciones que no se ven desde la mesa de diseño. Pero <em>tú no eres el usuario</em>, así que no sustituye a observar a otras personas.</li>
+      <li><b>Observación en contexto.</b> Miras cómo una persona realiza la tarea en su entorno real, sin intervenir. Anota qué hace, dónde duda, qué atajos o apaños improvisa y qué interrupciones sufre. Las preguntas llegan después.</li>
+      <li><b>Entrevista.</b> Conversación abierta. Pide historias concretas («cuéntame la última vez que…») antes que opiniones generales. Pregunta «¿por qué?» para llegar a los motivos. Evita las preguntas que sugieren la respuesta, deja silencios y busca también a personas que no se parezcan al usuario medio.</li>
+      <li><b>Mapa de empatía.</b> Cuadro con cuatro apartados: qué <em>dice</em>, qué <em>hace</em>, qué <em>piensa</em> y qué <em>siente</em> la persona. Úsalo con cuidado: lo que dice y hace se observa; lo que piensa y siente se infiere, y hay que marcarlo como tal.</li>
+    </ol>
+
+    <h4>Un guion de entrevista alineado con la cláusula 7.2.2</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Ejemplos de preguntas abiertas para cada bloque de la descripción del contexto.</caption>
+      <thead>
+        <tr><th scope="col">Bloque</th><th scope="col">Pregunta de ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Usuarios y grupos de interés</th><td>¿Quién más interviene cuando haces este trámite? ¿A quién le afecta si sale mal?</td></tr>
+        <tr><th scope="row">Características de los usuarios</th><td>¿Qué aplicaciones usas a diario? ¿Qué te resulta más incómodo de usarlas?</td></tr>
+        <tr><th scope="row">Objetivos y tareas</th><td>Cuéntame la última vez que lo hiciste, paso a paso. ¿Qué querías conseguir? ¿Qué fue lo más difícil?</td></tr>
+        <tr><th scope="row">Entorno</th><td>¿Dónde estabas y con qué dispositivo? ¿Había ruido, prisa o alguien que te ayudara?</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Ética y privacidad</span>
+      <p>Antes de observar o entrevistar, pide <strong>consentimiento informado</strong>, explica para qué se usarán los datos y recoge solo los imprescindibles. Los datos personales están sujetos al Reglamento General de Protección de Datos (RGPD). En las prácticas de clase, <strong>no recojas datos de salud</strong> de personas reales: trabaja con casos ficticios o con aspectos no sensibles del uso del servicio.</p>
+    </div>
+  </section>
+
+  <section id="dt-definir" aria-labelledby="dt-definir-h">
+    <h3 id="dt-definir-h"><span class="num" aria-hidden="true">3.6</span>Definir en detalle: del montón de datos al problema</h3>
+
+    <p>Tras empatizar tendrás muchas notas, citas y fotos. Definir es el trabajo de <strong>darles forma</strong> hasta llegar a un enunciado del problema que el equipo comparta. Se hace en seis pasos.</p>
+
+    <ol class="cycle" role="list">
+      <li><b>1. Sintetizar.</b> Agrupa las observaciones por afinidad: pon cada hallazgo en una nota, junta las que se parecen y dale a cada grupo un nombre en una frase. Separa tres cosas: <em>hechos</em> observados, <em>interpretaciones</em> y <em>suposiciones</em>.</li>
+      <li><b>2. Construir personas y el escenario actual.</b> Una <em>persona</em> es un perfil de usuario representativo, basado en lo observado y no inventado (las popularizó Alan Cooper). El <em>escenario del estado actual</em> cuenta, paso a paso, cómo se hace la tarea hoy. Un <em>mapa de recorrido</em> añade en cada paso las emociones y los puntos de fricción.</li>
+      <li><b>3. Formular necesidades, no soluciones.</b> Una necesidad se expresa con un verbo («poder comprobar que la cita quedó reservada»), no con un elemento de interfaz («un botón de confirmar»). La norma recoge la misma idea en su cláusula 7.3.2: las necesidades indican lo que los usuarios necesitan lograr, no cómo, e incluyen las restricciones del contexto.</li>
+      <li><b>4. Buscar la causa de fondo.</b> La técnica de los <em>cinco porqués</em> consiste en preguntar «¿por qué?» sucesivamente hasta llegar a una causa que se pueda abordar.</li>
+      <li><b>5. Redactar el enunciado del problema.</b> Una plantilla muy usada es: «[Persona o grupo] necesita [necesidad] porque [descubrimiento]». La d.school la llama enunciado de <em>punto de vista</em>.</li>
+      <li><b>6. Abrir preguntas.</b> Las preguntas «¿Cómo podríamos…?» convierten el enunciado en retos abiertos. En esta asignatura sirven de puente hacia los requisitos de la Actividad B.</li>
+    </ol>
+
+    <h4>Enunciados débiles y enunciados útiles</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Ejemplos didácticos. El enunciado mejor es una hipótesis de partida que habría que validar con personas reales.</caption>
+      <thead>
+        <tr><th scope="col">Enunciado</th><th scope="col">Qué falla o qué aporta</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">«Hay que hacer una app para pedir cita.»</th><td>Es una solución disfrazada de problema. Cierra las opciones antes de entender nada.</td></tr>
+        <tr><th scope="row">«Los usuarios mayores no saben usar la tecnología.»</th><td>Generaliza, culpa a las personas y no dice qué necesitan ni en qué contexto.</td></tr>
+        <tr><th scope="row">«Una persona mayor que pide cita desde casa necesita comprobar con rapidez que su cita está confirmada, porque la duda le lleva a llamar de nuevo o a presentarse sin cita.»</th><td>Está centrado en una persona, nombra la necesidad con un verbo, incluye el contexto y no contiene la solución. La causa («porque…») es una hipótesis que hay que validar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Siete rasgos de un buen enunciado</h4>
+    <ul>
+      <li>Se refiere a personas o grupos concretos.</li>
+      <li>Se apoya en evidencia observada, no en intuición.</li>
+      <li>Incluye el contexto en el que ocurre el problema.</li>
+      <li>No contiene la solución.</li>
+      <li>Admite varias soluciones posibles.</li>
+      <li>Está acotado: no pretende resolver todo a la vez.</li>
+      <li>Se ha contrastado con las personas afectadas.</li>
+    </ul>
+  </section>
+
+  <section id="dt-correspondencia" aria-labelledby="dt-correspondencia-h">
+    <h3 id="dt-correspondencia-h"><span class="num" aria-hidden="true">3.7</span>Cómo usar el Design Thinking para cumplir la cláusula 7.2</h3>
+
+    <p>Esta tabla enlaza cada bloque de la descripción del contexto con una pregunta guía, una técnica para obtener la información y un resultado donde plasmarla. Es una propuesta docente.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Correspondencia entre los bloques de la cláusula 7.2.2 y las técnicas de empatizar y definir.</caption>
+      <thead>
+        <tr><th scope="col">Bloque (7.2.2)</th><th scope="col">Pregunta guía</th><th scope="col">Se obtiene con (empatizar)</th><th scope="col">Se plasma en (definir)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">a) Usuarios y grupos de interés</th><td>¿Quién está implicado y qué le importa?</td><td>Entrevistas a grupos distintos; mapa de actores.</td><td>Mapa de actores; perfiles de grupos.</td></tr>
+        <tr><th scope="row">b) Características de los usuarios</th><td>¿Qué saben, qué pueden y qué prefieren?</td><td>Entrevista, observación, inmersión.</td><td>Personas; perfiles.</td></tr>
+        <tr><th scope="row">c) Objetivos y tareas</th><td>¿Qué quieren lograr y cómo lo hacen hoy?</td><td>Observación; entrevistas basadas en historias.</td><td>Escenario del estado actual; mapa de recorrido; necesidades.</td></tr>
+        <tr><th scope="row">d) Entorno</th><td>¿Dónde, con qué y en qué condiciones?</td><td>Observación en el lugar real; fotos con permiso; inmersión.</td><td>Descripción del entorno técnico, físico, social y cultural; restricciones.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Cuidado con los huecos</span>
+      <p>El Design Thinking <strong>no sustituye</strong> las exigencias de la norma. Sus técnicas pueden dejar sin cubrir aspectos que la 7.2.2 pide, como las consecuencias para la salud y la seguridad, el riesgo de error en las tareas o la diversidad de capacidades para la accesibilidad. Usa la lista de bloques de la cláusula 7.2.2 como comprobación final de que nada falta.</p>
+    </div>
+  </section>
+
+  <section id="dt-ejemplo" aria-labelledby="dt-ejemplo-h">
+    <h3 id="dt-ejemplo-h"><span class="num" aria-hidden="true">3.8</span>Ejemplo trabajado: cita médica en línea en un entorno rural</h3>
+
+    <div class="box curio">
+      <span class="label">Aviso</span>
+      <p>Este es un <strong>ejemplo didáctico</strong>. Todo lo que se dice sobre las personas son <strong>hipótesis de partida</strong> que habría que validar. No son datos sobre ningún lugar concreto.</p>
+    </div>
+
+    <h4>El reto de partida</h4>
+    <p>«Queremos que la población de pueblos pequeños pueda pedir cita médica en línea.» Fíjate en que el reto ya contiene una solución (lo «en línea»). Parte de la tarea de definir es averiguar el problema que hay debajo.</p>
+
+    <h4>Empatizar: plan de trabajo</h4>
+    <ul>
+      <li><strong>A quién:</strong> personas de edades y habilidades digitales distintas, familiares o cuidadores que gestionan citas por otros, personal administrativo y personal sanitario.</li>
+      <li><strong>Qué observar:</strong> cómo se pide cita hoy, desde dónde, con qué dispositivo y con qué ayuda.</li>
+      <li><strong>Qué preguntar:</strong> «Cuéntame la última vez que pediste una cita» y «¿qué hiciste cuando no funcionó?».</li>
+    </ul>
+
+    <h4>Hallazgos hipotéticos (a validar)</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Hipótesis de ejemplo. Cada una indica qué bloque de la 7.2.2 alimenta y cómo se comprobaría.</caption>
+      <thead>
+        <tr><th scope="col">Hipótesis</th><th scope="col">Bloque</th><th scope="col">Cómo comprobarla</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">H1. Muchas citas las gestiona un familiar o cuidador, no la persona que acude.</th><td>a) Usuarios</td><td>Entrevistas a familiares; preguntar quién pide la cita en los últimos casos.</td></tr>
+        <tr><th scope="row">H2. La cobertura móvil varía mucho según el lugar y el momento.</th><td>d) Entorno</td><td>Probar el servicio en distintos lugares; preguntar dónde suelen conectarse.</td></tr>
+        <tr><th scope="row">H3. Cuando la persona duda, llama por teléfono en lugar de reintentar en la aplicación.</th><td>c) Tareas</td><td>Observar intentos reales; revisar datos de llamadas si el servicio los tiene.</td></tr>
+        <tr><th scope="row">H4. El personal administrativo es quien orienta a quien no sabe usar la aplicación.</th><td>a) y d) Grupos y entorno social</td><td>Entrevistas al personal; observar el mostrador en horas de más afluencia.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Definir: del enunciado a los requisitos candidatos</h4>
+    <p><strong>Enunciado (hipótesis):</strong> «Un familiar que gestiona citas para una persona mayor necesita saber con certeza que la cita quedó reservada, aunque la conexión falle a mitad del proceso, porque la duda le obliga a llamar o a desplazarse.»</p>
+    <p><strong>Preguntas abiertas:</strong> ¿Cómo podríamos confirmar una cita de forma que no dependa de una conexión estable? ¿Cómo podríamos permitir que otra persona gestione la cita con la autorización de quien acudirá?</p>
+    <p><strong>Requisitos candidatos para la Actividad B</strong>, expresados con su contexto, tal como pide la cláusula 7.2.4: «el proceso de reserva debe poder completarse o recuperarse con conectividad limitada» y «la confirmación de la cita debe ser inequívoca y recuperable posteriormente». Son borradores: pasarán por la especificación de requisitos de la cláusula 7.3.</p>
+  </section>
+
+  <section id="dt-limites" aria-labelledby="dt-limites-h">
+    <h3 id="dt-limites-h"><span class="num" aria-hidden="true">3.9</span>Límites y buenas prácticas</h3>
+
+    <p>Aplicado sin rigor, el Design Thinking puede convertirse en un ritual de notas adhesivas. Estas precauciones lo evitan.</p>
+    <ul>
+      <li><strong>Las notas adhesivas no son datos.</strong> Registra quién aportó cada hallazgo, cuándo y cómo se obtuvo, para que pueda revisarse.</li>
+      <li><strong>Pocas entrevistas no generalizan.</strong> Contrasta con varias fuentes (triangulación) antes de afirmar algo sobre «los usuarios».</li>
+      <li><strong>Busca lo que te lleve la contraria.</strong> Es fácil recoger solo lo que confirma la idea que ya tenías (sesgo de confirmación).</li>
+      <li><strong>La empatía no sustituye a la validación.</strong> Un enunciado atractivo sigue siendo una hipótesis hasta que lo contrastas con las personas afectadas.</li>
+      <li><strong>Incluye la diversidad.</strong> La norma pide describir los usuarios con la mayor diversidad de capacidades posible; busca a quienes se alejan del perfil típico.</li>
+      <li><strong>No lo uses como sustituto de la evaluación.</strong> La evaluación centrada en el usuario es una actividad obligatoria de la norma (7.5.1), y el Design Thinking no la reemplaza.</li>
+      <li><strong>Deja constancia del proceso.</strong> En tu proyecto se valora la evidencia de que investigaste, no solo el documento final.</li>
+    </ul>
+  </section>
+
+  <section id="dt-hoja" aria-labelledby="dt-hoja-h">
+    <h3 id="dt-hoja-h"><span class="num" aria-hidden="true">3.10</span>Hoja de trabajo para el laboratorio</h3>
+
+    <p>Usa estos campos como esquema para tu primera entrega de la Actividad A.</p>
+    <ol>
+      <li><strong>Reto de partida</strong>, tal como te lo plantean.</li>
+      <li><strong>Personas y grupos implicados</strong>, con su objetivo clave y su restricción principal.</li>
+      <li><strong>Lo que sé, lo que supongo y lo que necesito averiguar.</strong> Tres columnas.</li>
+      <li><strong>Técnica elegida, fecha y personas</strong> para cada cosa que necesitas averiguar.</li>
+      <li><strong>Hallazgos</strong>, separando hechos, interpretaciones y suposiciones.</li>
+      <li><strong>Descripción del contexto</strong> con los cuatro bloques de la cláusula 7.2.2.</li>
+      <li><strong>Necesidades</strong> formuladas con verbos.</li>
+      <li><strong>Enunciado del problema</strong> y dos preguntas «¿Cómo podríamos…?».</li>
+      <li><strong>Supuestos pendientes</strong> y cómo los validarás.</li>
+      <li><strong>Requisitos candidatos</strong> para la Actividad B, con el contexto en el que valen.</li>
+    </ol>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El Design Thinking es útil para la Actividad A cuando se usa con <strong>rigor de evidencia</strong>: empatizar para reunir datos reales, definir para sintetizarlos en un enunciado sin solución escondida, y comprobar con la cláusula 7.2.2 que no falta ningún bloque.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué actividad del DCH es la definición del contexto de uso y qué posición ocupa?</summary>
+      <p>Es la <strong>Actividad A</strong>, «entender y especificar el contexto de uso», la <strong>primera</strong> del ciclo iterativo del DCH (A → B → C → D). Materializa el primer principio del DCH: basarse en una comprensión explícita de usuarios, tareas y entornos. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. Define «contexto de uso» y di qué norma lo precisa.</summary>
+      <p>Es el conjunto de circunstancias reales de uso de un sistema: <strong>usuarios, tareas/objetivos, recursos y entorno</strong>. Lo precisa la <strong>ISO 9241-11</strong>, la misma que define la usabilidad, porque la usabilidad solo se mide «en un contexto de uso especificado». <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son las cuatro partes del contexto de uso?</summary>
+      <p>Usuarios (<strong>¿quién?</strong>), tareas y objetivos (<strong>¿para qué?</strong>), recursos y equipamiento (<strong>¿con qué?</strong>) y entorno físico, social y técnico (<strong>¿dónde?</strong>). Se investigan a la vez y se describen juntos. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Por qué la usabilidad «depende» del contexto?</summary>
+      <p>Porque la misma tarea en el mismo sistema puede ser fácil o imposible según quién, con qué y dónde se realice. Un sistema usable en una oficina puede ser inservible de pie, sin cobertura o para una persona con baja visión. Por eso especificar el contexto es el primer paso. <em>(Ver 1.2 y 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Qué fases del Design Thinking sirven a la Actividad A?</summary>
+      <p><strong>Empatizar</strong> (observar y acompañar a personas reales para recoger quién, para qué, con qué y dónde) y <strong>definir</strong> (enunciar el problema con claridad). Las demás fases alimentarán las Actividades C y D más adelante. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué tres errores aparecen al saltarse el contexto de uso?</summary>
+      <p>Diseñar para uno mismo (el «usuario» es el propio equipo), construir las tareas que el sistema permite en vez de las que la persona necesita, e ignorar el entorno real de uso. El resultado: una buena solución para el problema equivocado. <em>(Ver 1.8)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué dicen los datos del INE sobre el contexto de uso en España?</summary>
+      <p>Que es diverso y mayoritariamente móvil: en 2025, el 50,3 % de los hogares solo tiene teléfono móvil y el 10,7 % accede a Internet únicamente por conexión móvil; además, el 80,7 % de las personas se relaciona con la Administración por Internet. Diseñar para un único usuario «de oficina» excluye a buena parte de la población. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo se concreta la Actividad A en tu proyecto?</summary>
+      <p>Como una entrega parcial obligatoria (checkpoint): una especificación del contexto de uso con sus cuatro componentes, obtenida con Design Thinking y análisis de tareas. Hay que evidenciar el proceso de investigación, no solo el documento, y aquí empieza a aplicarse el nivel AA de WCAG. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. ¿Qué cuatro bloques debe contener la descripción del contexto según la cláusula 7.2.2?</summary>
+      <p>Usuarios y otros grupos de interés; características de los usuarios; objetivos y tareas; y entorno (técnico, físico, social y cultural). <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. ¿Qué diferencia hay entre objetivo y tarea?</summary>
+      <p>El objetivo es el resultado pretendido y es independiente de los medios. La tarea es el conjunto de actividades para lograrlo y describe un medio concreto. Por eso la norma pide no describir las tareas solo por las funciones del producto. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. ¿Debe empezar siempre un proyecto por la Actividad A?</summary>
+      <p>No necesariamente. La cláusula 7.1 admite empezar por cualquiera de las cuatro actividades según el proyecto, pero las cuatro deben darse y el diseño debe basarse en una comprensión explícita del contexto. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>12. ¿Qué debe ocurrir con el contexto de uso al llegar a los requisitos?</summary>
+      <p>El contexto previsto debe declararse en la especificación de requisitos (7.2.4), y los requisitos se derivan de las necesidades y de ese contexto (7.3.3). <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>13. ¿Forma parte el Design Thinking de la ISO 9241-210?</summary>
+      <p>No. La norma no prescribe métodos y remite a la ISO/TR 16982. El Design Thinking es una caja de herramientas compatible con el proceso, útil sobre todo para comprender el problema. <em>(Ver 3.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>14. ¿Qué dos modos de la d.school sirven para comprender el problema y qué produce cada uno?</summary>
+      <p>Empatizar produce evidencia sobre personas, tareas y entorno (observaciones, entrevistas, hallazgos). Definir sintetiza esa evidencia en perfiles, escenarios, necesidades y un enunciado del problema. <em>(Ver 3.5 y 3.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>15. ¿Por qué un buen enunciado del problema no debe contener la solución?</summary>
+      <p>Porque cierra las alternativas antes de entender las necesidades. «Hacer una app» es una solución; «necesitar comprobar que la cita está confirmada» es una necesidad que admite varias soluciones. <em>(Ver 3.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>16. ¿Qué riesgos tiene aplicar el Design Thinking sin rigor?</summary>
+      <p>Tomar notas adhesivas por datos, generalizar a partir de pocas entrevistas, buscar solo lo que confirma la idea previa, no cubrir bloques que exige la 7.2.2 y sustituir la evaluación con usuarios. <em>(Ver 3.9)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Contexto de uso</dt>
+      <dd>Conjunto de usuarios, tareas y objetivos, recursos y entorno (físico, social, técnico y organizativo) en el que se usa un sistema. Definido en la ISO 9241-11; es lo que especifica la Actividad A del DCH.</dd>
+      <dt>Actividad A (DCH)</dt>
+      <dd>«Entender y especificar el contexto de uso»: primera actividad del ciclo iterativo del DCH (ISO 9241-210). Investiga y documenta quién, para qué, con qué y dónde.</dd>
+      <dt>Usuario directo</dt>
+      <dd>Persona que opera el sistema e interactúa con él de forma inmediata.</dd>
+      <dt>Usuario indirecto</dt>
+      <dd>Persona que usa o recibe los resultados del sistema sin manejarlo directamente.</dd>
+      <dt>Grupo de interés (stakeholder)</dt>
+      <dd>Persona u organización afectada por el sistema, interactúe o no directamente con él.</dd>
+      <dt>Tarea</dt>
+      <dd>Conjunto de acciones que realiza un usuario para alcanzar un objetivo, junto con la información que necesita y produce. Su estudio es el análisis de tareas.</dd>
+      <dt>Recursos / equipamiento</dt>
+      <dd>Medios con los que el usuario realiza la tarea: dispositivos, software, conexión, documentos, tiempo disponible.</dd>
+      <dt>Entorno</dt>
+      <dd>Condiciones físicas, sociales, técnicas y organizativas que rodean el uso del sistema (ruido, luz, prisa, cobertura, normas, presencia de otras personas, etc.).</dd>
+      <dt>Análisis de tareas</dt>
+      <dd>Técnica para describir qué hacen los usuarios, en qué pasos y con qué información, como parte de la especificación del contexto de uso.</dd>
+      <dt>Design Thinking</dt>
+      <dd>Enfoque para resolver problemas centrado en las personas (en la versión de la d.school: empatizar, definir, idear, prototipar y probar). No forma parte de la ISO 9241-210. Sus modos empatizar y definir sirven a la Actividad A. Ver la Parte 3.</dd>
+      <dt>Empatizar</dt>
+      <dd>Modo del Design Thinking que consiste en reunir evidencia sobre las personas mediante observación, entrevistas e inmersión.</dd>
+      <dt>Definir</dt>
+      <dd>Modo del Design Thinking que sintetiza la evidencia en un enunciado claro del problema.</dd>
+      <dt>Enunciado del problema</dt>
+      <dd>Frase que expresa quién necesita qué y por qué, sin incluir la solución. Plantilla habitual: «[Persona] necesita [necesidad] porque [descubrimiento]».</dd>
+      <dt>¿Cómo podríamos…?</dt>
+      <dd>Pregunta abierta que convierte el enunciado del problema en un reto que admite varias soluciones.</dd>
+      <dt>Doble Diamante</dt>
+      <dd>Modelo del Design Council con cuatro fases (descubrir, definir, desarrollar, entregar) que representa la alternancia entre abrir y cerrar el trabajo.</dd>
+      <dt>Divergir y converger</dt>
+      <dd>Abrir el abanico de perspectivas o ideas (divergir) y después cerrarlo hacia una elección concreta (converger).</dd>
+      <dt>Persona</dt>
+      <dd>Perfil de usuario representativo, construido a partir de evidencia, que ayuda al equipo a diseñar para personas concretas.</dd>
+      <dt>Escenario del estado actual (as-is)</dt>
+      <dd>Relato paso a paso de cómo se realiza hoy una tarea, con sus puntos de fricción.</dd>
+      <dt>Mapa de recorrido</dt>
+      <dd>Representación de los pasos de una persona al hacer una tarea, con sus emociones y problemas en cada paso.</dd>
+      <dt>Triangulación</dt>
+      <dd>Contraste de varias fuentes o técnicas antes de dar por válida una conclusión.</dd>
+      <dt>ISO 9241-11</dt>
+      <dd>Norma que define la usabilidad (eficacia, eficiencia y satisfacción en un contexto de uso especificado) y el propio concepto de contexto de uso. Versión vigente: 2018.</dd>
+      <dt>ISO 9241-210</dt>
+      <dd>Norma del proceso de Diseño Centrado en lo Humano; su primera actividad es especificar el contexto de uso. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>La <strong>Actividad A</strong> del DCH es «entender y especificar el contexto de uso»: la <strong>primera</strong> del ciclo y la base de todo lo demás.</li>
+        <li>«Entender y especificar» significa <strong>investigar</strong> (con personas reales) y <strong>documentar</strong>; no basta con suponer.</li>
+        <li>El <strong>contexto de uso</strong> son cuatro componentes: <strong>usuarios (¿quién?), tareas (¿para qué?), recursos (¿con qué?) y entorno (¿dónde?)</strong>. Lo define la <strong>ISO 9241-11</strong>.</li>
+        <li>La <strong>usabilidad solo existe respecto a un contexto</strong>: la misma tarea cambia de dificultad según quién, con qué y dónde se haga.</li>
+        <li>Saltarse esta actividad lleva a <strong>diseñar para uno mismo</strong> y a construir «una solución preciosa para el problema equivocado».</li>
+        <li>Se ejecuta con <strong>Design Thinking</strong> (fases empatizar y definir) y <strong>análisis de tareas</strong>, las prácticas del Tema 2.</li>
+        <li>Los datos del <strong>INE 2025</strong> confirman un contexto diverso y móvil: 50,3 % de hogares solo con móvil, 10,7 % con acceso solo móvil, 80,7 % usando la e-Administración.</li>
+        <li>En tu proyecto es la <strong>primera entrega de fondo</strong>: un checkpoint obligatorio donde se evidencia la investigación y empieza a aplicarse el nivel <strong>AA de WCAG</strong>.</li>
+        <li>La cláusula <strong>7.2</strong> de la norma exige una descripción con cuatro bloques: <strong>grupos de interés, características de los usuarios, objetivos y tareas, y entorno</strong>, con detalle suficiente y declarada en los requisitos (7.2.4).</li>
+        <li>La norma admite empezar el proyecto por cualquiera de sus cuatro actividades, pero las cuatro deben darse.</li>
+        <li>El <strong>Design Thinking</strong> no es parte de la norma: es una caja de herramientas (empatizar y definir) para reunir evidencia y formular el problema sin solución escondida.</li>
+        <li>En las próximas sesiones desarrollaremos por separado <strong>usuarios, tareas, recursos y entorno</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>ISO 13407:1999. <em>Human-centred design processes for interactive systems</em> (predecesora, revisada como ISO 9241-210).</li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; usabilidad y accesibilidad como características de calidad.</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>ISO/TR 16982. <em>Ergonomics of human-system interaction. Usability methods supporting human-centred design</em> (citada en la ISO 9241-210 como fuente de métodos).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="14">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+    <p>Design Thinking:</p>
+    <ol class="refs" start="18">
+      <li>Hasso Plattner Institute of Design at Stanford (d.school). <em>Design Thinking Bootleg</em>. <a href="https://dschool.stanford.edu/resources/design-thinking-bootleg">dschool.stanford.edu</a>.</li>
+      <li>Design Council. <em>The Double Diamond</em>. <a href="https://www.designcouncil.org.uk/our-resources/the-double-diamond/">designcouncil.org.uk</a>.</li>
+      <li>Brown, T. «Design Thinking». <em>Harvard Business Review</em>, junio de 2008.</li>
+      <li>Simon, H. A. <em>The Sciences of the Artificial</em>. MIT Press, 1969.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>Contexto de uso (Actividad A del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

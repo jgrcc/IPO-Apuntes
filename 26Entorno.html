@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: el entorno como componente del contexto de uso (Actividad A del Diseño Centrado en lo Humano, ISO 9241-11 e ISO 9241-210). Cierre del Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>El entorno del contexto de uso (Actividad A del DCH) · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>El entorno del contexto de uso
+      <span class="sub">El «¿dónde?» de la Actividad A: el componente que cierra el contexto de uso (ISO 9241-11 · ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB03</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#donde-encaja">Dónde encaja: el cuarto pilar que cierra el contexto</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es el entorno? Definición ISO</a></li>
+          <li class="lvl2"><a href="#dimensiones">Las cuatro dimensiones del entorno</a></li>
+          <li class="lvl2"><a href="#historia">El linaje del concepto en la familia ISO 9241</a></li>
+          <li class="lvl2"><a href="#antipatron">El antipatrón: el «entorno de laboratorio»</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La misma tarea, entornos distintos</a></li>
+          <li class="lvl2"><a href="#robusto">Diseñar para entornos hostiles: el diseño robusto</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: dónde y cómo se usa (INE 2025)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: cerrar el contexto de uso</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno-ing">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes <strong>cierran el bloque del contexto de uso</strong> dentro del Tema 2. Tratan el último de sus cuatro componentes: el <strong>entorno</strong>. Son la continuación directa de los apuntes de usuarios, tareas y recursos.</p>
+    <p>Damos por sabido el marco anterior. Del arranque del Tema 2 retomamos que el contexto de uso responde a cuatro preguntas: <strong>¿quién?, ¿para qué?, ¿con qué? y ¿dónde?</strong>. Hoy resolvemos la última.</p>
+    <p>El entorno es el <strong>¿dónde?</strong>: las condiciones reales que rodean el uso. Es el componente más fácil de ignorar desde un despacho tranquilo y, por eso, el que más sorpresas da cuando el sistema sale a la calle.</p>
+    <p>Seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>entorno</strong> es el «¿dónde?» del contexto de uso: las condiciones <strong>físicas, sociales, técnicas y organizativas</strong> que rodean la tarea. Con él se completa la <strong>Actividad A</strong> del DCH (las cuatro preguntas), apoyada en la <strong>ISO 9241-11</strong>. Cerrado el contexto, el proceso ya puede pasar a especificar requisitos.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es el entorno y cómo se especifica</h2>
+    <p class="lead">Dónde encaja este componente, qué dice la norma, qué cuatro dimensiones lo forman, de dónde viene el concepto y qué pasa cuando se diseña en un «entorno de laboratorio» que no existe fuera.</p>
+  </div>
+
+  <section id="donde-encaja" aria-labelledby="donde-encaja-h">
+    <h3 id="donde-encaja-h"><span class="num" aria-hidden="true">1.1</span>Dónde encaja: el cuarto pilar que cierra el contexto</h3>
+
+    <p>Ya tienes el mapa completo del contexto de uso: <strong>usuarios</strong> (¿quién?), <strong>tareas y objetivos</strong> (¿para qué?), <strong>recursos</strong> (¿con qué?) y <strong>entorno</strong> (¿dónde?). Hoy tomamos el cuarto y, con él, cerramos el conjunto.</p>
+    <p>Conviene recordar la frontera con el componente anterior, que vimos al hablar de recursos. Los <strong>recursos</strong> son los <em>medios</em> con los que se hace la tarea; el <strong>entorno</strong> son las <em>condiciones</em> que la rodean.</p>
+
+    <h4>Entorno frente a recursos: la frontera, otra vez</h4>
+    <ul>
+      <li>El móvil con el que validas el billete es un <strong>recurso</strong> (un medio que empleas).</li>
+      <li>El andén ruidoso, con prisa y a pleno sol donde lo usas es <strong>entorno</strong> (una condición que te envuelve).</li>
+      <li>Tu plan de datos es recurso; que en ese túnel concreto no haya cobertura es entorno técnico.</li>
+    </ul>
+    <p>No te obsesiones con clasificar a la perfección: lo grave no es poner una etiqueta u otra, sino que una condición real quede sin describir. El entorno es justo el cajón donde caben todas esas condiciones que «no son medios» pero lo cambian todo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El entorno completa las cuatro preguntas del contexto de uso. Frente a los recursos (los <strong>medios</strong>), el entorno son las <strong>condiciones</strong> que envuelven la tarea. Con él, la <strong>Actividad A</strong> queda cerrada y lista para alimentar los requisitos.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es el entorno? Definición ISO</h3>
+
+    <p>La <strong>ISO 9241-11</strong> —la norma que define la usabilidad y el contexto de uso— describe el <strong>entorno</strong> como el conjunto de condiciones <em>físicas, sociales, técnicas y organizativas</em> en las que se utiliza el sistema. No es decorado: forma parte de la definición de contexto.</p>
+    <p>Recuerda por qué importa tanto. La usabilidad solo se mide <em>en un contexto de uso especificado</em>. Cambia el entorno y cambia la usabilidad, aunque la persona, la tarea y el dispositivo sean idénticos.</p>
+    <p>Un formulario perfectamente usable en una oficina silenciosa puede volverse inservible de pie en un tren en marcha, con ruido, mala luz y gente alrededor mirando la pantalla.</p>
+
+    <h4>Una definición operativa que puedes aplicar</h4>
+    <p>Especificar el entorno es responder con concreción a una pregunta: <strong>¿en qué circunstancias reales se va a usar esto?</strong>. No la circunstancia ideal: la real, la incómoda, la que tú no ves desde tu mesa.</p>
+    <p>No es una ambientación literaria. Es una <strong>especificación de ingeniería</strong>: condiciones comprobadas que luego se convertirán en requisitos verificables en la Actividad B (por ejemplo, «legible a plena luz del sol» o «usable con ruido de fondo»).</p>
+    <p>El entorno suele actuar como un <strong>multiplicador de dificultad</strong>: rara vez impide la tarea por sí solo, pero agrava todo lo demás. La prisa convierte un menú largo en un obstáculo; el ruido vuelve inútil una alerta sonora.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Entorno = condiciones físicas, sociales, técnicas y organizativas del uso, según la <strong>ISO 9241-11</strong>. Es un <strong>multiplicador de dificultad</strong>: agrava lo que ya cuesta. Especificarlo es describir la circunstancia <strong>real</strong>, no la ideal del despacho.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La disciplina madre de todo esto, la <strong>ergonomía</strong>, nació precisamente estudiando entornos extremos: cabinas de aviones en la Segunda Guerra Mundial. Se descubrió que pilotos muy preparados se «equivocaban» por culpa de mandos mal situados bajo estrés, ruido y vibración. La lección fue la misma que hoy: si el entorno hace fallar a la gente, el problema es del diseño, no de la gente.</p>
+    </div>
+  </section>
+
+  <section id="dimensiones" aria-labelledby="dimensiones-h">
+    <h3 id="dimensiones-h"><span class="num" aria-hidden="true">1.3</span>Las cuatro dimensiones del entorno</h3>
+
+    <p>Para que el análisis no se quede en «se usa por ahí», la norma distingue cuatro dimensiones. Conviene recorrerlas todas, porque es fácil ver una (la física) y olvidar las otras tres.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 470" role="img" aria-labelledby="env-title env-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="env-title">Las cuatro dimensiones del entorno del contexto de uso según la norma ISO 9241-11</title>
+        <desc id="env-desc">Un bloque central, «especificación del entorno», recibe la aportación de cuatro dimensiones dispuestas alrededor: entorno físico (luz, ruido, movimiento, espacio), entorno social (a solas o con público, presión, ayuda disponible), entorno técnico (cobertura, compatibilidad, infraestructura) y entorno organizativo (normas, prisas, plazos, jerarquía). Las cuatro juntas describen las condiciones reales que rodean el uso y, con ellas, se cierra la especificación del contexto de uso de la Actividad A, que alimenta la siguiente actividad, la especificación de requisitos.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Físico (teal) -->
+        <rect x="40" y="30" width="270" height="74" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="175" y="60" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0B5563">FÍSICO</text>
+        <text x="175" y="82" text-anchor="middle" font-size="12" fill="#211C16">Luz, ruido, movimiento, espacio</text>
+
+        <!-- Social (ochre) -->
+        <rect x="410" y="30" width="270" height="74" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="545" y="60" text-anchor="middle" font-size="14.5" font-weight="700" fill="#7A5A12">SOCIAL</text>
+        <text x="545" y="82" text-anchor="middle" font-size="12" fill="#211C16">A solas o con público, presión, ayuda</text>
+
+        <!-- Técnico (green) -->
+        <rect x="40" y="366" width="270" height="74" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="175" y="396" text-anchor="middle" font-size="14.5" font-weight="700" fill="#2C5A2E">TÉCNICO</text>
+        <text x="175" y="418" text-anchor="middle" font-size="12" fill="#211C16">Cobertura, compatibilidad, red</text>
+
+        <!-- Organizativo (terra) -->
+        <rect x="410" y="366" width="270" height="74" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="545" y="396" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8A3412">ORGANIZATIVO</text>
+        <text x="545" y="418" text-anchor="middle" font-size="12" fill="#211C16">Normas, prisas, plazos, jerarquía</text>
+
+        <!-- Núcleo central -->
+        <rect x="250" y="190" width="220" height="90" rx="14" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="360" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">Especificación del</text>
+        <text x="360" y="242" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">entorno</text>
+        <text x="360" y="264" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Actividad A · ISO 9241-11</text>
+
+        <!-- Flechas dimensiones al núcleo -->
+        <line x1="290" y1="104" x2="318" y2="186" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="430" y1="104" x2="402" y2="186" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="290" y1="366" x2="318" y2="284" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="430" y1="366" x2="402" y2="284" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+
+        <!-- Salida hacia la actividad B -->
+        <line x1="470" y1="235" x2="612" y2="235" stroke="#0B5563" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <text x="615" y="222" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">cierra el contexto</text>
+        <text x="615" y="251" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">y alimenta la Actividad B</text>
+      </svg>
+      <figcaption>Las cuatro dimensiones del entorno (ISO 9241-11) confluyen en una sola especificación que, junto con usuarios, tareas y recursos, cierra el contexto de uso y alimenta la Actividad B (requisitos). La descripción completa está disponible para lectores de pantalla y se desarrolla en la lista siguiente.</figcaption>
+    </figure>
+
+    <ol class="pillars" role="list">
+      <li><b>Entorno físico.</b> Luz (¿sol directo en la pantalla?), ruido (¿se oirá una alerta?), movimiento (¿de pie, en un autobús?), espacio y postura (¿una mano libre?). Es la dimensión más visible y la que más se nota cuando falla.</li>
+      <li><b>Entorno social.</b> ¿La persona está a solas o con público? ¿Hay presión de una cola detrás? ¿Tiene a alguien que la ayude o está sola ante el sistema? Introducir una contraseña no es igual en casa que con diez personas mirando.</li>
+      <li><b>Entorno técnico.</b> La cobertura del lugar, la infraestructura disponible, la compatibilidad con otros sistemas con los que el tuyo debe convivir. Es primo del recurso «conexión», pero aquí miramos las <em>condiciones</em> del sitio, no el plan de la persona.</li>
+      <li><b>Entorno organizativo.</b> Las normas, prisas, plazos, jerarquías y procedimientos que rodean el uso en un trabajo o institución. Un sistema en un hospital se usa entre interrupciones, turnos y protocolos que el diseño debe respetar.</li>
+    </ol>
+
+    <p>Las cuatro dimensiones se investigan a la vez y se describen juntas. Y casi nunca aparecen solas: lo habitual es un entorno físico hostil <em>más</em> presión social <em>más</em> prisa organizativa, todo sumando dificultad sobre la misma tarea.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuatro dimensiones: <strong>físico</strong> (luz, ruido, movimiento), <strong>social</strong> (público, presión, ayuda), <strong>técnico</strong> (cobertura, compatibilidad) y <strong>organizativo</strong> (normas, prisas, plazos). Se suman entre sí. Mirar solo la física —la más obvia— deja fuera tres cuartas partes del problema.</p>
+    </div>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.4</span>El linaje del concepto en la familia ISO 9241</h3>
+
+    <p>El entorno entró en escena de la mano de la propia definición de usabilidad, igual que el resto del contexto de uso. No fue un añadido tardío.</p>
+
+    <ul class="timeline" role="list">
+      <li><b>1998</b> — La primera <strong>ISO 9241-11</strong> liga la usabilidad a un «contexto de uso especificado» y nombra ya, entre sus elementos, el entorno físico y social junto a usuarios, tareas y equipamiento.</li>
+      <li><b>1999</b> — La <strong>ISO 13407</strong> formaliza el proceso centrado en el operador humano e incluye «entender y especificar el contexto de uso» como primera actividad: el entorno vive ahí desde el principio.</li>
+      <li><b>2010</b> — La 13407 se integra en la <strong>ISO 9241-210</strong>; el contexto de uso, con su entorno, se consolida como punto de partida del ciclo.</li>
+      <li><b>2018</b> — La <strong>ISO 9241-11:2018</strong> reescribe la definición y precisa las dimensiones del entorno (físico, social, técnico y organizativo), aplicándolas a productos y servicios de cualquier tipo.</li>
+    </ul>
+    <p>No memorices las fechas. Quédate con la dirección: el entorno pasó de ser <strong>el lugar donde por casualidad estaba la persona</strong> a entenderse como <strong>una variable de diseño que el ingeniero debe conocer y respetar</strong>.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El móvil reabrió el debate del entorno. Mientras el ordenador vivía atado a una mesa, el entorno era casi siempre el mismo: una oficina o una casa. El teléfono inteligente sacó la interacción a la calle, al transporte, a la cola del supermercado… y devolvió el entorno al centro del análisis. Diseñar «de escritorio» dejó de servir el día en que el sistema empezó a usarse en cualquier parte.</p>
+    </div>
+  </section>
+
+  <section id="antipatron" aria-labelledby="antipatron-h">
+    <h3 id="antipatron-h"><span class="num" aria-hidden="true">1.5</span>El antipatrón: el «entorno de laboratorio»</h3>
+
+    <p>La mejor forma de entender por qué hay que especificar el entorno es ver qué pasa cuando se ignora. Y se ignora casi siempre, por una razón muy concreta: el equipo prueba el sistema en <strong>el único entorno que tiene a mano</strong>, su despacho.</p>
+    <p>Ese despacho es silencioso, bien iluminado, con buena conexión, sin prisa y sin nadie mirando por encima del hombro. El sistema «funciona perfecto»… en condiciones que casi ningún usuario real tendrá.</p>
+
+    <h4>Tres síntomas de un proyecto con «entorno de laboratorio»</h4>
+    <ul>
+      <li><strong>Se prueba sentado y tranquilo.</strong> Nadie comprueba qué pasa de pie, en movimiento, con una mano y con prisa. La interacción real es mucho más torpe que la del laboratorio.</li>
+      <li><strong>Se ignora la luz y el ruido.</strong> Contrastes bajos que son ilegibles al sol; avisos solo sonoros que nadie oye en la calle. La pantalla del despacho miente sobre la pantalla de la calle.</li>
+      <li><strong>Se olvida la presión social y organizativa.</strong> Se diseña como si la persona tuviera todo el tiempo del mundo, sin cola detrás, sin un jefe esperando, sin un protocolo que cumplir.</li>
+    </ul>
+    <p>El resultado es el ya conocido: algo que <strong>brilla en la demo y se rompe en la calle</strong>. Y el fallo aparece tarde, cuando la persona real, en su entorno real, no logra terminar y se siente torpe por un problema que no es suyo.</p>
+    <p>Especificar el entorno es el seguro contra eso. No es imaginar catástrofes: es probar y diseñar para el sol, el ruido, la prisa y el público que la tarea va a encontrarse de verdad.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El antipatrón del entorno es el <strong>«entorno de laboratorio»</strong>: validar todo en un despacho tranquilo, luminoso y sin prisa. Suponer ese entorno ideal excluye a quien usa el sistema de pie, con ruido, con prisa o ante público. El entorno real se observa, no se imagina.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo cambia una tarea según el entorno, cómo se diseña para condiciones hostiles, qué dicen los datos del INE sobre dónde y cómo se usa la tecnología en España y en Extremadura, y cómo cerrarás el contexto de uso en tu proyecto.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma tarea, entornos distintos</h3>
+
+    <p>El entorno se entiende mejor con un ejemplo único visto en distintas condiciones. Retomemos una tarea cotidiana: <strong>consultar y validar el billete de transporte en el móvil</strong>.</p>
+    <p>El objetivo es siempre el mismo —enseñar el billete y pasar—, pero el entorno cambia por completo la dificultad de esa tarea idéntica.</p>
+
+    <h4>Una tarea, tres entornos</h4>
+    <ul>
+      <li><strong>En casa, sentado, con buena luz y sin prisa.</strong> Trivial: cualquier diseño «vale». Es el entorno del equipo de desarrollo… y la trampa de siempre.</li>
+      <li><strong>De pie en el andén, con sol, ruido y una cola detrás.</strong> Ahora el contraste bajo es ilegible, el aviso sonoro no se oye y la prisa social no perdona un menú de tres pasos. Misma app, entorno hostil.</li>
+      <li><strong>En el túnel del metro, sin cobertura y con poca batería.</strong> El entorno técnico ha cambiado: si el billete no se puede mostrar sin red, la persona se queda tirada justo cuando más lo necesita.</li>
+    </ul>
+    <p>Misma app, misma tarea, tres entornos. Cada uno impone decisiones distintas. Si solo pensaste en el primero —el que se parece al tuyo—, dejaste fuera los otros dos, que son los habituales.</p>
+    <p>Esto es, en una escena cotidiana, lo que captura el componente de entorno: <strong>no diseñas para una tarea, diseñas para una tarea en unas condiciones concretas</strong>. Cuando empieces a preguntarte «¿y al sol, con ruido, con prisa y sin cobertura?», habrás interiorizado la mirada del análisis.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Saca a la calle, a pleno sol, la última app que usaste en casa. ¿Sigues leyendo bien la pantalla? ¿Oyes sus avisos con tráfico alrededor? Cada «no» es una condición de entorno que su equipo pudo haber probado solo en el despacho.</p>
+    </div>
+  </section>
+
+  <section id="robusto" aria-labelledby="robusto-h">
+    <h3 id="robusto-h"><span class="num" aria-hidden="true">2.2</span>Diseñar para entornos hostiles: el diseño robusto</h3>
+
+    <p>Si el entorno real es ruidoso, soleado, móvil y con prisa, la respuesta de ingeniería tiene nombre: <strong>diseño robusto</strong>. Es diseñar para que el sistema siga funcionando cuando las condiciones empeoran.</p>
+    <p>Conocer el entorno en la Actividad A es lo que permite tomar estas decisiones <em>a propósito</em>, en vez de descubrir el problema cuando ya es tarde.</p>
+
+    <h4>Cuatro respuestas de diseño a un entorno hostil</h4>
+    <ul>
+      <li><strong>Contraste alto y texto legible</strong> para el entorno físico de luz: lo que se lee al sol también ayuda a quien tiene baja visión. Es, además, un criterio de las <strong>WCAG</strong> nivel AA.</li>
+      <li><strong>No depender de un solo canal</strong> en el entorno de ruido: si hay un aviso sonoro, que haya también una señal visual o táctil. Nunca confiar el mensaje crítico solo al sonido.</li>
+      <li><strong>Objetivos táctiles grandes y tolerancia al error</strong> para el movimiento: dedos imprecisos en un autobús que da botes necesitan botones amplios y separados.</li>
+      <li><strong>Recuperación tras la interrupción</strong> para el entorno social y organizativo: si una llamada, una cola o un jefe interrumpen, el sistema debe guardar el estado y dejar retomar sin empezar de cero.</li>
+    </ul>
+    <p>Observa el patrón que viste con accesibilidad: <strong>diseñar para el entorno difícil mejora el producto para todos</strong>. El contraste alto sirve al sol y a la baja visión; el doble canal sirve al ruido y a la persona sorda; el botón grande sirve al autobús y al temblor de manos.</p>
+    <p>Por eso el entorno no es un capricho de realismo: es una de las fuentes más ricas de requisitos de usabilidad y accesibilidad que llevarás a la Actividad B.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Conocer el entorno permite el <strong>diseño robusto</strong>: alto contraste para la luz, doble canal para el ruido, objetivos grandes para el movimiento y recuperación tras interrupciones. Diseñar para el entorno hostil, como con la accesibilidad, <strong>mejora el producto para todo el mundo</strong>.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: dónde y cómo se usa (INE 2025)</h3>
+
+    <p>Que «el entorno importa» no es opinión: los datos describen entornos de uso muy distintos del despacho ideal. El <strong>Instituto Nacional de Estadística (INE)</strong>, en su <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>, ofrece varias pistas.</p>
+    <p>Tres cifras retratan un uso cotidiano, deslocalizado y desigual según el territorio.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos definitivos publicados el 20 de noviembre de 2025). Población de 16 a 74 años; el teletrabajo se refiere a la semana anterior a la entrevista.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas que usaron Internet a diario</td><td class="fig">92,5 %</td></tr>
+          <tr><td>Ocupados que teletrabajaron la semana anterior</td><td class="fig">14,8 %</td></tr>
+          <tr><td>Tasa de teletrabajo entre quienes pueden teletrabajar</td><td class="fig">47,7 %</td></tr>
+          <tr><td>Uso de Internet en Extremadura (frente al 96,3 % nacional)</td><td class="fig">93,9 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>La primera cifra habla de <strong>ubicuidad</strong>: si el 92,5 % usa Internet a diario, no lo hace solo sentado en casa, sino en el transporte, en la calle y en el trabajo. El entorno de uso ya no es uno: son muchos a lo largo del día.</p>
+    <p>El <strong>teletrabajo</strong> ilustra de manual la dimensión organizativa y física del entorno: la misma tarea, hecha desde la oficina o desde casa, ocurre en condiciones de ruido, interrupciones y normas muy distintas. No es casual que esa modalidad alcance al 47,7 % de quienes pueden adoptarla.</p>
+    <p>Y la cifra de <strong>Extremadura</strong> apunta a la dimensión <strong>territorial</strong> del entorno técnico. En un territorio extenso, rural y poco poblado, el uso de Internet (93,9 %) queda por debajo de la media nacional (96,3 %). La cobertura y la infraestructura del lugar son parte del entorno, y no son iguales en una gran ciudad que en la dehesa.</p>
+    <p>Especificar bien el entorno es la inversión que evita el fallo: diseñar para el sol, el ruido, la prisa y la cobertura que la gente tiene de verdad, también fuera de las grandes capitales.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los datos del INE 2025 dibujan entornos de uso <strong>cotidianos, deslocalizados y desiguales</strong>: uso diario casi universal (92,5 %), teletrabajo extendido (47,7 % de quienes pueden) y diferencias territoriales (Extremadura, 93,9 %, por debajo de la media). El despacho tranquilo no representa a casi nadie.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: cerrar el contexto de uso</h3>
+
+    <p>Esta es la transferencia más directa, y además marca un hito. Con el entorno <strong>cierras la especificación del contexto de uso</strong> de tu proyecto: ya has respondido a las cuatro preguntas de la Actividad A.</p>
+    <p>No basta con decir «se usará en el móvil». Tienes que describir, con evidencia de tu observación, las condiciones reales en las que tus usuarios harán la tarea.</p>
+
+    <h4>Qué tendrás que entregar sobre el entorno</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cómo se concreta la dimensión de entorno en la entrega de contexto de uso del proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Dimensión</th><th scope="col">Qué describir en la entrega</th><th scope="col">Cómo obtenerlo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Físico</th><td>Luz, ruido, movimiento y postura habituales del uso</td><td>Observación in situ</td></tr>
+        <tr><th scope="row">Social</th><td>Si se usa a solas o con público, presión y ayuda disponible</td><td>Observación y entrevistas</td></tr>
+        <tr><th scope="row">Técnico</th><td>Cobertura del lugar y sistemas con los que debe convivir</td><td>Observación y datos del INE</td></tr>
+        <tr><th scope="row">Organizativo</th><td>Normas, prisas, plazos y procedimientos que rodean la tarea</td><td>Entrevistas y análisis de tareas</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consecuencias prácticas desde hoy</h4>
+    <ul>
+      <li><strong>Cierra un <em>checkpoint</em> obligatorio.</strong> El entorno completa la entrega de contexto de uso; como las demás entregas parciales, no se califica por separado, pero no presentarla en plazo significa no superar el bloque del proyecto.</li>
+      <li><strong>Hay que evidenciar el entorno, no suponerlo.</strong> La evaluación verifica que «se ha seguido un proceso de DCH». Tendrás que <em>demostrar</em> que observaste el entorno real (dónde, con qué luz, con qué prisa), no afirmar «se usa por ahí».</li>
+      <li><strong>De aquí salen requisitos de accesibilidad.</strong> El entorno hostil (sol, ruido, movimiento) es una fuente directa de requisitos que coinciden con el nivel <strong>AA de WCAG</strong>, umbral mínimo del proyecto. Lo que diseñas para la calle protege también a quien tiene una discapacidad.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Con el entorno <strong>cierras la Actividad A</strong> de tu proyecto: las cuatro condiciones (física, social, técnica, organizativa) de tus usuarios reales. Lo que se valora es la <strong>evidencia de que observaste</strong> esas condiciones, porque de ellas saldrán los requisitos —y muchos coincidirán con el umbral <strong>AA de WCAG</strong>.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de observación para esta semana</h3>
+
+    <p>El entorno se aprende mirando con otros ojos las condiciones que ya te rodean. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Las cuatro condiciones</span>
+      <p>Elige una app que uses fuera de casa y descríbela en sus cuatro dimensiones: <strong>físico</strong> (¿luz, ruido, en marcha?), <strong>social</strong> (¿con público?), <strong>técnico</strong> (¿cobertura?) y <strong>organizativo</strong> (¿con prisa, con normas?). Acabas de especificar un entorno de uso.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Cambia el entorno, no la tarea</span>
+      <p>Toma esa misma app y la misma tarea, pero en el peor entorno que se te ocurra: al sol, en un autobús que frena, con una cola detrás y poca cobertura. ¿Qué decisión de diseño se rompe primero? Acabas de ver por qué la usabilidad depende del entorno.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Observa un uso real</span>
+      <p>Fíjate en alguien usando un cajero o una máquina de billetes en un sitio concurrido. <strong>No intervengas; observa el entorno.</strong> La prisa, la gente detrás, el ruido, la luz: anota cada condición que dificulta la tarea. Eso es entorno real que desde un despacho no se ve.</p>
+    </div>
+  </section>
+
+  <section id="entorno-ing" aria-labelledby="entorno-ing-h">
+    <h3 id="entorno-ing-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente lo deja claro: una de las competencias de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la ergonomía y la calidad del software (CG03).</p>
+    <p>Pero no puedes garantizar usabilidad ni accesibilidad de algo cuyo entorno de uso desconoces. La dimensión de entorno es donde esa competencia se vuelve concreta: en qué condiciones reales va a funcionar lo que construyes.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando validas el sistema solo en tu despacho, cuando supones «todos lo usan sentados y con calma» o cuando ignoras el sol, el ruido y la prisa, estás <strong>volviendo a centrar el diseño en la máquina</strong> —en el entorno cómodo de tu mesa.</p>
+    <p>Tener en cuenta el entorno real es lo que te separa de quien «hace pantallas» y te acerca a quien diseña <strong>sistemas que las personas pueden usar de verdad</strong>, en la calle y no en la demo.</p>
+    <p>Con el entorno cierras el contexto de uso. Ya sabes <strong>quién, para qué, con qué y dónde</strong>. El siguiente paso del proceso es convertir todo eso en <strong>requisitos verificables</strong> (Actividad B): el puente natural hacia el resto del proyecto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No puedes asegurar usabilidad ni accesibilidad (CI17, CG03) sin conocer el entorno real. Con él cierras las cuatro preguntas del contexto de uso; lo que viene a continuación es transformarlas en <strong>requisitos verificables</strong> (Actividad B), el paso que enlaza el análisis con el diseño.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué es el entorno dentro del contexto de uso y qué norma lo enmarca?</summary>
+      <p>Son las <strong>condiciones físicas, sociales, técnicas y organizativas</strong> que rodean el uso de un sistema. Es el cuarto componente del contexto de uso (el «¿dónde?») y lo enmarca la <strong>ISO 9241-11</strong>, dentro del proceso de la ISO 9241-210. Con él se cierra la Actividad A. <em>(Ver 1.1 y 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Cuáles son las cuatro dimensiones del entorno?</summary>
+      <p><strong>Física</strong> (luz, ruido, movimiento, espacio), <strong>social</strong> (a solas o con público, presión, ayuda), <strong>técnica</strong> (cobertura, compatibilidad, infraestructura) y <strong>organizativa</strong> (normas, prisas, plazos, jerarquía). Suelen sumarse entre sí. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿En qué se distinguen «entorno» y «recursos»?</summary>
+      <p>Los recursos son los <strong>medios</strong> con los que se hace la tarea (móvil, conexión, tiempo); el entorno son las <strong>condiciones</strong> que la rodean (luz, ruido, prisa, cobertura del lugar). No importa tanto la etiqueta como no olvidar ninguna condición. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Por qué se dice que el entorno es un «multiplicador de dificultad»?</summary>
+      <p>Porque rara vez impide la tarea por sí solo, pero agrava todo lo demás: la prisa vuelve costoso un menú largo, el ruido inutiliza una alerta sonora, el sol hace ilegible un contraste bajo. La misma tarea, en un entorno hostil, se vuelve mucho más difícil. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Qué es el diseño robusto y cómo se relaciona con la accesibilidad?</summary>
+      <p>Es diseñar para que el sistema siga funcionando cuando las condiciones empeoran: alto contraste, doble canal (no solo sonido), objetivos táctiles grandes, recuperación tras interrupciones. Lo mismo que protege en un entorno hostil suele coincidir con criterios WCAG: diseñar para la calle mejora el producto para todos. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué errores aparecen con el «entorno de laboratorio»?</summary>
+      <p>Probar todo sentado y tranquilo, ignorar luz y ruido, y olvidar la presión social y organizativa. El resultado: un sistema que brilla en la demo y se rompe en la calle, donde la persona real falla por un problema de diseño, no suyo. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué dicen los datos del INE 2025 sobre el entorno de uso?</summary>
+      <p>Que es cotidiano y deslocalizado: el 92,5 % usa Internet a diario (en muchos sitios, no solo en casa); el teletrabajo alcanza al 47,7 % de quienes pueden (misma tarea, entorno distinto); y hay diferencias territoriales, con Extremadura (93,9 %) por debajo de la media nacional (96,3 %). <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Qué significa cerrar la Actividad A con el entorno y qué viene después?</summary>
+      <p>Significa haber respondido a las cuatro preguntas del contexto de uso: quién, para qué, con qué y dónde, con evidencia de observación. Es un checkpoint obligatorio. Lo que viene después es la Actividad B: convertir ese contexto en requisitos verificables. <em>(Ver 2.4 y 2.6)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Entorno</dt>
+      <dd>Conjunto de condiciones físicas, sociales, técnicas y organizativas que rodean el uso de un sistema. Componente «¿dónde?» del contexto de uso, según la ISO 9241-11; cierra la Actividad A del DCH.</dd>
+      <dt>Entorno físico</dt>
+      <dd>Condiciones materiales del lugar de uso: luz, ruido, movimiento, espacio y postura de la persona.</dd>
+      <dt>Entorno social</dt>
+      <dd>Condiciones relacionadas con otras personas: uso a solas o con público, presión (una cola, un plazo), y disponibilidad de ayuda.</dd>
+      <dt>Entorno técnico</dt>
+      <dd>Condiciones tecnológicas del lugar: cobertura de red, infraestructura disponible y compatibilidad con otros sistemas con los que el tuyo debe convivir.</dd>
+      <dt>Entorno organizativo</dt>
+      <dd>Normas, prisas, plazos, jerarquías y procedimientos del trabajo o institución que rodean el uso del sistema.</dd>
+      <dt>Diseño robusto</dt>
+      <dd>Estrategia de diseñar para que el sistema siga siendo usable cuando las condiciones del entorno empeoran (sol, ruido, movimiento, interrupciones).</dd>
+      <dt>Multiplicador de dificultad</dt>
+      <dd>Idea de que el entorno rara vez impide la tarea por sí solo, pero agrava la dificultad de todo lo demás.</dd>
+      <dt>Recursos / equipamiento</dt>
+      <dd>Medios con los que la persona realiza la tarea (dispositivo, software, conexión, tiempo). Se distinguen del entorno: los recursos son medios; el entorno, condiciones.</dd>
+      <dt>Contexto de uso</dt>
+      <dd>Conjunto de usuarios, tareas y objetivos, recursos y entorno en el que se usa un sistema. Definido en la ISO 9241-11; lo especifica la Actividad A del DCH.</dd>
+      <dt>Actividad A (DCH)</dt>
+      <dd>«Entender y especificar el contexto de uso»: primera actividad del ciclo del DCH. Queda completa cuando se han descrito sus cuatro componentes, incluido el entorno.</dd>
+      <dt>ISO 9241-11</dt>
+      <dd>Norma que define la usabilidad y los componentes del contexto de uso, entre ellos las cuatro dimensiones del entorno. Versión vigente: 2018.</dd>
+      <dt>ISO 9241-210</dt>
+      <dd>Norma del proceso de Diseño Centrado en lo Humano; su primera actividad especifica el contexto de uso. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>entorno</strong> es el «¿dónde?» del contexto de uso: el cuarto componente de la <strong>Actividad A</strong>, definido en la <strong>ISO 9241-11</strong>. Con él se cierra el contexto.</li>
+        <li>Tiene cuatro dimensiones: <strong>física</strong> (luz, ruido, movimiento), <strong>social</strong> (público, presión, ayuda), <strong>técnica</strong> (cobertura, compatibilidad) y <strong>organizativa</strong> (normas, prisas, plazos). Se suman.</li>
+        <li>Distínguelo de los <strong>recursos</strong>: recursos son los medios; entorno, las condiciones. Lo grave no es etiquetar mal, sino olvidar una condición.</li>
+        <li>El entorno es un <strong>multiplicador de dificultad</strong>: la misma tarea cambia de coste según el sol, el ruido, la prisa o el público.</li>
+        <li>El antipatrón es el <strong>«entorno de laboratorio»</strong>: validar en un despacho tranquilo y excluir a quien usa el sistema en la calle.</li>
+        <li>La respuesta de ingeniería es el <strong>diseño robusto</strong>: alto contraste, doble canal, objetivos grandes y recuperación tras interrupción; coincide con criterios <strong>WCAG AA</strong> y mejora el producto para todos.</li>
+        <li>Los datos del <strong>INE 2025</strong> describen entornos cotidianos y desiguales: 92,5 % de uso diario, 47,7 % de teletrabajo entre quienes pueden y un 93,9 % de uso en Extremadura, por debajo del 96,3 % nacional.</li>
+        <li>En tu proyecto, el entorno <strong>cierra la entrega de contexto de uso</strong> (las cuatro preguntas); hay que evidenciar la observación y aquí nacen requisitos de accesibilidad.</li>
+        <li>Cerrada la Actividad A, el proceso avanza a la <strong>Actividad B</strong>: convertir el contexto en requisitos verificables.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="7">
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018); precisa las dimensiones del entorno del contexto de uso.</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>ISO 13407:1999. <em>Human-centred design processes for interactive systems</em> (predecesora, revisada como ISO 9241-210).</li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; usabilidad y accesibilidad como características de calidad.</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="12">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos definitivos publicados el 20 de noviembre de 2025; incluye desglose por comunidades autónomas y teletrabajo). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>El entorno del contexto de uso (Actividad A del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

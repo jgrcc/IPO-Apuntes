@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo del concepto de Interacción Persona-Ordenador. Tema 1 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Interacción Persona-Ordenador · Apuntes Tema 1 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 1 · Conceptos básicos · Material de apoyo</p>
+    <h1>Interacción Persona-Ordenador
+      <span class="sub">El concepto que sostiene todo el diseño de sistemas interactivos</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CI17 · CG03 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es la Interacción Persona-Ordenador?</a></li>
+          <li class="lvl2"><a href="#historia">Una historia breve: de la orden al diálogo</a></li>
+          <li class="lvl2"><a href="#disciplina">Una disciplina de fronteras: ¿de dónde bebe la IPO?</a></li>
+          <li class="lvl2"><a href="#nucleo">Los conceptos clave: el lenguaje de la disciplina</a></li>
+          <li class="lvl2"><a href="#con-is">Su lugar en la Ingeniería del Software</a></li>
+          <li class="lvl2"><a href="#importa">¿Por qué importa? El coste de una mala interacción</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La IPO en tu día a día</a></li>
+          <li class="lvl2"><a href="#datos">Anclaje real: ¿cuánta interacción hay en España?</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#normativa">Anclaje normativo: cuando diseñar bien es obligatorio</a></li>
+          <li class="lvl2"><a href="#entorno">Tu entorno: por qué te concierne como futuro ingeniero</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Este documento acompaña a la clase expositiva con la que abrimos el Tema 1. No sustituye a la explicación en el aula: la complementa y te permite repasar a tu ritmo.</p>
+    <p>Está diseñado siguiendo el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>. Por eso encontrarás la misma idea presentada de varias formas: en prosa, en cajas de «idea clave», con ejemplos cotidianos y con preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Interacción Persona-Ordenador (IPO) no va de hacer que un programa funcione: va de hacer que una persona <strong>pueda usarlo</strong> con éxito, sin esfuerzo innecesario y sin quedar excluida.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es y de dónde viene</h2>
+    <p class="lead">Teoría, historia y vocabulario fundamental de la disciplina.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es la Interacción Persona-Ordenador?</h3>
+
+    <p>La <strong>Interacción Persona-Ordenador</strong> (IPO; en inglés, <em>Human-Computer Interaction</em>, HCI) es la disciplina que estudia el <strong>diseño</strong>, la <strong>evaluación</strong> y la <strong>implementación</strong> de los sistemas informáticos interactivos pensados para que los usen personas.</p>
+    <p>Y, de forma igual de importante, estudia <strong>todos los fenómenos que rodean a ese uso</strong>: qué siente la persona, qué entiende, dónde se equivoca y por qué abandona.</p>
+    <p>No es una asignatura «de pantallas bonitas». Es ingeniería: tiene métodos, normas internacionales y criterios de calidad medibles, como veremos a lo largo del curso.</p>
+
+    <h4>Tres ingredientes y un escenario</h4>
+    <p>Para entender el concepto conviene descomponerlo en sus piezas. El propio nombre las anuncia:</p>
+    <ul>
+      <li><strong>La persona.</strong> Un ser humano con capacidades <em>perceptivas</em> (ver, oír), <em>cognitivas</em> (atender, recordar, decidir) y <em>motoras</em> (mover, pulsar, hablar). Tiene límites, expectativas y emociones.</li>
+      <li><strong>El ordenador.</strong> Aquí «ordenador» se entiende en sentido amplio: cualquier artefacto computacional. Un móvil, un cajero, un coche, un reloj inteligente o un altavoz por voz son «ordenadores».</li>
+      <li><strong>La interacción.</strong> El diálogo de ida y vuelta entre ambos. La persona actúa sobre el sistema y el sistema responde; ese intercambio ocurre a través de una <strong>interfaz</strong>.</li>
+    </ul>
+    <p>Y el escenario que lo envuelve todo: el <strong>contexto de uso</strong>. No se diseña igual una app para usarla con calma en el sofá que un panel para manejar conduciendo o con guantes en una obra.</p>
+
+    <h4>Interfaz: la frontera donde ocurre todo</h4>
+    <p>La <strong>interfaz</strong> es la superficie de contacto entre la persona y el sistema. Es lo único que la persona ve, toca y oye; para ella, la interfaz <em>es</em> el sistema.</p>
+    <p>Por eso una idea brillante con una interfaz confusa fracasa, mientras que una solución modesta pero clara triunfa. La calidad interna del código no se percibe; la calidad de la interacción, sí.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>IPO = <strong>persona</strong> + <strong>ordenador</strong> (en sentido amplio) + <strong>interacción</strong>, dentro de un <strong>contexto de uso</strong>. Diseñar bien es ajustar el sistema a las capacidades y límites reales de las personas, no al revés.</p>
+    </div>
+
+    <h4>Una distinción que lo cambia todo</h4>
+    <p>Existe una diferencia decisiva entre dos preguntas que un ingeniero debe separar siempre:</p>
+    <ul>
+      <li>«¿<strong>Funciona</strong> el sistema?» → pregunta de la programación clásica.</li>
+      <li>«¿<strong>Puede usarlo</strong> bien una persona real?» → pregunta de la IPO.</li>
+    </ul>
+    <p>Un sistema puede pasar todos sus tests técnicos y, aun así, ser inservible porque nadie entiende cómo manejarlo. La IPO se ocupa precisamente de ese segundo plano, que ningún test unitario detecta.</p>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.2</span>Una historia breve: de la orden al diálogo</h3>
+
+    <p>La IPO no nació con los móviles. Su historia explica por qué hoy esperamos que un sistema se adapte a nosotros, y no nosotros a la máquina.</p>
+    <p>En los primeros ordenadores no había «interacción» en nuestro sentido: se introducían tarjetas perforadas y se esperaban horas por un resultado impreso. El usuario era casi siempre el propio ingeniero.</p>
+    <p>El cambio fue pasar de <strong>dar órdenes a una máquina</strong> a <strong>mantener un diálogo con un sistema</strong>. Estos hitos marcan el camino:</p>
+
+    <ul class="timeline" role="list">
+      <li><b>1945 · La visión.</b> Vannevar Bush imagina el «Memex», una máquina para almacenar y enlazar información como lo hace la mente. Aún no existía, pero fijó una meta.</li>
+      <li><b>1963 · El primer dibujo interactivo.</b> Ivan Sutherland presenta <em>Sketchpad</em>: se dibujaba en pantalla con un lápiz óptico. Nace la idea de manipular gráficos en tiempo real.</li>
+      <li><b>1968 · «La madre de todas las demos».</b> Douglas Engelbart muestra en directo el ratón, el hipertexto, la edición en pantalla y el trabajo colaborativo. Décadas antes de que fueran cotidianos.</li>
+      <li><b>Años 70 · La interfaz gráfica.</b> En el centro Xerox PARC se desarrolla el paradigma <strong>WIMP</strong> (ventanas, iconos, menús y puntero), base de los escritorios actuales.</li>
+      <li><b>1982-1984 · La disciplina y el gran público.</b> Se funda el grupo ACM SIGCHI, que consolida la IPO como campo académico; poco después, ordenadores como el Apple Macintosh llevan la interfaz gráfica a los hogares.</li>
+      <li><b>1991 · La Web.</b> Tim Berners-Lee publica la World Wide Web. La interacción deja de ser cosa de expertos y se vuelve masiva.</li>
+      <li><b>2007 en adelante · Lo táctil y lo ubicuo.</b> El teléfono táctil generaliza tocar la información con los dedos. Después llegan la voz, los relojes y los objetos conectados.</li>
+      <li><b>Hoy · La conversación.</b> Los sistemas de inteligencia artificial generativa introducen una interacción basada en lenguaje natural. La frontera persona-máquina se difumina aún más.</li>
+    </ul>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El ratón se inventó en los años 60, pero tardó casi <strong>veinte años</strong> en llegar a tu mesa. Una buena idea de interacción no triunfa sola: necesita una tecnología accesible y un diseño que la haga comprensible. Esa brecha entre «inventado» y «usable» es, en el fondo, el territorio de la IPO.</p>
+    </div>
+
+    <p>La lección histórica es clara: cada vez que la interacción se acercó al lenguaje natural de las personas (señalar, tocar, hablar) en lugar de exigir el lenguaje de la máquina, la tecnología se democratizó.</p>
+  </section>
+
+  <section id="disciplina" aria-labelledby="disciplina-h">
+    <h3 id="disciplina-h"><span class="num" aria-hidden="true">1.3</span>Una disciplina de fronteras: ¿de dónde bebe la IPO?</h3>
+
+    <p>La IPO es <strong>multidisciplinar</strong> por necesidad. Para diseñar la interacción hay que entender a la vez la mitad humana y la mitad técnica del problema.</p>
+    <p>Del lado de <strong>la persona</strong> se nutre de:</p>
+    <ul>
+      <li><strong>Psicología cognitiva:</strong> cómo percibimos, atendemos, recordamos y cometemos errores.</li>
+      <li><strong>Ergonomía y factores humanos:</strong> cómo adaptar herramientas al cuerpo y sus límites; su origen está en el diseño de cabinas y puestos de trabajo.</li>
+      <li><strong>Sociología y antropología:</strong> cómo usamos la tecnología en grupo y en cada cultura.</li>
+    </ul>
+    <p>Del lado <strong>del sistema</strong> se apoya en:</p>
+    <ul>
+      <li><strong>Ingeniería del Software:</strong> cómo construir el sistema con calidad y mantenerlo.</li>
+      <li><strong>Diseño gráfico e industrial:</strong> cómo dar forma visual y física a lo que se usa.</li>
+      <li><strong>Lingüística:</strong> clave hoy para las interfaces por voz y conversacionales.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La IPO vive en la frontera entre «cómo son las personas» y «cómo se construyen los sistemas». Tu valor como ingeniero será saber traducir entre ambos mundos.</p>
+    </div>
+  </section>
+
+  <section id="nucleo" aria-labelledby="nucleo-h">
+    <h3 id="nucleo-h"><span class="num" aria-hidden="true">1.4</span>Los conceptos clave: el lenguaje de la disciplina</h3>
+
+    <p>Estos términos los usarás durante todo el curso. Aquí los presentamos con detalle; en temas posteriores los aplicarás al evaluar y diseñar interfaces.</p>
+    <p>Buena parte proviene del trabajo de <strong>Donald Norman</strong> (en <em>La psicología de los objetos cotidianos</em>), una de las referencias fundamentales de la materia. Otros vienen de la psicología cognitiva y de autores como Nielsen, Shneiderman o Krug.</p>
+    <p>Conviene leer este apartado despacio: es el vocabulario con el que pensarás el diseño durante toda la asignatura.</p>
+
+    <h4>1) El triángulo: modelo del diseñador, modelo del usuario e imagen del sistema</h4>
+    <p>Un <strong>modelo mental</strong> es la representación interna que una persona se construye de cómo funciona un sistema. No tiene por qué ser correcta: es «cómo cree el usuario que va la cosa».</p>
+    <p>Conviene distinguir tres elementos que Norman relaciona entre sí:</p>
+    <ul>
+      <li><strong>Modelo del diseñador:</strong> cómo el equipo cree que funciona y debe usarse el sistema. Suele ser el modelo «correcto».</li>
+      <li><strong>Modelo del usuario:</strong> la idea que se hace quien lo usa, a partir solo de lo que percibe.</li>
+      <li><strong>Imagen del sistema:</strong> todo lo que el sistema comunica al exterior (la interfaz, los mensajes, los manuales). Es el <em>único</em> puente entre los dos modelos.</li>
+    </ul>
+    <p>La clave es esta: diseñador y usuario nunca hablan directamente. El diseñador solo puede influir en el modelo del usuario a través de la <strong>imagen del sistema</strong>.</p>
+    <p>Si esa imagen es clara y coherente, el modelo del usuario se acerca al del diseñador y la interacción fluye. Si es pobre o contradictoria, el usuario se inventa un modelo equivocado y aparecen los errores.</p>
+    <p>Un ejemplo: el termostato que «calienta más rápido» si lo subes al máximo. Mucha gente lo cree (modelo mental erróneo), porque la imagen del sistema no transmite que solo fija la temperatura objetivo, no la velocidad.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuando un usuario hace algo «raro», casi siempre está siendo perfectamente lógico <strong>dentro de su modelo mental</strong>. Tu trabajo no es corregir a la persona, sino mejorar la imagen del sistema para que su modelo sea acertado.</p>
+    </div>
+
+    <h4>2) Affordances, significantes y restricciones</h4>
+    <p>El término <strong>affordance</strong> procede del psicólogo de la percepción James J. Gibson y Norman lo trajo al diseño. Designa la relación entre un objeto y las acciones que permite: una silla «ofrece» sentarse; un asa, agarrar; un botón, pulsarse.</p>
+    <p>Conviene separar dos planos:</p>
+    <ul>
+      <li><strong>Affordance real:</strong> lo que el objeto permite hacer de hecho (una superficie plana soporta objetos).</li>
+      <li><strong>Affordance percibida:</strong> lo que la persona <em>cree</em> que puede hacer al mirarlo. El diseño de interacción trabaja sobre todo con esta.</li>
+    </ul>
+    <p>Para que la affordance se perciba hace falta un <strong>significante</strong>: la pista visible que anuncia la posibilidad y dónde actuar. El subrayado de un enlace, la sombra de un botón, el cursor que cambia de forma o una flecha son significantes.</p>
+    <p>Norman añade un tercer mecanismo, las <strong>restricciones</strong> (constraints): límites que reducen las acciones posibles y previenen errores. Suelen clasificarse en cuatro tipos:</p>
+    <ul>
+      <li><strong>Físicas:</strong> un conector USB que solo entra de una manera.</li>
+      <li><strong>Lógicas:</strong> deshabilitar el botón «Enviar» hasta que el formulario esté completo.</li>
+      <li><strong>Culturales:</strong> el rojo se asocia a peligro o a detener; el verde, a continuar.</li>
+      <li><strong>Semánticas:</strong> el significado de la situación («el icono de la papelera es para borrar»).</li>
+    </ul>
+    <p>Affordances bien comunicadas mediante significantes, más restricciones que cierran caminos erróneos: esa es la receta de un control que «se entiende solo».</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Existen las llamadas «puertas Norman»: esas puertas con un tirador donde, en realidad, hay que empujar. El diseño te invita a una acción equivocada. Cuando te confundas con una puerta, recuerda: <strong>no eres torpe; el significante es engañoso</strong>.</p>
+    </div>
+
+    <h4>3) Mapeo, visibilidad y retroalimentación</h4>
+    <p>Tres principios prácticos hacen que la imagen del sistema sea legible. Los usarás constantemente al evaluar interfaces.</p>
+    <p>El <strong>mapeo</strong> es la correspondencia entre los controles y sus efectos. Un buen mapeo (mapeo <em>natural</em>) aprovecha analogías espaciales o físicas.</p>
+    <ul>
+      <li>Ejemplo clásico de mal mapeo: una placa de cocina con cuatro fuegos en cuadrado y los mandos en fila; nadie recuerda qué mando enciende qué fuego.</li>
+      <li>Ejemplo de buen mapeo: subir el control de volumen y que el sonido aumente; deslizar hacia arriba para subir el brillo.</li>
+    </ul>
+    <p>La <strong>visibilidad</strong> consiste en que las opciones relevantes y el estado del sistema estén a la vista. Lo que no se ve, no se usa; las funciones escondidas en menús profundos «no existen» para la mayoría.</p>
+    <p>La <strong>retroalimentación</strong> (feedback) es la respuesta inmediata que confirma qué ha pasado: el clic de un botón, el «pago aceptado» del datáfono, una barra de progreso. Sin ella, la persona no sabe si su acción surtió efecto y la repite o la abandona.</p>
+
+    <h4>4) Las siete etapas de la acción</h4>
+    <p>Norman describe cómo actuamos sobre cualquier sistema mediante un ciclo de <strong>siete etapas</strong>. Entenderlo te permite localizar <em>dónde</em> falla una interfaz.</p>
+    <p>El ciclo se divide en dos mitades:</p>
+    <ul>
+      <li><strong>Ejecución (hacer):</strong> 1) formar el objetivo, 2) decidir la intención, 3) planificar la acción y 4) ejecutarla.</li>
+      <li><strong>Evaluación (interpretar):</strong> 5) percibir el nuevo estado, 6) interpretarlo y 7) compararlo con el objetivo.</li>
+    </ul>
+    <p>Cada vez que pulsas, esperas y compruebas el resultado, recorres este ciclo (muchas veces sin darte cuenta). Cuando una etapa se rompe, aparece la dificultad. Y ahí entran los dos golfos.</p>
+
+    <h4>5) Los dos golfos</h4>
+    <p>Norman llama «golfos» a dos distancias que el diseño debe acortar; encajan justo en las dos mitades del ciclo anterior:</p>
+    <ul>
+      <li><strong>Golfo de ejecución:</strong> la distancia entre lo que la persona quiere lograr y lo que el sistema le permite hacer. ¿Sé <em>qué</em> debo tocar para conseguir mi objetivo?</li>
+      <li><strong>Golfo de evaluación:</strong> la distancia entre el estado real del sistema y lo que la persona entiende de él. ¿Sé si <em>funcionó</em> lo que acabo de hacer?</li>
+    </ul>
+    <p>Veámoslo con un caso que conoces: rellenas un formulario web y pulsas «Enviar».</p>
+    <ul>
+      <li>Si no encuentras el botón o no sabes qué campos son obligatorios, sufres el <strong>golfo de ejecución</strong>.</li>
+      <li>Si tras pulsar no aparece ninguna confirmación y no sabes si se envió, sufres el <strong>golfo de evaluación</strong>.</li>
+    </ul>
+    <p>El buen diseño tiende puentes sobre ambos golfos justamente con las herramientas anteriores: <strong>visibilidad</strong> y <strong>significantes</strong> para el de ejecución; <strong>retroalimentación</strong> clara para el de evaluación.</p>
+
+    <h4>6) Los límites humanos: atención, memoria y carga cognitiva</h4>
+    <p>La IPO se apoya en la psicología cognitiva porque diseñar bien exige respetar los límites reales de las personas. Tres ideas bastan por ahora.</p>
+    <ul>
+      <li><strong>La memoria de trabajo es limitada.</strong> Manejamos pocos elementos a la vez (el célebre «7 ± 2» de George Miller da una idea del orden de magnitud). Una pantalla saturada de opciones desborda.</li>
+      <li><strong>Reconocer es más fácil que recordar.</strong> Por eso un menú con opciones visibles funciona mejor que pedir al usuario que recuerde un comando exacto.</li>
+      <li><strong>La atención es un recurso escaso.</strong> Cada decisión innecesaria consume esfuerzo; reducir ese esfuerzo es un objetivo de diseño, no un lujo.</li>
+    </ul>
+    <p>Estos límites no son defectos del usuario: son la materia prima con la que trabaja un buen diseñador.</p>
+
+    <h4>7) De los conceptos a las reglas: heurísticas y principios</h4>
+    <p>Sobre estas bases, varios autores han propuesto conjuntos de reglas que estructuran el campo y que verás en detalle más adelante:</p>
+    <ul>
+      <li>Las <strong>10 heurísticas de usabilidad</strong> de Jakob Nielsen: una lista de comprobación clásica para detectar problemas (por ejemplo, «visibilidad del estado del sistema», «prevención de errores» o «reconocer mejor que recordar»). Verás que son la traducción operativa de los conceptos de Norman.</li>
+      <li>Las <strong>8 reglas de oro</strong> del diseño de interfaces de Ben Shneiderman: entre ellas, buscar la consistencia, ofrecer atajos a usuarios expertos, dar retroalimentación informativa y permitir deshacer acciones.</li>
+      <li>La regla práctica de Steve Krug: «<strong>no me hagas pensar</strong>». Una interfaz debe ser tan evidente que no obligue a razonar dónde está cada cosa ni qué significa.</li>
+    </ul>
+    <p>Fíjate en la coherencia: heurísticas y reglas de oro no son listas arbitrarias, sino la aplicación práctica del modelo mental, los golfos y los principios de visibilidad y retroalimentación.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Memoriza estas tres parejas: <strong>modelo del usuario ↔ imagen del sistema</strong>, <strong>affordance ↔ significante</strong> y <strong>golfo de ejecución ↔ golfo de evaluación</strong>. Con ellas, más el mapeo, la visibilidad y la retroalimentación, tienes las gafas con las que mirarás toda interfaz a partir de ahora.</p>
+    </div>
+  </section>
+
+  <section id="con-is" aria-labelledby="con-is-h">
+    <h3 id="con-is-h"><span class="num" aria-hidden="true">1.5</span>Su lugar en la Ingeniería del Software</h3>
+
+    <p>Ya conoces el ciclo de vida del software de cursos anteriores: requisitos, diseño, implementación, pruebas y mantenimiento. Conviene situar la IPO dentro de ese marco familiar.</p>
+    <p>La IPO no es una fase aislada al final («ahora pintamos la pantalla»). Es una <strong>preocupación transversal</strong> que atraviesa todo el ciclo, igual que la seguridad o el rendimiento.</p>
+
+    <h4>La usabilidad como atributo de calidad</h4>
+    <p>En Ingeniería del Software hablamos de requisitos <em>funcionales</em> (qué debe hacer) y de atributos de <em>calidad</em> (cómo de bien lo hace: fiabilidad, eficiencia, seguridad…).</p>
+    <p>La <strong>usabilidad</strong> y la <strong>accesibilidad</strong> son atributos de calidad de pleno derecho. Se especifican, se diseñan y, sobre todo, <strong>se miden y se prueban</strong>, igual que cualquier otro requisito.</p>
+
+    <h4>El puente normativo: el Diseño Centrado en el Humano</h4>
+    <p>El nexo formal entre ambas disciplinas es la norma <strong>ISO 9241-210</strong>, que define el <strong>Diseño Centrado en el Humano</strong> (DCH): un proceso <strong>iterativo</strong> que pone a las personas en el centro de cada decisión.</p>
+    <p>Ese proceso (comprender el contexto, especificar requisitos, producir soluciones y evaluarlas con usuarios, repitiendo el ciclo) es el esqueleto del proyecto que desarrollarás en esta asignatura.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Ingeniería del Software te enseña a <strong>construir bien</strong> el sistema. La IPO te asegura que construyes <strong>el sistema correcto para las personas</strong> y que de verdad pueden usarlo. Las necesitas las dos.</p>
+    </div>
+  </section>
+
+  <section id="importa" aria-labelledby="importa-h">
+    <h3 id="importa-h"><span class="num" aria-hidden="true">1.6</span>¿Por qué importa? El coste de una mala interacción</h3>
+
+    <p>Es tentador pensar que la usabilidad es un «lujo estético». La realidad es que una mala interacción tiene costes concretos, y a veces graves.</p>
+    <p>En el plano cotidiano, una interfaz confusa provoca:</p>
+    <ul>
+      <li><strong>Errores</strong> del usuario que el sistema podría haber evitado.</li>
+      <li><strong>Frustración y abandono:</strong> un formulario complicado hace que la gente desista de un trámite o una compra.</li>
+      <li><strong>Costes de soporte:</strong> más llamadas, más incidencias, más tiempo perdido.</li>
+      <li><strong>Exclusión:</strong> personas que sencillamente no pueden completar la tarea.</li>
+    </ul>
+    <p>En sistemas críticos, el coste sube de escala. La historia de la ingeniería recoge casos donde fallos de interacción contribuyeron a tragedias.</p>
+    <p>Un ejemplo clásico que estudiarás como advertencia es el del equipo de radioterapia <strong>Therac-25</strong> en los años 80: una combinación de fallos de software y de interfaz contribuyó a sobredosis de radiación con consecuencias mortales.</p>
+    <p>Otro caso citado es la <strong>falsa alerta de misil de Hawái (2018)</strong>: un operario eligió la opción equivocada en un menú mal diseñado y disparó por error un aviso de ataque a toda la población.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuando una persona se equivoca con un sistema, la primera hipótesis profesional no debe ser «qué torpe es el usuario», sino «<strong>qué he hecho mal en el diseño</strong>». Ese cambio de mirada es el corazón de la IPO.</p>
+    </div>
+    <hr class="soft">
+    <p>Con esto cierras la base teórica. En la siguiente parte la conectaremos con tu vida diaria, con datos reales y con la normativa que hoy te obliga, como futuro ingeniero, a tomarte la interacción en serio.</p>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo aparece la IPO en tu vida, qué dicen los datos y por qué te concierne.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La IPO en tu día a día</h3>
+
+    <p>Para sentir de verdad el concepto, deja de pensar en «software» y mira tu jornada. Cada vez que actúas sobre un sistema y este te responde, estás dentro de una interacción persona-ordenador.</p>
+    <p>Repasa un día cualquiera:</p>
+    <ul>
+      <li>Desbloqueas el móvil con la huella o la cara: interacción biométrica.</li>
+      <li>Pagas el café acercando la tarjeta al datáfono y miras la pantalla esperando el «pago aceptado»: ahí está la <strong>retroalimentación</strong> cerrando el golfo de evaluación.</li>
+      <li>Sacas dinero del cajero y te peleas con un menú: golfo de ejecución.</li>
+      <li>Pides cita médica o haces un trámite en una <strong>sede electrónica</strong>.</li>
+      <li>Hablas con un asistente de voz o consultas una IA: interacción conversacional.</li>
+    </ul>
+    <p>Nada de esto es «usar el ordenador» en el sentido antiguo. Todo es interacción persona-ordenador. La disciplina, lejos de ser abstracta, describe el tejido digital de tu vida.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Antes de seguir leyendo, cuenta cuántos «sistemas interactivos» distintos has usado hoy desde que te has levantado. Casi seguro pasarás de diez. Todos son objeto de esta asignatura.</p>
+    </div>
+  </section>
+
+  <section id="datos" aria-labelledby="datos-h">
+    <h3 id="datos-h"><span class="num" aria-hidden="true">2.2</span>Anclaje real: ¿cuánta interacción hay en España?</h3>
+
+    <p>Que la interacción esté en todas partes no es una impresión: es un hecho medido. El Instituto Nacional de Estadística (INE) publica cada año la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong>.</p>
+    <p>Sus datos de 2025 dibujan un país casi totalmente mediado por interfaces:</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Datos de población de 16 a 74 años. Fuente: INE, Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025 (publicada en noviembre de 2025).</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Usó Internet en los últimos 3 meses</td><td class="fig">96,3 %</td></tr>
+          <tr><td>Se conecta a diario</td><td class="fig">92,5 %</td></tr>
+          <tr><td>Hogares con acceso a Internet</td><td class="fig">97,4 %</td></tr>
+          <tr><td>Hogares con algún ordenador (sobremesa, portátil o tableta)</td><td class="fig">83,8 %</td></tr>
+          <tr><td>Interactuó con la Administración por Internet (últimos 12 meses)</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Usó alguna herramienta de IA generativa (últimos 3 meses)</td><td class="fig">37,9 %</td></tr>
+          <tr><td>Posee habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Lee la última cifra con cuidado: si dos de cada tres personas tienen habilidades digitales «básicas o avanzadas», <strong>una de cada tres no las tiene</strong>. Para ese tercio, una interfaz mal diseñada no es una molestia: es un muro.</p>
+    <p>Y un dato cercano a vosotros: en <strong>Extremadura</strong>, según la explotación de esa misma encuesta, el 93,9&nbsp;% de la población de 16 a 74 años usó Internet en los últimos tres meses, frente al 96,3&nbsp;% nacional. La brecha territorial es pequeña pero real.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuando casi toda la ciudadanía interactúa a diario con sistemas (sanidad, banca, administración), la calidad de la interacción deja de ser un detalle de producto y se convierte en una cuestión de <strong>inclusión y derechos</strong>.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.3</span>Retos de observación para esta semana</h3>
+
+    <p>La IPO se aprende mirando. Estos retos no requieren programar nada: solo observar tu entorno con las gafas conceptuales de la Parte 1. Anótalos para comentarlos en clase.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Auditoría de un día</span>
+      <p>Durante 24 horas, apunta cada sistema interactivo que uses. Clasifícalos por tipo de interacción: táctil, por voz, físico (botones), biométrico. ¿Cuál usas más y por qué?</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Caza del golfo de evaluación</span>
+      <p>Encuentra un sistema en el que, tras hacer una acción, <strong>no supiste si había funcionado</strong> (un botón que no respondía, un envío sin confirmación). Describe qué retroalimentación habría cerrado ese golfo.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · El significante engañoso</span>
+      <p>Localiza una «puerta Norman» digital o física: un control que sugiere una acción equivocada. Haz una foto o un boceto y explica por qué confunde.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 4 · Traduce un error</span>
+      <p>Busca un mensaje de error técnico real (por ejemplo, «Error 0x80070057») y reescríbelo en lenguaje humano: qué pasó, por qué y qué puede hacer la persona ahora.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 5 · Observa a otra persona</span>
+      <p>Pide a alguien (a poder ser, no de tu edad) que realice una tarea sencilla en una app y obsérvale en silencio. Anota dónde duda o se atasca. Acabas de hacer tu primer mini-test de usabilidad.</p>
+    </div>
+  </section>
+
+  <section id="normativa" aria-labelledby="normativa-h">
+    <h3 id="normativa-h"><span class="num" aria-hidden="true">2.4</span>Anclaje normativo: cuando diseñar bien es obligatorio</h3>
+
+    <p>Aquí está la transferencia más importante para tu futuro profesional: hoy, en Europa, diseñar de forma usable y accesible no es solo «buena práctica». En muchos casos, <strong>es la ley</strong>.</p>
+    <p>Estas son las normas que enmarcan la asignatura y que manejarás en el proyecto:</p>
+    <ul>
+      <li><strong>ISO 9241-210:2019</strong> — define el proceso de Diseño Centrado en el Humano para sistemas interactivos.</li>
+      <li><strong>WCAG</strong> (Pautas de Accesibilidad para el Contenido Web, del W3C-WAI) — los criterios de accesibilidad web, organizados en niveles A, AA y AAA.</li>
+      <li><strong>EN 301 549</strong> — la norma europea de accesibilidad para productos y servicios TIC.</li>
+      <li><strong>Directiva (UE) 2019/882</strong>, conocida como «Acta Europea de Accesibilidad» — fija requisitos de accesibilidad para productos y servicios, y es de aplicación desde 2025.</li>
+    </ul>
+    <p>Fíjate en la consecuencia práctica: muchos productos digitales (banca electrónica, comercio en línea, transporte) deben cumplir requisitos de accesibilidad para venderse legalmente en la Unión Europea.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La accesibilidad ya no es opcional. Como ingeniero, entregar un sistema inaccesible puede ser, además de un fallo de calidad, un <strong>incumplimiento legal</strong>. La IPO te da las herramientas para no caer en él.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.5</span>Tu entorno: por qué te concierne como futuro ingeniero</h3>
+
+    <p>Dentro de poco serás tú quien diseñe la sede electrónica de un ayuntamiento, la app de un hospital o el sistema interno de una empresa. Las decisiones de interacción que tomes afectarán a personas reales.</p>
+    <p>Recuerda el dato del INE: el 80,7&nbsp;% de la población interactúa con la Administración por Internet. Si tu interfaz excluye a parte de ese público, excluyes a ciudadanos de servicios esenciales.</p>
+    <p>Esto conecta directamente con lo que esta asignatura espera de ti, según el plan docente:</p>
+    <ul>
+      <li>Adoptar <strong>soluciones concretas a las discapacidades</strong> de los usuarios, aplicando los principios del «diseño para todos» (competencia <strong>CI17</strong>, resultados de aprendizaje del curso).</li>
+      <li>Diseñar, evaluar y asegurar la <strong>accesibilidad, usabilidad y ergonomía</strong> de los sistemas (competencia <strong>CG03</strong>).</li>
+      <li>Saber <strong>transmitir</strong> soluciones a públicos especializados y no especializados (competencia <strong>CB04</strong>): por eso el proyecto incluye una presentación oral accesible.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La IPO convierte una habilidad técnica en una responsabilidad social: <strong>quien diseña la interacción decide quién queda dentro y quién queda fuera</strong> del mundo digital.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Por qué decimos que «la interfaz es el sistema» para el usuario?</summary>
+      <p>Porque la interfaz es lo único que la persona percibe y manipula. No ve el código ni la arquitectura interna; juzga (y usa) el sistema solo a través de lo que la interfaz le muestra. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. Diferencia entre golfo de ejecución y golfo de evaluación.</summary>
+      <p>El golfo de ejecución es la distancia entre lo que quiero hacer y saber qué acción realizar en el sistema. El golfo de evaluación es la distancia entre el estado del sistema y entender si mi acción tuvo el efecto esperado. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Qué relación tiene la IPO con la Ingeniería del Software que ya conoces?</summary>
+      <p>La Ingeniería del Software se ocupa de construir bien el sistema; la IPO, de que ese sistema sea el correcto para las personas y resulte usable. La usabilidad y la accesibilidad son atributos de calidad, y la norma ISO 9241-210 (Diseño Centrado en el Humano) tiende el puente entre ambas. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Cita una razón legal por la que hoy debes diseñar de forma accesible.</summary>
+      <p>La Directiva (UE) 2019/882 («Acta Europea de Accesibilidad») exige requisitos de accesibilidad a muchos productos y servicios digitales para poder ofrecerse en la UE. Diseñar de forma inaccesible puede suponer un incumplimiento legal. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Interacción Persona-Ordenador (IPO / HCI)</dt>
+      <dd>Disciplina que estudia el diseño, la evaluación y la implementación de sistemas interactivos para uso humano, y los fenómenos que rodean ese uso.</dd>
+      <dt>Interfaz</dt>
+      <dd>Superficie de contacto entre la persona y el sistema; todo aquello que el usuario ve, toca u oye.</dd>
+      <dt>Usabilidad</dt>
+      <dd>Medida de lo eficaz, eficiente y satisfactorio que resulta usar un sistema para alcanzar un objetivo en un contexto dado.</dd>
+      <dt>Accesibilidad</dt>
+      <dd>Grado en que un sistema puede ser utilizado por el mayor número de personas posible, incluidas las que tienen discapacidad.</dd>
+      <dt>Diseño Centrado en el Humano (DCH)</dt>
+      <dd>Proceso iterativo, definido en ISO 9241-210, que sitúa a las personas usuarias en el centro de cada decisión de diseño.</dd>
+      <dt>Modelo mental</dt>
+      <dd>Idea que la persona se forma sobre cómo funciona un sistema; guía sus acciones aunque no sea técnicamente correcta.</dd>
+      <dt>Imagen del sistema</dt>
+      <dd>Todo lo que el sistema comunica al exterior (interfaz, mensajes, documentación); único puente entre el modelo del diseñador y el del usuario.</dd>
+      <dt>Affordance</dt>
+      <dd>Relación entre un objeto y las acciones que permite realizar (una asa «ofrece» agarrar).</dd>
+      <dt>Significante</dt>
+      <dd>Pista perceptible que indica dónde y cómo actuar (un subrayado, una sombra, una flecha).</dd>
+      <dt>Restricciones (constraints)</dt>
+      <dd>Límites que reducen las acciones posibles y previenen errores; pueden ser físicas, lógicas, culturales o semánticas.</dd>
+      <dt>Mapeo</dt>
+      <dd>Correspondencia entre un control y su efecto; es «natural» cuando aprovecha analogías espaciales o físicas (subir un mando para subir el volumen).</dd>
+      <dt>Visibilidad</dt>
+      <dd>Principio según el cual las opciones relevantes y el estado del sistema deben estar a la vista; lo que no se ve, no se usa.</dd>
+      <dt>Golfo de ejecución</dt>
+      <dd>Distancia entre la intención del usuario y las acciones que el sistema le ofrece para lograrla.</dd>
+      <dt>Golfo de evaluación</dt>
+      <dd>Distancia entre el estado real del sistema y la interpretación que de él hace la persona.</dd>
+      <dt>Siete etapas de la acción</dt>
+      <dd>Ciclo de Norman que describe cómo actuamos sobre un sistema: cuatro etapas de ejecución (objetivo, intención, plan, acción) y tres de evaluación (percibir, interpretar, comparar).</dd>
+      <dt>Retroalimentación (feedback)</dt>
+      <dd>Respuesta del sistema que informa a la persona del resultado de su acción.</dd>
+      <dt>WIMP</dt>
+      <dd>Paradigma de interfaz gráfica basado en ventanas, iconos, menús y puntero (del inglés <em>Windows, Icons, Menus, Pointer</em>).</dd>
+      <dt>Experiencia de usuario (UX)</dt>
+      <dd>Conjunto de percepciones y respuestas de una persona derivadas del uso de un producto o servicio.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>La IPO estudia que las personas <strong>puedan usar</strong> los sistemas, no solo que estos funcionen.</li>
+        <li>Sus piezas: <strong>persona + ordenador + interacción</strong>, dentro de un <strong>contexto de uso</strong>.</li>
+        <li>La historia avanzó acercando la interacción al lenguaje humano: señalar, tocar, hablar.</li>
+        <li>Conceptos núcleo de Norman: <strong>modelo mental</strong>, <strong>affordance/significante</strong> y los dos <strong>golfos</strong>.</li>
+        <li>En Ingeniería del Software, usabilidad y accesibilidad son <strong>atributos de calidad</strong>; el DCH (ISO 9241-210) las integra en el proceso.</li>
+        <li>Una mala interacción tiene costes reales, desde el abandono hasta el riesgo en sistemas críticos.</li>
+        <li>Con casi toda la población interactuando a diario (datos del INE), la accesibilidad es <strong>inclusión, derechos y, hoy, obligación legal</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Norman, D. A. <em>El diseño emocional</em>. Paidós, 2005.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Krug, S. <em>Rocket Surgery Made Easy</em>. New Riders, 2010.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas, recursos y datos:</p>
+    <ol class="refs" start="10">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos.</em></li>
+      <li>W3C — Web Accessibility Initiative (WAI). Pautas de Accesibilidad para el Contenido Web (WCAG). <a href="http://www.w3.org/wai">w3.org/wai</a></li>
+      <li>UNE-EN 301 549. <em>Requisitos de accesibilidad para productos y servicios TIC.</em></li>
+      <li>Directiva (UE) 2019/882, sobre los requisitos de accesibilidad de los productos y servicios («Acta Europea de Accesibilidad»).</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de Tecnologías de la Información y Comunicación en los Hogares 2025</em>. Nota de prensa, noviembre de 2025.</li>
+      <li>Nielsen Norman Group. <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO). <a href="http://www.aipo.es">aipo.es</a></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 1 «Conceptos básicos» · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

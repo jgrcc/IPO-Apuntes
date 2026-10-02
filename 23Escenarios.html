@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: los escenarios como técnica para poner a las personas en acción dentro de la Actividad A del Diseño Centrado en lo Humano (ISO 9241-210). Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Escenarios: poner a las personas en acción · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>Escenarios: poner a las personas en acción
+      <span class="sub">La técnica narrativa que conecta a tus «personas» con sus tareas y con los requisitos (Actividad A → B)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CI17 · CG05 · CB04 · CT09</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#de-la-persona">De la persona estática a la historia: por qué escenarios</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es un escenario? Persona + objetivo + contexto</a></li>
+          <li class="lvl2"><a href="#tipos">Tipos de escenario: contexto, uso diario y validación</a></li>
+          <li class="lvl2"><a href="#vs">Escenario, caso de uso e historia de usuario</a></li>
+          <li class="lvl2"><a href="#historia">Origen: de la ingeniería del software al diseño</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#proceso">Cómo se escribe un escenario paso a paso</a></li>
+          <li class="lvl2"><a href="#ejemplo">Un escenario de cada tipo con Marta (contexto, uso diario y validación)</a></li>
+          <li class="lvl2"><a href="#journey">Del escenario al journey map: el viaje de Marta</a></li>
+          <li class="lvl2"><a href="#errores">Errores típicos al escribir escenarios</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: el escenario como puente a tareas y requisitos</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes continúan justo donde lo dejamos. En la sesión anterior aprendiste a definir <strong>quién</strong> usará el sistema con la técnica de las <strong>personas</strong> de Cooper. Hoy las ponemos en movimiento.</p>
+    <p>Una persona, por sí sola, es una foto fija: nos dice quién es Marta y qué objetivos tiene, pero no qué <em>ocurre</em> cuando intenta lograrlos. Los <strong>escenarios</strong> son esa película: la historia de una persona usando (o intentando usar) el sistema para alcanzar un objetivo en un contexto.</p>
+    <p>El objetivo de la sesión es triple: entender <strong>qué es</strong> un escenario, <strong>qué tipos</strong> hay y <strong>cómo se escribe</strong>, y ver que es la pieza que conecta la Actividad A con los <strong>requisitos</strong> y el <strong>análisis de tareas</strong>.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en un escenario narrado, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un <strong>escenario</strong> es una <strong>historia de uso</strong>: una narración concreta de una <strong>persona</strong> intentando lograr un <strong>objetivo</strong> con el sistema, en un <strong>contexto</strong> determinado. Si la persona responde al «¿quién?», el escenario responde al «¿qué pasa cuando lo usa?».</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es, qué tipos hay y de dónde viene</h2>
+    <p class="lead">Por qué necesitamos escenarios, qué son exactamente, los tres tipos de Cooper, en qué se diferencian de un caso de uso o una historia de usuario, y su origen.</p>
+  </div>
+
+  <section id="de-la-persona" aria-labelledby="de-la-persona-h">
+    <h3 id="de-la-persona-h"><span class="num" aria-hidden="true">1.1</span>De la persona estática a la historia: por qué escenarios</h3>
+
+    <p>Tienes a Marta y a Don Ernesto perfectamente descritos. Estupendo. Pero una persona no diseña nada por sí sola: es un retrato, no una situación. Falta verla <strong>actuar</strong>.</p>
+    <p>El escenario aporta ese movimiento. Coge a la persona, le da un <strong>objetivo concreto</strong> y la mete en un <strong>contexto</strong>, y cuenta qué pasa paso a paso. De repente, los huecos del diseño se vuelven evidentes.</p>
+    <p>Es la diferencia entre tener los personajes de una película y tener el <strong>guion</strong>. Los personajes interesan; pero es el guion el que revela qué tiene que ocurrir, en qué orden y dónde se atasca la trama.</p>
+
+    <h4>Para qué sirven, en concreto</h4>
+    <ul>
+      <li><strong>Hacen concreto lo abstracto.</strong> «Pagar el bus» es vago; un escenario de Marta pagando con una mano, de pie y sin cobertura, no lo es.</li>
+      <li><strong>Revelan necesidades y requisitos.</strong> Al narrar el uso, afloran cosas que el sistema <em>tiene</em> que permitir. Esos son los requisitos de la Actividad B.</li>
+      <li><strong>Comunican.</strong> Una historia se entiende y se recuerda mejor que una lista de funciones. Alinean al equipo.</li>
+      <li><strong>Prueban ideas baratas.</strong> Un escenario detecta un fallo de diseño antes de programar una sola línea: cuesta una conversación, no un sprint.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La persona es el <strong>personaje</strong>; el escenario es el <strong>guion</strong>. Sin guion, los personajes no diseñan nada. El escenario convierte un retrato estático en una situación de uso que revela necesidades, comunica y permite probar ideas casi gratis.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es un escenario? Persona + objetivo + contexto</h3>
+
+    <p>Un <strong>escenario</strong> es una <strong>descripción narrativa</strong>, concreta y en presente, de cómo una persona concreta realiza una tarea para alcanzar un objetivo, en un contexto de uso determinado. No es una especificación técnica: es una <strong>historia</strong>.</p>
+    <p>Su fórmula es sencilla y enlaza todo lo anterior: una <strong>persona</strong> (el «¿quién?» del tema anterior) más un <strong>objetivo</strong> (sus objetivos finales) más un <strong>contexto</strong> (los cuatro componentes del contexto de uso) producen una historia de uso.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 360" role="img" aria-labelledby="sc-title sc-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="sc-title">Cómo se forma un escenario y qué produce</title>
+        <desc id="sc-desc">Tres entradas a la izquierda se combinan para formar un escenario: una persona (el quién), un objetivo (qué quiere lograr) y un contexto (dónde y con qué). En el centro, esas tres entradas producen el escenario, una historia de uso. A la derecha, el escenario alimenta dos resultados: las necesidades y requisitos de usuario, que pasan a la Actividad B, y el análisis de tareas.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+        <!-- Entradas -->
+        <rect x="16" y="26" width="194" height="64" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="113" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">PERSONA</text>
+        <text x="113" y="73" text-anchor="middle" font-size="12" fill="#211C16">¿Quién? (Marta)</text>
+        <rect x="16" y="148" width="194" height="64" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="113" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5A12">OBJETIVO</text>
+        <text x="113" y="195" text-anchor="middle" font-size="12" fill="#211C16">¿Qué quiere lograr?</text>
+        <rect x="16" y="270" width="194" height="64" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="113" y="296" text-anchor="middle" font-size="14" font-weight="700" fill="#8A3412">CONTEXTO</text>
+        <text x="113" y="317" text-anchor="middle" font-size="12" fill="#211C16">¿Dónde y con qué?</text>
+        <!-- Centro -->
+        <rect x="266" y="120" width="180" height="120" rx="12" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="3"></rect>
+        <text x="356" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#2C5A2E">ESCENARIO</text>
+        <text x="356" y="194" text-anchor="middle" font-size="13" fill="#211C16">Historia de uso</text>
+        <text x="356" y="214" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">(narrativa, en presente)</text>
+        <!-- Salidas -->
+        <rect x="500" y="78" width="206" height="64" rx="10" fill="#FDFBF6" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="603" y="104" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5563">Necesidades y requisitos</text>
+        <text x="603" y="125" text-anchor="middle" font-size="11.5" fill="#211C16">→ Actividad B</text>
+        <rect x="500" y="218" width="206" height="64" rx="10" fill="#FDFBF6" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="603" y="244" text-anchor="middle" font-size="13.5" font-weight="700" fill="#7A5A12">Análisis de tareas</text>
+        <text x="603" y="265" text-anchor="middle" font-size="11.5" fill="#211C16">qué pasos da</text>
+        <!-- Flechas entradas → centro -->
+        <line x1="210" y1="58" x2="262" y2="150" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="210" y1="180" x2="262" y2="180" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="210" y1="302" x2="262" y2="210" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <!-- Flechas centro → salidas -->
+        <line x1="446" y1="160" x2="496" y2="110" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="446" y1="200" x2="496" y2="250" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+      </svg>
+      <figcaption>Un escenario combina persona, objetivo y contexto en una historia de uso, y de esa historia se extraen necesidades y requisitos (que pasan a la Actividad B) y el análisis de tareas. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <h4>Lo que hace bueno a un escenario</h4>
+    <ul>
+      <li><strong>Parte de una persona real</strong> (no de un usuario genérico): protagoniza Marta, no «el usuario».</li>
+      <li><strong>Está dirigido por un objetivo</strong>: la historia avanza hacia algo que la persona quiere lograr.</li>
+      <li><strong>Es concreto y específico</strong>: una situación puntual, no «a veces el usuario podría…».</li>
+      <li><strong>Es rico en contexto</strong>: dónde está, con qué, con cuánta prisa, con qué conexión.</li>
+      <li><strong>Es plausible</strong>: cuelga de la investigación, no de la fantasía del equipo.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Escenario = <strong>persona + objetivo + contexto → historia</strong>. Es narrativo, concreto y plausible. De él se extraen los <strong>requisitos</strong> (Actividad B) y los <strong>pasos</strong> (análisis de tareas). Es el eslabón entre saber a quién sirves y saber qué tienes que construir.</p>
+    </div>
+  </section>
+
+  <section id="tipos" aria-labelledby="tipos-h">
+    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.3</span>Tipos de escenario: contexto, uso diario y validación</h3>
+
+    <p>No todos los escenarios sirven para lo mismo. En el Diseño Orientado a Objetivos de Cooper se usan, en este orden, <strong>tres tipos</strong>, y cada uno aparece en un momento distinto del proceso y aporta una capa distinta de detalle. El de validación, además, tiene <strong>tres variedades</strong> propias.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>Escenario de contexto (o «día en la vida»).</b> Es el primero y el más importante; se escribe en la fase de análisis, <strong>antes de diseñar nada</strong>. Se cuenta desde el punto de vista de la persona y describe su <strong>experiencia ideal</strong> logrando el objetivo a lo largo de su jornada. Se escribe <strong>sin describir la interfaz</strong>: se asume que el sistema «hace magia». Su finalidad no es enseñar pantallas, sino <strong>descubrir qué necesita</strong> la persona; de él se extraen las necesidades y los requisitos.</li>
+      <li><b>Escenario de uso diario</b> (en inglés, <em>key path</em>). Se escribe ya con un <strong>concepto de diseño</strong> sobre la mesa, en la fase de refinamiento. Detalla, con precisión, las <strong>interacciones más frecuentes e importantes</strong>: las que la persona repite casi cada vez que usa el producto. Aquí <strong>sí</strong> aparecen pantallas, gestos y pasos concretos. Es el «camino feliz», el grueso del diseño: el recorrido que hay que pulir hasta dejarlo impecable, porque es el que más se transita.</li>
+      <li><b>Escenario de validación (o de comprobación).</b> No introduce diseño nuevo: <strong>somete a prueba</strong> el que ya existe con preguntas «¿y si…?». Sirve para encontrar grietas antes de programar. Cooper lo divide en tres variedades, según qué tipo de situación se pone a prueba.</li>
+    </ol>
+
+    <h4>Las tres variedades del escenario de validación (según Cooper)</h4>
+    <ul>
+      <li><strong>Variante del uso diario.</strong> Otras formas de recorrer el mismo camino principal: usuarios que hacen la tarea frecuente de una manera distinta a la prevista. Comprueba que el «camino feliz» admite alternativas razonables.</li>
+      <li><strong>Uso necesario.</strong> Acciones que <strong>hay que poder hacer, pero rara vez</strong>: configurar una cuenta, darse de baja, cambiar un dato. Son infrecuentes, así que no deben estorbar el uso diario, pero cuando se necesitan tienen que funcionar sin fricción.</li>
+      <li><strong>Caso extremo.</strong> Situaciones atípicas, raras o de error: quedarse sin cobertura, batería al límite, datos incompletos, valores fuera de rango. El sistema debe <strong>aguantarlas con dignidad</strong>, pero —ojo— <strong>no deben dirigir el diseño principal</strong>.</li>
+    </ul>
+    <p>Esa última advertencia es clave: un error muy común es dejar que los <strong>casos extremos manden</strong>. Si diseñas toda la app pensando en el 1 % de situaciones raras, estropeas la experiencia del 99 %. Los casos extremos se atienden, pero no protagonizan.</p>
+
+    <p>Conviene además distinguir dos pares útiles: el escenario <strong>actual</strong> (<em>as-is</em>: cómo se hace hoy, a menudo mal) frente al <strong>propuesto</strong> (<em>to-be</em>: cómo será con tu sistema); y el escenario <strong>positivo</strong> (uso previsto) frente al <strong>negativo</strong> (mal uso o abuso que conviene prevenir).</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El escenario de contexto se escribe <strong>antes</strong> de dibujar una sola pantalla, y a propósito. Si empiezas describiendo botones, te atas a una solución concreta antes de haber entendido la necesidad. Mantenerlo «sin interfaz» te obliga a pensar primero en la persona y su objetivo, no en tu maqueta favorita.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tres tipos, en orden: <strong>contexto</strong> (la experiencia ideal, sin interfaz, para hallar necesidades), <strong>uso diario</strong> (las interacciones más frecuentes, ya con diseño) y <strong>validación</strong> (poner a prueba lo diseñado). El de validación tiene tres variedades: <strong>variante del uso diario</strong>, <strong>uso necesario</strong> y <strong>caso extremo</strong>; los casos extremos se atienden, pero no deben dirigir el diseño.</p>
+    </div>
+  </section>
+
+  <section id="vs" aria-labelledby="vs-h">
+    <h3 id="vs-h"><span class="num" aria-hidden="true">1.4</span>Escenario, caso de uso e historia de usuario</h3>
+
+    <p>Como futuro ingeniero o ingeniera del software, ya conoces los <strong>casos de uso</strong>. Conviene situar el escenario junto a ellos y junto a las <strong>historias de usuario</strong> ágiles, porque se complementan y a veces se confunden.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>El escenario frente al caso de uso y la historia de usuario. No compiten: se usan en momentos distintos.</caption>
+      <thead>
+        <tr><th scope="col">Artefacto</th><th scope="col">Qué es</th><th scope="col">Estilo</th><th scope="col">Cuándo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Escenario</th><td>Una historia concreta de un uso específico</td><td>Narrativo, rico en contexto, informal</td><td>Análisis (Actividad A); explorar y comunicar</td></tr>
+        <tr><th scope="row">Caso de uso</th><td>Descripción estructurada de la interacción actor-sistema, con todos los flujos</td><td>Formal, generaliza (cubre muchos casos)</td><td>Especificación de requisitos (Ing. del Software)</td></tr>
+        <tr><th scope="row">Historia de usuario</th><td>Necesidad mínima en una frase</td><td>«Como [persona], quiero [acción] para [objetivo]»</td><td>Backlog ágil; unidad de trabajo</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>La relación es bonita: un <strong>caso de uso</strong> puede verse como la <em>generalización</em> de muchos escenarios concretos; un <strong>escenario</strong> es una de esas historias particulares; y una <strong>historia de usuario</strong> es la semilla comprimida de un escenario. Del relato concreto subes a lo general (caso de uso) o lo destilas a una frase (historia de usuario).</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El escenario es <strong>concreto y narrativo</strong>; el caso de uso, <strong>general y estructurado</strong>; la historia de usuario, <strong>una frase</strong>. Un caso de uso generaliza muchos escenarios; una historia de usuario resume uno. Enlazan tu formación en ingeniería del software (CG05) con el DCH.</p>
+    </div>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.5</span>Origen: de la ingeniería del software al diseño</h3>
+
+    <p>La idea de usar historias para diseñar no es nueva. La ingeniería del software lleva décadas usando escenarios para capturar requisitos: contar cómo se usará un sistema antes de construirlo.</p>
+    <p>En el campo de la interacción, fueron sobre todo <strong>John Carroll</strong> y Mary Beth Rosson quienes formalizaron el <em>Diseño Basado en Escenarios</em> (<em>Scenario-Based Design</em>) en los años noventa, defendiendo la narración como herramienta central para razonar sobre el uso.</p>
+    <p><strong>Alan Cooper</strong>, a su vez, integró los escenarios con las personas dentro de su Diseño Orientado a Objetivos: las personas dan el «quién», los escenarios dan el «qué ocurre». Ambas piezas se necesitan.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La palabra «escenario» viene del teatro y el cine: el <em>scenario</em> era el resumen de la acción de una obra. No es casualidad que en diseño los escenarios usen un lenguaje de guion (un protagonista, un objetivo, un conflicto que resolver). Diseñar es, en parte, contar bien la historia de un uso futuro.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo escribir un escenario paso a paso, un ejemplo completo con Marta del que extraemos requisitos, los errores más comunes y cómo será tu entregable, puente hacia las tareas y los requisitos.</p>
+  </div>
+
+  <section id="proceso" aria-labelledby="proceso-h">
+    <h3 id="proceso-h"><span class="num" aria-hidden="true">2.1</span>Cómo se escribe un escenario paso a paso</h3>
+
+    <p>Escribir un escenario no es redactar un cuento bonito. Es un procedimiento con un fin: pasar de la persona a los requisitos. Esta es la secuencia que propone Cooper.</p>
+
+    <ol class="steps" role="list">
+      <li><b>1. Elige una persona y uno de sus objetivos.</b> Empieza por la <strong>persona primaria</strong> (Marta) y uno de sus <strong>objetivos finales</strong> («tener el billete validado antes de subir»).</li>
+      <li><b>2. Escribe el escenario de contexto.</b> Narra, en presente y en pocas frases, su experiencia ideal logrando ese objetivo en su contexto real. <strong>Sin describir la interfaz</strong>: céntrate en qué consigue, no en qué botón pulsa.</li>
+      <li><b>3. Extrae las necesidades y requisitos.</b> Relee el escenario y subraya lo que el sistema <strong>tiene que permitir</strong>. Cada necesidad se reformula como requisito verificable: esto ya es materia de la <strong>Actividad B</strong>.</li>
+      <li><b>4. Escribe los escenarios de uso diario.</b> Con un primer concepto de diseño, detalla las interacciones más frecuentes: ahora sí, qué ve y qué toca la persona.</li>
+      <li><b>5. Escribe escenarios de validación.</b> Pregunta «¿y si…?» (sin cobertura, con prisa, error al pagar) y comprueba si el diseño aguanta. Si no, vuelve a diseñar.</li>
+      <li><b>6. Itera.</b> Los escenarios se reescriben a medida que aprendes. Son material vivo, no un documento que se firma y se archiva.</li>
+    </ol>
+
+    <p>Fíjate en el orden: <strong>primero la necesidad (pasos 1-3), después la solución (4-5)</strong>. Es el mismo principio del DCH: entender antes de diseñar. El escenario de contexto es tu salvaguarda contra enamorarte de una pantalla antes de tiempo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Secuencia: <strong>persona + objetivo → escenario de contexto (sin interfaz) → extraer requisitos → uso diario → validación → iterar</strong>. Primero la necesidad, luego la solución. El escenario es la máquina que convierte personas en requisitos.</p>
+    </div>
+  </section>
+
+  <section id="ejemplo" aria-labelledby="ejemplo-h">
+    <h3 id="ejemplo-h"><span class="num" aria-hidden="true">2.2</span>Un escenario de cada tipo con Marta (contexto, uso diario y validación)</h3>
+
+    <p>Retomamos a <strong>Marta Rivero</strong>, nuestra persona primaria de la app de pago del transporte, y uno de sus objetivos: <em>tener el billete validado en dos toques antes de que llegue el bus</em>. Su contexto, según vimos al definirla, es marcadamente móvil: de pie, con una mano y con conexión que a veces falla.</p>
+
+    <p>Sobre ese mismo objetivo vamos a escribir <strong>un escenario de cada tipo</strong>, para ver cómo cambian el foco y el nivel de detalle al pasar de uno a otro.</p>
+
+    <h4>Tipo 1 · Escenario de contexto (sin interfaz)</h4>
+    <p>Primero, la experiencia ideal, sin hablar de pantallas: solo qué consigue Marta y en qué contexto.</p>
+
+    <article class="scenario" aria-label="Escenario de contexto de ejemplo">
+      <span class="stag">Escenario de contexto · sin interfaz · ejemplo didáctico</span>
+      <p class="narr">Marta sale de clase con el tiempo justo. Ve su autobús a dos paradas de distancia y aprieta el paso. Saca el móvil con una mano —en la otra lleva la mochila— y quiere <em>tener listo el pago</em> antes de subir. Llega a la marquesina, donde la cobertura es irregular. En cuestión de segundos, deja <em>el billete preparado</em> y, al subir, lo <em>valida sin dudar</em>, aunque en ese instante la red se ha caído. Sube, encuentra sitio y guarda el móvil. No ha tenido que pensar ni teclear nada.</p>
+    </article>
+
+    <p>Ese relato, escrito sin una sola pantalla, ya nos «chiva» lo que el sistema necesita. Subrayando las necesidades, salen requisitos concretos y verificables para la Actividad B:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>De la historia a los requisitos: necesidades detectadas en el escenario de contexto y su requisito verificable.</caption>
+      <thead>
+        <tr><th scope="col">En el escenario…</th><th scope="col">Requisito que se deriva (Actividad B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">«con una mano… sin teclear»</th><td>Pagar y validar debe lograrse en ≤ 2 toques, con objetivos táctiles grandes y sin entrada de texto.</td></tr>
+        <tr><th scope="row">«la red se ha caído»</th><td>El billete debe poder validarse sin conexión (disponible offline tras prepararlo).</td></tr>
+        <tr><th scope="row">«en cuestión de segundos»</th><td>El flujo de pago debe completarse en menos de un umbral de tiempo definido (p. ej., 10 s).</td></tr>
+        <tr><th scope="row">«valida sin dudar»</th><td>El estado «pagado/validado» debe ser inequívoco y visible de un vistazo.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tipo 2 · Escenario de uso diario (ya con diseño)</h4>
+    <p>Ahora suponemos un primer concepto de diseño y narramos el recorrido que Marta repetirá casi cada día, ya con detalle de interacción.</p>
+
+    <article class="scenario" aria-label="Escenario de uso diario de ejemplo">
+      <span class="stag">Escenario de uso diario · con interfaz · ejemplo didáctico</span>
+      <p class="narr">Marta despierta el móvil y, desde la propia pantalla de bloqueo, abre la app de un toque. Lo primero que ve es un botón grande y centrado: <em>Pagar viaje</em>. Lo pulsa. Aparece el importe y un único botón <em>Confirmar</em>. Vuelve a tocar y la pantalla se vuelve verde con un gran <em>Billete listo</em> y un código. Sube al autobús, acerca el móvil al validador y un pitido con un tic le confirman el pago. Dos toques, sin teclear nada, en menos de cinco segundos.</p>
+    </article>
+    <p>Este es el «camino feliz», el que hay que dejar impecable porque es el que más se recorre. Fíjate en que aquí <strong>sí</strong> hablamos de pantallas y gestos concretos: es lo propio de este tipo, no del de contexto.</p>
+
+    <h4>Tipo 3 · Escenario de validación («¿y si…?»)</h4>
+    <p>Por último, sometemos ese diseño a una situación adversa —un <strong>caso extremo</strong>— para comprobar que aguanta.</p>
+
+    <article class="scenario" aria-label="Escenario de validación de ejemplo">
+      <span class="stag">Escenario de validación · caso extremo · ejemplo didáctico</span>
+      <p class="narr">Hoy Marta llega a la parada con un 4 % de batería y <em>sin cobertura</em>. Abre la app: como preparó el billete por la mañana, la app lo tiene guardado y lo muestra igual, con un aviso discreto de <em>sin conexión</em>. Valida acercando el móvil; el validador lee el código almacenado y confirma. Cuando vuelve la cobertura, la app sincroniza el viaje en segundo plano. Aunque el móvil se apaga poco después, el pago ya había quedado registrado.</p>
+    </article>
+
+    <p>Este escenario no añade diseño nuevo: <strong>pone a prueba</strong> el que ya teníamos. Y destapa requisitos que el «camino feliz» ocultaba (validación sin conexión, billete persistente). Para <strong>Don Ernesto</strong> escribiríamos sus propios tres escenarios, que harían aflorar necesidades de legibilidad y confirmación que los de Marta no revelan.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los tres tipos sobre un mismo objetivo muestran la progresión: el de <strong>contexto</strong> (sin interfaz) destila requisitos; el de <strong>uso diario</strong> pule el recorrido más frecuente; el de <strong>validación</strong> estresa el diseño y saca a la luz requisitos que el camino feliz escondía. Ese es el puente A→B: no inventas requisitos, los <strong>lees</strong> en las historias de uso de tu persona.</p>
+    </div>
+  </section>
+
+  <section id="journey" aria-labelledby="journey-h">
+    <h3 id="journey-h"><span class="num" aria-hidden="true">2.3</span>Del escenario al journey map: el viaje de Marta</h3>
+
+    <p>El escenario de contexto te da la historia <strong>en prosa</strong>. Está muy bien para entender y comunicar, pero un párrafo disimula una dimensión clave: <strong>cómo se siente</strong> la persona en cada momento. Ahí entra el <strong>journey map</strong>.</p>
+    <p>Un <strong>journey map</strong> (mapa de experiencia o mapa del viaje del usuario) es una <strong>visualización estructurada</strong> del recorrido completo que hace una persona para lograr un objetivo, dividido en <strong>fases</strong>, y que muestra en cada una qué hace, qué piensa, <strong>qué siente</strong> (una curva emocional), dónde se frustra (<strong>puntos de dolor</strong>) y qué se puede mejorar (<strong>oportunidades</strong>).</p>
+    <p>Dicho corto: si el escenario es la <em>película narrada</em>, el journey map es el <em>storyboard con termómetro emocional</em>. La misma historia, pero desplegada en una rejilla que todo el equipo abarca de un vistazo y en la que saltan a la vista los altibajos.</p>
+
+    <h4>Cómo se usa tras un escenario de contexto</h4>
+    <p>El journey map no compite con el escenario: lo <strong>continúa</strong>. El flujo natural es:</p>
+    <ol class="steps" role="list">
+      <li><b>1. Parte del escenario de contexto.</b> Ya tienes la historia de Marta logrando su objetivo. Esa narración es tu materia prima.</li>
+      <li><b>2. Trocea el viaje en fases.</b> Divide la historia en unos pocos momentos con sentido (antes, durante, después; o fases más concretas).</li>
+      <li><b>3. Rellena cada fase.</b> Para cada fase anota acciones y puntos de contacto, pensamientos y, sobre todo, la <strong>emoción</strong>.</li>
+      <li><b>4. Marca los puntos de dolor.</b> Señala dónde la emoción cae: ahí está el problema que hay que resolver.</li>
+      <li><b>5. Deriva oportunidades.</b> Cada punto de dolor se traduce en una oportunidad de diseño y, de ahí, en requisitos (Actividad B).</li>
+    </ol>
+    <p>Una precisión útil: puedes mapear el viaje <strong>actual</strong> (<em>as-is</em>: cómo se sufre hoy, para encontrar problemas) o el <strong>propuesto</strong> (<em>to-be</em>: el que describe tu escenario de contexto ideal). Ponerlos uno al lado del otro enseña, con claridad, el trabajo de diseño que queda por hacer.</p>
+
+    <h4>Las capas de un journey map</h4>
+    <ul>
+      <li><strong>Fases.</strong> Las etapas del viaje, en orden temporal. Son las columnas del mapa.</li>
+      <li><strong>Acciones y puntos de contacto (<em>touchpoints</em>).</strong> Qué hace la persona y a través de qué (la app, el validador, la parada…).</li>
+      <li><strong>Pensamientos.</strong> Qué se pregunta o espera en cada fase.</li>
+      <li><strong>Emociones (curva emocional).</strong> El elemento estrella: cómo sube y baja su ánimo a lo largo del viaje.</li>
+      <li><strong>Puntos de dolor.</strong> Los momentos de fricción o frustración (los valles de la curva).</li>
+      <li><strong>Oportunidades.</strong> Las mejoras de diseño que responden a cada punto de dolor.</li>
+    </ul>
+
+    <h4>El journey map de Marta (ejemplo)</h4>
+    <p><strong>Persona:</strong> Marta Rivero (primaria). <strong>Objetivo:</strong> pagar y validar el billete antes de subir. <strong>Alcance:</strong> desde que decide coger el bus hasta que está sentada.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Journey map de Marta para pagar el billete del autobús. Ejemplo didáctico. La intensidad emocional se ve en la curva siguiente.</caption>
+      <thead>
+        <tr><th scope="col">Fase</th><th scope="col">Qué hace (y dónde)</th><th scope="col">Qué piensa / siente</th><th scope="col">Punto de dolor → Oportunidad</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1. Se da cuenta</th><td>Sale de clase, ve el bus llegar y saca el móvil con una mano (en la parada)</td><td>«No llego… ¿pagaré a tiempo?» — prisa, tensión</td><td>La prisa presiona → permitir preparar el pago por adelantado</td></tr>
+        <tr><th scope="row">2. Prepara el pago</th><td>Abre la app, elige el viaje y confirma (móvil, una mano)</td><td>«Ojalá cargue…» — ansiedad por la cobertura</td><td>Cobertura irregular → billete disponible offline y pago en 2 toques sin teclear</td></tr>
+        <tr><th scope="row">3. Sube y valida</th><td>Acerca el móvil al validador del autobús</td><td>«¿Habrá pagado bien?» — duda y luego alivio</td><td>Duda de si pagó → confirmación inequívoca (color y sonido)</td></tr>
+        <tr><th scope="row">4. En el bus</th><td>Guarda el móvil y busca sitio</td><td>«Listo» — calma</td><td>(sin dolor) → registrar el viaje para su historial</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 340" role="img" aria-labelledby="jm-title jm-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="jm-title">Curva emocional del viaje de Marta para pagar el billete del autobús</title>
+        <desc id="jm-desc">Gráfico de la emoción de Marta a lo largo de cuatro fases. En la fase 1, cuando se da cuenta de que llega el bus, su emoción es media y tensa por la prisa. En la fase 2, al preparar el pago con cobertura irregular, la emoción cae a su punto más bajo, la frustración. En la fase 3, al subir y validar con una confirmación clara, la emoción sube a su punto más alto, el alivio. En la fase 4, ya sentada en el bus, la emoción se mantiene alta y tranquila.</desc>
+        <!-- Ejes -->
+        <line x1="86" y1="46" x2="86" y2="250" stroke="#211C16" stroke-width="2"></line>
+        <line x1="86" y1="250" x2="668" y2="250" stroke="#211C16" stroke-width="2"></line>
+        <text x="80" y="44" text-anchor="end" font-size="11.5" fill="#2C5A2E" font-weight="700">+ satisfecha</text>
+        <text x="80" y="264" text-anchor="end" font-size="11.5" fill="#8A3412" font-weight="700">− frustrada</text>
+        <!-- Línea neutra -->
+        <line x1="86" y1="150" x2="668" y2="150" stroke="#D8CFBF" stroke-width="1.5" stroke-dasharray="5 5"></line>
+        <text x="664" y="145" text-anchor="end" font-size="10.5" fill="#4A4136" font-style="italic">neutral</text>
+        <!-- Curva emocional -->
+        <polyline points="180,160 330,222 500,92 620,82" fill="none" stroke="#8A3412" stroke-width="3"></polyline>
+        <circle cx="180" cy="160" r="6" fill="#211C16"></circle>
+        <circle cx="330" cy="222" r="6" fill="#8A3412"></circle>
+        <circle cx="500" cy="92" r="6" fill="#2C5A2E"></circle>
+        <circle cx="620" cy="82" r="6" fill="#2C5A2E"></circle>
+        <!-- Anotaciones -->
+        <text x="330" y="244" text-anchor="middle" font-size="10.5" fill="#8A3412" font-weight="700">punto de dolor: cobertura</text>
+        <text x="500" y="78" text-anchor="middle" font-size="10.5" fill="#2C5A2E" font-weight="700">alivio: validado</text>
+        <!-- Etiquetas de fase -->
+        <text x="180" y="272" text-anchor="middle" font-size="11.5" fill="#211C16" font-weight="700">1 · Se da cuenta</text>
+        <text x="330" y="272" text-anchor="middle" font-size="11.5" fill="#211C16" font-weight="700">2 · Prepara el pago</text>
+        <text x="500" y="272" text-anchor="middle" font-size="11.5" fill="#211C16" font-weight="700">3 · Sube y valida</text>
+        <text x="620" y="272" text-anchor="middle" font-size="11.5" fill="#211C16" font-weight="700">4 · En el bus</text>
+      </svg>
+      <figcaption>La curva emocional del journey map de Marta: arranca tensa por la prisa, <strong>cae</strong> al preparar el pago con mala cobertura (el punto de dolor) y <strong>sube</strong> al validar con una confirmación clara. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <p>Lee el mapa de izquierda a derecha: el <strong>valle</strong> de la fase 2 es justo donde el diseño tiene que actuar, y la columna de oportunidades ya te da los requisitos (billete offline, pago en dos toques, confirmación inequívoca) que completan los que sacamos del escenario en 2.2.</p>
+    <p>Para <strong>Don Ernesto</strong>, la curva tendría otra forma: su valle no estaría en la cobertura, sino en la fase de validar, por la duda ante una confirmación poco legible. Mismo viaje, distinta persona, distinto punto de dolor.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El journey map viene del <strong>diseño de servicios</strong> y la experiencia de cliente (CX), no del software. Tiene un primo más completo, el <em>service blueprint</em>, que añade lo que ocurre «entre bambalinas» (sistemas y personas que el usuario no ve). El Nielsen Norman Group, en la webgrafía de la asignatura, mantiene guías de referencia sobre cómo construirlos.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>journey map</strong> convierte el escenario de contexto en una vista por <strong>fases</strong> con <strong>curva emocional</strong>, puntos de dolor y oportunidades. Se usa <strong>después</strong> del escenario para estructurarlo, ver dónde cae la emoción y derivar oportunidades que se vuelven requisitos. El escenario cuenta; el journey map <strong>mide el ánimo</strong> y señala dónde actuar.</p>
+    </div>
+  </section>
+
+  <section id="errores" aria-labelledby="errores-h">
+    <h3 id="errores-h"><span class="num" aria-hidden="true">2.4</span>Errores típicos al escribir escenarios</h3>
+
+    <p>El escenario es fácil de escribir y fácil de estropear. Estos son los fallos que más lastran un análisis (y una entrega).</p>
+    <ul>
+      <li><strong>Colar la interfaz demasiado pronto.</strong> Si el escenario de contexto ya habla de «pulsa el botón azul de arriba», has saltado a la solución sin entender la necesidad.</li>
+      <li><strong>Protagonista genérico.</strong> Si quien actúa es «el usuario» y no Marta, vuelves al usuario elástico: la historia se estira para justificar lo que quieras.</li>
+      <li><strong>Sin objetivo claro.</strong> Una historia que no avanza hacia algo que la persona quiere lograr no sirve para extraer requisitos.</li>
+      <li><strong>Demasiado feliz.</strong> Solo escenarios «todo va bien». Sin escenarios de validación (errores, casos límite) el diseño se rompe en cuanto sale del laboratorio.</li>
+      <li><strong>Contexto de adorno.</strong> Mencionar que «es de día» sin que cambie nada. Cada detalle de contexto debe tener consecuencias de diseño.</li>
+    </ul>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Coge un escenario (tuyo o ajeno) y táchale toda mención a pantallas o botones. ¿Sigue contando una historia con sentido y un objetivo? Si al quitar la interfaz no queda nada, era una maqueta disfrazada de escenario.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.5</span>Tu proyecto: el escenario como puente a tareas y requisitos</h3>
+
+    <p>En tu proyecto, los escenarios son la <strong>bisagra</strong> de la Actividad A hacia el resto del proceso. Nacen de tus personas y entregan dos cosas: la materia prima del <strong>análisis de tareas</strong> y la base de los <strong>requisitos</strong> (Actividad B).</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué escenarios conviene llevar a la entrega y para qué sirve cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Qué entregar</th><th scope="col">Para qué sirve</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1 escenario de contexto por persona y objetivo clave</th><td>Descubrir necesidades sin atarte a una interfaz</td></tr>
+        <tr><th scope="row">Lista de requisitos derivados de cada escenario</th><td>Alimentar la Actividad B con requisitos trazables</td></tr>
+        <tr><th scope="row">Escenarios de uso diario (al prototipar)</th><td>Guiar el prototipo del Tema 3 por las interacciones frecuentes</td></tr>
+        <tr><th scope="row">Algún escenario de validación</th><td>Estresar el diseño y cubrir accesibilidad (nivel AA de WCAG)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consejos para la entrega</h4>
+    <ul>
+      <li><strong>Un escenario por persona primaria y objetivo.</strong> No hace falta inundar: con los objetivos clave de tus personas basta.</li>
+      <li><strong>Haz trazable cada requisito.</strong> Que se vea de qué frase del escenario sale. El tribunal valora esa trazabilidad: evidencia el proceso.</li>
+      <li><strong>Incluye al menos un escenario de Don Ernesto.</strong> Es donde aflora la accesibilidad (legibilidad, confirmaciones), requisito mínimo del proyecto.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El escenario es el <strong>puente A→B</strong>: de tus personas salen historias, y de las historias salen los requisitos y los pasos (tareas). Entrega escenarios de contexto trazables a requisitos, y reserva uso diario y validación para el prototipado y la accesibilidad.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.6</span>Retos de observación para esta semana</h3>
+
+    <p>Los escenarios se aprenden contándolos. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Cuenta sin pantallas</span>
+      <p>Elige una app que uses y escribe, en cinco frases y sin mencionar ningún botón, la historia de cómo logras con ella un objetivo concreto. Acabas de redactar un escenario de contexto.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Saca los requisitos</span>
+      <p>Subraya en ese escenario todo lo que el sistema «tiene que permitir». Reescribe cada subrayado como un requisito verificable. Acabas de hacer el puente a la Actividad B.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Rómpelo con un «¿y si…?»</span>
+      <p>Añade un escenario de validación: ¿y si no hay cobertura?, ¿y si se acaba la batería?, ¿y si la persona se equivoca? Mira cuántos requisitos nuevos aparecen al imaginar que algo va mal.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.7</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente te pide diseñar interfaces usables y accesibles (CI17), aplicar la ingeniería del software para asegurar la calidad (CG05) y comunicar soluciones (CB04). Los escenarios tocan las tres.</p>
+    <p>Tocan CG05 porque son el pariente narrativo de los casos de uso que ya manejas: un puente natural entre tu formación previa y el diseño centrado en lo humano. Y tocan CB04 porque una historia comunica una necesidad mejor que cualquier lista de funciones.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Puedes saltar de la persona directamente a maquetar pantallas. Si lo haces, diseñarás soluciones sin haber entendido del todo el problema, y descubrirás los huecos tarde, ya con código escrito.</p>
+    <p>Detenerte a contar la historia de uso —barata, en una servilleta— es lo que separa a quien <strong>programa pantallas</strong> de quien <strong>resuelve el recorrido completo</strong> de una persona hacia su objetivo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los escenarios enlazan tu formación en ingeniería del software (casos de uso, CG05) con el DCH, comunican necesidades (CB04) y aseguran que diseñas el recorrido real de la persona, no solo pantallas sueltas.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué es un escenario y con qué tres ingredientes se forma?</summary>
+      <p>Es una historia de uso: una narración concreta de una persona logrando un objetivo con el sistema en un contexto. Se forma con <strong>persona + objetivo + contexto</strong>. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué relación hay entre persona y escenario?</summary>
+      <p>La persona es el personaje (el «quién», estático); el escenario es el guion (qué ocurre cuando actúa). Sin escenario, la persona no diseña nada. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son los tres tipos de escenario y en qué orden se usan?</summary>
+      <p>Contexto (experiencia ideal, sin interfaz, para hallar necesidades), uso diario (interacciones más frecuentes, ya con diseño) y validación (casos límite y errores para estresar la solución). <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿En qué se diferencia un escenario de un caso de uso y de una historia de usuario?</summary>
+      <p>El escenario es concreto y narrativo; el caso de uso es general y estructurado (generaliza muchos escenarios); la historia de usuario es una frase («Como… quiero… para…»). <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Por qué el escenario de contexto se escribe sin describir la interfaz?</summary>
+      <p>Para no atarte a una solución antes de entender la necesidad. Sin interfaz, te obliga a pensar en la persona y su objetivo; luego, de esa historia, extraes los requisitos. <em>(Ver 1.3 y 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Cómo se escribe un escenario, en esencia?</summary>
+      <p>Persona + objetivo → escenario de contexto (sin interfaz) → extraer requisitos → uso diario → validación → iterar. Primero la necesidad, luego la solución. <em>(Ver 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué errores hay que evitar?</summary>
+      <p>Colar la interfaz pronto, usar un protagonista genérico, no tener objetivo claro, escribir solo escenarios «felices» (sin validación) y meter contexto de adorno sin consecuencias. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Qué papel juega el escenario en tu proyecto?</summary>
+      <p>Es el puente A→B: de las personas salen historias, y de las historias salen requisitos verificables y los pasos del análisis de tareas. Se entregan escenarios de contexto trazables a requisitos. <em>(Ver 2.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. ¿Qué es un journey map y cuándo se usa respecto al escenario de contexto?</summary>
+      <p>Es una visualización estructurada del viaje de la persona por fases, con sus acciones, pensamientos, una <strong>curva emocional</strong>, puntos de dolor y oportunidades. Se usa <strong>después</strong> del escenario de contexto: estructura esa historia, hace visible dónde cae la emoción y convierte los puntos de dolor en oportunidades y requisitos. <em>(Ver 2.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Escenario</dt>
+      <dd>Descripción narrativa, concreta y en presente, de una persona realizando una tarea para alcanzar un objetivo en un contexto de uso. Historia de uso.</dd>
+      <dt>Escenario de contexto</dt>
+      <dd>Primer escenario y el más importante: cuenta la experiencia ideal de la persona logrando su objetivo, sin describir la interfaz. Sirve para descubrir necesidades.</dd>
+      <dt>Escenario de uso diario (key path)</dt>
+      <dd>Escenario detallado de las interacciones más frecuentes e importantes con el sistema, ya con un concepto de diseño. Es el «camino feliz», el recorrido que más se transita y que hay que dejar impecable.</dd>
+      <dt>Escenario de validación</dt>
+      <dd>Escenario que prueba el diseño con situaciones poco frecuentes, casos límite y errores («¿y si…?»).</dd>
+      <dt>Escenario actual / propuesto (as-is / to-be)</dt>
+      <dd>El que describe cómo se hace algo hoy frente al que describe cómo será con el nuevo sistema.</dd>
+      <dt>Caso de uso</dt>
+      <dd>Descripción estructurada y general de las interacciones entre actores y sistema para lograr un objetivo, con flujos principal y alternativos. Puede verse como la generalización de muchos escenarios.</dd>
+      <dt>Historia de usuario</dt>
+      <dd>Necesidad expresada en una frase con el formato «Como [persona], quiero [acción] para [objetivo]». Semilla comprimida de un escenario; típica de los métodos ágiles.</dd>
+      <dt>Diseño Basado en Escenarios (Scenario-Based Design)</dt>
+      <dd>Enfoque que usa la narración de escenarios como herramienta central para analizar y diseñar el uso de un sistema.</dd>
+      <dt>Journey map (mapa de experiencia)</dt>
+      <dd>Visualización estructurada del recorrido completo de una persona para lograr un objetivo, por fases, con sus acciones, pensamientos, emociones (curva emocional), puntos de dolor y oportunidades. Se construye tras el escenario de contexto.</dd>
+      <dt>Punto de contacto (touchpoint)</dt>
+      <dd>Cada momento o canal en el que la persona interactúa con el producto o servicio durante el viaje (la app, el validador, la parada…).</dd>
+      <dt>Curva emocional</dt>
+      <dd>Línea que representa cómo sube y baja el ánimo de la persona a lo largo de las fases del viaje; el elemento distintivo del journey map.</dd>
+      <dt>Punto de dolor (pain point)</dt>
+      <dd>Momento de fricción o frustración en el viaje; coincide con los valles de la curva emocional.</dd>
+      <dt>Oportunidad</dt>
+      <dd>Mejora de diseño que responde a un punto de dolor; suele traducirse en un requisito.</dd>
+      <dt>Requisito de usuario</dt>
+      <dd>Necesidad concreta y verificable que el sistema debe satisfacer; se extrae del escenario y se especifica en la Actividad B.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>Un <strong>escenario</strong> es una historia de uso: <strong>persona + objetivo + contexto → narración</strong>. Pone a las personas en acción.</li>
+        <li>La persona es el <strong>personaje</strong>; el escenario, el <strong>guion</strong>. Sin guion, los personajes no diseñan.</li>
+        <li>Tres <strong>tipos</strong>, en orden: <strong>contexto</strong> (sin interfaz, para hallar necesidades), <strong>uso diario</strong> (interacciones frecuentes) y <strong>validación</strong> (casos límite y errores).</li>
+        <li>El escenario de contexto se escribe <strong>sin describir la interfaz</strong>, a propósito: primero la necesidad, luego la solución.</li>
+        <li>Se distingue del <strong>caso de uso</strong> (general y estructurado) y de la <strong>historia de usuario</strong> (una frase); un caso de uso generaliza muchos escenarios.</li>
+        <li>Se escribe así: persona + objetivo → contexto → <strong>extraer requisitos</strong> → uso diario → validación → iterar.</li>
+        <li>Es el <strong>puente A→B</strong>: de la historia se leen los requisitos verificables y los pasos del análisis de tareas.</li>
+        <li>El <strong>journey map</strong> continúa el escenario de contexto: lo despliega por <strong>fases</strong> con una <strong>curva emocional</strong>, marca los puntos de dolor y convierte cada uno en una oportunidad (y un requisito).</li>
+        <li>Errores: colar la interfaz pronto, protagonista genérico, sin objetivo, solo escenarios «felices» y contexto de adorno.</li>
+        <li>Enlaza con tu formación en ingeniería del software (casos de uso, CG05) y comunica necesidades mejor que una lista de funciones (CB04).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014. (Escenarios de contexto, uso diario y validación en el Diseño Orientado a Objetivos.)</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Escenarios y casos de uso en el análisis.)</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025. (Escenarios e historias de usuario en contexto ágil.)</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="5">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="8">
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>Escenarios (poner a las personas en acción)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: el test con usuarios dentro de la Actividad D del Diseño Centrado en lo Humano. Métricas de usabilidad (eficacia, eficiencia y satisfacción), cómo se diseña, desarrolla y evalúa un test, la escala SUS en detalle y herramientas para test remotos. Tema 4 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>El test con usuarios · Apuntes Tema 4 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 4 · Evaluación de sistemas · Material de apoyo</p>
+    <h1>El test con usuarios
+      <span class="sub">Personas reales realizan tareas y medimos qué pasa: la tercera familia de métodos de evaluación (Actividad D del DCH)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB03 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es un test con usuarios? La evidencia más directa</a></li>
+          <li class="lvl2"><a href="#metricas">Las métricas: cómo medimos la usabilidad</a></li>
+          <li class="lvl2"><a href="#fases">Diseñar, desarrollar y evaluar un test</a></li>
+          <li class="lvl2"><a href="#sus">El SUS en detalle</a></li>
+          <li class="lvl2"><a href="#tipos">Tipos de test: A/B y más allá del de usabilidad</a></li>
+          <li class="lvl2"><a href="#aloud">Pensar en voz alta (Thinking Aloud), en la práctica</a></li>
+          <li class="lvl2"><a href="#sesion">Cómo transcurre una sesión: presencial y remota</a></li>
+          <li class="lvl2"><a href="#caso">Un test de principio a fin (ejemplo didáctico)</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">Tests que quizá ya has vivido</a></li>
+          <li class="lvl2"><a href="#herramientas">Herramientas para test remotos</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: por qué el test remoto importa (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: el test que cierra la evaluación</a></li>
+          <li class="lvl2"><a href="#retos">Retos de test para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Cerramos el Tema 4 con la tercera familia de métodos de evaluación: el <strong>test con usuarios</strong>. Ya vimos la indagación (preguntar y observar) y la inspección (el experto revisa sin usuarios). Ahora llega la prueba de fuego.</p>
+    <p>El test es la familia que aporta la <strong>evidencia más directa</strong>: personas reales intentando completar tareas reales mientras observamos y <strong>medimos</strong>. Si la inspección decía qué problemas eran posibles, el test confirma cuáles son de verdad.</p>
+    <p>Hoy nos centramos en cuatro cosas: las <strong>métricas</strong> (cómo se mide la usabilidad), <strong>cómo se diseña, desarrolla y evalúa</strong> un test, la escala <strong>SUS</strong> en detalle, y las <strong>herramientas</strong> para hacer tests a distancia.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en tablas, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible; las <strong>«¿Sabías que?»</strong> añaden contexto.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>test con usuarios</strong> (o test de usabilidad) consiste en pedir a <strong>personas reales</strong> que realicen <strong>tareas concretas</strong> mientras observamos y <strong>medimos</strong> qué ocurre. Es la fuente de evidencia más directa de la evaluación: muestra los problemas <em>reales</em>, no solo los posibles.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: medir lo que ocurre de verdad</h2>
+    <p class="lead">Qué es un test, qué métricas miden la usabilidad, cómo se diseña, desarrolla y evalúa, el SUS, los tipos de test (incluido el A/B), el pensar en voz alta, cómo transcurre una sesión (presencial y remota) y un ejemplo completo.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es un test con usuarios? La evidencia más directa</h3>
+
+    <p>Un test con usuarios pone a <strong>personas reales</strong> a intentar completar <strong>tareas concretas</strong> con el sistema (o su prototipo), mientras un facilitador observa, escucha y anota qué pasa.</p>
+    <p>La técnica más habitual es <strong>pensar en voz alta</strong>: la persona verbaliza lo que intenta, lo que espera y lo que no entiende. Así no solo vemos <em>dónde</em> falla, sino que oímos <em>por qué</em>.</p>
+    <p>Es la familia que más se parece a la realidad: nadie opina sobre cómo <em>cree</em> que usaría algo (como en una entrevista), sino que lo <strong>usa de verdad</strong> delante de ti.</p>
+
+    <h4>Su gran virtud y su coste</h4>
+    <p>El test aporta la <strong>evidencia más fiable</strong>: si tres personas se atascan en el mismo botón, ese problema es real, no una suposición. Por eso es el método que cierra la evaluación.</p>
+    <p>A cambio, es el más <strong>costoso</strong> de las tres familias: hay que reclutar personas, preparar tareas, conducir sesiones y analizar. De ahí la regla de oro: inspecciona primero para limpiar lo evidente, y reserva el test para confirmar lo importante.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>No hacen falta multitudes. Una idea muy difundida en usabilidad sostiene que con observar a unas <strong>cinco personas</strong> por perfil aflora ya la mayor parte de los problemas graves. Es más rentable hacer <strong>varios tests pequeños</strong> e ir corrigiendo entre uno y otro que un único test enorme al final. Es la filosofía «hazlo tú mismo» que Steve Krug defiende en <em>Rocket Surgery Made Easy</em>.</p>
+    </div>
+  </section>
+
+  <section id="metricas" aria-labelledby="metricas-h">
+    <h3 id="metricas-h"><span class="num" aria-hidden="true">1.2</span>Las métricas: cómo medimos la usabilidad</h3>
+
+    <p>Aquí está el corazón del test. Un test no es «ver si a la gente le gusta»: es <strong>recoger datos</strong> sobre el uso. Y esos datos —las <strong>métricas</strong>— se organizan según las tres dimensiones de la usabilidad que conoces desde el Tema 1, las de la <strong>ISO 9241-11</strong>.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Métricas de usabilidad organizadas por las tres dimensiones de la ISO 9241-11.</caption>
+      <thead>
+        <tr><th scope="col">Dimensión</th><th scope="col">Qué responde</th><th scope="col">Métricas habituales</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Eficacia</strong></td><td>¿Logra la persona su objetivo?</td><td>Tasa de éxito (% de tareas completadas), nº de errores, finalización con o sin ayuda</td></tr>
+        <tr><td><strong>Eficiencia</strong></td><td>¿A qué coste lo logra?</td><td>Tiempo en tarea, nº de pasos o de clics, nº de pantallas visitadas</td></tr>
+        <tr><td><strong>Satisfacción</strong></td><td>¿Cómo de a gusto queda?</td><td>SUS, pregunta de facilidad (SEQ), valoraciones y comentarios</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Métricas concretas, dimensión por dimensión</h4>
+    <p>Dentro de cada dimensión hay varias métricas. Estas son las más útiles y fáciles de recoger en un test de estudiante:</p>
+    <ul>
+      <li><strong>Eficacia</strong> — ¿logra el objetivo?
+        <ul>
+          <li><strong>Tasa de éxito:</strong> porcentaje de tareas completadas correctamente.</li>
+          <li><strong>Finalización con o sin ayuda:</strong> cuántas completó por sí sola y cuántas necesitando una pista.</li>
+          <li><strong>Tasa de error:</strong> número de errores por tarea, o porcentaje de tareas con algún error.</li>
+        </ul>
+      </li>
+      <li><strong>Eficiencia</strong> — ¿a qué coste?
+        <ul>
+          <li><strong>Tiempo en tarea:</strong> cuánto tarda en completarla.</li>
+          <li><strong>Número de pasos, clics o toques</strong> frente a los de la ruta óptima.</li>
+          <li><strong>Número de pantallas visitadas</strong> para llegar a la meta.</li>
+        </ul>
+      </li>
+      <li><strong>Satisfacción</strong> — ¿cómo se siente?
+        <ul>
+          <li><strong>SUS:</strong> puntuación global de 0 a 100, al final de la sesión.</li>
+          <li><strong>SEQ:</strong> facilidad percibida tras cada tarea, en una escala de 1 a 7.</li>
+          <li><strong>Valoraciones y comentarios:</strong> una escala de satisfacción y, sobre todo, las frases textuales de la persona.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Cuantitativo y cualitativo, de la mano</h4>
+    <p>Las métricas anteriores son sobre todo <strong>cuantitativas</strong>: números que permiten comparar versiones o medir progreso. Pero un test produce también dato <strong>cualitativo</strong> valiosísimo: las frases que dice la persona, dónde duda, qué cara pone.</p>
+    <p>Lo cuantitativo te dice <em>cuánto</em> falla; lo cualitativo, <em>por qué</em>. Un buen informe combina ambos: «el 2 de 5 participantes no completó el pago (eficacia) porque no encontró el botón, oculto bajo el teclado (la causa)».</p>
+
+    <h4>Dos consejos sobre métricas</h4>
+    <ul>
+      <li><strong>Define el éxito antes.</strong> Cada tarea necesita un criterio claro de «completada» (por ejemplo, «cita confirmada en pantalla»). Si no, no podrás medir la eficacia.</li>
+      <li><strong>No midas por medir.</strong> Elige pocas métricas que respondan a tus preguntas. Veinte números que nadie usa valen menos que tres que guían una decisión.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Medimos la usabilidad en las tres dimensiones de la <strong>ISO 9241-11</strong>: <strong>eficacia</strong> (tasa de éxito, errores), <strong>eficiencia</strong> (tiempo en tarea, nº de pasos) y <strong>satisfacción</strong> (SUS, valoraciones). Combina lo <strong>cuantitativo</strong> (cuánto falla) con lo <strong>cualitativo</strong> (por qué), y define el éxito de cada tarea de antemano.</p>
+    </div>
+  </section>
+
+  <section id="fases" aria-labelledby="fases-h">
+    <h3 id="fases-h"><span class="num" aria-hidden="true">1.3</span>Diseñar, desarrollar y evaluar un test</h3>
+
+    <p>Un test serio tiene tres fases. Saltarse la primera (diseñar) es el error más común y el que arruina más tests: sin un buen plan, los datos no sirven.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 210" role="img" aria-labelledby="fases-title fases-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="fases-title">Las tres fases de un test con usuarios</title>
+        <desc id="fases-desc">Un test con usuarios tiene tres fases encadenadas. Primera, diseñar: fijar los objetivos, elegir a los participantes, definir las tareas con su criterio de éxito, elegir las métricas y hacer una prueba piloto. Segunda, desarrollar o conducir la sesión: pedir consentimiento, dar instrucciones, aplicar la técnica de pensar en voz alta, no guiar al usuario y registrar los datos. Tercera, evaluar o analizar: calcular las métricas, priorizar los problemas por frecuencia y gravedad y redactar el informe con recomendaciones.</desc>
+        <defs>
+          <marker id="ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+        <!-- Fase 1 -->
+        <rect x="10" y="40" width="218" height="150" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.4"></rect>
+        <text x="119" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">1. Diseñar</text>
+        <text x="119" y="94" text-anchor="middle" font-size="11.5" fill="#211C16">Objetivos y preguntas</text>
+        <text x="119" y="113" text-anchor="middle" font-size="11.5" fill="#211C16">Participantes (≈ 5)</text>
+        <text x="119" y="132" text-anchor="middle" font-size="11.5" fill="#211C16">Tareas con criterio de éxito</text>
+        <text x="119" y="151" text-anchor="middle" font-size="11.5" fill="#211C16">Métricas a recoger</text>
+        <text x="119" y="170" text-anchor="middle" font-size="11.5" fill="#211C16">Prueba piloto</text>
+        <!-- Fase 2 -->
+        <rect x="251" y="40" width="218" height="150" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.4"></rect>
+        <text x="360" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5A12">2. Desarrollar</text>
+        <text x="360" y="94" text-anchor="middle" font-size="11.5" fill="#211C16">Consentimiento</text>
+        <text x="360" y="113" text-anchor="middle" font-size="11.5" fill="#211C16">Instrucciones claras</text>
+        <text x="360" y="132" text-anchor="middle" font-size="11.5" fill="#211C16">Pensar en voz alta</text>
+        <text x="360" y="151" text-anchor="middle" font-size="11.5" fill="#211C16">No guiar al usuario</text>
+        <text x="360" y="170" text-anchor="middle" font-size="11.5" fill="#211C16">Registrar los datos</text>
+        <!-- Fase 3 -->
+        <rect x="492" y="40" width="218" height="150" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.4"></rect>
+        <text x="601" y="68" text-anchor="middle" font-size="14" font-weight="700" fill="#8A3412">3. Evaluar</text>
+        <text x="601" y="98" text-anchor="middle" font-size="11.5" fill="#211C16">Calcular las métricas</text>
+        <text x="601" y="120" text-anchor="middle" font-size="11.5" fill="#211C16">Priorizar problemas</text>
+        <text x="601" y="142" text-anchor="middle" font-size="11.5" fill="#211C16">(frecuencia y gravedad)</text>
+        <text x="601" y="164" text-anchor="middle" font-size="11.5" fill="#211C16">Informe con mejoras</text>
+        <!-- flechas -->
+        <line x1="228" y1="115" x2="249" y2="115" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah4)"></line>
+        <line x1="469" y1="115" x2="490" y2="115" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah4)"></line>
+      </svg>
+      <figcaption>Las tres fases de un test con usuarios: diseñar el plan, desarrollar (conducir) las sesiones y evaluar (analizar) los resultados. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <h4>Fase 1 · Diseñar el test</h4>
+    <p>Aquí decides todo lo importante. Define los <strong>objetivos</strong> (¿qué quieres averiguar?), elige a los <strong>participantes</strong> (perfiles reales, en torno a cinco por perfil) y redacta las <strong>tareas</strong>.</p>
+    <p>Las tareas son lo más delicado. Deben ser <strong>realistas, concretas y medibles</strong>, con un <strong>criterio de éxito</strong> claro. Y se piden como un encargo («pide una cita con el Dr. Gómez para el jueves»), nunca como una pista («usa el calendario para…»).</p>
+    <p>Decide también qué <strong>métricas</strong> recogerás y haz siempre una <strong>prueba piloto</strong> con una persona antes de empezar: descubrirás tareas mal redactadas o instrucciones confusas a tiempo de corregirlas.</p>
+
+    <h4>Fase 2 · Desarrollar (conducir) la sesión</h4>
+    <p>Empieza pidiendo <strong>consentimiento informado</strong> y explicando que se evalúa el sistema, no a la persona. Da instrucciones claras y anima a <strong>pensar en voz alta</strong>.</p>
+    <p>La regla de oro durante la sesión: <strong>no guiar</strong>. Si la persona se atasca, ese atasco es tu dato más valioso; no lo borres ayudando. Suele haber dos roles: un <strong>facilitador</strong> que acompaña y un <strong>observador</strong> que anota tiempos, éxitos, errores y frases.</p>
+
+    <h4>Fase 3 · Evaluar (analizar) los resultados</h4>
+    <p>Reúne los datos y <strong>calcula las métricas</strong> (tasa de éxito, tiempos, SUS…). Lista los problemas detectados y <strong>priorízalos</strong> por dos criterios: cuánta gente los sufre (frecuencia) y cuánto daño hacen (gravedad).</p>
+    <p>Termina con el <strong>informe de evaluación</strong>: hallazgos priorizados, evidencia (métricas y citas) y recomendaciones concretas. Recuerda que comunicar bien el problema vale tanto como detectarlo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un test tiene tres fases: <strong>diseñar</strong> (objetivos, participantes ≈ 5, tareas con criterio de éxito, métricas, piloto), <strong>desarrollar</strong> (consentimiento, pensar en voz alta, no guiar, registrar) y <strong>evaluar</strong> (calcular métricas, priorizar problemas por frecuencia y gravedad, informe). La fase de diseño es la que más decide el resultado.</p>
+    </div>
+  </section>
+
+  <section id="sus" aria-labelledby="sus-h">
+    <h3 id="sus-h"><span class="num" aria-hidden="true">1.4</span>El SUS en detalle</h3>
+
+    <p>La métrica de satisfacción más usada del mundo es el <strong>SUS</strong> (<em>System Usability Scale</em>, «escala de usabilidad del sistema»), un cuestionario breve creado por John Brooke en 1996. Es rápido, fiable y sirve para casi cualquier sistema.</p>
+    <p>Consta de <strong>10 afirmaciones</strong> que la persona valora tras usar el sistema, en una escala de <strong>1 («totalmente en desacuerdo») a 5 («totalmente de acuerdo»)</strong>. Su truco está en que las afirmaciones <strong>alternan tono positivo y negativo</strong>, lo que obliga a leer cada una y evita responder en piloto automático.</p>
+
+    <h4>Las 10 afirmaciones</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las diez afirmaciones del SUS y su tono (formulación estándar adaptada al español).</caption>
+      <thead>
+        <tr><th scope="col">Nº</th><th scope="col">Afirmación</th><th scope="col">Tono</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="c">1</td><td>Creo que usaré este sistema con frecuencia.</td><td>Positivo</td></tr>
+        <tr><td class="c">2</td><td>Encuentro el sistema innecesariamente complejo.</td><td>Negativo</td></tr>
+        <tr><td class="c">3</td><td>Creo que el sistema es fácil de usar.</td><td>Positivo</td></tr>
+        <tr><td class="c">4</td><td>Creo que necesitaría apoyo técnico para poder usar el sistema.</td><td>Negativo</td></tr>
+        <tr><td class="c">5</td><td>Las funciones del sistema están bien integradas.</td><td>Positivo</td></tr>
+        <tr><td class="c">6</td><td>Creo que el sistema es demasiado inconsistente.</td><td>Negativo</td></tr>
+        <tr><td class="c">7</td><td>Imagino que la mayoría aprendería a usarlo muy rápido.</td><td>Positivo</td></tr>
+        <tr><td class="c">8</td><td>Encuentro el sistema muy engorroso de usar.</td><td>Negativo</td></tr>
+        <tr><td class="c">9</td><td>Me he sentido muy seguro usando el sistema.</td><td>Positivo</td></tr>
+        <tr><td class="c">10</td><td>Necesité aprender muchas cosas antes de poder empezar.</td><td>Negativo</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Cómo se puntúa, paso a paso</h4>
+    <p>El SUS no se promedia sin más: tiene una fórmula precisa, porque los ítems positivos y negativos no se suman igual.</p>
+    <ol>
+      <li>En los ítems <strong>impares</strong> (positivos): puntuación = respuesta <strong>− 1</strong>.</li>
+      <li>En los ítems <strong>pares</strong> (negativos): puntuación = <strong>5 −</strong> respuesta.</li>
+      <li><strong>Suma</strong> las diez puntuaciones ajustadas (dará entre 0 y 40).</li>
+      <li><strong>Multiplica por 2,5</strong>. El resultado va de <strong>0 a 100</strong>.</li>
+    </ol>
+    <p>Importante: ese número de 0 a 100 <strong>no es un porcentaje</strong>. Es una puntuación en una escala propia.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave · ejemplo de cálculo</span>
+      <p>Imagina que una persona responde, del ítem 1 al 10: <strong>4, 2, 4, 1, 4, 2, 5, 2, 4, 2</strong>.</p>
+      <p>Impares (positivos, resta 1): 3 + 3 + 3 + 4 + 3 = <strong>16</strong>. Pares (negativos, 5 − respuesta): 3 + 4 + 3 + 3 + 3 = <strong>16</strong>.</p>
+      <p>Suma = <strong>32</strong>; × 2,5 = <strong>80</strong>. Como 80 supera la media de referencia (≈ 68), la usabilidad percibida es <strong>buena</strong>.</p>
+    </div>
+
+    <h4>Cómo se interpreta</h4>
+    <p>¿Qué es un buen SUS? La investigación de referencia (Jeff Sauro, sobre cientos de estudios) sitúa la <strong>media en torno a 68</strong>. Por encima de 68, la usabilidad percibida está por encima de la media; por debajo, hay señales de problema.</p>
+    <p>El SUS brilla para <strong>comparar</strong>: la versión A frente a la B, tu producto frente al de la competencia, o el antes y el después de un rediseño. Una sola cifra, fácil de comunicar.</p>
+
+    <h4>Qué mide y qué no</h4>
+    <p>El SUS mide <strong>satisfacción percibida</strong>, no eficacia ni eficiencia. Una persona puede dar un SUS alto y, aun así, haber fallado tareas. Por eso el SUS <strong>acompaña</strong> a las métricas de éxito y tiempo; no las sustituye.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>SUS</strong> son 10 afirmaciones (escala 1–5, alternando tono) que dan una puntuación de <strong>0 a 100</strong> de <strong>satisfacción percibida</strong>: impares «− 1», pares «5 −», se suman y se multiplican por 2,5. La media de referencia ronda <strong>68</strong>. No es un porcentaje y no mide eficacia: complementa a las demás métricas.</p>
+    </div>
+  </section>
+
+  <section id="tipos" aria-labelledby="tipos-h">
+    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.5</span>Tipos de test: A/B y más allá del de usabilidad</h3>
+
+    <p>El test de usabilidad que hemos visto no es el único tipo de test. Según la pregunta que quieras responder, existen otros. El más importante que debes conocer es el <strong>test A/B</strong>.</p>
+
+    <h4>El test A/B</h4>
+    <p>Un <strong>test A/B</strong> compara <strong>dos versiones</strong> de algo (la A y la B) mostrándolas <strong>al azar a grupos distintos de usuarios reales</strong>, normalmente en producción. Se mide una <strong>métrica concreta</strong> (por ejemplo, el porcentaje de personas que completan la compra) y gana la versión con mejor resultado, siempre que la diferencia sea <strong>estadísticamente significativa</strong>.</p>
+    <p>Sus diferencias con el test de usabilidad son grandes. El A/B necesita <strong>muchísimos usuarios</strong>, da dato <strong>cuantitativo</strong> y dice <strong>cuál</strong> versión funciona mejor… pero <strong>no por qué</strong>. El test de usabilidad, con pocas personas, dice <strong>por qué</strong> falla algo. Por eso se complementan: el A/B decide entre opciones a gran escala; la usabilidad explica y permite arreglar.</p>
+
+    <h4>Otros tipos de test</h4>
+    <p>Hay más, cada uno para una pregunta distinta:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Otros tipos de test y la pregunta que responde cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Tipo de test</th><th scope="col">¿Qué pregunta responde?</th><th scope="col">Usuarios · dato</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Test de usabilidad</td><td>¿Dónde y por qué falla al usarlo?</td><td>Pocos · cualitativo</td></tr>
+        <tr><td>Test A/B</td><td>¿Cuál de dos versiones rinde mejor?</td><td>Muchos · cuantitativo</td></tr>
+        <tr><td>Test comparativo (benchmark)</td><td>¿Cómo estamos frente a la competencia o a la versión anterior?</td><td>Variable · mixto</td></tr>
+        <tr><td>Test de primer clic</td><td>¿Dónde pulsa la gente primero para una tarea?</td><td>Medio · cuantitativo</td></tr>
+        <tr><td>Card sorting</td><td>¿Cómo agrupa la gente los contenidos?</td><td>Medio · para arquitectura</td></tr>
+        <tr><td>Tree testing</td><td>¿Encuentran las cosas en la estructura de menús?</td><td>Medio · cuantitativo</td></tr>
+        <tr><td>Test de 5 segundos</td><td>¿Qué se capta en la primera impresión?</td><td>Medio · mixto</td></tr>
+        <tr><td>Test de accesibilidad con usuarios</td><td>¿Pueden usarlo personas con discapacidad?</td><td>Pocos · cualitativo</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>No te abrumes: en esta asignatura el protagonista es el <strong>test de usabilidad</strong>. Los demás conviene conocerlos para elegir la herramienta adecuada a cada pregunta.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El test de usabilidad no es el único test. El <strong>test A/B</strong> compara dos versiones con muchos usuarios reales y dice <strong>cuál</strong> rinde mejor (pero no por qué); el de usabilidad, con pocos, dice <strong>por qué</strong>. Hay otros (comparativo, primer clic, <em>card sorting</em>, <em>tree testing</em>…): elige según la pregunta.</p>
+    </div>
+  </section>
+
+  <section id="aloud" aria-labelledby="aloud-h">
+    <h3 id="aloud-h"><span class="num" aria-hidden="true">1.6</span>Pensar en voz alta (Thinking Aloud), en la práctica</h3>
+
+    <p>El <strong>pensar en voz alta</strong> (<em>Thinking Aloud</em>) es la técnica central del test de usabilidad: la persona <strong>narra en voz alta</strong> lo que piensa mientras usa el sistema. Así no solo ves <em>qué</em> hace, sino que oyes <em>por qué</em>.</p>
+
+    <h4>Dos formas de hacerlo</h4>
+    <ul>
+      <li><strong>Concurrente</strong> (la habitual): la persona habla <strong>mientras</strong> realiza la tarea. Ventaja: captas el pensamiento en caliente, sin que se olvide. Inconveniente: hablar y hacer a la vez <strong>alarga los tiempos</strong>, así que las métricas de tiempo se distorsionan un poco.</li>
+      <li><strong>Retrospectivo</strong>: la persona hace la tarea <strong>en silencio</strong> y luego comenta lo que hizo viendo la grabación. Ventaja: no interfiere en el tiempo real. Inconveniente: depende del recuerdo y la sesión se alarga.</li>
+    </ul>
+
+    <h4>Qué dice (y qué no) el facilitador</h4>
+    <p>El papel del facilitador es <strong>mantener el flujo de palabras sin contaminar</strong> la prueba:</p>
+    <ul>
+      <li><strong>Modela al principio:</strong> haz tú una breve demostración con otra tarea para que la persona vea qué esperas de ella.</li>
+      <li><strong>Si se queda callada, anímala con sondas neutrales:</strong> «¿Qué estás pensando ahora?», «¿Qué esperabas que pasara?», «Sigue contándome».</li>
+      <li><strong>Devuelve sus preguntas:</strong> si te pregunta «¿le doy aquí?», responde «¿Qué harías tú normalmente?». No resuelvas por ella.</li>
+      <li><strong>No guíes, no juzgues y aguanta el silencio.</strong> Las pausas incómodas suelen preceder al hallazgo más valioso.</li>
+    </ul>
+    <p>Un apunte sobre métricas: como el pensar en voz alta concurrente alarga los tiempos, si el <strong>tiempo en tarea</strong> es una métrica crítica conviene medirlo aparte o usar la variante retrospectiva.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En el <strong>pensar en voz alta</strong>, la persona narra su pensamiento mientras usa el sistema (<strong>concurrente</strong>) o después, sobre la grabación (<strong>retrospectivo</strong>). El facilitador lo modela, anima con sondas neutrales, devuelve las preguntas y <strong>no guía</strong>. Revela el <em>porqué</em> de cada dificultad.</p>
+    </div>
+  </section>
+
+  <section id="sesion" aria-labelledby="sesion-h">
+    <h3 id="sesion-h"><span class="num" aria-hidden="true">1.7</span>Cómo transcurre una sesión: presencial y remota</h3>
+
+    <p>Una cosa es el plan y otra la sesión real. Veamos cómo discurre una sesión moderada típica (presencial) y en qué cambia si es remota.</p>
+
+    <h4>Una sesión moderada, paso a paso</h4>
+    <ol class="cycle" role="list">
+      <li><b>Bienvenida y consentimiento</b> Recibes a la persona, explicas el propósito y firmáis el consentimiento. Dejas claro: «evaluamos el sistema, no a ti; no hay respuestas malas».</li>
+      <li><b>Calentamiento</b> Dos o tres preguntas de contexto para romper el hielo.</li>
+      <li><b>Instrucciones</b> Explicas el pensar en voz alta y lo modelas con un ejemplo.</li>
+      <li><b>Tareas, una a una</b> Entregas cada tarea, observas y sondas sin guiar; tras cada una, la pregunta de facilidad (SEQ).</li>
+      <li><b>Cuestionario final</b> La persona responde el SUS y dos preguntas abiertas.</li>
+      <li><b>Cierre</b> Agradeces y resuelves ahora sí las dudas que aplazaste durante la prueba.</li>
+    </ol>
+    <p>Suelen participar dos personas del equipo: un <strong>facilitador</strong> que conduce y un <strong>observador</strong> que anota tiempos, éxitos, errores y frases (y, con permiso, graba).</p>
+
+    <h4>Si la sesión es remota</h4>
+    <p>El guion es el mismo, pero la tecnología lo cambia todo. Hay dos modalidades:</p>
+    <ul>
+      <li><strong>Remota moderada:</strong> por videollamada con pantalla compartida. La persona usa <strong>su propio dispositivo</strong> (ventaja: contexto real). Cuida la conexión, pide compartir pantalla, graba con permiso y ten un plan B por si falla la tecnología.</li>
+      <li><strong>Remota no moderada:</strong> no hay nadie en directo. La herramienta presenta por escrito las instrucciones y tareas, y graba pantalla, voz y a veces la cara. Como no puedes aclarar dudas, las <strong>instrucciones deben ser autoexplicativas</strong> y las tareas, cristalinas; el pensar en voz alta se pide por escrito al inicio.</li>
+    </ul>
+    <p>El equilibrio: lo <strong>moderado</strong> da profundidad pero es caro y no escala; lo <strong>no moderado</strong> escala y es barato, pero pierde matices y arriesga malentendidos. Muchos equipos combinan ambas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una sesión moderada sigue un guion: <strong>bienvenida y consentimiento → calentamiento → instrucciones → tareas (con SEQ) → SUS y preguntas abiertas → cierre</strong>, con facilitador y observador. En <strong>remoto</strong>, el guion no cambia: lo moderado se hace por videollamada (cuidado con la tecnología) y lo no moderado exige instrucciones autoexplicativas porque nadie puede aclarar dudas.</p>
+    </div>
+  </section>
+
+  <section id="caso" aria-labelledby="caso-h">
+    <h3 id="caso-h"><span class="num" aria-hidden="true">1.8</span>Un test de principio a fin (ejemplo didáctico)</h3>
+
+    <p>Juntemos todo lo anterior en un caso completo, sobre la <strong>app de cita médica</strong> que venimos usando. Verás de un vistazo cómo encajan participantes, tareas, preguntas, métricas y resultados.</p>
+    <p><strong>(Ejemplo didáctico. Los números de resultados son ficticios, para ilustrar.)</strong></p>
+
+    <h4>Objetivo y participantes</h4>
+    <p><strong>Objetivo:</strong> comprobar si personas reales consiguen <strong>pedir, consultar y anular</strong> una cita en el prototipo, con qué dificultad y con qué satisfacción.</p>
+    <p><strong>Participantes:</strong> 5 personas del perfil real (no compañeros de clase): dos estudiantes que usan solo el móvil (entre ellas Marta), una persona cuidadora que gestiona las citas de un familiar y dos personas mayores con baja confianza digital (entre ellas Don Ernesto). Sesiones de unos 30 minutos, cada una en <strong>su propio móvil</strong>.</p>
+
+    <h4>Las tareas</h4>
+    <p>Tres tareas, formuladas como encargos (sin pistas) y con un criterio de éxito claro:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Tareas del test y su criterio de éxito. Ejemplo didáctico.</caption>
+      <thead>
+        <tr><th scope="col">Tarea (encargo al participante)</th><th scope="col">Criterio de éxito</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>T1. «Pide una cita con tu médico de cabecera para la semana que viene.»</td><td>Llega a la pantalla «Cita confirmada» con médico y fecha correctos.</td></tr>
+        <tr><td>T2. «Comprueba a qué hora es tu próxima cita.»</td><td>Localiza y dice en voz alta la hora correcta.</td></tr>
+        <tr><td>T3. «Anula la cita que acabas de pedir.»</td><td>Llega a la confirmación de anulación.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Las preguntas</h4>
+    <p>Las preguntas cambian según el momento de la sesión:</p>
+    <ul>
+      <li><strong>Antes (calentamiento, tras el consentimiento):</strong> «¿Cómo pides cita médica habitualmente?», «¿Sueles hacer gestiones con el móvil?». Rompen el hielo y dan contexto, sin condicionar.</li>
+      <li><strong>Durante (sondas de pensar en voz alta, neutrales):</strong> «¿Qué estás intentando hacer ahora?», «¿Qué esperabas que pasara?», «¿Qué harías a continuación?». Nunca «pulsa ahí».</li>
+      <li><strong>Después de cada tarea (facilidad, SEQ):</strong> «Del 1 (muy difícil) al 7 (muy fácil), ¿cómo de fácil te ha resultado esta tarea?».</li>
+      <li><strong>Al final (post-test):</strong> las 10 afirmaciones del <strong>SUS</strong> y dos preguntas abiertas: «¿Qué es lo que más te ha costado?» y «¿Qué cambiarías?».</li>
+    </ul>
+
+    <h4>Las métricas</h4>
+    <p>Para cada tarea se recogen métricas de las tres dimensiones; el SUS se pasa una sola vez, al final:</p>
+    <ul>
+      <li><strong>Eficacia:</strong> tasa de éxito (cuántos de los 5 la completan) y nº de errores.</li>
+      <li><strong>Eficiencia:</strong> tiempo en tarea.</li>
+      <li><strong>Satisfacción:</strong> facilidad por tarea (SEQ, 1–7) y, global, el <strong>SUS</strong> (0–100).</li>
+    </ul>
+
+    <h4>Posibles resultados</h4>
+    <p>Tras las cinco sesiones, los datos podrían quedar así:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Resultados (ficticios) por tarea. Ejemplo didáctico.</caption>
+      <thead>
+        <tr><th scope="col">Tarea</th><th scope="col">Éxito</th><th scope="col">Tiempo medio</th><th scope="col">Errores</th><th scope="col">SEQ (1–7)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>T1 · Pedir cita</td><td class="c">5/5</td><td class="c">1 m 40 s</td><td class="c">2</td><td class="c">5,8</td></tr>
+        <tr><td>T2 · Ver próxima cita</td><td class="c">3/5</td><td class="c">1 m 10 s</td><td class="c">4</td><td class="c">3,4</td></tr>
+        <tr><td>T3 · Anular cita</td><td class="c">2/5</td><td class="c">2 m 20 s</td><td class="c">6</td><td class="c">2,6</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Y la satisfacción global: <strong>SUS = 62</strong>, por debajo de la media de referencia (≈ 68). Hay margen de mejora.</p>
+
+    <h4>Qué nos dicen y qué hacer</h4>
+    <p>Leídos juntos, los números cuentan una historia clara, que se prioriza por <strong>frecuencia y gravedad</strong>:</p>
+    <ol class="cycle" role="list">
+      <li><b>Anular cita es el gran problema (grave y frecuente)</b> Solo 2 de 5 lo logran, en mucho tiempo y con muchos errores. La opción está escondida en un submenú. <em>Recomendación:</em> mover «Anular» a la propia pantalla de la cita.</li>
+      <li><b>Consultar la próxima cita confunde (media)</b> 3 de 5 y SEQ bajo: «próxima cita» no se distingue de «historial». <em>Recomendación:</em> etiquetar con claridad «Tu próxima cita» y destacarla.</li>
+      <li><b>Pedir cita funciona bien (mantener)</b> 5 de 5 y SEQ alto; los 2 errores eran menores. La tarea principal está resuelta.</li>
+    </ol>
+    <p>Fíjate en cómo encaja todo: las <strong>tareas</strong> definieron qué medir; las <strong>métricas</strong> mostraron dónde duele; las <strong>preguntas</strong> (SEQ y abiertas) explicaron el porqué; y el <strong>SUS</strong> dio una nota global comparable para el próximo rediseño. Eso es un test de usabilidad completo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un test completo enlaza <strong>objetivo → participantes → tareas (con criterio de éxito) → preguntas (antes, durante, SEQ, SUS) → métricas → resultados priorizados → recomendaciones</strong>. Las métricas dicen <em>dónde</em> falla; las preguntas, <em>por qué</em>; el SUS da una nota global para comparar.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Tests que quizá ya has vivido, herramientas para hacerlos a distancia, por qué el test remoto importa según el INE, cómo cierra la evaluación de tu proyecto y por qué te concierne profesionalmente.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>Tests que quizá ya has vivido</h3>
+
+    <p>Puede que ya hayas sido participante de un test sin saberlo. Si alguna vez una app te invitó a «probar una nueva función» y te pidió comentarios, o una empresa te pagó por «usar una web mientras hablas en voz alta», eso era un test de usabilidad.</p>
+    <p>También lo haces como observador. Cuando ayudas a un familiar con el móvil y ves dónde se pierde sin que él sepa explicarlo, estás recogiendo justo lo que recoge un test: la <strong>conducta real</strong> frente a una tarea.</p>
+    <p>Entrénate a mirar así: cada vez que alguien usa algo delante de ti, fíjate en si <strong>completa</strong> la tarea (eficacia), <strong>cuánto le cuesta</strong> (eficiencia) y <strong>cómo se siente</strong> (satisfacción). Son las tres dimensiones de siempre.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Pide a alguien que complete una tarea en una app que no conozca y cronométrala. Anota tres métricas: ¿la completó? (sí/no), ¿cuánto tardó? y, al final, pregúntale del 1 al 5 cómo de fácil le resultó. Acabas de recoger eficacia, eficiencia y satisfacción.</p>
+    </div>
+  </section>
+
+  <section id="herramientas" aria-labelledby="herramientas-h">
+    <h3 id="herramientas-h"><span class="num" aria-hidden="true">2.2</span>Herramientas para test remotos</h3>
+
+    <p>No siempre puedes tener al usuario en la misma sala. El <strong>test remoto</strong> permite evaluar a distancia, y se presenta en dos modalidades que conviene distinguir:</p>
+    <ul>
+      <li><strong>Moderado:</strong> tú y la persona estáis conectados <strong>en directo</strong> (por videollamada). Permite preguntar y profundizar; ideal para flujos complejos.</li>
+      <li><strong>No moderado:</strong> la persona realiza las tareas <strong>por su cuenta</strong> y la herramienta lo graba. Escala a mucha gente y es más barato; ideal para validar rápido.</li>
+    </ul>
+
+    <p>Existen muchas plataformas. Esta es una selección representativa (no es una recomendación comercial; precios y funciones cambian, y casi todas tienen prueba o plan gratuito que conviene revisar en su web):</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Selección de herramientas para test remotos, por modalidad y punto fuerte. Ejemplos orientativos; verifica condiciones actuales.</caption>
+      <thead>
+        <tr><th scope="col">Herramienta</th><th scope="col">Modalidad</th><th scope="col">Destaca por</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lookback</td><td>Moderado (y no moderado)</td><td>Sesiones en directo con grabación de calidad, en web y móvil</td></tr>
+        <tr><td>UserTesting</td><td>Moderado y no moderado</td><td>Gran panel de participantes ya reclutados; escala</td></tr>
+        <tr><td>Maze</td><td>No moderado</td><td>Test de prototipos (se integra con Figma), métricas y mapas de calor</td></tr>
+        <tr><td>Lyssna (antes UsabilityHub)</td><td>No moderado</td><td>Económico, con panel propio; bueno para equipos pequeños</td></tr>
+        <tr><td>Optimal Workshop</td><td>No moderado</td><td>Arquitectura de información: <em>card sorting</em> y <em>tree testing</em></td></tr>
+        <tr><td>Loop11</td><td>No moderado</td><td>Test cuantitativo a escala: tareas, rutas de clic y métricas para decisiones basadas en datos</td></tr>
+        <tr><td>Hotjar</td><td>Analítica de uso real</td><td>Mapas de calor y grabaciones de sesión en producción</td></tr>
+        <tr><td>Zoom o Google Meet + grabación</td><td>Moderado (sin coste)</td><td>Opción gratuita para empezar: videollamada y pantalla compartida</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Para un proyecto de estudiante, lo más sensato suele ser <strong>empezar gratis</strong>: una videollamada con pantalla compartida (Meet o Zoom) para un test moderado, o el plan gratuito de una herramienta como Maze para uno no moderado.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto · privacidad ante todo</span>
+      <p>Antes de grabar a nadie con cualquiera de estas herramientas, recuerda el <strong>consentimiento informado</strong> y la protección de datos (RGPD): explica qué se graba, para qué y cuánto tiempo se conserva, y pide permiso por escrito. Investigar con personas conlleva responsabilidad legal, no solo ética.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: por qué el test remoto importa (INE)</h3>
+
+    <p>El test remoto no es solo una comodidad: a menudo es la <strong>única forma</strong> de evaluar con usuarios reales, en su dispositivo y su contexto. Los datos oficiales lo explican.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025</span>
+      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (datos de 2025, publicados el 20 de noviembre de 2025):</p>
+      <div class="table-scroll">
+      <table>
+        <caption>Por qué conviene testar en el dispositivo real del usuario. INE, 2025.</caption>
+        <thead>
+          <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Hogares que acceden a Internet solo por conexión móvil</td><td class="fig">10,7 %</td></tr>
+          <tr><td>Población de 16 a 74 años que usó Internet a diario</td><td class="fig">92,5 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Lee el primer dato: <strong>la mitad de los hogares</strong> solo tiene móvil, y uno de cada diez accede a Internet <strong>únicamente por el móvil</strong>. Si testas tu app solo en un portátil cómodo del laboratorio, estás evaluando un contexto que la mitad de la gente no vive.</p>
+    <p>El test remoto no moderado resuelve esto: la persona usa <strong>su propio teléfono</strong>, en <strong>su sofá</strong>, con su conexión real. Mides la usabilidad en el contexto auténtico, no en uno artificial.</p>
+    <p>Y para una región dispersa como <strong>Extremadura</strong>, lo remoto añade otra ventaja: alcanzas a personas de pueblos alejados sin pedirles que se desplacen a Cáceres o Badajoz. Más diversidad de usuarios, menos barreras.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El test remoto permite evaluar en el <strong>dispositivo y el contexto reales</strong> del usuario. Importa porque, según el INE (2025), <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil. Además, llega a la población <strong>dispersa</strong> de Extremadura sin desplazamientos.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: el test que cierra la evaluación</h3>
+
+    <p>El test es la última pieza de tu Actividad D. Recuerda que el proyecto pide aplicar <strong>al menos un método de cada familia</strong>; el test es el que aporta la evidencia más fuerte de que tu diseño funciona.</p>
+    <p>No te agobies con la escala: con un <strong>test pequeño</strong> (unas cinco personas), bien diseñado, sacarás muchísimo. Vale más eso que un test enorme improvisado.</p>
+
+    <h4>Una receta mínima viable</h4>
+    <ul>
+      <li><strong>Diseña</strong> 3–4 tareas realistas con criterio de éxito (por ejemplo, «pide una cita»).</li>
+      <li><strong>Recluta</strong> a 5 personas del perfil real (no solo a compañeros de clase).</li>
+      <li><strong>Conduce</strong> las sesiones con pensar en voz alta, presencial o remoto; no guíes.</li>
+      <li><strong>Mide</strong> tasa de éxito, tiempo por tarea y pasa el <strong>SUS</strong> al final.</li>
+      <li><strong>Analiza</strong> y lleva al informe los hallazgos priorizados con sus recomendaciones.</li>
+    </ul>
+    <p>Con eso tendrás las tres dimensiones (eficacia, eficiencia, satisfacción) cubiertas y una historia sólida que contar: qué probaste, qué falló y qué propones mejorar.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En tu proyecto, el test es <strong>obligatorio</strong> y cierra la Actividad D. Receta mínima: 3–4 tareas con criterio de éxito, ~5 participantes reales, sesiones con pensar en voz alta sin guiar, y medir <strong>éxito + tiempo + SUS</strong>. Todo, al informe con hallazgos priorizados.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de test para esta semana</h3>
+
+    <p>Tres retos para practicar la mirada y la mano de quien testa.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Escribe tres tareas</span>
+      <p>Para una app que conozcas, redacta tres tareas de test: realistas, con criterio de éxito y sin pistas. Revisa que ninguna diga «usa el botón X»; deben describir una meta, no el camino.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Calcula un SUS</span>
+      <p>Pide a dos personas que usen una app y respondan las 10 afirmaciones del SUS (1–5). Calcula la puntuación de cada una con la fórmula (impares − 1, pares 5 −, suma × 2,5) y compárala con la media de 68.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · Mini-test remoto</span>
+      <p>Haz un test moderado por videollamada con pantalla compartida: una tarea, pensar en voz alta, tú solo observas y anotas. Comprueba lo difícil que es <strong>morderse la lengua</strong> y no ayudar.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El test con usuarios es la prueba definitiva de que un sistema sirve. Saber diseñarlo, conducirlo y analizarlo te coloca entre quienes <strong>deciden con datos</strong>, no con corazonadas.</p>
+    <p>Conecta de lleno con las competencias del título: <strong>diseñar y evaluar</strong> interfaces usables y accesibles (CI17, CG03), <strong>reunir e interpretar datos</strong> para emitir juicios (CB03) y <strong>transmitirlos</strong> en un informe claro (CB04).</p>
+    <p>Y es una habilidad muy demandada: la cultura del «<em>data-informed design</em>» —decidir el diseño con evidencia de uso— es hoy estándar en la industria. Las métricas que has visto (tasa de éxito, tiempo en tarea, SUS) son moneda corriente en cualquier equipo de producto.</p>
+    <p>Dominar el test te da, además, autoridad: cuando alguien diga «yo lo veo claro», tú podrás responder «pues 3 de 5 usuarios no completaron la tarea». La evidencia gana discusiones.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Saber testar te permite <strong>decidir con evidencia</strong>, una habilidad estándar en la industria. Cubre las competencias CI17, CG03, CB03 y CB04: diseñar y evaluar, interpretar datos y comunicarlos. La evidencia de usuarios reales gana discusiones que las opiniones no.</p>
+    </div>
+  </section>
+
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué hace del test la evidencia más directa de la evaluación?</summary>
+      <p>Que personas reales <strong>usan de verdad</strong> el sistema realizando tareas concretas mientras observamos y medimos, en lugar de opinar sobre cómo creen que lo usarían. Si varias personas se atascan en lo mismo, el problema es real. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué métricas miden cada dimensión de la usabilidad?</summary>
+      <p><strong>Eficacia</strong>: tasa de éxito y errores. <strong>Eficiencia</strong>: tiempo en tarea y nº de pasos o clics. <strong>Satisfacción</strong>: SUS, valoraciones y la pregunta de facilidad. Son las tres dimensiones de la ISO 9241-11. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Por qué hay que combinar métricas cuantitativas y cualitativas?</summary>
+      <p>Porque lo cuantitativo dice <strong>cuánto</strong> se falla (p. ej., 2 de 5 no completan) y lo cualitativo dice <strong>por qué</strong> (no encontraron el botón). Juntos dan una imagen completa para decidir qué arreglar. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Cuáles son las tres fases de un test y qué se hace en cada una?</summary>
+      <p><strong>Diseñar</strong> (objetivos, participantes ≈ 5, tareas con criterio de éxito, métricas, piloto), <strong>desarrollar</strong> (consentimiento, pensar en voz alta, no guiar, registrar) y <strong>evaluar</strong> (calcular métricas, priorizar problemas por frecuencia y gravedad, informe). <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Cómo deben ser las tareas de un test?</summary>
+      <p>Realistas, concretas y <strong>medibles</strong>, con un criterio de éxito claro, y formuladas como un encargo («pide una cita»), nunca como una pista («usa el calendario»). Conviene probarlas antes en una prueba piloto. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. Explica cómo se calcula y se interpreta el SUS.</summary>
+      <p>10 afirmaciones (1–5, alternando tono). En los <strong>impares</strong>: respuesta − 1; en los <strong>pares</strong>: 5 − respuesta. Se suman (0–40) y se multiplican por <strong>2,5</strong> (0–100). No es un porcentaje. La media de referencia ronda <strong>68</strong>: por encima, usabilidad por encima de la media. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué diferencia un test remoto moderado de uno no moderado, y qué herramientas sirven?</summary>
+      <p>El <strong>moderado</strong> es en directo por videollamada (permite preguntar; flujos complejos); el <strong>no moderado</strong>, la persona lo hace sola y se graba (escala y barato). Herramientas: Lookback o UserTesting (moderado), Maze o Lyssna (no moderado), y Zoom/Meet como opción gratuita. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Por qué importa el test remoto según el INE?</summary>
+      <p>Porque permite evaluar en el dispositivo y contexto reales. En 2025, <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil; testar solo en un portátil de laboratorio ignora ese contexto. Además llega a la población dispersa de Extremadura. <em>(Ver 2.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Test con usuarios (test de usabilidad)</dt>
+      <dd>Método de evaluación en el que personas reales realizan tareas concretas con el sistema mientras se observa y se mide qué ocurre. Aporta la evidencia más directa.</dd>
+      <dt>Pensar en voz alta</dt>
+      <dd>Técnica en la que el participante verbaliza lo que intenta, espera y no entiende mientras usa el sistema, revelando el porqué de sus dificultades. Puede ser concurrente (mientras hace la tarea) o retrospectivo (después, sobre la grabación).</dd>
+      <dt>Test A/B</dt>
+      <dd>Test que compara dos versiones (A y B) mostrándolas al azar a grupos distintos de usuarios reales y mide una métrica concreta para decidir cuál rinde mejor. Cuantitativo y necesita muchos usuarios; dice cuál, no por qué.</dd>
+      <dt>Card sorting y tree testing</dt>
+      <dd>Métodos para la arquitectura de información: el card sorting estudia cómo agrupa la gente los contenidos; el tree testing, si encuentran las cosas en la estructura de menús.</dd>
+      <dt>Facilitador / observador</dt>
+      <dd>Roles del test: el facilitador acompaña y da las tareas; el observador anota tiempos, éxitos, errores y frases sin intervenir.</dd>
+      <dt>Tarea (de test)</dt>
+      <dd>Encargo realista y medible que se pide al participante, con un criterio de éxito claro y sin pistas sobre el camino a seguir.</dd>
+      <dt>Métrica de usabilidad</dt>
+      <dd>Dato que se recoge sobre el uso. Se organiza según la ISO 9241-11 en eficacia, eficiencia y satisfacción.</dd>
+      <dt>Eficacia · Eficiencia · Satisfacción</dt>
+      <dd>Las tres dimensiones de la usabilidad: lograr el objetivo (eficacia), a qué coste de tiempo y esfuerzo (eficiencia) y cómo de a gusto queda la persona (satisfacción).</dd>
+      <dt>Tasa de éxito</dt>
+      <dd>Métrica de eficacia: porcentaje de tareas completadas con éxito sobre el total de intentos.</dd>
+      <dt>Tiempo en tarea</dt>
+      <dd>Métrica de eficiencia: cuánto tarda la persona en completar una tarea.</dd>
+      <dt>SUS (System Usability Scale)</dt>
+      <dd>Cuestionario de 10 afirmaciones (escala 1–5, tono alternado) que da una puntuación de satisfacción percibida de 0 a 100. Media de referencia ≈ 68. Creado por J. Brooke (1996).</dd>
+      <dt>SEQ (pregunta de facilidad)</dt>
+      <dd>Single Ease Question: una única pregunta, tras cada tarea, sobre lo fácil o difícil que ha resultado, normalmente en una escala de 1 a 7. Rápida y útil para comparar tareas.</dd>
+      <dt>Test moderado / no moderado</dt>
+      <dd>Moderado: el investigador acompaña en directo. No moderado: el participante realiza las tareas por su cuenta y la herramienta lo graba.</dd>
+      <dt>Test remoto</dt>
+      <dd>Test realizado a distancia, con el participante en su propio dispositivo y entorno, mediante herramientas en línea.</dd>
+      <dt>Prueba piloto</dt>
+      <dd>Ensayo del test con una persona antes de empezar, para detectar tareas mal redactadas o instrucciones confusas.</dd>
+      <dt>Consentimiento informado</dt>
+      <dd>Permiso que la persona da, conociendo qué se graba y para qué, antes de participar. Requisito ético y legal (RGPD).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>test con usuarios</strong> pone a personas reales a realizar tareas mientras observamos y medimos. Es la evidencia más directa, y la más costosa.</li>
+        <li>Las <strong>métricas</strong> se organizan según la ISO 9241-11: <strong>eficacia</strong> (tasa de éxito, errores), <strong>eficiencia</strong> (tiempo, pasos) y <strong>satisfacción</strong> (SUS, valoraciones).</li>
+        <li>Combina lo <strong>cuantitativo</strong> (cuánto falla) con lo <strong>cualitativo</strong> (por qué), y define el éxito de cada tarea antes.</li>
+        <li>Un test tiene tres fases: <strong>diseñar</strong>, <strong>desarrollar</strong> (conducir) y <strong>evaluar</strong> (analizar). La de diseño es la que más decide el resultado.</li>
+        <li>Regla durante la sesión: <strong>pensar en voz alta</strong> y <strong>no guiar</strong>; el atasco del usuario es el dato más valioso.</li>
+        <li>El <strong>SUS</strong>: 10 afirmaciones (1–5, tono alternado), impares «− 1», pares «5 −», suma × 2,5 → 0–100 de satisfacción. Media ≈ <strong>68</strong>; no es porcentaje ni mide eficacia.</li>
+        <li>El <strong>test remoto</strong> (moderado o no moderado) evalúa en el dispositivo y contexto reales; herramientas como Lookback, UserTesting, Maze o Lyssna, o Zoom/Meet gratis.</li>
+        <li>Importa según el <strong>INE 2025</strong>: <strong>50,3 %</strong> de hogares solo con móvil; además, alcanza a la población dispersa de Extremadura.</li>
+        <li>En tu proyecto, el test cierra la Actividad D: ~5 participantes, tareas con criterio de éxito, medir <strong>éxito + tiempo + SUS</strong> y llevarlo al informe.</li>
+      </ul>
+    </div>
+    <p>Con esta sesión cerramos las tres familias de evaluación —indagación, inspección y test— y, con ellas, la Actividad D y el ciclo del Diseño Centrado en lo Humano.</p>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Krug, S. <em>Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems</em>. New Riders, 2010. (Tests pequeños y «hazlo tú mismo».)</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Evaluación con usuarios y métricas.)</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+    </ol>
+    <p>Normas técnicas y marco legal:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Diseño centrado en el operador humano para sistemas interactivos</em>.</li>
+      <li>Reglamento (UE) 2016/679 (RGPD), sobre protección de datos personales (aplicable al grabar a participantes).</li>
+    </ol>
+    <p>Instrumento y datos citados:</p>
+    <ol class="refs" start="11">
+      <li>Brooke, J. «SUS: A quick and dirty usability scale». En <em>Usability Evaluation in Industry</em>, 1996. (Origen de la escala SUS; citado como referencia del instrumento.)</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (publicada el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> (test de usabilidad y test remoto) · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+    </ol>
+    <p class="lead" style="font-size:.92rem;">Nota: las herramientas comerciales mencionadas (Lookback, UserTesting, Maze, Lyssna, Optimal Workshop, Loop11, Hotjar, Zoom, Google Meet) se citan a título informativo, sin relación con la asignatura; conviene consultar sus condiciones y precios actuales.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>El test con usuarios (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

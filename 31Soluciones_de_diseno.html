@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: apertura del Tema 3, la Actividad C del Diseño Centrado en lo Humano (ISO 9241-210). El proceso iterativo de diseño y las leyes cognitivas para el diseño de interfaces. Asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Generar soluciones de diseño (Actividad C del DCH) · Apuntes Tema 3 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 3 · Proceso iterativo de diseño · Material de apoyo</p>
+    <h1>Generar soluciones de diseño
+      <span class="sub">Actividad C del Diseño Centrado en lo Humano: del requisito al prototipo, diseñando con la mente del usuario (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#de-analizar">De analizar a diseñar: dónde estamos en el ciclo</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es la Actividad C? Generar soluciones de diseño</a></li>
+          <li class="lvl2"><a href="#tres-disenos">Las tres caras del diseño en el Tema 3</a></li>
+          <li class="lvl2"><a href="#leyes">Diseñar con la mente del usuario: las leyes cognitivas</a></li>
+          <li class="lvl2"><a href="#iteracion">Por qué se diseña en bucle (y barato primero)</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">Las leyes cognitivas que ya sufres</a></li>
+          <li class="lvl2"><a href="#anclaje">Anclaje real: un tercio de España sin destrezas básicas (INE)</a></li>
+          <li class="lvl2"><a href="#fidelidad">Niveles de fidelidad del prototipo: papel, esqueleto, casi real</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la Actividad C como entrega de prototipos</a></li>
+          <li class="lvl2"><a href="#retos">Retos de diseño para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes abren el <strong>Tema 3 (Proceso iterativo de diseño)</strong> y son la continuación directa del Tema 2. Allí investigamos el <strong>contexto de uso</strong> (Actividad A) y especificamos los <strong>requisitos de usuario</strong> (Actividad B). Ahora, por fin, diseñamos.</p>
+    <p>Damos por sabido el ciclo del DCH: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. Si ese esquema no te suena, vuelve un momento a los apuntes anteriores antes de seguir.</p>
+    <p>El objetivo de hoy es doble: <strong>entender qué es la Actividad C</strong> (producir soluciones de diseño) y conocer las <strong>leyes cognitivas</strong> que convierten una pantalla bonita en una pantalla que la gente puede usar.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>Actividad C — «producir soluciones de diseño»</strong> es la tercera del ciclo DCH. Convierte los requisitos en algo que se puede ver y tocar: <strong>prototipos</strong> de fidelidad creciente. Y no se diseña «a ojo»: se diseña respetando cómo <strong>perciben, deciden y recuerdan</strong> las personas, las <strong>leyes cognitivas</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: del requisito al prototipo</h2>
+    <p class="lead">Qué es generar soluciones de diseño, las tres caras del diseño en este tema, las leyes cognitivas que guían cada decisión y por qué todo el proceso es iterativo.</p>
+  </div>
+
+  <section id="de-analizar" aria-labelledby="de-analizar-h">
+    <h3 id="de-analizar-h"><span class="num" aria-hidden="true">3.1</span>De analizar a diseñar: dónde estamos en el ciclo</h3>
+
+    <p>Hasta ahora hemos hecho un trabajo de <strong>análisis</strong>: entender el problema. Sabemos <strong>quién</strong> usará el sistema, <strong>para qué</strong>, <strong>con qué</strong> y <strong>dónde</strong> (Actividad A), y hemos traducido eso en <strong>requisitos verificables</strong> (Actividad B).</p>
+    <p>El Tema 3 da el salto que el ingeniero novel desea hacer desde el minuto uno: <strong>proponer soluciones</strong>. Pero ahora llegamos con red. No diseñamos al azar; diseñamos para cumplir unos requisitos que ya hemos justificado.</p>
+    <p>Esa es la diferencia entre maquetar pantallas y hacer ingeniería de la interacción. La Actividad C es <strong>creativa pero disciplinada</strong>: cada decisión de diseño debe poder rastrearse hasta un requisito y, a través de él, hasta un dato real del contexto.</p>
+
+    <h4>El lugar exacto de la Actividad C</h4>
+    <p>La norma <strong>ISO 9241-210</strong> ordena el proceso en cuatro actividades en bucle. La C, «producir soluciones de diseño que satisfagan los requisitos», ocupa el centro: recibe de la B y entrega a la D para que se evalúe.</p>
+    <p>Si la evaluación detecta problemas (y casi siempre los detecta), se vuelve a la C, o incluso a la B o a la A. Por eso el diseño <strong>no es una línea recta, sino una rueda</strong> que gira hasta que el sistema cumple los requisitos.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 740 290" role="img" aria-labelledby="cyc-title cyc-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="cyc-title">El lugar de la Actividad C en el proceso iterativo del Diseño Centrado en lo Humano</title>
+        <desc id="cyc-desc">La Actividad C, producir soluciones de diseño, recibe los requisitos de usuario de la Actividad B (trabajada en el Tema 2) y produce su resultado para la Actividad D, la evaluación (Tema 4). Dentro de la Actividad C se encadenan tres diseños: primero el diseño de la actividad, después el diseño de la información y por último el diseño del prototipo, que avanza de baja a media y a alta fidelidad. Una flecha de realimentación va desde la evaluación de vuelta a la Actividad C, indicando que el proceso itera hasta cumplir los requisitos.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Entrada: Requisitos (Actividad B) -->
+        <rect x="10" y="92" width="120" height="80" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="70" y="124" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5563">Requisitos</text>
+        <text x="70" y="144" text-anchor="middle" font-size="11.5" fill="#211C16">Actividad B</text>
+        <text x="70" y="160" text-anchor="middle" font-size="11.5" fill="#211C16">(Tema 2)</text>
+
+        <!-- Contenedor Actividad C -->
+        <rect x="158" y="22" width="426" height="222" rx="14" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="371" y="48" text-anchor="middle" font-size="14.5" font-weight="700" fill="#211C16">Actividad C · Producir soluciones de diseño</text>
+
+        <!-- Tres diseños -->
+        <rect x="174" y="106" width="124" height="74" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.2"></rect>
+        <text x="236" y="134" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7A5A12">1 · Diseño de</text>
+        <text x="236" y="151" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7A5A12">la actividad</text>
+
+        <rect x="309" y="106" width="124" height="74" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.2"></rect>
+        <text x="371" y="134" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2C5A2E">2 · Diseño de</text>
+        <text x="371" y="151" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2C5A2E">la información</text>
+
+        <rect x="444" y="106" width="124" height="74" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.2"></rect>
+        <text x="506" y="134" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8A3412">3 · Diseño del</text>
+        <text x="506" y="151" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8A3412">prototipo</text>
+
+        <!-- Flechas entre diseños -->
+        <line x1="298" y1="143" x2="307" y2="143" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="433" y1="143" x2="442" y2="143" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+
+        <text x="371" y="206" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">baja &#8594; media &#8594; alta fidelidad</text>
+
+        <!-- Salida: Evaluación (Actividad D) -->
+        <rect x="610" y="92" width="120" height="80" rx="10" fill="#211C16" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="670" y="124" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FDFBF6">Evaluación</text>
+        <text x="670" y="144" text-anchor="middle" font-size="11.5" fill="#E7D8C2">Actividad D</text>
+        <text x="670" y="160" text-anchor="middle" font-size="11.5" fill="#E7D8C2">(Tema 4)</text>
+
+        <!-- Flechas entrada/salida -->
+        <line x1="130" y1="132" x2="156" y2="132" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <line x1="584" y1="132" x2="608" y2="132" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+
+        <!-- Realimentación: iterar -->
+        <path d="M650 172 C 650 268, 371 276, 371 246" fill="none" stroke="#0B5563" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ah)"></path>
+        <text x="500" y="285" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0B5563">iterar hasta cumplir los requisitos</text>
+      </svg>
+      <figcaption>La Actividad C recibe los requisitos (B), encadena tres diseños y avanza en fidelidad, para entregar a la evaluación (D). La flecha discontinua muestra la iteración. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad C es el corazón creativo del proceso, pero <strong>disciplinado</strong>: cada decisión de diseño se rastrea hasta un requisito (B) y, a través de él, hasta el contexto real (A). Diseñar no es adornar: es <strong>resolver un problema documentado</strong>.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">3.2</span>¿Qué es la Actividad C? Generar soluciones de diseño</h3>
+
+    <p>La <strong>ISO 9241-210</strong> describe esta actividad como «producir <strong>soluciones de diseño</strong> que tengan en cuenta el contexto de uso y los requisitos de usuario». La palabra importante está en plural: <strong>soluciones</strong>.</p>
+    <p>No se trata de acertar a la primera con la pantalla definitiva. Se trata de <strong>generar varias alternativas</strong>, hacerlas tangibles y dejar que la evaluación decida cuál sobrevive. El diseño es exploración antes que compromiso.</p>
+    <p>Por eso esta actividad produce <strong>prototipos</strong>: versiones provisionales y deliberadamente incompletas del sistema, hechas para <strong>pensar y probar</strong>, no para entregar al cliente.</p>
+
+    <h4>De lo abstracto a lo concreto</h4>
+    <p>Un requisito como «la persona mayor debe poder pedir cita en menos de tres pasos» es abstracto. La Actividad C lo vuelve concreto: ¿qué pasos?, ¿qué botones?, ¿qué textos?, ¿en qué orden aparecen?</p>
+    <p>Ese paso de lo abstracto a lo concreto es donde el diseño se vuelve <strong>visible y discutible</strong>. Y lo visible se puede criticar, mejorar y volver a probar; lo que solo está en la cabeza del programador, no.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Donald Norman lo resumió en una frase que ya conoces del Tema 1: si la gente se equivoca sistemáticamente, <strong>la culpa es del diseño, no del usuario</strong>. La Actividad C es donde, por fin, podemos asumir esa responsabilidad: rediseñar para que el error sea difícil de cometer.</p>
+    </div>
+  </section>
+
+  <section id="tres-disenos" aria-labelledby="tres-disenos-h">
+    <h3 id="tres-disenos-h"><span class="num" aria-hidden="true">3.3</span>Las tres caras del diseño en el Tema 3</h3>
+
+    <p>El plan docente desglosa este tema en tres diseños que se encadenan. No son fases estancas, pero conviene presentarlas por separado para tener el mapa completo.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>1 · Diseño de la actividad</b> Decide <strong>cómo interactuará la persona con el sistema</strong>: qué tareas realiza, en qué pasos, con qué flujo. Es el «guion» de la interacción. Aquí enlaza directamente con las <strong>siete etapas de la acción</strong> de Norman que viste en el Tema 1.</li>
+      <li><b>2 · Diseño de la información</b> Decide <strong>cómo se organiza y presenta lo que el usuario ve</strong>: qué se agrupa, qué destaca, qué jerarquía hay. Es la arquitectura de la información en la pantalla. Aquí mandan los <strong>principios de la Gestalt</strong>.</li>
+      <li><b>3 · Diseño del prototipo</b> Materializa lo anterior en un artefacto que se puede ver y tocar, con un <strong>nivel de detalle creciente</strong> (de baja a alta fidelidad). Es la práctica central del tema: <strong>prototipado</strong>.</li>
+    </ol>
+
+    <p>Fíjate en el orden lógico: primero <strong>qué hace</strong> la persona (actividad), luego <strong>qué ve</strong> para hacerlo (información) y por último <strong>en qué soporte</strong> lo probamos (prototipo).</p>
+    <p>Las tres caras comparten una exigencia común: respetar las <strong>capacidades y los límites de la mente humana</strong>. Y para eso necesitamos un cuerpo de conocimiento concreto: las leyes cognitivas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El Tema 3 son tres diseños encadenados: <strong>actividad</strong> (cómo se interactúa), <strong>información</strong> (cómo se presenta) y <strong>prototipo</strong> (cómo se materializa y prueba). Los tres se apoyan en las <strong>leyes cognitivas</strong>.</p>
+    </div>
+  </section>
+
+  <section id="leyes" aria-labelledby="leyes-h">
+    <h3 id="leyes-h"><span class="num" aria-hidden="true">3.4</span>Diseñar con la mente del usuario: las leyes cognitivas</h3>
+
+    <p>Una interfaz no se usa con las manos: se usa con el <strong>cerebro</strong>. Los ojos perciben, la mente decide y la memoria recuerda. Si el diseño ignora cómo funcionan esos tres procesos, fracasa por mucho que «se vea bonito».</p>
+    <p>Las <strong>leyes cognitivas</strong> son regularidades, medidas en psicología experimental, sobre cómo percibimos, decidimos y recordamos. No son opiniones de diseñador: son <strong>hechos sobre las personas</strong> que el ingeniero usa como restricciones de diseño.</p>
+    <p>Veremos cinco que conviene tener siempre presentes. Las tres primeras gobiernan la <strong>percepción y la organización</strong>; las dos siguientes, la <strong>decisión y la memoria</strong>; la última, la <strong>respuesta del sistema</strong>.</p>
+
+    <h4>Los principios de la Gestalt: el ojo agrupa solo</h4>
+    <p>La psicología de la Gestalt descubrió que <strong>percibimos conjuntos, no piezas sueltas</strong>. El ojo organiza lo que ve de forma automática, siguiendo unos principios predecibles. El diseño de la información los usa para que la pantalla «se lea sola».</p>
+    <ul class="laws" role="list">
+      <li><b>Proximidad</b> Lo que está cerca se percibe como un grupo. Separar un botón de su etiqueta, o juntar campos que no se relacionan, rompe la lectura.</li>
+      <li><b>Semejanza</b> Lo que comparte color, forma o tamaño se percibe como del mismo tipo. Por eso todos los enlaces deben parecerse entre sí, y los botones de acción también.</li>
+      <li><b>Cierre y continuidad</b> La mente completa figuras incompletas y sigue líneas. Un buen <em>layout</em> aprovecha esto para guiar la mirada sin recargar la pantalla.</li>
+      <li><b>Región común</b> Lo que comparte un recuadro o un fondo se percibe unido. Es la base de las tarjetas y los paneles que ves en cualquier interfaz moderna.</li>
+    </ul>
+    <p>Conclusión práctica: <strong>la proximidad, el color y los recuadros comunican relaciones</strong> antes de que se lea una sola palabra. Mal usados, mienten al usuario.</p>
+
+    <h4>La ley de Hick: cuantas más opciones, más se tarda en decidir</h4>
+    <p>La <strong>ley de Hick (o de Hick–Hyman)</strong> establece que el <strong>tiempo de decisión crece</strong> con el número y la complejidad de las opciones disponibles. Más alternativas no es más libertad: es más esfuerzo y más errores.</p>
+    <p>Su forma típica relaciona el tiempo de reacción con el logaritmo del número de opciones, aproximadamente <em>T = a + b · log₂(n + 1)</em>. La idea para el diseño es simple: <strong>menos opciones a la vez, mejor</strong>.</p>
+    <p>De ahí nacen recursos como <strong>agrupar</strong> el menú en categorías, ocultar lo avanzado tras un «más opciones» (revelación progresiva) o reducir un formulario a lo imprescindible. Cada opción que quitas acelera la decisión.</p>
+
+    <h4>La ley de Fitts: los objetivos grandes y cercanos se aciertan antes</h4>
+    <p>La <strong>ley de Fitts</strong> mide el <strong>tiempo para alcanzar un objetivo</strong> con un puntero o un dedo. Depende de dos cosas: la <strong>distancia</strong> hasta el objetivo y su <strong>tamaño</strong>. Más lejos y más pequeño, más tiempo y más fallos.</p>
+    <p>Su consecuencia es contundente: los controles importantes deben ser <strong>grandes</strong> y estar <strong>cerca</strong> de donde la mano ya está. En móvil, un botón diminuto en una esquina es un castigo; un botón ancho al alcance del pulgar es un acierto.</p>
+    <p>De aquí salen reglas concretas: <strong>áreas táctiles amplias</strong>, botones de acción destacados, y aprovechar los bordes y esquinas de la pantalla (que actúan como objetivos «infinitamente grandes» porque el cursor no se pasa de largo).</p>
+
+    <h4>La ley de Miller y la carga cognitiva: la memoria de trabajo es pequeña</h4>
+    <p>George Miller observó que la <strong>memoria de trabajo</strong> humana maneja a la vez solo unos pocos elementos, el famoso <strong>7 ± 2</strong>. Es un dato que ya apareció en el Tema 1 al hablar de los límites cognitivos.</p>
+    <p>La lección no es «pon siete cosas como máximo», sino algo más fino: <strong>no obligues a la persona a recordar</strong> lo que el sistema puede mostrar. Reconocer es fácil; recordar, costoso.</p>
+    <p>De ahí dos tácticas: el <strong>agrupamiento</strong> (partir la información en bloques con sentido, como un número de cuenta separado por tramos) y reducir la <strong>carga cognitiva</strong>, es decir, todo el esfuerzo mental que el diseño impone sin necesidad.</p>
+
+    <h4>Los tiempos de respuesta: la máquina también tiene que ser puntual</h4>
+    <p>Ben Shneiderman recopiló cómo influye la <strong>velocidad de respuesta del sistema</strong> en la experiencia. Hay tres umbrales que conviene memorizar, porque marcan la diferencia entre fluidez y frustración.</p>
+    <ul class="laws" role="list">
+      <li><b>Hasta ~0,1 s</b> La respuesta se siente <strong>instantánea</strong>: el usuario percibe que manipula el objeto directamente.</li>
+      <li><b>Hasta ~1 s</b> Se mantiene el <strong>flujo de pensamiento</strong>, aunque se nota el retardo. No suele hacer falta avisar.</li>
+      <li><b>A partir de ~10 s</b> Se pierde la <strong>atención</strong>: la persona se va a otra cosa. Aquí son obligatorios indicadores de progreso.</li>
+    </ul>
+    <p>El diseño de la actividad y del prototipo debe respetar estos umbrales: una espera sin aviso es un error de diseño, no solo de rendimiento.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cinco leyes para no olvidar: <strong>Gestalt</strong> (el ojo agrupa), <strong>Hick</strong> (menos opciones, decisión más rápida), <strong>Fitts</strong> (objetivos grandes y cercanos), <strong>Miller</strong> (memoria de trabajo pequeña: reconocer &gt; recordar) y <strong>tiempos de respuesta</strong> (0,1 s / 1 s / 10 s). Son restricciones de ingeniería, no gustos.</p>
+    </div>
+  </section>
+
+  <section id="iteracion" aria-labelledby="iteracion-h">
+    <h3 id="iteracion-h"><span class="num" aria-hidden="true">3.5</span>Por qué se diseña en bucle (y barato primero)</h3>
+
+    <p>El nombre del tema lo dice: <strong>proceso iterativo</strong> de diseño. Iterar significa diseñar, probar, aprender del fallo y volver a diseñar. No es un defecto del método: es su mayor virtud.</p>
+    <p>La razón es la misma economía que vimos en el Tema 1. Encontrar un problema en un <strong>boceto en papel</strong> cuesta una goma de borrar; encontrarlo en el <strong>código ya programado</strong> cuesta rehacer el trabajo de semanas.</p>
+    <p>Por eso se empieza por prototipos de <strong>baja fidelidad</strong>, baratos y desechables, y solo se sube de fidelidad cuando las ideas básicas ya han sobrevivido a la crítica. Equivocarse pronto y barato es el objetivo, no el accidente.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>En diseño de interacción se repite que <strong>«hay que enamorarse del problema, no de la primera solución»</strong>. La iteración es el antídoto contra el apego: si tu primer diseño es desechable y barato, no te dolerá tirarlo cuando los datos digan que no funciona.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Las leyes cognitivas en objetos que usas a diario, qué dicen los datos del INE sobre por qué importa la carga cognitiva, los niveles de prototipo de tu práctica y cómo todo esto se convierte en una entrega de tu proyecto.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">4.1</span>Las leyes cognitivas que ya sufres</h3>
+
+    <p>Las leyes que acabamos de ver no son teoría de laboratorio: explican tus enfados cotidianos con la tecnología. Reconocerlas en lo que te rodea es la mejor forma de fijarlas.</p>
+
+    <h4>Hick en el mando a distancia</h4>
+    <p>Un mando con cuarenta botones idénticos viola la ley de Hick: cada vez que quieres subir el volumen, tu cerebro tiene que <strong>buscar entre demasiadas opciones</strong>. Un mando de seis botones grandes se usa sin mirar.</p>
+
+    <h4>Fitts en el móvil con una mano</h4>
+    <p>Cuando una app pone el botón de «enviar» en la esquina superior, lejos del pulgar, te obliga a recolocar la mano. La ley de Fitts predice exactamente ese coste: <strong>lejos y pequeño = lento y con errores</strong>.</p>
+
+    <h4>Gestalt en un formulario mal hecho</h4>
+    <p>Si la etiqueta «Teléfono» está más cerca del campo de abajo que del suyo, la proximidad te engaña y escribes donde no es. El error parece tuyo; es del diseño.</p>
+
+    <h4>Miller en un código de un solo bloque</h4>
+    <p>Un código de verificación mostrado como «847209» es más difícil de copiar que «847 209». El agrupamiento descarga la memoria de trabajo. Misma información, distinta carga cognitiva.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cada vez que una interfaz te irrita, suele haber una ley cognitiva incumplida detrás. Aprender a <strong>nombrar el fallo</strong> (esto es Hick, esto es Fitts, esto es Gestalt) es el primer paso para no repetirlo en lo que tú diseñes.</p>
+    </div>
+  </section>
+
+  <section id="anclaje" aria-labelledby="anclaje-h">
+    <h3 id="anclaje-h"><span class="num" aria-hidden="true">4.2</span>Anclaje real: un tercio de España sin destrezas básicas (INE)</h3>
+
+    <p>Podría parecer que reducir la carga cognitiva es un lujo para gente cómoda. Los datos del <strong>INE</strong> dicen lo contrario: para una parte enorme de la población, es la diferencia entre poder o no poder completar una gestión.</p>
+
+    <div class="box real">
+      <span class="label">Dato real</span>
+      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> (INE, año 2025):</p>
+      <div class="table-scroll">
+      <table>
+        <caption>Indicadores de destrezas y contexto digital en España. Fuente: INE, datos publicados el 20 de noviembre de 2025.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
+          <tr><td>De ellas, con habilidades solo básicas</td><td class="fig">27,3 %</td></tr>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Personas que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>La lectura es incómoda. Si el 66,5 % alcanza un nivel básico o superior, <strong>cerca de un tercio de la población no llega ni al básico</strong>. Para esas personas, cada opción de más y cada espera sin aviso es una barrera real.</p>
+    <p>Súmale que la mitad de los hogares usa <strong>solo el móvil</strong>: pantalla pequeña, una mano, a menudo en movimiento. Ese contexto castiga sin piedad los objetivos diminutos (Fitts) y los menús sobrecargados (Hick).</p>
+    <p>Y si <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por Internet, diseñar con alta carga cognitiva no produce «una mala experiencia»: produce <strong>ciudadanía que no consigue su cita médica</strong> o su ayuda.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Respetar las leyes cognitivas no es estética: es <strong>inclusión</strong>. Con un tercio de la población por debajo del nivel digital básico y la mitad de los hogares solo con móvil, reducir opciones, agrandar objetivos y descargar la memoria es lo que separa un servicio usable de uno que excluye.</p>
+    </div>
+  </section>
+
+  <section id="fidelidad" aria-labelledby="fidelidad-h">
+    <h3 id="fidelidad-h"><span class="num" aria-hidden="true">4.3</span>Niveles de fidelidad del prototipo: papel, esqueleto, casi real</h3>
+
+    <p>La práctica del Tema 3 es <strong>prototipar en tres niveles de fidelidad</strong>. «Fidelidad» mide cuánto se parece el prototipo al producto final. Cada nivel sirve para responder preguntas distintas.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los tres niveles de fidelidad del prototipo y para qué sirve cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Nivel</th><th scope="col">Qué es</th><th scope="col">Qué pregunta responde</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Baja fidelidad</th><td>Bocetos en papel, sin color ni detalle</td><td>¿La idea y el flujo tienen sentido?</td></tr>
+        <tr><th scope="row">Media fidelidad</th><td><em>Wireframes</em>: estructura digital en gris, sin estilo final</td><td>¿La organización y la navegación funcionan?</td></tr>
+        <tr><th scope="row">Alta fidelidad</th><td>Casi como el producto real, interactivo y con estilo</td><td>¿Los detalles de uso y la apariencia convencen?</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>La regla de oro es <strong>subir de fidelidad solo cuando toca</strong>. Pintar colores y tipografías sobre una idea de navegación que aún no funciona es trabajo tirado.</p>
+    <p>Y en cada nivel reaparecen las leyes cognitivas: en papel ya decides la <strong>agrupación</strong> (Gestalt) y el <strong>número de opciones</strong> (Hick); en alta fidelidad afinas <strong>tamaños táctiles</strong> (Fitts) y <strong>tiempos de respuesta</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Prototipar es pensar con las manos. <strong>Baja fidelidad</strong> para validar la idea, <strong>media</strong> para la estructura y la navegación, <strong>alta</strong> para los detalles y la apariencia. Las leyes cognitivas se comprueban en los tres niveles.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">4.4</span>Tu proyecto: la Actividad C como entrega de prototipos</h3>
+
+    <p>Esta es la transferencia más directa. Tu <strong>proyecto de la asignatura sigue el proceso de la ISO 9241-210</strong>, y la Actividad C es donde el equipo, por fin, produce diseño tangible a partir de los requisitos ya entregados.</p>
+    <p>La práctica del tema, <strong>prototipado de baja, media y alta fidelidad</strong>, es exactamente lo que tendrás que evidenciar. No basta con presentar la pantalla final: hay que mostrar la <strong>evolución</strong> y las decisiones por el camino.</p>
+
+    <h4>De la norma a tu entrega</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué produce la Actividad C y cómo se convierte en una entrega del proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Diseño</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Apoyo cognitivo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Actividad</th><td>Flujo de tareas y modelo de interacción</td><td>Etapas de la acción · Hick</td></tr>
+        <tr><th scope="row">Información</th><td>Organización y jerarquía de la pantalla</td><td>Gestalt · Miller</td></tr>
+        <tr><th scope="row">Prototipo</th><td>Prototipos de baja, media y alta fidelidad</td><td>Fitts · tiempos de respuesta</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consecuencias prácticas desde hoy</h4>
+    <ul>
+      <li><strong>Esta entrega es un <em>checkpoint</em> obligatorio.</strong> Como las demás entregas parciales, su ausencia en plazo compromete la superación del bloque del proyecto.</li>
+      <li><strong>Tienes que evidenciar la iteración.</strong> Guarda los bocetos descartados: demostrar que probaste y mejoraste vale más que una única pantalla «perfecta».</li>
+      <li><strong>El nivel AA de WCAG sigue vigente.</strong> El umbral de accesibilidad que empezó en la Actividad A debe poder comprobarse ya en tus prototipos de alta fidelidad.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad C es tu entrega de <strong>prototipos</strong>: del boceto en papel a la maqueta interactiva, justificando cada decisión con un requisito y una ley cognitiva. Se valora la <strong>evidencia de iteración</strong>, no solo el resultado final.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">4.5</span>Retos de diseño para esta semana</h3>
+
+    <p>El diseño se aprende diseñando y criticando. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Caza la ley rota</span>
+      <p>Encuentra en una app que uses una pantalla que te irrite y <strong>nombra la ley que incumple</strong>: ¿demasiadas opciones (Hick)?, ¿botón diminuto (Fitts)?, ¿elementos mal agrupados (Gestalt)? Justifícalo en una frase.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Prototipa en papel</span>
+      <p>Coge un requisito de tu proyecto y dibuja la pantalla <strong>a mano, en papel</strong>, en cinco minutos. Sin color, sin regla. Acabas de hacer un prototipo de baja fidelidad: tu idea ya es discutible.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Quita la mitad</span>
+      <p>Toma esa pantalla y <strong>elimina la mitad de los elementos</strong>. ¿Sigue cumpliendo el objetivo? Casi siempre sí. Acabas de aplicar a la vez Hick (menos opciones) y Miller (menos carga).</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">4.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente lo deja claro: una competencia de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la calidad del software (CG03), y saber <strong>transmitir esas soluciones</strong> con claridad (CB04).</p>
+    <p>Entre los resultados de aprendizaje, el plan pide expresamente <strong>aplicar la formación teórica y práctica para abordar el desarrollo de interfaces de usuario</strong>. La Actividad C es donde esa competencia deja de ser teoría y se convierte en producto.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando amontones opciones «por si acaso», cuando pongas un botón crítico donde es difícil de pulsar, o cuando dejes una espera sin aviso, estarás <strong>volviendo a centrar el diseño en la máquina</strong> y trasladando el coste a la persona.</p>
+    <p>Conocer las leyes cognitivas te da algo que el sentido común no garantiza: <strong>argumentos</strong> para defender un diseño y para rechazar uno malo, aunque venga del jefe o del cliente.</p>
+    <p>El método, la norma y la evidencia te dan el respaldo. Decidir diseñar para la mente real de las personas, en cada proyecto que firmes, será tuyo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No puedes garantizar usabilidad ni accesibilidad (CI17, CG03) si diseñas contra la forma en que las personas perciben, deciden y recuerdan. Las leyes cognitivas convierten el «me gusta más así» en una <strong>decisión de ingeniería defendible</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué actividad del DCH es «producir soluciones de diseño» y qué posición ocupa?</summary>
+      <p>Es la <strong>Actividad C</strong>, la <strong>tercera</strong> del ciclo iterativo (A → B → C → D). Recibe los requisitos de la B y entrega prototipos a la D para que se evalúen. <em>(Ver 3.1 y 3.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Por qué se habla de «soluciones» en plural?</summary>
+      <p>Porque el diseño es <strong>exploración antes que compromiso</strong>: se generan varias alternativas, se hacen tangibles con prototipos y la evaluación decide cuál sobrevive. No se busca acertar a la primera. <em>(Ver 3.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son los tres diseños del Tema 3 y en qué orden?</summary>
+      <p><strong>Diseño de la actividad</strong> (cómo se interactúa), <strong>diseño de la información</strong> (cómo se presenta) y <strong>diseño del prototipo</strong> (cómo se materializa y prueba). Primero qué hace la persona, luego qué ve, por último en qué soporte se prueba. <em>(Ver 3.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Enuncia la ley de Hick y su consecuencia de diseño.</summary>
+      <p>El <strong>tiempo de decisión crece</strong> con el número y la complejidad de las opciones. Consecuencia: <strong>menos opciones a la vez</strong> (agrupar, revelación progresiva, formularios mínimos). <em>(Ver 3.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿De qué dependen el tiempo y los errores según la ley de Fitts?</summary>
+      <p>De la <strong>distancia</strong> al objetivo y de su <strong>tamaño</strong>. Más lejos y más pequeño, más tiempo y más fallos. Por eso los controles importantes deben ser grandes, cercanos y aprovechar bordes y esquinas. <em>(Ver 3.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué dice la ley de Miller y qué táctica de diseño se deriva?</summary>
+      <p>Que la <strong>memoria de trabajo</strong> maneja pocos elementos (7 ± 2). La lección: no obligar a recordar lo que se puede mostrar (reconocer &gt; recordar) y usar el <strong>agrupamiento</strong> para reducir la carga cognitiva. <em>(Ver 3.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Cuáles son los tres umbrales de tiempo de respuesta?</summary>
+      <p>Hasta <strong>~0,1 s</strong> se siente instantáneo; hasta <strong>~1 s</strong> se mantiene el flujo de pensamiento; a partir de <strong>~10 s</strong> se pierde la atención y son obligatorios los indicadores de progreso. <em>(Ver 3.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Para qué sirve cada nivel de fidelidad del prototipo?</summary>
+      <p><strong>Baja</strong> (papel): validar idea y flujo. <strong>Media</strong> (wireframe): comprobar estructura y navegación. <strong>Alta</strong> (casi real): afinar detalles y apariencia. Solo se sube de fidelidad cuando lo anterior ya funciona. <em>(Ver 4.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Actividad C (DCH)</dt>
+      <dd>«Producir soluciones de diseño que satisfagan los requisitos»: tercera actividad del ciclo iterativo del DCH (ISO 9241-210). Su resultado característico son los prototipos.</dd>
+      <dt>Soluciones de diseño</dt>
+      <dd>Propuestas concretas (en plural) que dan respuesta a los requisitos de usuario. Se generan como alternativas y se materializan en prototipos para poder probarlas.</dd>
+      <dt>Proceso iterativo de diseño</dt>
+      <dd>Forma de diseñar en bucle: diseñar, prototipar, evaluar y refinar, repitiendo hasta cumplir los requisitos. Da nombre al Tema 3.</dd>
+      <dt>Diseño de la actividad</dt>
+      <dd>Decisión de cómo interactuará la persona con el sistema: tareas, pasos y flujo de la interacción. Enlaza con las siete etapas de la acción de Norman.</dd>
+      <dt>Diseño de la información</dt>
+      <dd>Decisión de cómo se organiza y presenta lo que el usuario ve: agrupación, jerarquía y énfasis. Se apoya en los principios de la Gestalt.</dd>
+      <dt>Diseño del prototipo</dt>
+      <dd>Materialización del diseño en un artefacto que se puede ver y probar, con un nivel de detalle creciente.</dd>
+      <dt>Prototipo</dt>
+      <dd>Versión provisional e incompleta de un sistema, hecha para pensar y probar, no para entregar como producto final.</dd>
+      <dt>Fidelidad (baja, media, alta)</dt>
+      <dd>Grado de parecido del prototipo con el producto final. Baja: bocetos en papel. Media: wireframes digitales sin estilo. Alta: maqueta interactiva casi real.</dd>
+      <dt>Wireframe</dt>
+      <dd>Prototipo de media fidelidad: estructura digital de la pantalla en gris, sin estilo visual final, para validar organización y navegación.</dd>
+      <dt>Leyes cognitivas</dt>
+      <dd>Regularidades medidas sobre cómo las personas perciben, deciden y recuerdan; el diseñador las usa como restricciones de diseño.</dd>
+      <dt>Principios de la Gestalt</dt>
+      <dd>Reglas de percepción (proximidad, semejanza, cierre, continuidad, región común) según las cuales el ojo agrupa automáticamente lo que ve.</dd>
+      <dt>Ley de Hick</dt>
+      <dd>(Hick–Hyman) El tiempo de decisión crece con el número y la complejidad de las opciones. Implica reducir y agrupar opciones.</dd>
+      <dt>Ley de Fitts</dt>
+      <dd>El tiempo y los errores para alcanzar un objetivo dependen de su distancia y su tamaño. Implica controles grandes y cercanos.</dd>
+      <dt>Ley de Miller (7 ± 2)</dt>
+      <dd>La memoria de trabajo maneja a la vez solo unos pocos elementos. Implica favorecer el reconocimiento sobre el recuerdo y agrupar la información.</dd>
+      <dt>Carga cognitiva</dt>
+      <dd>Esfuerzo mental que un diseño impone al usuario. Reducirla es objetivo central del diseño de la información.</dd>
+      <dt>Tiempos de respuesta</dt>
+      <dd>Umbrales de velocidad del sistema que marcan la experiencia: ~0,1 s (instantáneo), ~1 s (flujo) y ~10 s (pérdida de atención).</dd>
+      <dt>Revelación progresiva</dt>
+      <dd>Mostrar primero lo esencial y ocultar lo avanzado hasta que se necesite, para reducir opciones y carga cognitiva.</dd>
+      <dt>ISO 9241-210</dt>
+      <dd>Norma del proceso de Diseño Centrado en lo Humano; su tercera actividad es producir soluciones de diseño. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>La <strong>Actividad C</strong> del DCH es «producir soluciones de diseño»: la <strong>tercera</strong> del ciclo, entre requisitos (B) y evaluación (D).</li>
+        <li>Es creativa pero <strong>disciplinada</strong>: cada decisión se rastrea hasta un requisito y, a través de él, hasta el contexto real.</li>
+        <li>El Tema 3 son tres diseños encadenados: <strong>actividad</strong> (cómo se interactúa), <strong>información</strong> (cómo se presenta) y <strong>prototipo</strong> (cómo se materializa).</li>
+        <li>Se diseña respetando las <strong>leyes cognitivas</strong>: <strong>Gestalt</strong>, <strong>Hick</strong>, <strong>Fitts</strong>, <strong>Miller</strong> y los <strong>tiempos de respuesta</strong>.</li>
+        <li>Son <strong>restricciones de ingeniería</strong>, no gustos: dan argumentos para defender o rechazar un diseño.</li>
+        <li>El proceso es <strong>iterativo</strong>: equivocarse <strong>pronto y barato</strong> en baja fidelidad evita el error caro en producción.</li>
+        <li>Los datos del <strong>INE 2025</strong> lo justifican: un tercio de la población no alcanza el nivel digital básico y la mitad de los hogares solo usa móvil; reducir la carga cognitiva es inclusión.</li>
+        <li>En tu proyecto, la Actividad C es la entrega de <strong>prototipos</strong> (baja, media y alta fidelidad), evidenciando la <strong>iteración</strong> y manteniendo el nivel <strong>AA de WCAG</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="11">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 3 «Proceso iterativo de diseño» · Concepto: <em>Generar soluciones de diseño (Actividad C del DCH) y leyes cognitivas</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: el diseño del prototipo, tercer diseño de la Actividad C del Diseño Centrado en lo Humano (ISO 9241-210). Niveles de fidelidad, prototipos horizontales y verticales, de usar y tirar y evolutivos, prototipado en papel y Mago de Oz. Tema 3 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Diseño del prototipo (Actividad C del DCH) · Apuntes Tema 3 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 3 · Proceso iterativo de diseño · Material de apoyo</p>
+    <h1>Diseño del prototipo
+      <span class="sub">El tercero de los tres diseños de la Actividad C: materializar la idea para pensarla y probarla (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es el diseño del prototipo?</a></li>
+          <li class="lvl2"><a href="#fidelidad">Los niveles de fidelidad, en profundidad</a></li>
+          <li class="lvl2"><a href="#ancho-profundo">Horizontal o vertical: ¿ancho o profundo?</a></li>
+          <li class="lvl2"><a href="#tirar-evolutivo">De usar y tirar o evolutivo</a></li>
+          <li class="lvl2"><a href="#tecnicas">Técnicas: prototipo en papel y Mago de Oz</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#preguntar">Prototipar es preguntar barato</a></li>
+          <li class="lvl2"><a href="#tres-fidelidades">El mismo flujo, tres fidelidades</a></li>
+          <li class="lvl2"><a href="#anclaje">Anclaje real: probar antes de lanzar (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: el prototipo como entrega central de la C</a></li>
+          <li class="lvl2"><a href="#retos">Retos de diseño para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes cierran la <strong>Actividad C</strong>. Ya vimos el <strong>diseño de la actividad</strong> (el comportamiento) y el <strong>diseño de la información</strong> (la presentación). Ahora toca el tercero: el <strong>diseño del prototipo</strong>, donde todo se vuelve tangible.</p>
+    <p>El prototipo es el <strong>artefacto que materializa</strong> los dos diseños anteriores para poder <strong>pensarlos mejor y probarlos</strong>. Es la pieza que después se evaluará en la Actividad D (Tema 4) y que itera hasta cumplir los requisitos.</p>
+    <p>Es también la <strong>práctica central del tema</strong>: prototipar en baja, media y alta fidelidad. Aquí desarrollamos a fondo lo que en la apertura solo presentamos.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>diseño del prototipo</strong> materializa la actividad y la información en un artefacto <strong>provisional e incompleto</strong>, hecho para <strong>pensar y probar</strong>, no para entregar. Es la pieza que se evalúa e itera.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: materializar para probar</h2>
+    <p class="lead">Qué es un prototipo, qué niveles de fidelidad existen, si conviene ancho o profundo, si se desecha o evoluciona, y con qué técnicas se prototipa antes de programar nada.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es el diseño del prototipo?</h3>
+
+    <p>Un <strong>prototipo</strong> es una versión <strong>provisional e incompleta</strong> del sistema, hecha para representar una idea de diseño y poder <strong>verla, tocarla y probarla</strong> antes de construir el producto real.</p>
+    <p>La palabra clave es <strong>incompleta a propósito</strong>. Un prototipo no pretende funcionar de verdad: pretende <strong>responder una pregunta</strong> de diseño con el mínimo esfuerzo posible.</p>
+    <p>Diseñar el prototipo es, por tanto, decidir <strong>qué representar, con cuánto detalle y para responder qué duda</strong>. No es «empezar a programar antes de tiempo».</p>
+
+    <h4>Para qué sirve un prototipo</h4>
+    <ul>
+      <li><strong>Pensar mejor</strong>: al hacer la idea tangible, se ven problemas que en la cabeza no se veían.</li>
+      <li><strong>Comunicar</strong>: el equipo, el cliente y los usuarios discuten algo concreto, no descripciones vagas.</li>
+      <li><strong>Probar</strong>: se puede poner delante de personas reales y observar qué pasa (eso será la Actividad D).</li>
+    </ul>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La palabra «prototipo» viene del griego <em>prôtos</em> (primero) y <em>týpos</em> (modelo): «el primer molde». En diseño de interacción, ese «primer molde» no se hace para acertar, sino para <strong>fallar pronto y barato</strong>: cada prototipo descartado es información que no costó programar.</p>
+    </div>
+  </section>
+
+  <section id="fidelidad" aria-labelledby="fidelidad-h">
+    <h3 id="fidelidad-h"><span class="num" aria-hidden="true">1.2</span>Los niveles de fidelidad, en profundidad</h3>
+
+    <p>La <strong>fidelidad</strong> mide cuánto se parece el prototipo al producto final, en aspecto y en comportamiento. No es una escala de calidad: es una escala de <strong>parecido</strong>, y cada nivel sirve para preguntas distintas.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 350" role="img" aria-labelledby="fid-title fid-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="fid-title">La escalera de fidelidad de los prototipos</title>
+        <desc id="fid-desc">Tres bloques de altura creciente representan los tres niveles de fidelidad. El primero, el más bajo, es la baja fidelidad en papel, que responde a si la idea y el flujo tienen sentido. El segundo, intermedio, es la media fidelidad o wireframe, que responde a si la estructura y la navegación funcionan. El tercero, el más alto, es la alta fidelidad interactiva, que responde a si los detalles y la apariencia convencen. Una flecha ascendente sobre los bloques indica que solo se sube de fidelidad cuando lo anterior ya funciona. Una flecha inferior indica que, hacia la derecha, hay más detalle, más coste y menos flexibilidad para cambiar.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0B5563"></path>
+          </marker>
+          <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4A4136"></path>
+          </marker>
+        </defs>
+
+        <!-- Flecha ascendente superior -->
+        <line x1="55" y1="92" x2="660" y2="48" stroke="#0B5563" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#ah)"></line>
+        <text x="360" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#0B5563">subir de fidelidad solo cuando lo anterior funciona</text>
+
+        <!-- Baja -->
+        <rect x="30" y="210" width="195" height="85" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="127" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5A12">Baja fidelidad</text>
+        <text x="127" y="261" text-anchor="middle" font-size="11.5" fill="#211C16">Papel, bocetos</text>
+        <text x="127" y="279" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">¿la idea y el flujo?</text>
+
+        <!-- Media -->
+        <rect x="262" y="160" width="195" height="135" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="359" y="190" text-anchor="middle" font-size="14" font-weight="700" fill="#2C5A2E">Media fidelidad</text>
+        <text x="359" y="211" text-anchor="middle" font-size="11.5" fill="#211C16">Wireframe digital</text>
+        <text x="359" y="229" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">¿estructura y</text>
+        <text x="359" y="245" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">navegación?</text>
+
+        <!-- Alta -->
+        <rect x="494" y="110" width="195" height="185" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="591" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#8A3412">Alta fidelidad</text>
+        <text x="591" y="161" text-anchor="middle" font-size="11.5" fill="#211C16">Maqueta interactiva</text>
+        <text x="591" y="179" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">¿detalles y</text>
+        <text x="591" y="195" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">apariencia?</text>
+
+        <!-- Flecha inferior coste -->
+        <line x1="30" y1="320" x2="689" y2="320" stroke="#4A4136" stroke-width="2" marker-end="url(#ah2)"></line>
+        <text x="360" y="340" text-anchor="middle" font-size="11.5" font-style="italic" fill="#4A4136">más detalle · más coste · menos flexibilidad para cambiar</text>
+      </svg>
+      <figcaption>La «escalera de fidelidad»: de baja (papel) a alta (maqueta interactiva). Se sube solo cuando lo anterior funciona; a más fidelidad, más coste y menos flexibilidad. Descripción completa disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los tres niveles de fidelidad: qué son, qué responden y qué cuestan.</caption>
+      <thead>
+        <tr><th scope="col">Nivel</th><th scope="col">Qué es</th><th scope="col">Pregunta que responde</th><th scope="col">Coste / flexibilidad</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Baja</th><td>Bocetos en papel, sin color ni detalle</td><td>¿La idea y el flujo tienen sentido?</td><td>Muy barato · muy flexible</td></tr>
+        <tr><th scope="row">Media</th><td>Wireframes digitales en gris, sin estilo final</td><td>¿La estructura y la navegación funcionan?</td><td>Intermedio</td></tr>
+        <tr><th scope="row">Alta</th><td>Maqueta interactiva, casi como el producto</td><td>¿Convencen los detalles y la apariencia?</td><td>Caro · poco flexible</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>La regla de oro ya la conoces: <strong>subir de fidelidad solo cuando lo anterior funciona</strong>. Pintar colores sobre un flujo que aún no convence es trabajo tirado.</p>
+    <p>Y cuidado con un riesgo conocido de la alta fidelidad: cuando algo «parece terminado», la gente <strong>critica menos</strong> y se centra en el color, no en si el flujo sirve. La baja fidelidad invita a opinar sin miedo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>fidelidad</strong> mide el parecido con el producto, no la calidad. <strong>Baja</strong> (papel): la idea y el flujo. <strong>Media</strong> (wireframe): estructura y navegación. <strong>Alta</strong> (interactiva): detalles y apariencia. A más fidelidad, más coste y menos ganas de criticar: sube solo cuando toca.</p>
+    </div>
+  </section>
+
+  <section id="ancho-profundo" aria-labelledby="ancho-profundo-h">
+    <h3 id="ancho-profundo-h"><span class="num" aria-hidden="true">1.3</span>Horizontal o vertical: ¿ancho o profundo?</h3>
+
+    <p>Además de la fidelidad, un prototipo decide <strong>cuánto del sistema cubre</strong>. Y casi nunca puede cubrirlo todo: hay que elegir entre ancho y profundidad.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>Prototipo horizontal</b> Cubre <strong>muchas funciones, pero superficialmente</strong>: muestra todas las pantallas, aunque ninguna haga nada de verdad. Sirve para validar el alcance y la navegación general.</li>
+      <li><b>Prototipo vertical</b> Cubre <strong>pocas funciones, pero a fondo</strong>: una sola tarea completa y realista, de principio a fin. Sirve para probar en detalle una parte crítica.</li>
+    </ol>
+
+    <p>La elección depende de la <strong>pregunta</strong> que quieras responder. Si dudas del mapa general, prototipa <strong>ancho</strong>; si dudas de si una tarea concreta funciona, prototipa <strong>profundo</strong>.</p>
+    <p>Una estrategia habitual es priorizar <strong>lo más arriesgado o incierto</strong>: prototipa primero aquello que, si falla, hace fracasar todo lo demás.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un prototipo elige entre <strong>ancho</strong> (horizontal: muchas funciones, poca profundidad) y <strong>profundo</strong> (vertical: una tarea completa y realista). Elige según la <strong>pregunta</strong> que quieras responder y prioriza lo más incierto.</p>
+    </div>
+  </section>
+
+  <section id="tirar-evolutivo" aria-labelledby="tirar-evolutivo-h">
+    <h3 id="tirar-evolutivo-h"><span class="num" aria-hidden="true">1.4</span>De usar y tirar o evolutivo</h3>
+
+    <p>Como ya sabes de Ingeniería del Software, un prototipo puede tener dos destinos distintos, y conviene decidirlo desde el principio.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>Prototipo de usar y tirar</b> Se construye para aprender y luego <strong>se desecha</strong>. Es rápido y sucio: su único valor es la información que da. La baja fidelidad casi siempre es de este tipo.</li>
+      <li><b>Prototipo evolutivo</b> Se construye con la intención de que <strong>crezca hasta convertirse en el producto</strong>. Exige más cuidado técnico desde el inicio, porque no se va a tirar.</li>
+    </ol>
+
+    <p>El error caro es confundirlos: tratar como evolutivo un prototipo hecho «rápido y sucio» arrastra al producto final todos los atajos. Un prototipo de usar y tirar <strong>debe tirarse</strong>.</p>
+    <p>En las fases tempranas, lo sano es <strong>de usar y tirar</strong>: exploras barato sin comprometerte. La tentación de «aprovechar el código» suele salir cara.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Muchos sistemas heredan defectos eternos porque un prototipo «provisional» acabó en producción. Por eso, en diseño de interacción, se recomienda que los prototipos de exploración sean <strong>explícitamente desechables</strong>: si sabes que vas a tirarlo, no caes en la tentación de conservarlo.</p>
+    </div>
+  </section>
+
+  <section id="tecnicas" aria-labelledby="tecnicas-h">
+    <h3 id="tecnicas-h"><span class="num" aria-hidden="true">1.5</span>Técnicas: prototipo en papel y Mago de Oz</h3>
+
+    <p>Hay técnicas que permiten probar un diseño <strong>sin programar nada</strong>. Dos son clásicas y muy potentes en las fases tempranas.</p>
+
+    <ul class="laws" role="list">
+      <li><b>Prototipado en papel</b> Las pantallas se dibujan en papel y una persona del equipo «hace de ordenador»: cuando el usuario «pulsa» un botón, cambia la hoja. Permite probar el flujo completo en minutos, con casi nada.</li>
+      <li><b>Mago de Oz</b> El usuario cree que interactúa con un sistema real, pero detrás hay una persona simulando las respuestas. Sirve para probar ideas (por ejemplo, de voz o de inteligencia artificial) que aún no existen.</li>
+    </ul>
+
+    <p>Ambas comparten la misma filosofía del tema: <strong>aprender pronto y barato</strong>. Antes de invertir una hora de programación, una hoja de papel ya te dice si el flujo se entiende.</p>
+    <p>Para media y alta fidelidad se usan <strong>herramientas de wireframe y de maquetado interactivo</strong>, que permiten enlazar pantallas y simular la interacción sin escribir código de producción.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Se puede probar sin programar: el <strong>prototipado en papel</strong> (una persona hace de ordenador) y el <strong>Mago de Oz</strong> (una persona simula el sistema) permiten validar ideas pronto y barato. Para fidelidad media y alta, herramientas de wireframe y maquetado.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Por qué prototipar es preguntar barato, cómo se ve un mismo flujo en tres fidelidades, qué dicen los datos del INE sobre probar antes de lanzar y cómo el prototipo es la entrega central de tu proyecto.</p>
+  </div>
+
+  <section id="preguntar" aria-labelledby="preguntar-h">
+    <h3 id="preguntar-h"><span class="num" aria-hidden="true">2.1</span>Prototipar es preguntar barato</h3>
+
+    <p>La mejor forma de entender el prototipado es verlo como una manera de <strong>hacer preguntas</strong>. Cada prototipo plantea: «¿esto funciona?», y la respuesta llega antes de gastar lo caro: el desarrollo.</p>
+    <p>Recuerda la economía del error del Tema 1: arreglar un problema en papel cuesta una goma; en código ya hecho, cuesta semanas. El prototipo mueve el descubrimiento del error al momento más barato.</p>
+
+    <h4>Una regla simple antes de prototipar</h4>
+    <p>Antes de empezar un prototipo, pregúntate: <strong>«¿qué duda quiero resolver?»</strong>. Esa duda decide la fidelidad (baja si dudas del flujo, alta si dudas de los detalles) y el alcance (vertical si es una tarea, horizontal si es el mapa).</p>
+    <p>Si no sabes qué pregunta responde tu prototipo, probablemente estés <strong>programando disfrazado</strong>, no prototipando.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un prototipo es una <strong>pregunta barata</strong>. Antes de hacerlo, define qué duda resuelve: eso determina su fidelidad y su alcance. Si no responde a ninguna pregunta, no es un prototipo.</p>
+    </div>
+  </section>
+
+  <section id="tres-fidelidades" aria-labelledby="tres-fidelidades-h">
+    <h3 id="tres-fidelidades-h"><span class="num" aria-hidden="true">2.2</span>El mismo flujo, tres fidelidades</h3>
+
+    <p>Volvamos a la tarea de <strong>pedir cita médica</strong> que diseñamos en los apuntes anteriores. Así se prototiparía, subiendo de fidelidad solo cuando cada paso convence.</p>
+
+    <ol class="cycle" role="list">
+      <li><b>Baja (papel)</b> Cuatro hojas dibujadas a mano: «elegir especialidad», «elegir día», «confirmar», «cita hecha». Un compañero hace de ordenador y un usuario «pulsa». En diez minutos sabes si el flujo se entiende.</li>
+      <li><b>Media (wireframe)</b> Las mismas pantallas, ahora digitales y en gris, enlazadas. Se prueba si la navegación y la estructura funcionan: ¿se encuentra el botón de volver?, ¿el calendario se entiende?</li>
+      <li><b>Alta (interactiva)</b> Una maqueta con colores, tipografía real y transiciones. Se prueban los detalles: contraste suficiente, tamaños táctiles cómodos (Fitts), avisos claros al confirmar (cierre del abismo de evaluación).</li>
+    </ol>
+
+    <p>Observa cómo cada nivel reúne lo aprendido en el tema: la baja prueba la <strong>actividad</strong>; la media, la <strong>información</strong>; la alta, las <strong>leyes cognitivas</strong> y la accesibilidad afinadas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un mismo flujo recorre las tres fidelidades resolviendo dudas distintas: papel para el <strong>flujo</strong>, wireframe para la <strong>estructura</strong>, maqueta para los <strong>detalles y la accesibilidad</strong>. Es la Actividad C entera puesta a prueba.</p>
+    </div>
+  </section>
+
+  <section id="anclaje" aria-labelledby="anclaje-h">
+    <h3 id="anclaje-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: probar antes de lanzar (INE)</h3>
+
+    <p>¿Por qué tanto énfasis en probar el prototipo antes de lanzar? Porque el sistema real no se usa en un laboratorio, sino en el contexto desordenado que describen los datos del <strong>INE</strong>.</p>
+
+    <div class="box real">
+      <span class="label">Dato real</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Contexto de uso real que un prototipo debería poner a prueba. Fuente: INE, Encuesta TIC en Hogares, año 2025.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Personas que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Si la mitad de los hogares usa <strong>solo el móvil</strong>, un prototipo probado únicamente en una pantalla grande de portátil engaña: hay que prototipar y probar <strong>en el móvil</strong>, donde el dedo, el sol y la prisa mandan.</p>
+    <p>Y si ocho de cada diez personas hacen gestiones con la Administración, un fallo de flujo que no se detectó a tiempo no es «un bug»: es gente que <strong>abandona</strong> un trámite que necesitaba.</p>
+    <p>El prototipo es la última oportunidad <strong>barata</strong> de descubrir esos problemas. Después de lanzar, cada error se paga en frustración de usuarios reales y en costoso retrabajo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El prototipo debe probarse en el <strong>contexto real</strong>: con la mitad de los hogares solo en móvil y ocho de cada diez personas usando la e-Administración, probar el prototipo (sobre todo en móvil) es la última ocasión barata de evitar que la gente abandone.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: el prototipo como entrega central de la C</h3>
+
+    <p>En tu proyecto, el diseño del prototipo es la <strong>entrega más visible de la Actividad C</strong>. Es donde la actividad y la información se vuelven algo que el profesorado y los usuarios pueden tocar.</p>
+    <p>La práctica pide <strong>prototipos de baja, media y alta fidelidad</strong>. Lo importante no es solo el resultado final, sino mostrar la <strong>evolución</strong>: cómo fuiste subiendo de fidelidad resolviendo dudas.</p>
+
+    <h4>De la teoría a tu entrega</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué produce el diseño del prototipo y cómo se evidencia en el proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Validar idea y flujo</th><td>Prototipo en papel (baja fidelidad)</td><td>De usar y tirar · papel</td></tr>
+        <tr><th scope="row">Validar estructura y navegación</th><td>Wireframes (media fidelidad)</td><td>Horizontal · información</td></tr>
+        <tr><th scope="row">Validar detalles y apariencia</th><td>Maqueta interactiva (alta fidelidad)</td><td>Vertical · Fitts · WCAG AA</td></tr>
+        <tr><th scope="row">Demostrar el método</th><td>Bocetos descartados y dudas resueltas</td><td>Iteración</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consejos prácticos desde hoy</h4>
+    <ul>
+      <li><strong>Empieza en papel, hoy mismo.</strong> No abras una herramienta de diseño hasta que el flujo en papel convenza.</li>
+      <li><strong>Guarda lo que descartes.</strong> Los prototipos tirados son la prueba de tu iteración, y se valoran.</li>
+      <li><strong>Prueba la alta fidelidad en un móvil real.</strong> Es donde estará la mitad de tus usuarios.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En el proyecto, el prototipo es la entrega central de la Actividad C: <strong>baja, media y alta fidelidad</strong>, con la <strong>evidencia de iteración</strong> (lo descartado) y probado en el contexto real. Es lo que pasará a evaluarse en el Tema 4.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de diseño para esta semana</h3>
+
+    <p>El prototipado se aprende prototipando, cuanto antes y más barato, mejor. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Hazte el ordenador</span>
+      <p>Dibuja en papel las pantallas de una tarea de tu proyecto y pide a alguien que la «use». Tú cambias las hojas a mano. Anota dónde duda: ahí está tu primer hallazgo.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Define la pregunta</span>
+      <p>Antes de tu próximo prototipo, escribe en una frase <strong>qué duda quieres resolver</strong>. Si no te sale ninguna, todavía no necesitas ese prototipo.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Prueba en el móvil</span>
+      <p>Toma tu maqueta (aunque sea un dibujo) y míratela <strong>en la pantalla de un móvil</strong>, no en el portátil. ¿Los objetivos siguen siendo cómodos para el dedo? ¿El texto se lee?</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente pide <strong>aplicar la formación teórica y práctica para abordar el desarrollo de interfaces de usuario</strong> (CI17) garantizando la calidad (CG03) y sabiendo <strong>comunicar</strong> las soluciones (CB04). Prototipar es esa formación convertida en práctica tangible.</p>
+    <p>El plan también enmarca todo esto en la metodología de <strong>aprendizaje basado en proyectos (ABP)</strong>: el prototipo es justo el artefacto que articula el proyecto, lo que se enseña, se discute y se mejora.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando empieces a programar sin haber probado el flujo, cuando trates un prototipo «rápido y sucio» como producto, o cuando solo lo pruebes en tu cómodo portátil, estarás <strong>moviendo el descubrimiento del error al momento más caro</strong>.</p>
+    <p>Prototipar bien te da algo valioso: <strong>equivocarte cuando equivocarse es barato</strong>, y llegar al código con un diseño ya probado con personas.</p>
+    <p>El método y la teoría te dan el respaldo. Decidir prototipar pronto, barato y en el contexto real, en cada proyecto que firmes, será tuyo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No puedes garantizar calidad ni usabilidad (CI17, CG03) si llegas al código sin haber probado el diseño. El prototipo te deja <strong>equivocarte barato</strong> y articula el proyecto (ABP): es la práctica donde la ingeniería de la interacción se vuelve tangible.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué es un prototipo y para qué sirve?</summary>
+      <p>Una versión <strong>provisional e incompleta</strong> del sistema, hecha para verla, tocarla y probarla antes de construir el producto. Sirve para pensar mejor, comunicar y probar con personas. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué mide la fidelidad y qué pregunta responde cada nivel?</summary>
+      <p>El <strong>parecido</strong> con el producto final (no la calidad). Baja: ¿la idea y el flujo? Media: ¿estructura y navegación? Alta: ¿detalles y apariencia? <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Por qué la alta fidelidad puede ser contraproducente al inicio?</summary>
+      <p>Porque cuando algo «parece terminado», la gente <strong>critica menos</strong> y se fija en el color en vez del flujo. La baja fidelidad invita a opinar sin miedo. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Diferencia prototipo horizontal y vertical.</summary>
+      <p><strong>Horizontal</strong>: muchas funciones poco profundas (valida alcance y navegación). <strong>Vertical</strong>: pocas funciones a fondo, una tarea completa (valida en detalle). Se elige según la pregunta. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Cuál es el riesgo de confundir prototipo de usar y tirar con evolutivo?</summary>
+      <p>Que un prototipo «rápido y sucio» acabe en producción, arrastrando sus atajos al producto final. Un prototipo de usar y tirar <strong>debe tirarse</strong>. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué son el prototipado en papel y el Mago de Oz?</summary>
+      <p>Técnicas para probar <strong>sin programar</strong>: en el papel, una persona «hace de ordenador» y cambia las hojas; en el Mago de Oz, una persona simula las respuestas de un sistema que el usuario cree real. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué hay que definir antes de hacer un prototipo?</summary>
+      <p>La <strong>pregunta o duda</strong> que quiere resolver. Esa duda determina la fidelidad y el alcance. Si no responde a ninguna pregunta, no es un prototipo. <em>(Ver 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Por qué hay que probar el prototipo en el móvil?</summary>
+      <p>Porque la mitad de los hogares en España usa solo móvil (INE 2025). Probar únicamente en portátil engaña: el dedo, el tamaño y el contexto cambian todo. <em>(Ver 2.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Diseño del prototipo</dt>
+      <dd>Tercer diseño de la Actividad C: materializar la actividad y la información en un artefacto provisional para pensarlo y probarlo.</dd>
+      <dt>Prototipo</dt>
+      <dd>Versión provisional e incompleta del sistema, hecha para representar una idea de diseño y poder verla, tocarla y probarla antes de construir el producto.</dd>
+      <dt>Fidelidad</dt>
+      <dd>Grado de parecido del prototipo con el producto final, en aspecto y comportamiento. No mide calidad, sino semejanza.</dd>
+      <dt>Baja fidelidad</dt>
+      <dd>Prototipo en papel o bocetos, sin color ni detalle. Responde si la idea y el flujo tienen sentido. Muy barato y flexible.</dd>
+      <dt>Media fidelidad</dt>
+      <dd>Wireframe digital en gris, sin estilo final. Responde si la estructura y la navegación funcionan.</dd>
+      <dt>Alta fidelidad</dt>
+      <dd>Maqueta interactiva, casi como el producto. Responde si los detalles y la apariencia convencen. Cara y poco flexible.</dd>
+      <dt>Wireframe</dt>
+      <dd>Prototipo de media fidelidad: estructura digital de la pantalla sin estilo visual, para validar organización y navegación.</dd>
+      <dt>Prototipo horizontal</dt>
+      <dd>Cubre muchas funciones de forma superficial; valida el alcance y la navegación general.</dd>
+      <dt>Prototipo vertical</dt>
+      <dd>Cubre pocas funciones a fondo, con una tarea completa y realista; valida en detalle una parte crítica.</dd>
+      <dt>Prototipo de usar y tirar</dt>
+      <dd>Se construye para aprender y luego se desecha. Su valor es la información que aporta; debe tirarse.</dd>
+      <dt>Prototipo evolutivo</dt>
+      <dd>Se construye con la intención de que crezca hasta convertirse en el producto final; exige más cuidado técnico desde el inicio.</dd>
+      <dt>Prototipado en papel</dt>
+      <dd>Técnica en la que las pantallas se dibujan en papel y una persona del equipo simula el sistema cambiando las hojas.</dd>
+      <dt>Mago de Oz</dt>
+      <dd>Técnica en la que el usuario cree interactuar con un sistema real, pero una persona simula las respuestas. Útil para ideas aún no construidas.</dd>
+      <dt>Maqueta interactiva</dt>
+      <dd>Prototipo de alta fidelidad con pantallas enlazadas que simulan la interacción sin código de producción.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>diseño del prototipo</strong> es el tercer diseño de la Actividad C: materializa actividad e información en un artefacto <strong>provisional</strong> para pensar y probar.</li>
+        <li>La <strong>fidelidad</strong> mide el parecido, no la calidad: <strong>baja</strong> (papel, el flujo), <strong>media</strong> (wireframe, la estructura), <strong>alta</strong> (interactiva, los detalles).</li>
+        <li>Se <strong>sube de fidelidad solo cuando lo anterior funciona</strong>; a más fidelidad, más coste y menos crítica.</li>
+        <li>Un prototipo elige entre <strong>horizontal</strong> (ancho) y <strong>vertical</strong> (profundo), según la pregunta y el riesgo.</li>
+        <li>Puede ser <strong>de usar y tirar</strong> (se desecha) o <strong>evolutivo</strong> (crece hasta el producto); no conviene confundirlos.</li>
+        <li>Se prueba sin programar con <strong>prototipado en papel</strong> y <strong>Mago de Oz</strong>; para media y alta, herramientas de wireframe y maquetado.</li>
+        <li>Prototipar es <strong>preguntar barato</strong>: define la duda antes de empezar y prueba en el contexto real (móvil), según el INE 2025.</li>
+        <li>En tu proyecto es la <strong>entrega central de la Actividad C</strong> (baja, media y alta), con evidencia de iteración, y pasa a evaluarse en el Tema 4.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="10">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 3 «Proceso iterativo de diseño» · Concepto: <em>Diseño del prototipo (Actividad C del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

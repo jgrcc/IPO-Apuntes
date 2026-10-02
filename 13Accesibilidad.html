@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo del concepto de Accesibilidad. Tema 1 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Accesibilidad · Apuntes Tema 1 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 1 · Conceptos básicos · Material de apoyo</p>
+    <h1>Accesibilidad
+      <span class="sub">Que nadie quede fuera: diseñar para todas las personas, no solo para la mayoría</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB03 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es la accesibilidad? La definición que importa</a></li>
+          <li class="lvl2"><a href="#diversidad">La diversidad humana: a quién dejamos fuera</a></li>
+          <li class="lvl2"><a href="#vecinos">Accesibilidad, usabilidad y diseño universal</a></li>
+          <li class="lvl2"><a href="#wcag">WCAG: la columna vertebral. Estructura y niveles</a></li>
+          <li class="lvl2"><a href="#pour">Los cuatro principios POUR, criterio a criterio</a></li>
+          <li class="lvl2"><a href="#novedades">Novedades de WCAG 2.2</a></li>
+          <li class="lvl2"><a href="#calidad">La accesibilidad como atributo de calidad</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La accesibilidad en tu día a día</a></li>
+          <li class="lvl2"><a href="#datos">Anclaje real: la discapacidad en España (INE)</a></li>
+          <li class="lvl2"><a href="#legislacion">El marco legal: cuando es obligatorio por ley</a></li>
+          <li class="lvl2"><a href="#revision">Revisión rápida de accesibilidad (Easy Checks de la WAI)</a></li>
+          <li class="lvl2"><a href="#herramientas">Herramientas reales de evaluación automática</a></li>
+          <li class="lvl2"><a href="#wcag-em">WCAG-EM: la metodología de evaluación de la WAI</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Tu entorno: por qué te concierne como ingeniero</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Este documento acompaña a la clase expositiva sobre <strong>accesibilidad</strong>, dentro del Tema 1. No sustituye a la explicación en el aula: la complementa y te deja repasar a tu ritmo.</p>
+    <p>Damos por sabidos los dos conceptos anteriores. De la <strong>Interacción Persona-Ordenador</strong> retomamos la idea de «imagen del sistema» y de inclusión. De la <strong>usabilidad</strong>, la definición ISO y la frontera entre usabilidad, utilidad y UX.</p>
+    <p>Sigue el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>. Verás la misma idea presentada de varias formas: en prosa, en cajas, con tablas, ejemplos cotidianos y preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Si la usabilidad pregunta «¿puede una persona usar bien esto?», la accesibilidad amplía la pregunta a «¿pueden usarlo <strong>todas</strong> las personas, incluidas las que perciben, se mueven o piensan de forma distinta a ti?». No es un añadido al diseño: es el diseño hecho de verdad para la diversidad humana.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es y cómo se sostiene</h2>
+    <p class="lead">Definición, diversidad de personas, las WCAG en su última versión y su lugar en la calidad del software.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es la accesibilidad? La definición que importa</h3>
+
+    <p>En lenguaje corriente, decimos que algo es «accesible» cuando se puede llegar a ello. En nuestra disciplina el sentido es más preciso y más exigente.</p>
+    <p>La <strong>accesibilidad</strong> es el grado en que un sistema, producto, servicio o entorno puede ser <strong>percibido, comprendido, manejado y utilizado</strong> por el <strong>mayor número de personas posible</strong>, con independencia de sus capacidades.</p>
+    <p>Eso incluye, de forma explícita, a las personas con <strong>discapacidad</strong> (visual, auditiva, motora, cognitiva o del habla), pero no se agota en ellas: también ampara a las personas mayores y a cualquiera en una situación limitante temporal.</p>
+
+    <h4>De «un grupo concreto» a «todas las personas»</h4>
+    <p>Durante años la accesibilidad se entendió como «adaptar la web para personas ciegas». Esa visión es correcta pero corta. La accesibilidad moderna parte de la <strong>diversidad funcional</strong> como norma, no como excepción.</p>
+    <p>El objetivo no es construir una «versión especial» aparte, sino diseñar <strong>desde el principio</strong> un único producto que funcione para el abanico más amplio de personas. A esa filosofía la llamamos <strong>diseño universal</strong> o «diseño para todos».</p>
+
+    <h4>La accesibilidad es una propiedad medible</h4>
+    <p>Igual que la usabilidad, la accesibilidad no es una impresión subjetiva. Es <strong>verificable</strong>: existen criterios técnicos, comprobables uno a uno, que dicen si una imagen tiene texto alternativo, si el contraste es suficiente o si todo se puede manejar con el teclado.</p>
+    <p>Por eso podemos auditar la accesibilidad, certificarla y, como veremos, <strong>exigirla por ley</strong>. No es decoración ni buena voluntad: es ingeniería con métricas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Accesibilidad = que el <strong>mayor número posible</strong> de personas pueda usar el sistema, incluidas las que tienen discapacidad. Se diseña desde el inicio (diseño universal), se comprueba con criterios concretos y, hoy, es obligación legal en muchos casos.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Muchas tecnologías que hoy usa todo el mundo nacieron como soluciones de accesibilidad. Los <strong>subtítulos</strong> se pensaron para personas sordas y hoy los usas con el móvil en silencio en el metro. El <strong>rebaje de las aceras</strong> se diseñó para sillas de ruedas y lo agradece quien arrastra una maleta o empuja un carrito. Es el llamado «efecto bordillo»: <strong>lo que ayuda a unos pocos suele mejorar la vida de todos</strong>.</p>
+    </div>
+  </section>
+
+  <section id="diversidad" aria-labelledby="diversidad-h">
+    <h3 id="diversidad-h"><span class="num" aria-hidden="true">1.2</span>La diversidad humana: a quién dejamos fuera</h3>
+
+    <p>Para diseñar accesible hay que conocer la diversidad de quienes usarán el sistema. No se trata de memorizar diagnósticos médicos, sino de entender qué <strong>barreras</strong> distintas puede encontrar cada persona ante una interfaz.</p>
+    <p>Conviene agrupar las situaciones en cuatro grandes familias, que se corresponden con las capacidades que ya estudiaste en el Tema 1.</p>
+
+    <h4>Cuatro familias de barreras</h4>
+    <ul>
+      <li><strong>Visuales:</strong> ceguera, baja visión, daltonismo. Una persona ciega no ve la pantalla y navega con un <strong>lector de pantalla</strong>; una con baja visión amplía el texto; una daltónica no distingue ciertos colores.</li>
+      <li><strong>Auditivas:</strong> sordera o hipoacusia. El audio de un vídeo o el «pitido» de aviso no le llega; necesita <strong>subtítulos</strong> o alternativas visuales.</li>
+      <li><strong>Motoras:</strong> dificultad o imposibilidad de usar el ratón, temblor, parálisis. Maneja el sistema solo con <strong>teclado</strong>, con conmutadores o por voz; los objetivos diminutos le resultan inalcanzables.</li>
+      <li><strong>Cognitivas y del lenguaje:</strong> dislexia, TDAH, deterioro de memoria, dificultades de lectura. Le penalizan los textos densos, los procesos largos y las instrucciones confusas.</li>
+    </ul>
+
+    <h4>Discapacidad permanente, temporal y situacional</h4>
+    <p>Una idea transforma por completo la forma de mirar esto: la limitación no siempre es permanente. Microsoft popularizó la distinción en tres planos, con el ejemplo del brazo:</p>
+    <ul>
+      <li><strong>Permanente:</strong> una persona con un solo brazo.</li>
+      <li><strong>Temporal:</strong> alguien con un brazo escayolado durante un mes.</li>
+      <li><strong>Situacional:</strong> una madre que sostiene a su bebé con un brazo mientras usa el móvil con el otro.</li>
+    </ul>
+    <p>Los tres se benefician exactamente del mismo diseño: poder operar con una sola mano. Por eso la accesibilidad <strong>no es un nicho minoritario</strong>: en algún momento, todos pasamos por una limitación.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Las <strong>tecnologías de apoyo</strong> (o de asistencia) son el puente entre la persona y el sistema. La más conocida es el <strong>lector de pantalla</strong>, que convierte el contenido en voz o braille. Si tu código no está bien estructurado, el lector «lee» un caos: por eso la accesibilidad empieza en el HTML, no en el maquillaje visual.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No diseñas para «un usuario medio» que no existe. Diseñas para un abanico de personas con capacidades distintas y cambiantes. La pregunta profesional no es «¿cuántos usuarios tienen discapacidad?», sino «<strong>¿qué barrera estoy creando y a quién deja fuera?</strong>».</p>
+    </div>
+  </section>
+
+  <section id="vecinos" aria-labelledby="vecinos-h">
+    <h3 id="vecinos-h"><span class="num" aria-hidden="true">1.3</span>Accesibilidad, usabilidad y diseño universal</h3>
+
+    <p>En el tema de usabilidad ya separaste cuatro conceptos vecinos. Conviene retomar la relación, porque es una pregunta clásica de examen y una confusión habitual en proyectos reales.</p>
+
+    <h4>Se solapan, pero no son lo mismo</h4>
+    <p>La <strong>usabilidad</strong> mide la calidad de uso para los <em>usuarios previstos</em>. La <strong>accesibilidad</strong> amplía el foco al <em>mayor número posible</em> de personas, incluidas las que tienen discapacidad.</p>
+    <p>Un ejemplo lo aclara: una web puede ser muy usable para una persona vidente y, a la vez, completamente <strong>inaccesible</strong> para quien navega con un lector de pantalla porque las imágenes no tienen texto alternativo.</p>
+
+    <h4>La regla práctica de la dirección</h4>
+    <p>La relación tiene una dirección útil de recordar: <strong>lo accesible tiende a ser más usable para todo el mundo</strong>, pero lo usable no garantiza ser accesible.</p>
+    <p>Un buen contraste, un lenguaje claro o una navegación predecible ayudan a la persona ciega <em>y</em> también a quien usa el móvil al sol o tiene prisa.</p>
+
+    <h4>Diseño universal: la actitud que las une</h4>
+    <p>El <strong>diseño universal</strong> (o «diseño para todos») es el principio que conecta ambas: crear productos utilizables por el mayor número de personas posible <strong>sin necesidad de adaptación</strong> posterior.</p>
+    <p>No persigue un diseño «para discapacitados», sino un único diseño que sirva a la diversidad real. Es la traducción, en interacción, del mismo DUA con el que están redactados estos apuntes.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cuatro conceptos vecinos y la pregunta que responde cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Concepto</th><th scope="col">Pregunta clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Utilidad</th><td>¿Tiene el sistema las funciones que necesito?</td></tr>
+        <tr><th scope="row">Usabilidad</th><td>¿Puedo usar bien esas funciones (los usuarios previstos)?</td></tr>
+        <tr><th scope="row">Accesibilidad</th><td>¿Pueden usarlas <em>todas</em> las personas, incluidas las que tienen discapacidad?</td></tr>
+        <tr><th scope="row">UX</th><td>¿Cómo es la vivencia completa, también emocional?</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La accesibilidad es la <strong>usabilidad llevada a su consecuencia ética y legal</strong>: que la calidad de uso no dependa de cómo veas, oigas, te muevas o pienses. Cuando diseñas accesible, casi siempre diseñas mejor para todos.</p>
+    </div>
+  </section>
+
+  <section id="wcag" aria-labelledby="wcag-h">
+    <h3 id="wcag-h"><span class="num" aria-hidden="true">1.4</span>WCAG: la columna vertebral. Estructura y niveles</h3>
+
+    <p>La accesibilidad web tiene un estándar de referencia mundial: las <strong>WCAG</strong> (<em>Web Content Accessibility Guidelines</em>, Pautas de Accesibilidad para el Contenido Web). Las publica el <strong>W3C</strong> a través de su iniciativa <strong>WAI</strong> (<em>Web Accessibility Initiative</em>).</p>
+    <p>Son la base sobre la que se construye toda la normativa europea y española, así que conviene conocerlas bien. No es una lista de opiniones: es un conjunto de <strong>requisitos comprobables</strong>.</p>
+
+    <h4>La última versión: WCAG 2.2</h4>
+    <p>La versión vigente más reciente es la <strong>WCAG 2.2</strong>, publicada como Recomendación oficial del W3C el <strong>5 de octubre de 2023</strong> (con una actualización editorial en diciembre de 2024). En octubre de 2025 se adoptó además como norma internacional <strong>ISO/IEC 40500:2025</strong>.</p>
+    <p>Las versiones de WCAG 2 son <strong>retrocompatibles</strong>: 2.2 no anula a 2.1 ni a 2.0; añade criterios nuevos sin cambiar los anteriores. Por eso, si cumples 2.2, cumples también 2.1 y 2.0.</p>
+
+    <h4>Una arquitectura de cuatro niveles</h4>
+    <p>Las WCAG están organizadas como una pirámide que va de lo general a lo concreto. Entender esta estructura es la mitad del tema.</p>
+    <ul>
+      <li><strong>Principios (4):</strong> los pilares filosóficos, resumidos en el acrónimo <strong>POUR</strong>.</li>
+      <li><strong>Pautas (13):</strong> objetivos generales bajo cada principio (p. ej., «proporciona alternativas textuales»).</li>
+      <li><strong>Criterios de conformidad:</strong> los requisitos <strong>comprobables</strong>, cada uno etiquetado con un nivel A, AA o AAA. En WCAG 2.2 hay <strong>86 criterios</strong>.</li>
+      <li><strong>Técnicas (informativas):</strong> formas concretas y documentadas de cumplir cada criterio. No son obligatorias: son ayuda práctica.</li>
+    </ul>
+
+    <h4>Los tres niveles de conformidad: A, AA, AAA</h4>
+    <p>Cada criterio se asigna a un nivel según su impacto y su exigencia:</p>
+    <ul>
+      <li><strong>Nivel A:</strong> lo mínimo imprescindible. Si no se cumple, hay barreras graves que impiden el uso.</li>
+      <li><strong>Nivel AA:</strong> el estándar de referencia en la práctica y, sobre todo, <strong>el que exige la ley</strong> en España y Europa. Incluye todos los criterios A más los AA.</li>
+      <li><strong>Nivel AAA:</strong> el nivel de excelencia. Deseable, pero no se puede exigir para todo el contenido, así que la ley no lo impone de forma general.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Memoriza la jerarquía: <strong>4 principios (POUR) → 13 pautas → 86 criterios comprobables (A/AA/AAA) → técnicas</strong>. Y graba esto a fuego: el objetivo legal y profesional es el <strong>nivel AA</strong>. Cuando alguien diga «esta web es accesible», la pregunta correcta es «¿conforme a qué versión y a qué nivel?».</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La primera guía de accesibilidad web la compiló Gregg Vanderheiden en <strong>1995</strong>, justo cuando la Web empezaba a despegar. WCAG 1.0 llegó en 1999; WCAG 2.0, en 2008. Que un estándar nacido hace casi tres décadas siga vigente y reforzándose te dice que describe algo estable: <strong>cómo somos las personas</strong>, no una tecnología pasajera.</p>
+    </div>
+  </section>
+
+  <section id="pour" aria-labelledby="pour-h">
+    <h3 id="pour-h"><span class="num" aria-hidden="true">1.5</span>Los cuatro principios POUR, criterio a criterio</h3>
+
+    <p>Todo el edificio de las WCAG descansa en cuatro principios. En español los recordamos como <strong>P-O-C-R</strong>; en inglés, <strong>POUR</strong>. Si el contenido falla en uno solo de ellos, hay personas que quedan fuera.</p>
+
+    <ul class="pour" role="list">
+      <li><b>P · Perceptible.</b> La información y los componentes deben presentarse de forma que la persona <em>pueda percibirlos</em>, por algún sentido. Lo que no se puede percibir, no existe para esa persona.</li>
+      <li><b>O · Operable.</b> Los componentes y la navegación deben poder <em>manejarse</em>. Si algo solo funciona con ratón o exige rapidez imposible, hay quien no podrá operarlo.</li>
+      <li><b>C · Comprensible.</b> La información y el funcionamiento deben <em>entenderse</em>. De nada sirve percibir y operar si no se comprende qué pasa ni qué hacer.</li>
+      <li><b>R · Robusto.</b> El contenido debe ser lo bastante <em>sólido</em> como para ser interpretado con fiabilidad por distintos agentes de usuario, incluidas las tecnologías de apoyo.</li>
+    </ul>
+
+    <p>Veamos cada principio con sus pautas y una muestra de criterios, cada uno con un <strong>ejemplo claro y conciso</strong>. No están todos los 86: se eligen los más representativos y los que más se incumplen.</p>
+
+    <h4>Principio 1 · Perceptible</h4>
+    <p>Reúne las pautas 1.1 a 1.4. Su misión: que la información llegue por más de un canal sensorial.</p>
+    <ul>
+      <li><strong>1.1.1 Contenido no textual (A).</strong> Toda imagen, icono o gráfico con significado debe tener una <strong>alternativa textual</strong>. <em>Ejemplo: una foto de producto lleva <code>alt="Zapatilla roja de running, vista lateral"</code>; un icono decorativo lleva <code>alt=""</code> para que el lector lo ignore.</em></li>
+      <li><strong>1.2.2 Subtítulos (A).</strong> Los vídeos con audio deben llevar <strong>subtítulos</strong> sincronizados. <em>Ejemplo: un vídeo de la sede electrónica incluye subtítulos con el diálogo y los avisos sonoros.</em></li>
+      <li><strong>1.2.5 Audiodescripción (AA).</strong> El vídeo debe describir lo importante que solo se ve. <em>Ejemplo: una voz narra «aparece un botón verde de Confirmar» para quien no ve la pantalla.</em></li>
+      <li><strong>1.3.1 Información y relaciones (A).</strong> La estructura debe estar en el código, no solo en el aspecto. <em>Ejemplo: los titulares se marcan con <code>&lt;h1&gt;…&lt;h2&gt;</code> y las tablas con encabezados <code>&lt;th&gt;</code>, para que el lector anuncie «encabezado de nivel 2».</em></li>
+      <li><strong>1.4.1 Uso del color (A).</strong> El color no puede ser el <em>único</em> medio para transmitir algo. <em>Ejemplo: un campo con error no se marca solo en rojo, también con un icono y el texto «Falta la @».</em></li>
+      <li><strong>1.4.3 Contraste mínimo (AA).</strong> El texto debe contrastar con el fondo al menos <strong>4,5:1</strong> (3:1 para texto grande). <em>Ejemplo: texto gris claro sobre blanco se oscurece hasta superar 4,5:1.</em></li>
+      <li><strong>1.4.4 Cambio de tamaño del texto (AA).</strong> Debe poder ampliarse hasta el <strong>200&nbsp;%</strong> sin perder contenido ni función. <em>Ejemplo: al hacer zoom, el menú se reorganiza pero no desaparece ni se solapa.</em></li>
+    </ul>
+
+    <h4>Principio 2 · Operable</h4>
+    <p>Reúne las pautas 2.1 a 2.5. Su misión: que todo se pueda manejar, también sin ratón y sin prisas imposibles.</p>
+    <ul>
+      <li><strong>2.1.1 Teclado (A).</strong> <em>Toda</em> la funcionalidad debe poder usarse solo con teclado. <em>Ejemplo: un menú desplegable se abre y recorre con Tab y flechas, no solo al pasar el ratón.</em></li>
+      <li><strong>2.1.2 Sin trampas de teclado (A).</strong> El foco no debe quedar atrapado. <em>Ejemplo: de una ventana emergente se puede salir con Esc; el foco no se queda «pegado» dentro.</em></li>
+      <li><strong>2.2.1 Tiempo ajustable (A).</strong> Si hay un límite de tiempo, debe poder ampliarse o desactivarse. <em>Ejemplo: una sesión que va a expirar ofrece «Necesito más tiempo» antes de cerrarse.</em></li>
+      <li><strong>2.3.1 Destellos (A).</strong> Nada debe parpadear más de <strong>tres veces por segundo</strong>, por riesgo de epilepsia fotosensible. <em>Ejemplo: una animación de carga no usa flashes rápidos.</em></li>
+      <li><strong>2.4.1 Evitar bloques (A).</strong> Un enlace «saltar al contenido» permite esquivar menús repetidos. <em>Ejemplo: el primer enlace de la página lleva directamente al contenido principal (como el de estos apuntes).</em></li>
+      <li><strong>2.4.4 Propósito del enlace (A).</strong> El texto del enlace debe decir adónde lleva. <em>Ejemplo: «Descargar el plan docente (PDF)» en lugar de un genérico «Pincha aquí».</em></li>
+      <li><strong>2.4.7 Foco visible (AA).</strong> Debe verse qué elemento tiene el foco del teclado. <em>Ejemplo: el botón enfocado muestra un recuadro nítido, no se le quita el contorno con <code>outline:none</code>.</em></li>
+    </ul>
+
+    <h4>Principio 3 · Comprensible</h4>
+    <p>Reúne las pautas 3.1 a 3.3. Su misión: que el contenido y el comportamiento se entiendan y sean predecibles.</p>
+    <ul>
+      <li><strong>3.1.1 Idioma de la página (A).</strong> El código debe declarar el idioma. <em>Ejemplo: <code>&lt;html lang="es"&gt;</code> para que el lector pronuncie en español, no en inglés.</em></li>
+      <li><strong>3.2.3 Navegación coherente (AA).</strong> Los elementos repetidos deben aparecer en el mismo orden en todas las páginas. <em>Ejemplo: el buscador está siempre arriba a la derecha, no cambia de sitio.</em></li>
+      <li><strong>3.2.4 Identificación coherente (AA).</strong> Lo que hace lo mismo se nombra igual. <em>Ejemplo: no usar «Buscar» en una pantalla y «Localizar» en otra para la misma acción.</em></li>
+      <li><strong>3.3.1 Identificación de errores (A).</strong> Si hay un error, debe describirse con texto. <em>Ejemplo: «La fecha debe tener formato DD/MM/AAAA», junto al campo afectado.</em></li>
+      <li><strong>3.3.2 Etiquetas o instrucciones (A).</strong> Los campos de formulario deben llevar etiqueta clara. <em>Ejemplo: cada campo tiene su <code>&lt;label&gt;</code> asociado, no solo un texto gris dentro que desaparece al escribir.</em></li>
+    </ul>
+
+    <h4>Principio 4 · Robusto</h4>
+    <p>Reúne la pauta 4.1. Su misión: que el contenido «hable bien» con navegadores y tecnologías de apoyo.</p>
+    <ul>
+      <li><strong>4.1.2 Nombre, función, valor (A).</strong> Cada componente debe exponer a las tecnologías de apoyo qué es, qué hace y en qué estado está. <em>Ejemplo: un interruptor personalizado declara con ARIA que es un botón conmutable y si está «activado» o «desactivado», para que el lector lo anuncie.</em></li>
+      <li><strong>4.1.3 Mensajes de estado (AA).</strong> Los avisos que aparecen sin cambiar de página deben comunicarse sin robar el foco. <em>Ejemplo: «3 resultados encontrados» se anuncia por voz mediante una región <em>aria-live</em>, sin que el usuario tenga que buscarlo.</em></li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Asocia cada principio a una pregunta: <strong>Perceptible</strong> «¿lo capto?»; <strong>Operable</strong> «¿lo manejo?»; <strong>Comprensible</strong> «¿lo entiendo?»; <strong>Robusto</strong> «¿lo lee mi tecnología de apoyo?». Si las cuatro respuestas son «sí» para todas las personas, vas por buen camino.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El criterio de <strong>contraste 4,5:1</strong> no es un capricho de diseñadores. Sale de estudios sobre cómo cae la sensibilidad al contraste con la edad y la baja visión. Por eso muchas apps que «se ven preciosas» en gris claro fallan este criterio: bonito para el diseñador joven, ilegible para su abuela. La accesibilidad pone número a esa intuición.</p>
+    </div>
+  </section>
+
+  <section id="novedades" aria-labelledby="novedades-h">
+    <h3 id="novedades-h"><span class="num" aria-hidden="true">1.6</span>Novedades de WCAG 2.2</h3>
+
+    <p>Al pasar de WCAG 2.1 (2018) a WCAG 2.2 (2023) se añadieron <strong>nueve criterios nuevos</strong> y se retiró uno. Las novedades se centran en tres frentes muy actuales: <strong>accesibilidad cognitiva</strong>, <strong>uso táctil/motor</strong> y <strong>foco del teclado</strong>.</p>
+    <p>Conviene conocerlos, porque una lista de comprobación antigua (de 2.1) ya está incompleta. Estos son los nueve, con su nivel y un ejemplo conciso:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los 9 criterios nuevos de WCAG 2.2 (sobre 2.1).</caption>
+      <thead>
+        <tr><th scope="col">Criterio</th><th scope="col">Nivel</th><th scope="col">Qué exige · ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">2.4.11 Foco no oscurecido (mínimo)</th><td>AA</td><td>El elemento con foco no queda totalmente tapado. <em>Una cabecera fija no oculta el botón recién enfocado.</em></td></tr>
+        <tr><th scope="row">2.4.12 Foco no oscurecido (mejorado)</th><td>AAA</td><td>El elemento con foco no queda ni parcialmente tapado.</td></tr>
+        <tr><th scope="row">2.4.13 Apariencia del foco</th><td>AAA</td><td>El indicador de foco es grande y con buen contraste (perímetro de 2&nbsp;px y 3:1).</td></tr>
+        <tr><th scope="row">2.5.7 Movimientos de arrastre</th><td>AA</td><td>Toda acción de arrastrar tiene alternativa con un solo toque/clic. <em>Reordenar una lista también con botones de subir/bajar.</em></td></tr>
+        <tr><th scope="row">2.5.8 Tamaño del objetivo (mínimo)</th><td>AA</td><td>Los objetivos táctiles miden al menos <strong>24×24&nbsp;px</strong>. <em>Botones de iconos pequeños se agrandan con relleno.</em></td></tr>
+        <tr><th scope="row">3.2.6 Ayuda coherente</th><td>A</td><td>El acceso a la ayuda está siempre en el mismo lugar. <em>El enlace de contacto/soporte no cambia de sitio entre páginas.</em></td></tr>
+        <tr><th scope="row">3.3.7 Entrada redundante</th><td>A</td><td>No se obliga a reescribir datos ya facilitados en el mismo proceso. <em>La dirección de envío se reutiliza como la de facturación con una casilla.</em></td></tr>
+        <tr><th scope="row">3.3.8 Autenticación accesible (mínimo)</th><td>AA</td><td>Iniciar sesión sin pruebas de memoria o puzles. <em>Se permite pegar la contraseña y se ofrecen alternativas tipo enlace mágico.</em></td></tr>
+        <tr><th scope="row">3.3.9 Autenticación accesible (mejorado)</th><td>AAA</td><td>Versión más estricta del anterior.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>El criterio que desapareció</h4>
+    <p>Se retiró el antiguo <strong>4.1.1 «Análisis sintáctico» (Parsing)</strong>, que exigía un HTML sin errores de marcado. ¿La razón? Los navegadores modernos ya gestionan bien el código malformado, así que el criterio había quedado <strong>obsoleto</strong>. Si ves una declaración de conformidad que todavía lo menciona, está desactualizada.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Tres de los nueve criterios nuevos atienden directamente a las <strong>dificultades cognitivas</strong> (ayuda coherente, entrada redundante, autenticación accesible). Es un giro de fondo: durante años la accesibilidad miró sobre todo a lo sensorial y motor; ahora reconoce que <strong>la memoria y la atención también son capacidades que un diseño puede respetar o maltratar</strong>. Es exactamente lo que viste con los límites cognitivos en el tema de IPO.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>WCAG 2.2 = WCAG 2.1 + 9 criterios − 1 obsoleto = <strong>86 criterios</strong>. De los nueve nuevos, los que más vas a tocar en la práctica son <strong>2.5.8 (tamaño del objetivo, 24×24&nbsp;px)</strong>, <strong>3.3.7 (entrada redundante)</strong> y <strong>3.3.8 (autenticación accesible)</strong>.</p>
+    </div>
+  </section>
+
+  <section id="calidad" aria-labelledby="calidad-h">
+    <h3 id="calidad-h"><span class="num" aria-hidden="true">1.7</span>La accesibilidad como atributo de calidad</h3>
+
+    <p>Igual que la usabilidad, la accesibilidad es un <strong>atributo de calidad</strong> del software (un requisito no funcional), no una capa cosmética que se añade al final.</p>
+    <p>Recuerda la distinción de Ingeniería del Software: los requisitos <strong>funcionales</strong> dicen <em>qué</em> hace el sistema; los atributos de calidad dicen <em>cómo de bien</em> lo hace. La accesibilidad pertenece al segundo grupo, junto a fiabilidad, rendimiento o seguridad.</p>
+
+    <h4>Su lugar en los modelos de calidad</h4>
+    <p>El modelo <strong>ISO/IEC 25010</strong> (familia SQuaRE) que ya viste recoge la accesibilidad como <strong>subcaracterística de la usabilidad</strong>: el grado en que el producto puede usarlo el rango más amplio posible de personas.</p>
+    <p>Y se integra en el proceso a través del <strong>Diseño Centrado en el Humano</strong> (ISO 9241-210): comprender el contexto (incluida la diversidad de usuarios), especificar requisitos de accesibilidad, producir soluciones y evaluarlas, iterando.</p>
+
+    <h4>La consecuencia para el ciclo de vida</h4>
+    <p>Si la accesibilidad es un requisito, se trata como cualquier otro:</p>
+    <ul>
+      <li>Se <strong>especifica</strong>: «la web cumplirá WCAG 2.2 nivel AA».</li>
+      <li>Se <strong>diseña</strong> desde el inicio: contraste, estructura, manejo por teclado.</li>
+      <li>Se <strong>verifica y valida</strong>: con herramientas automáticas, revisión manual y, sobre todo, con usuarios reales y tecnologías de apoyo.</li>
+    </ul>
+    <p>Añadirla al final («ya le pondremos los <em>alt</em> luego») es el camino más caro y peor. Como la seguridad, la accesibilidad es barata si está en el diseño y carísima si es un parche.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tratar la accesibilidad como atributo de calidad cambia la conversación de «¿queda bonito para todos?» a «<strong>qué nivel WCAG fijamos y cómo demostramos que se cumple</strong>». Eso es ingeniería con requisitos verificables, no buena intención.</p>
+    </div>
+    <hr class="soft">
+    <p>Con esto cierras la base conceptual: qué es la accesibilidad, a quién protege, cómo se estructuran las WCAG en su última versión y dónde encaja en la calidad del software. En la Parte 2 la sacamos del aula: tu día a día, datos del INE, la ley española y las herramientas reales para medirla.</p>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo se nota la accesibilidad en tu vida, qué dicen los datos, qué exige la ley y con qué se mide.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La accesibilidad en tu día a día</h3>
+
+    <p>La accesibilidad, como la usabilidad, es invisible cuando funciona y muy visible cuando falla. Y la usas a diario sin nombrarla. Mira tu jornada con las gafas POUR.</p>
+    <ul>
+      <li>Activas los <strong>subtítulos automáticos</strong> para ver un vídeo en el metro sin auriculares: una solución de accesibilidad auditiva que te sirve a ti (limitación situacional).</li>
+      <li>Aumentas el <strong>tamaño de letra</strong> del móvil cuando hay poca luz: criterio 1.4.4 en acción.</li>
+      <li>Usas el <strong>modo oscuro</strong> o subes el <strong>contraste</strong> porque te molesta la vista: principio Perceptible.</li>
+      <li>Le dictas un mensaje al <strong>asistente de voz</strong> con las manos ocupadas: interacción operable sin teclado.</li>
+      <li>Rellenas un formulario que <strong>recuerda</strong> tus datos y no te obliga a repetirlos: criterio 3.3.7, entrada redundante.</li>
+    </ul>
+    <p>Ninguna de estas funciones se diseñó «para ti», pero todas te benefician. Esa es la prueba viva del efecto bordillo: <strong>la accesibilidad mejora el producto para todo el mundo</strong>.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Activa ahora mismo el <strong>lector de pantalla</strong> de tu móvil (VoiceOver en iOS, TalkBack en Android), cierra los ojos e intenta abrir una app y leer un mensaje. Treinta segundos bastan para que nunca vuelvas a ver una imagen sin <em>alt</em> de la misma manera.</p>
+    </div>
+  </section>
+
+  <section id="datos" aria-labelledby="datos-h">
+    <h3 id="datos-h"><span class="num" aria-hidden="true">2.2</span>Anclaje real: la discapacidad en España (INE)</h3>
+
+    <p>¿De cuántas personas hablamos? No es una impresión: el <strong>Instituto Nacional de Estadística (INE)</strong> lo mide en su <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia</em> (EDAD).</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia (EDAD-Hogares 2020), última edición publicada del estudio.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 6 o más años con algún tipo de discapacidad</td><td class="fig">4,32 millones</td></tr>
+          <tr><td>Incremento respecto a la encuesta anterior (2008)</td><td class="fig">+14 %</td></tr>
+          <tr><td>Tipo de discapacidad más frecuente</td><td class="fig">Movilidad</td></tr>
+          <tr><td>De ellas, mujeres</td><td class="fig">2,55 millones</td></tr>
+          <tr><td>De ellas, hombres</td><td class="fig">1,77 millones</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Más de cuatro millones de personas: no es una minoría anecdótica, es una ciudad entera de usuarios que tu diseño puede incluir o excluir.</p>
+    <p>Y crece: el envejecimiento de la población lo empuja al alza, porque la discapacidad aumenta con la edad. La <strong>movilidad</strong> es la barrera más común, lo que conecta directamente con criterios como el teclado (2.1.1) o el tamaño del objetivo (2.5.8).</p>
+    <p>Cruza esto con el dato que ya conoces de la <em>Encuesta de TIC en los Hogares</em>: el <strong>80,7&nbsp;%</strong> de la población se relaciona con la Administración por Internet. Si esas sedes no son accesibles, millones de gestiones esenciales se vuelven un muro para ese tercio que no tiene habilidades digitales sólidas <em>y</em> para quien tiene una discapacidad.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuando el servicio es público o esencial (sanidad, banca, trámites), una interfaz inaccesible deja de ser un defecto de producto y se convierte en una <strong>barrera de acceso a derechos</strong>. El dato del INE le pone rostro y número a esa frase.</p>
+    </div>
+  </section>
+
+  <section id="legislacion" aria-labelledby="legislacion-h">
+    <h3 id="legislacion-h"><span class="num" aria-hidden="true">2.3</span>El marco legal: cuando es obligatorio por ley</h3>
+
+    <p>Esta es la transferencia más decisiva para tu futuro profesional: en España y en Europa, diseñar accesible <strong>no es solo buena práctica; en muchos casos es la ley</strong>, y ahora con régimen sancionador real.</p>
+
+    <h4>La cadena normativa: de Europa a España y de la ley a la WCAG</h4>
+    <p>Para no perderte, mira el marco como una <strong>cadena de tres eslabones</strong> que se repite dos veces (una para lo público y otra para lo privado):</p>
+    <ul>
+      <li><strong>Europa dicta una Directiva.</strong> Marca el objetivo, pero no es directamente aplicable a una empresa.</li>
+      <li><strong>España la traspone</strong> en una ley o real decreto. La convierte en obligación concreta y exigible aquí.</li>
+      <li><strong>Una norma técnica común traduce esa obligación a requisitos verificables.</strong> Esa norma es la <strong>EN 301&nbsp;549</strong>, que a su vez remite a las <strong>WCAG</strong>.</li>
+    </ul>
+    <p>En una frase: la ley dice «sé accesible», la EN 301&nbsp;549 dice «accesible significa esto» y las WCAG ponen los criterios comprobables uno a uno. Las tres piezas encajan.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · La trasposición, eslabón a eslabón</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Cómo la legislación europea se convierte en obligación española y, finalmente, en criterios WCAG.</caption>
+        <thead>
+          <tr><th scope="col">Directiva europea</th><th scope="col">Trasposición en España</th><th scope="col">Ámbito</th><th scope="col">Norma técnica → pautas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Directiva (UE) 2016/2102</td><td>Real Decreto 1112/2018</td><td>Sector público (webs y apps móviles)</td><td>EN 301&nbsp;549 → WCAG 2.1 AA</td></tr>
+          <tr><td>Directiva (UE) 2019/882 (EAA)</td><td>Ley 11/2023</td><td>Sector privado (banca, e-commerce, transporte, libros digitales…)</td><td>EN 301&nbsp;549 → WCAG 2.1 AA</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <h4>Sector público: Real Decreto 1112/2018</h4>
+    <p>El <strong>Real Decreto 1112/2018</strong>, de 7 de septiembre, regula la accesibilidad de los <strong>sitios web y aplicaciones móviles del sector público</strong>. Traspone la <strong>Directiva (UE) 2016/2102</strong> y está en vigor desde septiembre de 2018.</p>
+    <p>Obliga, entre otras cosas, a publicar una <strong>Declaración de Accesibilidad</strong> visible (normalmente en el pie) que indique el grado de cumplimiento, qué contenidos no son accesibles y un canal de reclamación.</p>
+    <p>Alcanza no solo a las administraciones, sino también a entidades que prestan servicios públicos o se financian con fondos públicos.</p>
+
+    <h4>Sector privado: Ley 11/2023 (Acta Europea de Accesibilidad)</h4>
+    <p>La <strong>Ley 11/2023</strong>, de 8 de mayo, traspone la <strong>Directiva (UE) 2019/882</strong>, conocida como <strong>Acta Europea de Accesibilidad (EAA)</strong>. Es aplicable desde el <strong>28 de junio de 2025</strong> y extiende las obligaciones al <strong>sector privado</strong>.</p>
+    <p>Afecta a productos y servicios como el <strong>comercio electrónico</strong>, la <strong>banca</strong>, el <strong>transporte de viajeros</strong>, las comunicaciones electrónicas o los <strong>libros digitales</strong>. Quedan exentas, en general, las <strong>microempresas</strong> que prestan servicios (menos de 10 personas y menos de 2 millones de euros de facturación).</p>
+
+    <h4>La pieza que lo conecta todo: la norma EN 301&nbsp;549</h4>
+    <p>La <strong>EN 301&nbsp;549</strong> es la <strong>norma técnica europea armonizada</strong> sobre requisitos de accesibilidad de productos y servicios TIC. En España se adopta como <strong>UNE-EN 301&nbsp;549</strong>. Es la traducción de la ley a requisitos concretos y comprobables, y por eso es la referencia real en cualquier pliego o auditoría.</p>
+    <p>Tres ideas que debes retener sobre ella:</p>
+    <ul>
+      <li><strong>Va mucho más allá de la web.</strong> Cubre <em>software</em>, documentos, hardware o terminales de autoservicio (cajeros). Su <strong>capítulo 9</strong> es el específico de contenido web, y es justo el que <strong>remite a las WCAG</strong> (niveles A y AA).</li>
+      <li><strong>Da «presunción de conformidad».</strong> Si tu producto cumple la EN 301&nbsp;549, se presume que cumple la ley. Por la Decisión de Ejecución (UE) 2018/2048, esta norma es el estándar armonizado de referencia.</li>
+      <li><strong>Tiene versiones.</strong> La vigente es la <strong>EN 301&nbsp;549 V3.2.1</strong>, que incorpora <strong>WCAG 2.1 nivel AA</strong>. Las futuras revisiones acabarán incorporando WCAG 2.2.</li>
+    </ul>
+
+    <h4>El resto del marco</h4>
+    <ul>
+      <li><strong>Real Decreto 193/2023</strong>, de 21 de marzo: condiciones básicas de accesibilidad y no discriminación para el acceso a bienes y servicios a disposición del público.</li>
+      <li><strong>Real Decreto Legislativo 1/2013</strong> (Ley General de derechos de las personas con discapacidad y de su inclusión social): aporta el <strong>régimen sancionador</strong> que da dientes a todo lo anterior.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave · matiz importante</span>
+      <p>La <strong>última versión técnica</strong> de las pautas es <strong>WCAG 2.2</strong>. Pero la <strong>referencia legal</strong> vigente (vía la EN 301&nbsp;549 V3.2.1) todavía se apoya en <strong>WCAG 2.1 nivel AA</strong>. Conclusión profesional: diseña a <strong>2.2 AA</strong> y cumplirás de sobra la ley actual y te adelantarás a la próxima actualización, porque cumplir 2.2 implica cumplir 2.1.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Hasta hace poco, incumplir la accesibilidad en Europa apenas tenía consecuencias prácticas. Con la EAA y la Ley 11/2023 eso cambió: por primera vez hay <strong>sanciones reales</strong>. Entregar una web inaccesible ya no es solo un fallo de calidad o una cuestión ética: puede ser un <strong>incumplimiento legal</strong> con multa.</p>
+    </div>
+  </section>
+
+  <section id="revision" aria-labelledby="revision-h">
+    <h3 id="revision-h"><span class="num" aria-hidden="true">2.4</span>Revisión rápida de accesibilidad (Easy Checks de la WAI)</h3>
+
+    <p>Antes de una auditoría formal, la propia WAI propone una <strong>revisión rápida</strong> de accesibilidad: su recurso <strong>«Easy Checks – A First Review of Web Accessibility»</strong>. Es el primer contacto, pensado para que <em>cualquiera</em> lo haga.</p>
+    <p>Su filosofía: con unas pocas comprobaciones sencillas obtienes <strong>una primera idea</strong> de si una página atiende la accesibilidad, aunque sea de forma básica. No requiere ser experto ni saber programar.</p>
+
+    <h4>Qué se comprueba (un minuto cada cosa)</h4>
+    <p>Son comprobaciones puntuales, no exhaustivas. Las principales:</p>
+    <ul>
+      <li><strong>Título de página:</strong> que el <code>&lt;title&gt;</code> describa el contenido (se ve en la pestaña del navegador).</li>
+      <li><strong>Texto alternativo de imágenes:</strong> que las imágenes con significado tengan un <em>alt</em> útil.</li>
+      <li><strong>Encabezados:</strong> que exista una jerarquía de títulos (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>…) y no «texto en negrita grande».</li>
+      <li><strong>Contraste de color:</strong> que el texto se lea bien sobre el fondo.</li>
+      <li><strong>Redimensionar el texto:</strong> ampliar al 200&nbsp;% y comprobar que todo sigue legible y usable.</li>
+      <li><strong>Teclado y foco visible:</strong> recorrer la página con Tab y ver que siempre se sabe dónde está el foco.</li>
+      <li><strong>Formularios, etiquetas y errores:</strong> que los campos tengan etiqueta y los errores se expliquen.</li>
+      <li><strong>Contenido en movimiento o parpadeo:</strong> que nada destelle de forma peligrosa.</li>
+      <li><strong>Multimedia:</strong> que los vídeos tengan subtítulos.</li>
+      <li><strong>Estructura básica:</strong> leer la página «desnuda» (sin estilos ni imágenes) y ver si sigue teniendo sentido.</li>
+    </ul>
+
+    <div class="box real">
+      <span class="label">Recurso real · WAI</span>
+      <p>Guía oficial de la revisión rápida, con instrucciones paso a paso (disponible también <a href="https://www.w3.org/WAI/test-evaluate/es" target="_blank" rel="noopener">en español<span class="sr-only"> (se abre en una pestaña nueva)</span></a>):</p>
+      <p><a href="https://www.w3.org/WAI/test-evaluate/preliminary/" target="_blank" rel="noopener">w3.org/WAI/test-evaluate/preliminary · Easy Checks – A First Review of Web Accessibility<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>
+    </div>
+
+    <p>Ojo con su límite, que es el mismo de las herramientas automáticas: la revisión rápida <strong>orienta, no certifica</strong>. Un resultado «sin problemas evidentes» no equivale a «conforme con WCAG»; solo significa que no saltan los fallos más groseros.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La revisión rápida es tu <strong>primer filtro</strong>: barata, rápida y al alcance de cualquiera. Detecta lo evidente y te dice si merece la pena seguir. Pero una valoración seria exige el método completo (WCAG-EM) y usuarios reales.</p>
+    </div>
+  </section>
+
+  <section id="herramientas" aria-labelledby="herramientas-h">
+    <h3 id="herramientas-h"><span class="num" aria-hidden="true">2.5</span>Herramientas reales de evaluación automática</h3>
+
+    <p>La accesibilidad se comprueba. Existen <strong>herramientas automáticas</strong> gratuitas y verificables que escanean una página y señalan incumplimientos de las WCAG. Estas son las más usadas y reconocidas en la práctica profesional:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Herramientas reales de evaluación de accesibilidad web (todas verificables y de uso extendido).</caption>
+      <thead>
+        <tr><th scope="col">Herramienta</th><th scope="col">Quién la hace</th><th scope="col">Para qué destaca</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">WAVE</th><td>WebAIM (EE. UU.)</td><td>Superpone iconos sobre la página; muy visual e ideal para empezar. <code>wave.webaim.org</code></td></tr>
+        <tr><th scope="row">axe DevTools</th><td>Deque Systems</td><td>Extensión de navegador muy precisa; su motor <em>axe-core</em> es de código abierto e integrable en CI/CD. <code>deque.com/axe</code></td></tr>
+        <tr><th scope="row">Lighthouse</th><td>Google</td><td>Integrada en Chrome DevTools; da una puntuación rápida (usa una versión reducida de axe-core).</td></tr>
+        <tr><th scope="row">TAW</th><td>Fundación CTIC (España)</td><td>Evaluador en línea español basado en WCAG. <code>tawdis.net</code></td></tr>
+        <tr><th scope="row">ARC Toolkit</th><td>TPGi</td><td>Extensión profesional para auditoría detallada.</td></tr>
+        <tr><th scope="row">Accessibility Insights</th><td>Microsoft</td><td>Pruebas automáticas y guiadas paso a paso (FastPass).</td></tr>
+        <tr><th scope="row">Pa11y</th><td>Código abierto</td><td>Herramienta de línea de comandos para automatizar pruebas en el pipeline.</td></tr>
+        <tr><th scope="row">Colour Contrast Analyser</th><td>TPGi</td><td>Mide el contraste exacto entre texto y fondo (criterio 1.4.3).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Para las pruebas <strong>manuales</strong> con tecnología de apoyo, el lector de pantalla gratuito de referencia es <strong>NVDA</strong> (NV Access, Windows). Probar tu web «a ciegas» con NVDA revela problemas que ninguna herramienta automática detecta.</p>
+
+    <h4>El límite que debes conocer (y respetar)</h4>
+    <p>Aquí va la advertencia profesional más importante del apartado: <strong>las herramientas automáticas no bastan</strong>. Detectan solo una parte de los problemas: distintos estudios sitúan la cobertura automática en torno al <strong>30–55&nbsp;%</strong> de los criterios.</p>
+    <p>La razón es simple. Una máquina puede comprobar si una imagen <em>tiene</em> texto alternativo, pero no si ese texto es <strong>correcto</strong>. Un <code>alt="imagen1234.jpg"</code> pasa el test automático y es inútil para una persona ciega.</p>
+    <p>Por eso la evaluación seria combina tres capas: <strong>automática</strong> (rápida, para lo evidente), <strong>manual experta</strong> (revisión heurística y de código) y <strong>con usuarios reales</strong> y tecnologías de apoyo (lo definitivo). Lo verás en detalle en el Tema 4.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una herramienta automática es como un corrector ortográfico: detecta faltas, pero no te dice si el texto tiene sentido. Un «verde» en Lighthouse <strong>no significa</strong> «accesible»; significa «sin errores automáticos detectables». La accesibilidad real exige juicio humano.</p>
+    </div>
+  </section>
+
+  <section id="wcag-em" aria-labelledby="wcag-em-h">
+    <h3 id="wcag-em-h"><span class="num" aria-hidden="true">2.6</span>WCAG-EM: la metodología de evaluación de la WAI</h3>
+
+    <p>Cuando hay que evaluar <strong>un sitio entero</strong> con rigor (no una página suelta), la WAI propone una metodología formal: <strong>WCAG-EM</strong> (<em>Website Accessibility Conformance Evaluation Methodology</em>, Metodología de Evaluación de la Conformidad con las WCAG).</p>
+    <p>No inventa criterios nuevos: organiza <strong>cómo</strong> comprobar de forma sistemática la conformidad con las WCAG, para que dos evaluadores distintos lleguen a conclusiones comparables.</p>
+
+    <h4>Los cinco pasos</h4>
+    <ol>
+      <li><strong>Definir el alcance.</strong> Qué se evalúa, contra qué versión de WCAG y qué nivel objetivo (A, AA o AAA), y en qué condiciones.</li>
+      <li><strong>Explorar el sitio.</strong> Identificar sus tipos de página, funcionalidades, tecnologías y flujos clave (inicio de sesión, compra, formularios…).</li>
+      <li><strong>Seleccionar una muestra representativa.</strong> Como no se puede revisar página por página, se elige un conjunto que represente la variedad del sitio, incluyendo las páginas críticas.</li>
+      <li><strong>Evaluar la muestra.</strong> Comprobar cada página de la muestra contra todos los criterios del nivel objetivo, combinando herramientas, revisión manual y tecnologías de apoyo.</li>
+      <li><strong>Informar de los hallazgos.</strong> Documentar resultados, evidencias y grado de conformidad de forma transparente y repetible.</li>
+    </ol>
+
+    <h4>Dos matices profesionales</h4>
+    <ul>
+      <li><strong>Recomienda incluir a usuarios reales con discapacidad</strong> durante la evaluación: ninguna herramienta sustituye observar a una persona usando el sistema con su tecnología de apoyo.</li>
+      <li><strong>No define una nota ni un porcentaje.</strong> Las WCAG no establecen un sistema de puntuación: cada criterio se «cumple o no se cumple». Las puntuaciones agregadas pueden ser engañosas, así que la transparencia del informe vale más que un número.</li>
+    </ul>
+
+    <h4>La herramienta de apoyo: WCAG-EM Report Tool</h4>
+    <p>La WAI ofrece una herramienta gratuita y de código abierto, el <strong>WCAG-EM Report Tool</strong>, que te guía por los cinco pasos, te ayuda a registrar los resultados y <strong>genera el informe</strong> de evaluación.</p>
+    <p>Importante: <strong>no hace la comprobación por ti</strong>. No analiza la página automáticamente; estructura tu trabajo y produce un informe ordenado a partir de lo que tú vas registrando.</p>
+
+    <div class="box real">
+      <span class="label">Recursos reales · WAI</span>
+      <p>Introducción a la metodología (y enlace al documento completo desde ahí):</p>
+      <p><a href="https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/" target="_blank" rel="noopener">w3.org/WAI/test-evaluate/conformance/wcag-em · WCAG-EM Overview<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>
+      <p>Herramienta para generar el informe de evaluación:</p>
+      <p><a href="https://www.w3.org/WAI/eval/report-tool/" target="_blank" rel="noopener">w3.org/WAI/eval/report-tool · WCAG-EM Report Tool<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tres niveles de evaluación, de menor a mayor rigor: <strong>revisión rápida</strong> (un vistazo, cualquiera), <strong>herramientas automáticas</strong> (rápidas, parciales) y <strong>WCAG-EM</strong> (el método completo y documentado para declarar conformidad). El profesional sabe cuál usar en cada momento. Profundizarás en estos métodos de evaluación en el Tema 4.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.7</span>Retos de observación para esta semana</h3>
+
+    <p>La accesibilidad se entrena mirando (y probando). Estos retos no requieren programar: solo observar con el vocabulario de la Parte 1. Anótalos para comentarlos en clase.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Solo con el teclado</span>
+      <p>Elige una web que uses mucho y navégala <strong>sin tocar el ratón</strong>, solo con Tab, Shift+Tab y Enter. ¿Llegas a todo? ¿Ves siempre dónde está el foco? Apunta el primer sitio donde te quedaste atrapado o perdido (criterios 2.1.1 y 2.4.7).</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Pásale WAVE</span>
+      <p>Instala la extensión <strong>WAVE</strong> y analiza la página principal de tu Facultad o de un ayuntamiento. Anota cuántos errores marca y de qué tipo (contraste, alt, etiquetas). Acabas de hacer tu primera auditoría automática.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · Caza del contraste</span>
+      <p>Con el <strong>Colour Contrast Analyser</strong> (o el inspector del navegador), busca un texto que no llegue a 4,5:1. Haz una captura y propón los colores corregidos que sí cumplan (criterio 1.4.3).</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 4 · Lee la declaración</span>
+      <p>Busca la <strong>Declaración de Accesibilidad</strong> de una sede electrónica pública (suele estar en el pie). ¿A qué nivel dice conformarse? ¿Reconoce contenidos no accesibles? ¿Ofrece un canal de reclamación? (RD 1112/2018).</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 5 · El alt inútil</span>
+      <p>Activa el lector de pantalla del móvil y recorre una web de noticias. Localiza una imagen con un <em>alt</em> ausente o sin sentido («img_001»). Reescríbelo en una frase que de verdad describa la imagen para quien no la ve (criterio 1.1.1).</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.8</span>Tu entorno: por qué te concierne como ingeniero</h3>
+
+    <p>Dentro de poco serás tú quien diseñe la sede electrónica de un ayuntamiento extremeño, la app de un hospital o la banca en línea de una empresa. La accesibilidad de lo que entregues recaerá sobre personas reales, y sobre tu responsabilidad legal.</p>
+    <p>Recuerda los dos datos: <strong>4,32 millones</strong> de personas con discapacidad en España (INE) y un <strong>80,7&nbsp;%</strong> de la población que se relaciona con la Administración por Internet. Si tu interfaz «da por hecho» que el usuario ve, oye, se mueve y recuerda como tú, dejas fuera a millones.</p>
+    <p>Esto conecta directamente con lo que esta asignatura espera de ti, según el plan docente:</p>
+    <ul>
+      <li>Adoptar <strong>soluciones concretas a las discapacidades</strong> de los usuarios, aplicando los principios del «diseño para todos» (competencia <strong>CI17</strong> y resultados de aprendizaje del curso).</li>
+      <li>Diseñar, evaluar y <strong>asegurar la accesibilidad, ergonomía y usabilidad</strong> de los sistemas y de la información que gestionan (competencia <strong>CG03</strong>).</li>
+      <li>Reunir e interpretar datos para emitir juicios con reflexión <strong>social y ética</strong> (competencia <strong>CB03</strong>): la accesibilidad es justo eso.</li>
+      <li><strong>Transmitir</strong> soluciones a públicos especializados y no especializados (competencia <strong>CB04</strong>): por eso el proyecto exige documentos y presentaciones accesibles.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La accesibilidad convierte una habilidad técnica en una responsabilidad social y legal: <strong>quien diseña la interacción decide quién queda dentro y quién queda fuera del mundo digital</strong>. Como ingeniero, esa decisión es tuya, y ahora la ley te pide cuentas de ella.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. Define accesibilidad y di en qué se diferencia de la usabilidad.</summary>
+      <p>Accesibilidad es el grado en que un sistema puede ser percibido, comprendido, manejado y usado por el mayor número de personas posible, incluidas las que tienen discapacidad. La usabilidad mide la calidad de uso para los usuarios previstos; la accesibilidad amplía el foco a toda la diversidad humana. Algo usable para una persona vidente puede ser inaccesible para quien usa lector de pantalla. <em>(Ver 1.1 y 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué significa POUR y qué pregunta encarna cada principio?</summary>
+      <p>Perceptible (¿lo capto?), Operable (¿lo manejo?), Comprensible (¿lo entiendo?) y Robusto (¿lo lee mi tecnología de apoyo?). Son los cuatro principios sobre los que se organizan las WCAG. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuál es la última versión de las WCAG y qué nivel exige la ley?</summary>
+      <p>La última versión es WCAG 2.2 (Recomendación del W3C de octubre de 2023, también ISO/IEC 40500:2025). El nivel exigido por la ley en España y Europa es el AA. La referencia legal técnica (EN 301 549) aún se apoya en WCAG 2.1 AA, pero cumplir 2.2 implica cumplir 2.1. <em>(Ver 1.4 y 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Cita la legislación española clave en accesibilidad digital.</summary>
+      <p>Real Decreto 1112/2018 (sector público; obliga a la Declaración de Accesibilidad) y Ley 11/2023 (transpone el Acta Europea de Accesibilidad, aplicable desde el 28/06/2025; extiende la obligación al sector privado, salvo microempresas). El régimen sancionador procede del Real Decreto Legislativo 1/2013. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. Nombra dos herramientas automáticas reales y explica su gran límite.</summary>
+      <p>Por ejemplo, WAVE (WebAIM) y axe DevTools (Deque); también Lighthouse, TAW o NVDA para pruebas manuales. Su límite: solo detectan en torno al 30–55 % de los problemas; comprueban si existe un <em>alt</em>, no si es correcto. Hace falta revisión manual experta y pruebas con usuarios reales. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Por qué decimos que la accesibilidad beneficia a todos? Da un ejemplo.</summary>
+      <p>Por el «efecto bordillo»: lo diseñado para una limitación concreta acaba ayudando a la mayoría. Los subtítulos (pensados para personas sordas) sirven a cualquiera que vea un vídeo en silencio en el metro; un objetivo táctil grande (2.5.8) ayuda a quien tiene temblor y también a quien usa el móvil en marcha. <em>(Ver 1.1 y 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. Diferencia revisión rápida, herramientas automáticas y WCAG-EM.</summary>
+      <p>La revisión rápida (Easy Checks de la WAI) es un primer vistazo orientativo que puede hacer cualquiera. Las herramientas automáticas (WAVE, axe…) escanean la página y detectan parte de los fallos. WCAG-EM es la metodología formal en cinco pasos (alcance, exploración, muestra, evaluación, informe) para declarar conformidad de un sitio completo, con su WCAG-EM Report Tool de apoyo. De menor a mayor rigor. <em>(Ver 2.4, 2.5 y 2.6)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Accesibilidad</dt>
+      <dd>Grado en que un sistema puede ser percibido, comprendido, manejado y utilizado por el mayor número de personas posible, incluidas las que tienen discapacidad.</dd>
+      <dt>Diseño universal (diseño para todos)</dt>
+      <dd>Filosofía de diseñar productos utilizables por el mayor número de personas posible sin necesidad de adaptación posterior.</dd>
+      <dt>Discapacidad situacional</dt>
+      <dd>Limitación temporal derivada del contexto (una mano ocupada, ruido, poca luz) que se beneficia de las mismas soluciones que una discapacidad permanente.</dd>
+      <dt>Tecnología de apoyo (o de asistencia)</dt>
+      <dd>Software o hardware que permite a una persona con discapacidad usar el sistema (lector de pantalla, magnificador, conmutadores, reconocimiento de voz).</dd>
+      <dt>Lector de pantalla</dt>
+      <dd>Tecnología de apoyo que convierte el contenido de la pantalla en voz o braille (p. ej. NVDA, VoiceOver, TalkBack).</dd>
+      <dt>WCAG</dt>
+      <dd>Pautas de Accesibilidad para el Contenido Web del W3C-WAI. Versión vigente: 2.2 (2023). Organizan la accesibilidad en principios, pautas y criterios.</dd>
+      <dt>POUR</dt>
+      <dd>Los cuatro principios de las WCAG: Perceptible, Operable, Comprensible y Robusto.</dd>
+      <dt>Criterio de conformidad</dt>
+      <dd>Requisito comprobable de las WCAG, etiquetado con un nivel A, AA o AAA. WCAG 2.2 tiene 86.</dd>
+      <dt>Niveles A / AA / AAA</dt>
+      <dd>Grados de exigencia de las WCAG: A (mínimo), AA (estándar legal y profesional) y AAA (excelencia, no exigible para todo).</dd>
+      <dt>Texto alternativo (alt)</dt>
+      <dd>Descripción textual de una imagen que leen las tecnologías de apoyo; vacío (<code>alt=""</code>) si la imagen es decorativa.</dd>
+      <dt>Contraste</dt>
+      <dd>Relación de luminancia entre texto y fondo; el criterio AA exige al menos 4,5:1 (3:1 para texto grande).</dd>
+      <dt>ARIA</dt>
+      <dd>Conjunto de atributos (WAI-ARIA) que comunican a las tecnologías de apoyo el nombre, la función y el estado de los componentes.</dd>
+      <dt>Declaración de Accesibilidad</dt>
+      <dd>Documento obligatorio (RD 1112/2018) que informa del nivel de conformidad de una web pública, sus carencias y el canal de reclamación.</dd>
+      <dt>EN 301 549</dt>
+      <dd>Norma técnica europea armonizada que fija los requisitos de accesibilidad TIC; es el puente entre la ley y las WCAG.</dd>
+      <dt>Acta Europea de Accesibilidad (EAA)</dt>
+      <dd>Directiva (UE) 2019/882, traspuesta en España por la Ley 11/2023; extiende las obligaciones de accesibilidad al sector privado.</dd>
+      <dt>Revisión rápida (Easy Checks)</dt>
+      <dd>Conjunto de comprobaciones sencillas de la WAI que cualquiera puede hacer para una primera valoración de accesibilidad; es orientativa, no definitiva.</dd>
+      <dt>WCAG-EM</dt>
+      <dd>Metodología de la WAI para evaluar la conformidad de un sitio con las WCAG en cinco pasos (alcance, exploración, muestra, evaluación, informe). Su WCAG-EM Report Tool ayuda a documentar el informe, pero no realiza la comprobación.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>Accesibilidad = que el <strong>mayor número posible</strong> de personas pueda usar el sistema, incluidas las que tienen discapacidad. Es la usabilidad llevada a toda la diversidad humana.</li>
+        <li>La discapacidad puede ser <strong>permanente, temporal o situacional</strong>: por eso nos concierne a todos (efecto bordillo).</li>
+        <li>El estándar es <strong>WCAG</strong>; última versión <strong>2.2</strong> (2023): <strong>4 principios POUR → 13 pautas → 86 criterios (A/AA/AAA) → técnicas</strong>.</li>
+        <li>El objetivo legal y profesional es el <strong>nivel AA</strong>. WCAG 2.2 añade 9 criterios (foco, táctil, cognición) y retira el 4.1.1 Parsing.</li>
+        <li>Es un <strong>atributo de calidad</strong> del software (ISO/IEC 25010) que se especifica, diseña y prueba, integrado vía DCH (ISO 9241-210).</li>
+        <li>En España es <strong>obligación legal</strong>: RD 1112/2018 (sector público) y Ley 11/2023 / EAA (sector privado desde 2025), con sanciones reales.</li>
+        <li>Se evalúa en tres niveles de rigor: <strong>revisión rápida</strong> (Easy Checks de la WAI), <strong>herramientas automáticas</strong> (WAVE, axe, Lighthouse, TAW…) y la metodología completa <strong>WCAG-EM</strong>. Ninguna automática basta: hacen falta revisión manual y usuarios reales.</li>
+        <li>Con <strong>4,32 millones</strong> de personas con discapacidad (INE) y el 80,7 % de la población usando la e-Administración, la accesibilidad es <strong>inclusión y acceso a derechos</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+    </ol>
+    <p>Normas y legislación:</p>
+    <ol class="refs" start="8">
+      <li>W3C — Web Accessibility Initiative (WAI). <em>Web Content Accessibility Guidelines (WCAG) 2.2</em>. Recomendación del W3C, 5 de octubre de 2023 (actualización de diciembre de 2024). <a href="https://www.w3.org/TR/WCAG22/">w3.org/TR/WCAG22</a> · <a href="http://www.w3.org/wai">w3.org/wai</a></li>
+      <li>ISO/IEC 40500:2025. <em>Information technology — W3C Web Content Accessibility Guidelines (WCAG) 2.2.</em></li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC.</em></li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Diseño centrado en el operador humano para sistemas interactivos.</em></li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; accesibilidad como subcaracterística de usabilidad.</li>
+      <li>Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público (transpone la Directiva (UE) 2016/2102).</li>
+      <li>Ley 11/2023, de 8 de mayo, de trasposición de la Directiva (UE) 2019/882 (Acta Europea de Accesibilidad). Aplicable desde el 28 de junio de 2025.</li>
+      <li>Real Decreto 193/2023, de 21 de marzo, sobre condiciones básicas de accesibilidad y no discriminación para el acceso y utilización de bienes y servicios a disposición del público.</li>
+      <li>Real Decreto Legislativo 1/2013, Ley General de derechos de las personas con discapacidad y de su inclusión social (régimen sancionador).</li>
+    </ol>
+    <p>Datos y herramientas:</p>
+    <ol class="refs" start="17">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia (EDAD-Hogares 2020)</em>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>.</li>
+      <li>W3C — WAI. <em>Evaluating Web Accessibility (Overview)</em>. <a href="https://www.w3.org/WAI/test-evaluate/">w3.org/WAI/test-evaluate</a></li>
+      <li>W3C — WAI. <em>Easy Checks – A First Review of Web Accessibility</em> (revisión rápida). <a href="https://www.w3.org/WAI/test-evaluate/preliminary/">w3.org/WAI/test-evaluate/preliminary</a></li>
+      <li>W3C — WAI. <em>WCAG-EM: Website Accessibility Conformance Evaluation Methodology</em>. <a href="https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/">w3.org/WAI/test-evaluate/conformance/wcag-em</a> · documento completo: <a href="https://www.w3.org/TR/WCAG-EM/">w3.org/TR/WCAG-EM</a></li>
+      <li>W3C — WAI. <em>WCAG-EM Report Tool</em>. <a href="https://www.w3.org/WAI/eval/report-tool/">w3.org/WAI/eval/report-tool</a></li>
+      <li>WAVE — WebAIM. <a href="https://wave.webaim.org/">wave.webaim.org</a> · axe DevTools — Deque. <a href="https://www.deque.com/axe/">deque.com/axe</a> · Lighthouse — Google (Chrome DevTools).</li>
+      <li>TAW — Fundación CTIC. <a href="https://www.tawdis.net/">tawdis.net</a> · ARC Toolkit y Colour Contrast Analyser — TPGi · Accessibility Insights — Microsoft · NVDA — NV Access.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 1 «Conceptos básicos» · Concepto: <em>Accesibilidad</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

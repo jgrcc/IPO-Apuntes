@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: la técnica de las Personas de Alan Cooper para definir usuarios dentro de la Actividad A del Diseño Centrado en lo Humano (ISO 9241-210). Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Definir usuarios con Personas (Alan Cooper) · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>Definir usuarios con «Personas»
+      <span class="sub">La técnica de Alan Cooper para dar rostro al «¿quién?» de la Actividad A (Diseño Orientado a Objetivos)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CI17 · CG03 · CB04 · CT09</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#del-quien">Del «¿quién?» a la persona concreta: por qué esta técnica</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es una «persona»? Y qué no es</a></li>
+          <li class="lvl2"><a href="#objetivos">Los objetivos de la técnica: matar al «usuario elástico»</a></li>
+          <li class="lvl2"><a href="#tipos">Tipos de persona: primaria, secundaria, servida, negativa…</a></li>
+          <li class="lvl2"><a href="#anatomia">Anatomía de una persona: los objetivos son el corazón</a></li>
+          <li class="lvl2"><a href="#historia">Historia: Cooper y el Diseño Orientado a Objetivos</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#indagacion">Cómo se indaga: de dónde salen los datos (observación, entrevistas, cuestionarios…)</a></li>
+          <li class="lvl2"><a href="#proceso">Cómo se construye: el proceso de Cooper paso a paso</a></li>
+          <li class="lvl2"><a href="#ejemplo">De los datos a la ficha: una persona de ejemplo (INE)</a></li>
+          <li class="lvl2"><a href="#errores">Errores típicos al crear personas</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la persona como entregable de la Actividad A</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes desarrollan el primer componente del <strong>contexto de uso</strong>: los <strong>usuarios</strong>, el «¿quién?» de la Actividad A. Son la continuación directa de la introducción al contexto de uso que vimos al abrir el Tema 2.</p>
+    <p>Allí dijimos que identificar usuarios no es hablar de «la gente» en general, sino distinguir a los <strong>directos</strong>, <strong>indirectos</strong> y a los <strong>grupos de interés</strong>. Hoy aprendemos la técnica concreta para hacerlo con rigor: las <strong>Personas</strong> de Alan Cooper.</p>
+    <p>El objetivo de la sesión es triple y muy claro: entender <strong>qué es</strong> la técnica, <strong>para qué sirve</strong> (sus objetivos) y <strong>cómo se lleva a cabo</strong> paso a paso.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una ficha de ejemplo, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una <strong>persona</strong> (en el sentido de Cooper) es un <strong>arquetipo de usuario</strong>: un usuario ficticio, con nombre y rostro, pero <strong>construido a partir de datos reales</strong> de investigación. Sirve para dejar de diseñar para «todo el mundo» —que es diseñar para nadie— y empezar a diseñar para alguien concreto.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es la técnica, para qué sirve y de dónde viene</h2>
+    <p class="lead">Por qué necesitamos personas, qué son exactamente (y qué no), cuáles son sus objetivos, qué tipos existen, qué contiene una buena ficha y quién inventó el método.</p>
+  </div>
+
+  <section id="del-quien" aria-labelledby="del-quien-h">
+    <h3 id="del-quien-h"><span class="num" aria-hidden="true">1.1</span>Del «¿quién?» a la persona concreta: por qué esta técnica</h3>
+
+    <p>En la Actividad A investigamos a personas reales (empatizar). Pero esa investigación produce un montón de notas, entrevistas y observaciones difíciles de manejar. ¿Cómo se convierte ese material en una guía de diseño?</p>
+    <p>El problema es que «el usuario» en abstracto es inútil para decidir. Cada miembro del equipo imagina un usuario distinto: el programador piensa en alguien experto; el de negocio, en quien paga; tú, sin querer, en alguien como tú.</p>
+    <p>La técnica de las <strong>personas</strong> resuelve eso. Sintetiza toda la investigación en <strong>unos pocos arquetipos concretos</strong>, con nombre, foto y biografía, que el equipo entero comparte. En vez de discutir sobre «el usuario», el equipo discute sobre <strong>Marta</strong> o <strong>Don Ernesto</strong>.</p>
+
+    <h4>Una herramienta de síntesis, no de invención</h4>
+    <p>Conviene fijar esto desde el principio: una persona <strong>no se inventa</strong>. Es el resultado de <em>destilar</em> patrones observados en la investigación de la Actividad A. Sin datos detrás, una persona es solo un prejuicio con foto de archivo.</p>
+    <p>Por eso esta técnica vive dentro de la Actividad A: es la forma de <strong>especificar</strong> (dejar por escrito, de forma compartible) el componente «usuarios» del contexto de uso.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Las personas son una <strong>herramienta de síntesis</strong>: convierten las notas crudas de la investigación en unos pocos arquetipos manejables que todo el equipo comparte. Es el paso de «el usuario» (vago) a «Marta» (concreta y discutible).</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es una «persona»? Y qué no es</h3>
+
+    <p>Una <strong>persona</strong> es un <strong>modelo de usuario arquetípico</strong>: un personaje ficticio, descrito como si fuera real, que representa a un grupo de usuarios que comparten <strong>comportamientos, objetivos y motivaciones</strong> similares.</p>
+    <p>Cooper insiste en una idea contraintuitiva: aunque la persona sea ficticia, es <strong>más útil que un usuario real concreto</strong>, porque concentra lo común de muchos usuarios sin las particularidades irrelevantes de uno solo.</p>
+
+    <h4>Definir por contraste: qué NO es una persona</h4>
+    <ul>
+      <li><strong>No es un usuario real.</strong> Es un arquetipo. Ningún usuario real es exactamente «Marta», pero muchos se reconocen en ella.</li>
+      <li><strong>No es un promedio estadístico.</strong> El «usuario medio» no existe: nadie tiene 1,7 hijos. Promediar a usuarios distintos da un monstruo que no encaja con nadie.</li>
+      <li><strong>No es un segmento de mercado.</strong> El marketing segmenta por demografía y poder de compra; las personas se construyen por <strong>comportamiento y objetivos</strong>. Dos personas del mismo segmento de edad pueden ser personas distintas.</li>
+      <li><strong>No es un rol o un puesto.</strong> «Administrativo» es un rol; «Marta, que evita el ratón y vive de atajos de teclado» es una persona.</li>
+    </ul>
+    <p>Tampoco hay que confundirla con una <strong>persona de suposición</strong> (o <em>proto-persona</em>): un boceto hecho de memoria, sin investigación. Es admisible como <strong>hipótesis de partida</strong>, pero hay que validarla con datos antes de fiarse de ella.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El término inglés es <em>persona</em> (plural <em>personas</em>), tomado del latín, donde significaba la <strong>máscara</strong> que usaban los actores en el teatro clásico. La metáfora es perfecta: una persona es la «máscara» que el equipo se pone para mirar el diseño con los ojos de un tipo concreto de usuario.</p>
+    </div>
+  </section>
+
+  <section id="objetivos" aria-labelledby="objetivos-h">
+    <h3 id="objetivos-h"><span class="num" aria-hidden="true">1.3</span>Los objetivos de la técnica: matar al «usuario elástico»</h3>
+
+    <p>¿Para qué sirven exactamente las personas? Cooper lo resume en un enemigo a batir: el <strong>«usuario elástico»</strong>. Cuando «el usuario» no tiene cara, se <strong>estira</strong> para justificar cualquier decisión.</p>
+    <p>Si un diseño es complicado, «bueno, el usuario es experto». Si conviene quitar una opción, «el usuario no la usa». El usuario elástico siempre da la razón a quien habla. Una persona concreta, en cambio, <strong>se resiste</strong>: «Don Ernesto jamás encontraría ese menú».</p>
+
+    <h4>Los seis objetivos concretos de usar personas</h4>
+    <ol class="pillars" role="list">
+      <li><b>Acabar con el usuario elástico.</b> Fijan a quién diseñamos, para que nadie lo redefina a conveniencia en mitad de una discusión.</li>
+      <li><b>Evitar el autodiseño.</b> Impiden que el equipo diseñe para sí mismo (jóvenes, expertos, buen móvil), el error que vimos en la introducción al contexto de uso.</li>
+      <li><b>Crear empatía.</b> Un nombre y una historia activan la empatía mucho más que una tabla de porcentajes. El equipo <em>siente</em> a quién sirve.</li>
+      <li><b>Dar un lenguaje común.</b> Todo el equipo —diseño, desarrollo, negocio— habla de los mismos personajes. Se acaban los malentendidos sobre «el usuario».</li>
+      <li><b>Permitir decisiones concretas.</b> Convierten preguntas abstractas en preguntas con respuesta: «¿Marta entendería este icono?» se puede debatir; «¿lo entendería el usuario?», no.</li>
+      <li><b>Priorizar.</b> Al designar una <strong>persona primaria</strong>, el equipo sabe a quién dar prioridad cuando dos necesidades chocan.</li>
+    </ol>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El objetivo central de las personas es sustituir al <strong>«usuario elástico»</strong> —que se estira para justificar cualquier decisión— por <strong>arquetipos concretos</strong> que generan empatía, dan un lenguaje común al equipo y permiten decidir y priorizar con criterio.</p>
+    </div>
+  </section>
+
+  <section id="tipos" aria-labelledby="tipos-h">
+    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.4</span>Tipos de persona: primaria, secundaria, servida, negativa…</h3>
+
+    <p>No todas las personas pesan lo mismo en el diseño. Cooper distingue varios tipos según el papel que juegan. Conviene conocerlos porque determinan <strong>para quién</strong> se optimiza la interfaz.</p>
+
+    <ul>
+      <li><strong>Primaria.</strong> El foco principal del diseño. La interfaz se diseña <em>para ella</em>. Cooper sostiene que cada interfaz necesita <strong>una sola persona primaria</strong>; si hay dos que no caben en la misma interfaz, hacen falta dos interfaces.</li>
+      <li><strong>Secundaria.</strong> Queda satisfecha en su mayor parte por la interfaz de la primaria, pero tiene <strong>alguna necesidad adicional</strong> que hay que atender sin estropear la experiencia de la primaria.</li>
+      <li><strong>Suplementaria.</strong> No es primaria ni secundaria; sus necesidades ya están cubiertas por completo. Sirve para verificar que no dejamos a nadie fuera.</li>
+      <li><strong>Cliente.</strong> Decide o paga, pero no usa el sistema a diario (típico en software institucional o de empresa).</li>
+      <li><strong>Servida.</strong> No usa el sistema, pero <strong>se ve afectada</strong> por su uso. Recuerda al usuario indirecto: el paciente cuyo informe genera el médico.</li>
+      <li><strong>Negativa.</strong> Un arquetipo para el que <strong>explícitamente NO diseñamos</strong>. Sirve para que el equipo tenga claro a quién puede ignorar (por ejemplo, un usuario súper experto en un producto pensado para principiantes).</li>
+    </ul>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La regla de «una sola persona primaria por interfaz» es la traducción práctica de un dicho de diseño: <em>si intentas contentar a todo el mundo, no contentas a nadie</em>. Cooper prefiere una interfaz que encaja perfectamente con una persona a una que «más o menos» sirve a cinco.</p>
+    </div>
+  </section>
+
+  <section id="anatomia" aria-labelledby="anatomia-h">
+    <h3 id="anatomia-h"><span class="num" aria-hidden="true">1.5</span>Anatomía de una persona: los objetivos son el corazón</h3>
+
+    <p>Una ficha de persona no es una biografía de novela. Tiene un conjunto de elementos con función concreta. El diagrama muestra el esqueleto; luego lo explicamos.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 540" role="img" aria-labelledby="an-title an-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="an-title">Anatomía de una ficha de persona</title>
+        <desc id="an-desc">Una ficha de persona se compone de seis bloques. Arriba, la identidad: un nombre, una fotografía y unos datos demográficos básicos. Debajo, una cita breve en primera persona que resume su actitud. A continuación, cuatro bloques de contenido: objetivos (el corazón de la ficha, divididos en objetivos de experiencia, finales y vitales), comportamientos y aptitudes, motivaciones, y frustraciones o puntos de dolor. Todo ello se apoya siempre en datos de investigación, no en suposiciones.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+        <!-- Identidad -->
+        <rect x="30" y="24" width="660" height="86" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <circle cx="80" cy="67" r="28" fill="#FDFBF6" stroke="#0B5563" stroke-width="2"></circle>
+        <circle cx="80" cy="58" r="10" fill="#0B5563"></circle>
+        <path d="M62 84 a18 16 0 0 1 36 0 z" fill="#0B5563"></path>
+        <text x="128" y="58" font-size="15" font-weight="700" fill="#0B5563">IDENTIDAD</text>
+        <text x="128" y="80" font-size="12.5" fill="#211C16">Nombre + fotografía + datos demográficos básicos</text>
+        <!-- Cita -->
+        <rect x="30" y="124" width="660" height="56" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="48" y="148" font-size="14" font-weight="700" fill="#7A5A12">CITA</text>
+        <text x="48" y="168" font-size="12.5" fill="#211C16" font-style="italic">Una frase en primera persona que resume su actitud</text>
+        <!-- Objetivos (corazón) -->
+        <rect x="30" y="196" width="320" height="150" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="3"></rect>
+        <text x="48" y="222" font-size="15" font-weight="700" fill="#8A3412">OBJETIVOS · el corazón</text>
+        <text x="48" y="248" font-size="12.5" fill="#211C16">· De experiencia (cómo quiere sentirse)</text>
+        <text x="48" y="272" font-size="12.5" fill="#211C16">· Finales (qué quiere lograr)</text>
+        <text x="48" y="296" font-size="12.5" fill="#211C16">· Vitales (en quién quiere convertirse)</text>
+        <text x="48" y="326" font-size="11.5" fill="#8A3412" font-style="italic">Lo que de verdad guía el diseño</text>
+        <!-- Comportamientos -->
+        <rect x="370" y="196" width="320" height="70" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="388" y="222" font-size="14" font-weight="700" fill="#2C5A2E">COMPORTAMIENTOS Y APTITUDES</text>
+        <text x="388" y="244" font-size="12.5" fill="#211C16">Qué hace y con qué soltura digital</text>
+        <!-- Motivaciones -->
+        <rect x="370" y="276" width="320" height="70" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="388" y="302" font-size="14" font-weight="700" fill="#0B5563">MOTIVACIONES</text>
+        <text x="388" y="324" font-size="12.5" fill="#211C16">Por qué actúa así</text>
+        <!-- Frustraciones -->
+        <rect x="30" y="362" width="660" height="60" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="48" y="388" font-size="14" font-weight="700" fill="#8A3412">FRUSTRACIONES / PUNTOS DE DOLOR</text>
+        <text x="48" y="408" font-size="12.5" fill="#211C16">Qué le bloquea hoy (cada una es una oportunidad de diseño)</text>
+        <!-- Base de datos -->
+        <rect x="30" y="446" width="660" height="56" rx="10" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5" stroke-dasharray="6 5"></rect>
+        <text x="360" y="471" text-anchor="middle" font-size="13.5" font-weight="700" fill="#211C16">TODO se apoya en datos de investigación de la Actividad A</text>
+        <text x="360" y="491" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Sin datos detrás, no es una persona: es una suposición</text>
+        <line x1="360" y1="422" x2="360" y2="442" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+      </svg>
+      <figcaption>Esqueleto de una ficha de persona. Los objetivos (en especial los <em>finales</em>) son el elemento que de verdad orienta el diseño; el resto da contexto y empatía. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <h4>Los tres tipos de objetivos según Cooper</h4>
+    <p>Para Cooper, lo decisivo de una persona <strong>no son sus datos demográficos, sino sus objetivos</strong>. La gente no quiere «usar una app»: quiere lograr algo. El diseño debe servir a esos objetivos. Distingue tres niveles:</p>
+    <ul>
+      <li><strong>Objetivos de experiencia.</strong> Cómo quiere <em>sentirse</em> al usarlo: seguro, competente, sin agobio. Son emocionales e inmediatos.</li>
+      <li><strong>Objetivos finales.</strong> Qué quiere <em>lograr</em>: «tener el billete validado antes de que llegue el bus». Son la razón de usar el producto y la guía principal del diseño.</li>
+      <li><strong>Objetivos vitales.</strong> En quién aspira a <em>convertirse</em>: «ser una persona autónoma que no depende de nadie para sus gestiones». Son aspiraciones de fondo, de largo plazo.</li>
+    </ul>
+    <p>Fíjate en que estos tres niveles resuenan con los tres niveles de procesamiento de Norman (visceral, conductual y reflexivo) que viste como referencia conceptual. No es casualidad: ambos describen a la misma persona desde el sentir, el hacer y el ser.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una ficha de persona reúne identidad, una cita, comportamientos, motivaciones y frustraciones, pero su <strong>corazón son los objetivos</strong>: de experiencia (sentir), finales (lograr) y vitales (llegar a ser). El diseño se justifica por cómo sirve a esos objetivos, no por la demografía.</p>
+    </div>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.6</span>Historia: Cooper y el Diseño Orientado a Objetivos</h3>
+
+    <p>La técnica nació de la mano de <strong>Alan Cooper</strong>, programador y diseñador estadounidense conocido como «el padre de Visual Basic». A finales de los años noventa formalizó las personas como herramienta de diseño.</p>
+    <p>Las presentó al gran público en su libro <em>The Inmates Are Running the Asylum</em> (1999) y las desarrolló como método en <em>About Face</em>, la obra que figura en la bibliografía de esta asignatura.</p>
+
+    <h4>El origen anecdótico</h4>
+    <p>El germen es de comienzos de los ochenta. Mientras diseñaba un software de gestión de proyectos, Cooper tomó como modelo a una <strong>usuaria real</strong> que había conocido y empezó a «interpretarla» en voz alta, preguntándose qué haría ella ante cada decisión de diseño.</p>
+    <p>Aquel juego de rol —ponerse en la piel de un usuario concreto y constante— se convirtió, ya con método y datos detrás, en la técnica de las personas.</p>
+
+    <p>Las personas son la pieza central de su método, el <strong>Diseño Orientado a Objetivos</strong> (<em>Goal-Directed Design</em>): primero entiendes a quién sirves y qué objetivos tiene; solo después diseñas la solución. Es, en esencia, el mismo orden que impone la ISO 9241-210.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El título <em>«Los internos dirigen el manicomio»</em> resume la tesis de Cooper: cuando el software lo diseñan solo quienes lo programan, sin pensar en el usuario, el resultado es tan absurdo como dejar a los pacientes gobernar el hospital. Las personas eran su antídoto.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">De dónde salen los datos (la indagación con usuarios), el proceso de creación paso a paso, una persona de ejemplo anclada en datos reales del INE, los errores más comunes y cómo será exactamente tu entregable de la Actividad A.</p>
+  </div>
+
+  <section id="indagacion" aria-labelledby="indagacion-h">
+    <h3 id="indagacion-h"><span class="num" aria-hidden="true">2.1</span>Cómo se indaga: de dónde salen los datos</h3>
+
+    <p>Hemos repetido que una persona se construye con datos, no con suposiciones. Toca responder a la pregunta práctica: ¿cómo se consiguen esos datos? La respuesta es la <strong>indagación sobre los usuarios</strong>, es decir, la investigación que recoge las características reales de quienes usarán el sistema.</p>
+    <p>Estas técnicas son las herramientas de la fase <strong>empatizar</strong> del Design Thinking que vimos al abrir el Tema 2. En la asignatura se estudian con más detalle como <strong>métodos de indagación</strong> en el Tema 4; aquí las usamos con una meta concreta: <strong>conocer a los futuros usuarios antes de diseñar</strong> para poder destilarlos en personas.</p>
+
+    <h4>La regla de oro: observar lo que la gente hace, no solo lo que dice</h4>
+    <p>Existe una brecha bien conocida entre lo que las personas <em>dicen</em> que hacen y lo que <em>hacen</em> de verdad: la <strong>brecha decir-hacer</strong>. Nadie miente; es que recordamos mal, racionalizamos o contamos la versión ideal de nosotros mismos.</p>
+    <p>Por eso una buena indagación no se queda en preguntar. Cruza <strong>preguntar</strong> (entrevistas, cuestionarios) con <strong>observar</strong> (ver al usuario en acción). Lo segundo descubre lo que el propio usuario ni sabe que hace.</p>
+
+    <h4>Las técnicas principales</h4>
+    <ul>
+      <li><strong>Observación (e indagación contextual).</strong> Mirar al usuario realizar su tarea en su entorno real, interfiriendo lo menos posible. Es la técnica reina para captar tareas, recursos y entorno tal y como son. La variante <em>indagación contextual</em> combina observar y preguntar <em>in situ</em>, como un aprendiz que mira trabajar a un maestro y le pregunta sobre la marcha.</li>
+      <li><strong>Entrevistas.</strong> Conversación individual, normalmente <em>semiestructurada</em> (un guion flexible que deja margen a repreguntar). Es lo mejor para el <strong>porqué</strong>: objetivos, motivaciones, frustraciones, historia personal con la tarea.</li>
+      <li><strong>Cuestionarios / encuestas.</strong> Preguntas iguales para muchas personas. Aportan <strong>amplitud y cifras</strong>: permiten medir cuántos usuarios comparten un rasgo y validar a gran escala los patrones que viste en pocas entrevistas.</li>
+      <li><strong>Grupos focales.</strong> Discusión guiada en grupo pequeño. Útiles para explorar <strong>actitudes y percepciones</strong>; poco fiables para el comportamiento real, porque el grupo arrastra y nadie quiere desentonar.</li>
+      <li><strong>Datos ya existentes (investigación de gabinete).</strong> Analíticas de uso, incidencias de soporte, estudios previos y <strong>estadísticas públicas</strong> como las del INE. Es evidencia disponible sin trabajo de campo, ideal como punto de partida y contraste.</li>
+    </ul>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparativa de técnicas de indagación sobre usuarios para construir personas.</caption>
+      <thead>
+        <tr><th scope="col">Técnica</th><th scope="col">Qué aporta</th><th scope="col">Cuándo conviene</th><th scope="col">Límite a vigilar</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Observación</th><td>Lo que el usuario hace de verdad, en su contexto</td><td>Para captar tareas, recursos y entorno reales</td><td>Costosa en tiempo; la presencia puede alterar la conducta</td></tr>
+        <tr><th scope="row">Entrevista</th><td>El porqué: objetivos, motivaciones, frustraciones</td><td>Para profundizar en pocas personas</td><td>Sesgo de memoria y racionalización (brecha decir-hacer)</td></tr>
+        <tr><th scope="row">Cuestionario / encuesta</th><td>Amplitud y cifras; cuántos comparten un rasgo</td><td>Para validar patrones a gran escala</td><td>Superficial; depende mucho del diseño de las preguntas</td></tr>
+        <tr><th scope="row">Grupo focal</th><td>Actitudes y reacciones colectivas</td><td>Para explorar opiniones y percepciones</td><td>El grupo arrastra; poco fiable para conducta individual</td></tr>
+        <tr><th scope="row">Datos existentes</th><td>Evidencia disponible sin coste de campo</td><td>Como punto de partida y contraste</td><td>No se generó para tu pregunta; puede estar desactualizada</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Cómo elegir: cruzar profundidad y amplitud</h4>
+    <p>No hay una técnica «mejor»: hay técnicas <strong>cualitativas</strong> y <strong>cuantitativas</strong>, y se complementan. Las cualitativas (entrevistas, observación, grupos focales) usan <strong>pocas personas con mucha profundidad</strong>: descubren los patrones y el porqué.</p>
+    <p>Las cuantitativas (cuestionarios, analíticas) usan <strong>muchas personas con menos profundidad</strong>: miden cuán frecuentes son esos patrones en la población. Lo cualitativo te dice <em>qué buscar</em>; lo cuantitativo, <em>cuánto pesa</em>.</p>
+    <p>Cuando varias fuentes apuntan a lo mismo, la conclusión es más sólida. A ese cruce de evidencias se le llama <strong>triangulación</strong>, y es la mejor defensa contra construir personas sobre una sola fuente frágil.</p>
+
+    <div class="box challenge">
+      <span class="label">Para tu proyecto</span>
+      <p>No necesitas un estudio enorme. Combina, a pequeña escala: <strong>observa</strong> a unos pocos usuarios reales, <strong>entrevista</strong> a algunos para entender el porqué y pasa un <strong>cuestionario breve</strong> para contrastar. Dos cautelas: no formules preguntas que sugieran la respuesta («¿verdad que es cómodo?») y, ante la duda, <strong>prioriza observar sobre preguntar</strong>.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La <strong>indagación contextual</strong> la formalizaron Beyer y Holtzblatt en los años noventa con una metáfora memorable: el diseñador debe comportarse como un <em>aprendiz</em> y el usuario como el <em>maestro</em>. En vez de interrogarlo en una sala aséptica, lo acompañas mientras trabaja y aprendes viéndolo hacer.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los datos de una persona salen de la <strong>indagación con usuarios</strong>: observación, entrevistas, cuestionarios, grupos focales y datos existentes. La regla de oro es <strong>observar, no solo preguntar</strong> (por la brecha decir-hacer), y <strong>triangular</strong> técnicas cualitativas (profundidad) con cuantitativas (amplitud).</p>
+    </div>
+  </section>
+
+  <section id="proceso" aria-labelledby="proceso-h">
+    <h3 id="proceso-h"><span class="num" aria-hidden="true">2.2</span>Cómo se construye: el proceso de Cooper paso a paso</h3>
+
+    <p>Una persona no se escribe «a ojo». Cooper propone un proceso para <strong>destilarla a partir de la investigación</strong>. Esta es la respuesta directa a «¿cómo se lleva a cabo?».</p>
+
+    <ol class="steps" role="list">
+      <li><b>1. Identificar variables de comportamiento.</b> A partir de la investigación, listar las dimensiones en las que los usuarios difieren: actividades que realizan, actitudes, aptitudes (soltura digital), motivaciones. <strong>Importan más las de comportamiento que las demográficas.</strong></li>
+      <li><b>2. Situar a las personas entrevistadas en cada variable.</b> Colocar a cada sujeto observado en un punto de cada variable (un eje o rango). No importa la posición exacta, sino quién queda cerca de quién.</li>
+      <li><b>3. Detectar patrones.</b> Buscar grupos de sujetos que se agrupan a la vez en varias variables. Un grupo que coincide en varias dimensiones es un <strong>patrón de comportamiento</strong>: el embrión de una persona.</li>
+      <li><b>4. Sintetizar características y definir objetivos.</b> Dar cuerpo a cada patrón con detalles realistas y, sobre todo, <strong>definir sus objetivos</strong> (experiencia, finales, vitales). Aquí el patrón se convierte en personaje.</li>
+      <li><b>5. Comprobar redundancia y completitud.</b> ¿Sobran personas que se solapan? ¿Falta algún tipo de usuario importante sin representar? Ajustar el conjunto.</li>
+      <li><b>6. Expandir la descripción.</b> Redactar una narrativa breve, en tercera persona y presente, con nombre, foto, cita y frustraciones. Lo justo para generar empatía, sin paja de novela.</li>
+      <li><b>7. Designar los tipos.</b> Marcar cuál es la persona <strong>primaria</strong> y clasificar el resto (secundaria, servida, negativa…). Esto fija las prioridades del diseño.</li>
+    </ol>
+
+    <p>Repara en que los pasos 1 a 3 son <strong>análisis</strong> (extraer patrones de los datos) y los pasos 4 a 7 son <strong>síntesis</strong> (construir los personajes). Las personas son el puente entre lo que observaste y lo que vas a diseñar.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El proceso va de los datos al personaje: <strong>variables → situar sujetos → patrones → síntesis con objetivos → depurar → describir → designar tipos</strong>. La mitad es analizar la investigación; la otra mitad, convertir los patrones en arquetipos con nombre.</p>
+    </div>
+  </section>
+
+  <section id="ejemplo" aria-labelledby="ejemplo-h">
+    <h3 id="ejemplo-h"><span class="num" aria-hidden="true">2.3</span>De los datos a la ficha: una persona de ejemplo (INE)</h3>
+
+    <p>Retomemos el caso de la introducción: una <strong>app de pago del transporte público</strong>. Para construir personas realistas necesitamos saber cómo es de verdad la población usuaria. Aquí entran los datos del <strong>INE</strong>.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). Hogares y personas de 16 a 74 años.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil (sin fijo)</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Hogares que acceden a Internet solo mediante conexión móvil</td><td class="fig">10,7 %</td></tr>
+          <tr><td>Personas de 16 a 74 años que usaron Internet en los últimos 3 meses</td><td class="fig">96,3 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Estos datos nos recuerdan que el contexto real es <strong>mayoritariamente móvil</strong> y que conviven niveles de soltura digital muy distintos. Pero el INE da el <strong>marco</strong>, no las personas: estas hay que destilarlas de una indagación propia. Simulemos esa indagación aplicando, paso a paso, lo visto en 2.1 (técnicas) y 2.2 (proceso de Cooper).</p>
+
+    <div class="box curio">
+      <span class="label">Simulación didáctica · datos ficticios</span>
+      <p>Lo que sigue es un ejemplo <strong>inventado con fines docentes</strong> para ilustrar el método de principio a fin. En tu proyecto, estas citas y cifras saldrían de tu investigación real, no de la imaginación.</p>
+    </div>
+
+    <h4>Paso 0 · El plan de indagación (las técnicas de 2.1)</h4>
+    <p>El equipo combinó cuatro técnicas para <strong>triangular</strong> y no fiarlo todo a una fuente:</p>
+    <ul>
+      <li><strong>Observación</strong> en tres paradas reales: acompañar a viajeros mientras pagan, sin ayudarles, para esquivar la <strong>brecha decir-hacer</strong>.</li>
+      <li><strong>Entrevistas semiestructuradas</strong> a seis viajeros de perfiles distintos, centradas en sus objetivos y frustraciones (el porqué).</li>
+      <li><strong>Cuestionario breve</strong> a unos cuarenta usuarios del autobús, para medir cuán comunes eran los patrones.</li>
+      <li><strong>Datos existentes</strong>: el marco del INE (realidad móvil y diversidad digital) como contraste de fondo.</li>
+    </ul>
+
+    <h4>Paso 1 · Hallazgos en bruto</h4>
+    <ul>
+      <li><strong>Observación:</strong> casi todos pagan de pie, con una mano y mirando de reojo si llega el bus; varias personas mayores se quedan inseguras cuando la pantalla cambia sola.</li>
+      <li><strong>Entrevistas:</strong> los más jóvenes repiten «que sea rápido, dos toques»; los mayores piden «ver bien» y «saber que ha quedado pagado».</li>
+      <li><strong>Cuestionario (simulado):</strong> 7 de cada 10 dicen pagar «con prisa» y 1 de cada 4 ha tenido algún problema sin cobertura.</li>
+    </ul>
+
+    <h4>Pasos 2-3 · Variables de comportamiento y patrones</h4>
+    <p>De esos hallazgos, el equipo eligió las variables que de verdad <strong>diferencian</strong> a unos usuarios de otros (no las demográficas) y situó en ellas a cada persona entrevistada:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Mapa de los seis entrevistados (E1-E6) sobre las variables de comportamiento que más los separan. Al agruparlos, emergen dos patrones (A y B). Ejemplo didáctico.</caption>
+      <thead>
+        <tr><th scope="col">Entrevistado</th><th scope="col">Confianza digital</th><th scope="col">Ritmo en la parada</th><th scope="col">Necesita confirmación / legibilidad</th><th scope="col">Patrón</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">E1 · estudiante, 19</th><td>Alta</td><td>Con prisa, de pie</td><td>Baja</td><td>A</td></tr>
+        <tr><th scope="row">E2 · mensajero, 26</th><td>Alta</td><td>En marcha</td><td>Baja</td><td>A</td></tr>
+        <tr><th scope="row">E3 · estudiante, 23</th><td>Alta</td><td>Con prisa</td><td>Baja</td><td>A</td></tr>
+        <tr><th scope="row">E4 · jubilado, 68</th><td>Baja</td><td>Sin prisa, sentado</td><td>Alta</td><td>B</td></tr>
+        <tr><th scope="row">E5 · jubilada, 72</th><td>Baja</td><td>Sin prisa</td><td>Alta</td><td>B</td></tr>
+        <tr><th scope="row">E6 · vecino, 64</th><td>Media-baja</td><td>Sin prisa</td><td>Alta</td><td>B</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Al situar a los seis, aparecen <strong>dos agrupaciones claras</strong>: el patrón <strong>A</strong> (alta confianza, con prisa, de pie) y el patrón <strong>B</strong> (baja confianza, sin prisa, necesita confirmaciones y buena legibilidad). Esos dos patrones son el embrión de dos personas.</p>
+
+    <h4>Pasos 4 y 7 · Síntesis y designación de tipos</h4>
+    <p>Cada patrón se sintetiza en una persona con sus objetivos. Y se designan los tipos: como el momento <strong>más frecuente y crítico</strong> del producto es pagar deprisa en la parada, el patrón A se convierte en la <strong>persona primaria</strong> (Marta) y el patrón B, en la <strong>secundaria</strong> (Don Ernesto).</p>
+
+    <p>De los dos patrones nacen, así, dos personas que no se parecen entre sí. Las sintetizamos en sus fichas:</p>
+
+    <article class="persona-card" aria-label="Ficha de persona de ejemplo: Marta">
+      <div class="head">
+        <p class="pname">Marta Rivero</p>
+        <span class="ptype">Persona primaria</span>
+      </div>
+      <p class="demo">21 años · estudiante de FP · Cáceres · solo usa el móvil, datos limitados</p>
+      <p class="quote">«No me hagas pensar: si el bus está llegando, lo último que quiero es buscar dónde se paga.»</p>
+
+      <h5>Objetivos</h5>
+      <ul>
+        <li><strong>De experiencia:</strong> sentirse rápida y sin estrés en la parada.</li>
+        <li><strong>Final:</strong> tener el billete validado en dos toques antes de subir.</li>
+        <li><strong>Vital:</strong> manejar su día a día sin depender de nadie.</li>
+      </ul>
+
+      <h5>Comportamientos y aptitudes</h5>
+      <ul>
+        <li>Alta soltura con el móvil; lo usa de pie, en movimiento y con una mano.</li>
+        <li>Conexión intermitente: a veces sin cobertura en el túnel.</li>
+      </ul>
+
+      <h5>Frustraciones</h5>
+      <ul>
+        <li>Apps que exigen registrarse o escribir mucho antes de poder pagar.</li>
+        <li>Que el billete no esté accesible sin conexión.</li>
+      </ul>
+    </article>
+
+    <p>Junto a Marta podría existir <strong>Don Ernesto</strong> (68 años, poca confianza digital, prioriza textos legibles y confirmaciones claras): una persona <strong>secundaria</strong>. Diseñar primero para Marta y luego comprobar que Don Ernesto no queda fuera es exactamente lo que la técnica nos ordena hacer.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una buena persona <strong>cuelga de datos reales</strong> (aquí, la realidad móvil y diversa que retrata el INE) y se centra en <strong>objetivos</strong>, no en adornos. Marta no es «una chica joven»: es «alguien que necesita pagar en dos toques, de pie y a veces sin cobertura».</p>
+    </div>
+  </section>
+
+  <section id="errores" aria-labelledby="errores-h">
+    <h3 id="errores-h"><span class="num" aria-hidden="true">2.4</span>Errores típicos al crear personas</h3>
+
+    <p>La técnica es sencilla de entender y fácil de hacer mal. Estos son los fallos que más penalizan en un proyecto (y en tu entrega).</p>
+    <ul>
+      <li><strong>Personas inventadas.</strong> Hechas «de cabeza», sin investigación. Son prejuicios disfrazados; no resuelven el problema del usuario elástico, lo decoran.</li>
+      <li><strong>Demasiado detalle irrelevante.</strong> Su color favorito o su mascota no cambian ninguna decisión de diseño. Cada dato debe ganarse su sitio por ser útil.</li>
+      <li><strong>Demasiadas personas.</strong> Tres o cuatro bien hechas valen más que diez. Si todo es prioritario, nada lo es.</li>
+      <li><strong>Personas sin objetivos.</strong> Una ficha solo demográfica («mujer, 30, urbana») no guía nada. Sin objetivos, no es una persona de Cooper.</li>
+      <li><strong>Estereotipos.</strong> Caricaturizar («la abuela que no sabe encender el móvil») insulta a usuarios reales y produce mal diseño. La investigación es la vacuna contra el prejuicio.</li>
+    </ul>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Mira cualquier persona (real o de ejemplo) y tacha mentalmente todo dato que no cambie una sola decisión de diseño. Lo que sobreviva es lo que de verdad importa. Si te quedas casi sin nada, esa persona estaba mal hecha.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.5</span>Tu proyecto: la persona como entregable de la Actividad A</h3>
+
+    <p>En tu proyecto, las personas son <strong>parte del entregable de la Actividad A</strong>, dentro de la «identificación de usuarios y grupos de interés» que marca el plan docente. No son un adorno: son la evidencia de que investigaste a quién sirves.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cómo se concreta la técnica de personas en tu entrega de la Actividad A.</caption>
+      <thead>
+        <tr><th scope="col">Qué tendrás que entregar</th><th scope="col">De dónde sale</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">2-4 fichas de persona con objetivos</th><td>Síntesis de tu investigación (fase «empatizar» del Design Thinking)</td></tr>
+        <tr><th scope="row">Designación de la persona primaria</th><td>Decisión de equipo sobre a quién se prioriza</td></tr>
+        <tr><th scope="row">Evidencia de la investigación</th><td>A quién observaste o entrevistaste y qué patrones encontraste</td></tr>
+        <tr><th scope="row">Grupos de interés (incl. servidos)</th><td>Personas afectadas aunque no usen el sistema</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consejos prácticos para la entrega</h4>
+    <ul>
+      <li><strong>Cuelga cada persona de un dato.</strong> Si no puedes señalar de qué observación sale un rasgo, sobra o hay que investigarlo.</li>
+      <li><strong>Incluye al menos una persona que no se parezca a ti.</strong> Es la mejor defensa contra el autodiseño y un primer paso hacia el nivel <strong>AA de WCAG</strong> exigido al proyecto.</li>
+      <li><strong>Define la primaria y justifícala.</strong> El tribunal valorará que el proceso sea visible: por qué esa y no otra.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En el proyecto entregarás <strong>unas pocas personas centradas en objetivos, ancladas en tu investigación</strong>, con una <strong>persona primaria</strong> designada y justificada. Lo que se evalúa es la evidencia del proceso, no la belleza de la ficha.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.6</span>Retos de observación para esta semana</h3>
+
+    <p>Las personas se aprenden practicando la mirada que las produce. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Caza al usuario elástico</span>
+      <p>En la próxima discusión sobre una app (en clase o con amigos), cuenta cuántas veces alguien dice «el usuario» para defender posturas opuestas. Acabas de ver al usuario elástico en acción.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Objetivos, no funciones</span>
+      <p>Elige una app que uses y escribe su <strong>objetivo final</strong> en una frase que empiece por un verbo de la persona, no del sistema: «pagar y subir al bus», no «mostrar el código QR». Si te sale una función, reescríbela hasta que sea un objetivo humano.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Una persona en cinco minutos</span>
+      <p>Tras observar a alguien usar una app (sin ayudarle), redacta una mini-ficha: nombre ficticio, un objetivo final, una aptitud y una frustración real que le viste. No inventes: usa solo lo que observaste.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.7</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente te pide <strong>diseñar y evaluar interfaces que garanticen la usabilidad y la accesibilidad</strong> (CI17) y <strong>transmitir ideas y soluciones</strong> (CB04). Las personas sirven a ambas competencias a la vez.</p>
+    <p>A la primera, porque obligan a diseñar para usuarios reales y diversos en vez de para uno mismo. A la segunda, porque son una herramienta de <strong>comunicación</strong>: alinean a todo el equipo en torno a a quién se sirve.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Puedes saltarte las personas y diseñar «para el usuario». En cuanto lo hagas, el usuario empezará a estirarse para darte la razón, y acabarás construyendo, sin notarlo, algo para alguien como tú.</p>
+    <p>Definir a quién sirves, con nombre y objetivos, es lo que separa a quien <strong>programa pantallas</strong> de quien <strong>resuelve el problema de personas concretas</strong>. La técnica te la da Cooper; usarla, en cada proyecto que firmes, será decisión tuya.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Las personas sirven a CI17 (diseñar para usuarios reales y diversos, no para uno mismo) y a CB04 (comunicar y alinear al equipo en torno a a quién se sirve). Son, a la vez, herramienta de diseño y herramienta de comunicación.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué es una persona y de qué actividad del DCH forma parte?</summary>
+      <p>Es un <strong>arquetipo de usuario</strong>: un usuario ficticio, con nombre y objetivos, construido a partir de datos de investigación. Forma parte de la <strong>Actividad A</strong> (contexto de uso), como técnica para especificar el componente «usuarios». <em>(Ver 1.1 y 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué NO es una persona?</summary>
+      <p>No es un usuario real concreto, ni un promedio estadístico, ni un segmento de mercado, ni un rol o puesto. Tampoco una ficha inventada sin investigación (eso es, como mucho, una hipótesis a validar). <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuál es el objetivo central de la técnica?</summary>
+      <p>Acabar con el <strong>«usuario elástico»</strong>: ese «usuario» abstracto que cada cual estira para justificar cualquier decisión. Las personas lo sustituyen por arquetipos concretos que dan empatía, lenguaje común, decisiones discutibles y prioridades. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Qué es la persona primaria y por qué solo una por interfaz?</summary>
+      <p>Es la persona en la que se centra el diseño; la interfaz se diseña para ella. Cooper defiende una sola por interfaz porque intentar contentar a varias a la vez en la misma interfaz no contenta a ninguna. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Cuáles son los tres tipos de objetivos de Cooper?</summary>
+      <p>De experiencia (cómo quiere sentirse), finales (qué quiere lograr; la guía principal del diseño) y vitales (en quién aspira a convertirse). Resuenan con los niveles visceral, conductual y reflexivo de Norman. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Cómo se construye una persona, en esencia?</summary>
+      <p>De los datos al personaje: identificar variables de comportamiento, situar a los sujetos en ellas, detectar patrones, sintetizar características y objetivos, depurar, describir y designar tipos (primaria, secundaria…). La mitad es análisis; la otra, síntesis. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué errores comunes hay que evitar?</summary>
+      <p>Inventarlas sin datos, llenarlas de detalle irrelevante, crear demasiadas, dejarlas sin objetivos y caer en estereotipos. La investigación es la vacuna contra todos ellos. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo se concreta en tu proyecto?</summary>
+      <p>Como parte del entregable de la Actividad A: 2-4 fichas con objetivos, una persona primaria designada y justificada, evidencia de la investigación y los grupos de interés (incluidos los servidos). Se evalúa el proceso, no la estética. <em>(Ver 2.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. ¿De dónde salen los datos de una persona y cuál es la regla de oro al recogerlos?</summary>
+      <p>De la <strong>indagación con usuarios</strong>: observación (e indagación contextual), entrevistas, cuestionarios/encuestas, grupos focales y datos ya existentes (analíticas, INE…). La regla de oro es <strong>observar, no solo preguntar</strong>, por la brecha decir-hacer, y <strong>triangular</strong> técnicas cualitativas (profundidad) con cuantitativas (amplitud). <em>(Ver 2.1)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Persona</dt>
+      <dd>Modelo de usuario arquetípico: personaje ficticio con nombre y objetivos, construido a partir de datos de investigación, que representa a un grupo de usuarios con comportamientos y objetivos similares.</dd>
+      <dt>Usuario elástico</dt>
+      <dd>El «usuario» abstracto y sin rostro que se estira para justificar cualquier decisión de diseño. Es el problema que las personas vienen a resolver.</dd>
+      <dt>Diseño Orientado a Objetivos (Goal-Directed Design)</dt>
+      <dd>Método de diseño de Alan Cooper que parte de entender los objetivos de las personas usuarias antes de proponer soluciones. Las personas son su pieza central.</dd>
+      <dt>Persona primaria</dt>
+      <dd>Aquella en la que se centra el diseño de una interfaz; Cooper recomienda una sola por interfaz.</dd>
+      <dt>Persona secundaria</dt>
+      <dd>Queda satisfecha en su mayor parte por la interfaz de la primaria, pero tiene alguna necesidad adicional que atender.</dd>
+      <dt>Persona servida</dt>
+      <dd>No usa el sistema pero se ve afectada por su uso (equivale al usuario indirecto).</dd>
+      <dt>Persona negativa</dt>
+      <dd>Arquetipo para el que se decide explícitamente NO diseñar.</dd>
+      <dt>Objetivos finales</dt>
+      <dd>Lo que la persona quiere lograr al usar el producto; son la guía principal del diseño.</dd>
+      <dt>Objetivos de experiencia</dt>
+      <dd>Cómo quiere sentirse la persona durante el uso (seguridad, soltura, ausencia de agobio).</dd>
+      <dt>Objetivos vitales</dt>
+      <dd>Aspiraciones de fondo de la persona: en quién quiere convertirse.</dd>
+      <dt>Persona de suposición (proto-persona)</dt>
+      <dd>Boceto de persona hecho sin investigación; admisible solo como hipótesis de partida que debe validarse con datos.</dd>
+      <dt>Variables de comportamiento</dt>
+      <dd>Dimensiones en las que los usuarios difieren (actividades, actitudes, aptitudes, motivaciones); son la base para detectar patrones y construir personas.</dd>
+      <dt>Indagación con usuarios</dt>
+      <dd>Investigación que recoge las características reales de los futuros usuarios (observación, entrevistas, cuestionarios, grupos focales, datos existentes) para alimentar las personas. Es el trabajo de la fase «empatizar».</dd>
+      <dt>Observación / indagación contextual</dt>
+      <dd>Técnica de ver al usuario realizar su tarea en su entorno real; la indagación contextual añade preguntar in situ, como un aprendiz junto a un maestro.</dd>
+      <dt>Entrevista semiestructurada</dt>
+      <dd>Conversación individual con un guion flexible que permite repreguntar; idónea para entender objetivos y motivaciones (el porqué).</dd>
+      <dt>Cuestionario / encuesta</dt>
+      <dd>Conjunto de preguntas iguales para muchas personas; aporta amplitud y cifras para validar patrones a gran escala.</dd>
+      <dt>Brecha decir-hacer (say-do gap)</dt>
+      <dd>Diferencia entre lo que las personas dicen que hacen y lo que hacen realmente; justifica observar además de preguntar.</dd>
+      <dt>Triangulación</dt>
+      <dd>Cruce de varias fuentes o técnicas de indagación; cuando coinciden, la conclusión es más fiable.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>Una <strong>persona</strong> es un arquetipo de usuario con nombre y objetivos, <strong>construido con datos</strong> de la investigación de la Actividad A. No se inventa.</li>
+        <li>No es un usuario real, ni un promedio, ni un segmento de mercado, ni un rol.</li>
+        <li>Los <strong>datos</strong> salen de la <strong>indagación con usuarios</strong> (observación, entrevistas, cuestionarios, grupos focales, datos existentes). Regla de oro: <strong>observar, no solo preguntar</strong>, y <strong>triangular</strong> lo cualitativo (profundidad) con lo cuantitativo (amplitud).</li>
+        <li>Su <strong>objetivo</strong> es acabar con el <strong>«usuario elástico»</strong>: dan empatía, lenguaje común, decisiones concretas y prioridades.</li>
+        <li>Hay varios <strong>tipos</strong>: primaria (foco del diseño, una por interfaz), secundaria, suplementaria, cliente, servida y negativa.</li>
+        <li>El <strong>corazón</strong> de una persona son sus objetivos: de experiencia (sentir), finales (lograr) y vitales (llegar a ser).</li>
+        <li>Se construye con un proceso de <strong>análisis + síntesis</strong>: variables → patrones → personajes con objetivos → tipos.</li>
+        <li>La inventó <strong>Alan Cooper</strong> (<em>The Inmates Are Running the Asylum</em>, 1999; método en <em>About Face</em>) como base del Diseño Orientado a Objetivos.</li>
+        <li>Errores a evitar: inventarlas, detalle irrelevante, demasiadas, sin objetivos y estereotipos.</li>
+        <li>En tu <strong>proyecto</strong>: 2-4 personas con objetivos, una primaria justificada y evidencia de la investigación, dentro del entregable de la Actividad A.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014. (Referencia principal: técnica de personas y Diseño Orientado a Objetivos.)</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Norman, D. A. <em>El diseño emocional</em>. Paidós, 2005. (Niveles visceral, conductual y reflexivo.)</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="7">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="10">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>Definición de usuarios mediante Personas (Alan Cooper)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

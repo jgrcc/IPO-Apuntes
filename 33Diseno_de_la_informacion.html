@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: el diseño de la información, segundo diseño de la Actividad C del Diseño Centrado en lo Humano (ISO 9241-210). Arquitectura de la información, principios de la Gestalt, jerarquía visual y accesibilidad perceptiva (contraste, no solo color). Tema 3 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Diseño de la información (Actividad C del DCH) · Apuntes Tema 3 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 3 · Proceso iterativo de diseño · Material de apoyo</p>
+    <h1>Diseño de la información
+      <span class="sub">El segundo de los tres diseños de la Actividad C: organizar y presentar lo que la persona ve y entiende (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es el diseño de la información?</a></li>
+          <li class="lvl2"><a href="#arquitectura">Arquitectura de la información: organizar y etiquetar</a></li>
+          <li class="lvl2"><a href="#gestalt">Los principios de la Gestalt, en profundidad</a></li>
+          <li class="lvl2"><a href="#jerarquia">La jerarquía visual: que lo importante se vea importante</a></li>
+          <li class="lvl2"><a href="#accesible">Información accesible: contraste, no solo color, legibilidad</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#escanea">La gente no lee, escanea</a></li>
+          <li class="lvl2"><a href="#dos-presentaciones">La misma información, dos presentaciones</a></li>
+          <li class="lvl2"><a href="#anclaje">Anclaje real: percibir no es opcional (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: el diseño de la información como segunda decisión</a></li>
+          <li class="lvl2"><a href="#retos">Retos de diseño para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes continúan el <strong>Tema 3</strong>. Ya vimos el primer diseño de la Actividad C, el <strong>diseño de la actividad</strong> (el comportamiento: qué pasos y en qué orden). Hoy entramos en el segundo: el <strong>diseño de la información</strong>.</p>
+    <p>Si el diseño de la actividad decidía <em>qué hace</em> la persona, el diseño de la información decide <em>qué ve</em> para hacerlo: cómo se <strong>organiza y se presenta</strong> en pantalla todo lo que necesita percibir y entender.</p>
+    <p>Aquí, por fin, desarrollamos en profundidad los <strong>principios de la Gestalt</strong> que solo presentamos en la apertura, y los unimos a la <strong>jerarquía visual</strong> y a la <strong>accesibilidad perceptiva</strong> (contraste, no depender del color).</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>diseño de la información</strong> decide <strong>cómo se organiza y se presenta</strong> lo que el usuario ve: qué se agrupa, qué destaca y qué jerarquía hay. Su objetivo es que la pantalla <strong>se entienda sin esfuerzo</strong> y la pueda percibir todo el mundo.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: organizar lo que se ve</h2>
+    <p class="lead">Qué es el diseño de la información, cómo se estructura y etiqueta, qué principios de la Gestalt gobiernan la percepción, cómo se construye la jerarquía visual y por qué la información debe poder percibirla todo el mundo.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es el diseño de la información?</h3>
+
+    <p>Diseñar la información es decidir <strong>cómo se organiza y se presenta</strong> todo lo que la persona ve en pantalla para realizar su actividad: textos, datos, controles, imágenes, mensajes.</p>
+    <p>Es el complemento del diseño de la actividad. La actividad decidió <em>qué</em> ocurre y en qué orden; la información decide <em>cómo se muestra</em> cada paso para que se entienda al primer vistazo.</p>
+    <p>No es «decorar». Una pantalla bien diseñada informa <strong>antes de leerla</strong>: con la disposición, el espacio y el contraste ya se intuye qué es importante, qué va junto y qué hacer.</p>
+
+    <h4>Dos trabajos en uno</h4>
+    <ul>
+      <li><strong>Organizar</strong> la información: decidir qué contenidos hay, cómo se agrupan y cómo se etiquetan. Es la <strong>arquitectura de la información</strong>.</li>
+      <li><strong>Presentar</strong> la información: decidir cómo se ve cada grupo, qué destaca y en qué orden lo recorre la mirada. Es la <strong>jerarquía visual</strong>.</li>
+    </ul>
+
+    <p>Ambos trabajos persiguen lo mismo: reducir el esfuerzo de comprensión, es decir, la <strong>carga cognitiva</strong> que vimos en la apertura.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El diseño de la información tiene dos caras: <strong>organizar</strong> (arquitectura de la información) y <strong>presentar</strong> (jerarquía visual). Su meta común es que la pantalla se entienda con el mínimo esfuerzo.</p>
+    </div>
+  </section>
+
+  <section id="arquitectura" aria-labelledby="arquitectura-h">
+    <h3 id="arquitectura-h"><span class="num" aria-hidden="true">1.2</span>Arquitectura de la información: organizar y etiquetar</h3>
+
+    <p>La <strong>arquitectura de la información</strong> es la estructura: cómo se divide el contenido en partes, cómo se agrupan esas partes y con qué <strong>nombres (etiquetas)</strong> se presentan para que la gente encuentre lo que busca.</p>
+    <p>Una buena arquitectura responde a la pregunta del usuario «¿dónde estará lo que necesito?» antes de que la formule. Por eso se organiza según el modelo mental de la persona, no según el organigrama de la empresa.</p>
+
+    <h4>Tres decisiones de arquitectura</h4>
+    <ul>
+      <li><strong>Agrupar</strong>: reunir lo que va junto (datos personales por un lado, pago por otro). Conecta con la ley de Miller: bloques con sentido descargan la memoria.</li>
+      <li><strong>Ordenar</strong>: decidir la secuencia y la prioridad de los grupos (primero lo más usado o lo más urgente).</li>
+      <li><strong>Etiquetar</strong>: poner a cada grupo y a cada opción un nombre claro, en el lenguaje del usuario, no en jerga técnica.</li>
+    </ul>
+
+    <p>Steve Krug lo resume con su célebre lema: <strong>«no me hagas pensar»</strong>. Si la persona tiene que detenerse a descifrar dónde está algo o qué significa una etiqueta, la arquitectura ha fallado.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El mayor enemigo del etiquetado claro es la <strong>«maldición del conocimiento»</strong>: quien diseña sabe tanto del sistema que olvida lo que es obvio para él no lo es para nadie más. Por eso una etiqueta «evidente» para el equipo puede ser un jeroglífico para el usuario. La prueba con personas reales (Tema 4) es el único antídoto fiable.</p>
+    </div>
+  </section>
+
+  <section id="gestalt" aria-labelledby="gestalt-h">
+    <h3 id="gestalt-h"><span class="num" aria-hidden="true">1.3</span>Los principios de la Gestalt, en profundidad</h3>
+
+    <p>La psicología de la <strong>Gestalt</strong> descubrió que el ojo no percibe píxeles sueltos: percibe <strong>conjuntos organizados</strong>. Y lo hace siguiendo principios predecibles, que el diseño de la información usa como herramientas.</p>
+    <p>Lo primero que hace el ojo es separar <strong>figura y fondo</strong>: qué es objeto y qué es trasfondo. A partir de ahí, agrupa según varios principios. Veamos los principales con un ejemplo visual.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 420" role="img" aria-labelledby="ges-title ges-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="ges-title">Cuatro principios de la Gestalt ilustrados con figuras simples</title>
+        <desc id="ges-desc">Cuatro paneles. Proximidad: dos grupos de cuatro círculos cada uno; se perciben como dos grupos porque dentro de cada grupo los círculos están cerca y entre grupos hay separación. Semejanza: una cuadrícula de círculos en la que una columna es de distinto color, por lo que esa columna se percibe como un grupo aparte. Región común: seis círculos igualmente espaciados, pero un recuadro encierra tres de ellos, que pasan a percibirse como un grupo. Cierre: cuatro marcas en forma de ángulo situadas en las esquinas de un cuadrado imaginario; el ojo completa el cuadrado aunque sus lados no estén dibujados.</desc>
+
+        <!-- Panel 1: Proximidad -->
+        <rect x="14" y="14" width="330" height="188" rx="10" fill="#FDFBF6" stroke="#D8CFBF" stroke-width="1.5"></rect>
+        <text x="179" y="42" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Proximidad</text>
+        <circle cx="92" cy="100" r="11" fill="#0B5563"></circle>
+        <circle cx="128" cy="100" r="11" fill="#0B5563"></circle>
+        <circle cx="92" cy="136" r="11" fill="#0B5563"></circle>
+        <circle cx="128" cy="136" r="11" fill="#0B5563"></circle>
+        <circle cx="232" cy="100" r="11" fill="#0B5563"></circle>
+        <circle cx="268" cy="100" r="11" fill="#0B5563"></circle>
+        <circle cx="232" cy="136" r="11" fill="#0B5563"></circle>
+        <circle cx="268" cy="136" r="11" fill="#0B5563"></circle>
+        <text x="179" y="184" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Dos grupos por cercanía</text>
+
+        <!-- Panel 2: Semejanza -->
+        <rect x="356" y="14" width="330" height="188" rx="10" fill="#FDFBF6" stroke="#D8CFBF" stroke-width="1.5"></rect>
+        <text x="521" y="42" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Semejanza</text>
+        <circle cx="440" cy="88" r="10" fill="#0B5563"></circle>
+        <circle cx="487" cy="88" r="10" fill="#0B5563"></circle>
+        <circle cx="534" cy="88" r="10" fill="#8A3412"></circle>
+        <circle cx="581" cy="88" r="10" fill="#0B5563"></circle>
+        <circle cx="440" cy="123" r="10" fill="#0B5563"></circle>
+        <circle cx="487" cy="123" r="10" fill="#0B5563"></circle>
+        <circle cx="534" cy="123" r="10" fill="#8A3412"></circle>
+        <circle cx="581" cy="123" r="10" fill="#0B5563"></circle>
+        <circle cx="440" cy="158" r="10" fill="#0B5563"></circle>
+        <circle cx="487" cy="158" r="10" fill="#0B5563"></circle>
+        <circle cx="534" cy="158" r="10" fill="#8A3412"></circle>
+        <circle cx="581" cy="158" r="10" fill="#0B5563"></circle>
+        <text x="521" y="190" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Un grupo por color (semejanza)</text>
+
+        <!-- Panel 3: Región común -->
+        <rect x="14" y="216" width="330" height="188" rx="10" fill="#FDFBF6" stroke="#D8CFBF" stroke-width="1.5"></rect>
+        <text x="179" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Región común</text>
+        <rect x="46" y="286" width="132" height="56" rx="9" fill="none" stroke="#8A3412" stroke-width="2.5"></rect>
+        <circle cx="78" cy="314" r="11" fill="#0B5563"></circle>
+        <circle cx="112" cy="314" r="11" fill="#0B5563"></circle>
+        <circle cx="146" cy="314" r="11" fill="#0B5563"></circle>
+        <circle cx="212" cy="314" r="11" fill="#0B5563"></circle>
+        <circle cx="246" cy="314" r="11" fill="#0B5563"></circle>
+        <circle cx="280" cy="314" r="11" fill="#0B5563"></circle>
+        <text x="179" y="386" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Un grupo por recuadro compartido</text>
+
+        <!-- Panel 4: Cierre -->
+        <rect x="356" y="216" width="330" height="188" rx="10" fill="#FDFBF6" stroke="#D8CFBF" stroke-width="1.5"></rect>
+        <text x="521" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Cierre</text>
+        <polyline points="487,292 487,272 507,272" fill="none" stroke="#8A3412" stroke-width="4"></polyline>
+        <polyline points="555,272 575,272 575,292" fill="none" stroke="#8A3412" stroke-width="4"></polyline>
+        <polyline points="487,338 487,358 507,358" fill="none" stroke="#8A3412" stroke-width="4"></polyline>
+        <polyline points="555,358 575,358 575,338" fill="none" stroke="#8A3412" stroke-width="4"></polyline>
+        <text x="521" y="386" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">El ojo completa el cuadrado</text>
+      </svg>
+      <figcaption>Cuatro principios de la Gestalt con figuras simples: proximidad, semejanza, región común y cierre. La descripción completa, disponible para lectores de pantalla, explica cada panel.</figcaption>
+    </figure>
+
+    <ul class="laws" role="list">
+      <li><b>Proximidad</b> Lo cercano se percibe junto. Es la herramienta más potente: acerca lo que se relaciona y separa lo que no. Una etiqueta debe estar más cerca de su campo que de cualquier otro.</li>
+      <li><b>Semejanza</b> Lo que comparte color, forma o tamaño se percibe del mismo tipo. Por eso todos los enlaces se parecen, y todos los botones de acción también.</li>
+      <li><b>Región común</b> Lo que comparte un recuadro o un fondo se percibe unido, aunque esté algo separado. Es la base de las tarjetas y los paneles.</li>
+      <li><b>Cierre y continuidad</b> La mente completa figuras incompletas y sigue las líneas. Un buen <em>layout</em> guía la mirada con alineaciones invisibles, sin recargar de bordes.</li>
+    </ul>
+
+    <p>El mensaje práctico es contundente: <strong>la disposición habla antes que el texto</strong>. Si agrupas mal, mientes al usuario aunque las palabras sean correctas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El ojo agrupa solo, siguiendo la Gestalt: <strong>figura-fondo</strong>, <strong>proximidad</strong>, <strong>semejanza</strong>, <strong>región común</strong> y <strong>cierre/continuidad</strong>. La proximidad es la más potente. Usa estos principios para que la pantalla comunique relaciones <strong>antes de leerse</strong>.</p>
+    </div>
+  </section>
+
+  <section id="jerarquia" aria-labelledby="jerarquia-h">
+    <h3 id="jerarquia-h"><span class="num" aria-hidden="true">1.4</span>La jerarquía visual: que lo importante se vea importante</h3>
+
+    <p>Si la Gestalt decide qué va junto, la <strong>jerarquía visual</strong> decide qué va <strong>primero</strong>. Es el orden de importancia que el diseño impone a la mirada: qué se ve antes, qué después y qué casi no se ve.</p>
+    <p>La regla de oro: <strong>lo más importante debe ser lo más prominente</strong>. Si todo grita, no se oye nada; si nada destaca, la persona no sabe por dónde empezar.</p>
+
+    <h4>Las herramientas de la jerarquía: las variables visuales</h4>
+    <p>La prominencia se construye con un puñado de <strong>variables visuales</strong>, que conviene usar con intención y no por defecto.</p>
+    <ul>
+      <li><strong>Tamaño</strong>: lo grande se ve antes y se interpreta como más importante.</li>
+      <li><strong>Contraste y color</strong>: lo que contrasta con su entorno atrae la mirada.</li>
+      <li><strong>Posición</strong>: lo que está arriba y a la izquierda (en lectura occidental) se lee primero.</li>
+      <li><strong>Espacio en blanco</strong>: el vacío alrededor de algo lo destaca y lo separa; el espacio es diseño, no «hueco desaprovechado».</li>
+    </ul>
+
+    <p>Estas variables también <strong>codifican significado</strong>: el rojo «alerta», el tamaño «título», la negrita «importante». Si las usas de forma incoherente, el usuario aprende un código que luego incumples.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El <strong>espacio en blanco</strong> es de las decisiones de diseño peor entendidas: muchos lo viven como sitio «desperdiciado» y lo rellenan. Pero el vacío es lo que hace legible lo lleno. Quitar elementos suele mejorar una pantalla más que añadirlos, porque sube la <strong>relación señal-ruido</strong>.</p>
+    </div>
+  </section>
+
+  <section id="accesible" aria-labelledby="accesible-h">
+    <h3 id="accesible-h"><span class="num" aria-hidden="true">1.5</span>Información accesible: contraste, no solo color, legibilidad</h3>
+
+    <p>De nada sirve una jerarquía preciosa si una parte de las personas <strong>no puede percibirla</strong>. La accesibilidad perceptiva no es un añadido del diseño de la información: es parte de su definición.</p>
+    <p>Las <strong>WCAG nivel AA</strong> (a las que remite la <strong>EN 301 549</strong> que ya conoces) ponen condiciones concretas y verificables sobre cómo se presenta la información. Tres son inexcusables.</p>
+
+    <ul class="laws" role="list">
+      <li><b>Contraste suficiente</b> El texto debe contrastar con su fondo (WCAG AA pide una relación de al menos <strong>4,5:1</strong> para texto normal). Un gris claro sobre blanco es elegante y, a la vez, ilegible para mucha gente.</li>
+      <li><b>No solo el color</b> Nunca transmitas información <strong>únicamente</strong> con color (por ejemplo, «los campos en rojo son obligatorios»). Quien no distingue ese color se queda sin el dato. Acompaña siempre con texto, icono o forma.</li>
+      <li><b>Legibilidad</b> Tipografía clara, tamaño suficiente y líneas no demasiado largas. La tipografía de estos apuntes, <strong>Atkinson Hyperlegible</strong>, está diseñada precisamente para distinguir mejor letras parecidas.</li>
+    </ul>
+
+    <p>Fíjate en que estas reglas <strong>mejoran la experiencia de todo el mundo</strong>, no solo de quien tiene una discapacidad: es el principio del diseño universal. Un buen contraste se agradece también al sol, en un móvil y con prisa.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La información debe poder <strong>percibirla todo el mundo</strong>. Las WCAG AA lo concretan: <strong>contraste ≥ 4,5:1</strong>, <strong>nunca solo el color</strong> y <strong>texto legible</strong>. No es un extra: es la condición para que la jerarquía visual le sirva a alguien más que a ti.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo lee de verdad la gente, un ejemplo de la misma información presentada bien y mal, qué dicen los datos del INE sobre por qué percibir no es opcional y cómo se convierte todo esto en una entrega de tu proyecto.</p>
+  </div>
+
+  <section id="escanea" aria-labelledby="escanea-h">
+    <h3 id="escanea-h"><span class="num" aria-hidden="true">2.1</span>La gente no lee, escanea</h3>
+
+    <p>Hay un hecho incómodo que el diseño de la información debe asumir: las personas <strong>no leen</strong> las pantallas palabra por palabra. Las <strong>escanean</strong>, saltando de un punto llamativo a otro, buscando lo que les interesa.</p>
+    <p>Steve Krug lo documentó: ante una pantalla, la gente echa un vistazo rápido, se fija en lo que destaca y pulsa lo primero razonable que encuentra. No es pereza: es economía cognitiva.</p>
+
+    <h4>Diseñar para el escaneo</h4>
+    <ul>
+      <li><strong>Titulares y encabezados claros</strong> que actúen como señales de tráfico.</li>
+      <li><strong>Bloques cortos</strong> y listas en lugar de párrafos densos.</li>
+      <li><strong>Una jerarquía visual fuerte</strong> que diga, sin leer, por dónde empezar.</li>
+      <li><strong>Lo importante, donde la mirada cae primero</strong> (arriba y a la izquierda en nuestra cultura).</li>
+    </ul>
+
+    <p>Diseñar para el escaneo no es renunciar al contenido: es <strong>estructurarlo</strong> para que la persona encuentre rápido lo suyo y profundice solo si quiere.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La gente <strong>escanea, no lee</strong>. El diseño de la información debe facilitar ese escaneo con encabezados claros, bloques cortos y una jerarquía visual fuerte. Pelear contra el escaneo es perder.</p>
+    </div>
+  </section>
+
+  <section id="dos-presentaciones" aria-labelledby="dos-presentaciones-h">
+    <h3 id="dos-presentaciones-h"><span class="num" aria-hidden="true">2.2</span>La misma información, dos presentaciones</h3>
+
+    <p>Igual que una misma meta admitía dos actividades, una misma información admite presentaciones que la hacen clara o ilegible. Tomemos un <strong>formulario de solicitud de cita</strong>.</p>
+
+    <h4>Presentación mal diseñada</h4>
+    <ul>
+      <li>Todos los campos seguidos, sin agrupar (datos personales mezclados con los del centro).</li>
+      <li>Etiquetas lejos de sus campos, que la proximidad asocia mal.</li>
+      <li>Campos obligatorios marcados <strong>solo</strong> en rojo (falla «no solo el color»).</li>
+      <li>Texto gris claro de bajo contraste, ilegible al sol o con baja visión.</li>
+    </ul>
+
+    <h4>Presentación bien diseñada</h4>
+    <ul>
+      <li>Campos <strong>agrupados</strong> en bloques con título: «Tus datos», «La cita» (proximidad y región común).</li>
+      <li>Cada etiqueta pegada a su campo, sin ambigüedad.</li>
+      <li>Los obligatorios marcados con texto e icono además del color.</li>
+      <li>Contraste alto y un botón de acción claramente prominente (jerarquía visual).</li>
+    </ul>
+
+    <p>Los datos pedidos son los mismos. Cambia la <strong>organización y la presentación</strong>: la segunda versión se completa de un vistazo; la primera, a tientas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La misma información puede ser clara o ilegible según se <strong>agrupe, etiquete y destaque</strong>. Buen diseño de la información: bloques con sentido, etiquetas pegadas, contraste alto, nunca solo color y una acción principal prominente.</p>
+    </div>
+  </section>
+
+  <section id="anclaje" aria-labelledby="anclaje-h">
+    <h3 id="anclaje-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: percibir no es opcional (INE)</h3>
+
+    <p>Podría parecer que el contraste o el «no solo color» son detalles para perfeccionistas. Los datos del <strong>INE</strong> muestran a cuánta gente deja fuera saltárselos.</p>
+
+    <div class="box real">
+      <span class="label">Dato real</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Indicadores que justifican la accesibilidad perceptiva en España. Fuentes: INE, EDAD 2020 y Encuesta TIC en Hogares 2025.</caption>
+        <thead>
+          <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 6 o más años con algún tipo de discapacidad (EDAD 2020)</td><td class="fig">4,32 mill.</td></tr>
+          <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas (2025)</td><td class="fig">66,5 %</td></tr>
+          <tr><td>Hogares que disponen únicamente de teléfono móvil (2025)</td><td class="fig">50,3 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Más de <strong>cuatro millones de personas</strong> viven con alguna discapacidad, y los problemas de movilidad y de percepción están entre los más frecuentes. Un bajo contraste o un código solo de color les cierra la puerta directamente.</p>
+    <p>Súmale que cerca de un tercio de la población no alcanza un nivel digital básico: para esas personas, una jerarquía clara y un etiquetado sencillo no son un lujo, son la diferencia entre comprender o rendirse.</p>
+    <p>Y con la mitad de los hogares usando <strong>solo el móvil</strong>, a menudo al sol y con prisa, el contraste alto y la información bien jerarquizada benefician, de hecho, a todo el mundo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La accesibilidad perceptiva no es perfeccionismo: con 4,32 millones de personas con discapacidad y la mitad de los hogares solo con móvil, el <strong>contraste</strong>, el <strong>no depender del color</strong> y una <strong>jerarquía clara</strong> son lo que permite que la información llegue a todo el mundo.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: el diseño de la información como segunda decisión</h3>
+
+    <p>En tu proyecto, el diseño de la información es <strong>la segunda decisión de la Actividad C</strong>: una vez decidido el flujo (la actividad), toca decidir cómo se ve cada pantalla de ese flujo.</p>
+    <p>No tienes que entregar arte final, pero sí <strong>justificar la organización</strong>: por qué estos grupos, por qué este orden, qué destaca y por qué, y cómo garantizas que se percibe.</p>
+
+    <h4>De la teoría a tu entrega</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué produce el diseño de la información y cómo se evidencia en el proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Qué contenidos y cómo se agrupan</th><td>Estructura y etiquetas de cada pantalla</td><td>Arquitectura de la información · Miller</td></tr>
+        <tr><th scope="row">Qué va junto visualmente</th><td>Agrupaciones y bloques justificados</td><td>Gestalt (proximidad, región común)</td></tr>
+        <tr><th scope="row">Qué se ve primero</th><td>Jerarquía visual de cada pantalla</td><td>Variables visuales · escaneo</td></tr>
+        <tr><th scope="row">Que lo perciba todo el mundo</th><td>Comprobación de contraste y de «no solo color»</td><td>WCAG AA · EN 301 549</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consejos prácticos desde hoy</h4>
+    <ul>
+      <li><strong>Agrupa antes de adornar.</strong> Decide qué va junto (proximidad, recuadros) antes de pensar en colores o tipos.</li>
+      <li><strong>Elige una sola cosa por pantalla que destaque más que el resto.</strong> Si hay dos «más importantes», no hay jerarquía.</li>
+      <li><strong>Comprueba el contraste y quita el color superfluo.</strong> Pregúntate: «si esto se viera en gris, ¿se seguiría entendiendo?».</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En el proyecto, el diseño de la información se entrega como la <strong>estructura, las agrupaciones y la jerarquía</strong> de cada pantalla, con su comprobación de <strong>contraste y «no solo color»</strong>. Se valora el razonamiento de la presentación, no el arte final.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de diseño para esta semana</h3>
+
+    <p>El diseño de la información se entrena mirando pantallas con ojos críticos. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Entrecierra los ojos</span>
+      <p>Abre una pantalla que uses y <strong>entrecierra los ojos</strong> hasta que el texto se vuelva borroso. ¿Qué destaca todavía? Eso es su jerarquía visual real. ¿Coincide con lo más importante?</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Caza el «solo color»</span>
+      <p>Busca un sitio donde la información se dé <strong>únicamente</strong> con color (estados en rojo/verde, enlaces solo por color). Imagina que no distingues ese color: ¿te quedarías sin el dato?</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Reagrupa un formulario</span>
+      <p>Toma un formulario largo de tu proyecto y <strong>agrúpalo en bloques con título</strong>, acercando cada etiqueta a su campo. Sin tocar el contenido, acabas de aplicar proximidad y región común.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente pide <strong>diseñar interfaces que garanticen accesibilidad y usabilidad</strong> (CI17), asegurar la calidad del software (CG03) y saber <strong>comunicar</strong> las soluciones (CB04). El diseño de la información es donde la accesibilidad deja de ser una intención y se vuelve comprobable.</p>
+    <p>El plan también pide expresamente <strong>conocer los procesos de percepción y el modelo mental de los usuarios</strong> y <strong>adoptar soluciones para las discapacidades aplicando el diseño para todos</strong>. La Gestalt y las WCAG AA son ese resultado de aprendizaje hecho práctica.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando agrupes mal por descuido, cuando uses el color como único código o cuando elijas un gris «bonito» pero ilegible, estarás <strong>excluyendo</strong> a parte de tus usuarios sin pretenderlo.</p>
+    <p>Conocer la Gestalt y las reglas de contraste te da algo que el gusto no garantiza: <strong>criterios verificables</strong> para defender una presentación y para detectar una mala, aunque «quede bonita».</p>
+    <p>El método, la teoría y la norma te dan el respaldo. Decidir que la información llegue a todo el mundo, en cada pantalla que diseñes, será tuyo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No puedes garantizar usabilidad ni accesibilidad (CI17, CG03) si la información se presenta «a ojo». La Gestalt, la jerarquía visual y las WCAG AA convierten la presentación en una <strong>decisión de ingeniería verificable</strong>, que incluye a todo el mundo.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué decide el diseño de la información y en qué se diferencia del de la actividad?</summary>
+      <p>Decide <strong>cómo se organiza y se presenta</strong> lo que la persona ve (agrupación, jerarquía, etiquetas). El de la actividad decide el comportamiento (qué pasos); el de la información, la presentación de cada paso. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué tres decisiones forman la arquitectura de la información?</summary>
+      <p><strong>Agrupar</strong> (reunir lo que va junto), <strong>ordenar</strong> (secuencia y prioridad) y <strong>etiquetar</strong> (nombres claros en el lenguaje del usuario). <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuál es el principio de la Gestalt más potente y por qué?</summary>
+      <p>La <strong>proximidad</strong>: lo cercano se percibe junto. Permite asociar o separar elementos solo con el espacio; por eso una etiqueta debe estar más cerca de su campo que de cualquier otro. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Qué es la jerarquía visual y con qué se construye?</summary>
+      <p>Es el orden de importancia que el diseño impone a la mirada. Se construye con <strong>variables visuales</strong>: tamaño, contraste y color, posición y espacio en blanco. Lo más importante, lo más prominente. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Por qué el espacio en blanco no es «hueco desaprovechado»?</summary>
+      <p>Porque el vacío alrededor de algo lo destaca y lo separa, y sube la relación señal-ruido. Quitar elementos suele mejorar una pantalla más que añadirlos. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué tres reglas de accesibilidad perceptiva son inexcusables (WCAG AA)?</summary>
+      <p><strong>Contraste suficiente</strong> (≥ 4,5:1 para texto normal), <strong>no transmitir información solo con color</strong> y <strong>texto legible</strong> (tipografía y tamaño adecuados). <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Cómo se diseña para que la gente «escanee» en vez de leer?</summary>
+      <p>Con encabezados claros, bloques cortos y listas, una jerarquía visual fuerte y lo importante donde la mirada cae primero (arriba y a la izquierda). <em>(Ver 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Por qué los datos del INE justifican la accesibilidad perceptiva?</summary>
+      <p>Porque 4,32 millones de personas tienen alguna discapacidad, cerca de un tercio no alcanza el nivel digital básico y la mitad de los hogares usa solo móvil; el bajo contraste o el «solo color» excluye a mucha gente. <em>(Ver 2.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Diseño de la información</dt>
+      <dd>Segundo diseño de la Actividad C: decidir cómo se organiza y se presenta lo que la persona ve, para que se entienda con el mínimo esfuerzo y lo perciba todo el mundo.</dd>
+      <dt>Arquitectura de la información</dt>
+      <dd>Estructura del contenido: cómo se divide, se agrupa y se etiqueta para que la gente encuentre lo que busca.</dd>
+      <dt>Etiquetado</dt>
+      <dd>Asignación de nombres claros a grupos y opciones, en el lenguaje del usuario y no en jerga técnica.</dd>
+      <dt>Principios de la Gestalt</dt>
+      <dd>Reglas de percepción según las cuales el ojo agrupa automáticamente lo que ve.</dd>
+      <dt>Figura-fondo</dt>
+      <dd>Principio por el que el ojo separa primero qué es objeto (figura) y qué es trasfondo (fondo).</dd>
+      <dt>Proximidad</dt>
+      <dd>Principio de la Gestalt: los elementos cercanos se perciben como un grupo. El más potente para organizar.</dd>
+      <dt>Semejanza</dt>
+      <dd>Principio de la Gestalt: los elementos que comparten color, forma o tamaño se perciben del mismo tipo.</dd>
+      <dt>Región común</dt>
+      <dd>Principio de la Gestalt: los elementos que comparten un recuadro o un fondo se perciben unidos.</dd>
+      <dt>Cierre / continuidad</dt>
+      <dd>Principios de la Gestalt: la mente completa figuras incompletas y sigue las líneas y alineaciones.</dd>
+      <dt>Jerarquía visual</dt>
+      <dd>Orden de importancia que el diseño impone a la mirada: qué se ve primero, después y casi no se ve.</dd>
+      <dt>Variables visuales</dt>
+      <dd>Recursos para construir la jerarquía y codificar significado: tamaño, contraste y color, posición y espacio en blanco.</dd>
+      <dt>Espacio en blanco</dt>
+      <dd>Vacío alrededor de los elementos; destaca y separa, y aumenta la relación señal-ruido. Es diseño, no hueco.</dd>
+      <dt>Escaneo (lectura por barrido)</dt>
+      <dd>Forma real de mirar las pantallas: la gente salta entre puntos llamativos en vez de leer palabra por palabra.</dd>
+      <dt>Contraste</dt>
+      <dd>Diferencia de luminosidad entre texto y fondo. WCAG AA exige al menos 4,5:1 para texto normal.</dd>
+      <dt>No solo color</dt>
+      <dd>Regla WCAG: nunca transmitir información únicamente mediante el color; acompañarlo con texto, icono o forma.</dd>
+      <dt>Legibilidad</dt>
+      <dd>Facilidad para leer un texto: tipografía clara, tamaño suficiente y longitud de línea adecuada.</dd>
+      <dt>WCAG nivel AA</dt>
+      <dd>Pautas de accesibilidad del contenido web, nivel de cumplimiento exigible; a ellas remite la EN 301 549. Umbral del proyecto.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>diseño de la información</strong> es el segundo diseño de la Actividad C: decide cómo se <strong>organiza y se presenta</strong> lo que la persona ve.</li>
+        <li>Tiene dos caras: <strong>arquitectura de la información</strong> (agrupar, ordenar, etiquetar) y <strong>jerarquía visual</strong> (qué destaca).</li>
+        <li>La percepción la gobiernan los <strong>principios de la Gestalt</strong>: figura-fondo, proximidad (la más potente), semejanza, región común y cierre.</li>
+        <li>La jerarquía se construye con <strong>variables visuales</strong>: tamaño, contraste, posición y espacio en blanco; lo importante, lo más prominente.</li>
+        <li>La gente <strong>escanea, no lee</strong>: hay que diseñar para el barrido con encabezados, bloques cortos y jerarquía fuerte.</li>
+        <li>La información debe ser <strong>accesible</strong>: contraste ≥ 4,5:1, nunca solo color y texto legible (WCAG AA · EN 301 549).</li>
+        <li>El <strong>INE</strong> lo justifica: 4,32 millones de personas con discapacidad, un tercio sin nivel digital básico y la mitad de los hogares solo con móvil.</li>
+        <li>En tu proyecto es la <strong>segunda decisión de la Actividad C</strong>: estructura, agrupaciones y jerarquía de cada pantalla, con su comprobación de accesibilidad.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>WCAG 2.1 (Web Content Accessibility Guidelines), nivel AA. World Wide Web Consortium (W3C).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="11">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia</em> (EDAD 2020). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 3 «Proceso iterativo de diseño» · Concepto: <em>Diseño de la información (Actividad C del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

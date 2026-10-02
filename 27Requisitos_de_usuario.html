@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: introducción a la Actividad B del Diseño Centrado en lo Humano (ISO 9241-210), la especificación de los requisitos de usuario. Continuación del Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Los requisitos de usuario (Actividad B del DCH) · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>Especificar los requisitos de usuario
+      <span class="sub">Actividad B del Diseño Centrado en lo Humano: del contexto a requisitos verificables (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04 · CB03</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#de-la-a-a-la-b">De la Actividad A a la B: del contexto al requisito</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es un requisito de usuario? Definición</a></li>
+          <li class="lvl2"><a href="#tipos">Los tipos de requisitos</a></li>
+          <li class="lvl2"><a href="#derivacion">De dónde salen: la derivación desde el contexto de uso</a></li>
+          <li class="lvl2"><a href="#redaccion">Cómo se redacta un buen requisito</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">De una queja real a un requisito verificable</a></li>
+          <li class="lvl2"><a href="#accesibilidad">Requisitos de accesibilidad: las WCAG como fuente de requisitos</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: la accesibilidad es un requisito, no un extra (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la especificación de requisitos como entrega</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes continúan el <strong>Tema 2 (Actividades de análisis)</strong> justo donde lo dejamos. En la sesión anterior abrimos la <strong>Actividad A — entender y especificar el contexto de uso</strong>. Hoy damos el paso siguiente del ciclo: la <strong>Actividad B</strong>.</p>
+    <p>Damos por sabido el ciclo del DCH del Tema 1: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. Y damos por sabida la Actividad A: investigar y documentar <strong>quién, para qué, con qué y dónde</strong>.</p>
+    <p>El objetivo de hoy es una <strong>visión general</strong>: qué es un requisito de usuario, qué tipos hay, de dónde salen y cómo se redactan. No agotaremos el tema. El detalle fino —técnicas formales de especificación, gestión y trazabilidad— corresponde a la asignatura de <strong>Ingeniería de Requisitos</strong>.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>Actividad B — «especificar los requisitos de usuario»</strong> es la segunda del ciclo DCH. Convierte el contexto de uso (Actividad A) en <strong>enunciados concretos y verificables</strong> de lo que el sistema debe lograr para sus personas, incluidas las metas de <strong>usabilidad</strong> y <strong>accesibilidad</strong>. Es el puente entre <em>entender el problema</em> y <em>diseñar la solución</em>.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es y cómo se especifica</h2>
+    <p class="lead">Por qué la B sigue a la A, qué es exactamente un requisito de usuario, qué tipos existen, cómo se derivan del contexto y qué hace que un requisito esté bien escrito.</p>
+  </div>
+
+  <section id="de-la-a-a-la-b" aria-labelledby="de-la-a-a-la-b-h">
+    <h3 id="de-la-a-a-la-b-h"><span class="num" aria-hidden="true">1.1</span>De la Actividad A a la B: del contexto al requisito</h3>
+
+    <p>En la Actividad A reuniste información: quiénes son los usuarios, qué tareas hacen, con qué recursos y en qué entorno. Esa información es valiosa, pero todavía no se puede «construir» ni «comprobar».</p>
+    <p>La Actividad B le da forma de ingeniería. Toma esa comprensión del contexto y la transforma en <strong>requisitos</strong>: afirmaciones precisas de lo que el sistema tiene que permitir, cumplir o respetar.</p>
+    <p>Dicho de otra forma: la A responde a <em>«¿cómo es el mundo real de estas personas?»</em>; la B responde a <em>«entonces, ¿qué debe cumplir el sistema para servir en ese mundo?»</em>.</p>
+
+    <h4>Por qué este paso es obligatorio antes de diseñar</h4>
+    <p>La norma coloca la B entre la A y el diseño (C) por una razón: sin requisitos explícitos, <strong>no hay forma de saber si el diseño es correcto</strong>. Diseñarías a ciegas y evaluarías contra un objetivo que nadie escribió.</p>
+    <p>El sexto principio del DCH dice que el proceso se dirige por evaluación. Pero solo se puede evaluar frente a algo. Ese «algo» son los requisitos de la Actividad B: el <strong>criterio</strong> contra el que más tarde (Actividad D) comprobarás si el sistema funciona.</p>
+    <p>Por eso la B es a la vez la <strong>salida</strong> del análisis y la <strong>vara de medir</strong> de todo lo que viene después.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad B traduce el contexto de uso (A) en <strong>requisitos verificables</strong>. No es papeleo: es lo que permite, más tarde, decidir objetivamente si el diseño cumple. Sin requisitos escritos, la evaluación (D) no tiene contra qué comparar.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es un requisito de usuario? Definición</h3>
+
+    <p>Un <strong>requisito de usuario</strong> es la expresión de una <strong>necesidad</strong> de las personas, redactada de forma concreta y verificable, que el sistema debe satisfacer.</p>
+    <p>Conviene separar tres palabras que se confunden a menudo, porque son tres niveles distintos:</p>
+    <ul>
+      <li><strong>Necesidad:</strong> lo que la persona quiere conseguir o el problema que tiene («necesito comprar el billete antes de que llegue el autobús»).</li>
+      <li><strong>Requisito:</strong> lo que el sistema debe cumplir para atender esa necesidad, escrito de modo comprobable («el sistema debe permitir comprar un billete en menos de 30 segundos»).</li>
+      <li><strong>Solución de diseño:</strong> la forma concreta de cumplirlo (un botón grande de «comprar» en la pantalla de inicio). Esto es ya la Actividad C, y <strong>no</strong> va en el requisito.</li>
+    </ul>
+
+    <h4>La regla de oro: el requisito dice «qué», no «cómo»</h4>
+    <p>El error más común del principiante es colar la solución dentro del requisito. «El sistema tendrá un menú desplegable azul» no es un requisito de usuario: es una decisión de diseño disfrazada.</p>
+    <p>Un buen requisito describe el <strong>resultado</strong> que la persona necesita, dejando libertad al equipo de diseño para encontrar la mejor forma de lograrlo. Mezclar el «qué» con el «cómo» cierra puertas antes de tiempo y, además, hace que el requisito no se pueda evaluar con limpieza.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Necesidad → Requisito → Solución son tres niveles distintos. El <strong>requisito de usuario</strong> vive en el nivel intermedio: expresa <strong>qué debe lograr</strong> el sistema de forma verificable, no <strong>cómo</strong> lo hará. El «cómo» es diseño (Actividad C).</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>En la familia ISO 9241, la usabilidad se define como eficacia, eficiencia y satisfacción <em>en un contexto de uso especificado</em>. Por eso un requisito de usabilidad bien hecho <strong>casi se escribe solo</strong> a partir del contexto: basta convertir cada componente que estudiaste en la Actividad A en una meta medible.</p>
+    </div>
+  </section>
+
+  <section id="tipos" aria-labelledby="tipos-h">
+    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.3</span>Los tipos de requisitos</h3>
+
+    <p>No todos los requisitos hablan de lo mismo. Para esta visión general basta con distinguir dos grandes familias y, dentro de la segunda, los dos tipos que más nos importan en esta asignatura.</p>
+
+    <ol class="pillars" role="list">
+      <li><b>Requisitos funcionales — qué hace el sistema.</b> Describen las funciones o capacidades que el sistema debe ofrecer: «debe permitir cancelar una reserva», «debe enviar un comprobante». Responden a <em>qué tareas</em> soporta.</li>
+      <li><b>Requisitos no funcionales — cómo se comporta.</b> No describen funciones nuevas, sino <strong>cualidades</strong> de cómo se prestan: rapidez, seguridad, fiabilidad y, sobre todo en nuestro caso, <strong>usabilidad</strong> y <strong>accesibilidad</strong>.</li>
+    </ol>
+
+    <p>Dentro de los no funcionales, dos son el corazón del DCH y de tu proyecto:</p>
+
+    <ul>
+      <li><strong>Requisitos de usabilidad:</strong> metas medibles de eficacia, eficiencia y satisfacción. Ejemplo: «el 90 % de los usuarios completa el alta sin ayuda en el primer intento». Se expresan con <strong>métricas</strong>, no con adjetivos.</li>
+      <li><strong>Requisitos de accesibilidad:</strong> condiciones para que el mayor número posible de personas pueda usar el sistema. En esta asignatura tienen una fuente clara y exigible: las <strong>WCAG nivel AA</strong>. Ejemplo: «todo el texto cumple un contraste mínimo conforme a WCAG 2.1 AA».</li>
+    </ul>
+
+    <p>Fíjate en el contraste entre dos formas de pedir lo mismo. «Que sea fácil de usar» <strong>no es un requisito</strong>: no se puede comprobar. «Que un usuario nuevo complete la compra en menos de tres pasos» <strong>sí lo es</strong>: o se cumple, o no.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). De los no funcionales, los dos que dominan el DCH son los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG AA como fuente). Un adjetivo nunca es un requisito; una meta comprobable sí.</p>
+    </div>
+  </section>
+
+  <section id="derivacion" aria-labelledby="derivacion-h">
+    <h3 id="derivacion-h"><span class="num" aria-hidden="true">1.4</span>De dónde salen: la derivación desde el contexto de uso</h3>
+
+    <p>Un requisito de usuario no se inventa: se <strong>deriva</strong> del contexto de uso que documentaste en la Actividad A. Esa cadena de derivación es lo que da rigor a la Actividad B y la distingue de una lluvia de ideas.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 600" role="img" aria-labelledby="der-title der-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="der-title">Cadena de derivación de un requisito de usuario, desde el contexto de uso hasta el criterio de evaluación</title>
+        <desc id="der-desc">Un proceso descendente en cuatro pasos. Primero, el contexto de uso de la Actividad A, formado por usuarios, tareas, recursos y entorno. De ahí se detecta una necesidad de usuario: qué quiere lograr y qué se lo impide. La necesidad se convierte en un requisito de usuario, un enunciado concreto y verificable. Por último, el requisito establece el criterio con el que se comprobará el sistema en la Actividad D de evaluación. Una nota lateral indica que el requisito también alimenta la Actividad C de diseño.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Paso 1: Contexto de uso (teal) -->
+        <rect x="160" y="26" width="400" height="86" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="360" y="58" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0B5563">1 · Contexto de uso (Actividad A)</text>
+        <text x="360" y="80" text-anchor="middle" font-size="12.5" fill="#211C16">Usuarios · tareas · recursos · entorno</text>
+        <text x="360" y="98" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«¿Cómo es el mundo real de estas personas?»</text>
+
+        <line x1="360" y1="112" x2="360" y2="160" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+
+        <!-- Paso 2: Necesidad (ochre) -->
+        <rect x="160" y="162" width="400" height="86" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="360" y="194" text-anchor="middle" font-size="14.5" font-weight="700" fill="#7A5A12">2 · Necesidad de usuario</text>
+        <text x="360" y="216" text-anchor="middle" font-size="12.5" fill="#211C16">Qué quiere lograr y qué se lo impide</text>
+        <text x="360" y="234" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«Necesito pagar antes de que llegue el bus»</text>
+
+        <line x1="360" y1="248" x2="360" y2="296" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+
+        <!-- Paso 3: Requisito (green) -->
+        <rect x="160" y="298" width="400" height="86" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="360" y="330" text-anchor="middle" font-size="14.5" font-weight="700" fill="#2C5A2E">3 · Requisito de usuario</text>
+        <text x="360" y="352" text-anchor="middle" font-size="12.5" fill="#211C16">Enunciado concreto y verificable</text>
+        <text x="360" y="370" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«El sistema permite pagar en menos de 30 s»</text>
+
+        <line x1="360" y1="384" x2="360" y2="432" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+
+        <!-- Paso 4: Criterio de evaluación (terra) -->
+        <rect x="160" y="434" width="400" height="86" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="360" y="466" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8A3412">4 · Criterio de evaluación (Actividad D)</text>
+        <text x="360" y="488" text-anchor="middle" font-size="12.5" fill="#211C16">Cómo se comprobará si se cumple</text>
+        <text x="360" y="506" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«Medir el tiempo de compra con usuarios reales»</text>
+
+        <!-- Nota lateral: alimenta el diseño -->
+        <line x1="560" y1="341" x2="648" y2="341" stroke="#0B5563" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <text x="652" y="332" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">guía el</text>
+        <text x="652" y="350" text-anchor="end" font-size="11.5" fill="#0B5563" font-weight="700">diseño (C)</text>
+      </svg>
+      <figcaption>La cadena de derivación: del contexto de uso (A) se detecta una necesidad, que se convierte en un requisito verificable; ese requisito guía el diseño (C) y fija el criterio de la evaluación (D). La descripción completa está disponible para lectores de pantalla y se desarrolla en la lista siguiente.</figcaption>
+    </figure>
+
+    <ol class="cycle" role="list">
+      <li><b>Parte del contexto, no de la suposición.</b> Cada requisito debe poder rastrearse hasta un dato de la Actividad A: un usuario, una tarea, un recurso o una condición del entorno. Esa capacidad de rastreo se llama <strong>trazabilidad</strong>.</li>
+      <li><b>Detecta la necesidad real.</b> Observa qué quiere lograr la persona y qué se lo impide hoy. La necesidad es del usuario, no del sistema.</li>
+      <li><b>Conviértela en requisito verificable.</b> Reescribe la necesidad como una afirmación que el sistema debe cumplir, con una condición que se pueda comprobar.</li>
+      <li><b>Anticipa cómo se comprobará.</b> Si no se te ocurre cómo medir si el requisito se cumple, casi seguro está mal redactado. Esa prueba será la materia de la Actividad D.</li>
+    </ol>
+
+    <p>La trazabilidad es la prueba de que no inventaste: cada requisito tiene un origen en el contexto. Es, además, lo que pide la evaluación del proyecto cuando exige <strong>evidenciar que se siguió un proceso de DCH</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Los requisitos se <strong>derivan</strong> del contexto de uso por una cadena: contexto → necesidad → requisito → criterio de evaluación. Mantener la <strong>trazabilidad</strong> (que cada requisito apunte a un dato real de la Actividad A) es lo que separa un requisito de una ocurrencia.</p>
+    </div>
+  </section>
+
+  <section id="redaccion" aria-labelledby="redaccion-h">
+    <h3 id="redaccion-h"><span class="num" aria-hidden="true">1.5</span>Cómo se redacta un buen requisito</h3>
+
+    <p>Para esta visión general nos quedamos con cuatro cualidades que cualquier requisito de usuario debería cumplir. La lista exhaustiva de atributos se trabajará en <em>Ingeniería de Requisitos</em>.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cuatro cualidades de un requisito de usuario bien escrito, con la pregunta que ayuda a comprobarlas.</caption>
+      <thead>
+        <tr><th scope="col">Cualidad</th><th scope="col">Significa</th><th scope="col">Pregunta de control</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Verificable</th><td>Se puede comprobar objetivamente si se cumple</td><td>¿Cómo lo mediría en la evaluación?</td></tr>
+        <tr><th scope="row">No ambiguo</th><td>Solo admite una interpretación</td><td>¿Dos personas lo entenderían igual?</td></tr>
+        <tr><th scope="row">Necesario / trazable</th><td>Responde a una necesidad real del contexto</td><td>¿A qué dato de la Actividad A apunta?</td></tr>
+        <tr><th scope="row">Alcanzable</th><td>Es realista con los recursos del proyecto</td><td>¿Se puede lograr de verdad?</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>El enemigo número uno: las palabras vagas</h4>
+    <p>Adjetivos como «rápido», «fácil», «intuitivo» o «amigable» son el principal motivo de requisitos inútiles. Suenan bien y no significan nada comprobable.</p>
+    <p>La cura es convertir cada adjetivo en una <strong>métrica</strong>. «Rápido» se vuelve «en menos de 2 segundos»; «fácil» se vuelve «el 90 % de los usuarios lo logra a la primera»; «accesible» se vuelve «conforme a WCAG 2.1 AA».</p>
+
+    <h4>Una plantilla sencilla para empezar</h4>
+    <p>Una fórmula que funciona bien para arrancar es: <em>«El sistema debe permitir a [tipo de usuario] [lograr una tarea] [en estas condiciones medibles]»</em>.</p>
+    <p>Ejemplo completo: «El sistema debe permitir a una persona mayor, sin experiencia previa, completar el alta en menos de tres minutos y sin ayuda externa». Es funcional, mide usabilidad y nombra al usuario del contexto. Es trazable, verificable y no ambiguo.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La palabra inglesa para «requisito», <em>requirement</em>, comparte raíz con <em>require</em>, «exigir». No es casual: un requisito es algo que se <strong>exige</strong> al sistema, no algo que se le sugiere. Por eso suele redactarse con el verbo «debe». Si tu frase usa «sería bonito que…», todavía no es un requisito.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un buen requisito es <strong>verificable, no ambiguo, necesario (trazable) y alcanzable</strong>. La técnica práctica es sustituir cada adjetivo vago por una <strong>métrica</strong>. Plantilla de partida: «El sistema debe permitir a [usuario] [tarea] [en condiciones medibles]».</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo se convierte una frustración cotidiana en un requisito, por qué las WCAG son una fábrica de requisitos de accesibilidad, qué dicen los datos del INE y cómo será tu entrega del proyecto.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>De una queja real a un requisito verificable</h3>
+
+    <p>La mejor forma de entender la Actividad B es hacerla a pequeña escala con algo que ya te ha pasado. Toda frustración con una app es, en el fondo, un requisito que alguien no escribió.</p>
+    <p>Tomemos la misma <strong>app de pago del transporte</strong> del tema anterior. Recoge una queja real y mira cómo asciende por la cadena de derivación.</p>
+
+    <h4>El mismo caso, paso a paso</h4>
+    <ul>
+      <li><strong>Queja (lo que sientes):</strong> «Tardo demasiado en pagar y el autobús se va».</li>
+      <li><strong>Necesidad (qué quieres lograr):</strong> pagar y validar el billete antes de subir, de pie y con una mano.</li>
+      <li><strong>Requisito malo:</strong> «la app debe ser rápida». No se puede comprobar.</li>
+      <li><strong>Requisito bueno:</strong> «el sistema debe permitir comprar y validar un billete en menos de 30 segundos, operable con una sola mano». Verificable y trazable al contexto.</li>
+    </ul>
+    <p>Ese requisito bueno nació del contexto que estudiaste en la Actividad A: usuario de pie, recurso «una mano libre», entorno «con prisa». No salió de la imaginación del equipo, salió de la observación.</p>
+    <p>Cuando empieces a traducir tus propias frustraciones digitales a requisitos, habrás interiorizado la Actividad B: <strong>no te quejas del sistema, especificas lo que debería cumplir</strong>.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Recuerda la última vez que una web o app te hizo perder el tiempo. Escribe la queja en una frase. Ahora reescríbela como un requisito verificable que empiece por «El sistema debe permitir…». Si no se te ocurre cómo medirlo, vuelve a intentarlo: aún es una queja, no un requisito.</p>
+    </div>
+  </section>
+
+  <section id="accesibilidad" aria-labelledby="accesibilidad-h">
+    <h3 id="accesibilidad-h"><span class="num" aria-hidden="true">2.2</span>Requisitos de accesibilidad: las WCAG como fuente de requisitos</h3>
+
+    <p>Aquí está la conexión más importante de esta sesión. Los requisitos de usabilidad suelen costar de escribir porque hay que inventar las métricas. Con los <strong>requisitos de accesibilidad</strong> tienes una ventaja enorme: ya están escritos por ti.</p>
+    <p>Las <strong>WCAG (Web Content Accessibility Guidelines)</strong> que estudiaste en el Tema 1 no son solo una buena práctica: son una <strong>fuente directa de requisitos verificables</strong>. Cada criterio de conformidad de nivel AA es, literalmente, un requisito ya redactado y comprobable.</p>
+
+    <h4>De criterio WCAG a requisito del proyecto</h4>
+    <ul>
+      <li>El criterio de <strong>contraste de texto</strong> se convierte en el requisito: «todo el texto cumple la relación de contraste mínima del nivel AA».</li>
+      <li>El criterio de <strong>operatividad por teclado</strong> se convierte en: «toda función es accesible sin ratón, solo con teclado».</li>
+      <li>El criterio de <strong>alternativas textuales</strong> se convierte en: «toda imagen con información tiene texto alternativo».</li>
+    </ul>
+    <p>Observa el patrón: la guía de accesibilidad ya está expresada de forma verificable, así que <strong>copiarla bien es derivar requisitos</strong>. Por eso en tu proyecto las WCAG AA son un requisito mínimo y no una recomendación.</p>
+    <p>Y la accesibilidad no aparece de golpe en la Actividad B: se <strong>siembra en la A</strong>, cuando identificas usuarios con distintas capacidades y entornos, y se <strong>cosecha en la D</strong>, cuando compruebas la conformidad. La B es donde queda por escrito como exigencia.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>En España y la UE, la accesibilidad de muchos productos y servicios digitales no es opcional: la respaldan la <strong>Directiva (UE) 2019/882</strong> (Ley Europea de Accesibilidad) y la norma <strong>EN 301 549</strong>, que remite precisamente a las WCAG. Cuando escribes «conforme a WCAG 2.1 AA» en un requisito, estás alineando tu proyecto con una obligación legal real, no solo con una buena intención.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Las <strong>WCAG nivel AA</strong> son una fábrica de requisitos de accesibilidad ya verificables: cada criterio de conformidad se convierte directamente en un requisito del proyecto. La accesibilidad se identifica en la A, se <strong>especifica como requisito en la B</strong> y se comprueba en la D.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Existe una forma de escribir requisitos tan verificables que una máquina puede comprobarlos sola. En el desarrollo ágil, el <strong>Desarrollo Guiado por Comportamiento (BDD, <em>Behaviour-Driven Development</em>)</strong> expresa los criterios de aceptación con el lenguaje <strong>Gherkin</strong> y su fórmula <strong>Dado–Cuando–Entonces</strong>: «<em>Dado</em> [un contexto], <em>Cuando</em> [una acción], <em>Entonces</em> [un resultado comprobable]». Es el mismo esqueleto que la cadena de derivación que acabas de ver —contexto → tarea → criterio—, pero llevado al punto de convertirse en una <strong>prueba automática</strong>. Suele acompañar a las <em>historias de usuario</em> ágiles, y verás esta idea en profundidad en Ingeniería de Requisitos.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: la accesibilidad es un requisito, no un extra (INE)</h3>
+
+    <p>Que la accesibilidad deba ser un requisito —y no un «si sobra tiempo»— no es una opinión: lo sostienen los datos. El <strong>Instituto Nacional de Estadística (INE)</strong> permite cuantificar a cuántas personas afecta dejarla fuera.</p>
+    <p>Dos cifras, de dos encuestas distintas del INE, bastan para entender la magnitud.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuentes: INE, <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia (EDAD 2020)</em> —última encuesta general en hogares— e <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 6 o más años con algún tipo de discapacidad (EDAD 2020)</td><td class="fig">4,32 mill.</td></tr>
+          <tr><td>Personas de 16 a 74 años que se relacionaron con la Administración por Internet (TIC 2025)</td><td class="fig">80,7 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>La lectura es directa. Más de <strong>cuatro millones de personas</strong> conviven con alguna discapacidad. Si un servicio digital no especifica requisitos de accesibilidad, está decidiendo —aunque no lo diga— dejar fuera a una parte enorme de la población.</p>
+    <p>Y como <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por internet, muchos de esos servicios son esenciales: solicitar una cita médica, una ayuda, un certificado. No poder usarlos no es una molestia, es una <strong>exclusión</strong>.</p>
+    <p>Por eso el requisito de accesibilidad va al mismo nivel que el funcional. Un sistema que «funciona» pero que el 9 % de la población no puede operar, en rigor, <strong>no cumple sus requisitos de usuario</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Con más de <strong>4,3 millones de personas con discapacidad</strong> (INE, EDAD 2020) y el <strong>80,7 %</strong> de la población usando la e-Administración, la accesibilidad no es un adorno: es un requisito de usuario tan exigible como cualquier requisito funcional. Omitirlo es especificar, de hecho, un sistema que excluye.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la especificación de requisitos como entrega</h3>
+
+    <p>Esta es la transferencia más directa. Tu <strong>proyecto sigue el proceso de la ISO 9241-210</strong>, y la Actividad B produce la entrega que conecta el análisis (Tema 2) con el prototipado (Tema 3).</p>
+    <p>Tras especificar el contexto de uso, tu equipo deberá transformarlo en una <strong>especificación de requisitos de usuario</strong>: la lista de lo que el sistema debe cumplir, con sus metas de usabilidad y accesibilidad.</p>
+
+    <h4>De la norma a tu entrega</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué produce la Actividad B y cómo se convierte en parte de la entrega del proyecto.</caption>
+      <thead>
+        <tr><th scope="col">Tipo de requisito</th><th scope="col">Qué tendrás que entregar</th><th scope="col">De dónde sale</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Funcionales</th><td>Lista de funciones que el sistema debe ofrecer</td><td>Tareas (Actividad A)</td></tr>
+        <tr><th scope="row">De usabilidad</th><td>Metas medibles de eficacia, eficiencia y satisfacción</td><td>Usuarios y entorno (Actividad A)</td></tr>
+        <tr><th scope="row">De accesibilidad</th><td>Conformidad con WCAG 2.1 nivel AA</td><td>Usuarios y WCAG / EN 301 549</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consecuencias prácticas desde hoy</h4>
+    <ul>
+      <li><strong>Cada requisito debe ser trazable.</strong> Si te preguntan «¿de dónde sale este requisito?», la respuesta debe estar en tu contexto de uso. Requisitos sin origen son una bandera roja en la evaluación.</li>
+      <li><strong>Los requisitos serán tu vara de medir.</strong> En la Actividad D evaluarás el prototipo contra esta lista. Requisitos vagos hoy significan una evaluación imposible mañana.</li>
+      <li><strong>La accesibilidad AA es un mínimo, no un objetivo opcional.</strong> El plan docente es explícito: si el prototipo no supera una revisión rápida conforme a los criterios <strong>AA de WCAG</strong>, no se superan los mínimos del bloque del proyecto.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad B se materializa en tu proyecto como una <strong>especificación de requisitos de usuario</strong> (funcionales, de usabilidad y de accesibilidad), derivada del contexto y trazable. Esa lista será la <strong>vara de medir</strong> de la evaluación, y el nivel <strong>AA de WCAG</strong> es un requisito mínimo, no negociable.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de observación para esta semana</h3>
+
+    <p>La Actividad B se aprende escribiendo requisitos sobre lo que ya te rodea. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Caza el adjetivo vago</span>
+      <p>Busca en cualquier web la promesa «fácil», «rápido» o «intuitivo». Reescríbela como un requisito verificable con una métrica concreta. Acabas de hacer la tarea central de la Actividad B: convertir lo vago en comprobable.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Funcional o no funcional</span>
+      <p>Elige una app y escribe tres requisitos: uno funcional (qué hace), uno de usabilidad (con una métrica) y uno de accesibilidad (apoyado en una idea de las WCAG). Comprobarás que cada familia se redacta de forma distinta.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Sigue el hilo de la trazabilidad</span>
+      <p>Toma uno de tus requisitos del reto anterior y pregúntate: ¿a qué dato del contexto de uso apunta? Si no encuentras ninguno, o el requisito sobra, o te falta investigar el contexto. Eso es la trazabilidad en acción.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente lo dice sin rodeos: una de las competencias de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la calidad del software (CG03). Y otra es <strong>transmitir información, ideas, problemas y soluciones</strong> con precisión (CB04).</p>
+    <p>La Actividad B es justo donde esas competencias se cruzan: escribir un requisito es <strong>comunicar con precisión de ingeniería</strong> lo que un sistema debe cumplir para las personas. Un requisito ambiguo es un fallo de comunicación, no solo de técnica.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando aceptes un requisito como «que sea intuitivo», cuando no escribas las metas de accesibilidad «porque se sobreentienden», o cuando inventes requisitos sin mirar el contexto, estarás <strong>renunciando a poder evaluar tu propio sistema</strong>.</p>
+    <p>Especificar bien los requisitos es lo que separa a quien «hace pantallas» de quien puede <strong>demostrar</strong> que su sistema sirve a las personas, incluidas las que no se parecen a él.</p>
+    <p>El método y la norma te dan el respaldo. Decidir escribir requisitos verificables y accesibles, en cada proyecto que firmes, será tuyo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Escribir requisitos es ejercer a la vez CI17 (garantizar usabilidad y accesibilidad), CG03 (calidad) y CB04 (comunicar con precisión). Un requisito verificable es la forma profesional de poder <strong>demostrar</strong> después que el sistema sirve a las personas, no solo de afirmarlo.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué actividad del DCH es la especificación de requisitos y qué posición ocupa?</summary>
+      <p>Es la <strong>Actividad B</strong>, «especificar los requisitos de usuario», la <strong>segunda</strong> del ciclo (A → B → C → D). Convierte el contexto de uso de la Actividad A en requisitos verificables que guiarán el diseño (C) y la evaluación (D). <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué diferencia hay entre necesidad, requisito y solución?</summary>
+      <p>La <strong>necesidad</strong> es lo que la persona quiere lograr; el <strong>requisito</strong> es lo que el sistema debe cumplir, escrito de forma verificable; la <strong>solución</strong> es la forma concreta de cumplirlo (ya es diseño, Actividad C). El requisito dice «qué», no «cómo». <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son los tipos de requisitos que vimos?</summary>
+      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). Dentro de los no funcionales destacan los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG AA como fuente). <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿De dónde se derivan los requisitos y qué es la trazabilidad?</summary>
+      <p>Se derivan del <strong>contexto de uso</strong> (Actividad A) por la cadena contexto → necesidad → requisito → criterio de evaluación. La <strong>trazabilidad</strong> es que cada requisito pueda rastrearse hasta un dato real del contexto; es lo que demuestra que no se inventó. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Qué cualidades tiene un requisito bien redactado?</summary>
+      <p>Verificable, no ambiguo, necesario (trazable) y alcanzable. La técnica práctica es sustituir cada adjetivo vago («rápido», «fácil») por una <strong>métrica</strong>. Plantilla: «El sistema debe permitir a [usuario] [tarea] [en condiciones medibles]». <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Por qué «que sea fácil de usar» no es un requisito?</summary>
+      <p>Porque no se puede comprobar objetivamente: «fácil» significa cosas distintas para cada persona. Un requisito necesita una condición verificable, por ejemplo «el 90 % de los usuarios completa la tarea a la primera». <em>(Ver 1.3 y 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Por qué se dice que las WCAG son una «fuente de requisitos»?</summary>
+      <p>Porque cada criterio de conformidad WCAG (nivel AA) ya está redactado de forma verificable y puede copiarse como requisito de accesibilidad del proyecto. Además, en la UE los respaldan la Directiva 2019/882 y la EN 301 549. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo se concreta la Actividad B en tu proyecto?</summary>
+      <p>Como una <strong>especificación de requisitos de usuario</strong> (funcionales, de usabilidad y de accesibilidad), derivada del contexto y trazable. Será la vara de medir de la evaluación, y el nivel <strong>AA de WCAG</strong> es un requisito mínimo del bloque. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Actividad B (DCH)</dt>
+      <dd>«Especificar los requisitos de usuario»: segunda actividad del ciclo del DCH (ISO 9241-210). Convierte el contexto de uso en requisitos verificables.</dd>
+      <dt>Necesidad de usuario</dt>
+      <dd>Lo que una persona quiere lograr o el problema que tiene. Es el punto de partida; aún no es un requisito.</dd>
+      <dt>Requisito de usuario</dt>
+      <dd>Expresión concreta y verificable de lo que el sistema debe cumplir para satisfacer una necesidad. Dice «qué», no «cómo».</dd>
+      <dt>Requisito funcional</dt>
+      <dd>Requisito que describe una función o capacidad que el sistema debe ofrecer (qué hace el sistema).</dd>
+      <dt>Requisito no funcional</dt>
+      <dd>Requisito que describe una cualidad del comportamiento del sistema (cómo se comporta): rendimiento, seguridad, usabilidad, accesibilidad, etc.</dd>
+      <dt>Requisito de usabilidad</dt>
+      <dd>Meta medible de eficacia, eficiencia o satisfacción para un contexto de uso especificado. Se expresa con métricas, no con adjetivos.</dd>
+      <dt>Requisito de accesibilidad</dt>
+      <dd>Condición para que el mayor número posible de personas pueda usar el sistema. En esta asignatura, su fuente principal son las WCAG nivel AA.</dd>
+      <dt>Métrica</dt>
+      <dd>Medida concreta que convierte una cualidad vaga en algo comprobable (p. ej., «menos de 30 segundos», «90 % de éxito a la primera»).</dd>
+      <dt>Verificable</dt>
+      <dd>Propiedad de un requisito que permite comprobar objetivamente si se cumple o no. Sin ella, no es un requisito útil.</dd>
+      <dt>BDD (Desarrollo Guiado por Comportamiento)</dt>
+      <dd>Enfoque ágil que describe el comportamiento esperado del sistema mediante criterios de aceptación verificables, a menudo escritos en Gherkin. Estrecha el lazo entre requisito y prueba.</dd>
+      <dt>Gherkin</dt>
+      <dd>Lenguaje estructurado en lenguaje casi natural (fórmula Dado–Cuando–Entonces) para expresar criterios de aceptación de forma legible por personas y ejecutable como prueba automática. Asociado a herramientas de BDD como Cucumber.</dd>
+      <dt>Trazabilidad</dt>
+      <dd>Capacidad de rastrear cada requisito hasta su origen en el contexto de uso (un usuario, tarea, recurso o condición del entorno).</dd>
+      <dt>WCAG</dt>
+      <dd>Web Content Accessibility Guidelines del W3C. Sus criterios de conformidad (nivel AA en esta asignatura) son una fuente directa de requisitos de accesibilidad verificables.</dd>
+      <dt>EN 301 549 / Directiva (UE) 2019/882</dt>
+      <dd>Norma europea y directiva (Ley Europea de Accesibilidad) que establecen requisitos de accesibilidad de productos y servicios TIC y remiten a las WCAG.</dd>
+      <dt>Contexto de uso</dt>
+      <dd>Usuarios, tareas, recursos y entorno en que se usa un sistema (ISO 9241-11). Es la entrada de la Actividad B: de él se derivan los requisitos.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>La <strong>Actividad B</strong> del DCH es «especificar los requisitos de usuario»: la <strong>segunda</strong> del ciclo, entre entender el contexto (A) y diseñar (C).</li>
+        <li>Tres niveles que no hay que confundir: <strong>necesidad → requisito → solución</strong>. El requisito dice <strong>qué</strong> debe lograr el sistema, no <strong>cómo</strong>.</li>
+        <li>Dos familias de requisitos: <strong>funcionales</strong> (qué hace) y <strong>no funcionales</strong> (cómo se comporta); de estos, los de <strong>usabilidad</strong> y <strong>accesibilidad</strong> son el corazón del DCH.</li>
+        <li>Los requisitos se <strong>derivan</strong> del contexto de uso y deben ser <strong>trazables</strong>: cada uno apunta a un dato real de la Actividad A.</li>
+        <li>Un buen requisito es <strong>verificable, no ambiguo, necesario y alcanzable</strong>; la cura de los adjetivos vagos es convertirlos en <strong>métricas</strong>.</li>
+        <li>Las <strong>WCAG nivel AA</strong> son una fuente directa de requisitos de accesibilidad ya verificables, respaldados por la Directiva 2019/882 y la EN 301 549.</li>
+        <li>Los datos del <strong>INE</strong> lo justifican: más de <strong>4,3 millones de personas con discapacidad</strong> (EDAD 2020) y un <strong>80,7 %</strong> usando la e-Administración. La accesibilidad es un requisito, no un extra.</li>
+        <li>En tu proyecto, la Actividad B es la <strong>especificación de requisitos</strong> que servirá de vara de medir en la evaluación, con el nivel <strong>AA de WCAG</strong> como mínimo obligatorio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="7">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; usabilidad y accesibilidad como características de calidad.</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>Directiva (UE) 2019/882, sobre los requisitos de accesibilidad de los productos y servicios (Ley Europea de Accesibilidad).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="12">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia (EDAD)</em>, año 2020. <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025. <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>Requisitos de usuario (Actividad B del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

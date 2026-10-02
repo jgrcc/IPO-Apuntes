@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: introducción a la Actividad D del Diseño Centrado en lo Humano (ISO 9241-210), la evaluación del diseño y las tres familias de métodos (indagación, inspección y test). Apertura del Tema 4 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>La evaluación del diseño (Actividad D del DCH) · Apuntes Tema 4 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 4 · Evaluación de sistemas · Material de apoyo</p>
+    <h1>La evaluación del diseño
+      <span class="sub">Actividad D del Diseño Centrado en lo Humano: comprobar que funciona de verdad (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04 · CT05</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#del-prototipo">Del prototipo a la prueba: por qué el ciclo se cierra evaluando</a></li>
+          <li class="lvl2"><a href="#que-es">¿Qué es la Actividad D? Evaluar el diseño según la norma</a></li>
+          <li class="lvl2"><a href="#familias">Las tres familias de métodos: indagación, inspección y test</a></li>
+          <li class="lvl2"><a href="#formativa-sumativa">Evaluar para mejorar y evaluar para decidir</a></li>
+          <li class="lvl2"><a href="#antipatron">El antipatrón: confundir «me gusta» con «funciona»</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La misma pantalla, dos veredictos</a></li>
+          <li class="lvl2"><a href="#elegir">Una primera guía para elegir el método</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: por qué evaluar no es opcional en España (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: la Actividad D y el informe de evaluación</a></li>
+          <li class="lvl2"><a href="#retos">Retos de evaluación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Estos apuntes abren el <strong>Tema 4 (Evaluación de sistemas)</strong> y cierran el recorrido por el ciclo del <strong>Diseño Centrado en lo Humano (DCH)</strong>. En el Tema 3 produjiste soluciones de diseño y prototipos. Aquí toca la pregunta que decide si ese trabajo sirve: <strong>¿funciona de verdad?</strong></p>
+    <p>Damos por sabido el ciclo del DCH: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. La evaluación es esa cuarta actividad, la <strong>Actividad D</strong>. Si el esquema no te suena, vuelve un momento al Tema 1 antes de seguir.</p>
+    <p>El objetivo de hoy es modesto pero decisivo: <strong>entender qué es evaluar en DCH y conocer las tres familias de métodos</strong> que verás en este tema. No vamos a aplicar todavía cada técnica en detalle; eso llega en las sesiones siguientes y en el laboratorio.</p>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La <strong>Actividad D — «evaluar el diseño respecto a los requisitos»</strong> es la cuarta y última del ciclo DCH… que no es el final, sino la que decide <strong>si hay que volver a empezar</strong>. Comprueba con evidencia si el sistema cumple lo que se especificó en las Actividades A y B. La norma de referencia para el proceso es la <strong>ISO 9241-210</strong>, la misma que ya conoces.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es evaluar y con qué métodos</h2>
+    <p class="lead">Por qué el proceso se cierra evaluando, qué dice la norma sobre la Actividad D, qué tres familias de métodos existen, la diferencia entre evaluar para mejorar y para decidir, y qué pasa cuando se evalúa mal o no se evalúa.</p>
+  </div>
+
+  <section id="del-prototipo" aria-labelledby="del-prototipo-h">
+    <h3 id="del-prototipo-h"><span class="num" aria-hidden="true">1.1</span>Del prototipo a la prueba: por qué el ciclo se cierra evaluando</h3>
+
+    <p>En el Tema 3 aprendiste a <strong>producir soluciones de diseño</strong>: bocetos, prototipos de baja, media y alta fidelidad. Era la Actividad C del DCH. Pero un prototipo es una <strong>hipótesis</strong>, no una verdad.</p>
+    <p>Tú crees que tu pantalla se entiende. Crees que el botón está donde la gente lo busca. Crees que la tarea se completa sin errores. Esas tres creencias pueden ser ciertas… o no. La única forma de saberlo es <strong>comprobarlo</strong>.</p>
+    <p>Esa comprobación tiene un nombre técnico: <strong>evaluar el diseño</strong>. Es la Actividad D, y por eso le dedicamos el arranque del Tema 4.</p>
+
+    <h4>Evaluar cierra el ciclo… y lo reabre</h4>
+    <p>El DCH es <strong>iterativo</strong>. La evaluación no es una nota final que pones al proyecto cuando ya no hay marcha atrás. Es un <strong>diagnóstico</strong>: detecta qué falla para poder arreglarlo.</p>
+    <p>Por eso, cuando evalúas y encuentras problemas, el ciclo <strong>vuelve a empezar</strong>: rediseñas, vuelves a prototipar y vuelves a evaluar. Cuanto antes lo hagas, más barato cuesta corregir.</p>
+    <p>Conecta con el principio del DCH que memorizaste en el Tema 1: <em>«el diseño se refina mediante evaluación centrada en el usuario»</em>. La Actividad D es ese principio convertido en trabajo concreto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un prototipo es una <strong>suposición</strong> hasta que se evalúa. La Actividad D convierte la suposición en <strong>evidencia</strong>: muestra qué funciona y qué no, para rediseñarlo. Por eso la evaluación cierra el ciclo y, casi siempre, lo reabre.</p>
+    </div>
+  </section>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es la Actividad D? Evaluar el diseño según la norma</h3>
+
+    <p>La <strong>ISO 9241-210</strong> describe el proceso de DCH como cuatro actividades en bucle. La cuarta es <strong>«evaluar el diseño respecto a los requisitos»</strong>. Fíjate en la palabra que lo cambia todo: <strong>respecto a los requisitos</strong>.</p>
+    <p>Evaluar no es preguntar si algo «gusta». Es comprobar si el sistema <strong>cumple lo que se especificó</strong> en las Actividades A (contexto de uso) y B (requisitos de usuario). Sin requisitos, no hay vara de medir.</p>
+    <p>Y la vara la conoces desde el Tema 1: la usabilidad de la <strong>ISO 9241-11</strong>, es decir, <strong>eficacia, eficiencia y satisfacción</strong> en un contexto de uso. Evaluar es medir esas tres cosas con personas y tareas reales.</p>
+
+    <h4>Una definición operativa que puedes aplicar</h4>
+    <p>Evaluar un diseño es <strong>recoger evidencia</strong> sobre cómo se comporta una interfaz frente a usuarios y requisitos, para <strong>identificar problemas</strong> y orientar las decisiones de mejora.</p>
+    <p>No es una opinión. Es una <strong>actividad de ingeniería</strong>: parte de objetivos concretos, aplica un método, recoge datos y produce hallazgos que cualquiera del equipo pueda revisar.</p>
+    <p>Y como toda pieza de ingeniería de este proceso, termina por escrito. El resultado de evaluar es un <strong>informe técnico de evaluación</strong>: qué se probó, cómo, qué falló y qué se recomienda. Es uno de los resultados de aprendizaje del tema.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Evaluar (Actividad D) = comprobar si el diseño cumple los <strong>requisitos</strong> midiendo <strong>eficacia, eficiencia y satisfacción</strong> con usuarios y tareas reales, y dejarlo por escrito en un <strong>informe de evaluación</strong>. Norma del proceso: <strong>ISO 9241-210</strong>; vara de medir: <strong>ISO 9241-11</strong>.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La idea de que basta con <strong>poca gente</strong> para encontrar la mayoría de los problemas de usabilidad se popularizó en los años 90: con observar a unas cinco personas usando el sistema aparecen ya la mayor parte de los fallos graves. Evaluar bien no exige laboratorios caros ni cientos de participantes; exige método y observar a las personas adecuadas. Es la filosofía «hazlo tú mismo» de Steve Krug en <em>Rocket Surgery Made Easy</em>.</p>
+    </div>
+  </section>
+
+  <section id="familias" aria-labelledby="familias-h">
+    <h3 id="familias-h"><span class="num" aria-hidden="true">1.3</span>Las tres familias de métodos: indagación, inspección y test</h3>
+
+    <p>El Tema 4 organiza la evaluación en <strong>tres familias de métodos</strong>. No compiten entre sí: responden a preguntas distintas y se combinan. Aquí solo las presentamos; cada una tendrá su sesión propia.</p>
+    <p>La diferencia esencial entre ellas es sencilla: <strong>quién juzga y con qué información</strong>. ¿Preguntamos a los usuarios? ¿Los miramos hacer? ¿O es un experto quien revisa la interfaz?</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 480" role="img" aria-labelledby="ev-title ev-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="ev-title">Las tres familias de métodos de evaluación dentro de la Actividad D</title>
+        <desc id="ev-desc">Un bloque superior, «Actividad D: evaluar el diseño respecto a los requisitos», se ramifica en tres familias de métodos. La indagación consiste en preguntar y observar a usuarios reales, mediante entrevistas, observación y cuestionarios. La inspección consiste en que una persona experta examina la interfaz sin usuarios, mediante evaluación heurística o recorrido cognitivo. El test consiste en que usuarios reales realizan tareas mientras se les observa y mide, mediante test de usabilidad y la técnica de pensar en voz alta. Los hallazgos de las tres familias vuelven al diseño para iterar y mejorarlo.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Núcleo: Actividad D -->
+        <rect x="200" y="20" width="320" height="80" rx="14" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="360" y="50" text-anchor="middle" font-size="14.5" font-weight="700" fill="#211C16">Actividad D · Evaluar el diseño</text>
+        <text x="360" y="71" text-anchor="middle" font-size="12.5" fill="#211C16">respecto a los requisitos</text>
+        <text x="360" y="90" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">ISO 9241-210</text>
+
+        <!-- Familia: Indagación (teal) -->
+        <rect x="15" y="210" width="216" height="150" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="123" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#0B5563">INDAGACIÓN</text>
+        <text x="123" y="266" text-anchor="middle" font-size="12.5" fill="#211C16">Se pregunta y observa</text>
+        <text x="123" y="284" text-anchor="middle" font-size="12.5" fill="#211C16">a usuarios reales</text>
+        <text x="123" y="316" text-anchor="middle" font-size="11.5" fill="#4A4136">Entrevistas · observación</text>
+        <text x="123" y="334" text-anchor="middle" font-size="11.5" fill="#4A4136">cuestionarios</text>
+
+        <!-- Familia: Inspección (ochre) -->
+        <rect x="252" y="210" width="216" height="150" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="360" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#7A5A12">INSPECCIÓN</text>
+        <text x="360" y="266" text-anchor="middle" font-size="12.5" fill="#211C16">Un experto examina</text>
+        <text x="360" y="284" text-anchor="middle" font-size="12.5" fill="#211C16">la interfaz, sin usuarios</text>
+        <text x="360" y="316" text-anchor="middle" font-size="11.5" fill="#4A4136">Evaluación heurística</text>
+        <text x="360" y="334" text-anchor="middle" font-size="11.5" fill="#4A4136">recorrido cognitivo</text>
+
+        <!-- Familia: Test (terra) -->
+        <rect x="489" y="210" width="216" height="150" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="597" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#8A3412">TEST</text>
+        <text x="597" y="266" text-anchor="middle" font-size="12.5" fill="#211C16">Usuarios realizan</text>
+        <text x="597" y="284" text-anchor="middle" font-size="12.5" fill="#211C16">tareas reales</text>
+        <text x="597" y="316" text-anchor="middle" font-size="11.5" fill="#4A4136">Test de usabilidad</text>
+        <text x="597" y="334" text-anchor="middle" font-size="11.5" fill="#4A4136">pensar en voz alta</text>
+
+        <!-- Flechas del núcleo a cada familia -->
+        <line x1="300" y1="100" x2="150" y2="206" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="360" y1="100" x2="360" y2="206" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+        <line x1="420" y1="100" x2="570" y2="206" stroke="#211C16" stroke-width="2.2" marker-end="url(#ah)"></line>
+
+        <!-- Retorno: iterar -->
+        <line x1="123" y1="360" x2="123" y2="430" stroke="#0B5563" stroke-width="2.2"></line>
+        <line x1="597" y1="360" x2="597" y2="430" stroke="#8A3412" stroke-width="2.2"></line>
+        <line x1="123" y1="430" x2="597" y2="430" stroke="#211C16" stroke-width="2.2"></line>
+        <line x1="360" y1="430" x2="360" y2="406" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <rect x="244" y="404" width="232" height="56" rx="10" fill="#FDFBF6" stroke="#211C16" stroke-width="2" stroke-dasharray="5 4"></rect>
+        <text x="360" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="#211C16">Los hallazgos vuelven</text>
+        <text x="360" y="447" text-anchor="middle" font-size="12.5" font-weight="700" fill="#211C16">al diseño · iterar</text>
+      </svg>
+      <figcaption>Las tres familias de métodos de la Actividad D y su diferencia esencial: quién juzga y con qué información. Sus hallazgos vuelven al diseño para iterar. La descripción completa está disponible para lectores de pantalla y se desarrolla en la lista siguiente.</figcaption>
+    </figure>
+
+    <ol class="pillars" role="list">
+      <li><b>Métodos de indagación — preguntar y observar</b> Se recoge lo que los usuarios <strong>dicen y hacen</strong> en situaciones reales o cercanas a las reales. Incluye <strong>entrevistas</strong>, <strong>observación</strong>, <strong>cuestionarios</strong> y diarios. Sirven sobre todo para entender necesidades, expectativas y satisfacción. Son el puente natural con la Actividad A que ya estudiaste.</li>
+      <li><b>Métodos de inspección — el experto revisa</b> Una persona con criterio examina la interfaz <strong>sin usuarios</strong>, comparándola con reglas conocidas. Los más habituales son la <strong>evaluación heurística</strong> (contrastar la interfaz con un conjunto de principios de usabilidad) y el <strong>recorrido cognitivo</strong> (seguir, paso a paso, si una persona nueva entendería cada acción). Son rápidos y baratos, pero no sustituyen a probar con gente.</li>
+      <li><b>Métodos de test — el usuario realiza tareas</b> Usuarios reales intentan <strong>completar tareas</strong> mientras alguien observa y mide. El método central es el <strong>test de usabilidad</strong>, casi siempre con la técnica de <strong>pensar en voz alta</strong> (la persona verbaliza lo que intenta y lo que no entiende). Es la familia que produce la evidencia más directa de lo que ocurre de verdad.</li>
+    </ol>
+
+    <p>Una regla práctica para empezar: la <strong>inspección</strong> encuentra problemas <em>posibles</em> deprisa; el <strong>test</strong> confirma cuáles son <em>reales</em>; la <strong>indagación</strong> explica el <em>porqué</em>. Combinadas, se complementan.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tres familias, una pregunta para distinguirlas: <strong>indagación</strong> (preguntar y observar al usuario), <strong>inspección</strong> (un experto revisa sin usuarios) y <strong>test</strong> (el usuario realiza tareas y se le observa). No compiten: se combinan. Las desarrollaremos una a una en las próximas sesiones.</p>
+    </div>
+  </section>
+
+  <section id="formativa-sumativa" aria-labelledby="formativa-sumativa-h">
+    <h3 id="formativa-sumativa-h"><span class="num" aria-hidden="true">1.4</span>Evaluar para mejorar y evaluar para decidir</h3>
+
+    <p>Más allá del método, toda evaluación responde a una de dos intenciones. Saber cuál persigues evita confundir resultados y elegir mal la técnica.</p>
+
+    <h4>Evaluación formativa: durante el diseño</h4>
+    <p>La <strong>evaluación formativa</strong> se hace <strong>mientras diseñas</strong>, sobre prototipos, para <strong>encontrar problemas y corregirlos</strong>. No busca una nota: busca pistas. Cuantos más fallos saque a la luz, mejor.</p>
+    <p>Es la que más usarás en tu proyecto, porque encaja con el carácter iterativo del DCH: probar pronto, fallar barato, rediseñar.</p>
+
+    <h4>Evaluación sumativa: al final</h4>
+    <p>La <strong>evaluación sumativa</strong> se hace sobre algo <strong>terminado</strong>, para <strong>medir y decidir</strong>: ¿cumple los requisitos?, ¿se puede lanzar?, ¿es mejor que la versión anterior? Aquí sí importan las métricas y la comparación.</p>
+    <p>La misma técnica (por ejemplo, un test de usabilidad) puede ser formativa o sumativa según el momento y la pregunta. Lo que cambia es el <strong>propósito</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p><strong>Formativa</strong> = evaluar <em>para mejorar</em>, durante el diseño, buscando problemas. <strong>Sumativa</strong> = evaluar <em>para decidir</em>, al final, midiendo cumplimiento. En un proceso iterativo dominan las formativas; las sumativas llegan al cierre.</p>
+    </div>
+  </section>
+
+  <section id="antipatron" aria-labelledby="antipatron-h">
+    <h3 id="antipatron-h"><span class="num" aria-hidden="true">1.5</span>El antipatrón: confundir «me gusta» con «funciona»</h3>
+
+    <p>La mejor forma de entender por qué hace falta evaluar bien es ver cómo se evalúa mal. Y se evalúa mal a menudo, por una tentación muy humana: <strong>buscar la aprobación, no la verdad</strong>.</p>
+    <p>El equipo enseña la pantalla a un amigo y pregunta: <strong>«¿te gusta?»</strong>. El amigo, por cortesía, dice que sí. El equipo respira aliviado y da por buena la interfaz. No ha evaluado nada: ha buscado un cumplido.</p>
+
+    <h4>Tres síntomas de una evaluación que no evalúa</h4>
+    <ul>
+      <li><strong>Preguntar opinión en vez de pedir una tarea.</strong> «¿Te gusta?» mide cortesía. «Compra esta entrada» mide si la interfaz funciona. Lo segundo revela problemas; lo primero, no.</li>
+      <li><strong>Evaluar solo con uno mismo o con el equipo.</strong> Quien diseñó el sistema ya sabe dónde está todo. Por eso no detecta lo que confunde a quien llega de cero.</li>
+      <li><strong>Guiar al usuario durante la prueba.</strong> «Ahora pulsa ahí» falsea el resultado. En un test, si la persona se atasca, ese atasco <em>es</em> el dato más valioso.</li>
+    </ul>
+    <p>El resultado es un sistema que parece validado y fracasa con usuarios reales. El problema estaba ahí; simplemente nadie miró bien. Evaluar con método es el seguro contra ese autoengaño.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tres trampas frecuentes: <strong>preguntar «¿te gusta?» en vez de pedir una tarea</strong>, <strong>evaluar solo con el propio equipo</strong> y <strong>guiar al usuario</strong> durante la prueba. Las tres buscan aprobación, no evidencia. La Actividad D existe para impedirlo.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo distingues «me gusta» de «funciona» a tu alrededor, cómo elegir un método según la fase y los recursos, qué nos dicen los datos del INE, cómo se concreta la Actividad D en tu proyecto y por qué te concierne profesionalmente.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma pantalla, dos veredictos</h3>
+
+    <p>Piensa en la última vez que sacaste un billete de tren o renovaste un documento por Internet. Si te preguntaran «¿te gustó la web?», quizá dirías que sí, que era «bonita».</p>
+    <p>Pero si te preguntaran «¿cuánto tardaste, cuántas veces te equivocaste y volviste atrás, llegaste a dudar de si lo habías hecho bien?», la respuesta sería otra. Ahí está la diferencia entre <strong>opinión</strong> y <strong>evaluación</strong>.</p>
+    <p>Una misma pantalla recibe dos veredictos: <strong>«me gusta»</strong> (estético, cortés) y <strong>«funciona»</strong> (eficacia, eficiencia, satisfacción real). Solo el segundo es evaluación. Y casi nunca coinciden.</p>
+    <p>Entrénate a mirar así el mundo digital: cada vez que algo te haga dudar, retroceder o repetir un paso, acabas de detectar un <strong>problema de usabilidad</strong>. Eso es, en miniatura, lo que hace un evaluador profesional.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Coge una app que uses a diario y completa una tarea concreta (enviar un mensaje, pagar algo). Cuenta cuántos toques necesitas, cuántas veces dudas y si en algún punto no sabes qué pasará al pulsar. No juzgues si «te gusta»: cuenta hechos. Acabas de hacer una micro-evaluación.</p>
+    </div>
+  </section>
+
+  <section id="elegir" aria-labelledby="elegir-h">
+    <h3 id="elegir-h"><span class="num" aria-hidden="true">2.2</span>Una primera guía para elegir el método</h3>
+
+    <p>Una de las competencias del tema es <strong>aplicar selectivamente</strong> los métodos: no usar siempre el mismo, sino el adecuado. La elección depende sobre todo de <strong>en qué fase estás</strong> y de <strong>qué recursos tienes</strong>.</p>
+    <p>No hace falta que memorices nada todavía. Quédate con la lógica de esta tabla, que iremos llenando de detalle en las próximas sesiones.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Orientación inicial para elegir familia de método (se desarrollará en el tema).</caption>
+      <thead>
+        <tr>
+          <th scope="col">Si quieres…</th>
+          <th scope="col">Familia más útil</th>
+          <th scope="col">Necesitas usuarios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Detectar problemas pronto y barato</th>
+          <td>Inspección (evaluación heurística)</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <th scope="row">Saber qué falla de verdad al usar</th>
+          <td>Test (test de usabilidad)</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <th scope="row">Entender necesidades y satisfacción</th>
+          <td>Indagación (entrevista, cuestionario)</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <th scope="row">Comprobar el cumplimiento legal de accesibilidad</th>
+          <td>Inspección guiada por norma (WCAG, EN 301 549)</td>
+          <td>No (pero conviene complementar)</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>La idea de fondo: <strong>empieza barato y avanza hacia lo caro</strong>. Una inspección detecta lo evidente en una tarde; un test con cinco personas confirma lo importante; la indagación explica el resto. Y casi nunca eliges una sola: las combinas.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Elegir método no es cuestión de gusto, sino de <strong>fase y recursos</strong>. Regla práctica: <strong>inspección</strong> para detectar pronto y barato, <strong>test</strong> para confirmar lo real, <strong>indagación</strong> para entender el porqué. La accesibilidad se inspecciona, además, contra norma.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: por qué evaluar no es opcional en España (INE)</h3>
+
+    <p>Quizá pienses que tus futuros usuarios se parecen a ti: jóvenes, con soltura digital. Los datos oficiales dicen lo contrario, y por eso no puedes fiarte de tu propia intuición: tienes que <strong>evaluar con gente distinta de ti</strong>.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025</span>
+      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (datos del año 2025, publicados el 20 de noviembre de 2025):</p>
+      <div class="table-scroll">
+      <table>
+        <caption>Datos que motivan la evaluación de la usabilidad y la accesibilidad. INE, 2025.</caption>
+        <thead>
+          <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Población de 16 a 74 años con habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
+          <tr><td>Personas de 16 a 74 años que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Población de 16 a 74 años que usó IA generativa en los últimos 3 meses</td><td class="fig">37,9 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Lee bien el primer dato. Que el <strong>66,5 %</strong> tenga habilidades digitales básicas o avanzadas significa que, aproximadamente, <strong>una de cada tres personas no llega ni al nivel básico</strong>. No son un caso raro: son millones de usuarios.</p>
+    <p>Y, a la vez, el <strong>80,7 %</strong> usa servicios públicos por Internet. Es decir: una población enorme y muy diversa <strong>está obligada</strong> a usar sistemas digitales, tenga o no destreza para ello.</p>
+    <p>La conclusión es directa: si diseñas pensando solo en usuarios como tú, dejas fuera a una parte gigantesca de la población. La única forma de saber si tu sistema sirve a quien no se te parece es <strong>evaluarlo con personas reales y diversas</strong>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En España, según el INE (2025), <strong>una de cada tres personas no alcanza el nivel básico de habilidades digitales</strong> y, sin embargo, el <strong>80,7 %</strong> usa la Administración por Internet. Diseñar «para alguien como yo» excluye a millones. Evaluar con usuarios diversos no es un lujo: es la garantía de que el sistema sirve.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la Actividad D y el informe de evaluación</h3>
+
+    <p>En el proyecto de la asignatura, la Actividad D no es teoría: es una <strong>entrega obligatoria</strong>. Tu equipo tendrá que <strong>evaluar la usabilidad</strong> del sistema que ha diseñado y dejarlo documentado.</p>
+    <p>Esto enlaza con el plan docente: la práctica del Tema 4 es, literalmente, una <strong>evaluación de usabilidad</strong>. Y conecta con cómo se califica el proyecto, que valora los requisitos funcionales, la <strong>usabilidad</strong> y la <strong>accesibilidad</strong>.</p>
+
+    <h4>Qué tendrás que demostrar</h4>
+    <ul>
+      <li>Que has aplicado los <strong>métodos de evaluación, al menos uno de cada tipo</strong>, de forma rigurosa (no «le pregunté a un amigo»).</li>
+      <li>Que mides respecto a los <strong>requisitos</strong> de tu proyecto, no respecto a tu gusto personal.</li>
+      <li>Que realizas una <strong>evaluación de accesibilidad</strong> de forma <strong>obligatoria</strong>, igual que la que ya practicaste en el Tema 1: el proyecto exige superar una <strong>revisión conforme al nivel AA de las WCAG</strong>. Es <strong>requisito mínimo</strong> del bloque: si el prototipo no la supera, no se superan los mínimos, por buena que sea la usabilidad.</li>
+      <li>Que produces un <strong>informe técnico de evaluación</strong> claro, comprensible para público especializado y no especializado.</li>
+    </ul>
+
+    <p>Ese informe es importante por sí mismo. Uno de los resultados de aprendizaje del tema es, precisamente, <strong>«elaborar informes técnicos de evaluación y asesoramiento de la interfaz»</strong>. Saber detectar el problema es la mitad; saber comunicarlo y recomendar una solución es la otra mitad.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>En tu proyecto, la Actividad D se concreta en una <strong>evaluación de usabilidad</strong> documentada: aplicar <strong>al menos un método de cada tipo</strong> con rigor, medir respecto a los requisitos, comprobar la accesibilidad (WCAG AA) y redactar un <strong>informe técnico de evaluación</strong>. Detectar el problema y comunicarlo bien valen lo mismo.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de evaluación para esta semana</h3>
+
+    <p>Tres retos breves para empezar a mirar con ojos de evaluador. No hace falta material: solo método y honestidad.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Tarea, no opinión</span>
+      <p>Pide a alguien que no conozca una app que uses (un familiar, por ejemplo) que complete una tarea concreta. No le ayudes ni le expliques nada. Solo observa y anota dónde duda, retrocede o se equivoca. Acabas de hacer un mini test de usabilidad.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Inspección de cinco minutos</span>
+      <p>Elige una pantalla cualquiera y revísala buscando incoherencias: ¿el sistema te dice qué está pasando?, ¿puedes deshacer un error?, ¿los términos son comprensibles? Estás haciendo, sin saberlo, una evaluación heurística básica.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · Caza la pregunta tramposa</span>
+      <p>Localiza un formulario de satisfacción o una encuesta real (de una web, una app o un comercio). Identifica qué preguntas miden hechos («¿completaste la compra?») y cuáles solo buscan un cumplido («¿te gustó nuestra web?»). Distinguirlas es el primer paso para evaluar bien.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>La evaluación es una de las pocas actividades del DCH que te van a pedir de forma explícita en el mundo profesional, y muchas veces con consecuencias legales.</p>
+    <p>La accesibilidad de los productos y servicios digitales es una <strong>obligación normativa</strong> en Europa: la <strong>Directiva (UE) 2019/882</strong> y la norma <strong>EN 301 549</strong> (que remite a las WCAG nivel AA) exigen que muchos sistemas sean accesibles y, por tanto, <strong>verificables</strong>. Y «verificable» significa <strong>evaluado</strong>.</p>
+    <p>Dicho de otro modo: alguien tendrá que comprobar que el sistema cumple, dejarlo por escrito y firmar ese informe. Esa persona puede ser tú. La competencia <strong>CI17</strong> de tu titulación se refiere exactamente a esto: <em>diseñar y evaluar interfaces que garanticen accesibilidad y usabilidad</em>.</p>
+    <p>Aprender a evaluar te separa de quien solo «hace pantallas bonitas». Te convierte en un profesional capaz de <strong>demostrar con evidencia</strong> que un sistema funciona, sirve a personas reales y cumple la ley.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Evaluar no es opcional ni decorativo: la accesibilidad es una <strong>obligación legal</strong> (Directiva 2019/882, EN 301 549, WCAG AA) que exige sistemas <strong>verificables</strong>. Saber evaluar y firmar un informe es justo lo que describe la competencia <strong>CI17</strong> de tu título.</p>
+    </div>
+  </section>
+
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué actividad del DCH es la evaluación y qué posición ocupa?</summary>
+      <p>Es la <strong>Actividad D</strong>, «evaluar el diseño respecto a los requisitos», la <strong>cuarta</strong> del ciclo iterativo del DCH (A → B → C → D). No es el final: sus hallazgos reabren el ciclo para rediseñar e iterar. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Qué significa «respecto a los requisitos» y por qué importa?</summary>
+      <p>Que evaluar no es preguntar si algo gusta, sino comprobar si el sistema <strong>cumple lo especificado</strong> en las Actividades A y B. La vara de medir es la usabilidad de la <strong>ISO 9241-11</strong>: eficacia, eficiencia y satisfacción. Sin requisitos no hay con qué comparar. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son las tres familias de métodos de evaluación?</summary>
+      <p><strong>Indagación</strong> (preguntar y observar al usuario: entrevistas, observación, cuestionarios), <strong>inspección</strong> (un experto revisa sin usuarios: evaluación heurística, recorrido cognitivo) y <strong>test</strong> (el usuario realiza tareas y se le observa: test de usabilidad, pensar en voz alta). <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Qué distingue a una familia de otra?</summary>
+      <p>Quién juzga y con qué información: en la <strong>indagación</strong> se pregunta y observa al usuario; en la <strong>inspección</strong> juzga un experto sin usuarios; en el <strong>test</strong> el usuario actúa y se le observa. La inspección encuentra problemas posibles, el test confirma los reales y la indagación explica el porqué. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿En qué se diferencian la evaluación formativa y la sumativa?</summary>
+      <p>La <strong>formativa</strong> se hace durante el diseño, sobre prototipos, para <strong>encontrar problemas y mejorar</strong>. La <strong>sumativa</strong> se hace al final, sobre algo terminado, para <strong>medir y decidir</strong> (¿cumple?, ¿se lanza?). Lo que cambia es el propósito, no necesariamente la técnica. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué tres errores típicos convierten una evaluación en un autoengaño?</summary>
+      <p>Preguntar «¿te gusta?» en vez de pedir una tarea concreta, evaluar solo con uno mismo o con el equipo, y guiar al usuario durante la prueba. Los tres buscan aprobación en lugar de evidencia. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Qué nos dicen los datos del INE sobre la necesidad de evaluar?</summary>
+      <p>Que no se puede diseñar «para alguien como yo». En 2025, solo el <strong>66,5 %</strong> de la población de 16 a 74 años tiene habilidades digitales básicas o avanzadas (≈ 1 de cada 3 no llega al nivel básico) y, a la vez, el <strong>80,7 %</strong> usa la Administración por Internet. Hay que evaluar con usuarios diversos. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo se concreta la Actividad D en tu proyecto?</summary>
+      <p>Como una <strong>evaluación de usabilidad</strong> obligatoria: aplicar <strong>al menos un método de cada tipo</strong> con rigor, medir respecto a los requisitos, realizar una <strong>evaluación de accesibilidad obligatoria</strong> conforme a <strong>WCAG nivel AA</strong> (como en el Tema 1) y entregar un <strong>informe técnico de evaluación</strong> comprensible. Detectar el problema y comunicarlo valen lo mismo. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Evaluación (del diseño)</dt>
+      <dd>Recoger evidencia sobre cómo se comporta una interfaz frente a usuarios y requisitos, para identificar problemas y orientar las mejoras. Es la base de la Actividad D del DCH.</dd>
+      <dt>Actividad D (DCH)</dt>
+      <dd>«Evaluar el diseño respecto a los requisitos»: cuarta y última actividad del ciclo iterativo del DCH (ISO 9241-210). Sus hallazgos reabren el ciclo para iterar.</dd>
+      <dt>Métodos de indagación</dt>
+      <dd>Familia de métodos que pregunta y observa a los usuarios para entender necesidades, comportamientos y satisfacción. Incluye entrevistas, observación y cuestionarios.</dd>
+      <dt>Métodos de inspección</dt>
+      <dd>Familia de métodos en que una persona experta examina la interfaz sin usuarios, contrastándola con reglas conocidas. Incluye la evaluación heurística y el recorrido cognitivo.</dd>
+      <dt>Evaluación heurística</dt>
+      <dd>Método de inspección que consiste en revisar la interfaz comparándola con un conjunto de principios de usabilidad (heurísticas). Rápido y económico.</dd>
+      <dt>Recorrido cognitivo</dt>
+      <dd>Método de inspección que sigue, paso a paso, una tarea para comprobar si una persona nueva entendería qué hacer en cada acción.</dd>
+      <dt>Métodos de test</dt>
+      <dd>Familia de métodos en que usuarios reales realizan tareas mientras se les observa y mide. Produce la evidencia más directa de lo que ocurre al usar el sistema.</dd>
+      <dt>Test de usabilidad</dt>
+      <dd>Método de test en que se pide a usuarios completar tareas concretas para detectar dónde fallan, dudan o se equivocan. Con pocas personas afloran ya la mayoría de los problemas graves.</dd>
+      <dt>Pensar en voz alta</dt>
+      <dd>Técnica habitual en los tests: la persona verbaliza lo que intenta, espera y no entiende mientras usa el sistema, revelando el porqué de sus dificultades.</dd>
+      <dt>Evaluación formativa</dt>
+      <dd>Evaluación realizada durante el diseño, sobre prototipos, con el fin de encontrar problemas y corregirlos. Predomina en procesos iterativos.</dd>
+      <dt>Evaluación sumativa</dt>
+      <dd>Evaluación de algo terminado, con el fin de medir el cumplimiento de requisitos y tomar una decisión (lanzar, comparar versiones, etc.).</dd>
+      <dt>Informe de evaluación</dt>
+      <dd>Documento técnico que recoge qué se evaluó, con qué método, qué problemas se detectaron y qué se recomienda. Debe ser comprensible para público especializado y no especializado.</dd>
+      <dt>Usabilidad</dt>
+      <dd>Grado en que un sistema permite a usuarios concretos lograr objetivos con eficacia, eficiencia y satisfacción en un contexto de uso especificado. Definida en la ISO 9241-11; es la vara de medir de la evaluación.</dd>
+      <dt>WCAG</dt>
+      <dd>Pautas de Accesibilidad para el Contenido Web (Web Content Accessibility Guidelines). Su nivel AA es la referencia exigida por la normativa europea y por el proyecto de la asignatura.</dd>
+      <dt>ISO 9241-210</dt>
+      <dd>Norma del proceso de Diseño Centrado en lo Humano; su cuarta actividad es evaluar el diseño respecto a los requisitos. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>La <strong>Actividad D</strong> del DCH es «evaluar el diseño respecto a los requisitos»: la <strong>cuarta</strong> del ciclo y la que decide si hay que <strong>volver a empezar</strong>.</li>
+        <li>Un prototipo es una <strong>suposición</strong>; evaluar lo convierte en <strong>evidencia</strong>. Por eso la evaluación cierra el ciclo y casi siempre lo reabre.</li>
+        <li>Se mide respecto a la <strong>usabilidad</strong> (eficacia, eficiencia, satisfacción) de la <strong>ISO 9241-11</strong>; la norma del proceso es la <strong>ISO 9241-210</strong>.</li>
+        <li>Hay <strong>tres familias de métodos</strong>: <strong>indagación</strong> (preguntar y observar), <strong>inspección</strong> (un experto revisa) y <strong>test</strong> (el usuario realiza tareas). Se combinan.</li>
+        <li>La evaluación puede ser <strong>formativa</strong> (mejorar durante el diseño) o <strong>sumativa</strong> (decidir al final).</li>
+        <li>El gran error es confundir <strong>«me gusta» con «funciona»</strong>: hay que pedir tareas, no opiniones, y no guiar al usuario.</li>
+        <li>Los datos del <strong>INE 2025</strong> lo justifican: solo el <strong>66,5 %</strong> tiene habilidades digitales básicas o avanzadas y el <strong>80,7 %</strong> usa la e-Administración. Diseñar «para alguien como yo» excluye a millones.</li>
+        <li>En tu proyecto es una <strong>evaluación de usabilidad</strong> obligatoria con revisión de accesibilidad <strong>WCAG AA</strong> y un <strong>informe técnico</strong>; evaluar es además una obligación legal (Directiva 2019/882, EN 301 549).</li>
+        <li>En las próximas sesiones desarrollaremos por separado los métodos de <strong>indagación, inspección y test</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Krug, S. <em>Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems</em>. New Riders, 2010.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+    </ol>
+    <p>Normas técnicas y marco legal:</p>
+    <ol class="refs" start="8">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>Directiva (UE) 2019/882 del Parlamento Europeo y del Consejo, sobre los <em>requisitos de accesibilidad de los productos y servicios</em>.</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="12">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>La evaluación del diseño (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo: el análisis de tareas en la Actividad A del Diseño Centrado en lo Humano, con dos técnicas detalladas (HTA, análisis jerárquico de tareas, y Gherkin, Dado/Cuando/Entonces), con ejemplos correctos y erróneos comentados. Tema 2 de Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Análisis de tareas: HTA y Gherkin · Apuntes Tema 2 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body class="code-chip">
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 2 · Actividades de análisis · Material de apoyo</p>
+    <h1>Análisis de tareas: HTA y Gherkin
+      <span class="sub">Estructurar lo que hace el usuario (HTA) y describir su comportamiento de forma verificable (Gherkin)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CI17 · CG05 · CB03 · CT09</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base (teoría)</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">Del escenario a la estructura: qué es el análisis de tareas</a></li>
+          <li class="lvl2"><a href="#niveles">Objetivo, tarea y acción: tres niveles que no se confunden</a></li>
+          <li class="lvl2"><a href="#hta">HTA: análisis jerárquico de tareas (teoría detallada)</a></li>
+          <li class="lvl2"><a href="#gherkin">Gherkin: describir la tarea como comportamiento (teoría detallada)</a></li>
+          <li class="lvl2"><a href="#complementan">HTA y Gherkin: dos miradas complementarias</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia: ejemplos, errores y proyecto</a>
+        <ol>
+          <li class="lvl2"><a href="#hta-ejemplo">HTA en la práctica: la tarea de Marta paso a paso</a></li>
+          <li class="lvl2"><a href="#hta-errores">HTA: ejemplos con errores y cómo se corrigen</a></li>
+          <li class="lvl2"><a href="#gherkin-ejemplo">Gherkin en la práctica: las tareas de Marta en Dado/Cuando/Entonces</a></li>
+          <li class="lvl2"><a href="#gherkin-errores">Gherkin: ejemplos con errores y cómo se corrigen</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto: el análisis de tareas como entregable</a></li>
+          <li class="lvl2"><a href="#retos">Retos para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Cerramos la Actividad A con su pieza más operativa: el <strong>análisis de tareas</strong>. Ya tienes las <strong>personas</strong> (quién), los <strong>escenarios</strong> (qué pasa, en prosa) y el <strong>journey map</strong> (cómo se siente). Ahora <strong>estructuramos</strong> qué hace exactamente el usuario.</p>
+    <p>El análisis de tareas es el desarrollo del componente «<strong>tareas e información</strong>» del contexto de uso, y la práctica de laboratorio «análisis de tareas del usuario» del plan docente.</p>
+    <p>Veremos <strong>dos técnicas complementarias</strong>, cada una explicada a fondo y con ejemplos correctos y <strong>erróneos comentados</strong>:</p>
+    <ul>
+      <li><strong>HTA (Análisis Jerárquico de Tareas):</strong> descompone la tarea en una <em>jerarquía</em> de subtareas con sus <em>planes</em>. Responde a «¿de qué pasos se compone y en qué orden?».</li>
+      <li><strong>Gherkin (Dado/Cuando/Entonces):</strong> describe el <em>comportamiento</em> esperado de cada tarea de forma estructurada y <em>verificable</em>. Responde a «¿cómo se comporta el sistema y cómo sé que está bien?».</li>
+    </ul>
+    <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: prosa, cajas, diagrama accesible, bloques de código y autocomprobación.</p>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El <strong>análisis de tareas</strong> convierte la historia del escenario en una <strong>estructura</strong> manejable. Usaremos <strong>HTA</strong> para la estructura jerárquica de la tarea y <strong>Gherkin</strong> para describir su comportamiento de forma verificable. Una técnica mapea; la otra especifica y prueba.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2 · Teoría</span>
+    <h2>Contenido base: qué es y las dos técnicas en detalle</h2>
+    <p class="lead">Qué es el análisis de tareas, la diferencia entre objetivo, tarea y acción, y la teoría detallada de HTA y de Gherkin, antes de pasar a los ejemplos.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>Del escenario a la estructura: qué es el análisis de tareas</h3>
+    <p>El <strong>análisis de tareas</strong> es el estudio sistemático de <strong>lo que las personas hacen (o necesitan hacer) para alcanzar un objetivo</strong>: sus tareas, subtareas y pasos, junto con la <strong>información</strong> y los objetos que manejan, y el <strong>orden y las condiciones</strong> en que los realizan.</p>
+    <p>Si el escenario te daba la historia en prosa, el análisis de tareas la <strong>descompone y ordena</strong>. Pasa de «Marta paga y sube» a una estructura precisa de subtareas que puedes discutir, completar y verificar.</p>
+    <p>Sirve para tres cosas concretas: <strong>entender</strong> la actividad real, <strong>detectar</strong> pasos redundantes o propensos a error, y <strong>derivar</strong> requisitos y decisiones de diseño (qué debe permitir el sistema, en qué orden, con qué información).</p>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Analizar tareas es responder con rigor: <strong>¿qué hace la persona, en qué pasos, en qué orden, con qué información y bajo qué condiciones?</strong> Es el puente entre el escenario (narrativo) y los requisitos (verificables).</p>
+    </div>
+  </section>
+
+  <section id="niveles" aria-labelledby="niveles-h">
+    <h3 id="niveles-h"><span class="num" aria-hidden="true">1.2</span>Objetivo, tarea y acción: tres niveles que no se confunden</h3>
+    <p>Antes de descomponer nada, hay que distinguir tres palabras que el lenguaje corriente mezcla, pero que aquí son niveles distintos:</p>
+    <ul>
+      <li><strong>Objetivo (<em>goal</em>):</strong> el <strong>estado final</strong> que la persona desea. No incluye el «cómo». Ej.: «tener el billete validado antes de subir».</li>
+      <li><strong>Tarea:</strong> la <strong>actividad estructurada</strong> que se realiza para alcanzar el objetivo. Ej.: «preparar el pago y validar».</li>
+      <li><strong>Acción u operación:</strong> el <strong>paso atómico</strong>, indivisible para nuestro propósito. Ej.: «acercar el móvil al validador».</li>
+    </ul>
+    <p>La distinción no es académica: <strong>el diseño debe servir al objetivo</strong>, no perpetuar las tareas actuales. Las tareas son el <em>medio</em> de hoy y pueden cambiar; un buen diseño a veces <strong>elimina</strong> tareas enteras manteniendo el objetivo.</p>
+    <p>Es la misma advertencia de Cooper que viste en escenarios: no automatices a ciegas el «cómo» de hoy. Analiza las tareas para <strong>entender el objetivo</strong>, y luego pregúntate si esas tareas siguen siendo necesarias.</p>
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Un clásico error de diseño es «pavimentar el camino de tierra»: digitalizar tal cual un proceso manual con sus mismos pasos absurdos. El análisis de tareas bien hecho separa el <strong>objetivo</strong> (que se conserva) de las <strong>tareas</strong> (que se pueden rediseñar o suprimir).</p>
+    </div>
+  </section>
+
+  <section id="hta" aria-labelledby="hta-h">
+    <h3 id="hta-h"><span class="num" aria-hidden="true">1.3</span>HTA: análisis jerárquico de tareas (teoría detallada)</h3>
+    <p>El <strong>Análisis Jerárquico de Tareas</strong> (HTA, <em>Hierarchical Task Analysis</em>) es la técnica más extendida. Descompone un <strong>objetivo</strong> en una <strong>jerarquía</strong> de subtareas y operaciones, y añade <strong>planes</strong> que indican en qué orden y bajo qué condiciones se ejecutan.</p>
+
+    <h4>Los cuatro elementos del HTA</h4>
+    <ol class="pillars" role="list">
+      <li><b>Objetivo (nivel 0).</b> El propósito global, en términos del usuario. Encabeza la jerarquía. No es una función del sistema ni una pantalla.</li>
+      <li><b>Tareas y subtareas.</b> La descomposición en niveles (1; 1.1; 1.1.1…). Cada subtarea es un objetivo más pequeño. Conviene <strong>4-8 por nivel</strong>: menos, no aporta; más, abruma.</li>
+      <li><b>Operaciones.</b> Las hojas del árbol: acciones atómicas donde dejamos de descomponer.</li>
+      <li><b>Planes.</b> El elemento <strong>distintivo</strong> del HTA. Para cada tarea con subtareas, un plan dice <strong>cómo</strong> se combinan: en secuencia, por selección (condición) o en iteración. Sin planes, el HTA es solo una lista; con planes, captura la lógica.</li>
+    </ol>
+
+    <h4>Los planes con más detalle</h4>
+    <p>Un plan se escribe junto a la tarea a la que gobierna. Hay tres patrones básicos, combinables:</p>
+    <ul>
+      <li><strong>Secuencia:</strong> «Plan 0: hacer 1, luego 2, luego 3».</li>
+      <li><strong>Selección (condición):</strong> «Plan 1: si hay saldo, hacer 1.1; si no, hacer 1.2».</li>
+      <li><strong>Iteración:</strong> «Plan 2: repetir 2.1 hasta que el campo esté completo».</li>
+    </ul>
+
+    <h4>La regla de parada: ¿hasta dónde descomponer?</h4>
+    <p>No se descompone hasta el infinito. La heurística clásica de HTA es la <strong>regla P × C</strong>: detente cuando la <strong>probabilidad</strong> de que el paso se haga mal, multiplicada por el <strong>coste</strong> de ese fallo, sea aceptablemente baja. En la práctica: para cuando la operación ya es <strong>obvia o atómica</strong> para tu propósito.</p>
+    <p>Lo importante es mantener un <strong>nivel de detalle coherente</strong> en todas las ramas: no bajes una rama hasta la pulsación de teclas mientras dejas otra en lo general.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 430" role="img" aria-labelledby="hta-title hta-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="hta-title">Notación del análisis jerárquico de tareas (HTA)</title>
+        <desc id="hta-desc">Un objetivo, numerado como cero, encabeza la jerarquía. De él cuelgan tres tareas: tarea 1, tarea 2 y tarea 3. La tarea 2 se descompone a su vez en dos operaciones: dos punto uno y dos punto dos, que son las hojas donde se deja de descomponer. Un recuadro de planes indica el orden: el plan cero dice hacer la tarea 1, luego la 2, luego la 3, en secuencia; el plan 2 dice hacer las operaciones dos punto uno y dos punto dos en cualquier orden.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path></marker>
+        </defs>
+        <rect x="270" y="16" width="180" height="50" rx="10" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="360" y="38" text-anchor="middle" font-size="14" font-weight="700" fill="#211C16">0 · Objetivo</text>
+        <text x="360" y="56" text-anchor="middle" font-size="11.5" fill="#4A4136">(del usuario)</text>
+        <rect x="40" y="120" width="170" height="48" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="125" y="149" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5563">1 · Tarea</text>
+        <rect x="275" y="120" width="170" height="48" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="360" y="149" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5563">2 · Tarea</text>
+        <rect x="510" y="120" width="170" height="48" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="595" y="149" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5563">3 · Tarea</text>
+        <rect x="255" y="226" width="120" height="44" rx="9" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="315" y="253" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2C5A2E">2.1 · Oper.</text>
+        <rect x="385" y="226" width="120" height="44" rx="9" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="445" y="253" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2C5A2E">2.2 · Oper.</text>
+        <line x1="360" y1="66" x2="125" y2="118" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+        <line x1="360" y1="66" x2="360" y2="118" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+        <line x1="360" y1="66" x2="595" y2="118" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+        <line x1="360" y1="168" x2="315" y2="224" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+        <line x1="360" y1="168" x2="445" y2="224" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+        <line x1="30" y1="292" x2="690" y2="292" stroke="#D8CFBF" stroke-width="1.5" stroke-dasharray="6 5"></line>
+        <text x="690" y="288" text-anchor="end" font-size="10.5" fill="#4A4136" font-style="italic">nivel de operaciones (regla de parada)</text>
+        <rect x="40" y="320" width="640" height="86" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2" stroke-dasharray="5 4"></rect>
+        <text x="58" y="345" font-size="12.5" font-weight="700" fill="#7A5A12">Planes (el orden y las condiciones):</text>
+        <text x="58" y="368" font-size="12.5" fill="#211C16">Plan 0: hacer 1 &#8594; 2 &#8594; 3 (en secuencia).</text>
+        <text x="58" y="390" font-size="12.5" fill="#211C16">Plan 2: hacer 2.1 y 2.2 (en cualquier orden).</text>
+      </svg>
+      <figcaption>Notación del HTA: un objetivo (0) se descompone en tareas (1, 2, 3); una tarea se descompone en operaciones (2.1, 2.2); y los <strong>planes</strong> fijan el orden y las condiciones. La descripción completa está disponible para lectores de pantalla.</figcaption>
+    </figure>
+
+    <p>El HTA se representa de dos formas equivalentes: el <strong>diagrama de árbol</strong> (como el de arriba) o un <strong>esquema numerado</strong> en texto (que verás en la Parte 2). Ambos contienen lo mismo; el texto es más cómodo para listas largas y para entregar.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>HTA = <strong>objetivo → tareas → operaciones</strong>, más <strong>planes</strong> que dicen el orden y las condiciones. La <strong>regla de parada</strong> (P × C) evita descomponer de más. Sin planes no es HTA: es una lista.</p>
+    </div>
+  </section>
+
+  <section id="gherkin" aria-labelledby="gherkin-h">
+    <h3 id="gherkin-h"><span class="num" aria-hidden="true">1.4</span>Gherkin: describir la tarea como comportamiento (teoría detallada)</h3>
+    <p><strong>Gherkin</strong> es un lenguaje <strong>estructurado y legible por humanos</strong> para describir el <strong>comportamiento</strong> esperado de una tarea mediante ejemplos concretos. Nació en el <strong>Desarrollo Guiado por el Comportamiento</strong> (BDD, <em>Behaviour-Driven Development</em>) y es el lenguaje de la herramienta Cucumber.</p>
+    <p>Su gran virtud: un mismo texto sirve a la vez como <strong>especificación</strong> (la entienden analistas, usuarios y desarrolladores) y como <strong>criterio de aceptación verificable</strong> (puede ejecutarse como prueba automática). Es un «lenguaje común» entre negocio y código.</p>
+
+    <h4>La estructura: palabras clave (en español)</h4>
+    <p>Gherkin admite español (con la cabecera <code># language: es</code>). Las palabras clave son:</p>
+    <ul>
+      <li><strong>Característica</strong> (<em>Feature</em>): qué funcionalidad o tarea se describe, y para quién y para qué.</li>
+      <li><strong>Antecedentes</strong> (<em>Background</em>): pasos <em>Dado</em> comunes a todos los escenarios de la característica (se escriben una vez).</li>
+      <li><strong>Escenario</strong> (<em>Scenario</em>): un ejemplo concreto de comportamiento.</li>
+      <li><strong>Dado</strong> (<em>Given</em>): el <strong>contexto inicial</strong>, las precondiciones, el estado <em>antes</em> de actuar.</li>
+      <li><strong>Cuando</strong> (<em>When</em>): el <strong>evento o acción</strong> que dispara el comportamiento. Idealmente, <strong>uno por escenario</strong>.</li>
+      <li><strong>Entonces</strong> (<em>Then</em>): el <strong>resultado esperado</strong>, observable y verificable.</li>
+      <li><strong>Y / Pero</strong> (<em>And / But</em>): encadenan pasos adicionales del mismo tipo.</li>
+      <li><strong>Esquema del escenario</strong> + <strong>Ejemplos</strong> (<em>Scenario Outline + Examples</em>): un escenario con huecos <code>&lt;parámetro&gt;</code> que se rellenan con una tabla de casos.</li>
+    </ul>
+
+    <h4>El patrón Dado–Cuando–Entonces</h4>
+    <p>La estructura no es decorativa: cada palabra tiene una semántica estricta.</p>
+    <pre class="codeblock"><b>Dado</b>   un contexto (el estado de partida)
+<b>Cuando</b> ocurre una acción (un solo evento)
+<b>Entonces</b> se observa un resultado (verificable)</pre>
+    <p>Mantener cada paso en su sitio es lo que hace el texto claro y comprobable: el <em>Dado</em> prepara, el <em>Cuando</em> actúa, el <em>Entonces</em> comprueba.</p>
+
+    <h4>La regla de oro: declarativo, no imperativo</h4>
+    <p>Gherkin describe <strong>qué</strong> comportamiento se espera, no <strong>cómo</strong> se pulsa la interfaz. Un paso <strong>imperativo</strong> («pulso el botón azul de arriba») ata la descripción a una pantalla concreta y se rompe en cuanto rediseñas. Un paso <strong>declarativo</strong> («confirmo el pago») describe la intención y sobrevive a los cambios de interfaz.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Gherkin describe la tarea como <strong>comportamiento verificable</strong> con <strong>Dado</strong> (contexto), <strong>Cuando</strong> (acción única) y <strong>Entonces</strong> (resultado observable). Debe ser <strong>declarativo</strong> (la intención), no imperativo (los clics). Sirve a la vez de especificación y de prueba de aceptación.</p>
+    </div>
+  </section>
+
+  <section id="complementan" aria-labelledby="complementan-h">
+    <h3 id="complementan-h"><span class="num" aria-hidden="true">1.5</span>HTA y Gherkin: dos miradas complementarias</h3>
+    <p>No compiten; se necesitan. Responden a preguntas distintas sobre la misma tarea.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>HTA y Gherkin: qué aporta cada técnica al análisis de tareas.</caption>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">HTA</th><th scope="col">Gherkin</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Pregunta que responde</th><td>¿De qué pasos se compone la tarea y en qué orden?</td><td>¿Cómo se comporta el sistema y cómo sé que está bien?</td></tr>
+        <tr><th scope="row">Qué modela</th><td>La estructura jerárquica de la actividad</td><td>El comportamiento observable, con ejemplos</td></tr>
+        <tr><th scope="row">Forma</th><td>Árbol / esquema numerado + planes</td><td>Dado / Cuando / Entonces</td></tr>
+        <tr><th scope="row">Resultado</th><td>Mapa de la tarea</td><td>Criterios de aceptación verificables</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>El flujo natural encadena todo lo del tema: del <strong>escenario</strong> (narrativa) sacas el <strong>HTA</strong> (estructura); de cada tarea u operación importante del HTA escribes <strong>Gherkin</strong> (comportamiento verificable); y esos criterios alimentan los <strong>requisitos</strong> de la Actividad B.</p>
+    <p>Existen otras técnicas que no veremos en detalle: <strong>GOMS/KLM</strong> (predice el tiempo de un usuario experto sumando operaciones, útil para comparar diseños) y el <strong>análisis cognitivo de tareas</strong> (centrado en el conocimiento y las decisiones mentales). Quédate con que HTA y Gherkin son las dos que usarás en el proyecto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>HTA <strong>mapea</strong> la tarea (estructura y orden); Gherkin la <strong>especifica y prueba</strong> (comportamiento verificable). Cadena del tema: escenario → HTA → Gherkin → requisitos (Actividad B).</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2 · Práctica</span>
+    <h2>Transferencia: ejemplos, errores y proyecto</h2>
+    <p class="lead">El análisis de la tarea de Marta con HTA y con Gherkin, con ejemplos correctos y, sobre todo, ejemplos con errores explicados y corregidos, y cómo lo entregarás.</p>
+  </div>
+
+  <section id="hta-ejemplo" aria-labelledby="hta-ejemplo-h">
+    <h3 id="hta-ejemplo-h"><span class="num" aria-hidden="true">2.1</span>HTA en la práctica: la tarea de Marta paso a paso</h3>
+    <p>Retomamos a <strong>Marta</strong> y su objetivo: <em>pagar y validar el billete del autobús antes de subir</em>. Del escenario de contexto sacamos sus tareas; el HTA las estructura. Este es el esquema numerado (correcto):</p>
+
+    <pre class="codeblock"><b>0. Pagar y validar el billete del autobús</b>
+  1. Preparar el pago
+     1.1 Indicar el viaje
+     1.2 Confirmar el pago
+  2. Validar al subir
+     2.1 Presentar el billete al validador
+     2.2 Comprobar la confirmación
+<span class="plan">Plan 0: hacer 1 antes de que llegue el bus; al subir, hacer 2.</span>
+<span class="plan">Plan 1: 1.1 &#8594; 1.2 (en secuencia).</span>
+<span class="plan">Plan 2: 2.1 &#8594; 2.2 (en secuencia).</span></pre>
+
+    <p>Fíjate en tres aciertos: el <strong>objetivo</strong> está en términos del usuario (no «usar la app»); las subtareas describen <strong>qué hace</strong>, no qué botón toca; y hay <strong>planes</strong> que fijan el orden.</p>
+
+    <h4>Las tareas también manejan información</h4>
+    <p>El plan docente habla de «tareas e <strong>información</strong>». Por eso conviene anotar, para cada subtarea, qué información necesita y cuál produce:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Información asociada a cada subtarea del HTA de Marta.</caption>
+      <thead>
+        <tr><th scope="col">Subtarea</th><th scope="col">Información que necesita</th><th scope="col">Información que produce</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1.1 Indicar el viaje</th><td>Línea o trayecto, tarifa</td><td>Viaje seleccionado</td></tr>
+        <tr><th scope="row">1.2 Confirmar el pago</th><td>Saldo disponible, importe</td><td>Billete preparado; saldo actualizado</td></tr>
+        <tr><th scope="row">2.1 Presentar al validador</th><td>Billete preparado</td><td>Señal enviada al validador</td></tr>
+        <tr><th scope="row">2.2 Comprobar confirmación</th><td>Respuesta del validador</td><td>Certeza de «Validado»</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un HTA correcto tiene un <strong>objetivo de usuario</strong>, subtareas que describen <strong>qué hace</strong> (no la interfaz), <strong>planes</strong> de orden y, anotada, la <strong>información</strong> que cada paso necesita y produce.</p>
+    </div>
+  </section>
+
+  <section id="hta-errores" aria-labelledby="hta-errores-h">
+    <h3 id="hta-errores-h"><span class="num" aria-hidden="true">2.2</span>HTA: ejemplos con errores y cómo se corrigen</h3>
+    <p>Ver el HTA mal hecho enseña más que verlo bien. Tres errores frecuentes, con su corrección.</p>
+
+    <h4>Error 1 · Describir la interfaz, no la tarea</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>0. Usar la app del bus</b>
+  1. Tocar el icono de la app
+  2. Pulsar el botón azul "Pagar"
+  3. Deslizar el panel de saldo
+  4. Pulsar "Confirmar"</pre>
+    <p><strong>Por qué está mal:</strong> «Usar la app» no es un objetivo de usuario, y los pasos describen <strong>una interfaz concreta</strong> (iconos, botones, gestos), no la tarea. Si rediseñas la app, todo el análisis caduca. Además no hay planes.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>0. Pagar y validar el billete del autobús</b>
+  1. Preparar el pago
+     1.1 Indicar el viaje
+     1.2 Confirmar el pago
+  2. Validar al subir
+<span class="plan">Plan 0: hacer 1 antes de subir; al subir, hacer 2.</span></pre>
+    <p><strong>Qué cambió:</strong> el objetivo es del usuario; las subtareas dicen <strong>qué se logra</strong> (independiente de la pantalla); y aparece un plan. El análisis sobrevive a cualquier rediseño.</p>
+
+    <h4>Error 2 · Una jerarquía sin planes</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>0. Pagar y validar el billete</b>
+  1. Preparar el pago
+  2. Validar al subir
+  3. Recargar saldo</pre>
+    <p><strong>Por qué está mal:</strong> es una <strong>lista</strong>, no un HTA. No sabemos el orden ni las condiciones. ¿Se recarga saldo siempre, o solo si falta? ¿Validar va antes o después de preparar? Sin planes, la lógica se pierde.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>0. Pagar y validar el billete</b>
+  1. Preparar el pago
+  2. Validar al subir
+  3. Recargar saldo
+<span class="plan">Plan 0: si el saldo es suficiente, hacer 1 y luego 2;</span>
+<span class="plan">         si no, hacer 3, luego 1, luego 2.</span></pre>
+    <p><strong>Qué cambió:</strong> el plan convierte la lista en estructura: expresa la <strong>secuencia</strong> y la <strong>condición</strong> (recargar solo si hace falta). Eso es lo que distingue al HTA.</p>
+
+    <h4>Error 3 · Nivel de detalle incoherente (descomponer de más)</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>0. Pagar y validar el billete</b>
+  1. Preparar el pago
+     1.1 Mirar la pantalla
+     1.2 Mover el pulgar hacia el botón
+     1.3 Apoyar el dedo
+     1.4 Levantar el dedo
+  2. Validar al subir</pre>
+    <p><strong>Por qué está mal:</strong> una rama baja hasta micro-movimientos del dedo mientras la otra queda en lo general. Ese detalle (mirar, mover, apoyar…) no aporta nada al diseño y rompe la <strong>regla de parada</strong> y la coherencia de niveles.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>0. Pagar y validar el billete</b>
+  1. Preparar el pago
+     1.1 Indicar el viaje
+     1.2 Confirmar el pago
+  2. Validar al subir
+     2.1 Presentar el billete al validador
+     2.2 Comprobar la confirmación</pre>
+    <p><strong>Qué cambió:</strong> todas las ramas paran en un nivel <strong>coherente y útil</strong> (operaciones con sentido para el usuario), aplicando la regla P × C: descomponer solo hasta donde aporta.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Coge un HTA cualquiera y hazle dos preguntas: ¿el objetivo es del usuario o describe la app? ¿hay planes que digan el orden y las condiciones? Si falla alguna, ya sabes qué corregir.</p>
+    </div>
+  </section>
+
+  <section id="gherkin-ejemplo" aria-labelledby="gherkin-ejemplo-h">
+    <h3 id="gherkin-ejemplo-h"><span class="num" aria-hidden="true">2.3</span>Gherkin en la práctica: las tareas de Marta en Dado/Cuando/Entonces</h3>
+    <p>Tomamos las operaciones del HTA de Marta y describimos su <strong>comportamiento</strong> con Gherkin. Empezamos por la característica y sus antecedentes:</p>
+
+    <pre class="codeblock"><b># language: es</b>
+<b>Característica:</b> Pago y validación del billete de autobús
+  Para subir al autobús sin perder tiempo
+  Como viajera con prisa
+  Quiero pagar y validar el billete en pocos toques
+
+  <b>Antecedentes:</b>
+    <b>Dado</b> que Marta ha iniciado sesión en la app
+    <b>Y</b> que tiene un viaje seleccionado</pre>
+
+    <p>Ahora un <strong>escenario del camino feliz</strong>, declarativo y con una sola acción:</p>
+    <pre class="codeblock"><b>Escenario:</b> Confirmar el pago del viaje
+    <b>Dado</b> que Marta tiene saldo suficiente
+    <b>Cuando</b> confirma el pago del viaje
+    <b>Entonces</b> el billete queda preparado para validar
+    <b>Y</b> el importe se descuenta de su saldo</pre>
+
+    <p>Un <strong>escenario de caso límite</strong> (recuerda la validación de escenarios): validar sin conexión.</p>
+    <pre class="codeblock"><b>Escenario:</b> Validar el billete sin conexión
+    <b>Dado</b> que Marta tiene un billete preparado
+    <b>Y</b> que el dispositivo no tiene conexión a Internet
+    <b>Cuando</b> acerca el móvil al validador
+    <b>Entonces</b> el billete aparece marcado como "Validado"</pre>
+
+    <p>Y un <strong>esquema del escenario</strong> para describir varios casos con una sola plantilla (según el saldo):</p>
+    <pre class="codeblock"><b>Esquema del escenario:</b> Intento de pago según el saldo
+    <b>Dado</b> que Marta tiene un saldo de &lt;saldo&gt; euros
+    <b>Cuando</b> confirma un viaje de 1,50 euros
+    <b>Entonces</b> el sistema responde con "&lt;resultado&gt;"
+
+    <b>Ejemplos:</b>
+      | saldo | resultado          |
+      | 5,00  | Billete preparado  |
+      | 1,00  | Saldo insuficiente |</pre>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cada escenario describe <strong>un</strong> comportamiento con <strong>Dado/Cuando/Entonces</strong> en lenguaje de negocio. <strong>Antecedentes</strong> evita repetir el contexto; el <strong>esquema del escenario</strong> cubre variantes con una tabla. Todos son a la vez especificación y prueba.</p>
+    </div>
+  </section>
+
+  <section id="gherkin-errores" aria-labelledby="gherkin-errores-h">
+    <h3 id="gherkin-errores-h"><span class="num" aria-hidden="true">2.4</span>Gherkin: ejemplos con errores y cómo se corrigen</h3>
+    <p>Gherkin es fácil de escribir mal. Tres errores típicos, con corrección.</p>
+
+    <h4>Error 1 · Imperativo y atado a la interfaz</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>Escenario:</b> Pagar
+    <b>Dado</b> que Marta abre la app y ve la pantalla de inicio
+    <b>Cuando</b> pulsa el botón azul "Pagar" de la esquina superior
+    <b>Y</b> desliza hacia arriba el panel
+    <b>Y</b> pulsa "Confirmar"
+    <b>Entonces</b> aparece un mensaje verde durante 2 segundos</pre>
+    <p><strong>Por qué está mal:</strong> describe <strong>cómo se pulsa</strong> una interfaz concreta (color, posición, gestos), no el comportamiento. Es frágil: cualquier rediseño lo rompe. El <em>Entonces</em> («mensaje verde 2 s») es un detalle visual, no un resultado de negocio. Y acumula varios <em>Cuando</em>.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>Escenario:</b> Confirmar el pago del viaje
+    <b>Dado</b> que Marta tiene un viaje seleccionado
+    <b>Cuando</b> confirma el pago
+    <b>Entonces</b> el billete queda preparado para validar</pre>
+    <p><strong>Qué cambió:</strong> es <strong>declarativo</strong> (la intención, no los clics), tiene <strong>una sola acción</strong> y un resultado de negocio observable. Sobrevive a los cambios de pantalla.</p>
+
+    <h4>Error 2 · Pasos en el sitio equivocado y varios comportamientos juntos</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>Escenario:</b> Todo el proceso
+    <b>Dado</b> que el usuario pulsa pagar
+    <b>Cuando</b> el sistema está disponible
+    <b>Entonces</b> paga
+    <b>Cuando</b> valida
+    <b>Entonces</b> funciona</pre>
+    <p><strong>Por qué está mal:</strong> el <em>Dado</em> contiene una <strong>acción</strong> («pulsa») en vez de un contexto; el <em>Cuando</em> describe un <strong>estado</strong> («está disponible»), no un evento; el <em>Entonces</em> «paga» es una acción, no un resultado; mezcla <strong>dos comportamientos</strong> (pagar y validar) en un escenario; y el protagonista es «el usuario» genérico.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>Escenario:</b> Validar el billete al subir
+    <b>Dado</b> que Marta tiene un billete preparado
+    <b>Cuando</b> acerca el móvil al validador
+    <b>Entonces</b> el billete aparece marcado como "Validado"</pre>
+    <p><strong>Qué cambió:</strong> cada paso ocupa su sitio (contexto / acción única / resultado), <strong>un</strong> comportamiento por escenario (pagar y validar irían en escenarios separados) y una persona concreta (Marta).</p>
+
+    <h4>Error 3 · Resultado vago o no verificable</h4>
+    <span class="codelabel bad">Incorrecto</span>
+    <pre class="codeblock bad"><b>Escenario:</b> Pago correcto
+    <b>Dado</b> que Marta quiere pagar
+    <b>Cuando</b> paga
+    <b>Entonces</b> la app es fácil de usar
+    <b>Y</b> el usuario queda contento</pre>
+    <p><strong>Por qué está mal:</strong> «fácil de usar» y «contento» <strong>no se pueden comprobar</strong>: no son observables ni medibles, así que el escenario no sirve como criterio de aceptación ni como prueba.</p>
+    <span class="codelabel good">Corregido</span>
+    <pre class="codeblock good"><b>Escenario:</b> Confirmación visible del pago
+    <b>Dado</b> que Marta tiene un viaje seleccionado y saldo suficiente
+    <b>Cuando</b> confirma el pago
+    <b>Entonces</b> el billete aparece marcado como "Preparado"
+    <b>Y</b> el saldo se reduce en el importe del viaje</pre>
+    <p><strong>Qué cambió:</strong> el <em>Entonces</em> describe resultados <strong>observables y verificables</strong> (un estado concreto, un saldo que baja), que sí se pueden convertir en prueba.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Revisa un escenario Gherkin con tres preguntas: ¿es declarativo (sin botones ni colores)?, ¿tiene un solo <em>Cuando</em>?, ¿el <em>Entonces</em> se puede comprobar de forma objetiva? Tres «sí» y vas bien.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.5</span>Tu proyecto: el análisis de tareas como entregable</h3>
+    <p>En tu proyecto, el análisis de tareas es la práctica «análisis de tareas del usuario» del Tema 2 y parte del entregable de la Actividad A. Cierra el análisis y abre los requisitos.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué entregar en el análisis de tareas y para qué sirve.</caption>
+      <thead>
+        <tr><th scope="col">Qué entregar</th><th scope="col">Para qué sirve</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Un HTA por objetivo clave (con planes)</th><td>Estructurar la tarea y ver su orden y condiciones</td></tr>
+        <tr><th scope="row">La información de cada tarea</th><td>Saber qué datos necesita y produce el sistema</td></tr>
+        <tr><th scope="row">Escenarios Gherkin de las tareas clave</th><td>Fijar criterios de aceptación verificables (Actividad B)</td></tr>
+        <tr><th scope="row">Algún escenario Gherkin de caso límite</th><td>Cubrir errores y accesibilidad (nivel AA de WCAG)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h4>Tres consejos</h4>
+    <ul>
+      <li><strong>Empieza por el objetivo, no por la app.</strong> Si tu HTA menciona botones, reescríbelo en términos de tarea.</li>
+      <li><strong>No olvides los planes.</strong> Una jerarquía sin planes no es un HTA: es una lista.</li>
+      <li><strong>Escribe Gherkin declarativo y comprobable.</strong> Cada <em>Entonces</em> debe poder verificarse; es la semilla de tus pruebas.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Entrega un <strong>HTA con planes e información</strong> y unos <strong>escenarios Gherkin</strong> (camino feliz y algún caso límite) de las tareas clave. El HTA estructura; el Gherkin se convierte en criterios de aceptación y en el puente hacia los requisitos.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.6</span>Retos para esta semana</h3>
+    <div class="box challenge">
+      <span class="label">Reto 1 · HTA de algo cotidiano</span>
+      <p>Elige una tarea diaria (sacar dinero del cajero, pedir comida en una app) y haz su HTA: objetivo, dos o tres subtareas y un plan. Comprueba que el objetivo no menciona ninguna pantalla.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · Conviértelo en Gherkin</span>
+      <p>Toma una operación de tu HTA y escríbela como un escenario Gherkin (Dado/Cuando/Entonces). Asegúrate de que el <em>Entonces</em> sea observable.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · Caza el error</span>
+      <p>Escribe a propósito un escenario imperativo («pulso el botón…») y luego reescríbelo en declarativo. Nota cómo el segundo no se rompe aunque cambie la interfaz.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.7</span>Por qué te concierne como ingeniero o ingeniera</h3>
+    <p>El análisis de tareas toca tres competencias del título: diseñar interfaces usables y accesibles (CI17), aplicar la ingeniería del software (CG05) y reunir e interpretar datos para emitir juicios (CB03).</p>
+    <p>HTA te da el rigor del análisis; Gherkin conecta directamente con tu mundo de ingeniería del software: es el lenguaje del BDD y de las pruebas de aceptación. Saber escribirlo bien te coloca en la frontera entre el diseño centrado en lo humano y el desarrollo.</p>
+    <h4>Una decisión que es tuya</h4>
+    <p>Puedes saltarte el análisis y programar lo primero que se te ocurra. Entonces descubrirás el orden real de las tareas y los casos límite tarde, depurando en producción en vez de pensándolos en una tabla.</p>
+    <p>Estructurar la tarea (HTA) y especificar su comportamiento verificable (Gherkin) es lo que separa a quien improvisa de quien construye sobre un análisis sólido.</p>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>HTA aporta rigor de análisis (CB03, CI17); Gherkin enlaza con la ingeniería del software y las pruebas de aceptación (CG05). Juntas, convierten «entender al usuario» en algo que se puede construir y comprobar.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. ¿Qué es el análisis de tareas y qué responde?</summary>
+      <p>Es el estudio sistemático de lo que hace la persona para lograr un objetivo: pasos, orden, condiciones e información. Responde a «¿qué hace, en qué pasos, en qué orden, con qué información y bajo qué condiciones?». <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. Diferencia objetivo, tarea y acción.</summary>
+      <p>Objetivo: el estado final deseado (sin «cómo»). Tarea: la actividad estructurada para lograrlo. Acción/operación: el paso atómico. El diseño sirve al objetivo; las tareas pueden cambiar. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cuáles son los elementos del HTA?</summary>
+      <p>Objetivo (0), tareas/subtareas, operaciones (hojas) y, sobre todo, los planes, que fijan el orden y las condiciones. La regla de parada (P × C) dice hasta dónde descomponer. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. ¿Por qué un HTA sin planes no es un HTA?</summary>
+      <p>Porque sin planes es solo una lista: no expresa el orden ni las condiciones (secuencia, selección, iteración), que son la lógica de la tarea. <em>(Ver 1.3 y 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Qué es Gherkin y cuál es su estructura?</summary>
+      <p>Un lenguaje estructurado y legible para describir el comportamiento de una tarea con ejemplos: Dado (contexto), Cuando (acción única) y Entonces (resultado verificable), más Antecedentes y Esquema del escenario. Viene del BDD. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Qué significa que Gherkin debe ser «declarativo»?</summary>
+      <p>Que describe la intención y el comportamiento («confirmo el pago»), no los clics en una interfaz concreta («pulso el botón azul»). Lo declarativo sobrevive al rediseño; lo imperativo se rompe. <em>(Ver 1.4 y 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿En qué se complementan HTA y Gherkin?</summary>
+      <p>HTA mapea la estructura de la tarea (pasos y orden); Gherkin especifica su comportamiento verificable (criterios de aceptación). Cadena: escenario → HTA → Gherkin → requisitos. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. Cita dos errores típicos del HTA y su corrección.</summary>
+      <p>Describir la interfaz en vez de la tarea (corregir: objetivo y subtareas de usuario, sin botones) y dejar la jerarquía sin planes (corregir: añadir planes de orden y condición). También el detalle incoherente (aplicar la regla de parada). <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. Cita dos errores típicos de Gherkin y su corrección.</summary>
+      <p>Pasos imperativos atados a la interfaz (corregir: declarativos) y resultados no verificables como «es fácil de usar» (corregir: resultados observables, p. ej. un estado «Validado»). También mezclar varios comportamientos o pasos en el sitio equivocado. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Análisis de tareas</dt>
+      <dd>Estudio sistemático de lo que las personas hacen para alcanzar un objetivo: tareas, subtareas, operaciones, información, orden y condiciones.</dd>
+      <dt>Objetivo / Tarea / Acción</dt>
+      <dd>Objetivo: estado final deseado. Tarea: actividad estructurada para lograrlo. Acción u operación: paso atómico.</dd>
+      <dt>HTA (Análisis Jerárquico de Tareas)</dt>
+      <dd>Técnica que descompone un objetivo en una jerarquía de subtareas y operaciones, con planes que fijan el orden y las condiciones.</dd>
+      <dt>Plan (en HTA)</dt>
+      <dd>Indicación de cómo se combinan las subtareas de una tarea: secuencia, selección (condición) o iteración. Elemento distintivo del HTA.</dd>
+      <dt>Operación</dt>
+      <dd>Hoja del árbol HTA: acción atómica donde se deja de descomponer.</dd>
+      <dt>Regla de parada (P × C)</dt>
+      <dd>Heurística para decidir hasta dónde descomponer: se para cuando la probabilidad de fallo por el coste del fallo es aceptablemente baja, o cuando la operación ya es obvia.</dd>
+      <dt>Gherkin</dt>
+      <dd>Lenguaje estructurado y legible para describir el comportamiento de una tarea mediante ejemplos (Dado/Cuando/Entonces). Es el lenguaje de Cucumber.</dd>
+      <dt>BDD (Desarrollo Guiado por el Comportamiento)</dt>
+      <dd>Enfoque que describe el comportamiento esperado con ejemplos concretos que sirven a la vez de especificación y de prueba de aceptación. Origen de Gherkin.</dd>
+      <dt>Característica / Escenario / Antecedentes</dt>
+      <dd>Característica: la funcionalidad o tarea descrita. Escenario: un ejemplo concreto de comportamiento. Antecedentes: pasos Dado comunes a todos los escenarios.</dd>
+      <dt>Dado / Cuando / Entonces</dt>
+      <dd>Dado: contexto o precondición. Cuando: la acción o evento (uno por escenario). Entonces: el resultado esperado, observable y verificable.</dd>
+      <dt>Esquema del escenario</dt>
+      <dd>Escenario con parámetros que se rellena con una tabla de Ejemplos, para cubrir varios casos con una sola plantilla.</dd>
+      <dt>Declarativo / Imperativo</dt>
+      <dd>Declarativo: describe la intención y el comportamiento (correcto). Imperativo: describe los clics en una interfaz concreta (frágil; se evita).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>análisis de tareas</strong> estructura lo que hace el usuario: pasos, orden, condiciones e información. Es el puente entre el escenario y los requisitos.</li>
+        <li>Distingue <strong>objetivo</strong> (estado final), <strong>tarea</strong> (actividad) y <strong>acción</strong> (paso atómico). El diseño sirve al objetivo; las tareas pueden cambiar.</li>
+        <li><strong>HTA</strong> = objetivo → tareas → operaciones, con <strong>planes</strong> de orden y condiciones y una <strong>regla de parada</strong>. Sin planes es una lista, no un HTA.</li>
+        <li><strong>Gherkin</strong> describe el comportamiento con <strong>Dado/Cuando/Entonces</strong>; debe ser <strong>declarativo</strong> y con un <em>Entonces</em> verificable. Viene del BDD.</li>
+        <li>Errores de HTA: describir la interfaz, faltar los planes, detalle incoherente. Errores de Gherkin: imperativo/atado a la UI, pasos mal ubicados o varios comportamientos, resultados no comprobables.</li>
+        <li>Se complementan: HTA <strong>mapea</strong>, Gherkin <strong>especifica y prueba</strong>. Cadena del tema: escenario → HTA → Gherkin → requisitos (Actividad B).</li>
+        <li>HTA aporta rigor de análisis (CB03, CI17); Gherkin enlaza con la ingeniería del software y las pruebas de aceptación (CG05).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004. (Capítulo de análisis de tareas; tratamiento detallado del HTA.)</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Análisis de tareas y modelado de la actividad.)</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025. (Tareas, criterios de aceptación y enfoque ágil.)</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014. (Objetivos frente a tareas; diseñar para el objetivo.)</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="5">
+      <li>UNE-EN ISO 9241-210:2019. <em>Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-11. <em>Usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Recursos en línea:</p>
+    <ol class="refs" start="8">
+      <li>Referencia oficial del lenguaje Gherkin (proyecto Cucumber): <a href="https://cucumber.io/docs/gherkin/">cucumber.io/docs/gherkin</a>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 2 «Actividades de análisis» · Concepto: <em>Análisis de tareas (HTA y Gherkin)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

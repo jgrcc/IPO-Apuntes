@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo del concepto de Diseño Centrado en lo Humano (ISO 9241-210). Tema 1 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Diseño Centrado en lo Humano · Apuntes Tema 1 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 1 · Conceptos básicos · Material de apoyo</p>
+    <h1>Diseño Centrado en lo Humano
+      <span class="sub">El proceso que convierte la usabilidad y la accesibilidad en un método de trabajo (ISO 9241-210)</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CG05 · CI17 · CB03</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es el Diseño Centrado en lo Humano?</a></li>
+          <li class="lvl2"><a href="#humano-usuario">«Humano», no solo «usuario»: el matiz que da nombre</a></li>
+          <li class="lvl2"><a href="#historia">De la máquina a la persona: breve historia y linaje ISO</a></li>
+          <li class="lvl2"><a href="#cierre">El DCH cierra el Tema 1: IPO + usabilidad + accesibilidad</a></li>
+          <li class="lvl2"><a href="#principios">Los seis principios del DCH (ISO 9241-210, cláusula 4)</a></li>
+          <li class="lvl2"><a href="#actividades">Las cuatro actividades del proceso iterativo</a></li>
+          <li class="lvl2"><a href="#entregables">Entregables de cada actividad y rol de la planificación</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">El DCH en lo cotidiano: las «puertas Norman»</a></li>
+          <li class="lvl2"><a href="#software">DCH y los ciclos de vida del software (cascada, iterativo, ágil)</a></li>
+          <li class="lvl2"><a href="#coste">Anclaje real: el coste de no aplicar DCH (INE)</a></li>
+          <li class="lvl2"><a href="#proyecto">Tu proyecto se hará con este modelo: ISO 9241-210 paso a paso</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Este documento acompaña a la clase expositiva sobre el <strong>Diseño Centrado en lo Humano (DCH)</strong>, el cuarto y último concepto del Tema 1. No sustituye a la explicación del aula: la complementa y te deja repasar a tu ritmo.</p>
+    <p>Damos por sabidos los tres conceptos anteriores. De la <strong>Interacción Persona-Ordenador</strong> retomamos la idea de modelo mental e imagen del sistema. De la <strong>usabilidad</strong>, la definición ISO y la frontera con utilidad y UX. De la <strong>accesibilidad</strong>, las WCAG y el nivel AA.</p>
+    <p>El DCH es la pieza que une las tres: no es <em>qué</em> queremos lograr (un sistema usable y accesible), sino <strong>cómo</strong> lo logramos de forma sistemática. Es un <strong>proceso de ingeniería</strong>, no una buena intención.</p>
+    <p>Sigue el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: verás la misma idea presentada de varias formas, en prosa, en cajas, en tablas, con ejemplos cotidianos y preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu trabajo y tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Si la usabilidad y la accesibilidad describen <strong>cómo debe ser</strong> el sistema, el Diseño Centrado en lo Humano describe <strong>cómo trabajar</strong> para conseguirlo. La norma que lo define, la <strong>ISO 9241-210</strong>, será el modelo de proceso que seguirás en el proyecto de toda la asignatura.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es y cómo está definido</h2>
+    <p class="lead">Definición ISO, el matiz de «humano», su historia, su lugar en el Tema 1 y el corazón de la norma: seis principios y cuatro actividades iterativas.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es el Diseño Centrado en lo Humano?</h3>
+
+    <p>El <strong>Diseño Centrado en lo Humano</strong> (DCH; en inglés <em>Human-Centred Design</em>, HCD) es un enfoque de diseño y desarrollo de sistemas interactivos cuyo objetivo es hacerlos <strong>más utilizables</strong>.</p>
+    <p>Lo consigue centrando todo el proceso en el <strong>uso real</strong> del sistema y aplicando conocimientos y técnicas de <strong>factores humanos, ergonomía y usabilidad</strong>. Esa es, casi literal, la definición de la norma ISO 9241-210.</p>
+    <p>En una frase de aula: <strong>diseñar a partir de quién va a usar el sistema, para qué y dónde, en lugar de a partir de lo que es fácil de programar</strong>. La persona no se «adapta» al sistema; el sistema se diseña alrededor de la persona.</p>
+
+    <h4>Una definición operativa que puedes aplicar</h4>
+    <p>El DCH no es una filosofía vaga. Es un <strong>proceso con actividades, entregables y criterios de salida</strong> concretos, descrito en una norma internacional. Por eso podemos planificarlo, presupuestarlo y auditarlo igual que cualquier otra fase de ingeniería.</p>
+    <p>Lo que lo distingue de otros enfoques es de dónde saca la información para decidir: no de la intuición del equipo, sino de la <strong>observación y participación de las personas reales</strong> que usarán el producto.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>DCH = enfoque que hace los sistemas interactivos más usables <strong>centrándose en su uso real</strong> y apoyándose en factores humanos, ergonomía y usabilidad. Está normalizado en la <strong>ISO 9241-210</strong>, así que es un proceso medible y exigible, no una opinión.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La norma vive dentro de la familia <strong>ISO 9241, «Ergonomía de la interacción persona-sistema»</strong>. Su título completo es elocuente: <em>Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em>. La «ergonomía» que aquí importa no es la de la silla de oficina, sino la <strong>ergonomía cognitiva</strong>: ajustar el sistema a cómo perciben, recuerdan y deciden las personas.</p>
+    </div>
+  </section>
+
+  <section id="humano-usuario" aria-labelledby="humano-usuario-h">
+    <h3 id="humano-usuario-h"><span class="num" aria-hidden="true">1.2</span>«Humano», no solo «usuario»: el matiz que da nombre</h3>
+
+    <p>Quizá hayas oído también la expresión <strong>Diseño Centrado en el Usuario (DCU)</strong>. Conviene entender por qué la norma actual prefiere hablar de «lo humano» y no solo de «el usuario».</p>
+    <p>El <strong>usuario</strong> es quien interactúa directamente con el sistema. Pero un sistema afecta a más personas: a quien recibe su salida, a quien lo mantiene, a quien lo administra, incluso a quien sufre sus consecuencias sin tocarlo nunca.</p>
+
+    <h4>Usuarios directos, indirectos y otros grupos de interés</h4>
+    <ul>
+      <li><strong>Usuario directo:</strong> opera el sistema (el médico que introduce datos en la historia clínica).</li>
+      <li><strong>Usuario indirecto:</strong> usa sus resultados sin manejarlo (el paciente cuyo informe se imprime).</li>
+      <li><strong>Otros grupos de interés (<em>stakeholders</em>):</strong> personas afectadas por el sistema aunque no interactúen con él (familiares, gestores, la sociedad).</li>
+    </ul>
+    <p>Por eso la norma habla de diseño «centrado en lo humano»: amplía el foco del operador directo a <strong>todas las personas afectadas</strong>. En la práctica, en muchos contextos profesionales DCH y DCU se usan como sinónimos; el matiz importa cuando el sistema tiene impacto más allá de quien lo teclea.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>DCU se centra en quien <strong>maneja</strong> el sistema; DCH amplía la mirada a <strong>todas las personas afectadas</strong>. Es el mismo giro que viste en accesibilidad: pasar de «un grupo concreto» a «el mayor número posible de personas».</p>
+    </div>
+  </section>
+
+  <section id="historia" aria-labelledby="historia-h">
+    <h3 id="historia-h"><span class="num" aria-hidden="true">1.3</span>De la máquina a la persona: breve historia y linaje ISO</h3>
+
+    <p>Durante las primeras décadas de la informática, el diseño estaba <strong>centrado en la máquina</strong>: la persona debía aprender comandos crípticos y adaptarse a lo que el hardware permitía. El error se atribuía siempre al «usuario torpe».</p>
+    <p>El cambio de paradigma llegó cuando se entendió que <strong>si la gente se equivoca de forma sistemática, el problema es de diseño</strong>, no de la persona. Donald Norman fue decisivo en popularizar esta idea fuera del laboratorio.</p>
+
+    <h4>El linaje de la norma</h4>
+    <ul>
+      <li><strong>1988</strong> — Norman publica <em>La psicología de los objetos cotidianos</em>, que lleva al gran público los conceptos de <em>affordances</em>, <em>feedback</em> y modelo conceptual. Norman acuña la expresión «diseño centrado en el usuario».</li>
+      <li><strong>1999</strong> — Aparece la <strong>ISO 13407</strong>, «Procesos de diseño centrado en el operador humano para sistemas interactivos», la primera norma que formaliza el proceso.</li>
+      <li><strong>2010</strong> — La ISO 13407 se revisa y se integra en la familia 9241 como <strong>ISO 9241-210:2010</strong>, ya con el nombre «diseño centrado en lo humano».</li>
+      <li><strong>2019</strong> — Revisión vigente: <strong>UNE-EN ISO 9241-210:2019</strong>, que refuerza la experiencia de usuario, la accesibilidad y la convivencia con métodos ágiles.</li>
+    </ul>
+    <p>No te aprendas las fechas de memoria; quédate con la dirección del cambio: <strong>de centrarse en la tecnología a centrarse en la persona</strong>, y de la buena voluntad a un proceso normalizado.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Norman dirigió el grupo de diseño de Apple en los años noventa e inventó el cargo de <strong>«User Experience Architect»</strong>; suya es buena parte de la popularización del término «experiencia de usuario» (UX). El mismo autor que estudiaste como referencia conceptual de la disciplina está detrás del enfoque que ahora aprendes como proceso.</p>
+    </div>
+  </section>
+
+  <section id="cierre" aria-labelledby="cierre-h">
+    <h3 id="cierre-h"><span class="num" aria-hidden="true">1.4</span>El DCH cierra el Tema 1: IPO + usabilidad + accesibilidad</h3>
+
+    <p>Conviene ver el Tema 1 como una sola idea desplegada en cuatro piezas que encajan. El DCH es la que las ata.</p>
+    <ul>
+      <li>La <strong>IPO</strong> es la disciplina: estudia cómo se relacionan personas y sistemas.</li>
+      <li>La <strong>usabilidad</strong> es un <em>atributo de calidad</em>: mide si los usuarios previstos logran sus objetivos con eficacia, eficiencia y satisfacción.</li>
+      <li>La <strong>accesibilidad</strong> extiende esa calidad al <em>mayor número posible</em> de personas.</li>
+      <li>El <strong>DCH</strong> es el <em>proceso</em> que produce de forma fiable las dos cualidades anteriores.</li>
+    </ul>
+    <p>Dicho de otro modo: usabilidad y accesibilidad son las <strong>metas</strong>; el DCH es el <strong>camino</strong>. Puedes desear un sistema usable, pero solo lo conseguirás de forma repetible si sigues un proceso que lo persiga de forma deliberada.</p>
+
+    <h4>Conexión con la calidad del software</h4>
+    <p>La <strong>ISO/IEC 25010</strong> (familia SQuaRE) recoge la usabilidad —y, dentro de ella, la accesibilidad— como características de calidad del producto software. El DCH es el proceso que asegura que esas características se <strong>especifican, diseñan y verifican</strong>, en lugar de dejarse al azar.</p>
+    <p>Así enlaza con la Ingeniería del Software que ya conoces: igual que no esperas que la seguridad «aparezca sola», tampoco esperas que la usabilidad emerja por suerte. Se diseña con método.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Usabilidad y accesibilidad son <strong>qué</strong> queremos; el DCH es <strong>cómo</strong> lo conseguimos. Es el puente entre los atributos de calidad (ISO/IEC 25010) y la práctica de la ingeniería del software.</p>
+    </div>
+  </section>
+
+  <section id="principios" aria-labelledby="principios-h">
+    <h3 id="principios-h"><span class="num" aria-hidden="true">1.5</span>Los seis principios del DCH (ISO 9241-210, cláusula 4)</h3>
+
+    <p>La norma define seis principios que deben cumplirse para poder afirmar que un proyecto es «centrado en lo humano». No son consejos sueltos: son <strong>condiciones</strong>. Si falta uno, el proceso no es DCH.</p>
+
+    <ol class="principles" role="list">
+      <li><b>1. Basarse en una comprensión explícita de usuarios, tareas y entornos.</b> No se diseña por suposición. Se investiga quiénes son las personas, qué quieren lograr y en qué contexto lo harán.</li>
+      <li><b>2. Implicar a los usuarios en todo el diseño y el desarrollo.</b> Las personas reales participan de principio a fin, no solo en una encuesta final. Su voz alimenta cada iteración.</li>
+      <li><b>3. Dirigir y refinar el diseño mediante evaluación centrada en el usuario.</b> Cada decisión se contrasta con datos de uso real; la evaluación no es el último paso, sino el motor del proceso.</li>
+      <li><b>4. El proceso es iterativo.</b> Se diseña, se prueba, se corrige y se vuelve a probar, tantas veces como haga falta hasta cumplir los requisitos.</li>
+      <li><b>5. El diseño aborda la experiencia de usuario completa.</b> No solo la pantalla: también las emociones, expectativas, la marca, el antes y el después del uso. La UX es más amplia que la usabilidad.</li>
+      <li><b>6. El equipo de diseño incluye perspectivas y competencias multidisciplinares.</b> Programación, diseño visual, psicología, negocio, dominio del problema… La diversidad de miradas evita el punto ciego del especialista único.</li>
+    </ol>
+
+    <p>Fíjate en que tres de los seis (comprensión, participación y evaluación) hablan de <strong>traer a la persona real al proyecto</strong>, y otros tres (iteración, UX completa, multidisciplinariedad) describen <strong>cómo debe trabajar el equipo</strong>.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>El principio de <strong>iteración</strong> es lo que más choca con la intuición de quien empieza en ingeniería: la primera versión <em>se supone</em> que estará equivocada en parte. El valor no está en acertar a la primera, sino en <strong>descubrir el error pronto y barato</strong>, con un prototipo, antes de haber programado nada definitivo.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Seis principios, dos familias: <strong>traer a la persona al proyecto</strong> (comprensión, participación, evaluación) y <strong>cómo trabaja el equipo</strong> (iteración, UX completa, multidisciplinariedad). Si un proyecto incumple uno, no es DCH aunque lo diga su portada.</p>
+    </div>
+  </section>
+
+  <section id="actividades" aria-labelledby="actividades-h">
+    <h3 id="actividades-h"><span class="num" aria-hidden="true">1.6</span>Las cuatro actividades del proceso iterativo</h3>
+
+    <p>El corazón operativo de la ISO 9241-210 son <strong>cuatro actividades</strong> que se ejecutan en ciclo. No es una línea recta: es una rueda que gira hasta que el sistema cumple los requisitos.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 600" role="img" aria-labelledby="cyc-title cyc-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="cyc-title">Ciclo iterativo del Diseño Centrado en lo Humano según la norma ISO 9241-210</title>
+        <desc id="cyc-desc">Una actividad de planificación inicia el proceso. A continuación, cuatro actividades se ejecutan en bucle en el sentido de las agujas del reloj: A, entender y especificar el contexto de uso; B, especificar los requisitos de usuario; C, producir soluciones de diseño; y D, evaluar el diseño frente a los requisitos. Tras evaluar se regresa a una actividad anterior y se repite el ciclo hasta que el sistema cumple los requisitos de usuario.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
+          </marker>
+        </defs>
+
+        <!-- Banner planificación -->
+        <rect x="200" y="18" width="320" height="56" rx="10" fill="#FDFBF6" stroke="#211C16" stroke-width="2"></rect>
+        <text x="360" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#8A3412" letter-spacing="1">PLANIFICACIÓN</text>
+        <text x="360" y="62" text-anchor="middle" font-size="15" fill="#211C16">Planificar el proceso DCH</text>
+        <line x1="360" y1="76" x2="360" y2="136" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></line>
+
+        <!-- Flechas del ciclo (sentido horario) -->
+        <line x1="463" y1="208" x2="476" y2="312" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <line x1="548" y1="388" x2="468" y2="491" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <line x1="252" y1="520" x2="170" y2="389" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+        <line x1="172" y1="312" x2="252" y2="204" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
+
+        <!-- Caja A: contexto de uso (teal) -->
+        <rect x="255" y="140" width="210" height="70" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="360" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">A · Contexto de uso</text>
+        <text x="360" y="190" text-anchor="middle" font-size="12.5" fill="#211C16">Usuarios, tareas y entorno</text>
+
+        <!-- Caja B: requisitos (ochre) -->
+        <rect x="455" y="315" width="210" height="70" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
+        <text x="560" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5A12">B · Requisitos de usuario</text>
+        <text x="560" y="365" text-anchor="middle" font-size="12.5" fill="#211C16">Necesidades verificables</text>
+
+        <!-- Caja C: soluciones (green) -->
+        <rect x="255" y="490" width="210" height="70" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
+        <text x="360" y="520" text-anchor="middle" font-size="14" font-weight="700" fill="#2C5A2E">C · Soluciones de diseño</text>
+        <text x="360" y="540" text-anchor="middle" font-size="12.5" fill="#211C16">Prototipos</text>
+
+        <!-- Caja D: evaluación (terra) -->
+        <rect x="55" y="315" width="210" height="70" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
+        <text x="160" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#8A3412">D · Evaluación</text>
+        <text x="160" y="365" text-anchor="middle" font-size="12.5" fill="#211C16">Frente a los requisitos</text>
+
+        <!-- Centro: iterar -->
+        <circle cx="360" cy="350" r="64" fill="none" stroke="#211C16" stroke-width="2" stroke-dasharray="6 7"></circle>
+        <path d="M360 286 A64 64 0 0 1 414 318" fill="none" stroke="#211C16" stroke-width="2" marker-end="url(#ah)"></path>
+        <text x="360" y="342" text-anchor="middle" font-size="13" font-weight="700" fill="#211C16">Iterar hasta</text>
+        <text x="360" y="360" text-anchor="middle" font-size="13" font-weight="700" fill="#211C16">cumplir los</text>
+        <text x="360" y="378" text-anchor="middle" font-size="13" font-weight="700" fill="#211C16">requisitos</text>
+      </svg>
+      <figcaption>El proceso de la ISO 9241-210: una planificación inicial y cuatro actividades que se repiten en bucle (A → B → C → D) hasta cumplir los requisitos de usuario. La descripción completa está disponible para lectores de pantalla y se desarrolla en la lista siguiente.</figcaption>
+    </figure>
+
+    <ol class="cycle" role="list">
+      <li><b>A. Entender y especificar el contexto de uso.</b> ¿Quiénes son los usuarios? ¿Qué tareas realizan? ¿En qué entorno físico, social y técnico? Aquí se observa y se pregunta, no se inventa. Es la materia del Tema 2 (análisis).</li>
+      <li><b>B. Especificar los requisitos de usuario.</b> A partir de ese contexto se derivan necesidades y requisitos concretos y verificables, incluidos los de usabilidad y accesibilidad (p. ej., «cualquier usuario completa el alta en menos de 3 minutos», «cumple WCAG 2.1 AA»).</li>
+      <li><b>C. Producir soluciones de diseño.</b> Se generan soluciones que cumplen esos requisitos: desde bocetos a prototipos de baja, media y alta fidelidad. Es la materia del Tema 3 (diseño y prototipado).</li>
+      <li><b>D. Evaluar el diseño frente a los requisitos.</b> Se prueba con usuarios o expertos para comprobar si la solución cumple. Si no, <strong>se vuelve</strong> a una actividad anterior. Es la materia del Tema 4 (evaluación).</li>
+    </ol>
+
+    <p>El proceso <strong>itera</strong>: tras evaluar (D) casi siempre se regresa, ya sea a rediseñar (C), a reformular requisitos (B) o incluso a entender mejor el contexto (A). El ciclo termina cuando el sistema <strong>satisface los requisitos de usuario</strong> fijados en la actividad B.</p>
+
+    <h4>Por qué empezar por el contexto y no por la solución</h4>
+    <p>La tentación del ingeniero novel es empezar por C: abrir el editor y maquetar pantallas. El DCH lo prohíbe expresamente. Sin A y B sólidas, diseñas <strong>una solución preciosa para el problema equivocado</strong>.</p>
+    <p>El orden A → B → C → D no es burocracia: es el seguro contra construir, con todo el esfuerzo del mundo, algo que nadie necesita o nadie puede usar.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuatro actividades en bucle: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. El ciclo se cierra cuando el sistema cumple los requisitos de usuario. En esta asignatura, esas cuatro actividades se reparten entre los Temas 2, 3 y 4.</p>
+    </div>
+  </section>
+
+  <section id="entregables" aria-labelledby="entregables-h">
+    <h3 id="entregables-h"><span class="num" aria-hidden="true">1.7</span>Entregables de cada actividad y rol de la planificación</h3>
+
+    <p>Antes de girar la rueda, la norma añade una actividad transversal: <strong>planificar el proceso de diseño centrado en lo humano</strong>. Decidir qué actividades, con qué recursos, en qué plazos y con qué hitos se integrarán en el proyecto.</p>
+    <p>Cada actividad produce <strong>resultados tangibles</strong>. Esto es importante para ti: en el proyecto, esos resultados serán tus entregas.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Actividad del proceso DCH y su entregable característico (según ISO 9241-210), y el tema de la asignatura donde se trabaja.</caption>
+      <thead>
+        <tr><th scope="col">Actividad</th><th scope="col">Entregable típico</th><th scope="col">Tema</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Planificación</th><td>Plan de proceso DCH del proyecto</td><td>1</td></tr>
+        <tr><th scope="row">A. Contexto de uso</th><td>Descripción del contexto, perfiles de usuario, escenarios, análisis de tareas</td><td>2</td></tr>
+        <tr><th scope="row">B. Requisitos de usuario</th><td>Especificación de necesidades y requisitos (incluida usabilidad y accesibilidad)</td><td>2</td></tr>
+        <tr><th scope="row">C. Soluciones de diseño</th><td>Prototipos de baja, media y alta fidelidad</td><td>3</td></tr>
+        <tr><th scope="row">D. Evaluación</th><td>Informe de evaluación de usabilidad y accesibilidad</td><td>4</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>La experiencia de usuario completa</h4>
+    <p>La norma insiste en el quinto principio: diseñar la <strong>UX completa</strong>. La ISO 9241-210 define la experiencia de usuario como las <strong>percepciones y respuestas</strong> de la persona derivadas del uso o del uso previsto de un sistema.</p>
+    <p>Eso incluye emociones, creencias, preferencias y reacciones que ocurren <strong>antes, durante y después</strong> de la interacción. La usabilidad mide si la tarea se cumple; la UX abarca además cómo se siente la persona al hacerlo.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El DCH se <strong>planifica</strong> primero y luego se ejecuta en cuatro actividades, cada una con su entregable. La UX es más amplia que la usabilidad: incluye lo emocional y lo que rodea al uso, no solo el rendimiento en la tarea.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo se reconoce el DCH a tu alrededor, cómo encaja con la ingeniería del software, qué cuesta ignorarlo y, sobre todo, cómo lo aplicarás en el proyecto de la asignatura.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>El DCH en lo cotidiano: las «puertas Norman»</h3>
+
+    <p>El DCH no es exclusivo del software. Sus principios se reconocen en cualquier objeto bien o mal diseñado. El ejemplo canónico es la puerta.</p>
+    <p>Una <strong>«puerta Norman»</strong> es esa puerta con una barra horizontal para empujar… que en realidad hay que tirar. La forma del objeto sugiere una acción equivocada. La gente choca con ella, y casi siempre se siente torpe en lugar de culpar al diseño.</p>
+
+    <h4>Lo que la puerta te enseña sobre el software</h4>
+    <ul>
+      <li><strong>Affordance</strong>: la forma de un control debería sugerir cómo se usa (una barra «pide» empujar; un asa «pide» tirar). Una interfaz bien diseñada hace lo mismo con sus botones.</li>
+      <li><strong>Señalización (<em>signifiers</em>)</strong>: cuando la forma no basta, se añade una pista. El cartel «TIRAR» es el equivalente al microcopy que aclara un botón ambiguo.</li>
+      <li><strong>Culpar al diseño, no a la persona</strong>: si muchos usuarios fallan en el mismo punto de tu app, no formes mejor al usuario; rediseña ese punto.</li>
+    </ul>
+    <p>Cuando empieces a ver «puertas Norman» en cajeros, mandos a distancia, vitrocerámicas o formularios web, habrás interiorizado la mirada del DCH: <strong>el buen diseño es invisible; el malo te hace sentir tonto</strong>.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Hoy, fíjate en la primera puerta de doble hoja que cruces en la facultad. ¿Su tirador te dice si empujar o tirar? Si dudas medio segundo, acabas de encontrar una «puerta Norman». Ahora busca la versión digital: un botón de una app cuyo texto no te dice qué pasará al pulsarlo.</p>
+    </div>
+  </section>
+
+  <section id="software" aria-labelledby="software-h">
+    <h3 id="software-h"><span class="num" aria-hidden="true">2.2</span>DCH y los ciclos de vida del software (cascada, iterativo, ágil)</h3>
+
+    <p>Una duda razonable: si ya estudiaste modelos de proceso en Ingeniería del Software, ¿es el DCH un modelo de ciclo de vida más? No exactamente: el DCH <strong>no construye el software</strong>; se <strong>integra</strong> en el proceso que sí lo construye.</p>
+
+    <h4>Cómo convive con cada modelo</h4>
+    <ul>
+      <li><strong>Con cascada:</strong> encaja mal. La cascada congela los requisitos al principio y prohíbe volver atrás, mientras que el DCH exige iterar. Forzarlos juntos suele dejar la usabilidad para el final, cuando ya es caro arreglarla.</li>
+      <li><strong>Con modelos iterativos e incrementales:</strong> encaja de forma natural. Cada iteración del software puede incluir un ciclo DCH (contexto → requisitos → diseño → evaluación).</li>
+      <li><strong>Con métodos ágiles (Scrum, etc.):</strong> es la combinación que la revisión de 2019 contempla de forma explícita. El DCH aporta la voz del usuario y la evaluación continua que el desarrollo ágil necesita para no «entregar rápido lo que no sirve».</li>
+    </ul>
+    <p>La bibliografía de la asignatura refleja este giro: <em>The UX Book</em> de Hartson y Pyla lleva por subtítulo, precisamente, «Agile UX Design». El DCH moderno se piensa para convivir con el desarrollo iterativo y ágil, no contra él.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El DCH no sustituye a tu modelo de desarrollo: lo <strong>complementa</strong>. Encaja a la perfección con procesos iterativos y ágiles, y mal con la cascada pura, porque su esencia es iterar a partir de la respuesta de las personas.</p>
+    </div>
+  </section>
+
+  <section id="coste" aria-labelledby="coste-h">
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: el coste de no aplicar DCH</h3>
+
+    <p>El DCH tiene una justificación económica, no solo ética. La regla de ingeniería del software que ya conoces se aplica aquí: <strong>cuanto más tarde se detecta un defecto, más cuesta corregirlo</strong>.</p>
+    <p>Un problema de usabilidad descubierto sobre un boceto en papel se arregla con una goma. El mismo problema descubierto tras desplegar en producción puede costar reescribir módulos, soporte, reputación y usuarios perdidos.</p>
+
+    <h4>Por qué los datos de uso real importan</h4>
+    <p>El argumento se vuelve tangible al mirar cuánta vida pasa hoy por interfaces digitales. El <strong>Instituto Nacional de Estadística (INE)</strong>, en su <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, mide la relación de la población con la Administración por Internet.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, Encuesta sobre Equipamiento y Uso de Tecnologías de la Información y Comunicación en los Hogares. Cifra utilizada como referencia en los apuntes de Accesibilidad de este mismo Tema 1.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Población que se relaciona con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Ocho de cada diez personas resuelven trámites esenciales a través de una pantalla. Si esa pantalla no se diseñó con un proceso centrado en lo humano, el coste del mal diseño no lo paga la empresa: lo paga la <strong>ciudadanía que no consigue hacer su gestión</strong>.</p>
+    <p>El DCH es, en este sentido, una inversión: gastar antes —en entender, prototipar y evaluar— para no gastar mucho más después en rehacer, dar soporte y perder usuarios.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Aplicar DCH no es un lujo: es la forma barata de evitar el error caro. Encontrar un problema en un prototipo cuesta una goma de borrar; encontrarlo en producción cuesta un proyecto.</p>
+    </div>
+  </section>
+
+  <section id="proyecto" aria-labelledby="proyecto-h">
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto se hará con este modelo: ISO 9241-210 paso a paso</h3>
+
+    <p>Esta es la transferencia más directa para ti. El <strong>proyecto que desarrollarás durante toda la asignatura seguirá el proceso definido en la ISO 9241-210</strong>. No es un ejercicio teórico: es la columna vertebral de la evaluación.</p>
+    <p>Según el plan docente, el proyecto evalúa exactamente «la capacidad de realizar un proyecto siguiendo el proceso definido en ISO 9241-210», con entregas parciales y una entrega final. Las cuatro actividades que acabas de ver son tus fases de trabajo.</p>
+
+    <h4>El mapa entre la norma y la asignatura</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cómo las actividades del DCH se materializan en el proyecto y se reparten por los temas de la asignatura.</caption>
+      <thead>
+        <tr><th scope="col">Fase del proyecto (ISO 9241-210)</th><th scope="col">Qué harás</th><th scope="col">Tema</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Presentación del problema</th><td>Definir el reto y el equipo de trabajo</td><td>1</td></tr>
+        <tr><th scope="row">A · Contexto de uso</th><td>Identificar usuarios, tareas e información; <em>Design Thinking</em></td><td>2</td></tr>
+        <tr><th scope="row">B · Requisitos de usuario</th><td>Especificar necesidades y requisitos, con metas de usabilidad y accesibilidad</td><td>2</td></tr>
+        <tr><th scope="row">C · Soluciones de diseño</th><td>Prototipar en baja, media y alta fidelidad</td><td>3</td></tr>
+        <tr><th scope="row">D · Evaluación</th><td>Evaluar la usabilidad y la accesibilidad del prototipo</td><td>4</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Tres consecuencias prácticas que conviene tener claras desde hoy</h4>
+    <ul>
+      <li><strong>Las entregas parciales son <em>checkpoints</em> del proceso.</strong> No se califican una a una, pero no presentarlas en plazo significa no superar el bloque del proyecto. Cada entrega demuestra que has hecho la actividad DCH correspondiente, no solo que tienes «pantallas bonitas».</li>
+      <li><strong>El proceso debe ser visible y demostrable.</strong> La evaluación verifica que «se ha seguido un proceso de DCH»: tendrás que <em>evidenciar</em> el contexto de uso, los requisitos, las iteraciones y la evaluación, no solo el producto final.</li>
+      <li><strong>La accesibilidad es requisito mínimo.</strong> Si el prototipo no supera una revisión rápida conforme a los criterios <strong>AA de WCAG</strong>, no se superan los mínimos del bloque. La accesibilidad que estudiaste se incorpora aquí como requisito de la actividad B y como criterio de la D.</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>El proyecto de DISI <strong>es</strong> un proceso ISO 9241-210 en miniatura: planificar, entender el contexto, especificar requisitos, prototipar y evaluar, iterando. Lo que se califica no es solo el producto, sino la <strong>evidencia de que seguiste el proceso</strong>, con el nivel AA de WCAG como umbral de accesibilidad.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de observación para esta semana</h3>
+
+    <p>El DCH se aprende mirando con otros ojos lo que ya te rodea. Prueba estos retos antes de la próxima sesión.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Caza el contexto de uso</span>
+      <p>Elige una app que uses a diario y describe su <strong>contexto de uso</strong> real: ¿quién la usa, para qué tarea concreta y en qué entorno (¿de pie en el metro?, ¿con prisa?, ¿con una mano?)? Comprueba cuántas decisiones de diseño cobran sentido al conocer ese contexto.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 2 · Convierte una queja en un requisito</span>
+      <p>Recuerda la última vez que algo digital te frustró. Reescribe esa frustración como un <strong>requisito de usuario verificable</strong> («el sistema debe permitir cancelar la compra en un solo paso»). Acabas de hacer, a pequeña escala, la actividad B del DCH.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto 3 · Iteración de bolsillo</span>
+      <p>Dibuja en papel, en cinco minutos, la pantalla de inicio de una app para pedir cita en el médico. Enséñasela a alguien sin explicar nada y observa dónde duda. Esa duda es una <strong>evaluación</strong>; corrígela y vuelve a enseñarla. Ya has iterado.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+
+    <p>El plan docente lo dice sin rodeos: una de las competencias de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), junto con asegurar la ergonomía y la calidad del software (CG03, CG05).</p>
+    <p>El DCH es la herramienta que te permite cumplir esa competencia <strong>de forma profesional y repetible</strong>, no por intuición. Es lo que distingue a quien «hace pantallas» de quien diseña sistemas que las personas pueden usar de verdad.</p>
+
+    <h4>Una decisión que es tuya</h4>
+    <p>Cuando especifiques requisitos sin hablar con un solo usuario, cuando saltes la fase de prototipo «por ir rápido» o cuando dejes la evaluación «para si sobra tiempo», estarás decidiendo, de hecho, <strong>centrar el diseño en la máquina otra vez</strong>.</p>
+    <p>El DCH te da el método y la norma te da el respaldo. La elección de aplicarlo, en cada proyecto que firmes, será tuya.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Saber programar te permite construir el sistema; dominar el DCH te permite construir el sistema <strong>correcto</strong>. Es la diferencia entre ejecutar una solución y resolver el problema de las personas.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. Define el Diseño Centrado en lo Humano y di qué norma lo regula.</summary>
+      <p>Es un enfoque de diseño y desarrollo de sistemas interactivos que busca hacerlos más usables centrándose en su uso real y aplicando factores humanos, ergonomía y usabilidad. Lo regula la <strong>ISO 9241-210</strong> (en España, UNE-EN ISO 9241-210:2019), dentro de la familia ISO 9241 de ergonomía de la interacción persona-sistema. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. ¿Por qué se dice «humano» y no solo «usuario»?</summary>
+      <p>Porque amplía el foco del usuario directo (quien opera el sistema) a todas las personas afectadas: usuarios indirectos y otros grupos de interés. Es el mismo giro de la accesibilidad, de «un grupo concreto» a «el mayor número posible de personas». <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Cómo se relaciona el DCH con la usabilidad y la accesibilidad?</summary>
+      <p>La usabilidad y la accesibilidad son metas (atributos de calidad: el «qué»); el DCH es el proceso que las consigue de forma fiable (el «cómo»). El DCH cierra el Tema 1 enlazando IPO, usabilidad y accesibilidad con la ingeniería del software (ISO/IEC 25010). <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Enumera los seis principios del DCH.</summary>
+      <p>1) Comprensión explícita de usuarios, tareas y entornos; 2) implicación de los usuarios en todo el proceso; 3) diseño dirigido y refinado por evaluación centrada en el usuario; 4) proceso iterativo; 5) abordar la experiencia de usuario completa; 6) equipo multidisciplinar. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿Cuáles son las cuatro actividades del proceso y en qué orden van?</summary>
+      <p>A) Entender y especificar el contexto de uso; B) especificar los requisitos de usuario; C) producir soluciones de diseño; D) evaluar el diseño frente a los requisitos. Se ejecutan en bucle (se itera) hasta que el sistema cumple los requisitos de usuario. <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. ¿Por qué no se empieza por diseñar pantallas?</summary>
+      <p>Porque sin entender el contexto de uso (A) y especificar requisitos (B) corres el riesgo de construir una solución excelente para el problema equivocado. El orden A→B→C→D protege el esfuerzo del equipo. <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Es el DCH un modelo de ciclo de vida del software como la cascada?</summary>
+      <p>No. El DCH no construye el software; se integra en el proceso que lo construye. Encaja bien con modelos iterativos y ágiles (como recoge la revisión de 2019 y refleja <em>The UX Book</em>) y mal con la cascada pura, porque su esencia es iterar a partir de la respuesta de las personas. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Cómo se aplicará el DCH en el proyecto de la asignatura?</summary>
+      <p>El proyecto seguirá el proceso de la ISO 9241-210: planificación (Tema 1), contexto de uso y requisitos (Tema 2), prototipado (Tema 3) y evaluación (Tema 4). Las entregas parciales son <em>checkpoints</em> obligatorios, hay que evidenciar el proceso y el prototipo debe superar una revisión rápida de accesibilidad de nivel AA de WCAG. <em>(Ver 2.4)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Diseño Centrado en lo Humano (DCH)</dt>
+      <dd>Enfoque de diseño y desarrollo de sistemas interactivos que busca hacerlos más usables centrándose en su uso real y aplicando factores humanos, ergonomía y usabilidad. Definido en la ISO 9241-210.</dd>
+      <dt>Diseño Centrado en el Usuario (DCU)</dt>
+      <dd>Enfoque equivalente centrado en quien opera directamente el sistema. El DCH amplía el foco a todas las personas afectadas; a menudo se usan como sinónimos.</dd>
+      <dt>ISO 9241-210</dt>
+      <dd>Norma internacional «Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en lo humano para sistemas interactivos». Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+      <dt>ISO 13407</dt>
+      <dd>Norma de 1999, predecesora de la 9241-210, que formalizó por primera vez el proceso de diseño centrado en el operador humano.</dd>
+      <dt>Contexto de uso</dt>
+      <dd>Conjunto de usuarios, tareas, equipos y entorno (físico, social, organizativo) en el que se usa un sistema. Es la primera actividad del proceso DCH.</dd>
+      <dt>Requisito de usuario</dt>
+      <dd>Necesidad de la persona expresada de forma concreta y verificable, incluidas las metas de usabilidad y accesibilidad. Es la segunda actividad del proceso.</dd>
+      <dt>Iteración</dt>
+      <dd>Repetición del ciclo diseñar–evaluar–corregir hasta cumplir los requisitos. Principio central del DCH.</dd>
+      <dt>Prototipo</dt>
+      <dd>Representación preliminar de una solución de diseño (baja, media o alta fidelidad) que permite evaluar ideas antes de construir el producto.</dd>
+      <dt>Experiencia de usuario (UX)</dt>
+      <dd>Percepciones y respuestas de la persona derivadas del uso o uso previsto de un sistema; incluye emociones y reacciones antes, durante y después de la interacción. Es más amplia que la usabilidad.</dd>
+      <dt>Affordance</dt>
+      <dd>Propiedad de un objeto o control que sugiere cómo puede usarse (una barra invita a empujar; un asa, a tirar).</dd>
+      <dt>Grupo de interés (stakeholder)</dt>
+      <dd>Persona u organización afectada por el sistema, interactúe o no directamente con él.</dd>
+      <dt>Factores humanos / Ergonomía</dt>
+      <dd>Disciplina que estudia cómo ajustar los sistemas a las capacidades y limitaciones de las personas; aquí, sobre todo en su vertiente cognitiva.</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>El <strong>DCH</strong> es el <em>proceso</em> que produce sistemas usables y accesibles. Usabilidad y accesibilidad son el «qué»; el DCH es el «cómo».</li>
+        <li>Está normalizado en la <strong>ISO 9241-210</strong> (UNE-EN ISO 9241-210:2019), heredera de la ISO 13407 (1999), dentro de la familia ISO 9241 de ergonomía de la interacción.</li>
+        <li>«Humano» en vez de «usuario» porque amplía el foco a <strong>todas las personas afectadas</strong>, no solo a quien teclea.</li>
+        <li>Seis <strong>principios</strong>: comprensión de usuarios/tareas/entornos, participación de los usuarios, evaluación que dirige el diseño, iteración, UX completa y equipo multidisciplinar.</li>
+        <li>Cuatro <strong>actividades</strong> en bucle: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar hasta cumplir los requisitos.</li>
+        <li>No es un ciclo de vida del software: se <strong>integra</strong> en él y encaja especialmente bien con métodos iterativos y ágiles.</li>
+        <li>Su justificación es económica además de ética: <strong>encontrar el error pronto y barato</strong>. Con el 80,7 % de la población usando la e-Administración (INE), el mal diseño excluye a millones.</li>
+        <li>El <strong>proyecto de la asignatura se realizará siguiendo este modelo</strong>: planificación (T1), contexto y requisitos (T2), prototipado (T3) y evaluación (T4), con entregas parciales obligatorias y el nivel <strong>AA de WCAG</strong> como umbral de accesibilidad.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Norman, D. A. <em>El diseño emocional</em>. Paidós, 2005.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas técnicas:</p>
+    <ol class="refs" start="9">
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>ISO 13407:1999. <em>Human-centred design processes for interactive systems</em> (predecesora, revisada como ISO 9241-210).</li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; la usabilidad y la accesibilidad como características de calidad.</li>
+      <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado.</em></li>
+      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+    </ol>
+    <p>Datos y recursos en línea:</p>
+    <ol class="refs" start="14">
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>.</li>
+      <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
+      <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 1 «Conceptos básicos» · Concepto: <em>Diseño Centrado en lo Humano</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

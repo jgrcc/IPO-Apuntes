@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Apuntes de apoyo del concepto de Usabilidad. Tema 1 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
+<title>Usabilidad · Apuntes Tema 1 · DISI (UEx)</title>
+<link rel="stylesheet" href="apuntes.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Tema 1 · Conceptos básicos · Material de apoyo</p>
+    <h1>Usabilidad
+      <span class="sub">Cuando «funcionar» no basta: que la persona, de verdad, pueda</span>
+    </h1>
+    <ul class="meta-grid" role="list">
+      <li><b>Asignatura</b>Diseño e Interacción en Sistemas de Información (501282)</li>
+      <li><b>Titulación</b>Grado en Ingeniería Informática (EPCC, UEx)</li>
+      <li><b>Curso</b>3.º · 5.º semestre</li>
+      <li><b>Competencias</b>CG03 · CI17 · CB04</li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Índice de contenidos">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#como-usar">Cómo usar estos apuntes</a></li>
+      <li><a href="#parte1">Parte 1 · Contenido base</a>
+        <ol>
+          <li class="lvl2"><a href="#que-es">¿Qué es la usabilidad? La definición que importa</a></li>
+          <li class="lvl2"><a href="#tres-pilares">Los tres pilares: eficacia, eficiencia y satisfacción</a></li>
+          <li class="lvl2"><a href="#no-confundir">Lo que la usabilidad NO es: vecinos que conviene separar</a></li>
+          <li class="lvl2"><a href="#componentes">Los cinco componentes y las 10 heurísticas de Nielsen</a></li>
+          <li class="lvl2"><a href="#krug">«No me hagas pensar»: la usabilidad como evidencia</a></li>
+          <li class="lvl2"><a href="#calidad">La usabilidad como atributo de calidad del software</a></li>
+          <li class="lvl2"><a href="#medir">¿Se puede medir? Métricas e instrumentos</a></li>
+        </ol>
+      </li>
+      <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
+        <ol>
+          <li class="lvl2"><a href="#cotidiano">La usabilidad en tu día a día</a></li>
+          <li class="lvl2"><a href="#datos">Anclaje real: el impacto medido en España</a></li>
+          <li class="lvl2"><a href="#sus">Mídelo tú: la escala SUS paso a paso</a></li>
+          <li class="lvl2"><a href="#retos">Retos de observación para esta semana</a></li>
+          <li class="lvl2"><a href="#entorno">Tu entorno: por qué te concierne como ingeniero</a></li>
+        </ol>
+      </li>
+      <li><a href="#comprueba">Comprueba tu comprensión</a></li>
+      <li><a href="#glosario">Glosario rápido</a></li>
+      <li><a href="#resumen">Resumen: ideas clave</a></li>
+      <li><a href="#refs">Referencias y recursos</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main id="contenido" class="wrap">
+
+  <section id="como-usar" aria-labelledby="como-usar-h">
+    <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
+    <p>Este documento acompaña a la clase expositiva sobre <strong>usabilidad</strong>, dentro del Tema 1. No sustituye a la explicación en el aula: la complementa y te deja repasar a tu ritmo.</p>
+    <p>Damos por sabido el concepto de <strong>Interacción Persona-Ordenador</strong> que vimos antes. La usabilidad es, en cierto modo, su «medida de calidad»: si la IPO describe el diálogo persona-sistema, la usabilidad mide <em>cómo de bien</em> va ese diálogo.</p>
+    <p>Sigue el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>. Por eso verás la misma idea presentada de varias formas: en prosa, en cajas de «idea clave», con tablas, ejemplos cotidianos y preguntas de autocomprobación.</p>
+    <ul>
+      <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
+      <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
+      <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu vida.</li>
+      <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
+    </ul>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Un sistema puede <strong>funcionar</strong> perfectamente y, aun así, ser <strong>inusable</strong>. La usabilidad no pregunta «¿hace lo que tiene que hacer?», sino «¿puede una persona real conseguir su objetivo con él, sin sufrir?».</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTE 1 ============ -->
+  <div class="part" id="parte1">
+    <span class="tag">Parte 1 de 2</span>
+    <h2>Contenido base: qué es y cómo se sostiene</h2>
+    <p class="lead">Definición normativa, componentes, vocabulario y su lugar en la calidad del software.</p>
+  </div>
+
+  <section id="que-es" aria-labelledby="que-es-h">
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>¿Qué es la usabilidad? La definición que importa</h3>
+
+    <p>De forma intuitiva, decimos que algo es «usable» cuando es fácil de usar. Cierto, pero esa frase es demasiado vaga para un ingeniero: no se puede especificar, ni medir, ni defender en una reunión.</p>
+    <p>Por eso partimos de la definición que la disciplina ha consensuado y que está recogida en una norma internacional, la <strong>ISO 9241-11</strong>. Esa norma define la usabilidad así:</p>
+
+    <div class="box key">
+      <span class="label">Definición · ISO 9241-11</span>
+      <p>Usabilidad es el <strong>grado</strong> en que un sistema, producto o servicio puede ser utilizado por <strong>usuarios concretos</strong> para lograr <strong>objetivos concretos</strong> con <strong>eficacia</strong>, <strong>eficiencia</strong> y <strong>satisfacción</strong>, en un <strong>contexto de uso</strong> determinado.</p>
+    </div>
+
+    <p>Lee esa frase despacio, porque cada palabra subrayada es deliberada. Conviene desmontarla pieza a pieza.</p>
+
+    <h4>«Grado»: la usabilidad no es un sí/no</h4>
+    <p>La usabilidad no es una propiedad que un sistema «tiene» o «no tiene». Es un <strong>continuo</strong>: un sistema es más o menos usable. Esto importa porque significa que se puede mejorar, comparar y, sobre todo, <em>medir</em>.</p>
+
+    <h4>«Usuarios concretos» y «objetivos concretos»</h4>
+    <p>No existe la usabilidad «en abstracto». Algo es usable <strong>para alguien</strong> que intenta <strong>hacer algo</strong>. La misma interfaz puede ser excelente para un administrativo experto y un muro para una persona mayor que entra una vez al año.</p>
+    <p>De ahí una regla de oro de la disciplina, que enlaza con la frase de Norman del tema anterior: <strong>tú no eres tu usuario</strong>. Lo que a ti, futuro ingeniero, te resulta evidente, puede no serlo para quien usará tu sistema.</p>
+
+    <h4>«Contexto de uso»: dónde, con qué y en qué condiciones</h4>
+    <p>El contexto incluye los usuarios, las tareas, los equipos (hardware, software, red) y el entorno (físico, social, organizativo). No se diseña igual una app para el sofá que un panel para usar conduciendo o con guantes.</p>
+    <p>Una interfaz puede ser muy usable en un despacho silencioso y desplomarse al sol del mediodía, con prisa, en un móvil pequeño y con una mano ocupada.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La usabilidad pertenece a la <strong>familia de normas ISO 9241</strong>, la misma a la que pertenece la ISO 9241-210 (Diseño Centrado en el Humano) que ya conoces. No es casualidad: todas nacen de la <strong>ergonomía</strong>, la ciencia de ajustar las herramientas al ser humano y no al revés.</p>
+    </div>
+  </section>
+
+  <section id="tres-pilares" aria-labelledby="tres-pilares-h">
+    <h3 id="tres-pilares-h"><span class="num" aria-hidden="true">1.2</span>Los tres pilares: eficacia, eficiencia y satisfacción</h3>
+
+    <p>El corazón de la definición ISO son tres dimensiones que debes saber distinguir con total claridad, porque se confunden constantemente. No son sinónimos: miden cosas distintas.</p>
+
+    <h4>Eficacia (effectiveness): ¿lo consigue?</h4>
+    <p>Es la <strong>precisión y completitud</strong> con que las personas logran sus objetivos. Responde a la pregunta más básica: <em>¿la persona termina la tarea, y la termina bien?</em></p>
+    <p>Si la gente abandona a mitad o cree haber comprado un billete que en realidad no se compró, hay un problema de eficacia. Es el pilar prioritario: de nada sirve ser rápido si no consigues nada.</p>
+
+    <h4>Eficiencia (efficiency): ¿a qué coste?</h4>
+    <p>Es la relación entre el <strong>resultado</strong> logrado y los <strong>recursos invertidos</strong> para lograrlo: tiempo, número de pasos, esfuerzo cognitivo, clics.</p>
+    <p>Dos sistemas pueden ser igual de eficaces (ambos completan la tarea) pero muy distintos en eficiencia: uno te lleva 30 segundos y dos pasos; el otro, cinco minutos y diez pantallas.</p>
+
+    <h4>Satisfacción (satisfaction): ¿cómo se siente?</h4>
+    <p>Es el grado de <strong>comodidad y aceptabilidad</strong> que percibe la persona. Incluye la ausencia de frustración y la actitud positiva hacia el sistema.</p>
+    <p>Es subjetiva, pero no por ello menos real ni menos medible: se captura con cuestionarios y escalas, como veremos. Un sistema técnicamente correcto que irrita a la gente acabará abandonado.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los tres pilares de la usabilidad (ISO 9241-11) y cómo se preguntan.</caption>
+      <thead>
+        <tr><th scope="col">Pilar</th><th scope="col">Pregunta que responde</th><th scope="col">Ejemplo de fallo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Eficacia</th><td>¿Logra la persona su objetivo, y correctamente?</td><td>Cree que reservó cita, pero no se guardó.</td></tr>
+        <tr><th scope="row">Eficiencia</th><td>¿Con cuánto tiempo, pasos y esfuerzo?</td><td>Diez pantallas para algo que cabía en dos.</td></tr>
+        <tr><th scope="row">Satisfacción</th><td>¿Cómo de cómoda y aceptable le resulta?</td><td>Termina la tarea, pero «odia» la web.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Memoriza la tríada <strong>eficacia · eficiencia · satisfacción</strong>. Es la columna vertebral del concepto y el origen de casi todas las métricas que usarás. Si solo recuerdas una cosa de este tema, que sea esta.</p>
+    </div>
+  </section>
+
+  <section id="no-confundir" aria-labelledby="no-confundir-h">
+    <h3 id="no-confundir-h"><span class="num" aria-hidden="true">1.3</span>Lo que la usabilidad NO es: vecinos que conviene separar</h3>
+
+    <p>La usabilidad vive rodeada de conceptos parecidos. Confundirlos es uno de los errores más típicos en los exámenes y, peor aún, en los proyectos reales. Separémoslos.</p>
+
+    <h4>Usabilidad ≠ Utilidad</h4>
+    <p>La <strong>utilidad</strong> responde a «¿hace el sistema lo que necesito?» (las funciones correctas). La <strong>usabilidad</strong> responde a «¿puedo usar bien esas funciones?».</p>
+    <p>Jakob Nielsen lo resume con una ecuación célebre: la <strong>utilidad práctica</strong> de un sistema (lo que él llama <em>usefulness</em>) es la suma de <strong>utilidad</strong> (tiene las funciones) más <strong>usabilidad</strong> (esas funciones se pueden usar).</p>
+    <p>Un sistema con todas las funciones del mundo pero imposible de manejar es tan inútil, en la práctica, como uno sencillísimo al que le falta lo esencial.</p>
+
+    <h4>Usabilidad ≠ Accesibilidad</h4>
+    <p>La <strong>accesibilidad</strong> se centra en que el sistema pueda ser usado por <strong>el mayor número de personas posible</strong>, incluidas las que tienen alguna discapacidad. La usabilidad mira la calidad de uso <strong>para los usuarios previstos</strong>.</p>
+    <p>Se solapan mucho, pero no son lo mismo: una web puede ser usable para una persona vidente y, a la vez, inaccesible para quien usa un lector de pantalla. Lo accesible suele ser más usable para todos; lo usable no garantiza ser accesible.</p>
+
+    <h4>Usabilidad ≠ Experiencia de usuario (UX)</h4>
+    <p>La <strong>experiencia de usuario (UX)</strong> es un concepto más amplio: abarca <em>todas</em> las percepciones y respuestas de la persona antes, durante y después del uso, incluidas las emociones, el placer, la confianza y la marca.</p>
+    <p>La usabilidad es una <strong>parte</strong> de la UX (su componente más pragmático), pero un producto puede ser usable y, aun así, ofrecer una experiencia pobre, o al revés. Aquí entra el «diseño emocional» de Norman: usar algo agradable nos hace, incluso, tolerar mejor sus fallos.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Norman observó que los objetos que nos resultan <strong>bonitos o agradables</strong> nos parecen también <strong>más fáciles de usar</strong>, aunque objetivamente no lo sean. La emoción no es un adorno: modula nuestra percepción de la usabilidad. Por eso UX y usabilidad, aun siendo distintas, tiran la una de la otra.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuatro palabras, cuatro preguntas. <strong>Utilidad</strong>: ¿tiene las funciones? · <strong>Usabilidad</strong>: ¿puedo usarlas bien? · <strong>Accesibilidad</strong>: ¿pueden usarlas <em>todas</em> las personas? · <strong>UX</strong>: ¿cómo es la vivencia completa? La usabilidad es el centro, pero no el todo.</p>
+    </div>
+  </section>
+
+  <section id="componentes" aria-labelledby="componentes-h">
+    <h3 id="componentes-h"><span class="num" aria-hidden="true">1.4</span>Los cinco componentes y las 10 heurísticas de Nielsen</h3>
+
+    <p>La definición ISO es excelente para especificar, pero algo abstracta para diseñar. Jakob Nielsen propuso descomponer la usabilidad en <strong>cinco atributos</strong> más operativos. Son una de las herramientas más citadas de la disciplina.</p>
+
+    <ul>
+      <li><strong>Facilidad de aprendizaje</strong> (<em>learnability</em>): ¿con qué rapidez una persona logra hacer algo la <em>primera</em> vez que se enfrenta al sistema?</li>
+      <li><strong>Eficiencia</strong> (<em>efficiency</em>): una vez que ya lo conoce, ¿con qué rapidez realiza las tareas?</li>
+      <li><strong>Memorabilidad</strong> (<em>memorability</em>): si vuelve tras un tiempo sin usarlo, ¿recupera la soltura o tiene que aprenderlo de nuevo?</li>
+      <li><strong>Errores</strong> (<em>errors</em>): ¿cuántos comete, cómo de graves son y con qué facilidad se recupera de ellos?</li>
+      <li><strong>Satisfacción</strong> (<em>satisfaction</em>): ¿le resulta agradable usarlo?</li>
+    </ul>
+
+    <p>Fíjate en una tensión interesante para el diseño: a veces lo más <strong>fácil de aprender</strong> no es lo más <strong>eficiente</strong> para un experto. Un asistente paso a paso es ideal para el novato y lento para quien lo usa cien veces al día.</p>
+    <p>Resolver esa tensión es parte de tu oficio: por ejemplo, ofreciendo atajos para expertos sin penalizar a los principiantes. Esta idea reaparecerá cuando estudies las heurísticas y las reglas de oro.</p>
+
+    <h4>Una mirada complementaria: las metas de Preece</h4>
+    <p>Preece y sus colegas amplían el cuadro con metas adicionales que conviene tener presentes, como la <strong>seguridad de uso</strong> (proteger a la persona de errores peligrosos o irreversibles) junto a las metas más experienciales (que el uso resulte satisfactorio, motivador o agradable).</p>
+
+    <h4>De los componentes a la práctica: las 10 heurísticas de Nielsen</h4>
+    <p>Los cinco componentes dicen <em>qué</em> dimensiones medir. Pero, a la hora de revisar una interfaz concreta, hace falta una lista de <strong>principios accionables</strong> que señalen problemas. Esa es la función de las <strong>10 heurísticas de usabilidad</strong> de Jakob Nielsen.</p>
+    <p>Se llaman «heurísticas» (reglas generales, no leyes exactas) porque orientan el juicio sin garantizarlo. Son la base del método de evaluación que estudiarás en el Tema 4: la <strong>evaluación heurística</strong>, en la que varios expertos recorren la interfaz buscando incumplimientos de estos diez principios.</p>
+    <p>Conviene que las conozcas una a una. Para cada una añado, entre paréntesis, un ejemplo cotidiano que la ilustra.</p>
+
+    <ol>
+      <li><strong>Visibilidad del estado del sistema.</strong> El sistema debe mantener informada a la persona de lo que ocurre, con <strong>retroalimentación adecuada y a tiempo</strong>. <em>(Una barra de progreso al subir un archivo; el «escribiendo…» de un chat.)</em></li>
+      <li><strong>Correspondencia entre el sistema y el mundo real.</strong> Hablar el <strong>lenguaje del usuario</strong>, con palabras y conceptos que le resulten familiares, en lugar de jerga técnica; respetar las convenciones del mundo real. <em>(Una papelera para «eliminar»; un carrito para «comprar».)</em></li>
+      <li><strong>Control y libertad del usuario.</strong> Las personas se equivocan y necesitan una <strong>«salida de emergencia»</strong> clara: deshacer y rehacer, cancelar, volver atrás sin quedar atrapadas. <em>(El botón «Deshacer» tras borrar; cancelar un envío.)</em></li>
+      <li><strong>Consistencia y estándares.</strong> Las mismas palabras, acciones e iconos deben significar lo mismo en toda la aplicación, y seguir las <strong>convenciones</strong> establecidas de la plataforma. <em>(Que «Guardar» esté siempre en el mismo sitio y con el mismo nombre.)</em></li>
+      <li><strong>Prevención de errores.</strong> Mejor que un buen mensaje de error es un <strong>diseño que evita</strong> que el error llegue a producirse. <em>(Que el botón «Enviar» se desactive hasta rellenar los campos obligatorios; pedir confirmación antes de una acción grave.)</em></li>
+      <li><strong>Reconocer mejor que recordar.</strong> Minimizar la carga de memoria haciendo <strong>visibles</strong> objetos, acciones y opciones; la persona no debería tener que recordar información de una pantalla a otra. <em>(Un desplegable con las opciones en vez de exigir teclearlas de memoria.)</em></li>
+      <li><strong>Flexibilidad y eficiencia de uso.</strong> Ofrecer <strong>aceleradores</strong> (atajos, acciones rápidas) para el experto, sin estorbar al novato. Aquí se resuelve la tensión aprendizaje ↔ eficiencia que veíamos antes. <em>(Atajos de teclado como Ctrl+C; gestos para usuarios avanzados.)</em></li>
+      <li><strong>Diseño estético y minimalista.</strong> Mostrar solo la información <strong>relevante</strong>: cada elemento superfluo compite con lo importante y reduce su visibilidad. Es la heurística hermana del «quita la mitad de las palabras» de Krug. <em>(Una pantalla limpia frente a un panel saturado de avisos.)</em></li>
+      <li><strong>Ayudar a reconocer, diagnosticar y recuperarse de los errores.</strong> Los mensajes de error deben expresarse en <strong>lenguaje claro</strong> (sin códigos crípticos), indicar el problema con precisión y <strong>sugerir una solución</strong>. <em>(«El correo no es válido: falta la @» en vez de «Error 0x80070057».)</em></li>
+      <li><strong>Ayuda y documentación.</strong> Aunque lo ideal es que el sistema se entienda sin ayuda, cuando esta sea necesaria debe ser <strong>fácil de buscar, concreta y orientada a la tarea</strong> de la persona. <em>(Una ayuda contextual junto al campo, no un manual de 200 páginas.)</em></li>
+    </ol>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Chuleta visual: las 10 heurísticas de Nielsen, qué comprueban y un fallo típico.</caption>
+      <thead>
+        <tr><th scope="col">#</th><th scope="col">Heurística</th><th scope="col">Qué comprueba</th><th scope="col">Ejemplo de fallo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>Visibilidad del estado</td><td>¿El sistema dice qué está pasando?</td><td>Pulsas «Enviar» y no pasa nada visible.</td></tr>
+        <tr><th scope="row">2</th><td>Sistema ↔ mundo real</td><td>¿Habla el lenguaje del usuario?</td><td>«Excepción no controlada» en vez de algo humano.</td></tr>
+        <tr><th scope="row">3</th><td>Control y libertad</td><td>¿Hay salida y deshacer?</td><td>Borras algo y no puedes recuperarlo.</td></tr>
+        <tr><th scope="row">4</th><td>Consistencia y estándares</td><td>¿Lo igual se ve y nombra igual?</td><td>«Aceptar» aquí y «Confirmar» allí para lo mismo.</td></tr>
+        <tr><th scope="row">5</th><td>Prevención de errores</td><td>¿Evita el error antes de que ocurra?</td><td>Permite enviar un formulario con campos vacíos.</td></tr>
+        <tr><th scope="row">6</th><td>Reconocer &gt; recordar</td><td>¿Hace visibles las opciones?</td><td>Exige memorizar un código de la pantalla anterior.</td></tr>
+        <tr><th scope="row">7</th><td>Flexibilidad y eficiencia</td><td>¿Hay atajos para expertos?</td><td>Solo el camino largo, sin acceleradores.</td></tr>
+        <tr><th scope="row">8</th><td>Estético y minimalista</td><td>¿Muestra solo lo relevante?</td><td>Pantalla saturada que oculta lo importante.</td></tr>
+        <tr><th scope="row">9</th><td>Recuperación de errores</td><td>¿El error se entiende y se arregla?</td><td>«Error 0x80070057» sin explicación ni solución.</td></tr>
+        <tr><th scope="row">10</th><td>Ayuda y documentación</td><td>¿La ayuda es útil y localizable?</td><td>No hay ayuda, o es un manual imposible de buscar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Fíjate cómo se entrelazan con lo ya estudiado. La heurística 1 (visibilidad) es la <strong>retroalimentación</strong> que cierra el golfo de evaluación de Norman; la 6 (reconocer mejor que recordar) y la 2 (lenguaje del mundo real) tienden puentes sobre el golfo de ejecución. Las heurísticas no son una lista suelta: son la IPO hecha checklist.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Estas heurísticas se publicaron a comienzos de los años 90 y, salvo pequeños ajustes de redacción, <strong>siguen vigentes décadas después</strong>. Que una lista de diez reglas resista el paso del tiempo, los móviles, la web y la voz dice mucho: describen cómo somos las <strong>personas</strong>, no una tecnología concreta. Y las personas cambiamos despacio.</p>
+    </div>
+
+    <h4>Una lista hermana: las 8 reglas de oro de Shneiderman</h4>
+    <p>Nielsen no fue el único en proponer principios. Ben Shneiderman, en la obra que figura en la bibliografía del curso, formuló sus <strong>8 reglas de oro</strong> del diseño de interfaces. Coinciden en gran parte con las heurísticas, lo cual no es debilidad sino confirmación: distintos autores, observando lo mismo, llegan a conclusiones parecidas.</p>
+    <ol>
+      <li><strong>Buscar la consistencia.</strong> Secuencias de acción, terminología y elementos uniformes en situaciones similares.</li>
+      <li><strong>Atender a la usabilidad universal.</strong> Reconocer perfiles distintos (novato ↔ experto, edades, capacidades) y ofrecer, por ejemplo, atajos para unos y explicaciones para otros.</li>
+      <li><strong>Ofrecer retroalimentación informativa.</strong> Para cada acción, una respuesta del sistema proporcional a su importancia.</li>
+      <li><strong>Diseñar diálogos que concluyan.</strong> Las secuencias de acciones deben tener principio, desarrollo y un <strong>cierre</strong> claro que dé sensación de tarea terminada.</li>
+      <li><strong>Prevenir errores.</strong> Diseñar para que la persona no pueda cometer errores graves y, si los comete, ofrecer una recuperación sencilla.</li>
+      <li><strong>Permitir deshacer acciones fácilmente.</strong> Que las acciones sean reversibles reduce la ansiedad y anima a explorar.</li>
+      <li><strong>Dar al usuario el control.</strong> Que la persona sienta que dirige el sistema, y no que el sistema le impone su ritmo.</li>
+      <li><strong>Reducir la carga de memoria a corto plazo.</strong> No exigir recordar información entre pantallas; apoyarse en el reconocimiento.</li>
+    </ol>
+    <p>Verás los ecos al instante: la consistencia es la heurística 4; la retroalimentación, la 1; la prevención de errores, la 5; el deshacer, la 3; reducir la memoria, la 6. Que dos marcos independientes converjan te dice que <strong>estos principios no son moda, sino conocimiento consolidado</strong> de la disciplina.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La regla 4 de Shneiderman, «diseñar diálogos que concluyan», explica por qué una <strong>pantalla de confirmación</strong> («Tu pedido nº&nbsp;1234 está confirmado») resulta tan tranquilizadora. No añade ninguna función, pero cierra la tarea en tu cabeza. Sin ese cierre, te quedas con la duda de «¿habrá salido bien?»: justo el golfo de evaluación sin puente.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>No confundas las dos listas de Nielsen. Los <strong>5 componentes</strong> son las <em>dimensiones que se miden</em> (aprendizaje, eficiencia, memorabilidad, errores, satisfacción). Las <strong>10 heurísticas</strong> son los <em>principios que se inspeccionan</em> para detectar problemas. Las primeras evalúan «cuánto»; las segundas, «qué falla y por qué». Las <strong>8 reglas de Shneiderman</strong> son una lista hermana de estas últimas.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Cuando evalúes un sistema, no preguntes solo «¿es fácil?». Pregunta por separado: ¿es fácil de <strong>aprender</strong>, <strong>eficiente</strong>, <strong>memorable</strong>, <strong>tolerante a errores</strong> y <strong>satisfactorio</strong>? Cada componente revela un problema distinto.</p>
+    </div>
+  </section>
+
+  <section id="krug" aria-labelledby="krug-h">
+    <h3 id="krug-h"><span class="num" aria-hidden="true">1.5</span>«No me hagas pensar»: la usabilidad como evidencia</h3>
+
+    <p>Frente al lenguaje normativo, Steve Krug ofrece la formulación más práctica y memorable de la usabilidad web, y da título a uno de los libros de la bibliografía: <strong>«No me hagas pensar»</strong>.</p>
+    <p>Su primera «ley» es justamente esa: una interfaz bien diseñada debe ser tan <strong>autoevidente</strong> que la persona no tenga que detenerse a razonar dónde está cada cosa o qué significa.</p>
+    <p>Cada vez que un usuario se pregunta «¿dónde pincho?», «¿esto es un botón o solo texto?», «¿esto qué hace?», estás gastando una parte de su atención y de su paciencia. Esos pequeños titubeos, sumados, son lo que hace que la gente abandone.</p>
+
+    <h4>La segunda ley: clics que no duelen</h4>
+    <p>Krug matiza un mito habitual. No importa tanto el <strong>número</strong> de clics como su <strong>dificultad</strong>: la gente tolera varios pasos si cada uno es una elección <strong>obvia y sin ambigüedad</strong>.</p>
+    <p>Un clic que obliga a pensar pesa más que tres clics evidentes. La fatiga no la produce la cantidad, sino la <strong>incertidumbre</strong>.</p>
+
+    <h4>La tercera ley: quita la mitad de las palabras</h4>
+    <p>Krug recomienda, medio en broma medio en serio, eliminar la mitad de las palabras de una pantalla… y luego eliminar la mitad de lo que quede. El ruido textual oculta lo importante y aumenta el esfuerzo de lectura.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>«No me hagas pensar» traduce la usabilidad a una experiencia que sentirás como usuario: una buena interfaz <strong>desaparece</strong>; te deja concentrarte en tu objetivo, no en la herramienta. Cuando notes que «piensas» en la interfaz, hay un problema de usabilidad.</p>
+    </div>
+  </section>
+
+  <section id="calidad" aria-labelledby="calidad-h">
+    <h3 id="calidad-h"><span class="num" aria-hidden="true">1.6</span>La usabilidad como atributo de calidad del software</h3>
+
+    <p>Aquí conectamos con lo que ya sabes de Ingeniería del Software. La usabilidad no es un capricho de la fase final; es un <strong>atributo de calidad</strong> de pleno derecho, como la fiabilidad, el rendimiento o la seguridad.</p>
+    <p>Recuerda la distinción clásica: los requisitos <strong>funcionales</strong> dicen <em>qué</em> debe hacer el sistema; los atributos de calidad (o requisitos no funcionales) dicen <em>cómo de bien</em> lo hace. La usabilidad pertenece al segundo grupo.</p>
+
+    <h4>Su lugar en los modelos de calidad</h4>
+    <p>El modelo de calidad de producto software <strong>ISO/IEC 25010</strong> (familia SQuaRE), que probablemente ya has visto, incluye la <strong>usabilidad</strong> como una de sus características de calidad, con subcaracterísticas muy reconocibles: facilidad de aprendizaje, operabilidad, protección frente a errores del usuario, estética de la interfaz y reconocimiento de adecuación.</p>
+    <p>Es decir, dos familias de normas miran la usabilidad desde ángulos complementarios: la <strong>ISO 9241</strong> desde la ergonomía y la interacción; la <strong>ISO/IEC 25010</strong> desde la calidad del producto software.</p>
+
+    <h4>La consecuencia para el ciclo de vida</h4>
+    <p>Si la usabilidad es un requisito de calidad, entonces se trata como cualquier otro requisito:</p>
+    <ul>
+      <li>Se <strong>especifica</strong> con objetivos medibles (por ejemplo: «el 90&nbsp;% de usuarios novatos completará la tarea X en menos de 2 minutos»).</li>
+      <li>Se <strong>diseña</strong> de forma deliberada, no se deja al azar de «cómo salga la pantalla».</li>
+      <li>Se <strong>verifica y valida</strong> con pruebas, igual que se prueba el código.</li>
+    </ul>
+    <p>Y se integra en el proceso a través del <strong>Diseño Centrado en el Humano</strong> (ISO 9241-210) que ya conoces: comprender el contexto, especificar requisitos, producir soluciones y evaluarlas, iterando. La usabilidad es, en gran medida, <em>lo que ese proceso busca asegurar</em>.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Tratar la usabilidad como atributo de calidad cambia la conversación: deja de ser «que quede bonito» y pasa a ser «<strong>qué objetivo de usabilidad fijamos y cómo demostramos que se cumple</strong>». Eso es ingeniería, no decoración.</p>
+    </div>
+  </section>
+
+  <section id="medir" aria-labelledby="medir-h">
+    <h3 id="medir-h"><span class="num" aria-hidden="true">1.7</span>¿Se puede medir? Métricas e instrumentos</h3>
+
+    <p>Si la usabilidad es un grado y un atributo de calidad, tiene que ser medible. Y lo es. Las métricas se agrupan, no por casualidad, en torno a los tres pilares. Ben Shneiderman ya proponía criterios medibles muy parecidos.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Métricas de usabilidad más habituales, agrupadas por pilar.</caption>
+      <thead>
+        <tr><th scope="col">Pilar</th><th scope="col">Métrica</th><th scope="col">Cómo se obtiene</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Eficacia</th><td>Tasa de éxito en la tarea</td><td>% de usuarios que completan la tarea correctamente.</td></tr>
+        <tr><th scope="row">Eficacia</th><td>Tasa de errores</td><td>Nº de errores por tarea y su gravedad.</td></tr>
+        <tr><th scope="row">Eficiencia</th><td>Tiempo en tarea</td><td>Segundos/minutos hasta completar el objetivo.</td></tr>
+        <tr><th scope="row">Eficiencia</th><td>Nº de pasos o clics</td><td>Acciones necesarias frente a la ruta óptima.</td></tr>
+        <tr><th scope="row">Satisfacción</th><td>Cuestionarios (p. ej. SUS)</td><td>Puntuación subjetiva tras el uso.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Conviene combinar métricas <strong>objetivas</strong> (tiempo, éxito, errores: lo que <em>ocurre</em>) con métricas <strong>subjetivas</strong> (cuestionarios: lo que la persona <em>siente</em>). Las dos caras pueden discrepar, y esa discrepancia es información valiosa.</p>
+    <p>Una persona puede completar una tarea con éxito y rapidez y, aun así, puntuar bajo la satisfacción porque el camino le pareció estresante. Si solo miras el tiempo, te pierdes esa señal.</p>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>Estas métricas se recogen en sesiones de <strong>test de usabilidad</strong>, que estudiarás en profundidad en el Tema 4. Por ahora quédate con la idea: la usabilidad no se opina, <strong>se observa y se mide</strong>. «A mí me parece intuitivo» no es un dato.</p>
+    </div>
+
+    <hr class="soft">
+    <p>Con esto cierras la base conceptual: qué es la usabilidad, en qué pilares se apoya, qué <em>no</em> es, cómo se descompone y cómo se mide. En la Parte 2 la sacamos del aula y la conectamos con tu vida, con datos del INE y con tu futura responsabilidad profesional.</p>
+  </section>
+
+  <!-- ============ PARTE 2 ============ -->
+  <div class="part" id="parte2">
+    <span class="tag">Parte 2 de 2</span>
+    <h2>Transferencia al mundo real</h2>
+    <p class="lead">Cómo se nota la usabilidad en tu vida, qué dicen los datos y por qué te concierne.</p>
+  </div>
+
+  <section id="cotidiano" aria-labelledby="cotidiano-h">
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La usabilidad en tu día a día</h3>
+
+    <p>La usabilidad es invisible cuando es buena y dolorosamente visible cuando es mala. La sientes a diario, aunque no la nombres. Repasa una jornada cualquiera con las gafas de los tres pilares.</p>
+    <ul>
+      <li>Reservas cita médica en una <strong>sede electrónica</strong> y dudas en qué pestaña está tu trámite: fallo de <strong>eficacia</strong> y de aprendizaje.</li>
+      <li>Compras un billete de tren y la web te obliga a diez pantallas para algo simple: problema de <strong>eficiencia</strong>.</li>
+      <li>Pagas con el móvil y la app te enseña un «✓ Pago realizado» claro y rápido: buena <strong>retroalimentación</strong> que sostiene la satisfacción.</li>
+      <li>Vuelves a una app de la Administración que usaste hace un año y no recuerdas cómo iba: fallo de <strong>memorabilidad</strong>.</li>
+      <li>Rellenas un formulario, te equivocas en un campo y te borra todo lo demás: error grave y no <strong>tolerante</strong>.</li>
+    </ul>
+    <p>Nada de esto es «mala suerte» ni «que eres torpe». Son decisiones de diseño que alguien tomó (o dejó de tomar). Mañana, esas decisiones las tomarás tú.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto exprés</span>
+      <p>Piensa en la última vez que te frustraste con una pantalla esta semana. ¿Qué pilar falló: eficacia (no lo lograste), eficiencia (te costó demasiado) o satisfacción (lo lograste, pero a regañadientes)? Ponle nombre técnico a tu frustración.</p>
+    </div>
+  </section>
+
+  <section id="datos" aria-labelledby="datos-h">
+    <h3 id="datos-h"><span class="num" aria-hidden="true">2.2</span>Anclaje real: el impacto medido en España</h3>
+
+    <p>Que la usabilidad importe no es opinión: cuando casi toda la población interactúa a diario con servicios digitales, una mala interacción excluye a personas reales de servicios esenciales. El <strong>Instituto Nacional de Estadística (INE)</strong> nos da la fotografía.</p>
+    <p>Estos son los mismos datos de la <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em> que vimos en el Tema 1, leídos ahora desde la usabilidad:</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Población de 16 a 74 años. Fuente: INE, Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025 (publicada en noviembre de 2025).</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Usó Internet en los últimos 3 meses</td><td class="fig">96,3 %</td></tr>
+          <tr><td>Interactuó con la Administración por Internet (12 meses)</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Posee habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
+          <tr><td>Extremadura · usó Internet en los últimos 3 meses</td><td class="fig">93,9 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Lee la tercera cifra con la lupa de la usabilidad: si dos de cada tres personas tienen habilidades digitales «básicas o avanzadas», <strong>una de cada tres no las tiene</strong>. Para ese tercio, la usabilidad no es comodidad: es la diferencia entre poder y no poder.</p>
+    <p>Y la cifra del 80,7&nbsp;% de relación con la Administración por Internet significa que tus futuras interfaces de servicio público tendrán un alcance enorme. Cada punto de usabilidad que ganes o pierdas se multiplica por millones de gestiones.</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La usabilidad deja de ser un detalle de producto cuando el producto es un servicio público o esencial. Ahí, una interfaz poco usable se convierte en una <strong>barrera de acceso a derechos</strong> (sanidad, banca, trámites). El dato lo confirma.</p>
+    </div>
+  </section>
+
+  <section id="sus" aria-labelledby="sus-h">
+    <h3 id="sus-h"><span class="num" aria-hidden="true">2.3</span>Mídelo tú: la escala SUS paso a paso</h3>
+
+    <p>Para que «medir la satisfacción» deje de sonar abstracto, conoce el instrumento estándar de la industria: la <strong>System Usability Scale (SUS)</strong>. Es un cuestionario muy breve, gratuito y rapidísimo de pasar.</p>
+    <ul>
+      <li>Son <strong>10 afirmaciones</strong> sobre el sistema (por ejemplo, «creo que usaría este sistema con frecuencia»).</li>
+      <li>La persona responde cada una en una escala de <strong>1 (muy en desacuerdo) a 5 (muy de acuerdo)</strong>.</li>
+      <li>Las afirmaciones alternan entre positivas y negativas, para evitar respuestas automáticas.</li>
+      <li>Con una fórmula sencilla, las respuestas se transforman en una <strong>puntuación de 0 a 100</strong>.</li>
+    </ul>
+    <p>Como referencia ampliamente aceptada en la práctica profesional, una puntuación en torno a <strong>68</strong> suele considerarse «promedio»: por encima, el sistema va bien; por debajo, hay trabajo por hacer.</p>
+    <p>Ojo: ese 100 <strong>no</strong> es un porcentaje ni una nota escolar. Es una puntuación relativa que cobra todo su sentido al <strong>comparar</strong> dos versiones de un diseño o un antes y un después de un rediseño.</p>
+
+    <div class="box real">
+      <span class="label">Recurso real · Consulta el cuestionario</span>
+      <p>Puedes ver las 10 afirmaciones originales de la SUS y el método de cálculo en este artículo del Nielsen Norman Group (en la webgrafía del plan docente):</p>
+      <p><a href="https://www.nngroup.com/articles/measuring-perceived-usability/" target="_blank" rel="noopener">nngroup.com · Measuring Perceived Usability with the SUS<span class="sr-only"> (se abre en una pestaña nueva)</span></a></p>
+      <p>Importante: para que tu puntuación sea comparable con la de otros sistemas, <strong>no cambies el orden ni la redacción</strong> de las preguntas estándar.</p>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Sabías que?</span>
+      <p>La SUS se diseñó en los años 80 como un cuestionario «rápido y sucio» (<em>quick and dirty</em>), pensando que era demasiado simple para ser fiable. Décadas y miles de estudios después, sigue siendo uno de los instrumentos más usados del mundo por su <strong>sencillez y robustez</strong>. A veces, lo usable también gana entre las herramientas.</p>
+    </div>
+
+    <div class="box challenge">
+      <span class="label">Reto · Mide algo de verdad</span>
+      <p>Elige una app que uses mucho y otra que detestes. Imagina que pasas la SUS a 5 personas con cada una. ¿Qué puntuación intuyes que sacaría cada una y por qué? Anota las dos razones principales de la diferencia. Lo formalizaremos en el Tema 4.</p>
+    </div>
+  </section>
+
+  <section id="retos" aria-labelledby="retos-h">
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.4</span>Retos de observación para esta semana</h3>
+
+    <p>La usabilidad se entrena mirando. Estos retos no requieren programar: solo observar tu entorno con el vocabulario de la Parte 1. Anótalos para comentarlos en clase.</p>
+
+    <div class="box challenge">
+      <span class="label">Reto 1 · Diagnóstico por pilares</span>
+      <p>Elige un trámite digital que hayas hecho (matrícula, cita, compra). Evalúalo por separado en eficacia, eficiencia y satisfacción, del 1 al 5. Justifica cada nota con un ejemplo concreto de lo que pasó.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 2 · El experto contra el novato</span>
+      <p>Busca un sistema que sea muy eficiente para ti (lo dominas) pero difícil de aprender para alguien nuevo. Describe la tensión <strong>aprendizaje ↔ eficiencia</strong> y propón cómo lo resolverías sin penalizar a ninguno.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 3 · La recuperación del error</span>
+      <p>Provoca (a propósito y sin riesgo) un error en una app: deja un campo vacío, pon mal una fecha. Observa cómo te trata: ¿te avisa claro?, ¿conserva tus datos?, ¿te dice cómo arreglarlo? Puntúa su tolerancia a errores.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 4 · «No me hagas pensar»</span>
+      <p>Localiza una pantalla donde tuviste que <strong>detenerte a pensar</strong> dónde pinchar. Haz una captura o boceto, marca el punto de duda y reescríbelo para que sea autoevidente, aplicando a Krug.</p>
+    </div>
+    <div class="box challenge">
+      <span class="label">Reto 5 · Mide la eficiencia</span>
+      <p>Cronométrate haciendo una tarea simple en dos apps que hagan lo mismo (p. ej. consultar el saldo en dos bancos, o el tiempo en dos webs). Compara tiempo y nº de pasos. Acabas de hacer tu primer <em>benchmark</em> de eficiencia.</p>
+    </div>
+  </section>
+
+  <section id="entorno" aria-labelledby="entorno-h">
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.5</span>Tu entorno: por qué te concierne como ingeniero</h3>
+
+    <p>Dentro de poco serás tú quien diseñe la sede electrónica de un ayuntamiento extremeño, la app de un hospital o el sistema interno de una empresa. La usabilidad de lo que entregues recaerá sobre personas reales.</p>
+    <p>Recuerda el dato del INE: el 80,7&nbsp;% de la población se relaciona con la Administración por Internet, pero un tercio no tiene habilidades digitales sólidas. Si tu interfaz «da por hecho» que el usuario es como tú, dejas fuera a ese tercio.</p>
+    <p>Esto conecta de forma directa con lo que esta asignatura espera de ti, según el plan docente:</p>
+    <ul>
+      <li>Diseñar, evaluar y <strong>asegurar la accesibilidad, ergonomía y usabilidad</strong> de los sistemas y de la información que gestionan (competencia <strong>CG03</strong>).</li>
+      <li>Diseñar y <strong>evaluar interfaces persona-computador</strong> que garanticen accesibilidad y usabilidad (competencia <strong>CI17</strong>).</li>
+      <li>Conocer y aplicar selectivamente los <strong>métodos de evaluación de la usabilidad</strong> de un sistema, y elaborar informes técnicos de evaluación (resultados de aprendizaje del curso).</li>
+      <li><strong>Transmitir</strong> soluciones a públicos especializados y no especializados (competencia <strong>CB04</strong>).</li>
+    </ul>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La calidad interna de tu código no la verá nadie; la usabilidad la sufrirá o disfrutará todo el mundo. Como ingeniero, <strong>la usabilidad es la parte de tu trabajo que la sociedad toca con las manos</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ AUTOCOMPROBACIÓN ============ -->
+  <section id="comprueba" aria-labelledby="comprueba-h">
+    <h2 id="comprueba-h"><span class="num" aria-hidden="true">·</span>Comprueba tu comprensión</h2>
+    <p>Intenta responder antes de abrir cada respuesta. Si dudas, vuelve a la sección indicada.</p>
+
+    <details class="check">
+      <summary>1. Define usabilidad según la ISO 9241-11 sin mirar.</summary>
+      <p>Grado en que un sistema, producto o servicio puede ser usado por usuarios concretos para lograr objetivos concretos con eficacia, eficiencia y satisfacción, en un contexto de uso determinado. <em>(Ver 1.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>2. Diferencia eficacia de eficiencia con un ejemplo.</summary>
+      <p>La eficacia es lograr el objetivo correctamente (¿compré el billete o no?); la eficiencia es el coste de lograrlo (¿en dos pasos o en diez?). Se puede ser eficaz y poco eficiente: terminas, pero tardando una eternidad. <em>(Ver 1.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>3. ¿Por qué usabilidad y accesibilidad no son lo mismo?</summary>
+      <p>La usabilidad mide la calidad de uso para los usuarios previstos; la accesibilidad busca que pueda usarlo el mayor número de personas posible, incluidas las que tienen discapacidad. Algo usable para una persona vidente puede ser inaccesible para quien usa lector de pantalla. <em>(Ver 1.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>4. Nombra los cinco componentes de Nielsen.</summary>
+      <p>Facilidad de aprendizaje, eficiencia, memorabilidad, errores (frecuencia/gravedad/recuperación) y satisfacción. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>5. ¿En qué se diferencian los 5 componentes y las 10 heurísticas de Nielsen?</summary>
+      <p>Los 5 componentes son las dimensiones que se <em>miden</em> (cuánto de usable es un sistema). Las 10 heurísticas son principios de diseño que se <em>inspeccionan</em> para detectar qué falla y por qué; son la base de la evaluación heurística. Las primeras cuantifican; las segundas diagnostican. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>6. Da un ejemplo de incumplimiento de la heurística «visibilidad del estado del sistema».</summary>
+      <p>Pulsar «Enviar» y no recibir ninguna confirmación ni indicador: la persona no sabe si la acción funcionó. Faltó la retroalimentación que mantiene informado del estado y cierra el golfo de evaluación. <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>7. ¿Por qué decimos que la usabilidad es un atributo de calidad del software?</summary>
+      <p>Porque, como la fiabilidad o el rendimiento, dice <em>cómo de bien</em> hace el sistema su función, no qué hace. Se especifica, se diseña y se mide/prueba; figura como característica de calidad en modelos como ISO/IEC 25010 y se integra en el proceso vía ISO 9241-210 (DCH). <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>8. ¿Qué es la SUS y para qué sirve una puntuación de, digamos, 72?</summary>
+      <p>Es un cuestionario de 10 ítems que mide la satisfacción percibida y devuelve una puntuación de 0 a 100. Un 72 estaría por encima del promedio habitual (~68): señal de un sistema razonablemente usable, especialmente útil para comparar versiones. No es un porcentaje. <em>(Ver 2.3)</em></p>
+    </details>
+  </section>
+
+  <!-- ============ GLOSARIO ============ -->
+  <section id="glosario" aria-labelledby="glosario-h">
+    <h2 id="glosario-h"><span class="num" aria-hidden="true">·</span>Glosario rápido</h2>
+    <dl class="glossary">
+      <dt>Usabilidad</dt>
+      <dd>Grado en que un sistema puede ser usado por usuarios concretos para lograr objetivos concretos con eficacia, eficiencia y satisfacción en un contexto de uso (ISO 9241-11).</dd>
+      <dt>Eficacia</dt>
+      <dd>Precisión y completitud con que las personas logran sus objetivos al usar el sistema.</dd>
+      <dt>Eficiencia</dt>
+      <dd>Recursos (tiempo, pasos, esfuerzo) empleados en relación con los resultados obtenidos.</dd>
+      <dt>Satisfacción</dt>
+      <dd>Grado de comodidad y aceptabilidad que la persona percibe al usar el sistema.</dd>
+      <dt>Contexto de uso</dt>
+      <dd>Conjunto de usuarios, tareas, equipos y entorno (físico, social, organizativo) en que se usa el sistema.</dd>
+      <dt>Utilidad</dt>
+      <dd>Que el sistema ofrezca las funciones que la persona necesita. Distinta de la usabilidad: tener la función no garantiza poder usarla.</dd>
+      <dt>Accesibilidad</dt>
+      <dd>Grado en que un sistema puede ser utilizado por el mayor número de personas posible, incluidas las que tienen discapacidad.</dd>
+      <dt>Experiencia de usuario (UX)</dt>
+      <dd>Conjunto de percepciones y respuestas de la persona derivadas del uso (y la expectativa de uso) de un producto. Engloba la usabilidad, pero la supera.</dd>
+      <dt>Facilidad de aprendizaje (learnability)</dt>
+      <dd>Rapidez con que una persona logra hacer algo la primera vez que usa el sistema.</dd>
+      <dt>Memorabilidad</dt>
+      <dd>Facilidad para recuperar la soltura tras un periodo sin usar el sistema.</dd>
+      <dt>Tolerancia a errores</dt>
+      <dd>Capacidad del sistema de prevenir errores y permitir recuperarse de ellos con facilidad y sin pérdidas graves.</dd>
+      <dt>Métrica de usabilidad</dt>
+      <dd>Indicador medible asociado a un pilar: tasa de éxito, tiempo en tarea, nº de pasos, tasa de errores, puntuación de satisfacción.</dd>
+      <dt>Heurísticas de usabilidad (Nielsen)</dt>
+      <dd>Conjunto de 10 principios generales de diseño que sirven para detectar problemas de usabilidad al inspeccionar una interfaz (visibilidad del estado, prevención de errores, consistencia, etc.).</dd>
+      <dt>Evaluación heurística</dt>
+      <dd>Método de inspección en el que varios expertos revisan una interfaz comprobando si cumple las heurísticas y anotando los incumplimientos. Se estudia en el Tema 4.</dd>
+      <dt>SUS (System Usability Scale)</dt>
+      <dd>Cuestionario estándar de 10 ítems que estima la satisfacción percibida en una puntuación de 0 a 100.</dd>
+      <dt>Atributo de calidad</dt>
+      <dd>Propiedad no funcional que indica cómo de bien hace el sistema su trabajo (fiabilidad, rendimiento, usabilidad…).</dd>
+    </dl>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen" aria-labelledby="resumen-h">
+    <h2 id="resumen-h"><span class="num" aria-hidden="true">·</span>Resumen: ideas clave</h2>
+    <div class="box key">
+      <span class="label">Para llevarte a casa</span>
+      <ul>
+        <li>Usabilidad (ISO 9241-11) = <strong>eficacia + eficiencia + satisfacción</strong>, para <strong>usuarios y objetivos concretos</strong> en un <strong>contexto de uso</strong>.</li>
+        <li>Es un <strong>grado</strong> (más o menos), no un sí/no: por eso se puede comparar, mejorar y medir.</li>
+        <li>No confundir con sus vecinos: <strong>utilidad</strong>, <strong>accesibilidad</strong> y <strong>UX</strong> son cosas distintas que se solapan.</li>
+        <li>Los <strong>cinco componentes de Nielsen</strong> (aprendizaje, eficiencia, memorabilidad, errores y satisfacción) miden <em>cuánto</em>; sus <strong>10 heurísticas</strong> inspeccionan <em>qué falla y por qué</em>.</li>
+        <li>La regla práctica de Krug: <strong>«no me hagas pensar»</strong>; una buena interfaz es autoevidente y desaparece.</li>
+        <li>Es un <strong>atributo de calidad del software</strong> (ISO/IEC 25010) que se especifica, diseña y prueba; se integra vía DCH (ISO 9241-210).</li>
+        <li>Se <strong>mide</strong>: tasa de éxito, tiempo, pasos, errores y cuestionarios como la <strong>SUS</strong>.</li>
+        <li>Con casi toda la población interactuando a diario (datos del INE), la usabilidad es <strong>inclusión y acceso a derechos</strong>, no un lujo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCIAS ============ -->
+  <section id="refs" aria-labelledby="refs-h">
+    <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
+    <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
+    <ol class="refs">
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
+      <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
+      <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
+      <li>Krug, S. <em>Rocket Surgery Made Easy</em>. New Riders, 2010.</li>
+      <li>Norman, D. A. <em>La psicología de los objetos cotidianos</em>. Nerea, 1990.</li>
+      <li>Norman, D. A. <em>El diseño emocional</em>. Paidós, 2005.</li>
+      <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
+      <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
+    </ol>
+    <p>Normas, recursos y datos:</p>
+    <ol class="refs" start="10">
+      <li>UNE-EN ISO 9241-11. <em>Ergonomía de la interacción persona-sistema. Parte 11: Usabilidad: definiciones y conceptos.</em></li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Diseño centrado en el operador humano para sistemas interactivos.</em></li>
+      <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; la usabilidad como característica de calidad.</li>
+      <li>Nielsen Norman Group. Recursos sobre usabilidad y sus componentes. <a href="https://www.nngroup.com/">nngroup.com</a></li>
+      <li>Nielsen Norman Group. <em>Measuring Perceived Usability with the SUS, NASA-TLX, and the Single Ease Question</em>. <a href="https://www.nngroup.com/articles/measuring-perceived-usability/">nngroup.com/articles/measuring-perceived-usability</a></li>
+      <li>Asociación para la Interacción Persona-Ordenador (AIPO). <a href="http://www.aipo.es">aipo.es</a></li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>. Nota de prensa, noviembre de 2025.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Material de apoyo docente · Tema 1 «Conceptos básicos» · Concepto: <em>Usabilidad</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
+    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+  </div>
+</footer>
+
+</body>
+</html>

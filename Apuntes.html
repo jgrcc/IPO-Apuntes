@@ -1,0 +1,413 @@
+<div class="moodle-disi-content">
+  <style>
+    /* Aislamiento de estilos exclusivo para este contenedor */
+    .moodle-disi-content {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #334155;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background-color: #f8fafc;
+      border-radius: 12px;
+    }
+    
+    .moodle-disi-content * {
+      box-sizing: border-box;
+    }
+
+    .moodle-disi-content .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .moodle-disi-content h2.main-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+
+    .moodle-disi-content h2.main-title svg {
+      color: #4f46e5;
+    }
+
+    .moodle-disi-content section.tema-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .moodle-disi-content h3.tema-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+
+    .moodle-disi-content .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .moodle-disi-content .card-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease-in-out;
+      height: 100%;
+    }
+
+    .moodle-disi-content .card-link:hover,
+    .moodle-disi-content .card-link:focus-visible {
+      border-color: #818cf8;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    
+    .moodle-disi-content .card-link:focus-visible {
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.5);
+    }
+
+    .moodle-disi-content .icon-wrapper {
+      padding: 0.625rem;
+      border-radius: 0.5rem;
+      border: 1px solid transparent;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Colores WCAG AA para los temas */
+    .moodle-disi-content .theme-blue .icon-wrapper { background-color: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+    .moodle-disi-content .theme-blue .card-title { color: #1e3a8a; }
+    
+    .moodle-disi-content .theme-emerald .icon-wrapper { background-color: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+    .moodle-disi-content .theme-emerald .card-title { color: #064e3b; }
+    
+    .moodle-disi-content .theme-amber .icon-wrapper { background-color: #fef3c7; color: #92400e; border-color: #fde68a; }
+    .moodle-disi-content .theme-amber .card-title { color: #78350f; }
+    
+    .moodle-disi-content .theme-purple .icon-wrapper { background-color: #f3e8ff; color: #6b21a8; border-color: #e9d5ff; }
+    .moodle-disi-content .theme-purple .card-title { color: #581c87; }
+
+    .moodle-disi-content .card-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .moodle-disi-content .card-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+      line-height: 1.2;
+    }
+
+    .moodle-disi-content .card-desc {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+      .moodle-disi-content {
+        padding: 0.5rem;
+      }
+      .moodle-disi-content .grid-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <h2 class="main-title">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    Diseño e Interacción en Sistemas de Información
+  </h2>
+
+  <!-- TEMA 1 -->
+  <section class="tema-section">
+    <h3 class="tema-title">Tema 1: Conceptos básicos</h3>
+    <ul class="grid-cards">
+      <li class="theme-blue">
+        <a href="11IPO.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Interacción Persona-Ordenador</h4>
+            <p class="card-desc">El concepto que sostiene todo el diseño de sistemas interactivos. Incluye modelos mentales, affordances, y los golfos de Norman.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-blue">
+        <a href="12Usabilidad.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Usabilidad</h4>
+            <p class="card-desc">Eficacia, eficiencia y satisfacción en un contexto de uso. Las heurísticas de Nielsen para la interacción.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-blue">
+        <a href="13Accesibilidad.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Accesibilidad</h4>
+            <p class="card-desc">Diseñar para todas las personas. Principios POUR, WCAG 2.2 y la normativa legal aplicable.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-blue">
+        <a href="14DCH.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Diseño centrado en lo humano</h4>
+            <p class="card-desc">El proceso iterativo que integra usabilidad y accesibilidad (ISO 9241-210) focalizado en el uso real.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEMA 2 -->
+  <section class="tema-section">
+    <h3 class="tema-title">Tema 2: Actividades de análisis</h3>
+    <ul class="grid-cards">
+      <li class="theme-emerald">
+        <a href="21Contexto_de_uso.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Contexto de uso</h4>
+            <p class="card-desc">Entender antes de diseñar: quién, para qué, con qué y dónde ocurren las interacciones.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="22Personas.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Personas</h4>
+            <p class="card-desc">Arquetipos basados en datos de investigación para guiar el diseño y generar empatía.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="23Escenarios.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Escenarios</h4>
+            <p class="card-desc">Historias narrativas que ponen a las personas en acción para revelar sus necesidades y el contexto.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="24Analisis_de_tareas.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Análisis de tareas</h4>
+            <p class="card-desc">Descomposición estructurada de las metas del usuario en pasos accionables.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="25Recursos.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Recursos</h4>
+            <p class="card-desc">Identificación de los medios físicos, cognitivos y tecnológicos de los que dispone el usuario.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="26Entorno.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Entorno</h4>
+            <p class="card-desc">Análisis minucioso de las condiciones físicas, sociales, técnicas y organizativas donde ocurre el uso.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-emerald">
+        <a href="27Requisitos_de_usuario.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Requisitos de usuario</h4>
+            <p class="card-desc">Traducción de las necesidades descubiertas en especificaciones formales y verificables para el diseño.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEMA 3 -->
+  <section class="tema-section">
+    <h3 class="tema-title">Tema 3: Diseño y prototipado</h3>
+    <ul class="grid-cards">
+      <li class="theme-amber">
+        <a href="31Soluciones_de_diseno.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Soluciones de diseño</h4>
+            <p class="card-desc">Generación de ideas y alternativas funcionales para dar respuesta a los requisitos identificados.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-amber">
+        <a href="32Diseno_de_la_actividad.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Diseño de la actividad</h4>
+            <p class="card-desc">Estructuración y optimización de las tareas, procesos y flujos de trabajo en el sistema.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-amber">
+        <a href="33Diseno_de_la_informacion.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Diseño de la información</h4>
+            <p class="card-desc">Organización, categorización y arquitectura visual de los contenidos para que sean comprensibles.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-amber">
+        <a href="34Diseno_del_prototipo.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Diseño del prototipo</h4>
+            <p class="card-desc">Creación de representaciones tangibles de la interfaz para iterar y evaluar ideas.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEMA 4 -->
+  <section class="tema-section">
+    <h3 class="tema-title">Tema 4: Evaluación</h3>
+    <ul class="grid-cards">
+      <li class="theme-purple">
+        <a href="41Intro_evaluacion.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Intro. a los métodos de evaluación</h4>
+            <p class="card-desc">Visión general de las técnicas para medir y comprobar la usabilidad y accesibilidad.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-purple">
+        <a href="42Indagacion.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Indagación</h4>
+            <p class="card-desc">Métodos basados en observar y preguntar a usuarios reales en su contexto.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-purple">
+        <a href="43Inspeccion.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Inspección</h4>
+            <p class="card-desc">Revisión analítica de la interfaz por parte de expertos sin involucrar usuarios finales.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+      <li class="theme-purple">
+        <a href="44Test_usuarios.html" target="_blank" class="card-link">
+          <div class="icon-wrapper">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">Test de usuarios</h4>
+            <p class="card-desc">Pruebas empíricas donde personas representativas realizan tareas reales para detectar barreras.</p>
+          </div>
+          <span class="sr-only">Abre en ventana nueva</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</div>
