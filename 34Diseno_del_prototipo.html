@@ -94,9 +94,9 @@
 
     <h4>Para qué sirve un prototipo</h4>
     <ul>
-      <li><strong>Pensar mejor</strong>: al hacer la idea tangible, se ven problemas que en la cabeza no se veían.</li>
-      <li><strong>Comunicar</strong>: el equipo, el cliente y los usuarios discuten algo concreto, no descripciones vagas.</li>
-      <li><strong>Probar</strong>: se puede poner delante de personas reales y observar qué pasa (eso será la Actividad D).</li>
+      <li><strong>Pensar mejor</strong>: al hacer la idea tangible, se ven problemas que en la cabeza no se veían. Dibujar en papel el flujo de confirmación de cita de <strong>Mari Carmen</strong> revela enseguida que el código SMS caducado puede dejarla atascada en el paso 2 de 4.</li>
+      <li><strong>Comunicar</strong>: el equipo, el cliente y los usuarios discuten algo concreto. Cuatro hojas de papel con el flujo de <strong>Marta</strong> pagando el billete son más útiles en una reunión de diseño que diez páginas de descripción.</li>
+      <li><strong>Probar</strong>: se puede poner delante de personas reales y observar qué pasa (eso será la Actividad D). Poner el prototipo delante de la propia Mari Carmen —sentada en la mesa de la cocina, con sus gafas— es la única forma de saber si el flujo de confirmación la tranquiliza o la confunde.</li>
     </ul>
 
     <div class="box curio">
@@ -188,7 +188,7 @@
     </ol>
 
     <p>La elección depende de la <strong>pregunta</strong> que quieras responder. Si dudas del mapa general, prototipa <strong>ancho</strong>; si dudas de si una tarea concreta funciona, prototipa <strong>profundo</strong>.</p>
-    <p>Una estrategia habitual es priorizar <strong>lo más arriesgado o incierto</strong>: prototipa primero aquello que, si falla, hace fracasar todo lo demás.</p>
+    <p>En los dos casos de estudio la elección es clara. Para la app de <strong>Marta</strong>, la tarea crítica es el flujo de pago y validación del billete: un prototipo <strong>vertical</strong> que cubra esa tarea de principio a fin —preparar el billete, validar sin conexión, ver la confirmación— revela los problemas que importan antes que un mapa completo con ocho pantallas superficiales. Para la app de <strong>Mari Carmen</strong>, lo más arriesgado e incierto es el paso de verificación por código SMS: si ese paso falla sistemáticamente, todo el flujo de cita es inutilizable; un prototipo <strong>vertical</strong> de ese único paso —recibir el SMS, introducir el código, recuperarse si caduca— vale más que mostrar todas las pantallas de la app sin ese detalle.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -249,6 +249,7 @@
 
     <h4>Una regla simple antes de prototipar</h4>
     <p>Antes de empezar un prototipo, pregúntate: <strong>«¿qué duda quiero resolver?»</strong>. Esa duda decide la fidelidad (baja si dudas del flujo, alta si dudas de los detalles) y el alcance (vertical si es una tarea, horizontal si es el mapa).</p>
+    <p>Aplicado a los dos casos: la duda de <strong>Marta</strong> en baja fidelidad es «¿puede completar el pago en dos pasos sin cobertura?» —fidelidad baja, alcance vertical—; la duda en alta fidelidad es «¿la confirmación se lee al sol con suficiente contraste?» —fidelidad alta, alcance vertical del único elemento crítico—. La duda de <strong>Mari Carmen</strong> en baja fidelidad es «¿entiende que la cita ha quedado guardada?»; en alta fidelidad: «¿el texto de confirmación fluye bien al zoom al 200 %?». Cada pregunta diferente exige un prototipo diferente.</p>
     <p>Si no sabes qué pregunta responde tu prototipo, probablemente estés <strong>programando disfrazado</strong>, no prototipando.</p>
 
     <div class="box key">
@@ -260,19 +261,47 @@
   <section id="tres-fidelidades" aria-labelledby="tres-fidelidades-h">
     <h3 id="tres-fidelidades-h"><span class="num" aria-hidden="true">2.2</span>El mismo flujo, tres fidelidades</h3>
 
-    <p>Volvamos a la tarea de <strong>pedir cita médica</strong> que diseñamos en los apuntes anteriores. Así se prototiparía, subiendo de fidelidad solo cuando cada paso convence.</p>
+    <p>Los dos casos de estudio muestran cómo un mismo flujo recorre las tres fidelidades resolviendo dudas distintas en cada nivel.</p>
 
-    <ol class="cycle" role="list">
-      <li><b>Baja (papel)</b> Cuatro hojas dibujadas a mano: «elegir especialidad», «elegir día», «confirmar», «cita hecha». Un compañero hace de ordenador y un usuario «pulsa». En diez minutos sabes si el flujo se entiende.</li>
-      <li><b>Media (wireframe)</b> Las mismas pantallas, ahora digitales y en gris, enlazadas. Se prueba si la navegación y la estructura funcionan: ¿se encuentra el botón de volver?, ¿el calendario se entiende?</li>
-      <li><b>Alta (interactiva)</b> Una maqueta con colores, tipografía real y transiciones. Se prueban los detalles: contraste suficiente, tamaños táctiles cómodos (Fitts), avisos claros al confirmar (cierre del abismo de evaluación).</li>
-    </ol>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · Flujo: pagar y validar el billete antes de subir</h4>
 
-    <p>Observa cómo cada nivel reúne lo aprendido en el tema: la baja prueba la <strong>actividad</strong>; la media, la <strong>información</strong>; la alta, las <strong>leyes cognitivas</strong> y la accesibilidad afinadas.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los tres niveles de fidelidad del prototipo para el flujo de pago del billete de Marta. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Fidelidad</th><th scope="col">Qué se hace</th><th scope="col">Duda que resuelve</th><th scope="col">Qué se descartaría si falla</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Baja · papel</th><td>Dos hojas dibujadas a mano: pantalla de inicio con el botón de pago y pantalla de confirmación «Billete listo». Una persona hace de ordenador; otra «toca» el botón.</td><td>¿Puede Marta completar el pago en dos pasos sin leer nada? ¿El flujo se entiende de pie, con prisa?</td><td>Si no lo completa en 30 s, el flujo tiene demasiados pasos o el botón no es visible: se rediseña antes de wireframing.</td></tr>
+        <tr><th scope="row">Media · wireframe</th><td>Las dos pantallas en digital y en gris, enlazadas. Se añade el estado «sin cobertura» como pantalla alternativa.</td><td>¿El botón de «Confirmar» está en la zona del pulgar? ¿La pantalla de error de cobertura tiene un camino de recuperación claro?</td><td>Si no encuentra el botón o no sabe cómo recuperarse, se reubica antes de añadir color y tipografía.</td></tr>
+        <tr><th scope="row">Alta · interactiva</th><td>Maqueta con color verde para «Billete listo», tipografía real y transición de &lt; 0,1 s. Se prueba en un móvil real al sol o bajo luz intensa.</td><td>¿El contraste ≥ 4,5:1 es legible al sol? ¿El «tic» de validación se ve sin leer el texto? ¿El tamaño táctil del botón cumple Fitts?</td><td>Si el contraste falla o el botón es demasiado pequeño, se corrige antes de evaluar con usuarios reales (Tema 4).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · Flujo: pedir cita y recibir confirmación guardada</h4>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los tres niveles de fidelidad del prototipo para el flujo de cita médica de Mari Carmen. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Fidelidad</th><th scope="col">Qué se hace</th><th scope="col">Duda que resuelve</th><th scope="col">Qué se descartaría si falla</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Baja · papel</th><td>Cuatro hojas dibujadas a mano: identificarse, elegir médico y fecha en un calendario, confirmar, pantalla «Cita guardada — Dr. Ramos, martes 10:00». Una persona hace de ordenador sentada frente a Mari Carmen.</td><td>¿Entiende que la cita ha quedado guardada sin llamar a nadie? ¿El flujo tiene cuatro pasos o menos?</td><td>Si la pantalla «Cita guardada» no la tranquiliza o el flujo tiene más pasos de los necesarios, se rediseña la actividad antes de wireframing.</td></tr>
+        <tr><th scope="row">Media · wireframe</th><td>Las cuatro pantallas en digital y en gris, enlazadas. Se añade el flujo alternativo: «código SMS caducado → botón Reenviar sin reiniciar».</td><td>¿Encuentra el botón «Reenviar código» sin abandonar el proceso? ¿El resumen de cita ocupa pantalla completa y se lee de un vistazo?</td><td>Si no encuentra el reenvío o el resumen queda enterrado, se reorganiza la información antes de añadir estilos.</td></tr>
+        <tr><th scope="row">Alta · interactiva</th><td>Maqueta con texto ≥ 18 px, título «Cita guardada» en grande, contraste ≥ 4,5:1 y reflujo sin pérdida al zoom al 200 %. Se prueba en el móvil de Mari Carmen (letra grande activada).</td><td>¿El texto de confirmación refluye bien a 200 % de zoom (para Joaquín, secundario)? ¿El código SMS aparece agrupado en «847 209»? ¿El mensaje «Cita guardada» elimina la ansiedad sin releer?</td><td>Si el reflujo rompe el layout o el código SMS es difícil de copiar, se corrige antes de evaluar con usuarios reales (Tema 4).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Observa cómo cada nivel reúne lo aprendido en el tema: la baja prueba la <strong>actividad</strong> (el flujo y el número de pasos); la media, la <strong>información</strong> (estructura y navegación, incluidos los flujos alternativos); la alta, las <strong>leyes cognitivas</strong> y la accesibilidad afinadas (Fitts, Miller, contraste, reflujo).</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Un mismo flujo recorre las tres fidelidades resolviendo dudas distintas: papel para el <strong>flujo</strong>, wireframe para la <strong>estructura</strong>, maqueta para los <strong>detalles y la accesibilidad</strong>. Es la Actividad C entera puesta a prueba.</p>
+      <p>Un mismo flujo recorre las tres fidelidades resolviendo dudas distintas: papel para el <strong>flujo</strong>, wireframe para la <strong>estructura y los flujos alternativos</strong>, maqueta para los <strong>detalles y la accesibilidad</strong>. Es la Actividad C entera puesta a prueba con personas reales.</p>
     </div>
   </section>
 
@@ -298,8 +327,8 @@
       </div>
     </div>
 
-    <p>Si la mitad de los hogares usa <strong>solo el móvil</strong>, un prototipo probado únicamente en una pantalla grande de portátil engaña: hay que prototipar y probar <strong>en el móvil</strong>, donde el dedo, el sol y la prisa mandan.</p>
-    <p>Y si ocho de cada diez personas hacen gestiones con la Administración, un fallo de flujo que no se detectó a tiempo no es «un bug»: es gente que <strong>abandona</strong> un trámite que necesitaba.</p>
+    <p>Si la mitad de los hogares usa <strong>solo el móvil</strong>, un prototipo probado únicamente en una pantalla grande de portátil engaña. <strong>Marta</strong> está en ese 50,3 %: su app de transporte vive en un móvil de gama media, bajo el sol de la parada, con una mano. Si el equipo prototipa y prueba solo en el portátil, nunca descubrirá que el botón «Confirmar» queda fuera de la zona del pulgar ni que el contraste verde falla con luz directa.</p>
+    <p>Y si ocho de cada diez personas hacen gestiones con la Administración por Internet, un fallo de flujo que no se detectó a tiempo no es «un bug»: es gente que <strong>abandona</strong> un trámite que necesitaba. <strong>Mari Carmen</strong> está en ese 80,7 %: si el paso del código SMS no se prototipa y prueba con alguien de su perfil antes del lanzamiento, el sistema llega a producción con un cuello de botella que excluye exactamente a las personas que más lo necesitan.</p>
     <p>El prototipo es la última oportunidad <strong>barata</strong> de descubrir esos problemas. Después de lanzar, cada error se paga en frustración de usuarios reales y en costoso retrabajo.</p>
 
     <div class="box key">
@@ -317,17 +346,22 @@
     <h4>De la teoría a tu entrega</h4>
     <div class="table-scroll">
     <table class="data">
-      <caption>Qué produce el diseño del prototipo y cómo se evidencia en el proyecto.</caption>
+      <caption>Qué produce el diseño del prototipo y cómo se evidencia en el proyecto, con ejemplos de los dos casos de estudio.</caption>
       <thead>
-        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th></tr>
+        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Validar idea y flujo</th><td>Prototipo en papel (baja fidelidad)</td><td>De usar y tirar · papel</td></tr>
-        <tr><th scope="row">Validar estructura y navegación</th><td>Wireframes (media fidelidad)</td><td>Horizontal · información</td></tr>
-        <tr><th scope="row">Validar detalles y apariencia</th><td>Maqueta interactiva (alta fidelidad)</td><td>Vertical · Fitts · WCAG AA</td></tr>
-        <tr><th scope="row">Demostrar el método</th><td>Bocetos descartados y dudas resueltas</td><td>Iteración</td></tr>
+        <tr><th scope="row">Validar idea y flujo</th><td>Prototipo en papel (baja fidelidad)</td><td>De usar y tirar · papel</td><td>Dos hojas: inicio con botón de pago + confirmación «Billete listo». Pregunta: ¿completa el pago en 2 pasos sin leer?</td><td>Cuatro hojas: identificarse → médico/fecha → confirmar → «Cita guardada». Pregunta: ¿entiende que la cita quedó guardada?</td></tr>
+        <tr><th scope="row">Validar estructura y navegación</th><td>Wireframes (media fidelidad)</td><td>Horizontal · información</td><td>Wireframe vertical del flujo de pago + estado «sin cobertura». Comprueba: botón en zona del pulgar (Fitts), ruta de recuperación offline.</td><td>Wireframe vertical de los 4 pasos + flujo alternativo «código caducado → Reenviar». Comprueba: resumen de cita en pantalla completa, botón de reenvío visible.</td></tr>
+        <tr><th scope="row">Validar detalles y apariencia</th><td>Maqueta interactiva (alta fidelidad)</td><td>Vertical · Fitts · WCAG AA</td><td>Maqueta probada en móvil real al sol: contraste «Billete listo» ≥ 4,5:1, transición &lt; 0,1 s, tamaño táctil ≥ 44 px.</td><td>Maqueta probada en móvil de Mari Carmen: texto ≥ 18 px, reflujo al 200 % sin pérdida, código SMS agrupado «847 209» (Miller).</td></tr>
+        <tr><th scope="row">Demostrar el método</th><td>Bocetos descartados y dudas resueltas</td><td>Iteración</td><td>Boceto descartado: flujo de 6 pasos. Razón: Marta no lo completaba en 30 s en papel.</td><td>Boceto descartado: confirmación con solo un tic verde. Razón: Mari Carmen no sabía si la cita había quedado guardada.</td></tr>
       </tbody>
     </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">El prototipo como prueba del contexto real</span>
+      <p>El contexto de uso decide dónde y cómo se prueba cada prototipo. El de <strong>Marta</strong> se prueba en el móvil, de pie, con luz directa: si solo se prueba en el portátil de laboratorio, los problemas de Fitts y contraste no aparecen. El de <strong>Mari Carmen</strong> se prueba en la mesa de la cocina, con las gafas puestas y el zoom activado: si solo lo prueba alguien sin esas condiciones, el reflujo al 200 % y el código SMS nunca se detectan como problema. Prototipar en el contexto real no es un detalle metodológico: es la condición para que el prototipo responda las preguntas correctas.</p>
     </div>
 
     <h4>Tres consejos prácticos desde hoy</h4>
@@ -469,6 +503,7 @@
         <li>Se prueba sin programar con <strong>prototipado en papel</strong> y <strong>Mago de Oz</strong>; para media y alta, herramientas de wireframe y maquetado.</li>
         <li>Prototipar es <strong>preguntar barato</strong>: define la duda antes de empezar y prueba en el contexto real (móvil), según el INE 2025.</li>
         <li>En tu proyecto es la <strong>entrega central de la Actividad C</strong> (baja, media y alta), con evidencia de iteración, y pasa a evaluarse en el Tema 4.</li>
+        <li>Los dos casos de estudio ilustran que el prototipo vertical de la tarea más arriesgada vale más que el mapa completo: para <strong>Marta</strong> el flujo de pago y validación probado en móvil al sol; para <strong>Mari Carmen</strong> el paso del código SMS y la pantalla de confirmación probados con sus condiciones reales de uso.</li>
       </ul>
     </div>
   </section>

@@ -95,9 +95,11 @@
 
     <h4>Recursos frente a entorno: una distinción que ahorra errores</h4>
     <ul>
-      <li>El móvil con el que pagas el billete es un <strong>recurso</strong> (un medio que empleas).</li>
-      <li>El andén ruidoso y con prisa donde lo usas es <strong>entorno</strong> (una condición que te rodea).</li>
-      <li>La cobertura de red está en la frontera: la <em>conexión</em> que tu app consume es recurso; la <em>calidad de la cobertura</em> de ese lugar concreto es entorno.</li>
+      <li>El móvil con el que Marta paga el billete de autobús es un <strong>recurso</strong> (un medio que emplea).</li>
+      <li>El andén ruidoso y con prisa donde lo usa es <strong>entorno</strong> (una condición que la rodea).</li>
+      <li>El smartphone con letra grande que la nieta de Mari Carmen le instaló para pedir cita médica es un <strong>recurso</strong> (el único dispositivo de acceso disponible).</li>
+      <li>El pueblo de menos de 1.000 habitantes donde Mari Carmen vive, con cobertura irregular, es <strong>entorno</strong>; la conexión móvil que la app consume es <strong>recurso</strong>.</li>
+      <li>La cobertura de red está en la frontera: la <em>conexión</em> que la app consume es recurso; la <em>calidad de la cobertura</em> de ese lugar concreto es entorno.</li>
     </ul>
     <p>No te obsesiones con clasificar cada cosa en una sola casilla. Lo importante es que <strong>ningún medio se quede sin describir</strong>: si lo llamas recurso o condición es secundario; olvidarlo es lo grave.</p>
 
@@ -292,17 +294,54 @@
   <section id="cotidiano" aria-labelledby="cotidiano-h">
     <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma tarea, recursos distintos</h3>
 
-    <p>El recurso se entiende mejor con un ejemplo único visto desde distintos medios. Retomemos una tarea de tu día a día: <strong>renovar el abono de transporte desde el móvil</strong>.</p>
-    <p>El objetivo es siempre el mismo —renovar y poder viajar—, pero el recurso disponible cambia por completo la dificultad de esa tarea idéntica.</p>
+    <p>El recurso se entiende mejor poniendo caras concretas a los medios. Retomemos a las dos personas primarias que ya conoces: <strong>Marta</strong> (app de pago del transporte) y <strong>Mari Carmen</strong> (app de cita médica). Las dos usan el móvil, las dos tienen el mismo derecho al servicio. Sus recursos son completamente distintos.</p>
 
-    <h4>Una tarea, tres dotaciones de recursos</h4>
-    <ul>
-      <li><strong>Móvil de gama alta, fibra en casa, sin prisa.</strong> La tarea es trivial: carga rápido, cualquier diseño «vale». Es el recurso del equipo de desarrollo… y la trampa.</li>
-      <li><strong>Móvil de gama media de hace cuatro años, datos móviles justos.</strong> Si la pantalla pesa varios megas o exige el último navegador, la persona ve una rueda girando y se rinde. El recurso «conexión» y «dispositivo» se han vuelto el cuello de botella.</li>
-      <li><strong>Persona ciega con lector de pantalla.</strong> El recurso de acceso es la voz, no la vista. Si los botones no tienen etiqueta, el lector dice «botón, botón, botón» y la tarea es imposible, por bonita que sea la interfaz.</li>
-    </ul>
-    <p>Misma app, misma tarea, tres recursos. Cada uno impone decisiones de diseño distintas. Si solo pensaste en el primero —el que se parece al tuyo—, dejaste fuera a los otros dos.</p>
-    <p>Esto es, en una escena cotidiana, lo que captura el componente de recursos: <strong>no diseñas para una tarea, diseñas para una tarea con unos medios concretos</strong>. Cuando empieces a preguntarte «¿y si el móvil es viejo, los datos pocos y el acceso por voz?», habrás interiorizado la mirada del análisis.</p>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · App de pago del transporte</h4>
+    <p>Marta, 21 años, estudiante de FP en Cáceres. Su objetivo: <em>tener el billete validado en dos toques antes de subir al autobús</em>. Estos son sus recursos reales, extraídos del escenario de contexto:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Recursos de Marta para la tarea de pagar y validar el billete. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Tipo de recurso</th><th scope="col">Recurso real de Marta</th><th scope="col">Consecuencia de diseño</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Dispositivo</th><td>Smartphone propio, gama media; lo usa de pie, con una mano</td><td>Objetivos táctiles grandes; flujo completo con el pulgar</td></tr>
+        <tr><th scope="row">Conexión</th><td>Datos móviles con plan limitado; cobertura irregular en la parada</td><td>El billete debe estar disponible offline una vez preparado</td></tr>
+        <tr><th scope="row">Tiempo y atención</th><td>Segundos —el bus ya se ve llegar—; prisa máxima</td><td>Pago en ≤ 2 toques; sin formularios ni registro previo</td></tr>
+        <tr><th scope="row">Datos y batería</th><td>Plan de datos ajustado; a veces 4 % de batería</td><td>Pantallas ligeras; persistencia del billete sin reconexión</td></tr>
+        <tr><th scope="row">Productos de apoyo</th><td>Ninguno identificado en la investigación</td><td>Estándar WCAG AA para no cerrar la puerta a quien sí los use</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · App de cita médica</h4>
+    <p>Mari Carmen, 78 años, jubilada en un municipio rural de Extremadura de menos de 1.000 habitantes. Su objetivo: <em>pedir cita y saber que ha quedado confirmada, sin volver a llamar</em>. Sus recursos son radicalmente distintos a los de Marta, y así lo reveló la investigación:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Recursos de Mari Carmen para la tarea de pedir cita médica. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Tipo de recurso</th><th scope="col">Recurso real de Mari Carmen</th><th scope="col">Consecuencia de diseño</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Dispositivo</th><td>Smartphone con letra grande instalado por su nieta; sentada en la mesa de la cocina, con las gafas puestas</td><td>Texto grande por defecto (≥ 18 px base); sin dependencia de gestos complejos</td></tr>
+        <tr><th scope="row">Conexión</th><td>Red móvil con cobertura irregular en el interior de la casa</td><td>El flujo no puede depender de conexión continua; errores de red con mensaje claro y reintento</td></tr>
+        <tr><th scope="row">Tiempo y atención</th><td>Sin prisa en el momento de la tarea, pero con ansiedad ante la incertidumbre; competencia digital básica que aumenta la carga cognitiva</td><td>Sin límites de tiempo entre pasos; confirmación explícita en cada pantalla; una sola acción por paso</td></tr>
+        <tr><th scope="row">Datos y batería</th><td>Plan de datos básico; no comprueba habitualmente la batería</td><td>Pantallas livianas; la confirmación debe persistir sin necesidad de reconectar</td></tr>
+        <tr><th scope="row">Productos de apoyo</th><td>No identificados, pero Joaquín (secundario) amplía el zoom al 200 %</td><td>Reflujo sin pérdida de contenido al 200 % (WCAG AA 1.4.10); contraste mínimo 4,5:1</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Compara los dos casos</span>
+      <p>Las dos personas tienen en común: móvil como único dispositivo y conexión no garantizada. Pero sus consumibles difieren radicalmente: Marta tiene <strong>tiempo escaso y datos ajustados</strong>; Mari Carmen tiene <strong>tiempo disponible pero carga cognitiva alta</strong>. Una misma decisión de diseño —por ejemplo, añadir una pantalla de confirmación de resumen— es fricción innecesaria para Marta y requisito imprescindible para Mari Carmen. El análisis de recursos hace visible esa diferencia antes de diseñar una sola pantalla.</p>
+    </div>
+
+    <p><strong>No diseñas para una tarea: diseñas para una tarea con unos medios concretos.</strong> El recurso no es un detalle técnico que se resuelve al final. Es el marco dentro del cual el objetivo es alcanzable o imposible.</p>
 
     <div class="box challenge">
       <span class="label">Reto exprés</span>
@@ -318,9 +357,9 @@
 
     <h4>Tres consecuencias prácticas de no estar solo</h4>
     <ul>
-      <li><strong>Diseño adaptable (<em>responsive</em>).</strong> El mismo contenido debe servir en una pantalla pequeña y en una grande, porque el dispositivo es un recurso variable, no una constante.</li>
-      <li><strong>Tolerancia a la mala conexión.</strong> Mostrar algo útil mientras carga, permitir reintentos, no perder lo que la persona ya escribió. La <strong>latencia</strong> y los cortes son la norma, no la excepción.</li>
-      <li><strong>Compatibilidad con productos de apoyo.</strong> Texto alternativo en las imágenes, etiquetas en los botones, orden de foco lógico. Es lo que permite que el lector de pantalla —el recurso de acceso de la persona— haga su trabajo.</li>
+      <li><strong>Diseño adaptable (<em>responsive</em>).</strong> El mismo contenido debe servir en una pantalla pequeña y en una grande, porque el dispositivo es un recurso variable, no una constante. Marta usa el móvil de pie con una mano; Mari Carmen lo usa sentada con las gafas puestas: el mismo diseño tiene que funcionar en ambos contextos de interacción.</li>
+      <li><strong>Tolerancia a la mala conexión.</strong> Mostrar algo útil mientras carga, permitir reintentos, no perder lo que la persona ya escribió. La <strong>latencia</strong> y los cortes son la norma, no la excepción. Para Marta esto se traduce en billete disponible offline; para Mari Carmen, en que un corte de cobertura no borre lo que ya ha rellenado del formulario de cita.</li>
+      <li><strong>Compatibilidad con productos de apoyo.</strong> Texto alternativo en las imágenes, etiquetas en los botones, orden de foco lógico. Es lo que permite que el lector de pantalla —el recurso de acceso de la persona— haga su trabajo. En el Caso B, Joaquín (secundario) amplía el zoom al 200 %: el diseño debe refluir sin pérdida de contenido (WCAG AA 1.4.10).</li>
     </ul>
     <p>Observa que estas tres consecuencias no son «extras». Son la traducción directa del componente de recursos a tus decisiones técnicas: das por hecho menos sobre el equipamiento y, a cambio, llegas a más personas.</p>
     <p>La bibliografía de la asignatura insiste en esta humildad. Krug lo resume en una idea de su <em>No me hagas pensar</em>: el buen diseño no obliga a la persona a poner de su parte recursos —atención, paciencia, equipamiento— que quizá no tiene.</p>
@@ -334,11 +373,10 @@
   <section id="coste" aria-labelledby="coste-h">
     <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: con qué se conecta España (INE 2025)</h3>
 
-    <p>Que «el recurso importa» no es opinión: los datos lo confirman. El <strong>Instituto Nacional de Estadística (INE)</strong>, en su <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>, retrata con qué equipamiento y qué conexión cuenta de verdad la población.</p>
-    <p>Cuatro cifras de esa encuesta bastan para desmontar la suposición del «recurso ideal».</p>
+    <p>Que «el recurso importa» no es opinión: los datos lo confirman. El <strong>Instituto Nacional de Estadística (INE)</strong>, en su <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares 2025</em>, retrata con qué equipamiento y qué conexión cuenta de verdad la población. Dos grupos de datos son especialmente relevantes para los casos de estudio: los de la población general —que enmarcan a Marta— y los de los mayores en entorno rural, que dan respaldo estadístico al perfil de Mari Carmen.</p>
 
     <div class="box real">
-      <span class="label">Dato real · Fuente INE 2025</span>
+      <span class="label">Dato real · Fuente INE 2025 · Población general</span>
       <div class="table-scroll">
       <table>
         <caption>Fuente: INE, <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos definitivos publicados el 20 de noviembre de 2025). Hogares con al menos una persona de 16 a 74 años.</caption>
@@ -355,14 +393,32 @@
       </div>
     </div>
 
-    <p>La lectura es directa y útil para el diseño. Aunque el <strong>83,8 %</strong> de los hogares tiene algún ordenador, <strong>la mitad</strong> (50,3 %) solo dispone de móvil para la telefonía: para mucha gente, el aparato de referencia es pequeño y táctil, no un teclado.</p>
-    <p>Y aunque la fibra domina (86,8 %), un <strong>10,7 %</strong> de los hogares depende por completo de la red móvil para conectarse, con sus cortes, su latencia y su consumo de datos. Diseñar suponiendo «buena fibra siempre» deja fuera a uno de cada diez hogares.</p>
-    <p>Súmale el dato que ya conoces del Tema 1: <strong>ocho de cada diez personas</strong> (80,7 %) se relacionan con la Administración por Internet. Si esas pantallas exigen recursos que no todos tienen, el coste lo paga la <strong>ciudadanía que no consigue completar su gestión</strong>.</p>
-    <p>Especificar bien los recursos es la inversión que evita ese fallo: diseñar para el dispositivo, la conexión y los datos que la gente tiene de verdad, no para los del laboratorio.</p>
+    <p>Para Marta, estos datos son el marco: el recurso «dispositivo» es casi siempre el móvil, y la conexión no es garantía de fibra. La mitad de los hogares (50,3 %) solo dispone de teléfono móvil y uno de cada diez (10,7 %) se conecta únicamente por red móvil, con sus cortes y su consumo de datos. Diseñar suponiendo «buena fibra siempre» deja fuera a una parte enorme de la población.</p>
+
+    <div class="box real">
+      <span class="label">Dato real · Fuente INE 2025 · Mayores y entorno rural</span>
+      <div class="table-scroll">
+      <table>
+        <caption>Fuente: INE, <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025. Indicadores relevantes para el perfil de Mari Carmen y el entorno rural extremeño.</caption>
+        <thead>
+          <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Personas de 65 a 74 años que usaron Internet en los últimos 3 meses</td><td class="fig">78,6 %</td></tr>
+          <tr><td>Personas de 75 años o más que usaron Internet en los últimos 3 meses</td><td class="fig">44,2 %</td></tr>
+          <tr><td>Municipios &lt; 2.000 hab. en Extremadura: proporción de mayores de 65 años (estimación)</td><td class="fig">&gt; 35 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <p>Para Mari Carmen, estos datos son determinantes: <strong>más de la mitad de las personas de su franja de edad no usa Internet</strong>. Las que sí lo hacen —como ella— llegan a la app con recursos digitales mucho más limitados que la media. En entornos rurales, el móvil es frecuentemente el único dispositivo disponible, y la cobertura es el recurso más frágil.</p>
+    <p>Súmale el dato que ya conoces del Tema 1: <strong>ocho de cada diez personas</strong> (80,7 %) se relacionan con la Administración por Internet. Si esas pantallas exigen recursos que no todos tienen —ni en cantidad ni en calidad—, el coste lo paga la <strong>ciudadanía que no consigue completar su gestión</strong>.</p>
+    <p>Especificar bien los recursos es la inversión que evita ese fallo: diseñar para el dispositivo, la conexión y el tiempo que la gente tiene de verdad, no para los del laboratorio.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Los datos del INE 2025 dibujan un equipamiento <strong>diverso y mayoritariamente móvil</strong>: el 50,3 % de los hogares solo tiene móvil y el 10,7 % se conecta únicamente por red móvil. Diseñar para el «recurso ideal» excluye a una parte enorme de la población.</p>
+      <p>Los datos del INE 2025 dibujan un equipamiento <strong>diverso y mayoritariamente móvil</strong>: el 50,3 % de los hogares solo tiene móvil y el 10,7 % se conecta únicamente por red móvil. Entre los mayores de 75 años —el perfil de Mari Carmen—, solo el 44,2 % usa Internet: los que llegan a la app lo hacen con recursos digitales escasos. Diseñar para el «recurso ideal» excluye a una parte enorme de la población en ambos extremos del espectro.</p>
     </div>
   </section>
 
@@ -499,7 +555,7 @@
       <dt>Latencia</dt>
       <dd>Retardo entre que la persona actúa y el sistema responde; aumenta con conexiones lentas o saturadas y afecta de lleno a la usabilidad.</dd>
       <dt>Modo sin conexión (offline)</dt>
-      <dd>Capacidad de un sistema de seguir siendo útil cuando el recurso «conexión» desaparece (p. ej., guardar un billete ya descargado).</dd>
+      <dd>Capacidad de un sistema de seguir siendo útil cuando el recurso «conexión» desaparece. P. ej., el billete de Marta disponible aunque caiga la cobertura en la parada; o el formulario de cita de Mari Carmen que no pierde lo escrito si hay un corte de red en su pueblo.</dd>
       <dt>Esfuerzo / carga cognitiva</dt>
       <dd>Recurso mental que la tarea exige a la persona (atención, memoria, concentración). Un diseño que pide demasiado «gasta» un recurso limitado.</dd>
       <dt>Contexto de uso</dt>
@@ -523,7 +579,8 @@
         <li>Los <strong>productos de apoyo</strong> son un recurso clave: tu interfaz debe ser <strong>compatible</strong> con ellos. Ese es el sentido técnico de la accesibilidad (WCAG AA, EN 301 549).</li>
         <li>La <strong>usabilidad depende del recurso</strong>: la misma tarea cambia de dificultad según el dispositivo, la conexión o el tiempo disponibles.</li>
         <li>El antipatrón es suponer el <strong>«recurso ideal»</strong>: diseñar con el buen equipamiento del propio equipo y excluir a quien tiene menos.</li>
-        <li>Los datos del <strong>INE 2025</strong> confirman un equipamiento diverso y móvil: 83,8 % de hogares con ordenador, 50,3 % solo con móvil, 86,8 % con fibra y 10,7 % conectados solo por red móvil.</li>
+        <li>Los datos del <strong>INE 2025</strong> confirman un equipamiento diverso y móvil: 83,8 % de hogares con ordenador, 50,3 % solo con móvil, 86,8 % con fibra y 10,7 % conectados solo por red móvil. Entre los mayores de 75 años —el perfil de Mari Carmen— solo el 44,2 % usa Internet: quien llega a la app lo hace con recursos digitales escasos.</li>
+        <li>Los dos casos de estudio ilustran la diferencia entre consumibles: <strong>Marta</strong> (app de transporte) tiene tiempo escaso y datos justos → diseño en ≤ 2 toques, billete offline; <strong>Mari Carmen</strong> (app de cita médica) tiene tiempo pero alta carga cognitiva y cobertura irregular → sin límites de tiempo, confirmación explícita persistente.</li>
         <li>En tu proyecto, los recursos se especifican dentro de la entrega de contexto de uso: hay que <strong>evidenciar</strong> los medios reales de tus usuarios, y aquí se prepara el umbral <strong>AA de WCAG</strong>.</li>
         <li>En las próximas sesiones desarrollaremos el cuarto componente: el <strong>entorno (¿dónde?)</strong>, con el que se cierra el contexto de uso.</li>
       </ul>

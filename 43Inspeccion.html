@@ -397,22 +397,29 @@
     <p>Fíjate en el método: no se trata de opinar, sino de <strong>buscar un indicio observable</strong> para cada heurística. Si lo encuentras del lado «no se cumple», tienes un hallazgo.</p>
 
     <h4>De los indicios a los hallazgos priorizados</h4>
-    <p>Cada incumplimiento detectado se anota como hallazgo y se le asigna una <strong>gravedad</strong>, para saber qué arreglar primero. Por ejemplo, tres de los anteriores:</p>
+    <p>Cada incumplimiento detectado se anota como hallazgo y se le asigna una <strong>gravedad</strong>, para saber qué arreglar primero. La tabla incluye hallazgos de los dos casos de estudio:</p>
     <div class="table-scroll">
     <table class="data">
-      <caption>Hallazgos de la mini-evaluación, con su gravedad. Ejemplo didáctico.</caption>
+      <caption>Hallazgos de mini-evaluaciones en los dos casos de estudio, con su gravedad. Ejemplo didáctico.</caption>
       <thead>
-        <tr><th scope="col">Hallazgo</th><th scope="col">Heurística incumplida</th><th scope="col">Gravedad</th></tr>
+        <tr><th scope="col">Caso</th><th scope="col">Hallazgo</th><th scope="col">Heurística incumplida</th><th scope="col">Gravedad</th></tr>
       </thead>
       <tbody>
-        <tr><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>Grave</td></tr>
-        <tr><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>Grave</td></tr>
-        <tr><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia</td><td>Menor</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>Grave</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>Grave</td></tr>
+        <tr><td>Caso A · Marta</td><td>El botón «Confirmar pago» está en la esquina superior derecha, lejos de la zona del pulgar</td><td>3 · Control y libertad + 8 · Estético y minimalista</td><td>Grave</td></tr>
+        <tr><td>Caso A · Marta</td><td>La confirmación de validación solo usa color verde, sin texto ni icono adicional</td><td>4 · Consistencia (no solo color, WCAG AA)</td><td>Grave</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia</td><td>Menor</td></tr>
       </tbody>
     </table>
     </div>
-    <p>En diez minutos y sin molestar a nadie tienes una <strong>lista de problemas con nombre y gravedad</strong>, lista para llevar al equipo. Eso es una evaluación heurística.</p>
-    <p>Y observa el límite: no sabes <em>aún</em> si esos problemas hacen fracasar a un usuario real. Eso lo dirá el test. La inspección ha hecho su trabajo: señalar dónde mirar.</p>
+    <p>En diez minutos y sin molestar a nadie tienes una <strong>lista de problemas con nombre y gravedad</strong>, lista para llevar al equipo. Eso es una evaluación heurística aplicada a dos casos reales.</p>
+    <p>Y observa el límite: no sabes <em>aún</em> si esos problemas hacen fracasar a un usuario real. Eso lo dirá el test. La inspección ha hecho su trabajo: señalar dónde mirar, y en qué caso mirarlo primero.</p>
+
+    <div class="box curio">
+      <span class="label">La inspección en los dos casos</span>
+      <p>Para la app de <strong>Marta</strong>, la inspección heurística prioriza la zona del pulgar (Fitts + heurística 3) y el contraste al sol (WCAG AA + heurística 4). Para la app de <strong>Mari Carmen</strong>, prioriza la visibilidad del estado tras confirmar (heurística 1) y los mensajes de error en lenguaje claro (heurística 9). La inspección de accesibilidad añade la verificación del reflujo al 200 % (WCAG 1.4.10) para Joaquín. En diez minutos por caso, sin usuarios, el equipo tiene la lista de qué corregir antes del test.</p>
+    </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -443,9 +450,9 @@
       </div>
     </div>
 
-    <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia.</p>
-    <p>Cuando una inspección de accesibilidad detecta que una imagen no tiene texto alternativo o que el contraste es insuficiente, está evitando que esos millones de personas se queden fuera. Ese es el sentido de la heurística, convertido en cifras.</p>
-    <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: también a quien lleva una mano escayolada, usa el móvil al sol o envejece. Inspeccionar la accesibilidad es diseñar para todos.</p>
+    <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % porque tiene baja visión: si la inspección no verifica el criterio WCAG 1.4.10 (reflujo), la pantalla «Cita guardada» de <strong>Mari Carmen</strong> —que Joaquín también usa— le resulta inutilizable aunque el flujo funcione bien para todos los demás.</p>
+    <p>Cuando una inspección detecta que el contraste del «Billete listo» de la app de <strong>Marta</strong> es de 2,1:1 en lugar de 4,5:1, está evitando que ese problema llegue al test, donde el fallo con luz solar cuesta sesiones enteras. Ese es el valor de inspeccionar primero: limpiar lo que el experto puede ver sin necesitar a nadie.</p>
+    <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: el contraste alto que protege a Joaquín es el mismo que Marta necesita al sol en el andén. Inspeccionar la accesibilidad es diseñar para todos.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -461,9 +468,9 @@
 
     <h4>Qué encaja bien</h4>
     <ul>
-      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común.</li>
-      <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez.</li>
-      <li>La <strong>inspección de accesibilidad obligatoria</strong>: la revisión conforme a <strong>WCAG nivel AA</strong> que ya conoces del Tema 1 y que es requisito mínimo del bloque.</li>
+      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común. Para la app de <strong>Marta</strong>: revisar heurísticas 1 (visibilidad del estado en &lt; 0,1 s), 3 (botón «Confirmar» en zona del pulgar) y 8 (pantalla de inicio sin opciones superfluas). Para la de <strong>Mari Carmen</strong>: revisar heurísticas 1 (pantalla «Cita guardada» clara), 9 (mensajes de error en lenguaje llano) y 6 (sin exigir recordar el código del centro).</li>
+      <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez. Para Marta: ¿sabría que el botón de inicio es el pago? Para Mari Carmen: ¿en el paso del código SMS, vería el botón «Reenviar» sin reiniciar?</li>
+      <li>La <strong>inspección de accesibilidad obligatoria</strong>: contraste ≥ 4,5:1 (Marta bajo el sol, Joaquín con baja visión), reflujo al 200 % sin pérdida (Joaquín, WCAG 1.4.10), no solo color en la confirmación de Mari Carmen (WCAG 1.4.1).</li>
     </ul>
     <p>Sea cual sea, documenta cada hallazgo con su <strong>gravedad</strong> y su recomendación en el <strong>informe de evaluación</strong>. Una inspección sin informe no sirve: el valor está en comunicar qué arreglar y por qué.</p>
 
@@ -590,6 +597,7 @@
         <li>En tu proyecto la inspección es <strong>obligatoria</strong>; la más asequible es la heurística, e incluye la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo), documentada en el informe.</li>
         <li>Profesionalmente, la inspección de accesibilidad es <strong>obligatoria por ley</strong> (Directiva 2019/882, EN 301 549) y cubre las competencias CI17, CG03, CB03 y CB04.</li>
         <li>En la próxima sesión cerramos las familias con el <strong>test con usuarios</strong>.</li>
+        <li>Los dos casos ilustran el valor de inspeccionar antes del test: la heurística detecta el botón de <strong>Marta</strong> fuera de la zona del pulgar y el mensaje de error ininteligible de <strong>Mari Carmen</strong> en minutos y sin usuarios; la inspección WCAG verifica el contraste al sol (Marta) y el reflujo al 200 % para Joaquín antes de que ningún participante real fracase por ello.</li>
       </ul>
     </div>
   </section>

@@ -123,7 +123,7 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>El mayor enemigo del etiquetado claro es la <strong>«maldición del conocimiento»</strong>: quien diseña sabe tanto del sistema que olvida lo que es obvio para él no lo es para nadie más. Por eso una etiqueta «evidente» para el equipo puede ser un jeroglífico para el usuario. La prueba con personas reales (Tema 4) es el único antídoto fiable.</p>
+      <p>El mayor enemigo del etiquetado claro es la <strong>«maldición del conocimiento»</strong>: quien diseña sabe tanto del sistema que olvida que lo que es obvio para él no lo es para nadie más. Etiquetas como «CIP» o «Código de identificación personal» son evidentes para el equipo de desarrollo pero un jeroglífico para <strong>Mari Carmen</strong>; lo que necesita leer es «Tu número de teléfono». Del mismo modo, un botón «Validar» en la app de transporte le dice a <strong>Marta</strong> menos que «Pagar y subir». La prueba con personas reales (Tema 4) es el único antídoto fiable.</p>
     </div>
   </section>
 
@@ -199,7 +199,7 @@
       <li><b>Cierre y continuidad</b> La mente completa figuras incompletas y sigue las líneas. Un buen <em>layout</em> guía la mirada con alineaciones invisibles, sin recargar de bordes.</li>
     </ul>
 
-    <p>El mensaje práctico es contundente: <strong>la disposición habla antes que el texto</strong>. Si agrupas mal, mientes al usuario aunque las palabras sean correctas.</p>
+    <p>El mensaje práctico es contundente: <strong>la disposición habla antes que el texto</strong>. Si agrupas mal, mientes al usuario aunque las palabras sean correctas. En el formulario de cita de <strong>Mari Carmen</strong>: la etiqueta «Fecha» pegada a su calendario (proximidad) y el bloque «Tus datos» en un recuadro separado del bloque «La cita» (región común) le dicen antes de leer qué va con qué. En la pantalla de pago de <strong>Marta</strong>: el botón «Confirmar» del mismo color y tamaño que en todas las demás acciones positivas (semejanza) le dice sin pensar que ese es el paso siguiente.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -237,12 +237,12 @@
     <p>Las <strong>WCAG nivel AA</strong> (a las que remite la <strong>EN 301 549</strong> que ya conoces) ponen condiciones concretas y verificables sobre cómo se presenta la información. Tres son inexcusables.</p>
 
     <ul class="laws" role="list">
-      <li><b>Contraste suficiente</b> El texto debe contrastar con su fondo (WCAG AA pide una relación de al menos <strong>4,5:1</strong> para texto normal). Un gris claro sobre blanco es elegante y, a la vez, ilegible para mucha gente.</li>
-      <li><b>No solo el color</b> Nunca transmitas información <strong>únicamente</strong> con color (por ejemplo, «los campos en rojo son obligatorios»). Quien no distingue ese color se queda sin el dato. Acompaña siempre con texto, icono o forma.</li>
-      <li><b>Legibilidad</b> Tipografía clara, tamaño suficiente y líneas no demasiado largas. La tipografía de estos apuntes, <strong>Atkinson Hyperlegible</strong>, está diseñada precisamente para distinguir mejor letras parecidas.</li>
+      <li><b>Contraste suficiente</b> El texto debe contrastar con su fondo (WCAG AA pide una relación de al menos <strong>4,5:1</strong> para texto normal). El mensaje «Billete listo» de <strong>Marta</strong> en verde claro sobre blanco puede ser ilegible al sol del andén aunque se vea bien en el despacho; el texto de confirmación de <strong>Mari Carmen</strong> en gris tenue puede ser invisible con la baja visión de Joaquín (secundario).</li>
+      <li><b>No solo el color</b> Nunca transmitas información <strong>únicamente</strong> con color. Si el estado «Cita confirmada» de Mari Carmen se señala solo con un fondo verde sin texto, quien no distingue ese color no sabrá si la gestión se completó. Acompaña siempre con texto explícito: «Cita guardada — Dr. Ramos, martes 10:00».</li>
+      <li><b>Legibilidad</b> Tipografía clara, tamaño suficiente y líneas no demasiado largas. Para <strong>Mari Carmen</strong>, el texto base debe ser ≥ 18 px y el formulario no puede requerir desplazamiento horizontal; para <strong>Joaquín</strong> (secundario), el contenido debe refluir al 200 % de zoom sin pérdida de información (WCAG AA 1.4.10). La tipografía de estos apuntes, <strong>Atkinson Hyperlegible</strong>, está diseñada precisamente para distinguir mejor letras parecidas.</li>
     </ul>
 
-    <p>Fíjate en que estas reglas <strong>mejoran la experiencia de todo el mundo</strong>, no solo de quien tiene una discapacidad: es el principio del diseño universal. Un buen contraste se agradece también al sol, en un móvil y con prisa.</p>
+    <p>Fíjate en que estas reglas <strong>mejoran la experiencia de todo el mundo</strong>, no solo de quien tiene una discapacidad: un buen contraste se agradece al sol y con prisa, exactamente en el entorno de Marta en el andén. Es el principio del diseño universal.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -265,13 +265,13 @@
 
     <h4>Diseñar para el escaneo</h4>
     <ul>
-      <li><strong>Titulares y encabezados claros</strong> que actúen como señales de tráfico.</li>
-      <li><strong>Bloques cortos</strong> y listas en lugar de párrafos densos.</li>
-      <li><strong>Una jerarquía visual fuerte</strong> que diga, sin leer, por dónde empezar.</li>
-      <li><strong>Lo importante, donde la mirada cae primero</strong> (arriba y a la izquierda en nuestra cultura).</li>
+      <li><strong>Titulares y encabezados claros</strong> que actúen como señales de tráfico. Mari Carmen escanea la pantalla de confirmación buscando un titular que le diga «Cita guardada»; si solo hay un icono verde, no lo encuentra.</li>
+      <li><strong>Bloques cortos</strong> y listas en lugar de párrafos densos. El resumen de la cita de Mari Carmen —médico, fecha, hora— debe ocupar tres líneas cortas, no un párrafo de texto corrido.</li>
+      <li><strong>Una jerarquía visual fuerte</strong> que diga, sin leer, por dónde empezar. Marta escanea la pantalla de inicio buscando «el botón para pagar»; si hay ocho opciones del mismo tamaño, tarda más de lo que el bus espera.</li>
+      <li><strong>Lo importante, donde la mirada cae primero</strong>. El botón «Confirmar pago» de Marta debe estar en la zona central inferior —donde cae el pulgar—, no en una esquina que requiere recolocar la mano.</li>
     </ul>
 
-    <p>Diseñar para el escaneo no es renunciar al contenido: es <strong>estructurarlo</strong> para que la persona encuentre rápido lo suyo y profundice solo si quiere.</p>
+    <p>Diseñar para el escaneo no es renunciar al contenido: es <strong>estructurarlo</strong> para que cada persona encuentre rápido lo suyo. Marta escanea bajo presión; Mari Carmen escanea con ansiedad: las dos se benefician de una pantalla que comunica antes de leerse.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -282,29 +282,49 @@
   <section id="dos-presentaciones" aria-labelledby="dos-presentaciones-h">
     <h3 id="dos-presentaciones-h"><span class="num" aria-hidden="true">2.2</span>La misma información, dos presentaciones</h3>
 
-    <p>Igual que una misma meta admitía dos actividades, una misma información admite presentaciones que la hacen clara o ilegible. Tomemos un <strong>formulario de solicitud de cita</strong>.</p>
+    <p>Igual que una misma meta admitía dos actividades, una misma información admite presentaciones que la hacen clara o ilegible. Los dos casos de estudio ofrecen ejemplos concretos.</p>
 
-    <h4>Presentación mal diseñada</h4>
-    <ul>
-      <li>Todos los campos seguidos, sin agrupar (datos personales mezclados con los del centro).</li>
-      <li>Etiquetas lejos de sus campos, que la proximidad asocia mal.</li>
-      <li>Campos obligatorios marcados <strong>solo</strong> en rojo (falla «no solo el color»).</li>
-      <li>Texto gris claro de bajo contraste, ilegible al sol o con baja visión.</li>
-    </ul>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · Pantalla de confirmación de pago</h4>
 
-    <h4>Presentación bien diseñada</h4>
-    <ul>
-      <li>Campos <strong>agrupados</strong> en bloques con título: «Tus datos», «La cita» (proximidad y región común).</li>
-      <li>Cada etiqueta pegada a su campo, sin ambigüedad.</li>
-      <li>Los obligatorios marcados con texto e icono además del color.</li>
-      <li>Contraste alto y un botón de acción claramente prominente (jerarquía visual).</li>
-    </ul>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparativa de presentación mal y bien diseñada para la pantalla de confirmación de pago de Marta. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Presentación mal diseñada</th><th scope="col">Presentación bien diseñada</th><th scope="col">Principio aplicado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Importe, destino y hora en texto corrido, sin bloques.</td><td>Importe en grande y centrado; destino e hora en texto más pequeño debajo.</td><td>Jerarquía visual: lo más urgente (¿cuánto?) se ve primero.</td></tr>
+        <tr><td>Estado «Validado» señalado solo con un borde verde.</td><td>Estado con fondo verde <em>y</em> texto «Billete listo» en grande <em>y</em> un tic.</td><td>No solo el color (WCAG) + contraste legible al sol.</td></tr>
+        <tr><td>Botón «Aceptar» del mismo tamaño que «Cancelar» y «Ver detalle».</td><td>Un solo botón prominente «Subir» —el único paso siguiente— en zona del pulgar.</td><td>Jerarquía visual + Fitts: lo importante, grande y cerca.</td></tr>
+        <tr><td>Texto gris claro sobre blanco (contraste 2,1:1).</td><td>Texto oscuro sobre fondo claro, contraste ≥ 4,5:1 (WCAG AA 1.4.3).</td><td>Contraste suficiente: legible al sol y con baja visión.</td></tr>
+      </tbody>
+    </table>
+    </div>
 
-    <p>Los datos pedidos son los mismos. Cambia la <strong>organización y la presentación</strong>: la segunda versión se completa de un vistazo; la primera, a tientas.</p>
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · Formulario de solicitud de cita</h4>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparativa de presentación mal y bien diseñada para el formulario de cita de Mari Carmen. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Presentación mal diseñada</th><th scope="col">Presentación bien diseñada</th><th scope="col">Principio aplicado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Todos los campos seguidos: nombre, teléfono, CIP, especialidad, fecha, hora, observaciones.</td><td>Dos bloques con título: «Tus datos» y «La cita»; cada uno en su recuadro.</td><td>Región común + proximidad: agrupa lo que va junto, separa lo que no.</td></tr>
+        <tr><td>Etiqueta «Fecha» a la misma distancia de su campo y del campo de «Hora».</td><td>Cada etiqueta pegada justo encima de su campo, con espacio generoso entre pares.</td><td>Proximidad: la etiqueta más cerca de su campo que de cualquier otro.</td></tr>
+        <tr><td>Campos obligatorios marcados solo en rojo.</td><td>Obligatorios con asterisco, texto «(obligatorio)» e icono además del color.</td><td>No solo el color (WCAG AA 1.4.1).</td></tr>
+        <tr><td>Texto de 12 px, líneas de 80 caracteres, contraste 3,2:1.</td><td>Texto base ≥ 18 px, líneas de máximo 60 caracteres, contraste ≥ 4,5:1; reflujo sin pérdida al 200 % de zoom.</td><td>Legibilidad + WCAG AA 1.4.3 y 1.4.10 (para Joaquín, secundario).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>En los dos casos, los datos presentados son los mismos. Cambia la <strong>organización y la presentación</strong>: las versiones bien diseñadas se completan de un vistazo; las mal diseñadas obligan a detenerse, releer y adivinar.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>La misma información puede ser clara o ilegible según se <strong>agrupe, etiquete y destaque</strong>. Buen diseño de la información: bloques con sentido, etiquetas pegadas, contraste alto, nunca solo color y una acción principal prominente.</p>
+      <p>La misma información puede ser clara o ilegible según se <strong>agrupe, etiquete y destaque</strong>. Para Marta: jerarquía fuerte, contraste al sol y un solo botón prominente. Para Mari Carmen: bloques separados, etiquetas pegadas, nunca solo el color y texto legible con y sin zoom.</p>
     </div>
   </section>
 
@@ -330,9 +350,9 @@
       </div>
     </div>
 
-    <p>Más de <strong>cuatro millones de personas</strong> viven con alguna discapacidad, y los problemas de movilidad y de percepción están entre los más frecuentes. Un bajo contraste o un código solo de color les cierra la puerta directamente.</p>
-    <p>Súmale que cerca de un tercio de la población no alcanza un nivel digital básico: para esas personas, una jerarquía clara y un etiquetado sencillo no son un lujo, son la diferencia entre comprender o rendirse.</p>
-    <p>Y con la mitad de los hogares usando <strong>solo el móvil</strong>, a menudo al sol y con prisa, el contraste alto y la información bien jerarquizada benefician, de hecho, a todo el mundo.</p>
+    <p>Más de <strong>cuatro millones de personas</strong> viven con alguna discapacidad, y los problemas de percepción están entre los más frecuentes. Un bajo contraste o un código solo de color les cierra la puerta directamente. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % por su baja visión: si el diseño no refluye sin pérdida, la pantalla de confirmación de Mari Carmen —que Joaquín también usa— le resulta inutilizable.</p>
+    <p>Súmale que cerca de un tercio de la población no alcanza un nivel digital básico: <strong>Mari Carmen</strong> es exactamente ese perfil. Para ella, una jerarquía clara —«Cita guardada» en grande, médico y fecha en las dos líneas siguientes— no es un lujo: es la diferencia entre saber que la gestión se completó o llamar a su hija.</p>
+    <p>Y con la mitad de los hogares usando <strong>solo el móvil</strong>, a menudo al sol y con prisa, el contraste alto y la información bien jerarquizada benefician también a <strong>Marta</strong> en el andén: el «Billete listo» en verde oscuro sobre blanco que se lee bajo el sol es el mismo contraste que protege a quien tiene baja visión. Diseñar para el caso extremo mejora la experiencia para todos.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -349,17 +369,22 @@
     <h4>De la teoría a tu entrega</h4>
     <div class="table-scroll">
     <table class="data">
-      <caption>Qué produce el diseño de la información y cómo se evidencia en el proyecto.</caption>
+      <caption>Qué produce el diseño de la información y cómo se evidencia en el proyecto, con ejemplos de los dos casos de estudio.</caption>
       <thead>
-        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th></tr>
+        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Qué contenidos y cómo se agrupan</th><td>Estructura y etiquetas de cada pantalla</td><td>Arquitectura de la información · Miller</td></tr>
-        <tr><th scope="row">Qué va junto visualmente</th><td>Agrupaciones y bloques justificados</td><td>Gestalt (proximidad, región común)</td></tr>
-        <tr><th scope="row">Qué se ve primero</th><td>Jerarquía visual de cada pantalla</td><td>Variables visuales · escaneo</td></tr>
-        <tr><th scope="row">Que lo perciba todo el mundo</th><td>Comprobación de contraste y de «no solo color»</td><td>WCAG AA · EN 301 549</td></tr>
+        <tr><th scope="row">Qué contenidos y cómo se agrupan</th><td>Estructura y etiquetas de cada pantalla</td><td>Arquitectura de la información · Miller</td><td>Pantalla de inicio: un solo elemento, «importe + destino». Etiqueta del botón: «Pagar y subir», no «Validar».</td><td>Formulario en dos bloques etiquetados: «Tus datos» y «La cita». Etiqueta: «Tu número de teléfono», no «CIP».</td></tr>
+        <tr><th scope="row">Qué va junto visualmente</th><td>Agrupaciones y bloques justificados</td><td>Gestalt (proximidad, región común)</td><td>Importe + destino en mismo recuadro; separado del historial de viajes.</td><td>Etiqueta pegada a su campo; bloque «Tus datos» en recuadro separado del bloque «La cita».</td></tr>
+        <tr><th scope="row">Qué se ve primero</th><td>Jerarquía visual de cada pantalla</td><td>Variables visuales · escaneo</td><td>«Billete listo» en texto grande y color, centrado. Un solo botón prominente en zona del pulgar.</td><td>«Cita guardada» en título grande. Médico, fecha y hora en tres líneas cortas debajo. Botón secundario «Ver mis citas» en menor tamaño.</td></tr>
+        <tr><th scope="row">Que lo perciba todo el mundo</th><td>Comprobación de contraste y de «no solo color»</td><td>WCAG AA · EN 301 549</td><td>Contraste del «Billete listo» ≥ 4,5:1 al sol. Estado «Validado» con texto + tic + color verde.</td><td>Texto ≥ 18 px base. Obligatorios con asterisco + texto + color. Reflujo al 200 % sin pérdida (Joaquín, secundario).</td></tr>
       </tbody>
     </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">El diseño de la información en los dos casos</span>
+      <p>El reto de Marta es la <strong>jerarquía bajo presión</strong>: su pantalla de confirmación tiene que comunicar «listo» en menos de un segundo de escaneo. El reto de Mari Carmen es la <strong>claridad sin ambigüedad</strong>: su pantalla de confirmación debe eliminar cualquier duda sobre si la cita quedó guardada. Ambas exigen contraste alto y no depender solo del color, porque el sol del andén y la baja visión de Joaquín apuntan exactamente al mismo requisito WCAG.</p>
     </div>
 
     <h4>Tres consejos prácticos desde hoy</h4>
@@ -507,6 +532,7 @@
         <li>La información debe ser <strong>accesible</strong>: contraste ≥ 4,5:1, nunca solo color y texto legible (WCAG AA · EN 301 549).</li>
         <li>El <strong>INE</strong> lo justifica: 4,32 millones de personas con discapacidad, un tercio sin nivel digital básico y la mitad de los hogares solo con móvil.</li>
         <li>En tu proyecto es la <strong>segunda decisión de la Actividad C</strong>: estructura, agrupaciones y jerarquía de cada pantalla, con su comprobación de accesibilidad.</li>
+        <li>Los dos casos de estudio ilustran retos distintos del mismo diseño: para <strong>Marta</strong>, jerarquía fuerte que comunica «listo» en un segundo de escaneo bajo presión; para <strong>Mari Carmen</strong>, agrupaciones claras, etiquetas en lenguaje de usuario y confirmación explícita sin depender del color —requisitos que coinciden con WCAG AA y también protegen a Joaquín (secundario).</li>
       </ul>
     </div>
   </section>

@@ -89,7 +89,7 @@
     <h3 id="del-prototipo-h"><span class="num" aria-hidden="true">1.1</span>Del prototipo a la prueba: por qué el ciclo se cierra evaluando</h3>
 
     <p>En el Tema 3 aprendiste a <strong>producir soluciones de diseño</strong>: bocetos, prototipos de baja, media y alta fidelidad. Era la Actividad C del DCH. Pero un prototipo es una <strong>hipótesis</strong>, no una verdad.</p>
-    <p>Tú crees que tu pantalla se entiende. Crees que el botón está donde la gente lo busca. Crees que la tarea se completa sin errores. Esas tres creencias pueden ser ciertas… o no. La única forma de saberlo es <strong>comprobarlo</strong>.</p>
+    <p>Tú crees que tu pantalla se entiende. Crees que el botón está donde la gente lo busca. Crees que la tarea se completa sin errores. Esas tres creencias pueden ser ciertas… o no. La única forma de saberlo es <strong>comprobarlo</strong>. El equipo que diseñó la app de transporte de <strong>Marta</strong> cree que el botón «Confirmar pago» es visible de un vistazo y que la confirmación se lee al sol. El equipo de la app de cita médica de <strong>Mari Carmen</strong> cree que cuatro pasos son suficientes y que la pantalla «Cita guardada» la tranquiliza. Ambos equipos pueden tener razón. Pero sin evaluar con Marta en el andén y con Mari Carmen en la mesa de la cocina, esas creencias siguen siendo solo hipótesis.</p>
     <p>Esa comprobación tiene un nombre técnico: <strong>evaluar el diseño</strong>. Es la Actividad D, y por eso le dedicamos el arranque del Tema 4.</p>
 
     <h4>Evaluar cierra el ciclo… y lo reabre</h4>
@@ -190,12 +190,12 @@
     </figure>
 
     <ol class="pillars" role="list">
-      <li><b>Métodos de indagación — preguntar y observar</b> Se recoge lo que los usuarios <strong>dicen y hacen</strong> en situaciones reales o cercanas a las reales. Incluye <strong>entrevistas</strong>, <strong>observación</strong>, <strong>cuestionarios</strong> y diarios. Sirven sobre todo para entender necesidades, expectativas y satisfacción. Son el puente natural con la Actividad A que ya estudiaste.</li>
-      <li><b>Métodos de inspección — el experto revisa</b> Una persona con criterio examina la interfaz <strong>sin usuarios</strong>, comparándola con reglas conocidas. Los más habituales son la <strong>evaluación heurística</strong> (contrastar la interfaz con un conjunto de principios de usabilidad) y el <strong>recorrido cognitivo</strong> (seguir, paso a paso, si una persona nueva entendería cada acción). Son rápidos y baratos, pero no sustituyen a probar con gente.</li>
-      <li><b>Métodos de test — el usuario realiza tareas</b> Usuarios reales intentan <strong>completar tareas</strong> mientras alguien observa y mide. El método central es el <strong>test de usabilidad</strong>, casi siempre con la técnica de <strong>pensar en voz alta</strong> (la persona verbaliza lo que intenta y lo que no entiende). Es la familia que produce la evidencia más directa de lo que ocurre de verdad.</li>
+      <li><b>Métodos de indagación — preguntar y observar</b> Se recoge lo que los usuarios <strong>dicen y hacen</strong> en situaciones reales o cercanas a las reales. Incluye <strong>entrevistas</strong>, <strong>observación</strong>, <strong>cuestionarios</strong> y diarios. Sirven sobre todo para entender necesidades, expectativas y satisfacción. Son el puente natural con la Actividad A que ya estudiaste. Ej.: entrevistar a <strong>Mari Carmen</strong> tras usar el prototipo de cita médica para entender si la pantalla «Cita guardada» la tranquilizó o siguió llamando a su hija para confirmar.</li>
+      <li><b>Métodos de inspección — el experto revisa</b> Una persona con criterio examina la interfaz <strong>sin usuarios</strong>, comparándola con reglas conocidas. Los más habituales son la <strong>evaluación heurística</strong> (contrastar la interfaz con un conjunto de principios de usabilidad) y el <strong>recorrido cognitivo</strong> (seguir, paso a paso, si una persona nueva entendería cada acción). Son rápidos y baratos, pero no sustituyen a probar con gente. Ej.: revisar la pantalla de confirmación de pago de <strong>Marta</strong> comprobando si el contraste del «Billete listo» supera 4,5:1 y si el botón «Subir» es el único elemento prominente (heurística de jerarquía visual + WCAG AA).</li>
+      <li><b>Métodos de test — el usuario realiza tareas</b> Usuarios reales intentan <strong>completar tareas</strong> mientras alguien observa y mide. El método central es el <strong>test de usabilidad</strong>, casi siempre con la técnica de <strong>pensar en voz alta</strong> (la persona verbaliza lo que intenta y lo que no entiende). Es la familia que produce la evidencia más directa de lo que ocurre de verdad. Ej.: pedir a <strong>Mari Carmen</strong> que pida una cita médica con el prototipo sin dar ninguna instrucción, y observar si se atasca en el paso del código SMS o si llega a la pantalla de confirmación sin ayuda.</li>
     </ol>
 
-    <p>Una regla práctica para empezar: la <strong>inspección</strong> encuentra problemas <em>posibles</em> deprisa; el <strong>test</strong> confirma cuáles son <em>reales</em>; la <strong>indagación</strong> explica el <em>porqué</em>. Combinadas, se complementan.</p>
+    <p>Una regla práctica para empezar: la <strong>inspección</strong> encuentra problemas <em>posibles</em> deprisa; el <strong>test</strong> confirma cuáles son <em>reales</em>; la <strong>indagación</strong> explica el <em>porqué</em>. Combinadas, se complementan. En los dos casos de estudio: la inspección detectaría que el contraste de Marta o el tamaño de texto de Mari Carmen son dudosos; el test confirmaría cuál de los dos falla de verdad; la indagación explicaría por qué Mari Carmen siente ansiedad incluso cuando la cita sí se guardó.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -226,13 +226,13 @@
     <h3 id="antipatron-h"><span class="num" aria-hidden="true">1.5</span>El antipatrón: confundir «me gusta» con «funciona»</h3>
 
     <p>La mejor forma de entender por qué hace falta evaluar bien es ver cómo se evalúa mal. Y se evalúa mal a menudo, por una tentación muy humana: <strong>buscar la aprobación, no la verdad</strong>.</p>
-    <p>El equipo enseña la pantalla a un amigo y pregunta: <strong>«¿te gusta?»</strong>. El amigo, por cortesía, dice que sí. El equipo respira aliviado y da por buena la interfaz. No ha evaluado nada: ha buscado un cumplido.</p>
+    <p>El equipo enseña la pantalla a un amigo y pregunta: <strong>«¿te gusta?»</strong>. El amigo, por cortesía, dice que sí. El equipo respira aliviado y da por buena la interfaz. No ha evaluado nada: ha buscado un cumplido. Si el equipo de la app de <strong>Mari Carmen</strong> le enseña la pantalla de confirmación y le pregunta «¿te parece clara?», ella probablemente diga que sí para no parecer torpe. Solo pidiéndole que complete la tarea sola —«pide una cita con el Dr. Ramos para el martes»— se sabe si realmente llega a esa pantalla sin atascarse en el código SMS.</p>
 
     <h4>Tres síntomas de una evaluación que no evalúa</h4>
     <ul>
-      <li><strong>Preguntar opinión en vez de pedir una tarea.</strong> «¿Te gusta?» mide cortesía. «Compra esta entrada» mide si la interfaz funciona. Lo segundo revela problemas; lo primero, no.</li>
-      <li><strong>Evaluar solo con uno mismo o con el equipo.</strong> Quien diseñó el sistema ya sabe dónde está todo. Por eso no detecta lo que confunde a quien llega de cero.</li>
-      <li><strong>Guiar al usuario durante la prueba.</strong> «Ahora pulsa ahí» falsea el resultado. En un test, si la persona se atasca, ese atasco <em>es</em> el dato más valioso.</li>
+      <li><strong>Preguntar opinión en vez de pedir una tarea.</strong> «¿Te gusta?» mide cortesía. «Paga el billete antes de que llegue el bus» mide si la app de <strong>Marta</strong> funciona bajo presión. Lo segundo revela problemas; lo primero, no.</li>
+      <li><strong>Evaluar solo con uno mismo o con el equipo.</strong> Quien diseñó el flujo de cita médica ya sabe que el botón «Reenviar código» aparece tras 30 segundos. Si solo lo prueba el equipo, ese paso nunca parece problemático; con <strong>Mari Carmen</strong> delante, la espera y la ansiedad son visibles al instante.</li>
+      <li><strong>Guiar al usuario durante la prueba.</strong> «Ahora pulsa el botón verde» al probar con <strong>Marta</strong> falsea el resultado. Si no encuentra el botón sola en 10 segundos, ese atasco <em>es</em> el hallazgo más valioso de toda la sesión.</li>
     </ul>
     <p>El resultado es un sistema que parece validado y fracasa con usuarios reales. El problema estaba ahí; simplemente nadie miró bien. Evaluar con método es el seguro contra ese autoengaño.</p>
 
@@ -252,14 +252,36 @@
   <section id="cotidiano" aria-labelledby="cotidiano-h">
     <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma pantalla, dos veredictos</h3>
 
-    <p>Piensa en la última vez que sacaste un billete de tren o renovaste un documento por Internet. Si te preguntaran «¿te gustó la web?», quizá dirías que sí, que era «bonita».</p>
-    <p>Pero si te preguntaran «¿cuánto tardaste, cuántas veces te equivocaste y volviste atrás, llegaste a dudar de si lo habías hecho bien?», la respuesta sería otra. Ahí está la diferencia entre <strong>opinión</strong> y <strong>evaluación</strong>.</p>
-    <p>Una misma pantalla recibe dos veredictos: <strong>«me gusta»</strong> (estético, cortés) y <strong>«funciona»</strong> (eficacia, eficiencia, satisfacción real). Solo el segundo es evaluación. Y casi nunca coinciden.</p>
+    <p>Una misma pantalla recibe dos veredictos: <strong>«me gusta»</strong> (estético, cortés) y <strong>«funciona»</strong> (eficacia, eficiencia, satisfacción real). Solo el segundo es evaluación. Y casi nunca coinciden. Los dos casos de estudio lo ilustran con claridad.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>La misma pantalla, dos veredictos: opinión frente a evaluación. Aplicado a los dos casos de estudio.</caption>
+      <thead>
+        <tr><th scope="col">Caso</th><th scope="col">Veredicto «me gusta» (opinión)</th><th scope="col">Veredicto «funciona» (evaluación)</th><th scope="col">Qué revela solo el segundo</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Caso A · Marta<br>Pantalla de confirmación de pago</th>
+          <td>«El diseño es limpio y el verde queda bien.»</td>
+          <td>Marta tarda 8 segundos en encontrar el botón «Subir» bajo el sol de la parada. En 2 de 5 intentos no ve la confirmación verde y vuelve a la pantalla anterior.</td>
+          <td>El contraste no supera 4,5:1 al sol. El botón no está en la zona del pulgar. El requisito «≤ 30 s con una mano» no se cumple.</td>
+        </tr>
+        <tr>
+          <th scope="row">Caso B · Mari Carmen<br>Pantalla «Cita guardada»</th>
+          <td>«Es sencillo, con letra grande. Me parece bien.»</td>
+          <td>Mari Carmen llega a la pantalla de confirmación pero no sabe si la cita quedó guardada o si tiene que pulsar algo más. En 3 de 5 intentos llama a su hija para confirmar.</td>
+          <td>El mensaje «Cita guardada» no cierra el abismo de evaluación para su perfil. El requisito «confirmación que no necesita ayuda» no se cumple.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
     <p>Entrénate a mirar así el mundo digital: cada vez que algo te haga dudar, retroceder o repetir un paso, acabas de detectar un <strong>problema de usabilidad</strong>. Eso es, en miniatura, lo que hace un evaluador profesional.</p>
 
     <div class="box challenge">
       <span class="label">Reto exprés</span>
-      <p>Coge una app que uses a diario y completa una tarea concreta (enviar un mensaje, pagar algo). Cuenta cuántos toques necesitas, cuántas veces dudas y si en algún punto no sabes qué pasará al pulsar. No juzgues si «te gusta»: cuenta hechos. Acabas de hacer una micro-evaluación.</p>
+      <p>Coge una app que uses a diario y completa una tarea concreta. Cuenta cuántos toques necesitas, cuántas veces dudas y si en algún punto no sabes qué pasará al pulsar. No juzgues si «te gusta»: cuenta hechos. Acabas de hacer una micro-evaluación.</p>
     </div>
   </section>
 
@@ -271,12 +293,14 @@
 
     <div class="table-scroll">
     <table class="data">
-      <caption>Orientación inicial para elegir familia de método (se desarrollará en el tema).</caption>
+      <caption>Orientación inicial para elegir familia de método, con ejemplos de los dos casos de estudio (se desarrollará en el tema).</caption>
       <thead>
         <tr>
           <th scope="col">Si quieres…</th>
           <th scope="col">Familia más útil</th>
           <th scope="col">Necesitas usuarios</th>
+          <th scope="col">Ejemplo Caso A (Marta)</th>
+          <th scope="col">Ejemplo Caso B (Mari Carmen)</th>
         </tr>
       </thead>
       <tbody>
@@ -284,21 +308,29 @@
           <th scope="row">Detectar problemas pronto y barato</th>
           <td>Inspección (evaluación heurística)</td>
           <td>No</td>
+          <td>Revisar si el botón «Confirmar» cumple Fitts y si el contraste del «Billete listo» supera 4,5:1.</td>
+          <td>Revisar si la etiqueta «Fecha» está pegada a su campo (proximidad) y si el flujo de código SMS tiene ruta de recuperación visible.</td>
         </tr>
         <tr>
           <th scope="row">Saber qué falla de verdad al usar</th>
           <td>Test (test de usabilidad)</td>
           <td>Sí</td>
+          <td>Pedir a Marta que pague el billete con el móvil, de pie, sin instrucciones. Medir tiempo y errores.</td>
+          <td>Pedir a Mari Carmen que pida una cita con el Dr. Ramos sin ayuda. Observar si se atasca en el código SMS o en la confirmación.</td>
         </tr>
         <tr>
           <th scope="row">Entender necesidades y satisfacción</th>
           <td>Indagación (entrevista, cuestionario)</td>
           <td>Sí</td>
+          <td>Entrevistar a Marta tras el test: ¿cuándo duda más?, ¿qué contextos le generan más presión en la parada?</td>
+          <td>Entrevistar a Mari Carmen: ¿llamó a su hija para confirmar la cita? ¿Por qué? ¿Qué necesitaría ver para estar segura?</td>
         </tr>
         <tr>
           <th scope="row">Comprobar el cumplimiento legal de accesibilidad</th>
           <td>Inspección guiada por norma (WCAG, EN 301 549)</td>
           <td>No (pero conviene complementar)</td>
+          <td>Verificar contraste ≥ 4,5:1 (1.4.3) y alternativa textual al tic de validación (1.1.1).</td>
+          <td>Verificar reflujo al 200 % sin pérdida (1.4.10), texto ≥ 18 px (1.4.4) y no depender solo del color en campos obligatorios (1.4.1).</td>
         </tr>
       </tbody>
     </table>
@@ -335,9 +367,9 @@
       </div>
     </div>
 
-    <p>Lee bien el primer dato. Que el <strong>66,5 %</strong> tenga habilidades digitales básicas o avanzadas significa que, aproximadamente, <strong>una de cada tres personas no llega ni al nivel básico</strong>. No son un caso raro: son millones de usuarios.</p>
-    <p>Y, a la vez, el <strong>80,7 %</strong> usa servicios públicos por Internet. Es decir: una población enorme y muy diversa <strong>está obligada</strong> a usar sistemas digitales, tenga o no destreza para ello.</p>
-    <p>La conclusión es directa: si diseñas pensando solo en usuarios como tú, dejas fuera a una parte gigantesca de la población. La única forma de saber si tu sistema sirve a quien no se te parece es <strong>evaluarlo con personas reales y diversas</strong>.</p>
+    <p>Lee bien el primer dato. Que el <strong>66,5 %</strong> tenga habilidades digitales básicas o avanzadas significa que, aproximadamente, <strong>una de cada tres personas no llega ni al nivel básico</strong>. No son un caso raro: son millones de usuarios. <strong>Mari Carmen</strong> —78 años, municipio rural, competencia digital básica— es exactamente ese perfil. Si el equipo de la app de cita médica solo la evalúa con sus compañeros de clase, nunca descubrirá que el código SMS la bloquea o que la pantalla de confirmación no le transmite certeza.</p>
+    <p>Y, a la vez, el <strong>80,7 %</strong> usa servicios públicos por Internet. Es decir: una población enorme y muy diversa <strong>está obligada</strong> a usar sistemas digitales, tenga o no destreza para ello. Pedir cita médica online no es opcional para muchos usuarios rurales como Mari Carmen: el consultorio físico está lejos o cerrado. Un flujo que falla para ella no es una mala experiencia: es una barrera de acceso al sistema sanitario.</p>
+    <p>La conclusión es directa: si diseñas pensando solo en usuarios como tú, dejas fuera a una parte gigantesca de la población. La única forma de saber si tu sistema sirve a quien no se te parece es <strong>evaluarlo con personas reales y diversas</strong>. <strong>Marta</strong> y <strong>Mari Carmen</strong> son distintas entre sí en edad, contexto y competencia digital, y distintas de quien diseña. Evaluar con los dos perfiles, no solo con uno, es lo que garantiza que el sistema sirve al espectro real de usuarios.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -360,6 +392,11 @@
     </ul>
 
     <p>Ese informe es importante por sí mismo. Uno de los resultados de aprendizaje del tema es, precisamente, <strong>«elaborar informes técnicos de evaluación y asesoramiento de la interfaz»</strong>. Saber detectar el problema es la mitad; saber comunicarlo y recomendar una solución es la otra mitad.</p>
+
+    <div class="box curio">
+      <span class="label">La evaluación en los dos casos de estudio</span>
+      <p>Para la app de <strong>Marta</strong>, el informe de evaluación debería incluir: inspección del contraste y Fitts en la pantalla de pago; test con al menos cinco personas del perfil (jóvenes con movilidad reducida momentánea, de pie, con luz directa); métricas de eficacia (¿completó el pago?) y eficiencia (¿en menos de 30 s con una mano?). Para la app de <strong>Mari Carmen</strong>: inspección de reflujo al 200 %, tamaño de texto y flujo de código SMS; test con personas mayores de 70 años en entorno rural; métrica de satisfacción específica (¿necesitó llamar a alguien para confirmar?). Evaluar con el perfil equivocado —jóvenes con soltura digital en ambos casos— produciría un informe técnicamente correcto y completamente inútil para saber si el sistema funciona para quien lo necesita.</p>
+    </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -490,6 +527,7 @@
         <li>Los datos del <strong>INE 2025</strong> lo justifican: solo el <strong>66,5 %</strong> tiene habilidades digitales básicas o avanzadas y el <strong>80,7 %</strong> usa la e-Administración. Diseñar «para alguien como yo» excluye a millones.</li>
         <li>En tu proyecto es una <strong>evaluación de usabilidad</strong> obligatoria con revisión de accesibilidad <strong>WCAG AA</strong> y un <strong>informe técnico</strong>; evaluar es además una obligación legal (Directiva 2019/882, EN 301 549).</li>
         <li>En las próximas sesiones desarrollaremos por separado los métodos de <strong>indagación, inspección y test</strong>.</li>
+        <li>Los dos casos de estudio ilustran que evaluar con el perfil equivocado produce resultados inútiles: la app de <strong>Marta</strong> debe probarse en móvil, de pie y bajo presión; la de <strong>Mari Carmen</strong>, con personas mayores de 70 años en entorno rural y con el zoom activado. Sin esas condiciones, los problemas reales no aparecen.</li>
       </ul>
     </div>
   </section>

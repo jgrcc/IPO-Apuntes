@@ -116,7 +116,7 @@
 
     <h4>De la tarea actual a la tarea diseñada</h4>
     <p>Una buena pregunta de diseño es: <em>¿cuál es el objetivo real de la persona, más allá de los pasos que da hoy por costumbre?</em> El objetivo se respeta; el camino se puede rediseñar.</p>
-    <p>Por ejemplo, si hoy alguien rellena tres formularios para pedir una ayuda, su objetivo no es «rellenar tres formularios»: es «conseguir la ayuda». El diseño de la actividad puede convertir eso en un solo flujo guiado.</p>
+    <p>Por ejemplo, si hoy <strong>Mari Carmen</strong> llama varias veces al centro de salud, espera que le atiendan y por fin le dan la cita, su objetivo no es «llamar y esperar»: es «tener una cita reservada y saber que está guardada». El diseño de la actividad puede convertir eso en un flujo de cuatro pasos guiados en la app, sin llamadas. Del mismo modo, si <strong>Marta</strong> hoy compra el billete en la máquina de la parada, su objetivo no es «usar la máquina»: es «poder subir al autobús». El diseño puede convertirlo en dos toques desde el móvil.</p>
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
@@ -265,10 +265,10 @@
     <p>El diseño de la actividad no se hace «en la cabeza»: se hace con herramientas que lo vuelven <strong>visible y discutible</strong> en equipo, igual que la especificación del contexto en el Tema 2.</p>
 
     <ol class="pillars" role="list">
-      <li><b>Escenario</b> Una pequeña historia, en lenguaje natural, de una persona concreta usando el sistema para lograr una meta. Sirve para imaginar y discutir la actividad antes de dibujar nada.</li>
-      <li><b>Caso de uso</b> Una descripción más estructurada de la interacción: qué hace la persona, qué responde el sistema, paso a paso, incluyendo qué pasa si algo sale mal. Es el «guion» técnico.</li>
-      <li><b>Storyboard (guion gráfico)</b> Una secuencia de viñetas que muestra el flujo de pantallas o momentos clave. Hace visible el recorrido completo de un vistazo.</li>
-      <li><b>Flujo de tareas</b> El mapa de los pasos y decisiones de una tarea. Permite detectar pasos sobrantes o callejones sin salida.</li>
+      <li><b>Escenario</b> Una pequeña historia, en lenguaje natural, de una persona concreta usando el sistema para lograr una meta. Sirve para imaginar y discutir la actividad antes de dibujar nada. Ej.: «Mari Carmen se sienta en la cocina, abre la app, elige al Dr. Ramos, confirma el martes a las 10 y recibe el mensaje "Cita guardada"».</li>
+      <li><b>Caso de uso</b> Una descripción más estructurada de la interacción: qué hace la persona, qué responde el sistema, paso a paso, incluyendo qué pasa si algo sale mal. Ej.: el caso de uso de «Pedir cita» incluye el flujo alternativo «código SMS caducado → ofrecer reenvío sin reiniciar el proceso».</li>
+      <li><b>Storyboard (guion gráfico)</b> Una secuencia de viñetas que muestra el flujo de pantallas o momentos clave. Hace visible el recorrido completo de un vistazo. Ej.: seis viñetas que muestran a Marta abriendo la app, confirmando el pago y validando el billete mientras el bus llega.</li>
+      <li><b>Flujo de tareas</b> El mapa de los pasos y decisiones de una tarea. Permite detectar pasos sobrantes o callejones sin salida. Ej.: el flujo de pagar el billete de Marta tiene dos pasos; el de pedir cita de Mari Carmen tiene cuatro; ambos se pueden comparar con el proceso original para ver qué se eliminó.</li>
     </ol>
 
     <p>Estas herramientas enlazan con la fase <strong>idear</strong> del Design Thinking que viste en el Tema 2: primero se generan muchas ideas de actividad, y luego se concretan en escenarios y guiones.</p>
@@ -283,29 +283,49 @@
   <section id="dos-flujos" aria-labelledby="dos-flujos-h">
     <h3 id="dos-flujos-h"><span class="num" aria-hidden="true">2.2</span>La misma meta, dos actividades</h3>
 
-    <p>Veamos por qué el diseño de la actividad cambia la vida del usuario aunque la meta sea idéntica. Tomemos una meta cotidiana: <strong>pedir cita con el médico de cabecera</strong>.</p>
+    <p>Veamos por qué el diseño de la actividad cambia la vida del usuario aunque la meta sea idéntica. Los dos casos de estudio son perfectos para ilustrarlo: cada uno tiene una versión mal diseñada que calca el proceso anterior y una bien diseñada que parte del objetivo real.</p>
 
-    <h4>Actividad mal diseñada (calca el papel)</h4>
-    <ul>
-      <li>Buscar y recordar el código del centro de salud.</li>
-      <li>Elegir entre quince especialidades en un menú único (violación de Hick).</li>
-      <li>Escribir la fecha en un formato exacto, sin ayuda.</li>
-      <li>Pulsar «Aceptar» y ver una pantalla en blanco: ¿se pidió la cita o no? (abismo de evaluación).</li>
-    </ul>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · Meta: tener el billete validado antes de subir al autobús</h4>
 
-    <h4>Actividad bien diseñada (parte del objetivo)</h4>
-    <ul>
-      <li>El sistema ya sabe quién eres y a qué centro perteneces (no te hace recordar el código).</li>
-      <li>Te ofrece primero lo más probable: «Medicina de familia», y oculta el resto bajo «Otras especialidades» (revelación progresiva, Hick).</li>
-      <li>Eliges la fecha en un calendario donde solo se ven los huecos libres (manipulación directa).</li>
-      <li>Al confirmar, un mensaje claro dice: «Cita confirmada el martes a las 10:00» (realimentación que cierra el abismo de evaluación).</li>
-    </ul>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparativa de actividad mal y bien diseñada para Marta. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Actividad mal diseñada (calca la máquina de la parada)</th><th scope="col">Actividad bien diseñada (parte del objetivo)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Abrir el menú principal y buscar «Comprar billete» entre seis opciones (Hick).</td><td>La pantalla de inicio <em>es</em> el botón de pago: un solo toque para empezar.</td></tr>
+        <tr><td>Seleccionar línea, parada de origen y destino en tres pantallas separadas.</td><td>El sistema detecta la línea más probable por geolocalización; Marta solo confirma.</td></tr>
+        <tr><td>Introducir el número de viajeros, el tipo de billete y el método de pago.</td><td>Saldo prepagado activo: solo confirmar el importe y pulsar «Pagar».</td></tr>
+        <tr><td>Esperar la respuesta del servidor sin ningún aviso mientras el bus llega (abismo de evaluación).</td><td>La pantalla se vuelve verde en menos de 0,1 s con «Billete listo» — funciona offline. (realimentación inmediata)</td></tr>
+      </tbody>
+    </table>
+    </div>
 
-    <p>La meta era la misma; cambió la <strong>actividad</strong>. La segunda versión no es «más bonita»: es que se diseñó respetando las etapas de la acción y las leyes cognitivas.</p>
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · Meta: pedir cita médica y saber que ha quedado guardada</h4>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Comparativa de actividad mal y bien diseñada para Mari Carmen. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Actividad mal diseñada (calca el trámite telefónico)</th><th scope="col">Actividad bien diseñada (parte del objetivo)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Buscar y recordar el código del centro de salud (carga de memoria, Miller).</td><td>El sistema ya sabe a qué centro pertenece Mari Carmen: no le pregunta nada innecesario.</td></tr>
+        <tr><td>Elegir entre quince especialidades en un menú único (Hick).</td><td>Ofrece primero «Medicina de familia» y oculta el resto bajo «Otras especialidades» (revelación progresiva, Hick).</td></tr>
+        <tr><td>Escribir la fecha en un formato exacto sin ayuda (carga cognitiva).</td><td>Calendario con solo los huecos libres visibles; Mari Carmen toca el día (manipulación directa).</td></tr>
+        <tr><td>Pulsar «Aceptar» y ver una pantalla en blanco: ¿se pidió la cita? (abismo de evaluación).</td><td>Mensaje claro: «Cita guardada — martes 18 de noviembre, 10:00 h, Dr. Ramos» accesible desde «Mis citas» sin volver a entrar al flujo. (realimentación que cierra el abismo de evaluación)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>En los dos casos la meta era la misma; cambió la <strong>actividad</strong>. Las versiones bien diseñadas no son «más bonitas»: se diseñaron respetando las etapas de la acción, las leyes cognitivas y los requisitos derivados del contexto real de cada persona.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Para una misma meta caben actividades muy distintas. La buena no calca el proceso antiguo: <strong>parte del objetivo</strong>, reduce pasos y opciones, usa manipulación directa y cierra el abismo de evaluación con buena realimentación.</p>
+      <p>Para una misma meta caben actividades muy distintas. La buena no calca el proceso antiguo: <strong>parte del objetivo</strong>, reduce pasos y opciones, usa manipulación directa y cierra el abismo de evaluación con buena realimentación. Lo que cuenta es que los dos abismos sean estrechos para la persona real, no para la persona del laboratorio.</p>
     </div>
   </section>
 
@@ -333,9 +353,9 @@
       </div>
     </div>
 
-    <p>Lee la lista como un diseñador: cada fila es <strong>una actividad que diseñar</strong>. «Concertar una cita» la hacen seis de cada diez personas que usan la e-Administración; un mal flujo ahí afecta a millones.</p>
-    <p>Y «acceder a información almacenada» o «solicitar documentación» son tareas donde el <strong>abismo de evaluación</strong> es crítico: la persona necesita saber, sin dudas, si su solicitud se registró o no.</p>
-    <p>El diseño de la actividad no es un ejercicio de clase: es lo que decide si esas gestiones, que media España hace cada año, se completan o se abandonan a medio camino.</p>
+    <p>Lee la lista como un diseñador: cada fila es <strong>una actividad que diseñar</strong>. «Concertar una cita» la hacen seis de cada diez personas que usan la e-Administración; es exactamente la tarea de <strong>Mari Carmen</strong>: la app de cita médica no es un ejercicio inventado, es uno de los servicios digitales que más ciudadanos necesitan completar cada año. Un mal flujo ahí —como el del caso mal diseñado de la sección anterior— afecta a millones.</p>
+    <p>Y «acceder a información almacenada» o «solicitar documentación» son tareas donde el <strong>abismo de evaluación</strong> es crítico: la persona necesita saber, sin dudas, si su solicitud se registró. Es el mismo problema que Mari Carmen enfrenta cuando pulsa «Aceptar» y ve una pantalla en blanco. La realimentación que cierra ese abismo —«Cita guardada, Dr. Ramos, martes a las 10»— no es un detalle estético: es el requisito que convierte la actividad en usable para alguien con competencia digital básica.</p>
+    <p>El diseño de la actividad no es un ejercicio de clase: es lo que decide si esas gestiones, que media España hace cada año, se completan o se abandonan a medio camino. Y la app de transporte de Marta, con sus dos toques desde la parada, comparte la misma lógica: los datos del INE muestran que el móvil es el dispositivo dominante, y el flujo de pago tiene que funcionar de pie, con una mano y bajo presión.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -352,17 +372,22 @@
     <h4>De la teoría a tu entrega</h4>
     <div class="table-scroll">
     <table class="data">
-      <caption>Qué produce el diseño de la actividad y cómo se evidencia en el proyecto.</caption>
+      <caption>Qué produce el diseño de la actividad y cómo se evidencia en el proyecto, con ejemplos de los dos casos de estudio.</caption>
       <thead>
-        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th></tr>
+        <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Qué tareas y en qué pasos</th><td>Escenarios y casos de uso</td><td>Objetivos &gt; tareas (Cooper)</td></tr>
-        <tr><th scope="row">El flujo completo</th><td>Storyboard o flujo de tareas</td><td>Etapas de la acción</td></tr>
-        <tr><th scope="row">Cómo dialoga cada paso</th><td>Estilo de interacción elegido y justificado</td><td>Estilos de interacción</td></tr>
-        <tr><th scope="row">Cómo se entiende el sistema</th><td>Modelo conceptual (metáfora, conceptos)</td><td>Modelo conceptual / mental</td></tr>
+        <tr><th scope="row">Qué tareas y en qué pasos</th><td>Escenarios y casos de uso</td><td>Objetivos &gt; tareas (Cooper)</td><td>Escenario: «Marta abre la app de un toque, confirma el pago y valida el billete antes de subir». Caso de uso: flujo alternativo «sin cobertura → mostrar billete guardado offline».</td><td>Escenario: «Mari Carmen elige al Dr. Ramos, confirma la fecha y recibe "Cita guardada"». Caso de uso: flujo alternativo «código SMS caducado → reenvío sin reiniciar».</td></tr>
+        <tr><th scope="row">El flujo completo</th><td>Storyboard o flujo de tareas</td><td>Etapas de la acción</td><td>Flujo de 2 pasos: preparar billete → validar. Storyboard: 4 viñetas desde la parada hasta el asiento.</td><td>Flujo de 4 pasos: identificarse → elegir cita → confirmar → ver confirmación. Storyboard: 6 viñetas desde la cocina hasta «Cita guardada».</td></tr>
+        <tr><th scope="row">Cómo dialoga cada paso</th><td>Estilo de interacción elegido y justificado</td><td>Estilos de interacción</td><td>Manipulación directa (tocar el botón de pago) + menú reducido (revelación progresiva). Justificación: reduce abismo de ejecución para usuario en movimiento.</td><td>Menús + formulario guiado + manipulación directa (calendario). Justificación: reduce carga cognitiva para usuario con competencia básica.</td></tr>
+        <tr><th scope="row">Cómo se entiende el sistema</th><td>Modelo conceptual (metáfora, conceptos)</td><td>Modelo conceptual / mental</td><td>Metáfora: «monedero digital» — hay saldo, se gasta, queda billete. Evita la confusión entre comprar y validar.</td><td>Metáfora: «agenda personal» — tienes citas, puedes consultarlas cuando quieras. Evita la duda de si la cita «se guardó o se perdió».</td></tr>
       </tbody>
     </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Los dos abismos en los dos casos</span>
+      <p>Para Marta, el <strong>abismo de ejecución</strong> es el más crítico: en el andén con prisa, ¿sabe qué tocar? El flujo de dos pasos y el botón de inicio lo estrechan. Para Mari Carmen, el <strong>abismo de evaluación</strong> es el más crítico: en la cocina después de confirmar, ¿sabe que la cita quedó guardada? La realimentación explícita y persistente lo estrechan. Diseñar la actividad es, sobre todo, identificar qué abismo amenaza más a cada persona y actuar en consecuencia.</p>
     </div>
 
     <h4>Tres consejos prácticos desde hoy</h4>
@@ -508,6 +533,7 @@
         <li>Se trabaja con herramientas baratas y discutibles: <strong>escenarios, casos de uso, storyboards y flujos de tareas</strong>.</li>
         <li>El <strong>INE 2025</strong> muestra qué actividades importan: pedir cita (61,9 %), acceder a información (62,6 %), solicitar documentación (42,3 %) entre quienes usan la e-Administración.</li>
         <li>En tu proyecto es el <strong>primer paso de la Actividad C</strong>: justificar el comportamiento antes de dibujar pantallas.</li>
+        <li>Los dos casos de estudio ilustran qué abismo es más crítico para cada persona: para <strong>Marta</strong> (transporte), el abismo de <strong>ejecución</strong> —saber qué tocar bajo presión, flujo de 2 pasos—; para <strong>Mari Carmen</strong> (cita médica), el abismo de <strong>evaluación</strong> —saber que la cita quedó guardada, realimentación explícita y persistente—.</li>
       </ul>
     </div>
   </section>

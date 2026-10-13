@@ -166,7 +166,8 @@
     <p>Por eso esta actividad produce <strong>prototipos</strong>: versiones provisionales y deliberadamente incompletas del sistema, hechas para <strong>pensar y probar</strong>, no para entregar al cliente.</p>
 
     <h4>De lo abstracto a lo concreto</h4>
-    <p>Un requisito como «la persona mayor debe poder pedir cita en menos de tres pasos» es abstracto. La Actividad C lo vuelve concreto: ¿qué pasos?, ¿qué botones?, ¿qué textos?, ¿en qué orden aparecen?</p>
+    <p>Un requisito como «<strong>Mari Carmen</strong> debe poder pedir cita médica sin depender de nadie y recibir una confirmación que pueda consultar más tarde» es abstracto. La Actividad C lo vuelve concreto: ¿cuántos pasos?, ¿con un único botón grande de «Confirmar» o con varios?, ¿dónde aparece la cita guardada?, ¿qué texto muestra el mensaje de confirmación?</p>
+    <p>Del mismo modo, el requisito de <strong>Marta</strong> «pagar y validar en menos de 30 segundos con una sola mano» exige decidir: ¿está el botón de pago en la pantalla de inicio o hay que navegar?, ¿funciona sin conexión activa?, ¿la confirmación es un tic sonoro o también visual?</p>
     <p>Ese paso de lo abstracto a lo concreto es donde el diseño se vuelve <strong>visible y discutible</strong>. Y lo visible se puede criticar, mejorar y volver a probar; lo que solo está en la cabeza del programador, no.</p>
 
     <div class="box curio">
@@ -265,23 +266,26 @@
   <section id="cotidiano" aria-labelledby="cotidiano-h">
     <h3 id="cotidiano-h"><span class="num" aria-hidden="true">4.1</span>Las leyes cognitivas que ya sufres</h3>
 
-    <p>Las leyes que acabamos de ver no son teoría de laboratorio: explican tus enfados cotidianos con la tecnología. Reconocerlas en lo que te rodea es la mejor forma de fijarlas.</p>
+    <p>Las leyes que acabamos de ver no son teoría de laboratorio: explican los errores de diseño de las apps que ya conoces. Cada una se puede ver en los dos casos de estudio.</p>
 
-    <h4>Hick en el mando a distancia</h4>
-    <p>Un mando con cuarenta botones idénticos viola la ley de Hick: cada vez que quieres subir el volumen, tu cerebro tiene que <strong>buscar entre demasiadas opciones</strong>. Un mando de seis botones grandes se usa sin mirar.</p>
+    <h4>Hick en la app de cita médica de Mari Carmen</h4>
+    <p>Si la pantalla de inicio de la app muestra a Mari Carmen ocho opciones —pedir cita, mis citas, mis recetas, mis resultados, mis documentos, mis datos, contacto, ayuda—, su cerebro tiene que <strong>buscar entre demasiadas alternativas</strong> antes de encontrar la que necesita. Viola la ley de Hick. La solución: en la pantalla de inicio, solo «Pedir cita» y «Mis citas» —las únicas funciones que usa— en botones grandes. El resto, bajo un acceso secundario.</p>
 
-    <h4>Fitts en el móvil con una mano</h4>
-    <p>Cuando una app pone el botón de «enviar» en la esquina superior, lejos del pulgar, te obliga a recolocar la mano. La ley de Fitts predice exactamente ese coste: <strong>lejos y pequeño = lento y con errores</strong>.</p>
+    <h4>Fitts en la app de transporte de Marta</h4>
+    <p>Si el botón de «Confirmar pago» aparece en la esquina superior derecha de la pantalla, Marta debe recolocar la mano o usar el índice mientras sostiene la mochila. La ley de Fitts predice exactamente ese coste: <strong>lejos y pequeño = lento y con errores en la parada</strong>. La solución: botón de «Confirmar» ancho, centrado, en la zona inferior de la pantalla, al alcance del pulgar.</p>
 
-    <h4>Gestalt en un formulario mal hecho</h4>
-    <p>Si la etiqueta «Teléfono» está más cerca del campo de abajo que del suyo, la proximidad te engaña y escribes donde no es. El error parece tuyo; es del diseño.</p>
+    <h4>Gestalt en el formulario de cita de Mari Carmen</h4>
+    <p>Si la etiqueta «Fecha» está visualmente más cerca del campo de «Hora» que del suyo, la proximidad engaña a Mari Carmen y escribe donde no es. El error le parece suyo; es del diseño. La solución: cada etiqueta y su campo en el mismo recuadro, con espacio generoso entre pares distintos.</p>
 
-    <h4>Miller en un código de un solo bloque</h4>
-    <p>Un código de verificación mostrado como «847209» es más difícil de copiar que «847 209». El agrupamiento descarga la memoria de trabajo. Misma información, distinta carga cognitiva.</p>
+    <h4>Miller en el código SMS de Mari Carmen</h4>
+    <p>El código de verificación mostrado como «847209» es más difícil de copiar que «847 209», especialmente cuando hay que salir de la app para leerlo en los mensajes y volver. El agrupamiento descarga la memoria de trabajo. Misma información, distinta carga cognitiva —y en el caso de Mari Carmen, la diferencia entre completar la verificación o agotarse y llamar a su hija.</p>
+
+    <h4>Tiempos de respuesta en la validación del billete de Marta</h4>
+    <p>Marta acerca el móvil al validador y espera. Si la respuesta tarda más de 1 segundo sin ningún aviso, pierde el flujo y duda si volver a intentarlo. Si tarda más de 10 segundos, el bus ya está cerrando puertas. El diseño debe confirmar el resultado en menos de 0,1 s visualmente —aunque la sincronización en segundo plano llegue después—, para que Marta suba con certeza.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Cada vez que una interfaz te irrita, suele haber una ley cognitiva incumplida detrás. Aprender a <strong>nombrar el fallo</strong> (esto es Hick, esto es Fitts, esto es Gestalt) es el primer paso para no repetirlo en lo que tú diseñes.</p>
+      <p>Cada vez que una interfaz irrita a Marta o a Mari Carmen, hay una ley cognitiva incumplida detrás. Aprender a <strong>nombrar el fallo</strong> (esto es Hick, esto es Fitts, esto es Gestalt, esto es Miller) es el primer paso para no repetirlo. Las leyes no son teoría: son el mecanismo del error.</p>
     </div>
   </section>
 
@@ -311,7 +315,7 @@
 
     <p>La lectura es incómoda. Si el 66,5 % alcanza un nivel básico o superior, <strong>cerca de un tercio de la población no llega ni al básico</strong>. Para esas personas, cada opción de más y cada espera sin aviso es una barrera real.</p>
     <p>Súmale que la mitad de los hogares usa <strong>solo el móvil</strong>: pantalla pequeña, una mano, a menudo en movimiento. Ese contexto castiga sin piedad los objetivos diminutos (Fitts) y los menús sobrecargados (Hick).</p>
-    <p>Y si <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por Internet, diseñar con alta carga cognitiva no produce «una mala experiencia»: produce <strong>ciudadanía que no consigue su cita médica</strong> o su ayuda.</p>
+    <p>Y si <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por Internet, diseñar con alta carga cognitiva no produce «una mala experiencia»: produce <strong>ciudadanía que no consigue su cita médica</strong> o su ayuda. Mari Carmen —78 años, municipio rural, competencia digital básica— es exactamente ese perfil: una persona que necesita la app porque el teléfono del centro da comunicando, y que se rinde si el flujo le impone demasiadas opciones, tiempos que caducan o confirmaciones ambiguas.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -326,14 +330,14 @@
 
     <div class="table-scroll">
     <table class="data">
-      <caption>Los tres niveles de fidelidad del prototipo y para qué sirve cada uno.</caption>
+      <caption>Los tres niveles de fidelidad del prototipo, para qué sirve cada uno y qué se comprueba en cada caso de estudio.</caption>
       <thead>
-        <tr><th scope="col">Nivel</th><th scope="col">Qué es</th><th scope="col">Qué pregunta responde</th></tr>
+        <tr><th scope="col">Nivel</th><th scope="col">Qué es</th><th scope="col">Qué pregunta responde</th><th scope="col">Caso A · Marta (transporte)</th><th scope="col">Caso B · Mari Carmen (cita médica)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Baja fidelidad</th><td>Bocetos en papel, sin color ni detalle</td><td>¿La idea y el flujo tienen sentido?</td></tr>
-        <tr><th scope="row">Media fidelidad</th><td><em>Wireframes</em>: estructura digital en gris, sin estilo final</td><td>¿La organización y la navegación funcionan?</td></tr>
-        <tr><th scope="row">Alta fidelidad</th><td>Casi como el producto real, interactivo y con estilo</td><td>¿Los detalles de uso y la apariencia convencen?</td></tr>
+        <tr><th scope="row">Baja fidelidad</th><td>Bocetos en papel, sin color ni detalle</td><td>¿La idea y el flujo tienen sentido?</td><td>¿Es posible preparar y validar el billete en 2 pasos desde la pantalla de inicio?</td><td>¿El flujo de pedir cita tiene 4 pasos o menos? ¿Dónde aparece la confirmación?</td></tr>
+        <tr><th scope="row">Media fidelidad</th><td><em>Wireframes</em>: estructura digital en gris, sin estilo final</td><td>¿La organización y la navegación funcionan?</td><td>¿El botón de «Confirmar» está en la zona del pulgar? (Fitts) ¿Cuántas opciones hay en inicio? (Hick)</td><td>¿La etiqueta de cada campo está visualmente unida a su input? (Gestalt) ¿El resumen de cita ocupa una pantalla entera?</td></tr>
+        <tr><th scope="row">Alta fidelidad</th><td>Casi como el producto real, interactivo y con estilo</td><td>¿Los detalles de uso y la apariencia convencen?</td><td>¿La confirmación de validación es visible al sol? (contraste AA) ¿Responde en &lt; 0,1 s? (tiempos)</td><td>¿El texto «Cita guardada» es legible a 18 px con las gafas puestas? ¿El código SMS aparece agrupado? (Miller)</td></tr>
       </tbody>
     </table>
     </div>
@@ -356,16 +360,21 @@
     <h4>De la norma a tu entrega</h4>
     <div class="table-scroll">
     <table class="data">
-      <caption>Qué produce la Actividad C y cómo se convierte en una entrega del proyecto.</caption>
+      <caption>Qué produce la Actividad C y cómo se convierte en una entrega del proyecto, con ejemplos de los dos casos de estudio.</caption>
       <thead>
-        <tr><th scope="col">Diseño</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Apoyo cognitivo</th></tr>
+        <tr><th scope="col">Diseño</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Apoyo cognitivo</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Actividad</th><td>Flujo de tareas y modelo de interacción</td><td>Etapas de la acción · Hick</td></tr>
-        <tr><th scope="row">Información</th><td>Organización y jerarquía de la pantalla</td><td>Gestalt · Miller</td></tr>
-        <tr><th scope="row">Prototipo</th><td>Prototipos de baja, media y alta fidelidad</td><td>Fitts · tiempos de respuesta</td></tr>
+        <tr><th scope="row">Actividad</th><td>Flujo de tareas y modelo de interacción</td><td>Etapas de la acción · Hick</td><td>Flujo de 2 pasos: preparar billete → validar. Sin ramificaciones innecesarias.</td><td>Flujo de 4 pasos: identificarse → elegir cita → confirmar → ver confirmación. Sin opciones secundarias en pantalla.</td></tr>
+        <tr><th scope="row">Información</th><td>Organización y jerarquía de la pantalla</td><td>Gestalt · Miller</td><td>Botón único centrado en inicio. Estado «Billete listo» en verde grande.</td><td>Médico, fecha y hora en un recuadro destacado. Código SMS agrupado en bloques de 3 dígitos.</td></tr>
+        <tr><th scope="row">Prototipo</th><td>Prototipos de baja, media y alta fidelidad</td><td>Fitts · tiempos de respuesta</td><td>Baja: croquis en papel del flujo. Alta: botón en zona del pulgar, contraste AA al sol, confirmación en &lt; 0,1 s.</td><td>Baja: boceto del flujo de confirmación. Alta: texto ≥ 18 px, reflujo al 200 % sin pérdida, confirmación persistente sin conexión.</td></tr>
       </tbody>
     </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Las leyes cognitivas en los dos casos</span>
+      <p>Los dos casos exigen las mismas leyes pero con énfasis distinto. Para Marta, <strong>Fitts</strong> y <strong>Hick</strong> son críticos: botón al alcance del pulgar y mínimo de opciones cuando el bus ya se ve llegar. Para Mari Carmen, <strong>Miller</strong> y <strong>Gestalt</strong> son los que marcan la diferencia: código agrupado para copiar sin error, etiquetas pegadas a sus campos y confirmación explícita en texto. El nivel AA de WCAG —contraste, reflujo, alternativas textuales— es obligatorio para los dos.</p>
     </div>
 
     <h4>Tres consecuencias prácticas desde hoy</h4>
@@ -515,6 +524,7 @@
         <li>El proceso es <strong>iterativo</strong>: equivocarse <strong>pronto y barato</strong> en baja fidelidad evita el error caro en producción.</li>
         <li>Los datos del <strong>INE 2025</strong> lo justifican: un tercio de la población no alcanza el nivel digital básico y la mitad de los hogares solo usa móvil; reducir la carga cognitiva es inclusión.</li>
         <li>En tu proyecto, la Actividad C es la entrega de <strong>prototipos</strong> (baja, media y alta fidelidad), evidenciando la <strong>iteración</strong> y manteniendo el nivel <strong>AA de WCAG</strong>.</li>
+        <li>Los dos casos de estudio ilustran que las mismas leyes tienen énfasis distinto: en <strong>Marta</strong> (transporte), Fitts y Hick son críticos —botón al alcance del pulgar, dos pasos máximo—; en <strong>Mari Carmen</strong> (cita médica), Miller y Gestalt son los que marcan la diferencia —código agrupado, etiquetas unidas a sus campos, confirmación explícita en texto—.</li>
       </ul>
     </div>
   </section>

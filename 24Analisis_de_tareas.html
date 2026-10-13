@@ -42,9 +42,19 @@
       </li>
       <li><a href="#parte2">Parte 2 · Transferencia: ejemplos, errores y proyecto</a>
         <ol>
-          <li class="lvl2"><a href="#hta-ejemplo">HTA en la práctica: la tarea de Marta paso a paso</a></li>
+          <li class="lvl2"><a href="#hta-ejemplo">HTA en la práctica: dos casos de ejemplo</a>
+            <ol>
+              <li class="lvl2"><a href="#hta-ejemplo-a">Caso A · App de transporte (Marta)</a></li>
+              <li class="lvl2"><a href="#hta-ejemplo-b">Caso B · App de cita médica (Mari Carmen)</a></li>
+            </ol>
+          </li>
           <li class="lvl2"><a href="#hta-errores">HTA: ejemplos con errores y cómo se corrigen</a></li>
-          <li class="lvl2"><a href="#gherkin-ejemplo">Gherkin en la práctica: las tareas de Marta en Dado/Cuando/Entonces</a></li>
+          <li class="lvl2"><a href="#gherkin-ejemplo">Gherkin en la práctica: dos casos de ejemplo</a>
+            <ol>
+              <li class="lvl2"><a href="#gherkin-ejemplo-a">Caso A · App de transporte (Marta)</a></li>
+              <li class="lvl2"><a href="#gherkin-ejemplo-b">Caso B · App de cita médica (Mari Carmen)</a></li>
+            </ol>
+          </li>
           <li class="lvl2"><a href="#gherkin-errores">Gherkin: ejemplos con errores y cómo se corrigen</a></li>
           <li class="lvl2"><a href="#proyecto">Tu proyecto: el análisis de tareas como entregable</a></li>
           <li class="lvl2"><a href="#retos">Retos para esta semana</a></li>
@@ -87,7 +97,7 @@
   <section id="que-es" aria-labelledby="que-es-h">
     <h3 id="que-es-h"><span class="num" aria-hidden="true">1.1</span>Del escenario a la estructura: qué es el análisis de tareas</h3>
     <p>El <strong>análisis de tareas</strong> es el estudio sistemático de <strong>lo que las personas hacen (o necesitan hacer) para alcanzar un objetivo</strong>: sus tareas, subtareas y pasos, junto con la <strong>información</strong> y los objetos que manejan, y el <strong>orden y las condiciones</strong> en que los realizan.</p>
-    <p>Si el escenario te daba la historia en prosa, el análisis de tareas la <strong>descompone y ordena</strong>. Pasa de «Marta paga y sube» a una estructura precisa de subtareas que puedes discutir, completar y verificar.</p>
+    <p>Si el escenario te daba la historia en prosa, el análisis de tareas la <strong>descompone y ordena</strong>. Pasa de «Marta paga y sube» —o de «Mari Carmen pide su cita médica»— a una estructura precisa de subtareas que puedes discutir, completar y verificar.</p>
     <p>Sirve para tres cosas concretas: <strong>entender</strong> la actividad real, <strong>detectar</strong> pasos redundantes o propensos a error, y <strong>derivar</strong> requisitos y decisiones de diseño (qué debe permitir el sistema, en qué orden, con qué información).</p>
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -99,7 +109,7 @@
     <h3 id="niveles-h"><span class="num" aria-hidden="true">1.2</span>Objetivo, tarea y acción: tres niveles que no se confunden</h3>
     <p>Antes de descomponer nada, hay que distinguir tres palabras que el lenguaje corriente mezcla, pero que aquí son niveles distintos:</p>
     <ul>
-      <li><strong>Objetivo (<em>goal</em>):</strong> el <strong>estado final</strong> que la persona desea. No incluye el «cómo». Ej.: «tener el billete validado antes de subir».</li>
+      <li><strong>Objetivo (<em>goal</em>):</strong> el <strong>estado final</strong> que la persona desea. No incluye el «cómo». Ej.: «tener el billete validado antes de subir» (Marta) o «pedir cita y saber que ha quedado confirmada» (Mari Carmen).</li>
       <li><strong>Tarea:</strong> la <strong>actividad estructurada</strong> que se realiza para alcanzar el objetivo. Ej.: «preparar el pago y validar».</li>
       <li><strong>Acción u operación:</strong> el <strong>paso atómico</strong>, indivisible para nuestro propósito. Ej.: «acercar el móvil al validador».</li>
     </ul>
@@ -244,12 +254,20 @@
   <div class="part" id="parte2">
     <span class="tag">Parte 2 de 2 · Práctica</span>
     <h2>Transferencia: ejemplos, errores y proyecto</h2>
-    <p class="lead">El análisis de la tarea de Marta con HTA y con Gherkin, con ejemplos correctos y, sobre todo, ejemplos con errores explicados y corregidos, y cómo lo entregarás.</p>
+    <p class="lead">El análisis de tareas con HTA y con Gherkin sobre dos casos de ejemplo —Marta (app de transporte) y Mari Carmen (app de cita médica)—, con ejemplos correctos y, sobre todo, ejemplos con errores explicados y corregidos, y cómo lo entregarás.</p>
   </div>
 
   <section id="hta-ejemplo" aria-labelledby="hta-ejemplo-h">
-    <h3 id="hta-ejemplo-h"><span class="num" aria-hidden="true">2.1</span>HTA en la práctica: la tarea de Marta paso a paso</h3>
-    <p>Retomamos a <strong>Marta</strong> y su objetivo: <em>pagar y validar el billete del autobús antes de subir</em>. Del escenario de contexto sacamos sus tareas; el HTA las estructura. Este es el esquema numerado (correcto):</p>
+    <h3 id="hta-ejemplo-h"><span class="num" aria-hidden="true">2.1</span>HTA en la práctica: dos casos de ejemplo</h3>
+
+    <p>Los dos casos que siguen aplican el mismo método a objetivos y contextos distintos. Leerlos en paralelo permite ver qué cambia (la estructura de tareas, los planes y la información) y qué no (el proceso de análisis).</p>
+
+    <!-- ═══════════════════════════════════════════
+         CASO A · MARTA · APP DE TRANSPORTE
+         ═══════════════════════════════════════════ -->
+    <h4 id="hta-ejemplo-a">Caso A · App de transporte — Marta</h4>
+
+    <p>Retomamos a <strong>Marta</strong> y su objetivo: <em>pagar y validar el billete del autobús antes de subir</em>. Del escenario de contexto sacamos sus tareas; el HTA las estructura:</p>
 
     <pre class="codeblock"><b>0. Pagar y validar el billete del autobús</b>
   1. Preparar el pago
@@ -262,14 +280,13 @@
 <span class="plan">Plan 1: 1.1 &#8594; 1.2 (en secuencia).</span>
 <span class="plan">Plan 2: 2.1 &#8594; 2.2 (en secuencia).</span></pre>
 
-    <p>Fíjate en tres aciertos: el <strong>objetivo</strong> está en términos del usuario (no «usar la app»); las subtareas describen <strong>qué hace</strong>, no qué botón toca; y hay <strong>planes</strong> que fijan el orden.</p>
+    <p>Tres aciertos: el <strong>objetivo</strong> está en términos del usuario; las subtareas describen <strong>qué hace</strong>, no qué botón toca; y hay <strong>planes</strong> que fijan el orden.</p>
 
-    <h4>Las tareas también manejan información</h4>
-    <p>El plan docente habla de «tareas e <strong>información</strong>». Por eso conviene anotar, para cada subtarea, qué información necesita y cuál produce:</p>
+    <p>El plan docente habla de «tareas e <strong>información</strong>». Por eso conviene anotar qué información necesita y produce cada subtarea:</p>
 
     <div class="table-scroll">
     <table class="data">
-      <caption>Información asociada a cada subtarea del HTA de Marta.</caption>
+      <caption>Información asociada a cada subtarea del HTA de Marta. Caso A · app de transporte.</caption>
       <thead>
         <tr><th scope="col">Subtarea</th><th scope="col">Información que necesita</th><th scope="col">Información que produce</th></tr>
       </thead>
@@ -282,9 +299,63 @@
     </table>
     </div>
 
+    <!-- ═══════════════════════════════════════════
+         CASO B · MARI CARMEN · APP CITA MÉDICA
+         ═══════════════════════════════════════════ -->
+    <h4 id="hta-ejemplo-b">Caso B · App de cita médica — Mari Carmen</h4>
+
+    <p>Tomamos ahora a <strong>Mari Carmen</strong> (78 años, entorno rural, competencia digital básica) y su objetivo: <em>pedir cita médica y recibir una confirmación que pueda volver a consultar</em>. Del escenario de contexto de la sesión anterior, en el que Mari Carmen se sienta en la cocina, se pone las gafas y intenta pedir cita sin tener que llamar a nadie, extraemos sus tareas.</p>
+
+    <p>Fíjate desde el principio en que la <strong>estructura</strong> es distinta a la de Marta: aquí aparece una subtarea de verificación de identidad (el código SMS) y la confirmación no es un simple tic del validador sino un estado persistente que la usuaria necesita poder consultar más tarde. Esas diferencias no vienen de la app: vienen del <strong>contexto de uso</strong> y del <strong>objetivo</strong> de esta persona.</p>
+
+    <pre class="codeblock"><b>0. Pedir cita médica y recibir confirmación</b>
+  1. Acceder al servicio de citas
+     1.1 Identificarse con su número de teléfono
+     1.2 Verificar la identidad (código SMS)
+  2. Seleccionar la cita
+     2.1 Elegir el médico
+     2.2 Elegir el día y la hora disponibles
+  3. Confirmar la cita
+     3.1 Revisar el resumen de la cita
+     3.2 Confirmar
+  4. Guardar la confirmación
+     4.1 Leer la confirmación en pantalla
+     4.2 Consultar la cita en «Mis citas»
+<span class="plan">Plan 0: 1 &#8594; 2 &#8594; 3 &#8594; 4 (en secuencia).</span>
+<span class="plan">Plan 1: 1.1 &#8594; 1.2 (en secuencia); si el código caduca, repetir 1.2.</span>
+<span class="plan">Plan 2: 2.1 &#8594; 2.2 (en secuencia).</span>
+<span class="plan">Plan 3: 3.1 &#8594; 3.2 (en secuencia); si algo no es correcto, volver a 2.</span>
+<span class="plan">Plan 4: 4.1 y 4.2 pueden hacerse en cualquier orden.</span></pre>
+
+    <p>La tarea 1.2 («verificar la identidad») es el <strong>punto de fallo crítico</strong> detectado en el escenario de validación: el código SMS caduca antes de que Mari Carmen lo encuentre y lo escriba. El plan 1 lo recoge explícitamente. Esa iteración forzada —repetir 1.2— se convierte directamente en un requisito: el sistema debe ampliar el tiempo de caducidad o permitir reenviar el código sin volver al inicio.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Información asociada a cada subtarea del HTA de Mari Carmen. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Subtarea</th><th scope="col">Información que necesita</th><th scope="col">Información que produce</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1.1 Identificarse</th><td>Número de teléfono</td><td>Solicitud de código enviada</td></tr>
+        <tr><th scope="row">1.2 Verificar (código SMS)</th><td>Código de 6 dígitos recibido por SMS</td><td>Sesión activa verificada</td></tr>
+        <tr><th scope="row">2.1 Elegir médico</th><td>Lista de médicos asignados</td><td>Médico seleccionado</td></tr>
+        <tr><th scope="row">2.2 Elegir día y hora</th><td>Agenda de huecos disponibles</td><td>Fecha y hora seleccionadas</td></tr>
+        <tr><th scope="row">3.1 Revisar resumen</th><td>Médico, fecha, hora seleccionados</td><td>Confirmación de que los datos son correctos</td></tr>
+        <tr><th scope="row">3.2 Confirmar</th><td>Resumen revisado</td><td>Cita registrada en el sistema</td></tr>
+        <tr><th scope="row">4.1 Leer confirmación en pantalla</th><td>Cita registrada</td><td>Certeza visual de «Cita guardada»</td></tr>
+        <tr><th scope="row">4.2 Consultar en «Mis citas»</th><td>Cita registrada</td><td>Acceso persistente a los datos de la cita</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Compara los dos HTAs</span>
+      <p>El HTA de Marta tiene 2 tareas y 4 operaciones; el de Mari Carmen tiene 4 tareas y 8 operaciones. La diferencia no refleja que pedir cita sea más complicado en abstracto: refleja que el <strong>contexto y el objetivo de Mari Carmen</strong> exigen pasos que Marta nunca necesita (verificación, revisión del resumen, acceso persistente). El análisis de tareas hace esa diferencia visible antes de diseñar una sola pantalla.</p>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Un HTA correcto tiene un <strong>objetivo de usuario</strong>, subtareas que describen <strong>qué hace</strong> (no la interfaz), <strong>planes</strong> de orden y, anotada, la <strong>información</strong> que cada paso necesita y produce.</p>
+      <p>Un HTA correcto tiene un <strong>objetivo de usuario</strong>, subtareas que describen <strong>qué hace</strong> (no la interfaz), <strong>planes</strong> de orden y condición, y la <strong>información</strong> que cada paso necesita y produce. Aplicado a personas distintas, el mismo método produce estructuras distintas porque los contextos lo son.</p>
     </div>
   </section>
 
@@ -352,8 +423,16 @@
   </section>
 
   <section id="gherkin-ejemplo" aria-labelledby="gherkin-ejemplo-h">
-    <h3 id="gherkin-ejemplo-h"><span class="num" aria-hidden="true">2.3</span>Gherkin en la práctica: las tareas de Marta en Dado/Cuando/Entonces</h3>
-    <p>Tomamos las operaciones del HTA de Marta y describimos su <strong>comportamiento</strong> con Gherkin. Empezamos por la característica y sus antecedentes:</p>
+    <h3 id="gherkin-ejemplo-h"><span class="num" aria-hidden="true">2.3</span>Gherkin en la práctica: dos casos de ejemplo</h3>
+
+    <p>Tomamos las operaciones de cada HTA y describimos su <strong>comportamiento</strong> con Gherkin. De nuevo, el método es idéntico; los escenarios resultantes son completamente distintos porque las personas y sus objetivos lo son.</p>
+
+    <!-- ═══════════════════════════════════════════
+         CASO A · MARTA · APP DE TRANSPORTE
+         ═══════════════════════════════════════════ -->
+    <h4 id="gherkin-ejemplo-a">Caso A · App de transporte — Marta</h4>
+
+    <p>Tomamos las operaciones del HTA de Marta. Empezamos por la característica y sus antecedentes:</p>
 
     <pre class="codeblock"><b># language: es</b>
 <b>Característica:</b> Pago y validación del billete de autobús
@@ -365,21 +444,21 @@
     <b>Dado</b> que Marta ha iniciado sesión en la app
     <b>Y</b> que tiene un viaje seleccionado</pre>
 
-    <p>Ahora un <strong>escenario del camino feliz</strong>, declarativo y con una sola acción:</p>
+    <p>El <strong>camino feliz</strong>, declarativo y con una sola acción:</p>
     <pre class="codeblock"><b>Escenario:</b> Confirmar el pago del viaje
     <b>Dado</b> que Marta tiene saldo suficiente
     <b>Cuando</b> confirma el pago del viaje
     <b>Entonces</b> el billete queda preparado para validar
     <b>Y</b> el importe se descuenta de su saldo</pre>
 
-    <p>Un <strong>escenario de caso límite</strong> (recuerda la validación de escenarios): validar sin conexión.</p>
+    <p>Un <strong>caso límite</strong>: validar sin conexión.</p>
     <pre class="codeblock"><b>Escenario:</b> Validar el billete sin conexión
     <b>Dado</b> que Marta tiene un billete preparado
     <b>Y</b> que el dispositivo no tiene conexión a Internet
     <b>Cuando</b> acerca el móvil al validador
     <b>Entonces</b> el billete aparece marcado como "Validado"</pre>
 
-    <p>Y un <strong>esquema del escenario</strong> para describir varios casos con una sola plantilla (según el saldo):</p>
+    <p>Un <strong>esquema del escenario</strong> para cubrir variantes según el saldo:</p>
     <pre class="codeblock"><b>Esquema del escenario:</b> Intento de pago según el saldo
     <b>Dado</b> que Marta tiene un saldo de &lt;saldo&gt; euros
     <b>Cuando</b> confirma un viaje de 1,50 euros
@@ -390,9 +469,59 @@
       | 5,00  | Billete preparado  |
       | 1,00  | Saldo insuficiente |</pre>
 
+    <!-- ═══════════════════════════════════════════
+         CASO B · MARI CARMEN · APP CITA MÉDICA
+         ═══════════════════════════════════════════ -->
+    <h4 id="gherkin-ejemplo-b">Caso B · App de cita médica — Mari Carmen</h4>
+
+    <p>Tomamos ahora las operaciones del HTA de Mari Carmen. La característica refleja su objetivo y su contexto: no la velocidad, sino la <strong>confianza</strong> de que la cita ha quedado registrada.</p>
+
+    <pre class="codeblock"><b># language: es</b>
+<b>Característica:</b> Solicitud de cita médica
+  Para recibir atención médica sin desplazarse al centro de salud
+  Como jubilada con competencia digital básica en entorno rural
+  Quiero pedir cita y saber que ha quedado confirmada
+
+  <b>Antecedentes:</b>
+    <b>Dado</b> que Mari Carmen ha verificado su identidad con el código SMS
+    <b>Y</b> que su médico de familia aparece disponible</pre>
+
+    <p>El <strong>camino feliz</strong>: seleccionar y confirmar la cita.</p>
+    <pre class="codeblock"><b>Escenario:</b> Pedir cita con el médico de familia
+    <b>Dado</b> que Mari Carmen ha seleccionado el día y la hora disponibles
+    <b>Y</b> que ha revisado el resumen con médico, fecha y hora
+    <b>Cuando</b> confirma la cita
+    <b>Entonces</b> la cita queda registrada en el sistema
+    <b>Y</b> aparece un mensaje "Cita guardada" con médico, fecha y hora
+    <b>Y</b> la cita es accesible en "Mis citas" desde la pantalla de inicio</pre>
+
+    <p>Un <strong>caso límite crítico</strong>: el código SMS que caduca, el fallo documentado en el escenario de validación.</p>
+    <pre class="codeblock"><b>Escenario:</b> Verificación cuando el código SMS ha caducado
+    <b>Dado</b> que Mari Carmen ha recibido un código SMS de verificación
+    <b>Y</b> que el código ha caducado antes de introducirlo
+    <b>Cuando</b> intenta completar la verificación con el código caducado
+    <b>Entonces</b> el sistema informa de que el código ha caducado
+    <b>Y</b> ofrece la opción de recibir un nuevo código sin reiniciar el proceso</pre>
+
+    <p>Un <strong>esquema del escenario</strong> para cubrir variantes según la disponibilidad de huecos:</p>
+    <pre class="codeblock"><b>Esquema del escenario:</b> Solicitud de cita según disponibilidad
+    <b>Dado</b> que Mari Carmen selecciona al médico "&lt;medico&gt;"
+    <b>Cuando</b> consulta los huecos disponibles
+    <b>Entonces</b> el sistema responde con "&lt;resultado&gt;"
+
+    <b>Ejemplos:</b>
+      | medico           | resultado                                      |
+      | Dr. Ramos        | Lista de días y horas disponibles en texto grande |
+      | Dra. Sustituta   | Aviso "Sin huecos esta semana; próxima cita disponible el lunes" |</pre>
+
+    <div class="box curio">
+      <span class="label">Compara los dos Gherkins</span>
+      <p>El caso límite de Marta gira en torno a la <strong>conexión</strong> (sin red, ¿funciona?). El de Mari Carmen gira en torno a la <strong>verificación y la confirmación</strong> (código caducado, ¿cómo se recupera?). Los <em>Entonces</em> de Mari Carmen son más explícitos y más numerosos porque su objetivo requiere más certezas: cada <em>Y</em> extra no es ruido, es un requisito de accesibilidad cognitiva.</p>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Cada escenario describe <strong>un</strong> comportamiento con <strong>Dado/Cuando/Entonces</strong> en lenguaje de negocio. <strong>Antecedentes</strong> evita repetir el contexto; el <strong>esquema del escenario</strong> cubre variantes con una tabla. Todos son a la vez especificación y prueba.</p>
+      <p>Cada escenario describe <strong>un</strong> comportamiento con <strong>Dado/Cuando/Entonces</strong> en lenguaje de negocio. <strong>Antecedentes</strong> evita repetir el contexto; el <strong>esquema del escenario</strong> cubre variantes con una tabla. Los dos casos muestran que el número y la naturaleza de los <em>Entonces</em> dependen del contexto: donde Marta necesita rapidez, Mari Carmen necesita certeza.</p>
     </div>
   </section>
 
@@ -475,7 +604,7 @@
     <ul>
       <li><strong>Empieza por el objetivo, no por la app.</strong> Si tu HTA menciona botones, reescríbelo en términos de tarea.</li>
       <li><strong>No olvides los planes.</strong> Una jerarquía sin planes no es un HTA: es una lista.</li>
-      <li><strong>Escribe Gherkin declarativo y comprobable.</strong> Cada <em>Entonces</em> debe poder verificarse; es la semilla de tus pruebas.</li>
+      <li><strong>Escribe Gherkin declarativo y comprobable.</strong> Cada <em>Entonces</em> debe poder verificarse; es la semilla de tus pruebas. Si tu persona primaria es como Mari Carmen, los <em>Entonces</em> sobre confirmación explícita no son ruido: son requisitos de accesibilidad cognitiva.</li>
     </ul>
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -547,7 +676,7 @@
     </details>
     <details class="check">
       <summary>8. Cita dos errores típicos del HTA y su corrección.</summary>
-      <p>Describir la interfaz en vez de la tarea (corregir: objetivo y subtareas de usuario, sin botones) y dejar la jerarquía sin planes (corregir: añadir planes de orden y condición). También el detalle incoherente (aplicar la regla de parada). <em>(Ver 2.2)</em></p>
+      <p>Describir la interfaz en vez de la tarea (corregir: objetivo y subtareas de usuario, sin botones) y dejar la jerarquía sin planes (corregir: añadir planes de orden y condición). También el detalle incoherente (aplicar la regla de parada). Los HTAs de Marta y Mari Carmen ilustran los tres errores y sus correcciones. <em>(Ver 2.2)</em></p>
     </details>
     <details class="check">
       <summary>9. Cita dos errores típicos de Gherkin y su corrección.</summary>
@@ -598,6 +727,7 @@
         <li><strong>Gherkin</strong> describe el comportamiento con <strong>Dado/Cuando/Entonces</strong>; debe ser <strong>declarativo</strong> y con un <em>Entonces</em> verificable. Viene del BDD.</li>
         <li>Errores de HTA: describir la interfaz, faltar los planes, detalle incoherente. Errores de Gherkin: imperativo/atado a la UI, pasos mal ubicados o varios comportamientos, resultados no comprobables.</li>
         <li>Se complementan: HTA <strong>mapea</strong>, Gherkin <strong>especifica y prueba</strong>. Cadena del tema: escenario → HTA → Gherkin → requisitos (Actividad B).</li>
+        <li>Los apuntes desarrollan <strong>dos casos de ejemplo</strong>: Marta (app de transporte, 2 tareas, caso límite de cobertura) y Mari Carmen (app de cita médica, 4 tareas, caso límite de código SMS caducado). El mismo método produce estructuras distintas porque los contextos y las personas lo son.</li>
         <li>HTA aporta rigor de análisis (CB03, CI17); Gherkin enlaza con la ingeniería del software y las pruebas de aceptación (CG05).</li>
       </ul>
     </div>

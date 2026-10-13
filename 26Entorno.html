@@ -93,9 +93,11 @@
 
     <h4>Entorno frente a recursos: la frontera, otra vez</h4>
     <ul>
-      <li>El móvil con el que validas el billete es un <strong>recurso</strong> (un medio que empleas).</li>
-      <li>El andén ruidoso, con prisa y a pleno sol donde lo usas es <strong>entorno</strong> (una condición que te envuelve).</li>
-      <li>Tu plan de datos es recurso; que en ese túnel concreto no haya cobertura es entorno técnico.</li>
+      <li>El móvil con el que <strong>Marta</strong> valida el billete del autobús es un <strong>recurso</strong> (un medio que emplea).</li>
+      <li>El andén ruidoso, con sol y una cola detrás donde Marta lo usa es <strong>entorno</strong> (una condición que la envuelve).</li>
+      <li>Su plan de datos es recurso; que en ese túnel concreto no haya cobertura es entorno técnico.</li>
+      <li>El smartphone con letra grande que <strong>Mari Carmen</strong> usa para pedir cita médica es un <strong>recurso</strong>.</li>
+      <li>El pueblo de menos de 1.000 habitantes donde vive —con cobertura irregular, consultorio casi siempre cerrado y sin familiares cerca en ese momento— es <strong>entorno</strong> (físico, técnico y social a la vez).</li>
     </ul>
     <p>No te obsesiones con clasificar a la perfección: lo grave no es poner una etiqueta u otra, sino que una condición real quede sin describir. El entorno es justo el cajón donde caben todas esas condiciones que «no son medios» pero lo cambian todo.</p>
 
@@ -248,17 +250,52 @@
   <section id="cotidiano" aria-labelledby="cotidiano-h">
     <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>La misma tarea, entornos distintos</h3>
 
-    <p>El entorno se entiende mejor con un ejemplo único visto en distintas condiciones. Retomemos una tarea cotidiana: <strong>consultar y validar el billete de transporte en el móvil</strong>.</p>
-    <p>El objetivo es siempre el mismo —enseñar el billete y pasar—, pero el entorno cambia por completo la dificultad de esa tarea idéntica.</p>
+    <p>El entorno se entiende mejor poniendo caras concretas a las condiciones. Retomemos a <strong>Marta</strong> (app de pago del transporte) y a <strong>Mari Carmen</strong> (app de cita médica). Las dos usan el móvil para una gestión cotidiana. Sus entornos son tan distintos que imponen requisitos de diseño completamente diferentes.</p>
 
-    <h4>Una tarea, tres entornos</h4>
-    <ul>
-      <li><strong>En casa, sentado, con buena luz y sin prisa.</strong> Trivial: cualquier diseño «vale». Es el entorno del equipo de desarrollo… y la trampa de siempre.</li>
-      <li><strong>De pie en el andén, con sol, ruido y una cola detrás.</strong> Ahora el contraste bajo es ilegible, el aviso sonoro no se oye y la prisa social no perdona un menú de tres pasos. Misma app, entorno hostil.</li>
-      <li><strong>En el túnel del metro, sin cobertura y con poca batería.</strong> El entorno técnico ha cambiado: si el billete no se puede mostrar sin red, la persona se queda tirada justo cuando más lo necesita.</li>
-    </ul>
-    <p>Misma app, misma tarea, tres entornos. Cada uno impone decisiones distintas. Si solo pensaste en el primero —el que se parece al tuyo—, dejaste fuera los otros dos, que son los habituales.</p>
-    <p>Esto es, en una escena cotidiana, lo que captura el componente de entorno: <strong>no diseñas para una tarea, diseñas para una tarea en unas condiciones concretas</strong>. Cuando empieces a preguntarte «¿y al sol, con ruido, con prisa y sin cobertura?», habrás interiorizado la mirada del análisis.</p>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · App de pago del transporte</h4>
+    <p>Objetivo: <em>tener el billete validado en dos toques antes de subir al autobús</em>. El entorno que describe la investigación:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las cuatro dimensiones del entorno de Marta al pagar el billete. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Dimensión</th><th scope="col">Condición real</th><th scope="col">Consecuencia de diseño</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Física</th><td>De pie en el andén; sol directo en la pantalla; ruido de tráfico y megafonía; una mano ocupada con la mochila</td><td>Contraste ≥ 4,5:1 (legible al sol); botones grandes; flujo completo con el pulgar</td></tr>
+        <tr><th scope="row">Social</th><td>Cola de personas detrás; presión de no hacer esperar; sin nadie que la ayude</td><td>Flujo de ≤ 2 pasos; sin pantallas de confirmación innecesarias que alarguen el tiempo</td></tr>
+        <tr><th scope="row">Técnica</th><td>Cobertura irregular en la marquesina; posible túnel sin red al subir</td><td>Billete disponible offline una vez preparado; validación sin conexión activa</td></tr>
+        <tr><th scope="row">Organizativa</th><td>Sin restricciones institucionales; uso personal, autónomo</td><td>Sin requisitos organizativos específicos en este caso</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · App de cita médica</h4>
+    <p>Objetivo: <em>pedir cita y saber que ha quedado confirmada, sin volver a llamar</em>. El entorno que describe la investigación:</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las cuatro dimensiones del entorno de Mari Carmen al pedir cita médica. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Dimensión</th><th scope="col">Condición real</th><th scope="col">Consecuencia de diseño</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Física</th><td>Sentada en la cocina, con las gafas puestas; luz interior variable; sin prisa física pero con ansiedad ante la incertidumbre</td><td>Texto ≥ 18 px; contraste alto; sin animaciones que distraigan; confirmación visible y estable</td></tr>
+        <tr><th scope="row">Social</th><td>Sola en casa; nadie que la ayude en el momento; no quiere molestar a su hija</td><td>Cada paso con retroalimentación explícita de estado; mensajes de error claros y recuperables sin llamar a nadie</td></tr>
+        <tr><th scope="row">Técnica</th><td>Cobertura móvil irregular en municipio rural (&lt; 1.000 hab.); consultorio local casi siempre cerrado; sin alternativa presencial accesible</td><td>Tolerancia a cortes de red sin perder el formulario; mensaje de error de red con opción de reintento</td></tr>
+        <tr><th scope="row">Organizativa</th><td>Sistema sanitario público con agenda centralizada; citas que pueden requerir derivación; horarios del centro de salud a veces inaccesibles</td><td>Mostrar siempre el nombre del centro, el médico y el teléfono de contacto junto a la confirmación</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Compara los dos entornos</span>
+      <p>Marta tiene el entorno físico y social más hostil (sol, ruido, cola, prisa), pero el organizativo más simple. Mari Carmen tiene el entorno físico más amable (cocina, calma), pero el técnico y el organizativo más complejos (cobertura rural, sistema sanitario). Una misma decisión de diseño —suprimir la pantalla de resumen para ahorrar pasos— es correcta para Marta y un error para Mari Carmen. Eso es lo que hace imprescindible especificar el entorno por separado para cada persona.</p>
+    </div>
+
+    <p><strong>No diseñas para una tarea: diseñas para una tarea en unas condiciones concretas.</strong> El entorno no es ambientación literaria; es la variable que decide qué requisitos son imprescindibles y cuáles son ruido.</p>
 
     <div class="box challenge">
       <span class="label">Reto exprés</span>
@@ -274,10 +311,10 @@
 
     <h4>Cuatro respuestas de diseño a un entorno hostil</h4>
     <ul>
-      <li><strong>Contraste alto y texto legible</strong> para el entorno físico de luz: lo que se lee al sol también ayuda a quien tiene baja visión. Es, además, un criterio de las <strong>WCAG</strong> nivel AA.</li>
-      <li><strong>No depender de un solo canal</strong> en el entorno de ruido: si hay un aviso sonoro, que haya también una señal visual o táctil. Nunca confiar el mensaje crítico solo al sonido.</li>
-      <li><strong>Objetivos táctiles grandes y tolerancia al error</strong> para el movimiento: dedos imprecisos en un autobús que da botes necesitan botones amplios y separados.</li>
-      <li><strong>Recuperación tras la interrupción</strong> para el entorno social y organizativo: si una llamada, una cola o un jefe interrumpen, el sistema debe guardar el estado y dejar retomar sin empezar de cero.</li>
+      <li><strong>Contraste alto y texto legible</strong> para el entorno físico de luz: lo que se lee al sol en el andén de Marta también es lo que lee Mari Carmen con sus gafas en la cocina, y lo que Joaquín (secundario) lee con el zoom al 200 %. Es, además, un criterio de las <strong>WCAG</strong> nivel AA.</li>
+      <li><strong>No depender de un solo canal</strong> en el entorno de ruido: si hay un aviso sonoro, que haya también una señal visual o táctil. La confirmación de billete de Marta en el andén ruidoso necesita color y texto, no solo un pitido; la confirmación de cita de Mari Carmen necesita texto explícito, no solo un cambio de icono.</li>
+      <li><strong>Objetivos táctiles grandes y tolerancia al error</strong> para el movimiento: Marta usa el móvil de pie y con una mano mientras el bus se acerca; dedos imprecisos bajo presión necesitan botones amplios, separados y con margen de error generoso.</li>
+      <li><strong>Recuperación tras la interrupción</strong> para el entorno social y organizativo: si una llamada interrumpe a Mari Carmen a mitad del formulario de cita, el sistema debe guardar lo que ya rellenó y permitir retomar sin empezar de cero. Si la cola presiona a Marta y cierra sin querer la app, el billete ya preparado debe seguir disponible.</li>
     </ul>
     <p>Observa el patrón que viste con accesibilidad: <strong>diseñar para el entorno difícil mejora el producto para todos</strong>. El contraste alto sirve al sol y a la baja visión; el doble canal sirve al ruido y a la persona sorda; el botón grande sirve al autobús y al temblor de manos.</p>
     <p>Por eso el entorno no es un capricho de realismo: es una de las fuentes más ricas de requisitos de usabilidad y accesibilidad que llevarás a la Actividad B.</p>
@@ -314,7 +351,7 @@
 
     <p>La primera cifra habla de <strong>ubicuidad</strong>: si el 92,5 % usa Internet a diario, no lo hace solo sentado en casa, sino en el transporte, en la calle y en el trabajo. El entorno de uso ya no es uno: son muchos a lo largo del día.</p>
     <p>El <strong>teletrabajo</strong> ilustra de manual la dimensión organizativa y física del entorno: la misma tarea, hecha desde la oficina o desde casa, ocurre en condiciones de ruido, interrupciones y normas muy distintas. No es casual que esa modalidad alcance al 47,7 % de quienes pueden adoptarla.</p>
-    <p>Y la cifra de <strong>Extremadura</strong> apunta a la dimensión <strong>territorial</strong> del entorno técnico. En un territorio extenso, rural y poco poblado, el uso de Internet (93,9 %) queda por debajo de la media nacional (96,3 %). La cobertura y la infraestructura del lugar son parte del entorno, y no son iguales en una gran ciudad que en la dehesa.</p>
+    <p>Y la cifra de <strong>Extremadura</strong> apunta a la dimensión <strong>territorial</strong> del entorno técnico. En un territorio extenso, rural y poco poblado, el uso de Internet (93,9 %) queda por debajo de la media nacional (96,3 %). La cobertura y la infraestructura del lugar son parte del entorno, y no son iguales en una gran ciudad que en la dehesa. Mari Carmen vive en un municipio extremeño de menos de 1.000 habitantes: su entorno técnico —cobertura irregular, consultorio local cerrado casi siempre, sin alternativa presencial cercana— no es el del despacho donde se diseña la app; es el que la investigación de campo tiene que documentar antes de abrir el editor.</p>
     <p>Especificar bien el entorno es la inversión que evita el fallo: diseñar para el sol, el ruido, la prisa y la cobertura que la gente tiene de verdad, también fuera de las grandes capitales.</p>
 
     <div class="box key">
@@ -479,6 +516,7 @@
         <li>El antipatrón es el <strong>«entorno de laboratorio»</strong>: validar en un despacho tranquilo y excluir a quien usa el sistema en la calle.</li>
         <li>La respuesta de ingeniería es el <strong>diseño robusto</strong>: alto contraste, doble canal, objetivos grandes y recuperación tras interrupción; coincide con criterios <strong>WCAG AA</strong> y mejora el producto para todos.</li>
         <li>Los datos del <strong>INE 2025</strong> describen entornos cotidianos y desiguales: 92,5 % de uso diario, 47,7 % de teletrabajo entre quienes pueden y un 93,9 % de uso en Extremadura, por debajo del 96,3 % nacional.</li>
+        <li>Los dos casos de estudio ilustran entornos opuestos: <strong>Marta</strong> tiene el entorno físico y social más hostil (andén, sol, cola, prisa) pero el organizativo más simple; <strong>Mari Carmen</strong> tiene el entorno físico más amable (cocina, calma) pero el técnico y el organizativo más complejos (cobertura rural, sistema sanitario público). La misma decisión de diseño puede ser correcta para una y un error para la otra.</li>
         <li>En tu proyecto, el entorno <strong>cierra la entrega de contexto de uso</strong> (las cuatro preguntas); hay que evidenciar la observación y aquí nacen requisitos de accesibilidad.</li>
         <li>Cerrada la Actividad A, el proceso avanza a la <strong>Actividad B</strong>: convertir el contexto en requisitos verificables.</li>
       </ul>

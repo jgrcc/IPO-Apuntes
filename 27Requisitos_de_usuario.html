@@ -109,9 +109,9 @@
     <p>Un <strong>requisito de usuario</strong> es la expresión de una <strong>necesidad</strong> de las personas, redactada de forma concreta y verificable, que el sistema debe satisfacer.</p>
     <p>Conviene separar tres palabras que se confunden a menudo, porque son tres niveles distintos:</p>
     <ul>
-      <li><strong>Necesidad:</strong> lo que la persona quiere conseguir o el problema que tiene («necesito comprar el billete antes de que llegue el autobús»).</li>
-      <li><strong>Requisito:</strong> lo que el sistema debe cumplir para atender esa necesidad, escrito de modo comprobable («el sistema debe permitir comprar un billete en menos de 30 segundos»).</li>
-      <li><strong>Solución de diseño:</strong> la forma concreta de cumplirlo (un botón grande de «comprar» en la pantalla de inicio). Esto es ya la Actividad C, y <strong>no</strong> va en el requisito.</li>
+      <li><strong>Necesidad:</strong> lo que la persona quiere conseguir o el problema que tiene. Ej. (Marta): «necesito comprar el billete antes de que llegue el autobús». Ej. (Mari Carmen): «necesito pedir cita y saber que ha quedado confirmada sin llamar a nadie».</li>
+      <li><strong>Requisito:</strong> lo que el sistema debe cumplir para atender esa necesidad, escrito de modo comprobable. Ej.: «el sistema debe permitir comprar un billete en menos de 30 segundos, operable con una sola mano» · «el sistema debe mostrar la confirmación de la cita con texto explícito accesible sin reconexión».</li>
+      <li><strong>Solución de diseño:</strong> la forma concreta de cumplirlo (un botón grande de «comprar» en la pantalla de inicio; una pantalla de resumen con texto «Cita guardada» persistente). Esto es ya la Actividad C, y <strong>no</strong> va en el requisito.</li>
     </ul>
 
     <h4>La regla de oro: el requisito dice «qué», no «cómo»</h4>
@@ -162,7 +162,7 @@
     <figure class="diagram">
       <svg viewBox="0 0 720 600" role="img" aria-labelledby="der-title der-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
         <title id="der-title">Cadena de derivación de un requisito de usuario, desde el contexto de uso hasta el criterio de evaluación</title>
-        <desc id="der-desc">Un proceso descendente en cuatro pasos. Primero, el contexto de uso de la Actividad A, formado por usuarios, tareas, recursos y entorno. De ahí se detecta una necesidad de usuario: qué quiere lograr y qué se lo impide. La necesidad se convierte en un requisito de usuario, un enunciado concreto y verificable. Por último, el requisito establece el criterio con el que se comprobará el sistema en la Actividad D de evaluación. Una nota lateral indica que el requisito también alimenta la Actividad C de diseño.</desc>
+        <desc id="der-desc">Un proceso descendente en cuatro pasos ilustrado con dos casos. Primero, el contexto de uso de la Actividad A: Marta (app de transporte) y Mari Carmen (app de cita médica). De ahí se detectan sus necesidades: Marta necesita pagar antes de que llegue el bus; Mari Carmen necesita saber que la cita quedó guardada. Cada necesidad se convierte en un requisito verificable: pagar y validar en menos de 30 segundos con una mano; mostrar confirmación persistente sin límite de tiempo. Por último, el requisito establece el criterio de evaluación: medir el tiempo de pago para Marta; comprobar si Mari Carmen ve la confirmación sin ayuda. Una nota lateral indica que el requisito también alimenta la Actividad C de diseño.</desc>
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" fill="#211C16"></path>
@@ -173,7 +173,7 @@
         <rect x="160" y="26" width="400" height="86" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"></rect>
         <text x="360" y="58" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0B5563">1 · Contexto de uso (Actividad A)</text>
         <text x="360" y="80" text-anchor="middle" font-size="12.5" fill="#211C16">Usuarios · tareas · recursos · entorno</text>
-        <text x="360" y="98" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«¿Cómo es el mundo real de estas personas?»</text>
+        <text x="360" y="98" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">Marta (transporte) · Mari Carmen (cita médica)</text>
 
         <line x1="360" y1="112" x2="360" y2="160" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
 
@@ -181,7 +181,8 @@
         <rect x="160" y="162" width="400" height="86" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"></rect>
         <text x="360" y="194" text-anchor="middle" font-size="14.5" font-weight="700" fill="#7A5A12">2 · Necesidad de usuario</text>
         <text x="360" y="216" text-anchor="middle" font-size="12.5" fill="#211C16">Qué quiere lograr y qué se lo impide</text>
-        <text x="360" y="234" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«Necesito pagar antes de que llegue el bus»</text>
+        <text x="360" y="226" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Marta: «Necesito pagar antes de que llegue el bus»</text>
+        <text x="360" y="242" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Mari Carmen: «Necesito saber que la cita quedó guardada»</text>
 
         <line x1="360" y1="248" x2="360" y2="296" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
 
@@ -189,7 +190,8 @@
         <rect x="160" y="298" width="400" height="86" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"></rect>
         <text x="360" y="330" text-anchor="middle" font-size="14.5" font-weight="700" fill="#2C5A2E">3 · Requisito de usuario</text>
         <text x="360" y="352" text-anchor="middle" font-size="12.5" fill="#211C16">Enunciado concreto y verificable</text>
-        <text x="360" y="370" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«El sistema permite pagar en menos de 30 s»</text>
+        <text x="360" y="362" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Marta: «Pagar y validar en ≤ 30 s con una mano»</text>
+        <text x="360" y="378" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Mari Carmen: «Confirmación persistente sin límite de tiempo»</text>
 
         <line x1="360" y1="384" x2="360" y2="432" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah)"></line>
 
@@ -197,7 +199,7 @@
         <rect x="160" y="434" width="400" height="86" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"></rect>
         <text x="360" y="466" text-anchor="middle" font-size="14.5" font-weight="700" fill="#8A3412">4 · Criterio de evaluación (Actividad D)</text>
         <text x="360" y="488" text-anchor="middle" font-size="12.5" fill="#211C16">Cómo se comprobará si se cumple</text>
-        <text x="360" y="506" text-anchor="middle" font-size="11.5" fill="#4A4136" font-style="italic">«Medir el tiempo de compra con usuarios reales»</text>
+        <text x="360" y="498" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Marta: medir tiempo de pago · Mari Carmen: ¿ve confirmación sin ayuda?</text>
 
         <!-- Nota lateral: alimenta el diseño -->
         <line x1="560" y1="341" x2="648" y2="341" stroke="#0B5563" stroke-width="2.5" marker-end="url(#ah)"></line>
@@ -248,7 +250,11 @@
 
     <h4>Una plantilla sencilla para empezar</h4>
     <p>Una fórmula que funciona bien para arrancar es: <em>«El sistema debe permitir a [tipo de usuario] [lograr una tarea] [en estas condiciones medibles]»</em>.</p>
-    <p>Ejemplo completo: «El sistema debe permitir a una persona mayor, sin experiencia previa, completar el alta en menos de tres minutos y sin ayuda externa». Es funcional, mide usabilidad y nombra al usuario del contexto. Es trazable, verificable y no ambiguo.</p>
+    <p>Dos ejemplos completos, uno por caso de estudio:</p>
+    <ul>
+      <li><strong>Caso A (Marta):</strong> «El sistema debe permitir a una viajera de pie, con una mano libre y sin conexión activa, validar un billete ya preparado en menos de 3 segundos». Trazable al entorno (andén, sin cobertura) y al recurso (una mano). Verificable con cronómetro.</li>
+      <li><strong>Caso B (Mari Carmen):</strong> «El sistema debe mostrar a una usuaria mayor, tras confirmar la cita, un mensaje de texto explícito con médico, fecha y hora, accesible desde la pantalla de inicio sin necesidad de volver a entrar al flujo». Trazable al usuario (competencia básica, ansiedad ante incertidumbre) y al objetivo (confirmación persistente). Verificable comprobando si lo localiza sin ayuda.</li>
+    </ul>
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
@@ -271,22 +277,54 @@
   <section id="cotidiano" aria-labelledby="cotidiano-h">
     <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>De una queja real a un requisito verificable</h3>
 
-    <p>La mejor forma de entender la Actividad B es hacerla a pequeña escala con algo que ya te ha pasado. Toda frustración con una app es, en el fondo, un requisito que alguien no escribió.</p>
-    <p>Tomemos la misma <strong>app de pago del transporte</strong> del tema anterior. Recoge una queja real y mira cómo asciende por la cadena de derivación.</p>
+    <p>La mejor forma de entender la Actividad B es hacerla a pequeña escala con quejas que conoces. Toda frustración con una app es, en el fondo, un requisito que alguien no escribió. Recorremos la cadena de derivación con los dos casos de estudio.</p>
 
-    <h4>El mismo caso, paso a paso</h4>
-    <ul>
-      <li><strong>Queja (lo que sientes):</strong> «Tardo demasiado en pagar y el autobús se va».</li>
-      <li><strong>Necesidad (qué quieres lograr):</strong> pagar y validar el billete antes de subir, de pie y con una mano.</li>
-      <li><strong>Requisito malo:</strong> «la app debe ser rápida». No se puede comprobar.</li>
-      <li><strong>Requisito bueno:</strong> «el sistema debe permitir comprar y validar un billete en menos de 30 segundos, operable con una sola mano». Verificable y trazable al contexto.</li>
-    </ul>
-    <p>Ese requisito bueno nació del contexto que estudiaste en la Actividad A: usuario de pie, recurso «una mano libre», entorno «con prisa». No salió de la imaginación del equipo, salió de la observación.</p>
-    <p>Cuando empieces a traducir tus propias frustraciones digitales a requisitos, habrás interiorizado la Actividad B: <strong>no te quejas del sistema, especificas lo que debería cumplir</strong>.</p>
+    <!-- ── Caso A ── -->
+    <h4>Caso A · Marta · App de pago del transporte</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cadena de derivación de requisitos para Marta. Caso A · app de transporte.</caption>
+      <thead>
+        <tr><th scope="col">Eslabón</th><th scope="col">Enunciado</th><th scope="col">Trazabilidad (Actividad A)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Queja</th><td>«Tardo demasiado en pagar y el autobús se va.»</td><td>—</td></tr>
+        <tr><th scope="row">Necesidad</th><td>Pagar y validar el billete antes de subir, de pie y con una mano.</td><td>Usuario de pie · recurso «una mano libre» · entorno «prisa y cola»</td></tr>
+        <tr><th scope="row">Requisito malo</th><td>«La app debe ser rápida.» No se puede comprobar.</td><td>—</td></tr>
+        <tr><th scope="row">Requisito bueno</th><td>«El sistema debe permitir comprar y validar un billete en menos de 30 segundos, operable con una sola mano.»</td><td>Contexto de Marta (Actividad A) · tarea 1.2 del HTA</td></tr>
+        <tr><th scope="row">Criterio de evaluación</th><td>Medir con cronómetro en prueba con usuarios reales de perfil Marta.</td><td>Actividad D · escenario de validación del bus</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- ── Caso B ── -->
+    <h4>Caso B · Mari Carmen · App de cita médica</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cadena de derivación de requisitos para Mari Carmen. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Eslabón</th><th scope="col">Enunciado</th><th scope="col">Trazabilidad (Actividad A)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Queja</th><td>«No sé si la cita ha quedado guardada. Acabé llamando a mi hija.»</td><td>—</td></tr>
+        <tr><th scope="row">Necesidad</th><td>Saber que la cita ha quedado registrada, sin depender de nadie, y poder volver a consultarla.</td><td>Usuario con competencia básica · objetivo vital «no ser una carga» · entorno social «sola en casa»</td></tr>
+        <tr><th scope="row">Requisito malo</th><td>«La confirmación debe ser clara.» No se puede comprobar.</td><td>—</td></tr>
+        <tr><th scope="row">Requisito bueno</th><td>«Tras confirmar la cita, el sistema debe mostrar un mensaje de texto con médico, fecha y hora, accesible desde la pantalla de inicio sin volver a entrar al flujo y sin necesidad de conexión activa.»</td><td>Contexto de Mari Carmen (Actividad A) · tarea 4.1-4.2 del HTA · escenario de contexto Caso B</td></tr>
+        <tr><th scope="row">Criterio de evaluación</th><td>Comprobar si Mari Carmen localiza la confirmación sin ayuda tras cerrar y reabrir la app.</td><td>Actividad D · escenario de validación del código SMS</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Compara los dos requisitos «buenos»</span>
+      <p>El de Marta pone el acento en el <strong>tiempo y la operabilidad con una mano</strong> —fruto de su entorno físico hostil—. El de Mari Carmen pone el acento en la <strong>persistencia y la independencia de conexión</strong> —fruto de su entorno social y técnico—. Los dos son trazables, verificables y no ambiguos. Y los dos nacieron de la investigación del contexto, no de la imaginación del equipo.</p>
+    </div>
+
+    <p>Cuando empieces a traducir las frustraciones de tus personas a requisitos, habrás interiorizado la Actividad B: <strong>no te quejas del sistema, especificas lo que debería cumplir</strong>.</p>
 
     <div class="box challenge">
       <span class="label">Reto exprés</span>
-      <p>Recuerda la última vez que una web o app te hizo perder el tiempo. Escribe la queja en una frase. Ahora reescríbela como un requisito verificable que empiece por «El sistema debe permitir…». Si no se te ocurre cómo medirlo, vuelve a intentarlo: aún es una queja, no un requisito.</p>
+      <p>Recuerda la última vez que una web o app te hizo perder el tiempo. Escribe la queja en una frase. Ahora recorre la cadena: necesidad → requisito malo → requisito bueno → criterio de evaluación. Si no se te ocurre cómo medirlo, el requisito aún no está terminado.</p>
     </div>
   </section>
 
@@ -298,9 +336,9 @@
 
     <h4>De criterio WCAG a requisito del proyecto</h4>
     <ul>
-      <li>El criterio de <strong>contraste de texto</strong> se convierte en el requisito: «todo el texto cumple la relación de contraste mínima del nivel AA».</li>
-      <li>El criterio de <strong>operatividad por teclado</strong> se convierte en: «toda función es accesible sin ratón, solo con teclado».</li>
-      <li>El criterio de <strong>alternativas textuales</strong> se convierte en: «toda imagen con información tiene texto alternativo».</li>
+      <li>El criterio de <strong>contraste de texto</strong> (WCAG 1.4.3) se convierte en: «todo el texto cumple la relación de contraste mínima del nivel AA». Para Marta es el contraste legible al sol en el andén; para Mari Carmen, el texto grande visible con sus gafas y para Joaquín (secundario), el contraste que no se pierde al hacer zoom al 200 %.</li>
+      <li>El criterio de <strong>reflujo de contenido</strong> (WCAG 1.4.10) se convierte en: «el contenido es accesible sin pérdida de información al 200 % de zoom». Nació de identificar a Joaquín como persona secundaria con baja visión en la Actividad A.</li>
+      <li>El criterio de <strong>alternativas textuales</strong> (WCAG 1.1.1) se convierte en: «toda imagen con información tiene texto alternativo». Garantiza que el estado «Cita guardada» de Mari Carmen no dependa solo de un icono sin descripción.</li>
     </ul>
     <p>Observa el patrón: la guía de accesibilidad ya está expresada de forma verificable, así que <strong>copiarla bien es derivar requisitos</strong>. Por eso en tu proyecto las WCAG AA son un requisito mínimo y no una recomendación.</p>
     <p>Y la accesibilidad no aparece de golpe en la Actividad B: se <strong>siembra en la A</strong>, cuando identificas usuarios con distintas capacidades y entornos, y se <strong>cosecha en la D</strong>, cuando compruebas la conformidad. La B es donde queda por escrito como exigencia.</p>
@@ -344,7 +382,7 @@
     </div>
 
     <p>La lectura es directa. Más de <strong>cuatro millones de personas</strong> conviven con alguna discapacidad. Si un servicio digital no especifica requisitos de accesibilidad, está decidiendo —aunque no lo diga— dejar fuera a una parte enorme de la población.</p>
-    <p>Y como <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por internet, muchos de esos servicios son esenciales: solicitar una cita médica, una ayuda, un certificado. No poder usarlos no es una molestia, es una <strong>exclusión</strong>.</p>
+    <p>Y como <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por internet, muchos de esos servicios son esenciales: solicitar una cita médica, una ayuda, un certificado. Mari Carmen es exactamente ese caso: una usuaria mayor en entorno rural que necesita la app de cita médica porque el teléfono del centro da comunicando y el consultorio está casi siempre cerrado. Si la app no especifica requisitos de accesibilidad, no es solo una molestia para ella: es una <strong>exclusión del sistema sanitario</strong>.</p>
     <p>Por eso el requisito de accesibilidad va al mismo nivel que el funcional. Un sistema que «funciona» pero que el 9 % de la población no puede operar, en rigor, <strong>no cumple sus requisitos de usuario</strong>.</p>
 
     <div class="box key">
@@ -362,14 +400,14 @@
     <h4>De la norma a tu entrega</h4>
     <div class="table-scroll">
     <table class="data">
-      <caption>Qué produce la Actividad B y cómo se convierte en parte de la entrega del proyecto.</caption>
+      <caption>Qué produce la Actividad B, con ejemplos de los dos casos de estudio, y cómo se convierte en parte de la entrega del proyecto.</caption>
       <thead>
-        <tr><th scope="col">Tipo de requisito</th><th scope="col">Qué tendrás que entregar</th><th scope="col">De dónde sale</th></tr>
+        <tr><th scope="col">Tipo de requisito</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th><th scope="col">De dónde sale</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Funcionales</th><td>Lista de funciones que el sistema debe ofrecer</td><td>Tareas (Actividad A)</td></tr>
-        <tr><th scope="row">De usabilidad</th><td>Metas medibles de eficacia, eficiencia y satisfacción</td><td>Usuarios y entorno (Actividad A)</td></tr>
-        <tr><th scope="row">De accesibilidad</th><td>Conformidad con WCAG 2.1 nivel AA</td><td>Usuarios y WCAG / EN 301 549</td></tr>
+        <tr><th scope="row">Funcional</th><td>Función que el sistema debe ofrecer</td><td>El sistema debe permitir preparar el billete offline</td><td>El sistema debe mostrar la confirmación de cita en «Mis citas» sin volver a entrar al flujo</td><td>HTA y escenarios (Actividad A)</td></tr>
+        <tr><th scope="row">De usabilidad</th><td>Meta medible de eficacia, eficiencia o satisfacción</td><td>Comprar y validar un billete en ≤ 30 s con una mano</td><td>Completar el pedido de cita sin ayuda externa en el primer intento</td><td>Usuarios, recursos y entorno (Actividad A)</td></tr>
+        <tr><th scope="row">De accesibilidad</th><td>Criterio WCAG 2.1 AA verificable</td><td>Contraste ≥ 4,5:1 en todos los textos (legible al sol)</td><td>Contenido accesible sin pérdida al 200 % de zoom (Joaquín, secundario)</td><td>Usuarios con distintas capacidades y WCAG / EN 301 549</td></tr>
       </tbody>
     </table>
     </div>
@@ -515,6 +553,7 @@
         <li>Las <strong>WCAG nivel AA</strong> son una fuente directa de requisitos de accesibilidad ya verificables, respaldados por la Directiva 2019/882 y la EN 301 549.</li>
         <li>Los datos del <strong>INE</strong> lo justifican: más de <strong>4,3 millones de personas con discapacidad</strong> (EDAD 2020) y un <strong>80,7 %</strong> usando la e-Administración. La accesibilidad es un requisito, no un extra.</li>
         <li>En tu proyecto, la Actividad B es la <strong>especificación de requisitos</strong> que servirá de vara de medir en la evaluación, con el nivel <strong>AA de WCAG</strong> como mínimo obligatorio.</li>
+        <li>Los dos casos de estudio ilustran requisitos opuestos en origen: el de <strong>Marta</strong> nace del entorno físico (velocidad y operabilidad con una mano); el de <strong>Mari Carmen</strong>, del entorno social y cognitivo (confirmación persistente e independiente). Ambos son trazables, verificables y derivados del contexto, no inventados.</li>
       </ul>
     </div>
   </section>
