@@ -7,6 +7,58 @@
 <meta name="description" content="Apuntes de apoyo: introducción a la Actividad B del Diseño Centrado en lo Humano (ISO 9241-210), la especificación de los requisitos de usuario. Continuación del Tema 2 de la asignatura Diseño e Interacción en Sistemas de Información. Escuela Politécnica, Universidad de Extremadura.">
 <title>Los requisitos de usuario (Actividad B del DCH) · Apuntes Tema 2 · DISI (UEx)</title>
 <link rel="stylesheet" href="apuntes.css">
+<style>
+/* ── Bloques Gherkin ─────────────────────────────────────────────── */
+.ghk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .875rem;
+  margin: 1.25rem 0 1.6rem;
+}
+@media (max-width: 660px) { .ghk-grid { grid-template-columns: 1fr; } }
+
+.ghk-block {
+  border-radius: 8px;
+  padding: 1rem 1.15rem 1.05rem;
+}
+.ghk-block .ghk-label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.ghk-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: .83rem;
+  line-height: 1.72;
+  font-family: 'Courier New', Courier, monospace;
+}
+.ghk-kw  { font-weight: 700; }
+.ghk-cmt { opacity: .48; font-style: italic; }
+
+/* Variante compacta para incrustar dentro de listas o párrafos */
+.ghk-inline {
+  margin-top: .8rem;
+  border-radius: 6px;
+  padding: .75rem 1rem;
+}
+
+/* Tokens de color por criterio */
+.ghk-v { background: #E4EEEF; }
+.ghk-v .ghk-label, .ghk-v .ghk-kw { color: #0B5563; }
+
+.ghk-a { background: #F3EAD2; }
+.ghk-a .ghk-label, .ghk-a .ghk-kw { color: #7A5A12; }
+
+.ghk-t { background: #E1ECDC; }
+.ghk-t .ghk-label, .ghk-t .ghk-kw { color: #2C5A2E; }
+
+.ghk-p { background: #EDE8F4; }
+.ghk-p .ghk-label, .ghk-p .ghk-kw { color: #4A2E8A; }
+</style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido principal</a>
@@ -34,6 +86,7 @@
       <li><a href="#parte1">Parte 1 · Contenido base</a>
         <ol>
           <li class="lvl2"><a href="#de-la-a-a-la-b">De la Actividad A a la B: del contexto al requisito</a></li>
+          <li class="lvl2"><a href="#pasos">El proceso completo: los pasos de la Actividad B (ISO 9241-210)</a></li>
           <li class="lvl2"><a href="#que-es">¿Qué es un requisito de usuario? Definición</a></li>
           <li class="lvl2"><a href="#tipos">Los tipos de requisitos</a></li>
           <li class="lvl2"><a href="#derivacion">De dónde salen: la derivación desde el contexto de uso</a></li>
@@ -43,6 +96,7 @@
       <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
         <ol>
           <li class="lvl2"><a href="#cotidiano">De una queja real a un requisito verificable</a></li>
+          <li class="lvl2"><a href="#caso-completo">El caso completo: la Actividad B de Mari Carmen</a></li>
           <li class="lvl2"><a href="#accesibilidad">Requisitos de accesibilidad: las WCAG como fuente de requisitos</a></li>
           <li class="lvl2"><a href="#coste">Anclaje real: la accesibilidad es un requisito, no un extra (INE)</a></li>
           <li class="lvl2"><a href="#proyecto">Tu proyecto: la especificación de requisitos como entrega</a></li>
@@ -103,8 +157,139 @@
     </div>
   </section>
 
+  <section id="pasos" aria-labelledby="pasos-h">
+    <h3 id="pasos-h"><span class="num" aria-hidden="true">1.2</span>El proceso completo: los pasos de la Actividad B según la ISO 9241-210</h3>
+
+    <p>Antes de desglosar los conceptos por separado, conviene fijar la <strong>visión de conjunto del proceso</strong>. La Actividad B no es un único acto: es una secuencia de pasos interrelacionados que transforma el contexto de uso —la salida de la Actividad A— en un catálogo de requisitos verificable y trazable.</p>
+    <p>La ISO 9241-210:2019 (§ 6.3) no numera los pasos de forma rígida, pero describe con claridad los <strong>productos que la actividad debe generar</strong> y las acciones necesarias para obtenerlos: declaraciones explícitas de necesidades, objetivos medibles de calidad de uso (eficacia, eficiencia y satisfacción según ISO 9241-11) y restricciones del contexto que condicionan el diseño. De esa descripción normativa se extraen los ocho pasos siguientes. El caso completo de Mari Carmen (§ 2.2) recorre estas mismas etapas con evidencia real y constituye el modelo que se espera en la entrega del proyecto.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 720 774" role="img" aria-labelledby="pasos-svg-title pasos-svg-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="pasos-svg-title">Los ocho pasos de la Actividad B: especificación de requisitos de usuario según ISO 9241-210:2019</title>
+        <desc id="pasos-svg-desc">Diagrama vertical de ocho cajas conectadas por flechas. Paso 1: Revisar y sintetizar el contexto de uso — entrada de la Actividad A. Paso 2: Identificar las necesidades de usuario — qué quieren lograr y qué barreras encuentran. Paso 3: Derivar y clasificar los requisitos — funcionales, de usabilidad, de accesibilidad, de restricción. Paso 4: Especificar los objetivos de calidad de uso — metas medibles de eficacia, eficiencia y satisfacción. Paso 5: Documentar las restricciones del contexto — técnicas, organizativas y legales. Paso 6: Detectar y resolver conflictos entre requisitos — documentar incompatibilidades y decisiones. Paso 7: Construir la matriz de trazabilidad — vincular cada requisito a su necesidad y evidencia. Paso 8: Validar el catálogo de requisitos — verificable, no ambiguo, necesario y alcanzable.</desc>
+        <defs>
+          <marker id="ah-pasos" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#211C16"/>
+          </marker>
+        </defs>
+
+        <!-- Paso 1 -->
+        <rect x="80" y="10" width="560" height="68" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"/>
+        <text x="360" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Paso 1 · Revisar y sintetizar el contexto de uso</text>
+        <text x="360" y="56" text-anchor="middle" font-size="12" fill="#211C16">Entrada: Actividad A — personas, tareas, recursos, entorno, barreras</text>
+        <text x="360" y="72" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">¿Qué documentamos en la A? ¿Qué es relevante para la B?</text>
+        <line x1="360" y1="78" x2="360" y2="106" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 2 -->
+        <rect x="80" y="108" width="560" height="68" rx="10" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2.5"/>
+        <text x="360" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5A12">Paso 2 · Identificar las necesidades de usuario</text>
+        <text x="360" y="154" text-anchor="middle" font-size="12" fill="#211C16">¿Qué quieren lograr las personas? ¿Qué barreras o dificultades encuentran?</text>
+        <text x="360" y="170" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Catálogo de necesidades con evidencia y estado (respaldada / inferida)</text>
+        <line x1="360" y1="176" x2="360" y2="204" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 3 -->
+        <rect x="80" y="206" width="560" height="68" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"/>
+        <text x="360" y="232" text-anchor="middle" font-size="14" font-weight="700" fill="#2C5A2E">Paso 3 · Derivar y clasificar los requisitos</text>
+        <text x="360" y="252" text-anchor="middle" font-size="12" fill="#211C16">Cada necesidad → uno o varios requisitos verificables</text>
+        <text x="360" y="268" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Funcionales · Usabilidad · Accesibilidad (WCAG AA) · Restricción de contexto</text>
+        <line x1="360" y1="274" x2="360" y2="302" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 4 -->
+        <rect x="80" y="304" width="560" height="68" rx="10" fill="#F4E6DC" stroke="#8A3412" stroke-width="2.5"/>
+        <text x="360" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#8A3412">Paso 4 · Especificar los objetivos de calidad de uso</text>
+        <text x="360" y="350" text-anchor="middle" font-size="12" fill="#211C16">Metas medibles de eficacia, eficiencia y satisfacción (ISO 9241-11)</text>
+        <text x="360" y="366" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">«El 90 % lo completa sin ayuda» · «Puntuación SUS ≥ 70» · «En menos de 30 s»</text>
+        <line x1="360" y1="372" x2="360" y2="400" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 5 -->
+        <rect x="80" y="402" width="560" height="68" rx="10" fill="#EDE8F4" stroke="#4A2E8A" stroke-width="2.5"/>
+        <text x="360" y="428" text-anchor="middle" font-size="14" font-weight="700" fill="#4A2E8A">Paso 5 · Documentar las restricciones del contexto</text>
+        <text x="360" y="448" text-anchor="middle" font-size="12" fill="#211C16">Condicionantes técnicos, organizativos y legales que acotan el diseño</text>
+        <text x="360" y="464" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Directiva (UE) 2019/882 · EN 301 549 · Dispositivos · Cobertura · Privacidad</text>
+        <line x1="360" y1="470" x2="360" y2="498" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 6 -->
+        <rect x="80" y="500" width="560" height="68" rx="10" fill="#FAE8E8" stroke="#8A1212" stroke-width="2.5"/>
+        <text x="360" y="526" text-anchor="middle" font-size="14" font-weight="700" fill="#8A1212">Paso 6 · Detectar y resolver conflictos entre requisitos</text>
+        <text x="360" y="546" text-anchor="middle" font-size="12" fill="#211C16">Identificar incompatibilidades; documentar cada decisión con justificación</text>
+        <text x="360" y="562" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Ej.: plazo breve del SMS vs. accesibilidad cognitiva → decisión: reenvío sin pérdida</text>
+        <line x1="360" y1="568" x2="360" y2="596" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 7 -->
+        <rect x="80" y="598" width="560" height="68" rx="10" fill="#E4EEEF" stroke="#0B5563" stroke-width="2.5"/>
+        <text x="360" y="624" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5563">Paso 7 · Construir la matriz de trazabilidad</text>
+        <text x="360" y="644" text-anchor="middle" font-size="12" fill="#211C16">Vincular cada requisito a la necesidad que lo origina y a la evidencia del contexto</text>
+        <text x="360" y="660" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Requisito R-01 ← Necesidad N-01 ← Escenario C.2 (Actividad A)</text>
+        <line x1="360" y1="666" x2="360" y2="694" stroke="#211C16" stroke-width="2.5" marker-end="url(#ah-pasos)"/>
+
+        <!-- Paso 8 -->
+        <rect x="80" y="696" width="560" height="68" rx="10" fill="#E1ECDC" stroke="#2C5A2E" stroke-width="2.5"/>
+        <text x="360" y="722" text-anchor="middle" font-size="14" font-weight="700" fill="#2C5A2E">Paso 8 · Validar el catálogo de requisitos</text>
+        <text x="360" y="742" text-anchor="middle" font-size="12" fill="#211C16">¿Cada requisito es verificable, no ambiguo, necesario y alcanzable?</text>
+        <text x="360" y="758" text-anchor="middle" font-size="11" fill="#4A4136" font-style="italic">Salida: catálogo revisado — entrada para la Actividad C (diseño)</text>
+      </svg>
+      <figcaption>Los ocho pasos de la Actividad B según ISO 9241-210:2019 (§ 6.3). En la entrega del proyecto se espera que la documentación muestre evidencia de haber completado todos estos pasos. La sección 2.2 desarrolla el caso completo de Mari Carmen siguiendo este mismo proceso.</figcaption>
+    </figure>
+
+    <ol class="cycle" role="list">
+      <li>
+        <b>Revisar y sintetizar el contexto de uso.</b> La Actividad B empieza donde termina la A. Antes de derivar ningún requisito, el equipo revisa y sintetiza la documentación del contexto: fichas de personas, escenarios, análisis de tareas (HTA), descripción del entorno. <strong>Solo lo que está documentado en el contexto puede justificar un requisito.</strong> Esta síntesis actúa como filtro y punto de partida, y en la entrega corresponde al «Paso 0» del caso de Mari Carmen (§ 2.2).
+      </li>
+      <li>
+        <b>Identificar las necesidades de usuario.</b> A partir del contexto sintetizado, se detectan y catalogan las <strong>necesidades de usuario</strong>: qué quieren lograr las personas y qué barreras o dificultades encuentran hoy. Las necesidades no son requisitos del sistema —son el punto de partida—. Cada necesidad debe apuntar a evidencia concreta de la Actividad A. El caso de Mari Carmen cataloga las necesidades con identificadores N-01 a N-06, distinguiendo entre «<strong>respaldadas</strong>» (evidencia directa: observación, cita literal) e «<strong>inferidas</strong>» (deducidas razonadamente del contexto sin constatación directa).
+      </li>
+      <li>
+        <b>Derivar y clasificar los requisitos.</b> Cada necesidad se transforma en uno o varios <strong>requisitos verificables</strong>. En este paso se clasifica cada requisito según su naturaleza: <em>funcional</em> (qué debe hacer el sistema), <em>de usabilidad</em> (metas medibles de eficacia, eficiencia y satisfacción), <em>de accesibilidad</em> (conforme a WCAG 2.2 nivel AA) o de <em>restricción de contexto</em>. Ningún requisito describe una pantalla ni un botón: dice <strong>qué</strong> debe lograr el sistema, no <strong>cómo</strong>. Los requisitos se catalogan con identificadores (R-01, R-02…) que permiten su gestión y trazabilidad.
+      </li>
+      <li>
+        <b>Especificar los objetivos de calidad de uso.</b> Los requisitos de usabilidad exigen ir más allá de la clasificación: requieren <strong>metas cuantificadas</strong>. La norma ISO 9241-11 define la usabilidad como eficacia, eficiencia y satisfacción <em>en un contexto de uso especificado</em>; los objetivos de calidad de uso concretan esas tres dimensiones con valores medibles («el 90 % de los usuarios completa el alta sin ayuda en el primer intento», «puntuación SUS mínima de 70», «tiempo de tarea inferior a 30 segundos»). Sin métricas, no hay forma objetiva de evaluar si el diseño cumple.
+      </li>
+      <li>
+        <b>Documentar las restricciones del contexto.</b> No todo lo que condiciona el sistema es un requisito derivado de una necesidad de usuario. Las <strong>restricciones</strong> —técnicas, organizativas o legales— también deben documentarse explícitamente: el dispositivo o navegador a soportar, el marco legal aplicable (Directiva (UE) 2019/882, EN 301 549), el nivel de WCAG exigido, la disponibilidad de red, las políticas de privacidad, los recursos del proyecto. Estas restricciones acotan el espacio de diseño antes de que el equipo proponga soluciones.
+      </li>
+      <li>
+        <b>Detectar y resolver conflictos entre requisitos.</b> Los requisitos raramente son independientes. A veces dos requisitos se contradicen: un tiempo de expiración breve del código SMS (requisito de seguridad) entra en conflicto con el tiempo que necesita una usuaria mayor para localizarlo e introducirlo (requisito de accesibilidad cognitiva). Este paso obliga a identificar explícitamente cada conflicto y a documentar la <strong>decisión adoptada con su justificación</strong>. El caso de Mari Carmen registra tres conflictos (C-01 a C-03). Un conflicto sin resolver convierte el catálogo en un problema para el equipo de diseño.
+      </li>
+      <li>
+        <b>Construir la matriz de trazabilidad.</b> La <strong>trazabilidad</strong> es la prueba de que los requisitos no se inventaron. La matriz vincula cada requisito a la necesidad que lo origina y a la evidencia del contexto de uso (Actividad A) de la que procede: Requisito R-01 ← Necesidad N-01 ← Escenario C.2. Es también la herramienta de gestión del cambio: si un dato del contexto se actualiza, la matriz señala exactamente qué requisitos hay que revisar. La ISO 9241-210 la exige implícitamente al hablar de «requisitos derivados del contexto de uso».
+      </li>
+      <li>
+        <b>Validar el catálogo de requisitos.</b> Antes de dar por cerrada la Actividad B, se revisa el catálogo completo para comprobar que cada requisito cumple los cuatro atributos básicos: <strong>verificable</strong> (se puede medir), <strong>no ambiguo</strong> (solo admite una interpretación), <strong>necesario</strong> (trazable a un dato real del contexto) y <strong>alcanzable</strong> (realista con los recursos disponibles). Los que fallen se ajustan o se eliminan. El catálogo validado es la entrada de la Actividad C (diseño de soluciones) y el criterio de la Actividad D (evaluación).
+      </li>
+    </ol>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Resumen de los ocho pasos de la Actividad B según ISO 9241-210:2019, con su entrada, acción principal y salida esperada.</caption>
+      <thead>
+        <tr><th scope="col">Paso</th><th scope="col">Acción principal</th><th scope="col">Entrada</th><th scope="col">Salida</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1</th><td>Revisar y sintetizar el contexto de uso</td><td>Documentación completa de la Actividad A</td><td>Síntesis del contexto relevante para derivar requisitos</td></tr>
+        <tr><th scope="row">2</th><td>Identificar las necesidades de usuario</td><td>Síntesis del contexto</td><td>Catálogo de necesidades con evidencia y estado (respaldada / inferida)</td></tr>
+        <tr><th scope="row">3</th><td>Derivar y clasificar los requisitos</td><td>Catálogo de necesidades</td><td>Catálogo inicial de requisitos clasificados (funcional, usabilidad, accesibilidad, restricción)</td></tr>
+        <tr><th scope="row">4</th><td>Especificar objetivos de calidad de uso</td><td>Requisitos de usabilidad</td><td>Metas medibles de eficacia, eficiencia y satisfacción (ISO 9241-11)</td></tr>
+        <tr><th scope="row">5</th><td>Documentar restricciones del contexto</td><td>Contexto + marco legal (WCAG, Directiva 2019/882, EN 301 549)</td><td>Lista de restricciones que acotan el espacio de diseño</td></tr>
+        <tr><th scope="row">6</th><td>Detectar y resolver conflictos</td><td>Catálogo de requisitos + restricciones</td><td>Registro de conflictos y decisiones documentadas con justificación</td></tr>
+        <tr><th scope="row">7</th><td>Construir la matriz de trazabilidad</td><td>Requisitos + necesidades + evidencias del contexto</td><td>Matriz requisito ↔ necesidad ↔ evidencia de la Actividad A</td></tr>
+        <tr><th scope="row">8</th><td>Validar el catálogo</td><td>Catálogo completo de requisitos</td><td>Catálogo verificado y listo como entrada para la Actividad C (diseño)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">¿Por qué ocho pasos y no menos?</span>
+      <p>Podría parecer que basta con «identificar necesidades y escribir requisitos», pero los pasos 4 a 8 son los que separan un requisito ingenieril de una lista de deseos. Los <strong>objetivos de calidad de uso</strong> (paso 4) son lo que permite evaluar cuantitativamente; la <strong>documentación de restricciones</strong> (paso 5) evita que el diseñador invente dentro de un espacio imposible; la <strong>gestión de conflictos</strong> (paso 6) hace que las tensiones entre requisitos queden registradas y no las resuelva el diseñador de forma arbitraria; la <strong>trazabilidad</strong> (paso 7) es la prueba forense de que el proceso fue riguroso; y la <strong>validación</strong> (paso 8) cierra el ciclo antes de que el diseño empiece.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La Actividad B es un proceso de <strong>ocho pasos</strong> que va desde la revisión del contexto (Actividad A) hasta la validación del catálogo de requisitos (entrada a la Actividad C). No es suficiente con escribir una lista de funciones: hay que <strong>identificar necesidades, derivar requisitos verificables, cuantificar metas de calidad de uso, documentar restricciones y conflictos, y demostrar trazabilidad</strong>. El caso completo de Mari Carmen (§ 2.2) es el modelo que se espera en la entrega del proyecto.</p>
+    </div>
+  </section>
+
   <section id="que-es" aria-labelledby="que-es-h">
-    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es un requisito de usuario? Definición</h3>
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.3</span>¿Qué es un requisito de usuario? Definición</h3>
 
     <p>Un <strong>requisito de usuario</strong> es la expresión de una <strong>necesidad</strong> de las personas, redactada de forma concreta y verificable, que el sistema debe satisfacer.</p>
     <p>Conviene separar tres palabras que se confunden a menudo, porque son tres niveles distintos:</p>
@@ -130,7 +315,7 @@
   </section>
 
   <section id="tipos" aria-labelledby="tipos-h">
-    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.3</span>Los tipos de requisitos</h3>
+    <h3 id="tipos-h"><span class="num" aria-hidden="true">1.4</span>Los tipos de requisitos</h3>
 
     <p>No todos los requisitos hablan de lo mismo. Para esta visión general basta con distinguir dos grandes familias y, dentro de la segunda, los dos tipos que más nos importan en esta asignatura.</p>
 
@@ -143,7 +328,7 @@
 
     <ul>
       <li><strong>Requisitos de usabilidad:</strong> metas medibles de eficacia, eficiencia y satisfacción. Ejemplo: «el 90 % de los usuarios completa el alta sin ayuda en el primer intento». Se expresan con <strong>métricas</strong>, no con adjetivos.</li>
-      <li><strong>Requisitos de accesibilidad:</strong> condiciones para que el mayor número posible de personas pueda usar el sistema. En esta asignatura tienen una fuente clara y exigible: las <strong>WCAG nivel AA</strong>. Ejemplo: «todo el texto cumple un contraste mínimo conforme a WCAG 2.1 AA».</li>
+      <li><strong>Requisitos de accesibilidad:</strong> condiciones para que el mayor número posible de personas pueda usar el sistema. En esta asignatura tienen una fuente clara y exigible: las <strong>WCAG nivel AA</strong>. Ejemplo: «todo el texto cumple un contraste mínimo conforme a WCAG 2.2, nivel A y AA».</li>
     </ul>
 
     <p>Fíjate en el contraste entre dos formas de pedir lo mismo. «Que sea fácil de usar» <strong>no es un requisito</strong>: no se puede comprobar. «Que un usuario nuevo complete la compra en menos de tres pasos» <strong>sí lo es</strong>: o se cumple, o no.</p>
@@ -155,7 +340,7 @@
   </section>
 
   <section id="derivacion" aria-labelledby="derivacion-h">
-    <h3 id="derivacion-h"><span class="num" aria-hidden="true">1.4</span>De dónde salen: la derivación desde el contexto de uso</h3>
+    <h3 id="derivacion-h"><span class="num" aria-hidden="true">1.5</span>De dónde salen: la derivación desde el contexto de uso</h3>
 
     <p>Un requisito de usuario no se inventa: se <strong>deriva</strong> del contexto de uso que documentaste en la Actividad A. Esa cadena de derivación es lo que da rigor a la Actividad B y la distingue de una lluvia de ideas.</p>
 
@@ -225,7 +410,7 @@
   </section>
 
   <section id="redaccion" aria-labelledby="redaccion-h">
-    <h3 id="redaccion-h"><span class="num" aria-hidden="true">1.5</span>Cómo se redacta un buen requisito</h3>
+    <h3 id="redaccion-h"><span class="num" aria-hidden="true">1.6</span>Cómo se redacta un buen requisito</h3>
 
     <p>Para esta visión general nos quedamos con cuatro cualidades que cualquier requisito de usuario debería cumplir. La lista exhaustiva de atributos se trabajará en <em>Ingeniería de Requisitos</em>.</p>
 
@@ -244,16 +429,95 @@
     </table>
     </div>
 
+    <h4>Los cuatro criterios como escenarios de prueba (Gherkin)</h4>
+    <p>Una forma rigurosa y directamente aplicable de concretar cada criterio es expresarlo como un <strong>escenario ejecutable en notación Gherkin</strong> (<em>Dado – Cuando – Entonces</em>). Estos escenarios no describen el comportamiento del sistema: describen cómo se comprueba que <em>el requisito en sí mismo</em> está bien escrito. Son escenarios de <strong>validación del catálogo</strong> (Paso 8 del proceso), no criterios de aceptación del sistema.</p>
+    <p>Si un requisito no supera alguno de los cuatro escenarios siguientes, hay que corregirlo antes de cerrar la Actividad B.</p>
+
+    <div class="ghk-grid" role="list">
+
+      <div class="ghk-block ghk-v" role="listitem">
+        <span class="ghk-label">Verificable</span>
+        <pre><span class="ghk-cmt"># ¿Cómo se mide en la Actividad D?</span>
+<span class="ghk-kw">Dado</span> un requisito en el catálogo de la Actividad B
+<span class="ghk-kw">Cuando</span> el equipo diseña una prueba para comprobar
+      si el sistema lo cumple
+<span class="ghk-kw">Entonces</span> obtiene un resultado sin ambigüedad:
+      CUMPLE o NO CUMPLE</pre>
+      </div>
+
+      <div class="ghk-block ghk-a" role="listitem">
+        <span class="ghk-label">No ambiguo</span>
+        <pre><span class="ghk-cmt"># ¿Una sola interpretación posible?</span>
+<span class="ghk-kw">Dado</span> un requisito en el catálogo de la Actividad B
+<span class="ghk-kw">Cuando</span> dos personas del equipo lo leen
+      de forma independiente
+<span class="ghk-kw">Entonces</span> ambas obtienen exactamente
+      la misma interpretación</pre>
+      </div>
+
+      <div class="ghk-block ghk-t" role="listitem">
+        <span class="ghk-label">Necesario · Trazable</span>
+        <pre><span class="ghk-cmt"># ¿De dónde sale? Prueba de no invención</span>
+<span class="ghk-kw">Dado</span> un requisito en el catálogo de la Actividad B
+<span class="ghk-kw">Cuando</span> el equipo busca su origen en la Actividad A
+<span class="ghk-kw">Entonces</span> localiza la persona, tarea u observación
+      concreta que lo justifica</pre>
+      </div>
+
+      <div class="ghk-block ghk-p" role="listitem">
+        <span class="ghk-label">Alcanzable</span>
+        <pre><span class="ghk-cmt"># ¿Es posible con los recursos reales?</span>
+<span class="ghk-kw">Dado</span> un requisito en el catálogo de la Actividad B
+<span class="ghk-kw">Cuando</span> el equipo evalúa su viabilidad
+      con los recursos del proyecto
+<span class="ghk-kw">Entonces</span> existe al menos un diseño posible
+      que puede cumplirlo</pre>
+      </div>
+
+    </div>
+
     <h4>El enemigo número uno: las palabras vagas</h4>
     <p>Adjetivos como «rápido», «fácil», «intuitivo» o «amigable» son el principal motivo de requisitos inútiles. Suenan bien y no significan nada comprobable.</p>
-    <p>La cura es convertir cada adjetivo en una <strong>métrica</strong>. «Rápido» se vuelve «en menos de 2 segundos»; «fácil» se vuelve «el 90 % de los usuarios lo logra a la primera»; «accesible» se vuelve «conforme a WCAG 2.1 AA».</p>
+    <p>La cura es convertir cada adjetivo en una <strong>métrica</strong>. «Rápido» se vuelve «en menos de 2 segundos»; «fácil» se vuelve «el 90 % de los usuarios lo logra a la primera»; «accesible» se vuelve «conforme a WCAG 2.2, nivel A y AA».</p>
 
-    <h4>Una plantilla sencilla para empezar</h4>
-    <p>Una fórmula que funciona bien para arrancar es: <em>«El sistema debe permitir a [tipo de usuario] [lograr una tarea] [en estas condiciones medibles]»</em>.</p>
-    <p>Dos ejemplos completos, uno por caso de estudio:</p>
+    <h4>Una plantilla sencilla para empezar — con validación Gherkin</h4>
+    <p>Una fórmula que funciona bien para arrancar es: <em>«El sistema debe permitir a [tipo de usuario] [lograr una tarea] [en estas condiciones medibles]»</em>. Después de redactar el requisito, aplica los escenarios anteriores para confirmar que supera los cuatro criterios.</p>
+    <p>Dos ejemplos completos, con la validación Gherkin de los criterios más relevantes de cada uno:</p>
     <ul>
-      <li><strong>Caso A (Marta):</strong> «El sistema debe permitir a una viajera de pie, con una mano libre y sin conexión activa, validar un billete ya preparado en menos de 3 segundos». Trazable al entorno (andén, sin cobertura) y al recurso (una mano). Verificable con cronómetro.</li>
-      <li><strong>Caso B (Mari Carmen):</strong> «El sistema debe mostrar a una usuaria mayor, tras confirmar la cita, un mensaje de texto explícito con médico, fecha y hora, accesible desde la pantalla de inicio sin necesidad de volver a entrar al flujo». Trazable al usuario (competencia básica, ansiedad ante incertidumbre) y al objetivo (confirmación persistente). Verificable comprobando si lo localiza sin ayuda.</li>
+      <li>
+        <strong>Caso A (Marta):</strong> «El sistema debe permitir a una viajera de pie, con una mano libre y sin conexión activa, validar un billete ya preparado en menos de 3 segundos». Trazable al entorno (andén, sin cobertura) y al recurso (una mano).
+        <div class="ghk-block ghk-v ghk-inline">
+          <span class="ghk-label">Criterio VERIFICABLE · aplicado a este requisito</span>
+          <pre><span class="ghk-kw">Dado</span> el requisito «validar billete en &lt; 3 s, una mano, sin conexión»
+<span class="ghk-kw">Cuando</span> el evaluador diseña la prueba con cronómetro
+      y usuario de perfil Marta en condiciones de andén
+<span class="ghk-kw">Entonces</span> obtiene: CUMPLE si tiempo &lt; 3 s · NO CUMPLE si ≥ 3 s</pre>
+        </div>
+        <div class="ghk-block ghk-t ghk-inline">
+          <span class="ghk-label">Criterio NECESARIO · TRAZABLE · aplicado a este requisito</span>
+          <pre><span class="ghk-kw">Dado</span> el requisito «validar billete en &lt; 3 s, una mano, sin conexión»
+<span class="ghk-kw">Cuando</span> el equipo busca su origen en la Actividad A
+<span class="ghk-kw">Entonces</span> localiza: ficha persona Marta · recurso «una mano libre»
+      · entorno «andén, prisa, sin cobertura» · tarea 1.2 del HTA</pre>
+        </div>
+      </li>
+      <li>
+        <strong>Caso B (Mari Carmen):</strong> «El sistema debe mostrar a una usuaria mayor, tras confirmar la cita, un mensaje de texto explícito con médico, fecha y hora, accesible desde la pantalla de inicio sin necesidad de volver a entrar al flujo». Trazable al usuario (competencia básica, ansiedad ante incertidumbre) y al objetivo (confirmación persistente).
+        <div class="ghk-block ghk-v ghk-inline">
+          <span class="ghk-label">Criterio VERIFICABLE · aplicado a este requisito</span>
+          <pre><span class="ghk-kw">Dado</span> el requisito «mensaje de confirmación accesible desde pantalla de inicio»
+<span class="ghk-kw">Cuando</span> el evaluador diseña la prueba con una usuaria de perfil Mari Carmen
+<span class="ghk-kw">Entonces</span> comprueba: CUMPLE si localiza médico, fecha y hora sin ayuda
+      · NO CUMPLE si necesita volver a entrar al flujo o llama a alguien</pre>
+        </div>
+        <div class="ghk-block ghk-a ghk-inline">
+          <span class="ghk-label">Criterio NO AMBIGUO · aplicado a este requisito</span>
+          <pre><span class="ghk-kw">Dado</span> el requisito «mensaje con médico, fecha y hora desde pantalla de inicio»
+<span class="ghk-kw">Cuando</span> dos personas del equipo lo leen de forma independiente
+<span class="ghk-kw">Entonces</span> ambas acuerdan qué datos deben aparecer, desde qué pantalla
+      y que no requiere reconexión · la redacción no admite interpretación alternativa</pre>
+        </div>
+      </li>
     </ul>
 
     <div class="box curio">
@@ -297,6 +561,17 @@
     </table>
     </div>
 
+    <div class="ghk-block ghk-v">
+      <span class="ghk-label">Criterio de aceptación en Gherkin · Caso A (Marta)</span>
+      <pre><span class="ghk-cmt"># Este escenario describe cómo el evaluador comprobará en la Actividad D
+# que el sistema cumple el requisito de Marta.</span>
+<span class="ghk-kw">Dado</span> una usuaria de perfil Marta (de pie, una mano libre, sin conexión activa)
+<span class="ghk-kw">Y</span> que tiene preparado un billete en la app
+<span class="ghk-kw">Cuando</span> inicia la validación del billete
+<span class="ghk-kw">Entonces</span> completa la acción operando solo con una mano
+<span class="ghk-kw">Y</span> el tiempo total desde el inicio hasta la confirmación es inferior a 30 segundos</pre>
+    </div>
+
     <!-- ── Caso B ── -->
     <h4>Caso B · Mari Carmen · App de cita médica</h4>
     <div class="table-scroll">
@@ -315,6 +590,17 @@
     </table>
     </div>
 
+    <div class="ghk-block ghk-t">
+      <span class="ghk-label">Criterio de aceptación en Gherkin · Caso B (Mari Carmen)</span>
+      <pre><span class="ghk-cmt"># Este escenario describe cómo el evaluador comprobará en la Actividad D
+# que el sistema cumple el requisito de Mari Carmen.</span>
+<span class="ghk-kw">Dado</span> una usuaria de perfil Mari Carmen que acaba de confirmar una cita
+<span class="ghk-kw">Y</span> que cierra la aplicación y la vuelve a abrir sin conexión activa
+<span class="ghk-kw">Cuando</span> se encuentra en la pantalla de inicio
+<span class="ghk-kw">Entonces</span> localiza sin ayuda el nombre del médico, la fecha y la hora de la cita
+<span class="ghk-kw">Y</span> no necesita volver a entrar al flujo de solicitud ni llamar a nadie</pre>
+    </div>
+
     <div class="box curio">
       <span class="label">Compara los dos requisitos «buenos»</span>
       <p>El de Marta pone el acento en el <strong>tiempo y la operabilidad con una mano</strong> —fruto de su entorno físico hostil—. El de Mari Carmen pone el acento en la <strong>persistencia y la independencia de conexión</strong> —fruto de su entorno social y técnico—. Los dos son trazables, verificables y no ambiguos. Y los dos nacieron de la investigación del contexto, no de la imaginación del equipo.</p>
@@ -328,8 +614,133 @@
     </div>
   </section>
 
+  <section id="caso-completo" aria-labelledby="caso-completo-h">
+    <h3 id="caso-completo-h"><span class="num" aria-hidden="true">2.2</span>El caso completo: la Actividad B de Mari Carmen</h3>
+
+    <p>Hasta ahora hemos visto los conceptos por separado —la cadena de derivación, los tipos de requisitos, la plantilla de redacción—. En esta sección los vemos funcionar juntos en un único caso real. El objetivo es mostrar cómo se estructura una Actividad B completa, desde el contexto de uso hasta la trazabilidad, siguiendo el proceso de la ISO 9241-210.</p>
+    <p>El caso es el <strong>Caso B · App de cita médica en entorno rural</strong> que conoces de las sesiones anteriores. El flujo estudiado es la solicitud de cita para renovar medicación. Lo que sigue es una versión condensada y pedagógica de la entrega real de la Actividad B.</p>
+
+    <h4>Paso 0 · Punto de partida: contexto de uso (Actividad A)</h4>
+    <p>Antes de derivar ningún requisito, se sintetiza lo que la Actividad A ya documentó. Esta síntesis actúa como filtro: solo lo que está en el contexto puede justificar un requisito.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Síntesis del contexto de uso relevante para la Actividad B. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Elemento</th><th scope="col">Síntesis fundamentada</th><th scope="col">Referencia en Act. A</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Usuarios prioritarios</th><td><strong>Mari Carmen</strong> (78 años, usuaria primaria; baja alfabetización digital; letra extragrande; entorno rural). <strong>Joaquín</strong> (70 años, secundario; baja visión, zoom al 200 %). Hija y nieta como apoyo ocasional, no usuarias directas.</td><td>Personas (A.1 / A.2)</td></tr>
+        <tr><th scope="row">Objetivo y tarea crítica</th><td>Solicitar cita para renovar medicación. Confirmar que la cita quedó registrada sin necesidad de llamar a nadie ni pedir ayuda.</td><td>POV · Escenario · HTA (C.1, C.2)</td></tr>
+        <tr><th scope="row">Características condicionantes</th><td>78 años · competencia digital básica · letra extragrande en el móvil · dependencia puntual de apoyo familiar.</td><td>Ficha persona (B.1–B.3)</td></tr>
+        <tr><th scope="row">Entorno técnico y organizativo</th><td>Cobertura de red intermitente en entorno rural. Dispositivo: smartphone Android de gama baja con accesibilidad activada. Sin garantía de conexión estable durante toda la sesión.</td><td>Entorno (D.1–D.3)</td></tr>
+        <tr><th scope="row">Barreras identificadas</th><td>Visual: texto que se corta o se oculta con letra extragrande. Cognitiva: flujos con múltiples pasos generan abandono. Técnica: el código SMS de verificación caduca antes de que Mari Carmen lo localice e introduzca, bloqueando el flujo.</td><td>ACC · Escenario de validación (C.3)</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Apartado A · Necesidades identificadas</h4>
+    <p>Las necesidades expresan <em>qué quiere lograr la persona</em>, no qué debe hacer el sistema. Cada una apunta a evidencia concreta de la Actividad A.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Catálogo de necesidades identificadas. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">ID</th><th scope="col">Persona</th><th scope="col">Necesidad</th><th scope="col">Evidencia concreta</th><th scope="col">Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">N-01</th><td>Mari Carmen</td><td>Solicitar cita médica de forma autónoma y completar el proceso sin perder los datos ya introducidos.</td><td>Escenario de solicitud de cita (C.2); el SMS obliga a salir de la app y los datos se pierden (C.3).</td><td>Respaldada</td></tr>
+        <tr><th scope="row">N-02</th><td>Mari Carmen</td><td>Confirmar que la cita ha quedado registrada y poder volver a consultarla desde la pantalla de inicio, sin necesidad de reconexión activa.</td><td>POV y escenario: «saber que la cita está programada» es la prioridad declarada (C.1); Mari Carmen hace capturas de pantalla para guardar la confirmación porque no confía en que quede guardada.</td><td>Respaldada</td></tr>
+        <tr><th scope="row">N-03</th><td>Mari Carmen</td><td>Completar la verificación de identidad sin presión de tiempo y sin perder el estado de la solicitud.</td><td>Escenario de validación: el código SMS caduca antes de que Mari Carmen lo introduzca (C.3).</td><td>Respaldada</td></tr>
+        <tr><th scope="row">N-04</th><td>Mari Carmen</td><td>Leer toda la información crítica de la aplicación con la configuración de letra extragrande del dispositivo.</td><td>Ficha persona: Mari Carmen usa letra extragrande en su móvil (B.2).</td><td>Respaldada</td></tr>
+        <tr><th scope="row">N-05</th><td>Mari Carmen</td><td>Completar la solicitud aunque la cobertura de red sea intermitente o se pierda temporalmente.</td><td>Entorno rural con baja cobertura documentada (D.1–D.2). Impacto específico en el flujo no estudiado.</td><td>Inferida</td></tr>
+        <tr><th scope="row">N-06</th><td>Joaquín (secundario)</td><td>Leer y navegar por la aplicación con zoom al 200 % sin pérdida de información ni desplazamiento horizontal.</td><td>Ficha persona: Joaquín usa zoom al 200 % por baja visión; riesgo de reflujo roto (WCAG 2.2, criterio 1.4.10).</td><td>Inferida</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box curio">
+      <span class="label">Respaldada vs. Inferida</span>
+      <p><strong>Respaldada</strong> significa que existe evidencia específica en la Actividad A (una observación, una cita literal de la entrevista, un comportamiento documentado). <strong>Inferida</strong> significa que la necesidad se concluye razonadamente a partir de datos del contexto, pero sin constatación directa. La diferencia importa para decidir si el requisito derivado puede marcarse como firme o si hay que validarlo antes de comprometerse con él.</p>
+    </div>
+
+    <h4>Apartado B · Catálogo inicial de requisitos</h4>
+    <p>Los requisitos traducen las necesidades en condiciones exigibles al sistema, redactadas de forma verificable. Fíjate en que ningún requisito describe una pantalla ni un botón: describen <em>qué</em> debe lograr el sistema, no <em>cómo</em>.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Catálogo de requisitos derivados. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">ID</th><th scope="col">Tipo</th><th scope="col">Requisito</th><th scope="col">Necesidad</th><th scope="col">Cómo se comprueba</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">R-01</th><td>Funcional</td><td>El sistema deberá conservar el estado de la solicitud en curso si la usuaria sale temporalmente de la aplicación o si se produce una interrupción de la conexión, de modo que pueda retomar el proceso desde el punto en que lo dejó sin repetir pasos ya completados.</td><td>N-01</td><td>Prueba: la usuaria interrumpe el flujo (sale a leer un SMS) y lo retoma; comprueba que los datos previos se conservan sin empezar de nuevo.</td></tr>
+        <tr><th scope="row">R-02</th><td>Funcional</td><td>Tras completar la solicitud de cita, el sistema deberá mostrar en pantalla un mensaje de texto que incluya médico asignado, fecha, hora y centro; ese mensaje deberá permanecer accesible desde la pantalla de inicio sin necesidad de volver a entrar al flujo ni de disponer de conexión activa.</td><td>N-02</td><td>Inspección: la pantalla muestra los cuatro datos. Prueba: la usuaria localiza la confirmación en «Mis citas» tras cerrar y reabrir la app sin conexión, sin preguntar a nadie.</td></tr>
+        <tr><th scope="row">R-03</th><td>Accesibilidad</td><td>El sistema deberá cumplir la totalidad de los criterios A y AA de WCAG 2.2 en todas las pantallas del flujo. En particular: el contenido será compatible con la configuración de letra extragrande sin pérdida de información ni desplazamiento horizontal (WCAG 2.2 AA 1.4.4), y se reajustará sin pérdida al 200 % de zoom (WCAG 2.2 AA 1.4.10).</td><td>N-04, N-06</td><td>Inspección de accesibilidad con WCAG 2.2 AA como referencia; prueba con dispositivo configurado con letra extragrande y al 200 % de zoom.</td></tr>
+        <tr><th scope="row">R-04</th><td>Accesibilidad</td><td>Si el código de verificación enviado por SMS caduca antes de ser introducido, el sistema deberá permitir solicitar un nuevo envío sin que la usuaria pierda los datos de la solicitud en curso ni tenga que volver al inicio del flujo.</td><td>N-03</td><td>Prueba: la usuaria espera a que caduque el código y solicita reenvío; comprueba que el formulario conserva los datos ya introducidos.</td></tr>
+        <tr><th scope="row">R-05</th><td>Contexto</td><td>El sistema deberá gestionar la pérdida temporal de cobertura de red de manera que el usuario pueda recuperar el estado de la solicitud en curso cuando se restablezca la conexión, sin tener que empezar de nuevo.</td><td>N-05</td><td>Prueba técnica: se simula pérdida de cobertura durante la solicitud y se verifica que el estado se recupera al reconectar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Objetivos de calidad de uso (usabilidad medible)</h4>
+    <p>Además del catálogo de requisitos, la Actividad B establece <strong>metas medibles</strong> de eficacia, eficiencia y satisfacción. Cada umbral se indica como provisional cuando no hay base empírica.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Objetivos de calidad de uso. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">ID</th><th scope="col">Atributo</th><th scope="col">Métrica</th><th scope="col">Valor objetivo</th><th scope="col">Método</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">RU-01</th><td>Eficacia</td><td>Porcentaje de usuarias del perfil (≥ 70 años, competencia básica, letra extragrande) que completan la solicitud sin ayuda externa.</td><td>≥ 4 de 5 participantes (provisional; sin base empírica; equivalente al 80 % con n = 5).</td><td>Prueba con usuarios del perfil; dispositivo configurado con accesibilidad.</td></tr>
+        <tr><th scope="row">RU-02</th><td>Eficiencia</td><td>Tiempo total desde la apertura de la app hasta la pantalla de confirmación.</td><td>&lt; 5 minutos (provisional).</td><td>Prueba cronometrada con el mismo perfil y condiciones.</td></tr>
+        <tr><th scope="row">RU-03</th><td>Satisfacción</td><td>Percepción de certeza de que la cita ha quedado registrada, medida con un ítem ad hoc («¿Sabe ahora si la cita ha quedado guardada, sí o no?», escala 1–5) más un indicador de conducta observable (¿llamó a alguien para confirmar?).</td><td>≥ 4 sobre 5 en el ítem; 0 llamadas de confirmación (provisional).</td><td>Cuestionario post-tarea + observación directa del comportamiento.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Conflictos y trazabilidad</h4>
+    <p>Una Actividad B completa también documenta las tensiones entre requisitos y cierra con una matriz de trazabilidad que acredita el proceso.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Conflictos identificados entre requisitos. Caso B · app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">ID</th><th scope="col">Tensión</th><th scope="col">Decisión provisional</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">C-01</th><td>R-04 (verificación dentro del flujo sin presión de tiempo) frente a la posible obligatoriedad del SMS por normativa del sistema sanitario regional.</td><td>Consultar con el servicio de salud si existen alternativas compatibles con la normativa. R-04 queda como requisito a validar con el cliente hasta que se resuelva.</td></tr>
+        <tr><th scope="row">C-02</th><td>R-03 (texto grande sin información oculta) frente a R-02 (confirmación con los cuatro datos). En pantallas pequeñas, el texto grande puede no dejar espacio para los cuatro datos.</td><td>Decisión de diseño en Actividad C: R-03 prohíbe el desplazamiento horizontal pero admite el vertical; jerarquía visual adecuada resuelve la convivencia.</td></tr>
+        <tr><th scope="row">C-03</th><td>R-02 (confirmación inmediata) frente a R-05 (cobertura intermitente). Si no hay conexión al finalizar el flujo, no se puede confirmar en tiempo real.</td><td>El sistema distinguirá dos estados: «Solicitud guardada, pendiente de confirmar» (sin conexión) y «Cita confirmada» (con confirmación del servidor), con actualización automática al reconectar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Matriz de trazabilidad (simplificada). Hallazgo de la Actividad A → necesidad → requisito → evaluación prevista.</caption>
+      <thead>
+        <tr><th scope="col">Hallazgo (Act. A)</th><th scope="col">Necesidad</th><th scope="col">Requisito</th><th scope="col">Evaluación prevista (Act. D)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>El SMS obliga a salir de la app; los datos se pierden (C.2, C.3).</td><td>N-01</td><td>R-01</td><td>Prueba de usabilidad: la usuaria retoma el flujo tras salir a leer el SMS.</td></tr>
+        <tr><td>Prioridad declarada: «saber que la cita está programada» (POV, C.1).</td><td>N-02</td><td>R-02</td><td>Inspección de interfaz + prueba: localiza la confirmación sin conexión.</td></tr>
+        <tr><td>Letra extragrande y baja visión de Joaquín (B.2); riesgo de reflujo (WCAG 1.4.10).</td><td>N-04, N-06</td><td>R-03</td><td>Auditoría WCAG 2.2 AA + prueba con dispositivo configurado.</td></tr>
+        <tr><td>Código SMS caduca antes de ser introducido (escenario de validación, C.3).</td><td>N-03</td><td>R-04</td><td>Prueba: usuaria espera caducidad y solicita reenvío; datos conservados.</td></tr>
+        <tr><td>Entorno rural con cobertura baja e intermitente (D.1–D.2).</td><td>N-05</td><td>R-05</td><td>Prueba técnica: simulación de pérdida de cobertura durante la solicitud.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>Una Actividad B completa tiene cinco piezas encadenadas: síntesis del contexto (Paso 0) → necesidades de usuario (A) → catálogo de requisitos con objetivos de calidad (B) → conflictos documentados (C) → matriz de trazabilidad. Cada pieza apunta a la anterior: si un requisito no se puede rastrear hasta el contexto de uso, sobra o falta investigación. El caso de Mari Carmen muestra que necesidades distintas (confirmar la cita, no perder datos, verificar sin presión) producen requisitos distintos, cada uno verificable y trazable a una evidencia concreta.</p>
+    </div>
+  </section>
+
   <section id="accesibilidad" aria-labelledby="accesibilidad-h">
-    <h3 id="accesibilidad-h"><span class="num" aria-hidden="true">2.2</span>Requisitos de accesibilidad: las WCAG como fuente de requisitos</h3>
+    <h3 id="accesibilidad-h"><span class="num" aria-hidden="true">2.3</span>Requisitos de accesibilidad: las WCAG como fuente de requisitos</h3>
 
     <p>Aquí está la conexión más importante de esta sesión. Los requisitos de usabilidad suelen costar de escribir porque hay que inventar las métricas. Con los <strong>requisitos de accesibilidad</strong> tienes una ventaja enorme: ya están escritos por ti.</p>
     <p>Las <strong>WCAG (Web Content Accessibility Guidelines)</strong> que estudiaste en el Tema 1 no son solo una buena práctica: son una <strong>fuente directa de requisitos verificables</strong>. Cada criterio de conformidad de nivel AA es, literalmente, un requisito ya redactado y comprobable.</p>
@@ -345,7 +756,7 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>En España y la UE, la accesibilidad de muchos productos y servicios digitales no es opcional: la respaldan la <strong>Directiva (UE) 2019/882</strong> (Ley Europea de Accesibilidad) y la norma <strong>EN 301 549</strong>, que remite precisamente a las WCAG. Cuando escribes «conforme a WCAG 2.1 AA» en un requisito, estás alineando tu proyecto con una obligación legal real, no solo con una buena intención.</p>
+      <p>En España y la UE, la accesibilidad de muchos productos y servicios digitales no es opcional: la respaldan la <strong>Directiva (UE) 2019/882</strong> (Ley Europea de Accesibilidad) y la norma <strong>EN 301 549</strong>, que remite precisamente a las WCAG. Cuando escribes «conforme a WCAG 2.2, nivel A y AA» en un requisito, estás alineando tu proyecto con una obligación legal real, no solo con una buena intención.</p>
     </div>
 
     <div class="box key">
@@ -360,7 +771,7 @@
   </section>
 
   <section id="coste" aria-labelledby="coste-h">
-    <h3 id="coste-h"><span class="num" aria-hidden="true">2.3</span>Anclaje real: la accesibilidad es un requisito, no un extra (INE)</h3>
+    <h3 id="coste-h"><span class="num" aria-hidden="true">2.4</span>Anclaje real: la accesibilidad es un requisito, no un extra (INE)</h3>
 
     <p>Que la accesibilidad deba ser un requisito —y no un «si sobra tiempo»— no es una opinión: lo sostienen los datos. El <strong>Instituto Nacional de Estadística (INE)</strong> permite cuantificar a cuántas personas afecta dejarla fuera.</p>
     <p>Dos cifras, de dos encuestas distintas del INE, bastan para entender la magnitud.</p>
@@ -392,7 +803,7 @@
   </section>
 
   <section id="proyecto" aria-labelledby="proyecto-h">
-    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la especificación de requisitos como entrega</h3>
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.5</span>Tu proyecto: la especificación de requisitos como entrega</h3>
 
     <p>Esta es la transferencia más directa. Tu <strong>proyecto sigue el proceso de la ISO 9241-210</strong>, y la Actividad B produce la entrega que conecta el análisis (Tema 2) con el prototipado (Tema 3).</p>
     <p>Tras especificar el contexto de uso, tu equipo deberá transformarlo en una <strong>especificación de requisitos de usuario</strong>: la lista de lo que el sistema debe cumplir, con sus metas de usabilidad y accesibilidad.</p>
@@ -407,7 +818,7 @@
       <tbody>
         <tr><th scope="row">Funcional</th><td>Función que el sistema debe ofrecer</td><td>El sistema debe permitir preparar el billete offline</td><td>El sistema debe mostrar la confirmación de cita en «Mis citas» sin volver a entrar al flujo</td><td>HTA y escenarios (Actividad A)</td></tr>
         <tr><th scope="row">De usabilidad</th><td>Meta medible de eficacia, eficiencia o satisfacción</td><td>Comprar y validar un billete en ≤ 30 s con una mano</td><td>Completar el pedido de cita sin ayuda externa en el primer intento</td><td>Usuarios, recursos y entorno (Actividad A)</td></tr>
-        <tr><th scope="row">De accesibilidad</th><td>Criterio WCAG 2.1 AA verificable</td><td>Contraste ≥ 4,5:1 en todos los textos (legible al sol)</td><td>Contenido accesible sin pérdida al 200 % de zoom (Joaquín, secundario)</td><td>Usuarios con distintas capacidades y WCAG / EN 301 549</td></tr>
+        <tr><th scope="row">De accesibilidad</th><td>Criterio WCAG 2.2 (nivel A y AA) verificable</td><td>Contraste ≥ 4,5:1 en todos los textos (legible al sol)</td><td>Contenido accesible sin pérdida al 200 % de zoom (Joaquín, secundario)</td><td>Usuarios con distintas capacidades y WCAG / EN 301 549</td></tr>
       </tbody>
     </table>
     </div>
@@ -426,7 +837,7 @@
   </section>
 
   <section id="retos" aria-labelledby="retos-h">
-    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de observación para esta semana</h3>
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.6</span>Retos de observación para esta semana</h3>
 
     <p>La Actividad B se aprende escribiendo requisitos sobre lo que ya te rodea. Prueba estos retos antes de la próxima sesión.</p>
 
@@ -447,7 +858,7 @@
   </section>
 
   <section id="entorno" aria-labelledby="entorno-h">
-    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.7</span>Por qué te concierne como ingeniero o ingeniera</h3>
 
     <p>El plan docente lo dice sin rodeos: una de las competencias de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la calidad del software (CG03). Y otra es <strong>transmitir información, ideas, problemas y soluciones</strong> con precisión (CB04).</p>
     <p>La Actividad B es justo donde esas competencias se cruzan: escribir un requisito es <strong>comunicar con precisión de ingeniería</strong> lo que un sistema debe cumplir para las personas. Un requisito ambiguo es un fallo de comunicación, no solo de técnica.</p>
@@ -478,7 +889,7 @@
     </details>
     <details class="check">
       <summary>3. ¿Cuáles son los tipos de requisitos que vimos?</summary>
-      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). Dentro de los no funcionales destacan los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG AA como fuente). <em>(Ver 1.3)</em></p>
+      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). Dentro de los no funcionales destacan los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG 2.2, nivel A y AA, como fuente). <em>(Ver 1.3 y 2.2)</em></p>
     </details>
     <details class="check">
       <summary>4. ¿De dónde se derivan los requisitos y qué es la trazabilidad?</summary>
@@ -531,7 +942,7 @@
       <dt>Trazabilidad</dt>
       <dd>Capacidad de rastrear cada requisito hasta su origen en el contexto de uso (un usuario, tarea, recurso o condición del entorno).</dd>
       <dt>WCAG</dt>
-      <dd>Web Content Accessibility Guidelines del W3C. Sus criterios de conformidad (nivel AA en esta asignatura) son una fuente directa de requisitos de accesibilidad verificables.</dd>
+      <dd>Web Content Accessibility Guidelines del W3C. Sus criterios de conformidad de nivel A y nivel AA son fuente directa de requisitos de accesibilidad verificables. El proyecto exige la conformidad con la totalidad de los criterios A y AA de WCAG 2.2.</dd>
       <dt>EN 301 549 / Directiva (UE) 2019/882</dt>
       <dd>Norma europea y directiva (Ley Europea de Accesibilidad) que establecen requisitos de accesibilidad de productos y servicios TIC y remiten a las WCAG.</dd>
       <dt>Contexto de uso</dt>
@@ -554,6 +965,8 @@
         <li>Los datos del <strong>INE</strong> lo justifican: más de <strong>4,3 millones de personas con discapacidad</strong> (EDAD 2020) y un <strong>80,7 %</strong> usando la e-Administración. La accesibilidad es un requisito, no un extra.</li>
         <li>En tu proyecto, la Actividad B es la <strong>especificación de requisitos</strong> que servirá de vara de medir en la evaluación, con el nivel <strong>AA de WCAG</strong> como mínimo obligatorio.</li>
         <li>Los dos casos de estudio ilustran requisitos opuestos en origen: el de <strong>Marta</strong> nace del entorno físico (velocidad y operabilidad con una mano); el de <strong>Mari Carmen</strong>, del entorno social y cognitivo (confirmación persistente e independiente). Ambos son trazables, verificables y derivados del contexto, no inventados.</li>
+        <li>La sección 2.2 desarrolla el <strong>caso completo de la Actividad B de Mari Carmen</strong>: síntesis del contexto, seis necesidades (N-01 a N-06), cinco requisitos (R-01 a R-05), objetivos de calidad de uso (RU-01 a RU-03), tres conflictos documentados (C-01 a C-03) y la matriz de trazabilidad. Es el modelo que se espera en la entrega del proyecto.</li>
+        <li>Los requisitos de accesibilidad deben cubrir la <strong>totalidad de los criterios A y AA de WCAG 2.2</strong>: es un requisito mínimo del proyecto y una obligación legal conforme a la Directiva 2019/882 y la norma EN 301 549.</li>
       </ul>
     </div>
   </section>
