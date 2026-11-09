@@ -239,13 +239,13 @@
         <b>Identificar las necesidades de usuario.</b> A partir del contexto sintetizado, se detectan y catalogan las <strong>necesidades de usuario</strong>: qué quieren lograr las personas y qué barreras o dificultades encuentran hoy. Las necesidades no son requisitos del sistema —son el punto de partida—. Cada necesidad debe apuntar a evidencia concreta de la Actividad A. El caso de Mari Carmen cataloga las necesidades con identificadores N-01 a N-06, distinguiendo entre «<strong>respaldadas</strong>» (evidencia directa: observación, cita literal) e «<strong>inferidas</strong>» (deducidas razonadamente del contexto sin constatación directa).
       </li>
       <li>
-        <b>Derivar y clasificar los requisitos.</b> Cada necesidad se transforma en uno o varios <strong>requisitos verificables</strong>. En este paso se clasifica cada requisito según su naturaleza: <em>funcional</em> (qué debe hacer el sistema), <em>de usabilidad</em> (metas medibles de eficacia, eficiencia y satisfacción), <em>de accesibilidad</em> (conforme a WCAG 2.2 nivel AA) o de <em>restricción de contexto</em>. Ningún requisito describe una pantalla ni un botón: dice <strong>qué</strong> debe lograr el sistema, no <strong>cómo</strong>. Los requisitos se catalogan con identificadores (R-01, R-02…) que permiten su gestión y trazabilidad.
+        <b>Derivar y clasificar los requisitos.</b> Cada necesidad se transforma en uno o varios <strong>requisitos verificables</strong>. En este paso se clasifica cada requisito según su naturaleza: <em>funcional</em> (qué debe hacer el sistema), <em>de usabilidad</em> (metas medibles de eficacia, eficiencia y satisfacción), <em>de accesibilidad</em> (conforme a WCAG 2.1 nivel AA) o de <em>restricción de contexto</em>. Ningún requisito describe una pantalla ni un botón: dice <strong>qué</strong> debe lograr el sistema, no <strong>cómo</strong>. Los requisitos se catalogan con identificadores (R-01, R-02…) que permiten su gestión y trazabilidad.
       </li>
       <li>
         <b>Especificar los objetivos de calidad de uso.</b> Los requisitos de usabilidad exigen ir más allá de la clasificación: requieren <strong>metas cuantificadas</strong>. La norma ISO 9241-11 define la usabilidad como eficacia, eficiencia y satisfacción <em>en un contexto de uso especificado</em>; los objetivos de calidad de uso concretan esas tres dimensiones con valores medibles («el 90 % de los usuarios completa el alta sin ayuda en el primer intento», «puntuación SUS mínima de 70», «tiempo de tarea inferior a 30 segundos»). Sin métricas, no hay forma objetiva de evaluar si el diseño cumple.
       </li>
       <li>
-        <b>Documentar las restricciones del contexto.</b> No todo lo que condiciona el sistema es un requisito derivado de una necesidad de usuario. Las <strong>restricciones</strong> —técnicas, organizativas o legales— también deben documentarse explícitamente: el dispositivo o navegador a soportar, el marco legal aplicable (Directiva (UE) 2019/882, EN 301 549), el nivel de WCAG exigido, la disponibilidad de red, las políticas de privacidad, los recursos del proyecto. Estas restricciones acotan el espacio de diseño antes de que el equipo proponga soluciones.
+        <b>Documentar las restricciones del contexto.</b> No todo lo que condiciona el sistema es un requisito derivado de una necesidad de usuario. Las <strong>restricciones</strong> —técnicas, organizativas o legales— también deben documentarse explícitamente: el dispositivo o navegador a soportar, el marco legal aplicable (Directiva (UE) 2016/2102 y Real Decreto 1112/2018 en el sector público; Directiva (UE) 2019/882 en el privado; EN 301 549), el nivel de WCAG exigido, la disponibilidad de red, las políticas de privacidad, los recursos del proyecto. Estas restricciones acotan el espacio de diseño antes de que el equipo proponga soluciones.
       </li>
       <li>
         <b>Detectar y resolver conflictos entre requisitos.</b> Los requisitos raramente son independientes. A veces dos requisitos se contradicen: un tiempo de expiración breve del código SMS (requisito de seguridad) entra en conflicto con el tiempo que necesita una usuaria mayor para localizarlo e introducirlo (requisito de accesibilidad cognitiva). Este paso obliga a identificar explícitamente cada conflicto y a documentar la <strong>decisión adoptada con su justificación</strong>. El caso de Mari Carmen registra tres conflictos (C-01 a C-03). Un conflicto sin resolver convierte el catálogo en un problema para el equipo de diseño.
@@ -328,7 +328,7 @@
 
     <ul>
       <li><strong>Requisitos de usabilidad:</strong> metas medibles de eficacia, eficiencia y satisfacción. Ejemplo: «el 90 % de los usuarios completa el alta sin ayuda en el primer intento». Se expresan con <strong>métricas</strong>, no con adjetivos.</li>
-      <li><strong>Requisitos de accesibilidad:</strong> condiciones para que el mayor número posible de personas pueda usar el sistema. En esta asignatura tienen una fuente clara y exigible: las <strong>WCAG nivel AA</strong>. Ejemplo: «todo el texto cumple un contraste mínimo conforme a WCAG 2.2, nivel A y AA».</li>
+      <li><strong>Requisitos de accesibilidad:</strong> condiciones para que el mayor número posible de personas pueda usar el sistema. En esta asignatura tienen una fuente clara y exigible: las <strong>WCAG nivel AA</strong>. Ejemplo: «todo el texto cumple un contraste mínimo conforme a WCAG 2.1, nivel A y AA».</li>
     </ul>
 
     <p>Fíjate en el contraste entre dos formas de pedir lo mismo. «Que sea fácil de usar» <strong>no es un requisito</strong>: no se puede comprobar. «Que un usuario nuevo complete la compra en menos de tres pasos» <strong>sí lo es</strong>: o se cumple, o no.</p>
@@ -478,7 +478,7 @@
 
     <h4>El enemigo número uno: las palabras vagas</h4>
     <p>Adjetivos como «rápido», «fácil», «intuitivo» o «amigable» son el principal motivo de requisitos inútiles. Suenan bien y no significan nada comprobable.</p>
-    <p>La cura es convertir cada adjetivo en una <strong>métrica</strong>. «Rápido» se vuelve «en menos de 2 segundos»; «fácil» se vuelve «el 90 % de los usuarios lo logra a la primera»; «accesible» se vuelve «conforme a WCAG 2.2, nivel A y AA».</p>
+    <p>La cura es convertir cada adjetivo en una <strong>métrica</strong>. «Rápido» se vuelve «en menos de 2 segundos»; «fácil» se vuelve «el 90 % de los usuarios lo logra a la primera»; «accesible» se vuelve «conforme a WCAG 2.1, nivel A y AA».</p>
 
     <h4>Una plantilla sencilla para empezar — con validación Gherkin</h4>
     <p>Una fórmula que funciona bien para arrancar es: <em>«El sistema debe permitir a [tipo de usuario] [lograr una tarea] [en estas condiciones medibles]»</em>. Después de redactar el requisito, aplica los escenarios anteriores para confirmar que supera los cuatro criterios.</p>
@@ -654,7 +654,7 @@
         <tr><th scope="row">N-03</th><td>Mari Carmen</td><td>Completar la verificación de identidad sin presión de tiempo y sin perder el estado de la solicitud.</td><td>Escenario de validación: el código SMS caduca antes de que Mari Carmen lo introduzca (C.3).</td><td>Respaldada</td></tr>
         <tr><th scope="row">N-04</th><td>Mari Carmen</td><td>Leer toda la información crítica de la aplicación con la configuración de letra extragrande del dispositivo.</td><td>Ficha persona: Mari Carmen usa letra extragrande en su móvil (B.2).</td><td>Respaldada</td></tr>
         <tr><th scope="row">N-05</th><td>Mari Carmen</td><td>Completar la solicitud aunque la cobertura de red sea intermitente o se pierda temporalmente.</td><td>Entorno rural con baja cobertura documentada (D.1–D.2). Impacto específico en el flujo no estudiado.</td><td>Inferida</td></tr>
-        <tr><th scope="row">N-06</th><td>Joaquín (secundario)</td><td>Leer y navegar por la aplicación con zoom al 200 % sin pérdida de información ni desplazamiento horizontal.</td><td>Ficha persona: Joaquín usa zoom al 200 % por baja visión; riesgo de reflujo roto (WCAG 2.2, criterio 1.4.10).</td><td>Inferida</td></tr>
+        <tr><th scope="row">N-06</th><td>Joaquín (secundario)</td><td>Leer y navegar por la aplicación con zoom al 200 % sin pérdida de información ni desplazamiento horizontal.</td><td>Ficha persona: Joaquín usa zoom al 200 % por baja visión; riesgo de que se rompan la ampliación del texto o el reflujo (WCAG 2.1, criterios 1.4.4 y 1.4.10).</td><td>Inferida</td></tr>
       </tbody>
     </table>
     </div>
@@ -676,7 +676,7 @@
       <tbody>
         <tr><th scope="row">R-01</th><td>Funcional</td><td>El sistema deberá conservar el estado de la solicitud en curso si la usuaria sale temporalmente de la aplicación o si se produce una interrupción de la conexión, de modo que pueda retomar el proceso desde el punto en que lo dejó sin repetir pasos ya completados.</td><td>N-01</td><td>Prueba: la usuaria interrumpe el flujo (sale a leer un SMS) y lo retoma; comprueba que los datos previos se conservan sin empezar de nuevo.</td></tr>
         <tr><th scope="row">R-02</th><td>Funcional</td><td>Tras completar la solicitud de cita, el sistema deberá mostrar en pantalla un mensaje de texto que incluya médico asignado, fecha, hora y centro; ese mensaje deberá permanecer accesible desde la pantalla de inicio sin necesidad de volver a entrar al flujo ni de disponer de conexión activa.</td><td>N-02</td><td>Inspección: la pantalla muestra los cuatro datos. Prueba: la usuaria localiza la confirmación en «Mis citas» tras cerrar y reabrir la app sin conexión, sin preguntar a nadie.</td></tr>
-        <tr><th scope="row">R-03</th><td>Accesibilidad</td><td>El sistema deberá cumplir la totalidad de los criterios A y AA de WCAG 2.2 en todas las pantallas del flujo. En particular: el contenido será compatible con la configuración de letra extragrande sin pérdida de información ni desplazamiento horizontal (WCAG 2.2 AA 1.4.4), y se reajustará sin pérdida al 200 % de zoom (WCAG 2.2 AA 1.4.10).</td><td>N-04, N-06</td><td>Inspección de accesibilidad con WCAG 2.2 AA como referencia; prueba con dispositivo configurado con letra extragrande y al 200 % de zoom.</td></tr>
+        <tr><th scope="row">R-03</th><td>Accesibilidad</td><td>El sistema deberá cumplir la totalidad de los criterios A y AA de WCAG 2.1 en todas las pantallas del flujo. En particular: el texto podrá ampliarse hasta el 200 % y será compatible con la configuración de letra extragrande sin pérdida de información ni de funcionalidad (WCAG 2.1 AA 1.4.4), y el contenido se reorganizará en una columna de 320 píxeles de ancho, equivalente a un zoom del 400 %, sin desplazamiento horizontal (WCAG 2.1 AA 1.4.10).</td><td>N-04, N-06</td><td>Inspección de accesibilidad con WCAG 2.1 AA como referencia; prueba con dispositivo configurado con letra extragrande, con el texto al 200 % y con un ancho de 320 píxeles.</td></tr>
         <tr><th scope="row">R-04</th><td>Accesibilidad</td><td>Si el código de verificación enviado por SMS caduca antes de ser introducido, el sistema deberá permitir solicitar un nuevo envío sin que la usuaria pierda los datos de la solicitud en curso ni tenga que volver al inicio del flujo.</td><td>N-03</td><td>Prueba: la usuaria espera a que caduque el código y solicita reenvío; comprueba que el formulario conserva los datos ya introducidos.</td></tr>
         <tr><th scope="row">R-05</th><td>Contexto</td><td>El sistema deberá gestionar la pérdida temporal de cobertura de red de manera que el usuario pueda recuperar el estado de la solicitud en curso cuando se restablezca la conexión, sin tener que empezar de nuevo.</td><td>N-05</td><td>Prueba técnica: se simula pérdida de cobertura durante la solicitud y se verifica que el estado se recupera al reconectar.</td></tr>
       </tbody>
@@ -726,7 +726,7 @@
       <tbody>
         <tr><td>El SMS obliga a salir de la app; los datos se pierden (C.2, C.3).</td><td>N-01</td><td>R-01</td><td>Prueba de usabilidad: la usuaria retoma el flujo tras salir a leer el SMS.</td></tr>
         <tr><td>Prioridad declarada: «saber que la cita está programada» (POV, C.1).</td><td>N-02</td><td>R-02</td><td>Inspección de interfaz + prueba: localiza la confirmación sin conexión.</td></tr>
-        <tr><td>Letra extragrande y baja visión de Joaquín (B.2); riesgo de reflujo (WCAG 1.4.10).</td><td>N-04, N-06</td><td>R-03</td><td>Auditoría WCAG 2.2 AA + prueba con dispositivo configurado.</td></tr>
+        <tr><td>Letra extragrande y baja visión de Joaquín (B.2); riesgo de ampliación y reflujo rotos (WCAG 1.4.4 y 1.4.10).</td><td>N-04, N-06</td><td>R-03</td><td>Auditoría WCAG 2.1 AA + prueba con dispositivo configurado.</td></tr>
         <tr><td>Código SMS caduca antes de ser introducido (escenario de validación, C.3).</td><td>N-03</td><td>R-04</td><td>Prueba: usuaria espera caducidad y solicita reenvío; datos conservados.</td></tr>
         <tr><td>Entorno rural con cobertura baja e intermitente (D.1–D.2).</td><td>N-05</td><td>R-05</td><td>Prueba técnica: simulación de pérdida de cobertura durante la solicitud.</td></tr>
       </tbody>
@@ -748,7 +748,7 @@
     <h4>De criterio WCAG a requisito del proyecto</h4>
     <ul>
       <li>El criterio de <strong>contraste de texto</strong> (WCAG 1.4.3) se convierte en: «todo el texto cumple la relación de contraste mínima del nivel AA». Para Marta es el contraste legible al sol en el andén; para Mari Carmen, el texto grande visible con sus gafas y para Joaquín (secundario), el contraste que no se pierde al hacer zoom al 200 %.</li>
-      <li>El criterio de <strong>reflujo de contenido</strong> (WCAG 1.4.10) se convierte en: «el contenido es accesible sin pérdida de información al 200 % de zoom». Nació de identificar a Joaquín como persona secundaria con baja visión en la Actividad A.</li>
+      <li>Dos criterios WCAG se convierten en requisitos: el de <strong>cambio de tamaño del texto</strong> (1.4.4), «el texto puede ampliarse al 200 % sin pérdida de contenido ni de funcionalidad», y el de <strong>reflujo de contenido</strong> (1.4.10), «el contenido se reorganiza en una columna de 320 píxeles de ancho, equivalente a un zoom del 400 %, sin desplazamiento horizontal». Ambos nacieron de identificar a Joaquín como persona secundaria con baja visión en la Actividad A.</li>
       <li>El criterio de <strong>alternativas textuales</strong> (WCAG 1.1.1) se convierte en: «toda imagen con información tiene texto alternativo». Garantiza que el estado «Cita guardada» de Mari Carmen no dependa solo de un icono sin descripción.</li>
     </ul>
     <p>Observa el patrón: la guía de accesibilidad ya está expresada de forma verificable, así que <strong>copiarla bien es derivar requisitos</strong>. Por eso en tu proyecto las WCAG AA son un requisito mínimo y no una recomendación.</p>
@@ -756,7 +756,8 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>En España y la UE, la accesibilidad de muchos productos y servicios digitales no es opcional: la respaldan la <strong>Directiva (UE) 2019/882</strong> (Ley Europea de Accesibilidad) y la norma <strong>EN 301 549</strong>, que remite precisamente a las WCAG. Cuando escribes «conforme a WCAG 2.2, nivel A y AA» en un requisito, estás alineando tu proyecto con una obligación legal real, no solo con una buena intención.</p>
+      <p>En España y la UE, la accesibilidad de muchos productos y servicios digitales no es opcional: la respaldan, para las webs y aplicaciones del sector público, la <strong>Directiva (UE) 2016/2102</strong> y el <strong>Real Decreto 1112/2018</strong> (como la app de cita médica de un servicio de salud público) y, para los productos y servicios privados de su ámbito, la <strong>Directiva (UE) 2019/882</strong> (Ley Europea de Accesibilidad). Todas usan como referencia técnica la norma <strong>EN 301 549</strong>, que remite a las WCAG. Cuando escribes «conforme a WCAG 2.1, nivel A y AA» en un requisito, estás alineando tu proyecto con una obligación legal real, no solo con una buena intención.</p>
+    <p><strong>Una nota sobre la versión.</strong> La referencia legal vigente es la EN 301 549 V3.2.1 (en español, UNE-EN 301549:2022), que remite a las WCAG 2.1 nivel AA. La EN 301 549 V4.1.1, ya publicada, incorpora las WCAG 2.2, pero hasta que se cite en el Diario Oficial de la Unión Europea sigue siendo exigible la 3.2.1. Cuando se cite, el umbral del proyecto subirá a WCAG 2.2 nivel AA; los criterios que se usan en este tema existen también en esa versión.</p>
     </div>
 
     <div class="box key">
@@ -818,7 +819,7 @@
       <tbody>
         <tr><th scope="row">Funcional</th><td>Función que el sistema debe ofrecer</td><td>El sistema debe permitir preparar el billete offline</td><td>El sistema debe mostrar la confirmación de cita en «Mis citas» sin volver a entrar al flujo</td><td>HTA y escenarios (Actividad A)</td></tr>
         <tr><th scope="row">De usabilidad</th><td>Meta medible de eficacia, eficiencia o satisfacción</td><td>Comprar y validar un billete en ≤ 30 s con una mano</td><td>Completar el pedido de cita sin ayuda externa en el primer intento</td><td>Usuarios, recursos y entorno (Actividad A)</td></tr>
-        <tr><th scope="row">De accesibilidad</th><td>Criterio WCAG 2.2 (nivel A y AA) verificable</td><td>Contraste ≥ 4,5:1 en todos los textos (legible al sol)</td><td>Contenido accesible sin pérdida al 200 % de zoom (Joaquín, secundario)</td><td>Usuarios con distintas capacidades y WCAG / EN 301 549</td></tr>
+        <tr><th scope="row">De accesibilidad</th><td>Criterio WCAG 2.1 (nivel A y AA) verificable</td><td>Contraste ≥ 4,5:1 en todos los textos (legible al sol)</td><td>Contenido accesible sin pérdida al 200 % de zoom (Joaquín, secundario)</td><td>Usuarios con distintas capacidades y WCAG / EN 301 549</td></tr>
       </tbody>
     </table>
     </div>
@@ -889,7 +890,7 @@
     </details>
     <details class="check">
       <summary>3. ¿Cuáles son los tipos de requisitos que vimos?</summary>
-      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). Dentro de los no funcionales destacan los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG 2.2, nivel A y AA, como fuente). <em>(Ver 1.3 y 2.2)</em></p>
+      <p>Dos familias: <strong>funcionales</strong> (qué hace el sistema) y <strong>no funcionales</strong> (cómo se comporta). Dentro de los no funcionales destacan los de <strong>usabilidad</strong> (metas medibles) y los de <strong>accesibilidad</strong> (con las WCAG 2.1, nivel A y AA, como fuente). <em>(Ver 1.3 y 2.2)</em></p>
     </details>
     <details class="check">
       <summary>4. ¿De dónde se derivan los requisitos y qué es la trazabilidad?</summary>
@@ -942,7 +943,7 @@
       <dt>Trazabilidad</dt>
       <dd>Capacidad de rastrear cada requisito hasta su origen en el contexto de uso (un usuario, tarea, recurso o condición del entorno).</dd>
       <dt>WCAG</dt>
-      <dd>Web Content Accessibility Guidelines del W3C. Sus criterios de conformidad de nivel A y nivel AA son fuente directa de requisitos de accesibilidad verificables. El proyecto exige la conformidad con la totalidad de los criterios A y AA de WCAG 2.2.</dd>
+      <dd>Web Content Accessibility Guidelines del W3C. Sus criterios de conformidad de nivel A y nivel AA son fuente directa de requisitos de accesibilidad verificables. El proyecto exige la conformidad con la totalidad de los criterios A y AA de WCAG 2.1.</dd>
       <dt>EN 301 549 / Directiva (UE) 2019/882</dt>
       <dd>Norma europea y directiva (Ley Europea de Accesibilidad) que establecen requisitos de accesibilidad de productos y servicios TIC y remiten a las WCAG.</dd>
       <dt>Contexto de uso</dt>
@@ -966,7 +967,7 @@
         <li>En tu proyecto, la Actividad B es la <strong>especificación de requisitos</strong> que servirá de vara de medir en la evaluación, con el nivel <strong>AA de WCAG</strong> como mínimo obligatorio.</li>
         <li>Los dos casos de estudio ilustran requisitos opuestos en origen: el de <strong>Marta</strong> nace del entorno físico (velocidad y operabilidad con una mano); el de <strong>Mari Carmen</strong>, del entorno social y cognitivo (confirmación persistente e independiente). Ambos son trazables, verificables y derivados del contexto, no inventados.</li>
         <li>La sección 2.2 desarrolla el <strong>caso completo de la Actividad B de Mari Carmen</strong>: síntesis del contexto, seis necesidades (N-01 a N-06), cinco requisitos (R-01 a R-05), objetivos de calidad de uso (RU-01 a RU-03), tres conflictos documentados (C-01 a C-03) y la matriz de trazabilidad. Es el modelo que se espera en la entrega del proyecto.</li>
-        <li>Los requisitos de accesibilidad deben cubrir la <strong>totalidad de los criterios A y AA de WCAG 2.2</strong>: es un requisito mínimo del proyecto y una obligación legal conforme a la Directiva 2019/882 y la norma EN 301 549.</li>
+        <li>Los requisitos de accesibilidad deben cubrir la <strong>totalidad de los criterios A y AA de WCAG 2.1</strong>: es un requisito mínimo del proyecto y una obligación legal: la Directiva 2016/2102 y el Real Decreto 1112/2018 en el sector público (y la Directiva 2019/882 en el privado), con la norma EN 301 549 como referencia técnica.</li>
       </ul>
     </div>
   </section>
@@ -989,6 +990,8 @@
       <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
       <li>ISO/IEC 25010. <em>Modelos de calidad de producto software (familia SQuaRE)</em>; usabilidad y accesibilidad como características de calidad.</li>
       <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>Directiva (UE) 2016/2102, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público.</li>
+      <li>Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público.</li>
       <li>Directiva (UE) 2019/882, sobre los requisitos de accesibilidad de los productos y servicios (Ley Europea de Accesibilidad).</li>
     </ol>
     <p>Datos y recursos en línea:</p>

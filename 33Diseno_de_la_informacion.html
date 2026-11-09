@@ -65,11 +65,19 @@
     <p>Estos apuntes continúan el <strong>Tema 3</strong>. Ya vimos el primer diseño de la Actividad C, el <strong>diseño de la actividad</strong> (el comportamiento: qué pasos y en qué orden). Hoy entramos en el segundo: el <strong>diseño de la información</strong>.</p>
     <p>Si el diseño de la actividad decidía <em>qué hace</em> la persona, el diseño de la información decide <em>qué ve</em> para hacerlo: cómo se <strong>organiza y se presenta</strong> en pantalla todo lo que necesita percibir y entender.</p>
     <p>Aquí, por fin, desarrollamos en profundidad los <strong>principios de la Gestalt</strong> que solo presentamos en la apertura, y los unimos a la <strong>jerarquía visual</strong> y a la <strong>accesibilidad perceptiva</strong> (contraste, no depender del color).</p>
+    <p>Dentro de la <strong>ISO 9241-210:2019</strong>, este diseño responde a la parte de interfaz de la cláusula 7.4.2 (diseñar la interfaz para cumplir los requisitos, atendiendo a toda la experiencia de usuario). Presentamos los tres diseños de la Actividad C <strong>de forma secuencial</strong> para estudiarlos, pero en el proyecto se aplican <strong>de forma iterativa</strong>: lo que decidas aquí lo comprobarás en un prototipo y lo reajustarás tras cada evaluación.</p>
+    <div class="box curio">
+      <span class="label">Qué necesitas recordar</span>
+      <p><strong>Del Tema 1:</strong> los límites de la memoria de trabajo. <strong>De la apertura de este tema:</strong> la carga cognitiva y los principios de la Gestalt, que aquí desarrollamos.</p>
+      <p><strong>Del Tema 2:</strong> las personas de este caso (Mari Carmen, primaria, y Joaquín, secundario, con baja visión y zoom al 200 %); el entorno de uso (cobertura irregular y la mesa de la cocina, con gafas); y los requisitos R-02 y R-03 de la Actividad B (confirmación con cuatro datos; letra extragrande y ampliación al 200 %) y el conflicto C-02 entre ambos.</p>
+      <p><strong>Del diseño de la actividad (documento anterior):</strong> el flujo de cuatro pasos de Mari Carmen y sus mensajes de error. Aquí decidimos cómo se ve cada pantalla de ese flujo.</p>
+    </div>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
     <ul>
       <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
       <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>Los apartados <strong>«Ejemplo resuelto»</strong> muestran, completo, un artefacto del caso de Mari Carmen para que veas cómo se hace.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
     <div class="box key">
@@ -123,7 +131,7 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>El mayor enemigo del etiquetado claro es la <strong>«maldición del conocimiento»</strong>: quien diseña sabe tanto del sistema que olvida que lo que es obvio para él no lo es para nadie más. Etiquetas como «CIP» o «Código de identificación personal» son evidentes para el equipo de desarrollo pero un jeroglífico para <strong>Mari Carmen</strong>; lo que necesita leer es «Tu número de teléfono». Del mismo modo, un botón «Validar» en la app de transporte le dice a <strong>Marta</strong> menos que «Pagar y subir». La prueba con personas reales (Tema 4) es el único antídoto fiable.</p>
+      <p>El mayor enemigo del etiquetado claro es la <strong>«maldición del conocimiento»</strong>: quien diseña sabe tanto del sistema que olvida que lo que es obvio para él no lo es para nadie más. Etiquetas como «CIP» o «Código de identificación personal» son evidentes para el equipo de desarrollo pero un jeroglífico para <strong>Mari Carmen</strong>. Y, si el sistema no lo necesita para identificarla (ella se identifica con su número de teléfono), ni siquiera debería pedirlo; si hiciera falta, la etiqueta sería «Número de tu tarjeta sanitaria». Del mismo modo, un botón «Validar» en la app de transporte le dice a <strong>Marta</strong> menos que «Pagar y subir». La prueba con personas reales (Tema 4) es el único antídoto fiable.</p>
     </div>
   </section>
 
@@ -236,13 +244,42 @@
     <p>De nada sirve una jerarquía preciosa si una parte de las personas <strong>no puede percibirla</strong>. La accesibilidad perceptiva no es un añadido del diseño de la información: es parte de su definición.</p>
     <p>Las <strong>WCAG nivel AA</strong> (a las que remite la <strong>EN 301 549</strong> que ya conoces) ponen condiciones concretas y verificables sobre cómo se presenta la información. Tres son inexcusables.</p>
 
+    <p><strong>Una nota sobre la versión.</strong> La referencia legal vigente es la EN 301 549 V3.2.1 (en español, UNE-EN 301549:2022), que remite a las WCAG 2.1 nivel AA; es la referencia del Real Decreto 1112/2018 para las webs y aplicaciones del sector público, como la de cita médica. La EN 301 549 V4.1.1, ya publicada, incorpora las WCAG 2.2, pero hasta que se cite en el Diario Oficial de la Unión Europea sigue siendo exigible la 3.2.1. Todos los criterios que se usan en estos apuntes existen también en la versión 2.2.</p>
+
     <ul class="laws" role="list">
       <li><b>Contraste suficiente</b> El texto debe contrastar con su fondo (WCAG AA pide una relación de al menos <strong>4,5:1</strong> para texto normal). El mensaje «Billete listo» de <strong>Marta</strong> en verde claro sobre blanco puede ser ilegible al sol del andén aunque se vea bien en el despacho; el texto de confirmación de <strong>Mari Carmen</strong> en gris tenue puede ser invisible con la baja visión de Joaquín (secundario).</li>
       <li><b>No solo el color</b> Nunca transmitas información <strong>únicamente</strong> con color. Si el estado «Cita confirmada» de Mari Carmen se señala solo con un fondo verde sin texto, quien no distingue ese color no sabrá si la gestión se completó. Acompaña siempre con texto explícito: «Cita guardada — Dr. Ramos, martes 10:00».</li>
-      <li><b>Legibilidad</b> Tipografía clara, tamaño suficiente y líneas no demasiado largas. Para <strong>Mari Carmen</strong>, el texto base debe ser ≥ 18 px y el formulario no puede requerir desplazamiento horizontal; para <strong>Joaquín</strong> (secundario), el contenido debe refluir al 200 % de zoom sin pérdida de información (WCAG AA 1.4.10). La tipografía de estos apuntes, <strong>Atkinson Hyperlegible</strong>, está diseñada precisamente para distinguir mejor letras parecidas.</li>
+      <li><b>Legibilidad</b> Tipografía clara, tamaño suficiente y líneas no demasiado largas. Dos casos concretos. <strong>Mari Carmen:</strong> texto base ≥ 18 px (criterio de diseño del proyecto; WCAG no fija un tamaño mínimo de texto) y formulario sin desplazamiento horizontal. <strong>Joaquín</strong> (secundario): texto ampliable al 200 % sin perder contenido ni funciones (WCAG AA 1.4.4) y contenido que refluye en 320 píxeles de ancho, equivalente a un zoom del 400 % (WCAG AA 1.4.10). La tipografía de estos apuntes, <strong>Atkinson Hyperlegible</strong>, está diseñada precisamente para distinguir mejor letras parecidas.</li>
     </ul>
 
     <p>Fíjate en que estas reglas <strong>mejoran la experiencia de todo el mundo</strong>, no solo de quien tiene una discapacidad: un buen contraste se agradece al sol y con prisa, exactamente en el entorno de Marta en el andén. Es el principio del diseño universal.</p>
+
+    <h4>Cómo se mide el contraste</h4>
+    <p>El contraste entre dos colores se expresa como una <strong>relación de contraste</strong> entre 1:1 (iguales) y 21:1 (negro sobre blanco). Se calcula con la <strong>luminancia relativa</strong> de cada color, que mide cuánta luz parece emitir, ponderando el rojo, el verde y el azul según cómo los percibe el ojo:</p>
+    <ol>
+      <li>Se pasa cada canal (R, G, B) a un valor entre 0 y 1 y se corrige el efecto de la pantalla (gamma).</li>
+      <li>Luminancia <em>L = 0,2126 · R + 0,7152 · G + 0,0722 · B</em>, con los canales ya corregidos. El verde pesa más porque el ojo es más sensible a él.</li>
+      <li>Relación de contraste <em>= (L<sub>clara</sub> + 0,05) / (L<sub>oscura</sub> + 0,05)</em>.</li>
+    </ol>
+    <p>Umbrales de las WCAG nivel AA: <strong>4,5:1</strong> para texto normal; <strong>3:1</strong> para texto grande (a partir de 24 px, o de unos 18,7 px en negrita) y para los componentes de interfaz y gráficos necesarios para entender el contenido (criterio 1.4.11). El nivel AAA exige 7:1 para texto normal. La tabla muestra valores calculados con esa fórmula.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Relación de contraste de varios colores de texto o de iconos, calculada con la fórmula de las WCAG, y su cumplimiento del nivel AA.</caption>
+      <thead>
+        <tr><th scope="col">Ejemplo en la app de Mari Carmen</th><th scope="col">Colores (texto o icono / fondo)</th><th scope="col">Relación</th><th scope="col">Texto normal (4,5:1)</th><th scope="col">Texto grande o componente (3:1)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Texto gris claro de la versión mala</th><td>#B3B3B3 / #FFFFFF</td><td class="fig">2,1:1</td><td>No cumple</td><td>No cumple</td></tr>
+        <tr><th scope="row">Texto gris medio de la versión mala</th><td>#909090 / #FFFFFF</td><td class="fig">3,2:1</td><td>No cumple</td><td>Cumple</td></tr>
+        <tr><th scope="row">Gris en el límite</th><td>#767676 / #FFFFFF</td><td class="fig">4,54:1</td><td>Cumple, por muy poco</td><td>Cumple</td></tr>
+        <tr><th scope="row">Gris oscuro (también cumple AAA)</th><td>#595959 / #FFFFFF</td><td class="fig">7,0:1</td><td>Cumple</td><td>Cumple</td></tr>
+        <tr><th scope="row">Texto de la versión buena</th><td>#211C16 / #FDFBF6</td><td class="fig">16,3:1</td><td>Cumple</td><td>Cumple</td></tr>
+        <tr><th scope="row">Icono verde claro de la versión mala</th><td>#6FCF73 / #FFFFFF</td><td class="fig">1,9:1</td><td>No aplica</td><td>No cumple</td></tr>
+        <tr><th scope="row">Icono verde oscuro de la versión buena</th><td>#1B5E20 / #FFFFFF</td><td class="fig">7,9:1</td><td>No aplica</td><td>Cumple</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Herramientas para comprobarlo sin calcular a mano: el selector de color de las herramientas de desarrollo de los navegadores, el <em>WebAIM Contrast Checker</em> y el <em>Colour Contrast Analyser</em> de TPGi. Una limitación honesta: estas herramientas calculan sobre colores, no sobre la luz real. El deslumbramiento del sol sobre una pantalla se comprueba con una prueba en un móvil real al aire libre, además del cálculo.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -268,7 +305,7 @@
       <li><strong>Titulares y encabezados claros</strong> que actúen como señales de tráfico. Mari Carmen escanea la pantalla de confirmación buscando un titular que le diga «Cita guardada»; si solo hay un icono verde, no lo encuentra.</li>
       <li><strong>Bloques cortos</strong> y listas en lugar de párrafos densos. El resumen de la cita de Mari Carmen —médico, fecha, hora— debe ocupar tres líneas cortas, no un párrafo de texto corrido.</li>
       <li><strong>Una jerarquía visual fuerte</strong> que diga, sin leer, por dónde empezar. Marta escanea la pantalla de inicio buscando «el botón para pagar»; si hay ocho opciones del mismo tamaño, tarda más de lo que el bus espera.</li>
-      <li><strong>Lo importante, donde la mirada cae primero</strong>. El botón «Confirmar pago» de Marta debe estar en la zona central inferior —donde cae el pulgar—, no en una esquina que requiere recolocar la mano.</li>
+      <li><strong>Lo importante, donde la mirada cae primero</strong>. El botón «Pagar y subir» de Marta debe estar en la zona central inferior —donde cae el pulgar—, no en una esquina que requiere recolocar la mano.</li>
     </ul>
 
     <p>Diseñar para el escaneo no es renunciar al contenido: es <strong>estructurarlo</strong> para que cada persona encuentre rápido lo suyo. Marta escanea bajo presión; Mari Carmen escanea con ansiedad: las dos se benefician de una pantalla que comunica antes de leerse.</p>
@@ -296,7 +333,7 @@
       <tbody>
         <tr><td>Importe, destino y hora en texto corrido, sin bloques.</td><td>Importe en grande y centrado; destino e hora en texto más pequeño debajo.</td><td>Jerarquía visual: lo más urgente (¿cuánto?) se ve primero.</td></tr>
         <tr><td>Estado «Validado» señalado solo con un borde verde.</td><td>Estado con fondo verde <em>y</em> texto «Billete listo» en grande <em>y</em> un tic.</td><td>No solo el color (WCAG) + contraste legible al sol.</td></tr>
-        <tr><td>Botón «Aceptar» del mismo tamaño que «Cancelar» y «Ver detalle».</td><td>Un solo botón prominente «Subir» —el único paso siguiente— en zona del pulgar.</td><td>Jerarquía visual + Fitts: lo importante, grande y cerca.</td></tr>
+        <tr><td>Botón «Aceptar» del mismo tamaño que «Cancelar» y «Ver detalle».</td><td>Un solo botón prominente «Pagar y subir» —el único paso siguiente— en zona del pulgar.</td><td>Jerarquía visual + Fitts: lo importante, grande y cerca.</td></tr>
         <tr><td>Texto gris claro sobre blanco (contraste 2,1:1).</td><td>Texto oscuro sobre fondo claro, contraste ≥ 4,5:1 (WCAG AA 1.4.3).</td><td>Contraste suficiente: legible al sol y con baja visión.</td></tr>
       </tbody>
     </table>
@@ -315,12 +352,37 @@
         <tr><td>Todos los campos seguidos: nombre, teléfono, CIP, especialidad, fecha, hora, observaciones.</td><td>Dos bloques con título: «Tus datos» y «La cita»; cada uno en su recuadro.</td><td>Región común + proximidad: agrupa lo que va junto, separa lo que no.</td></tr>
         <tr><td>Etiqueta «Fecha» a la misma distancia de su campo y del campo de «Hora».</td><td>Cada etiqueta pegada justo encima de su campo, con espacio generoso entre pares.</td><td>Proximidad: la etiqueta más cerca de su campo que de cualquier otro.</td></tr>
         <tr><td>Campos obligatorios marcados solo en rojo.</td><td>Obligatorios con asterisco, texto «(obligatorio)» e icono además del color.</td><td>No solo el color (WCAG AA 1.4.1).</td></tr>
-        <tr><td>Texto de 12 px, líneas de 80 caracteres, contraste 3,2:1.</td><td>Texto base ≥ 18 px, líneas de máximo 60 caracteres, contraste ≥ 4,5:1; reflujo sin pérdida al 200 % de zoom.</td><td>Legibilidad + WCAG AA 1.4.3 y 1.4.10 (para Joaquín, secundario).</td></tr>
+        <tr><td>Texto de 12 px, líneas de 80 caracteres, contraste 3,2:1.</td><td>Texto base ≥ 18 px y líneas de máximo 60 caracteres (criterios del proyecto), contraste ≥ 4,5:1; texto ampliable al 200 % y reflujo a 320 px sin pérdida.</td><td>Legibilidad + WCAG AA 1.4.3, 1.4.4 y 1.4.10 (para Joaquín, secundario).</td></tr>
       </tbody>
     </table>
     </div>
 
     <p>En los dos casos, los datos presentados son los mismos. Cambia la <strong>organización y la presentación</strong>: las versiones bien diseñadas se completan de un vistazo; las mal diseñadas obligan a detenerse, releer y adivinar.</p>
+
+    <h4>Microtextos y mensajes de error en lenguaje claro</h4>
+    <p>Los <strong>microtextos</strong> son las palabras pequeñas de la interfaz: etiquetas, botones, avisos y mensajes de error. Son parte del diseño de la información y, para una persona con competencia digital básica, pueden decidir si completa o abandona. Cinco reglas:</p>
+    <ol>
+      <li><strong>Di qué ha pasado, por qué y qué hacer</strong>, en este orden y en pocas palabras.</li>
+      <li><strong>Usa verbos de acción</strong> en los botones («Reenviar código», «Confirmar»), no palabras vagas («Aceptar», «OK»).</li>
+      <li><strong>Evita jerga, códigos y mayúsculas:</strong> ningún «Error 4021» ni siglas como «CIP».</li>
+      <li><strong>Frases cortas, en voz activa y en positivo</strong>, con el tono de una persona que ayuda.</li>
+      <li><strong>Un término para cada cosa:</strong> si es «cita», es «cita» en todas las pantallas, no «reserva» ni «turno».</li>
+    </ol>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Microtextos del caso de Mari Carmen: versión mal redactada y versión bien redactada.</caption>
+      <thead>
+        <tr><th scope="col">Situación</th><th scope="col">Mal redactado</th><th scope="col">Bien redactado</th><th scope="col">Regla</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Botón del último paso</th><td>«Aceptar»</td><td>«Confirmar»</td><td>Verbo de acción</td></tr>
+        <tr><th scope="row">Código caducado</th><td>«Error 4021: token inválido»</td><td>«El código ha caducado. Pulsa Reenviar código».</td><td>Qué, por qué y qué hacer; sin códigos</td></tr>
+        <tr><th scope="row">Campo obligatorio vacío</th><td>«Campo obligatorio»</td><td>«Falta tu número de teléfono. Escríbelo en la casilla marcada con asterisco».</td><td>Lenguaje de la persona</td></tr>
+        <tr><th scope="row">Hueco ocupado</th><td>«Operación no disponible»</td><td>«Ese hueco ya no está libre. Elige otro».</td><td>Frase corta y en positivo</td></tr>
+        <tr><th scope="row">Fallo al guardar</th><td>«ERROR DE CONEXIÓN. REINTENTE»</td><td>«Tu solicitud está guardada, pero todavía no está confirmada. La confirmaremos en cuanto vuelva la conexión».</td><td>Dice en qué estado queda el trámite</td></tr>
+      </tbody>
+    </table>
+    </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -344,19 +406,20 @@
         <tbody>
           <tr><td>Personas de 6 o más años con algún tipo de discapacidad (EDAD 2020)</td><td class="fig">4,32 mill.</td></tr>
           <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas (2025)</td><td class="fig">66,5 %</td></tr>
-          <tr><td>Hogares que disponen únicamente de teléfono móvil (2025)</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Hogares con algún tipo de ordenador (2025)</td><td class="fig">83,8 %</td></tr>
         </tbody>
       </table>
       </div>
     </div>
 
-    <p>Más de <strong>cuatro millones de personas</strong> viven con alguna discapacidad, y los problemas de percepción están entre los más frecuentes. Un bajo contraste o un código solo de color les cierra la puerta directamente. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % por su baja visión: si el diseño no refluye sin pérdida, la pantalla de confirmación de Mari Carmen —que Joaquín también usa— le resulta inutilizable.</p>
-    <p>Súmale que cerca de un tercio de la población no alcanza un nivel digital básico: <strong>Mari Carmen</strong> es exactamente ese perfil. Para ella, una jerarquía clara —«Cita guardada» en grande, médico y fecha en las dos líneas siguientes— no es un lujo: es la diferencia entre saber que la gestión se completó o llamar a su hija.</p>
-    <p>Y con la mitad de los hogares usando <strong>solo el móvil</strong>, a menudo al sol y con prisa, el contraste alto y la información bien jerarquizada benefician también a <strong>Marta</strong> en el andén: el «Billete listo» en verde oscuro sobre blanco que se lee bajo el sol es el mismo contraste que protege a quien tiene baja visión. Diseñar para el caso extremo mejora la experiencia para todos.</p>
+    <p>Más de <strong>cuatro millones de personas</strong> viven con alguna discapacidad (EDAD 2020), y la discapacidad crece con la edad: el 75,4 % de este colectivo tiene 55 o más años.</p>
+    <p>Entre las dificultades que recoge la encuesta están las de visión y audición; para quien ve mal, un bajo contraste o un código solo de color le cierra la puerta directamente. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % por su baja visión: si el diseño no refluye sin pérdida, la pantalla de confirmación de Mari Carmen —que Joaquín también usa— le resulta inutilizable.</p>
+    <p>Súmale que cerca de un tercio de la población no alcanza un nivel digital básico: <strong>Mari Carmen</strong> se parece a ese grupo (y, con 78 años, queda fuera del rango de 16 a 74 años de la encuesta, así que las cifras describen su entorno, no su perfil). Para ella, una jerarquía clara —«Cita guardada» en grande, médico y fecha en las dos líneas siguientes— no es un lujo: es la diferencia entre saber que la gestión se completó o llamar a su hija.</p>
+    <p>Y con el <strong>móvil</strong> presente en prácticamente todos los hogares (y uno de cada seis sin ordenador), usado a menudo al sol y con prisa, el contraste alto y la información bien jerarquizada benefician también a <strong>Marta</strong> en el andén: el «Billete listo» en verde oscuro sobre blanco que se lee bajo el sol es el mismo contraste que protege a quien tiene baja visión. Diseñar para el caso extremo mejora la experiencia para todos.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>La accesibilidad perceptiva no es perfeccionismo: con 4,32 millones de personas con discapacidad y la mitad de los hogares solo con móvil, el <strong>contraste</strong>, el <strong>no depender del color</strong> y una <strong>jerarquía clara</strong> son lo que permite que la información llegue a todo el mundo.</p>
+      <p>La accesibilidad perceptiva no es perfeccionismo: con 4,32 millones de personas con discapacidad y el móvil como soporte casi universal, el <strong>contraste</strong>, el <strong>no depender del color</strong> y una <strong>jerarquía clara</strong> son lo que permite que la información llegue a todo el mundo.</p>
     </div>
   </section>
 
@@ -374,10 +437,10 @@
         <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Qué contenidos y cómo se agrupan</th><td>Estructura y etiquetas de cada pantalla</td><td>Arquitectura de la información · Miller</td><td>Pantalla de inicio: un solo elemento, «importe + destino». Etiqueta del botón: «Pagar y subir», no «Validar».</td><td>Formulario en dos bloques etiquetados: «Tus datos» y «La cita». Etiqueta: «Tu número de teléfono», no «CIP».</td></tr>
+        <tr><th scope="row">Qué contenidos y cómo se agrupan</th><td>Estructura y etiquetas de cada pantalla</td><td>Arquitectura de la información · Miller</td><td>Pantalla de inicio: un solo elemento, «importe + destino». Etiqueta del botón: «Pagar y subir», no «Validar».</td><td>Formulario en dos bloques etiquetados: «Tus datos» y «La cita». Etiqueta: «Tu número de teléfono», sin pedir el «CIP».</td></tr>
         <tr><th scope="row">Qué va junto visualmente</th><td>Agrupaciones y bloques justificados</td><td>Gestalt (proximidad, región común)</td><td>Importe + destino en mismo recuadro; separado del historial de viajes.</td><td>Etiqueta pegada a su campo; bloque «Tus datos» en recuadro separado del bloque «La cita».</td></tr>
-        <tr><th scope="row">Qué se ve primero</th><td>Jerarquía visual de cada pantalla</td><td>Variables visuales · escaneo</td><td>«Billete listo» en texto grande y color, centrado. Un solo botón prominente en zona del pulgar.</td><td>«Cita guardada» en título grande. Médico, fecha y hora en tres líneas cortas debajo. Botón secundario «Ver mis citas» en menor tamaño.</td></tr>
-        <tr><th scope="row">Que lo perciba todo el mundo</th><td>Comprobación de contraste y de «no solo color»</td><td>WCAG AA · EN 301 549</td><td>Contraste del «Billete listo» ≥ 4,5:1 al sol. Estado «Validado» con texto + tic + color verde.</td><td>Texto ≥ 18 px base. Obligatorios con asterisco + texto + color. Reflujo al 200 % sin pérdida (Joaquín, secundario).</td></tr>
+        <tr><th scope="row">Qué se ve primero</th><td>Jerarquía visual de cada pantalla</td><td>Variables visuales · escaneo</td><td>«Billete listo» en texto grande y color, centrado. Un solo botón prominente «Pagar y subir» en zona del pulgar.</td><td>«Cita guardada» en título grande. Médico, fecha y hora en tres líneas cortas debajo. Botón secundario «Mis citas» en menor tamaño.</td></tr>
+        <tr><th scope="row">Que lo perciba todo el mundo</th><td>Comprobación de contraste y de «no solo color»</td><td>WCAG AA · EN 301 549</td><td>Contraste del «Billete listo» ≥ 4,5:1 al sol. Estado «Validado» con texto + tic + color verde.</td><td>Texto ≥ 18 px base (criterio del proyecto). Obligatorios con asterisco + texto + color. Texto ampliable al 200 % y reflujo a 320 px sin pérdida (Joaquín, secundario).</td></tr>
       </tbody>
     </table>
     </div>
@@ -385,6 +448,163 @@
     <div class="box curio">
       <span class="label">El diseño de la información en los dos casos</span>
       <p>El reto de Marta es la <strong>jerarquía bajo presión</strong>: su pantalla de confirmación tiene que comunicar «listo» en menos de un segundo de escaneo. El reto de Mari Carmen es la <strong>claridad sin ambigüedad</strong>: su pantalla de confirmación debe eliminar cualquier duda sobre si la cita quedó guardada. Ambas exigen contraste alto y no depender solo del color, porque el sol del andén y la baja visión de Joaquín apuntan exactamente al mismo requisito WCAG.</p>
+    </div>
+
+    <h4>Ejemplo resuelto: de la pantalla mal diseñada a la bien diseñada (caso de Mari Carmen)</h4>
+    <p>El ejemplo recorre dos pantallas del flujo de «Pedir cita»: la confirmación y el formulario. Cada figura enfrenta la versión mal diseñada (letras) y la bien diseñada (números); las listas explican cada marca.</p>
+
+    <h5>1 · Pantalla de confirmación «Cita guardada»</h5>
+    <figure class="diagram">
+      <svg viewBox="0 0 720 470" role="img" aria-labelledby="cit-title cit-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="cit-title">Pantalla de confirmación «Cita guardada»: antes y después</title>
+        <desc id="cit-desc">Dos pantallas de móvil lado a lado con la confirmación de una cita. A la izquierda, la versión mal diseñada: un icono verde claro como única señal de que se guardó, una palabra «Guardado» en gris muy claro, tres líneas de texto corrido con médico, día y hora mezclados con avisos, y tres botones del mismo tamaño llamados Aceptar, Cancelar y Ver detalle. A la derecha, la versión bien diseñada: un icono verde oscuro junto al título grande «Cita guardada», un recuadro con la fecha y la hora en letra grande (martes, 10:00 h) y debajo el médico (Dr. Ramos) y el centro de salud, una frase que dice que la cita se puede ver en «Mis citas» y un único botón grande «Mis citas». Letras A a D marcan los problemas de la versión mala y números del 1 al 4 marcan los aciertos de la buena; el significado de cada una se explica en las listas bajo la figura.</desc>
+        <text x="170" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#8A3412">Mal diseñado</text>
+        <text x="550" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#0B5563">Bien diseñado</text>
+        <rect x="40" y="36" width="260" height="410" rx="24" fill="#FFFFFF" stroke="#211C16" stroke-width="2.5"></rect>
+        <circle cx="170" cy="96" r="24" fill="#6FCF73"></circle><path d="M158,96 L167,106 L184,86" fill="none" stroke="#FFFFFF" stroke-width="4"></path>
+        <text x="170" y="150" text-anchor="middle" font-size="12" fill="#B3B3B3">Guardado</text>
+        <text x="62" y="184" text-anchor="start" font-size="11" fill="#B3B3B3">Cita médica centro salud Dr. Ramos</text>
+        <text x="62" y="200" text-anchor="start" font-size="11" fill="#B3B3B3">martes 10:00 h consulta 3.ª planta</text>
+        <text x="62" y="216" text-anchor="start" font-size="11" fill="#B3B3B3">recuerde acudir con su tarjeta</text>
+        <rect x="70" y="250" width="200" height="34" rx="8" fill="#FFFFFF" stroke="#B3B3B3" stroke-width="1.5"></rect>
+        <text x="170" y="272" text-anchor="middle" font-size="12" fill="#909090">Aceptar</text>
+        <rect x="70" y="296" width="200" height="34" rx="8" fill="#FFFFFF" stroke="#B3B3B3" stroke-width="1.5"></rect>
+        <text x="170" y="318" text-anchor="middle" font-size="12" fill="#909090">Cancelar</text>
+        <rect x="70" y="342" width="200" height="34" rx="8" fill="#FFFFFF" stroke="#B3B3B3" stroke-width="1.5"></rect>
+        <text x="170" y="364" text-anchor="middle" font-size="12" fill="#909090">Ver detalle</text>
+        <circle cx="316" cy="96" r="11" fill="#8A3412"></circle><text x="316" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">A</text>
+        <circle cx="316" cy="150" r="11" fill="#8A3412"></circle><text x="316" y="154" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">B</text>
+        <circle cx="316" cy="196" r="11" fill="#8A3412"></circle><text x="316" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">C</text>
+        <circle cx="316" cy="296" r="11" fill="#8A3412"></circle><text x="316" y="300" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">D</text>
+        <rect x="420" y="36" width="260" height="410" rx="24" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <circle cx="452" cy="94" r="14" fill="#1B5E20"></circle><path d="M445,94 L450,100 L460,88" fill="none" stroke="#FDFBF6" stroke-width="3"></path>
+        <text x="474" y="102" text-anchor="start" font-size="22" font-weight="700" fill="#211C16">Cita guardada</text>
+        <rect x="440" y="130" width="220" height="150" rx="12" fill="#F3EAD2" stroke="#7A5A12" stroke-width="2"></rect>
+        <text x="456" y="170" text-anchor="start" font-size="24" font-weight="700" fill="#211C16">Martes</text>
+        <text x="456" y="204" text-anchor="start" font-size="24" font-weight="700" fill="#211C16">10:00 h</text>
+        <text x="456" y="236" text-anchor="start" font-size="17" fill="#211C16">Dr. Ramos</text>
+        <text x="456" y="262" text-anchor="start" font-size="15" fill="#211C16">Centro de salud</text>
+        <text x="440" y="306" text-anchor="start" font-size="13" fill="#211C16">Puedes verla cuando quieras</text>
+        <text x="440" y="324" text-anchor="start" font-size="13" fill="#211C16">en «Mis citas».</text>
+        <rect x="450" y="348" width="200" height="52" rx="12" fill="#FDFBF6" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="550" y="380" text-anchor="middle" font-size="16" font-weight="700" fill="#0B5563">Mis citas</text>
+        <circle cx="404" cy="94" r="11" fill="#0B5563"></circle><text x="404" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+        <circle cx="404" cy="205" r="11" fill="#0B5563"></circle><text x="404" y="209" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+        <circle cx="404" cy="316" r="11" fill="#0B5563"></circle><text x="404" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">3</text>
+        <circle cx="404" cy="374" r="11" fill="#0B5563"></circle><text x="404" y="378" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">4</text>
+      </svg>
+      <figcaption>Pantalla de confirmación de Mari Carmen: a la izquierda, la versión mal diseñada (letras A–D); a la derecha, la bien diseñada (números 1–4). Descripción completa disponible para lectores de pantalla.</figcaption>
+    </figure>
+    <p><strong>Versión mal diseñada:</strong></p>
+    <ul>
+      <li><strong>A · Solo color.</strong> El icono verde claro es la única señal visible de que se guardó (WCAG 1.4.1) y su contraste es de 1,9:1, por debajo del 3:1 exigido a los gráficos necesarios (1.4.11).</li>
+      <li><strong>B · Texto de bajo contraste y pequeño.</strong> El gris claro sobre blanco tiene 2,1:1.</li>
+      <li><strong>C · Texto corrido.</strong> Médico, día y hora se mezclan con avisos y obligan a leer todo.</li>
+      <li><strong>D · Tres botones iguales.</strong> No hay jerarquía: no se sabe cuál es el paso siguiente.</li>
+    </ul>
+    <p><strong>Versión bien diseñada:</strong></p>
+    <ol>
+      <li><strong>Jerarquía visual.</strong> Título grande y de alto contraste (16,3:1) junto a un icono verde oscuro: lo primero que se ve es lo más importante.</li>
+      <li><strong>Región común y Miller.</strong> Los cuatro datos que exige R-02 (día, hora, médico y centro) en un recuadro, con la fecha y la hora en grande: la jerarquía visual que resuelve el conflicto C-02 entre el texto grande y los cuatro datos.</li>
+      <li><strong>Texto explícito.</strong> La frase dice dónde consultar la cita; nada depende del color.</li>
+      <li><strong>Un solo botón secundario.</strong> «Mis citas», grande y a la altura del pulgar (Fitts).</li>
+    </ol>
+
+    <h5>2 · Formulario de pedir cita</h5>
+    <figure class="diagram">
+      <svg viewBox="0 0 720 470" role="img" aria-labelledby="frm-title frm-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+        <title id="frm-title">Formulario de pedir cita: antes y después</title>
+        <desc id="frm-desc">Dos pantallas de móvil lado a lado con el formulario de pedir cita. A la izquierda, la versión mal diseñada: cuatro campos seguidos sin bloques, con cada etiqueta (Nombre, CIP, Fecha, Hora) situada a media distancia entre dos campos, el campo CIP marcado solo con borde y texto rojos, texto pequeño en gris claro y un botón Enviar casi invisible. A la derecha, la versión bien diseñada: dos recuadros con título; «Tus datos» contiene un único campo, «Tu número de teléfono», que indica que es obligatorio con asterisco y con texto, y «La cita» contiene Fecha y Hora; cada etiqueta está pegada justo encima de su campo con espacio entre pares; abajo hay un botón «Continuar». Letras A a E marcan los problemas de la versión mala y números del 1 al 5 marcan los aciertos de la buena; el significado se explica en las listas bajo la figura.</desc>
+        <text x="170" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#8A3412">Mal diseñado</text>
+        <text x="550" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#0B5563">Bien diseñado</text>
+        <rect x="40" y="36" width="260" height="410" rx="24" fill="#FFFFFF" stroke="#211C16" stroke-width="2.5"></rect>
+        <text x="60" y="56" text-anchor="start" font-size="11" fill="#909090">Nombre</text>
+        <rect x="60" y="64" width="220" height="30" rx="6" fill="#FFFFFF" stroke="#909090" stroke-width="1.2"></rect>
+        <text x="60" y="118" text-anchor="start" font-size="11" fill="#D32F2F">CIP</text>
+        <rect x="60" y="134" width="220" height="30" rx="6" fill="#FFFFFF" stroke="#D32F2F" stroke-width="1.5"></rect>
+        <text x="60" y="188" text-anchor="start" font-size="11" fill="#909090">Fecha</text>
+        <rect x="60" y="204" width="220" height="30" rx="6" fill="#FFFFFF" stroke="#909090" stroke-width="1.2"></rect>
+        <text x="60" y="258" text-anchor="start" font-size="11" fill="#909090">Hora</text>
+        <rect x="60" y="274" width="220" height="30" rx="6" fill="#FFFFFF" stroke="#909090" stroke-width="1.2"></rect>
+        <rect x="60" y="330" width="90" height="30" rx="6" fill="#E6E6E6" stroke="#E6E6E6" stroke-width="1"></rect>
+        <text x="105" y="350" text-anchor="middle" font-size="11" fill="#909090">Enviar</text>
+        <circle cx="316" cy="90" r="11" fill="#8A3412"></circle><text x="316" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">A</text>
+        <circle cx="316" cy="124" r="11" fill="#8A3412"></circle><text x="316" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">D</text>
+        <circle cx="316" cy="158" r="11" fill="#8A3412"></circle><text x="316" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">C</text>
+        <circle cx="316" cy="240" r="11" fill="#8A3412"></circle><text x="316" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">B</text>
+        <circle cx="316" cy="345" r="11" fill="#8A3412"></circle><text x="316" y="349" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">E</text>
+        <rect x="420" y="36" width="260" height="410" rx="24" fill="#FDFBF6" stroke="#211C16" stroke-width="2.5"></rect>
+        <rect x="436" y="50" width="228" height="108" rx="12" fill="#FDFBF6" stroke="#7A5A12" stroke-width="2"></rect>
+        <text x="452" y="74" text-anchor="start" font-size="15" font-weight="700" fill="#211C16">Tus datos</text>
+        <text x="452" y="98" text-anchor="start" font-size="12.5" font-weight="700" fill="#211C16">Tu número de teléfono</text>
+        <text x="452" y="112" text-anchor="start" font-size="11.5" font-weight="700" fill="#8A3412">* (obligatorio)</text>
+        <rect x="452" y="118" width="196" height="28" rx="6" fill="#FFFFFF" stroke="#211C16" stroke-width="1.5"></rect>
+        <rect x="436" y="174" width="228" height="152" rx="12" fill="#FDFBF6" stroke="#7A5A12" stroke-width="2"></rect>
+        <text x="452" y="198" text-anchor="start" font-size="15" font-weight="700" fill="#211C16">La cita</text>
+        <text x="452" y="222" text-anchor="start" font-size="12.5" font-weight="700" fill="#211C16">Fecha</text>
+        <rect x="452" y="228" width="196" height="28" rx="6" fill="#FFFFFF" stroke="#211C16" stroke-width="1.5"></rect>
+        <text x="452" y="278" text-anchor="start" font-size="12.5" font-weight="700" fill="#211C16">Hora</text>
+        <rect x="452" y="284" width="196" height="28" rx="6" fill="#FFFFFF" stroke="#211C16" stroke-width="1.5"></rect>
+        <rect x="450" y="342" width="200" height="38" rx="10" fill="#FDFBF6" stroke="#0B5563" stroke-width="2.5"></rect>
+        <text x="550" y="366" text-anchor="middle" font-size="15" font-weight="700" fill="#0B5563">Continuar</text>
+        <circle cx="404" cy="62" r="11" fill="#0B5563"></circle><text x="404" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+        <circle cx="404" cy="226" r="11" fill="#0B5563"></circle><text x="404" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+        <circle cx="404" cy="120" r="11" fill="#0B5563"></circle><text x="404" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">3</text>
+        <circle cx="404" cy="90" r="11" fill="#0B5563"></circle><text x="404" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">4</text>
+        <circle cx="404" cy="350" r="11" fill="#0B5563"></circle><text x="404" y="354" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">5</text>
+      </svg>
+      <figcaption>Formulario de Mari Carmen: a la izquierda, la versión mal diseñada (letras A–E); a la derecha, la bien diseñada (números 1–5). Descripción completa disponible para lectores de pantalla.</figcaption>
+    </figure>
+    <p><strong>Versión mal diseñada:</strong></p>
+    <ul>
+      <li><strong>A · Etiquetas equidistantes.</strong> Cada etiqueta está igual de cerca de dos campos: la proximidad engaña.</li>
+      <li><strong>B · Campos seguidos.</strong> Sin bloques ni títulos, todo parece del mismo tipo.</li>
+      <li><strong>C · Obligatorio solo en rojo.</strong> Quien no distingue el rojo no sabe qué falta (WCAG 1.4.1).</li>
+      <li><strong>D · Jerga.</strong> «CIP» no dice nada a quien no lo conoce y ni siquiera hace falta para identificarla.</li>
+      <li><strong>E · Texto pequeño y gris.</strong> Contraste de 3,2:1 y botón casi invisible.</li>
+    </ul>
+    <p><strong>Versión bien diseñada:</strong></p>
+    <ol>
+      <li><strong>Región común.</strong> Dos recuadros con título, «Tus datos» y «La cita», separan lo que va junto de lo que no.</li>
+      <li><strong>Proximidad.</strong> Cada etiqueta, pegada encima de su campo, con espacio entre pares.</li>
+      <li><strong>Obligatorio con texto.</strong> Asterisco, la palabra «obligatorio» y color: tres señales.</li>
+      <li><strong>Lenguaje de la persona y datos mínimos.</strong> Solo se pide «Tu número de teléfono», sin el «CIP» que no hace falta.</li>
+      <li><strong>Legibilidad.</strong> Texto oscuro de tamaño cómodo sobre fondo claro, con contraste muy superior a 4,5:1.</li>
+    </ol>
+
+    <h5>3 · Hoja de decisiones de información</h5>
+    <p>Para entregar el diseño de la información, cada decisión se anota con su principio y su comprobación, como en esta tabla:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Decisiones de información de la pantalla «Cita guardada» con su principio y su comprobación.</caption>
+      <thead>
+        <tr><th scope="col">Elemento</th><th scope="col">Decisión</th><th scope="col">Principio</th><th scope="col">Comprobación</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Título</th><td>«Cita guardada» en negrita y tamaño grande, color #211C16 sobre #FDFBF6.</td><td>Jerarquía visual</td><td>Relación de contraste de 16,3:1 con una herramienta.</td></tr>
+        <tr><th scope="row">Datos de la cita</th><td>Recuadro con los cuatro datos (R-02): día y hora en grande, médico y centro debajo; jerarquía que resuelve C-02.</td><td>Región común · Miller</td><td>Prueba de entrecerrar los ojos: se ve el recuadro y el título.</td></tr>
+        <tr><th scope="row">Estado «guardada»</th><td>Icono verde oscuro más texto.</td><td>No solo color</td><td>Prueba en escala de grises: se entiende igual.</td></tr>
+        <tr><th scope="row">Botón «Mis citas»</th><td>Un solo botón secundario, ancho y a la altura del pulgar.</td><td>Fitts · jerarquía</td><td>Tamaño táctil medido en un móvil real (≥ 44 px, criterio del proyecto).</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Cinco comprobaciones rápidas, sin participantes</h4>
+    <p>Antes de probar con personas (Tema 4) puedes detectar muchos fallos tú mismo. Ninguna sustituye a la prueba con usuarios.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cinco comprobaciones de percepción que puede hacer el equipo y qué detecta cada una.</caption>
+      <thead>
+        <tr><th scope="col">Prueba</th><th scope="col">Cómo se hace</th><th scope="col">Qué detecta</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Entrecerrar los ojos</th><td>Mira la pantalla hasta que el texto se vuelva borroso.</td><td>La jerarquía real: ¿lo que destaca es lo importante?</td></tr>
+        <tr><th scope="row">Escala de grises</th><td>Pon la pantalla en blanco y negro (ajuste del móvil o emulación del navegador).</td><td>Información que depende solo del color.</td></tr>
+        <tr><th scope="row">Contraste con herramienta</th><td>Mide cada pareja de colores de texto e iconos.</td><td>Relaciones por debajo de 4,5:1 (texto) o 3:1 (texto grande y gráficos).</td></tr>
+        <tr><th scope="row">Texto al 200 %</th><td>Amplía el texto al doble en el navegador o en el sistema.</td><td>Texto cortado o funciones que desaparecen (WCAG 1.4.4).</td></tr>
+        <tr><th scope="row">Ancho de 320 px</th><td>Reduce la ventana a 320 píxeles de ancho (equivale a ampliar al 400 % una ventana de 1280).</td><td>Desplazamiento horizontal o contenido que no refluye (WCAG 1.4.10).</td></tr>
+      </tbody>
+    </table>
     </div>
 
     <h4>Tres consejos prácticos desde hoy</h4>
@@ -473,7 +693,19 @@
     </details>
     <details class="check">
       <summary>8. ¿Por qué los datos del INE justifican la accesibilidad perceptiva?</summary>
-      <p>Porque 4,32 millones de personas tienen alguna discapacidad, cerca de un tercio no alcanza el nivel digital básico y la mitad de los hogares usa solo móvil; el bajo contraste o el «solo color» excluye a mucha gente. <em>(Ver 2.3)</em></p>
+      <p>Porque 4,32 millones de personas tienen alguna discapacidad, cerca de un tercio de la población de 16 a 74 años no alcanza el nivel digital básico y uno de cada seis hogares no tiene ordenador; el bajo contraste o el «solo color» excluye a mucha gente. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: el texto de «Cita guardada» es #8A8A8A sobre fondo blanco, a tamaño normal. ¿Cumple el nivel AA? Propón un cambio.</summary>
+      <p>La relación de contraste es de 3,45:1: no cumple el 4,5:1 exigido a texto normal (solo cumpliría como texto grande). Un cambio posible es oscurecerlo hasta #595959 (7,0:1) o usar el #211C16 del ejemplo (16,3:1 sobre #FDFBF6). Se comprueba con una herramienta y, además, mirando la pantalla en un móvil real al aire libre. <em>(Ver 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. Ejercicio de aplicación: una pantalla de confirmación muestra tres botones del mismo tamaño y un icono verde sin texto. Señala tres problemas de diseño de la información y rediséñala.</summary>
+      <p>1) <strong>Jerarquía:</strong> tres botones iguales no indican el paso siguiente; deja uno prominente. 2) <strong>No solo color:</strong> el icono verde es la única señal; añade el título «Cita guardada» con médico, día y hora en texto. 3) <strong>Región común:</strong> los datos de la cita deben ir agrupados en un recuadro, no sueltos. Rediseño: título grande, recuadro con tres líneas, un botón «Mis citas» secundario y grande. <em>(Ver 1.3, 1.4 y 1.5)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. Ejercicio de aplicación: reescribe para Mari Carmen estos dos mensajes: «Error 4021: sesión inválida» y «Campo obligatorio» (en el campo del teléfono).</summary>
+      <p>Ejemplo: «Ha pasado mucho tiempo y hemos cerrado tu sesión. Vuelve a identificarte» (qué, por qué y qué hacer, sin código) y «Falta tu número de teléfono. Escríbelo en la casilla marcada con asterisco» (lenguaje de la persona y dónde actuar). Reglas aplicadas: sin jerga ni códigos, frases cortas y qué hacer a continuación. <em>(Ver 2.2)</em></p>
     </details>
   </section>
 
@@ -513,8 +745,24 @@
       <dd>Regla WCAG: nunca transmitir información únicamente mediante el color; acompañarlo con texto, icono o forma.</dd>
       <dt>Legibilidad</dt>
       <dd>Facilidad para leer un texto: tipografía clara, tamaño suficiente y longitud de línea adecuada.</dd>
+      <dt>Relación de contraste</dt>
+      <dd>Cociente entre las luminancias de dos colores, de 1:1 a 21:1. Las WCAG AA exigen 4,5:1 al texto normal y 3:1 al texto grande y a los componentes gráficos necesarios.</dd>
+      <dt>Luminancia relativa</dt>
+      <dd>Medida de cuánta luz parece emitir un color, calculada ponderando los canales rojo, verde y azul. Es la base del cálculo del contraste.</dd>
+      <dt>Texto grande (WCAG)</dt>
+      <dd>Texto de al menos 24 px, o de unos 18,7 px en negrita. Admite un umbral de contraste menor: 3:1.</dd>
+      <dt>Reflujo (reflow)</dt>
+      <dd>Capacidad del contenido de reorganizarse en una sola columna, sin desplazamiento horizontal, en un ancho de 320 px (equivalente a ampliar al 400 %). Criterio WCAG 1.4.10.</dd>
+      <dt>Microtexto</dt>
+      <dd>Las palabras pequeñas de la interfaz: etiquetas, botones, avisos y mensajes de error. Forman parte del diseño de la información.</dd>
+      <dt>Relación señal-ruido</dt>
+      <dd>En una pantalla, proporción entre lo que informa (señal) y lo que distrae (ruido). Quitar elementos superfluos la mejora.</dd>
+      <dt>CIP</dt>
+      <dd>Código de identificación personal de la tarjeta sanitaria. Es jerga: si hubiera que pedirlo, se escribiría «Número de tu tarjeta sanitaria»; en este caso la identificación usa el número de teléfono.</dd>
+      <dt>EDAD</dt>
+      <dd>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia del INE; la edición citada es la de 2020.</dd>
       <dt>WCAG nivel AA</dt>
-      <dd>Pautas de accesibilidad del contenido web, nivel de cumplimiento exigible; a ellas remite la EN 301 549. Umbral del proyecto.</dd>
+      <dd>Pautas de accesibilidad del contenido web, nivel de cumplimiento exigible; a ellas remite la EN 301 549. Umbral del proyecto. Versión vigente: 2.1 (EN 301 549 V3.2.1); la 2.2 llegará con la V4.1.1 cuando se cite en el Diario Oficial de la UE.</dd>
     </dl>
   </section>
 
@@ -530,7 +778,10 @@
         <li>La jerarquía se construye con <strong>variables visuales</strong>: tamaño, contraste, posición y espacio en blanco; lo importante, lo más prominente.</li>
         <li>La gente <strong>escanea, no lee</strong>: hay que diseñar para el barrido con encabezados, bloques cortos y jerarquía fuerte.</li>
         <li>La información debe ser <strong>accesible</strong>: contraste ≥ 4,5:1, nunca solo color y texto legible (WCAG AA · EN 301 549).</li>
-        <li>El <strong>INE</strong> lo justifica: 4,32 millones de personas con discapacidad, un tercio sin nivel digital básico y la mitad de los hogares solo con móvil.</li>
+        <li>El contraste se calcula con la luminancia relativa de los colores: <strong>4,5:1</strong> para texto normal y <strong>3:1</strong> para texto grande y gráficos necesarios. Se comprueba con herramientas y con una prueba en móvil real.</li>
+        <li>Los <strong>microtextos</strong> también se diseñan: qué ha pasado, por qué y qué hacer; sin jerga ni códigos; un término para cada cosa.</li>
+        <li>Antes de probar con personas, el equipo puede hacer cinco comprobaciones: entrecerrar los ojos, escala de grises, contraste con herramienta, texto al 200 % y ancho de 320 px.</li>
+        <li>El <strong>INE</strong> lo justifica: 4,32 millones de personas con discapacidad, un tercio de la población de 16 a 74 años sin nivel digital básico y uno de cada seis hogares sin ordenador.</li>
         <li>En tu proyecto es la <strong>segunda decisión de la Actividad C</strong>: estructura, agrupaciones y jerarquía de cada pantalla, con su comprobación de accesibilidad.</li>
         <li>Los dos casos de estudio ilustran retos distintos del mismo diseño: para <strong>Marta</strong>, jerarquía fuerte que comunica «listo» en un segundo de escaneo bajo presión; para <strong>Mari Carmen</strong>, agrupaciones claras, etiquetas en lenguaje de usuario y confirmación explícita sin depender del color —requisitos que coinciden con WCAG AA y también protegen a Joaquín (secundario).</li>
       </ul>
@@ -552,15 +803,17 @@
     </ol>
     <p>Normas técnicas:</p>
     <ol class="refs" start="8">
-      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
-      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción hombre-sistema. Parte 210: Diseño centrado en el operador humano para los sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN 301&nbsp;549:2022 (EN 301 549 V3.2.1). <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG 2.1 nivel AA).</li>
       <li>WCAG 2.1 (Web Content Accessibility Guidelines), nivel AA. World Wide Web Consortium (W3C).</li>
     </ol>
     <p>Datos y recursos en línea:</p>
     <ol class="refs" start="11">
       <li>Instituto Nacional de Estadística (INE). <em>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia</em> (EDAD 2020). <a href="https://www.ine.es/">ine.es</a>.</li>
-      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025. <a href="https://www.ine.es/">ine.es</a>.</li>
       <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>W3C. <em>Understanding WCAG 2.1</em>: criterios 1.4.1, 1.4.3, 1.4.4, 1.4.10 y 1.4.11. <a href="https://www.w3.org/WAI/WCAG21/Understanding/">w3.org/WAI/WCAG21/Understanding</a>.</li>
+      <li>WebAIM. <em>Contrast Checker</em>. <a href="https://webaim.org/resources/contrastchecker/">webaim.org/resources/contrastchecker</a>. · TPGi. <em>Colour Contrast Analyser</em>.</li>
     </ol>
   </section>
 

@@ -63,6 +63,13 @@
   <section id="como-usar" aria-labelledby="como-usar-h">
     <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
     <p>Estos apuntes cierran la <strong>Actividad C</strong>. Ya vimos el <strong>diseño de la actividad</strong> (el comportamiento) y el <strong>diseño de la información</strong> (la presentación). Ahora toca el tercero: el <strong>diseño del prototipo</strong>, donde todo se vuelve tangible.</p>
+    <p>Dentro de la <strong>ISO 9241-210:2019</strong>, este diseño corresponde a la cláusula 7.4.3 (hacer más concretas las soluciones mediante simulaciones, maquetas y prototipos) y enlaza con la 7.4.4 (modificar las soluciones según la evaluación) y la 7.4.5 (comunicar la solución a quienes deben implementarla). Presentamos los tres diseños de la Actividad C <strong>de forma secuencial</strong> para estudiarlos, pero en el proyecto se aplican <strong>de forma iterativa</strong>: el prototipo es precisamente el vehículo con el que pruebas y reajustas la actividad y la información.</p>
+    <div class="box curio">
+      <span class="label">Qué necesitas recordar</span>
+      <p><strong>Del Tema 1:</strong> la economía del error (corregir pronto es barato).</p>
+      <p><strong>Del Tema 2:</strong> las personas del caso (Mari Carmen y Joaquín), el entorno rural con cobertura irregular y los objetivos de calidad de uso RU-01 a RU-03 de la Actividad B (con umbrales provisionales), que aquí sirven de criterios de éxito de los prototipos.</p>
+      <p><strong>De los dos documentos anteriores de este tema:</strong> el flujo de cuatro pasos de Mari Carmen, sus mensajes de error y las decisiones de presentación de «Cita guardada» y del formulario. Aquí los materializamos en prototipos para probarlos.</p>
+    </div>
     <p>El prototipo es el <strong>artefacto que materializa</strong> los dos diseños anteriores para poder <strong>pensarlos mejor y probarlos</strong>. Es la pieza que después se evaluará en la Actividad D (Tema 4) y que itera hasta cumplir los requisitos.</p>
     <p>Es también la <strong>práctica central del tema</strong>: prototipar en baja, media y alta fidelidad. Aquí desarrollamos a fondo lo que en la apertura solo presentamos.</p>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
@@ -70,6 +77,7 @@
       <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
       <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>Los apartados <strong>«Ejemplo resuelto»</strong> muestran, completo, un artefacto del caso de Mari Carmen para que veas cómo se hace.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
     <div class="box key">
@@ -188,7 +196,8 @@
     </ol>
 
     <p>La elección depende de la <strong>pregunta</strong> que quieras responder. Si dudas del mapa general, prototipa <strong>ancho</strong>; si dudas de si una tarea concreta funciona, prototipa <strong>profundo</strong>.</p>
-    <p>En los dos casos de estudio la elección es clara. Para la app de <strong>Marta</strong>, la tarea crítica es el flujo de pago y validación del billete: un prototipo <strong>vertical</strong> que cubra esa tarea de principio a fin —preparar el billete, validar sin conexión, ver la confirmación— revela los problemas que importan antes que un mapa completo con ocho pantallas superficiales. Para la app de <strong>Mari Carmen</strong>, lo más arriesgado e incierto es el paso de verificación por código SMS: si ese paso falla sistemáticamente, todo el flujo de cita es inutilizable; un prototipo <strong>vertical</strong> de ese único paso —recibir el SMS, introducir el código, recuperarse si caduca— vale más que mostrar todas las pantallas de la app sin ese detalle.</p>
+    <p>En los dos casos de estudio la elección es clara. Para la app de <strong>Marta</strong>, la tarea crítica es el flujo de pago y validación del billete: un prototipo <strong>vertical</strong> que cubra esa tarea de principio a fin —pagar con «Pagar y subir», ver «Billete listo», validar sin conexión— revela los problemas que importan antes que un mapa completo con ocho pantallas superficiales.</p>
+    <p>Para la app de <strong>Mari Carmen</strong>, lo más arriesgado e incierto es el paso de verificación por código SMS: si ese paso falla sistemáticamente, todo el flujo de cita es inutilizable; un prototipo <strong>vertical</strong> de ese único paso —recibir el SMS, introducir el código, recuperarse si caduca— vale más que mostrar todas las pantallas de la app sin ese detalle.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -228,6 +237,24 @@
     <p>Ambas comparten la misma filosofía del tema: <strong>aprender pronto y barato</strong>. Antes de invertir una hora de programación, una hoja de papel ya te dice si el flujo se entiende.</p>
     <p>Para media y alta fidelidad se usan <strong>herramientas de wireframe y de maquetado interactivo</strong>, que permiten enlazar pantallas y simular la interacción sin escribir código de producción.</p>
 
+    <h4>Wireframe, mockup y prototipo: tres palabras que se confunden</h4>
+    <p>Se usan a menudo como sinónimos, pero designan cosas distintas. Conviene separar <strong>qué representan</strong> de <strong>cuánto se parecen</strong> al producto final (la fidelidad):</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Diferencia entre wireframe, mockup y prototipo, y su relación con la fidelidad.</caption>
+      <thead>
+        <tr><th scope="col">Término</th><th scope="col">Qué representa</th><th scope="col">¿Interactivo?</th><th scope="col">Fidelidad habitual</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Wireframe</th><td>La estructura de la pantalla: qué bloques hay y dónde, sin estilo visual.</td><td>No necesariamente; si se enlazan las pantallas, se puede recorrer.</td><td>Media</td></tr>
+        <tr><th scope="row">Mockup (maqueta visual)</th><td>La apariencia final de una pantalla: colores, tipografía, imágenes.</td><td>No: es una imagen estática.</td><td>Alta (visual)</td></tr>
+        <tr><th scope="row">Prototipo</th><td>El comportamiento: qué ocurre al tocar. Puede ser de papel, de wireframes enlazados o de maquetas enlazadas.</td><td>Sí, aunque sea con una persona cambiando hojas.</td><td>Baja, media o alta</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>En estos apuntes, la «maqueta interactiva» de alta fidelidad es, por tanto, un <em>mockup</em> al que se le ha añadido interacción. Una maqueta con colores pero sin enlaces es un mockup: sirve para valorar la apariencia, no para probar un flujo.</p>
+    <p>Las herramientas cambian con los años; la pregunta que quieres responder no. Como ejemplos de cada nivel: <strong>papel, rotuladores y recortes</strong> para la baja fidelidad; <strong>Balsamiq</strong> o <strong>Penpot</strong> (de código abierto) para wireframes; y <strong>Figma</strong> o <strong>Penpot</strong> para maquetas interactivas. Elige la herramienta más barata que responda tu duda.</p>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>Se puede probar sin programar: el <strong>prototipado en papel</strong> (una persona hace de ordenador) y el <strong>Mago de Oz</strong> (una persona simula el sistema) permiten validar ideas pronto y barato. Para fidelidad media y alta, herramientas de wireframe y maquetado.</p>
@@ -249,8 +276,28 @@
 
     <h4>Una regla simple antes de prototipar</h4>
     <p>Antes de empezar un prototipo, pregúntate: <strong>«¿qué duda quiero resolver?»</strong>. Esa duda decide la fidelidad (baja si dudas del flujo, alta si dudas de los detalles) y el alcance (vertical si es una tarea, horizontal si es el mapa).</p>
-    <p>Aplicado a los dos casos: la duda de <strong>Marta</strong> en baja fidelidad es «¿puede completar el pago en dos pasos sin cobertura?» —fidelidad baja, alcance vertical—; la duda en alta fidelidad es «¿la confirmación se lee al sol con suficiente contraste?» —fidelidad alta, alcance vertical del único elemento crítico—. La duda de <strong>Mari Carmen</strong> en baja fidelidad es «¿entiende que la cita ha quedado guardada?»; en alta fidelidad: «¿el texto de confirmación fluye bien al zoom al 200 %?». Cada pregunta diferente exige un prototipo diferente.</p>
+    <p>Aplicado a los dos casos: la duda de <strong>Marta</strong> en baja fidelidad es «¿puede completar el pago en dos pasos sin cobertura?» —fidelidad baja, alcance vertical—; la duda en alta fidelidad es «¿la confirmación se lee al sol con suficiente contraste?» —fidelidad alta, alcance vertical del único elemento crítico—. La duda de <strong>Mari Carmen</strong> en baja fidelidad es «¿entiende que la cita ha quedado guardada?»; en alta fidelidad: «¿el texto de confirmación se amplía al 200 % y refluye a 320 px sin perder información?». Cada pregunta diferente exige un prototipo diferente.</p>
     <p>Si no sabes qué pregunta responde tu prototipo, probablemente estés <strong>programando disfrazado</strong>, no prototipando.</p>
+
+    <h4>Plantilla: la ficha de cada prototipo</h4>
+    <p>Antes de construir un prototipo, rellena una ficha de siete campos. Si no puedes rellenarla, todavía no sabes qué quieres preguntar. La tabla muestra la ficha de los tres niveles de fidelidad del flujo «Pedir cita» de Mari Carmen. Los umbrales son de ejemplo: los fija el equipo.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Ficha de prototipo del flujo «Pedir cita» de Mari Carmen en los tres niveles de fidelidad (valores de ejemplo).</caption>
+      <thead>
+        <tr><th scope="col">Campo</th><th scope="col">Baja · papel</th><th scope="col">Media · wireframe</th><th scope="col">Alta · maqueta interactiva</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1 · Pregunta</th><td>¿Entiende que la cita quedó guardada y completa el flujo en cuatro pasos?</td><td>¿Encuentra «Reenviar código» y «Mis citas» sin ayuda y lee el resumen de un vistazo?</td><td>¿Se lee y se pulsa bien en su móvil con letra grande, y el código agrupado se copia sin error?</td></tr>
+        <tr><th scope="row">2 · Fidelidad</th><td>Hojas dibujadas a mano, del tamaño de un móvil.</td><td>Pantallas digitales en gris, enlazadas.</td><td>Maqueta con estilo final y enlaces.</td></tr>
+        <tr><th scope="row">3 · Alcance</th><td>Vertical: el flujo completo de cuatro pasos.</td><td>Vertical: identificarse (con código caducado) y confirmación.</td><td>Vertical: la pantalla de identificación y «Cita guardada».</td></tr>
+        <tr><th scope="row">4 · Tarea</th><td>«Pide una cita con tu médico de familia».</td><td>La misma tarea, incluyendo un código caducado.</td><td>La misma tarea, en su propio móvil.</td></tr>
+        <tr><th scope="row">5 · Participante</th><td>Persona de 70 o más años con competencia digital básica y letra extragrande, del perfil de Mari Carmen (el perfil de RU-01).</td><td>Persona del mismo perfil.</td><td>Persona del perfil de Mari Carmen y otra con baja visión que use ampliación (perfil de Joaquín).</td></tr>
+        <tr><th scope="row">6 · Criterio de éxito</th><td>Completa sin ayuda (RU-01, umbral provisional: al menos 4 de 5 participantes) y explica con sus palabras que la cita está guardada.</td><td>Reenvía el código sin volver al inicio y sin ayuda.</td><td>Sin errores de pulsación ni de copia; el texto se amplía al 200 % sin perder contenido.</td></tr>
+        <tr><th scope="row">7 · Si falla</th><td>Se rediseña el flujo o la pantalla final antes de hacer wireframes.</td><td>Se recoloca o renombra el botón antes de añadir estilo.</td><td>Se corrigen tamaños, contraste o agrupación antes de la evaluación con usuarios.</td></tr>
+      </tbody>
+    </table>
+    </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -273,8 +320,8 @@
         <tr><th scope="col">Fidelidad</th><th scope="col">Qué se hace</th><th scope="col">Duda que resuelve</th><th scope="col">Qué se descartaría si falla</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Baja · papel</th><td>Dos hojas dibujadas a mano: pantalla de inicio con el botón de pago y pantalla de confirmación «Billete listo». Una persona hace de ordenador; otra «toca» el botón.</td><td>¿Puede Marta completar el pago en dos pasos sin leer nada? ¿El flujo se entiende de pie, con prisa?</td><td>Si no lo completa en 30 s, el flujo tiene demasiados pasos o el botón no es visible: se rediseña antes de wireframing.</td></tr>
-        <tr><th scope="row">Media · wireframe</th><td>Las dos pantallas en digital y en gris, enlazadas. Se añade el estado «sin cobertura» como pantalla alternativa.</td><td>¿El botón de «Confirmar» está en la zona del pulgar? ¿La pantalla de error de cobertura tiene un camino de recuperación claro?</td><td>Si no encuentra el botón o no sabe cómo recuperarse, se reubica antes de añadir color y tipografía.</td></tr>
+        <tr><th scope="row">Baja · papel</th><td>Dos hojas dibujadas a mano: pantalla de inicio con el botón «Pagar y subir» y pantalla de confirmación «Billete listo». Una persona hace de ordenador; otra «toca» el botón.</td><td>¿Puede Marta completar el pago en dos pasos sin leer nada? ¿El flujo se entiende de pie, con prisa?</td><td>Si no lo completa en 30 s, el flujo tiene demasiados pasos o el botón no es visible: se rediseña antes de wireframing.</td></tr>
+        <tr><th scope="row">Media · wireframe</th><td>Las dos pantallas en digital y en gris, enlazadas. Se añade el estado «sin cobertura» como pantalla alternativa.</td><td>¿El botón «Pagar y subir» está en la zona del pulgar? ¿La pantalla de error de cobertura tiene un camino de recuperación claro?</td><td>Si no encuentra el botón o no sabe cómo recuperarse, se reubica antes de añadir color y tipografía.</td></tr>
         <tr><th scope="row">Alta · interactiva</th><td>Maqueta con color verde para «Billete listo», tipografía real y transición de &lt; 0,1 s. Se prueba en un móvil real al sol o bajo luz intensa.</td><td>¿El contraste ≥ 4,5:1 es legible al sol? ¿El «tic» de validación se ve sin leer el texto? ¿El tamaño táctil del botón cumple Fitts?</td><td>Si el contraste falla o el botón es demasiado pequeño, se corrige antes de evaluar con usuarios reales (Tema 4).</td></tr>
       </tbody>
     </table>
@@ -290,14 +337,14 @@
         <tr><th scope="col">Fidelidad</th><th scope="col">Qué se hace</th><th scope="col">Duda que resuelve</th><th scope="col">Qué se descartaría si falla</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Baja · papel</th><td>Cuatro hojas dibujadas a mano: identificarse, elegir médico y fecha en un calendario, confirmar, pantalla «Cita guardada — Dr. Ramos, martes 10:00». Una persona hace de ordenador sentada frente a Mari Carmen.</td><td>¿Entiende que la cita ha quedado guardada sin llamar a nadie? ¿El flujo tiene cuatro pasos o menos?</td><td>Si la pantalla «Cita guardada» no la tranquiliza o el flujo tiene más pasos de los necesarios, se rediseña la actividad antes de wireframing.</td></tr>
+        <tr><th scope="row">Baja · papel</th><td>Cuatro hojas dibujadas a mano: identificarse (con el código SMS), elegir médico y fecha en un calendario, confirmar, pantalla «Cita guardada — Dr. Ramos, martes 10:00». Una persona hace de ordenador sentada frente a Mari Carmen.</td><td>¿Entiende que la cita ha quedado guardada sin llamar a nadie? ¿El flujo tiene cuatro pasos o menos?</td><td>Si la pantalla «Cita guardada» no la tranquiliza o el flujo tiene más pasos de los necesarios, se rediseña la actividad antes de wireframing.</td></tr>
         <tr><th scope="row">Media · wireframe</th><td>Las cuatro pantallas en digital y en gris, enlazadas. Se añade el flujo alternativo: «código SMS caducado → botón Reenviar sin reiniciar».</td><td>¿Encuentra el botón «Reenviar código» sin abandonar el proceso? ¿El resumen de cita ocupa pantalla completa y se lee de un vistazo?</td><td>Si no encuentra el reenvío o el resumen queda enterrado, se reorganiza la información antes de añadir estilos.</td></tr>
-        <tr><th scope="row">Alta · interactiva</th><td>Maqueta con texto ≥ 18 px, título «Cita guardada» en grande, contraste ≥ 4,5:1 y reflujo sin pérdida al zoom al 200 %. Se prueba en el móvil de Mari Carmen (letra grande activada).</td><td>¿El texto de confirmación refluye bien a 200 % de zoom (para Joaquín, secundario)? ¿El código SMS aparece agrupado en «847 209»? ¿El mensaje «Cita guardada» elimina la ansiedad sin releer?</td><td>Si el reflujo rompe el layout o el código SMS es difícil de copiar, se corrige antes de evaluar con usuarios reales (Tema 4).</td></tr>
+        <tr><th scope="row">Alta · interactiva</th><td>Maqueta con texto ≥ 18 px (criterio del proyecto), título «Cita guardada» en grande, contraste ≥ 4,5:1, texto ampliable al 200 % y reflujo a 320 px sin pérdida. Se prueba en el móvil de Mari Carmen (letra grande activada).</td><td>¿El texto de confirmación se amplía al 200 % y refluye a 320 px sin pérdida (para Joaquín, secundario)? ¿El código SMS aparece agrupado en «847 209»? ¿El mensaje «Cita guardada» elimina la ansiedad sin releer?</td><td>Si el reflujo rompe el layout o el código SMS es difícil de copiar, se corrige antes de evaluar con usuarios reales (Tema 4).</td></tr>
       </tbody>
     </table>
     </div>
 
-    <p>Observa cómo cada nivel reúne lo aprendido en el tema: la baja prueba la <strong>actividad</strong> (el flujo y el número de pasos); la media, la <strong>información</strong> (estructura y navegación, incluidos los flujos alternativos); la alta, las <strong>leyes cognitivas</strong> y la accesibilidad afinadas (Fitts, Miller, contraste, reflujo).</p>
+    <p>Observa cómo cada nivel reúne lo aprendido en el tema: la baja prueba la <strong>actividad</strong> (el flujo y el número de pasos); la media, la <strong>información</strong> (estructura y navegación, incluidos los flujos alternativos); la alta, lo <strong>medible</strong>: tamaños táctiles reales (Fitts), tiempos de respuesta, agrupación del código (Miller), contraste y reflujo. Las leyes cognitivas se comprueban en los tres niveles, con el mismo reparto que en la apertura del tema.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -319,21 +366,22 @@
           <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
         </thead>
         <tbody>
-          <tr><td>Hogares que disponen únicamente de teléfono móvil</td><td class="fig">50,3 %</td></tr>
-          <tr><td>Personas que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Hogares con algún tipo de ordenador</td><td class="fig">83,8 %</td></tr>
+          <tr><td>Personas de 16 a 74 años que contactaron con la Administración por Internet (últimos 12 meses)</td><td class="fig">80,7 %</td></tr>
           <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
         </tbody>
       </table>
       </div>
     </div>
 
-    <p>Si la mitad de los hogares usa <strong>solo el móvil</strong>, un prototipo probado únicamente en una pantalla grande de portátil engaña. <strong>Marta</strong> está en ese 50,3 %: su app de transporte vive en un móvil de gama media, bajo el sol de la parada, con una mano. Si el equipo prototipa y prueba solo en el portátil, nunca descubrirá que el botón «Confirmar» queda fuera de la zona del pulgar ni que el contraste verde falla con luz directa.</p>
-    <p>Y si ocho de cada diez personas hacen gestiones con la Administración por Internet, un fallo de flujo que no se detectó a tiempo no es «un bug»: es gente que <strong>abandona</strong> un trámite que necesitaba. <strong>Mari Carmen</strong> está en ese 80,7 %: si el paso del código SMS no se prototipa y prueba con alguien de su perfil antes del lanzamiento, el sistema llega a producción con un cuello de botella que excluye exactamente a las personas que más lo necesitan.</p>
+    <p>El móvil está en prácticamente todos los hogares, mientras que <strong>uno de cada seis no tiene ordenador</strong> (el 83,8 % sí lo tiene). Un prototipo probado únicamente en la pantalla grande de un portátil engaña. La app de <strong>Marta</strong> vive en un móvil de gama media, bajo el sol de la parada, con una mano. Si el equipo prototipa y prueba solo en el portátil, nunca descubrirá que el botón «Pagar y subir» queda fuera de la zona del pulgar ni que el contraste verde falla con luz directa.</p>
+    <p>Y si ocho de cada diez personas de 16 a 74 años contactaron con la Administración por Internet en el último año, un fallo de flujo que no se detectó a tiempo no es «un bug»: es gente que <strong>abandona</strong> un trámite que necesitaba.</p>
+    <p><strong>Mari Carmen</strong>, con 78 años, queda fuera del rango de la encuesta, pero ilustra el riesgo: si el paso del código SMS no se prototipa y prueba con alguien de su perfil antes del lanzamiento, el sistema llega a producción con un cuello de botella que excluye exactamente a las personas que más lo necesitan.</p>
     <p>El prototipo es la última oportunidad <strong>barata</strong> de descubrir esos problemas. Después de lanzar, cada error se paga en frustración de usuarios reales y en costoso retrabajo.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>El prototipo debe probarse en el <strong>contexto real</strong>: con la mitad de los hogares solo en móvil y ocho de cada diez personas usando la e-Administración, probar el prototipo (sobre todo en móvil) es la última ocasión barata de evitar que la gente abandone.</p>
+      <p>El prototipo debe probarse en el <strong>contexto real</strong>: con el móvil en casi todos los hogares, uno de cada seis sin ordenador y ocho de cada diez personas de 16 a 74 años usando la e-Administración, probar el prototipo (sobre todo en móvil) es la última ocasión barata de evitar que la gente abandone.</p>
     </div>
   </section>
 
@@ -351,9 +399,9 @@
         <tr><th scope="col">Decisión de diseño</th><th scope="col">Qué entregas</th><th scope="col">Apoyo conceptual</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Validar idea y flujo</th><td>Prototipo en papel (baja fidelidad)</td><td>De usar y tirar · papel</td><td>Dos hojas: inicio con botón de pago + confirmación «Billete listo». Pregunta: ¿completa el pago en 2 pasos sin leer?</td><td>Cuatro hojas: identificarse → médico/fecha → confirmar → «Cita guardada». Pregunta: ¿entiende que la cita quedó guardada?</td></tr>
+        <tr><th scope="row">Validar idea y flujo</th><td>Prototipo en papel (baja fidelidad)</td><td>De usar y tirar · papel</td><td>Dos hojas: inicio con botón «Pagar y subir» + confirmación «Billete listo». Pregunta: ¿completa el pago en 2 pasos sin leer?</td><td>Cuatro hojas: identificarse (con el código SMS) → médico/fecha → confirmar → «Cita guardada». Pregunta: ¿entiende que la cita quedó guardada?</td></tr>
         <tr><th scope="row">Validar estructura y navegación</th><td>Wireframes (media fidelidad)</td><td>Horizontal · información</td><td>Wireframe vertical del flujo de pago + estado «sin cobertura». Comprueba: botón en zona del pulgar (Fitts), ruta de recuperación offline.</td><td>Wireframe vertical de los 4 pasos + flujo alternativo «código caducado → Reenviar». Comprueba: resumen de cita en pantalla completa, botón de reenvío visible.</td></tr>
-        <tr><th scope="row">Validar detalles y apariencia</th><td>Maqueta interactiva (alta fidelidad)</td><td>Vertical · Fitts · WCAG AA</td><td>Maqueta probada en móvil real al sol: contraste «Billete listo» ≥ 4,5:1, transición &lt; 0,1 s, tamaño táctil ≥ 44 px.</td><td>Maqueta probada en móvil de Mari Carmen: texto ≥ 18 px, reflujo al 200 % sin pérdida, código SMS agrupado «847 209» (Miller).</td></tr>
+        <tr><th scope="row">Validar detalles y apariencia</th><td>Maqueta interactiva (alta fidelidad)</td><td>Vertical · Fitts · WCAG AA</td><td>Maqueta probada en móvil real al sol: contraste «Billete listo» ≥ 4,5:1, transición &lt; 0,1 s, tamaño táctil ≥ 44 px (recomendación de Apple y de WCAG 2.5.5, nivel AAA; Material usa 48 dp).</td><td>Maqueta probada en móvil de Mari Carmen: texto ≥ 18 px (criterio del proyecto), texto ampliable al 200 % y reflujo a 320 px sin pérdida, código SMS agrupado «847 209» (Miller).</td></tr>
         <tr><th scope="row">Demostrar el método</th><td>Bocetos descartados y dudas resueltas</td><td>Iteración</td><td>Boceto descartado: flujo de 6 pasos. Razón: Marta no lo completaba en 30 s en papel.</td><td>Boceto descartado: confirmación con solo un tic verde. Razón: Mari Carmen no sabía si la cita había quedado guardada.</td></tr>
       </tbody>
     </table>
@@ -361,14 +409,97 @@
 
     <div class="box curio">
       <span class="label">El prototipo como prueba del contexto real</span>
-      <p>El contexto de uso decide dónde y cómo se prueba cada prototipo. El de <strong>Marta</strong> se prueba en el móvil, de pie, con luz directa: si solo se prueba en el portátil de laboratorio, los problemas de Fitts y contraste no aparecen. El de <strong>Mari Carmen</strong> se prueba en la mesa de la cocina, con las gafas puestas y el zoom activado: si solo lo prueba alguien sin esas condiciones, el reflujo al 200 % y el código SMS nunca se detectan como problema. Prototipar en el contexto real no es un detalle metodológico: es la condición para que el prototipo responda las preguntas correctas.</p>
+      <p>El contexto de uso decide dónde y cómo se prueba cada prototipo. El de <strong>Marta</strong> se prueba en el móvil, de pie, con luz directa: si solo se prueba en el portátil de laboratorio, los problemas de Fitts y contraste no aparecen. El de <strong>Mari Carmen</strong> se prueba en la mesa de la cocina, con las gafas puestas y el zoom activado: si solo lo prueba alguien sin esas condiciones, la ampliación del texto, el reflujo y el código SMS nunca se detectan como problema. Prototipar en el contexto real no es un detalle metodológico: es la condición para que el prototipo responda las preguntas correctas.</p>
+    </div>
+
+    <h4>Ejemplo resuelto: preparar y registrar una prueba en papel (caso de Mari Carmen)</h4>
+    <p>Este ejemplo muestra el material de una sesión de prototipo en papel antes de la evaluación formal (Actividad D, Tema 4). Los hallazgos y resultados son <strong>datos ficticios</strong> que ilustran cómo se anota, no resultados reales.</p>
+
+    <h5>1 · Guion de la prueba</h5>
+    <p><strong>Roles</strong> (tres personas del equipo):</p>
+    <ul>
+      <li><strong>Facilitador:</strong> habla con la participante, lee la consigna y hace las preguntas finales. No explica el diseño ni ayuda.</li>
+      <li><strong>«Ordenador»:</strong> cambia las hojas según lo que la participante «toca». No habla ni se adelanta.</li>
+      <li><strong>Observador:</strong> anota qué hace y qué dice, con tiempos aproximados. No interviene.</li>
+    </ul>
+    <p><strong>Materiales:</strong> hojas del tamaño aproximado de un móvil con las pantallas del flujo (inicio, identificarse, código SMS, calendario, resumen y «Cita guardada»), hojas de error (código caducado, hueco ocupado y sin conexión), rotuladores, hoja de registro y datos <strong>ficticios</strong> (un número de teléfono inventado, nunca el real).</p>
+    <p><strong>Pasos</strong> (unos 15 a 20 minutos, a modo orientativo):</p>
+    <ol>
+      <li><strong>Acogida y consentimiento.</strong> Explicar qué se hace y pedir permiso (ver el apartado 4 de este ejemplo).</li>
+      <li><strong>Encuadre.</strong> «Estamos probando la aplicación, no a ti. Si algo no se entiende, el fallo es nuestro».</li>
+      <li><strong>Consigna.</strong> Se lee sin añadir nada.</li>
+      <li><strong>Tarea.</strong> La participante «toca» las hojas con el dedo y habla en voz alta.</li>
+      <li><strong>Preguntas finales.</strong> Abiertas, para que cuente con sus palabras.</li>
+      <li><strong>Cierre.</strong> Agradecer, recoger las hojas y explicar qué se hará con lo anotado.</li>
+    </ol>
+    <p><strong>Consigna:</strong> «Imagina que quieres pedir cita con tu médico de familia y que usas esta aplicación en tu móvil. Haz lo que harías normalmente y, mientras lo haces, ve diciendo en voz alta lo que piensas».</p>
+    <p><strong>Preguntas finales:</strong> «¿Qué ha pasado con tu cita?», «¿Qué te ha parecido más difícil o más raro?», «¿Qué cambiarías?».</p>
+    <p><strong>Errores de sesgo que hay que evitar:</strong> dar la solución («pulsa Pedir cita»), corregir a la participante, hacer preguntas cerradas («¿te ha parecido fácil?»), reaccionar con gestos y rellenar los silencios. Si se atasca, el facilitador solo pregunta «¿qué esperas que pase si tocas ahí?»; si finalmente hay que ayudarla, se anota como hallazgo grave.</p>
+
+    <h5>2 · Registro de hallazgos</h5>
+    <p>Escala de gravedad: <strong>1</strong> = molestia menor; <strong>2</strong> = enlentece o confunde; <strong>3</strong> = impide completar la tarea o deja una duda grave.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Registro de hallazgos de una prueba en papel del flujo «Pedir cita» (datos ficticios de ejemplo).</caption>
+      <thead>
+        <tr><th scope="col">Hoja o paso</th><th scope="col">Qué hizo o dijo la participante</th><th scope="col">Problema</th><th scope="col">Gravedad</th><th scope="col">Decisión</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Identificarse</th><td>Duda y pregunta: «¿Qué número me piden, el de casa o el del móvil?».</td><td>No se aclara que es el número del móvil que recibirá el SMS.</td><td class="fig">2</td><td>Añadir una frase: «Escribe el número de este móvil; te enviaremos un código por SMS».</td></tr>
+        <tr><th scope="row">Código SMS</th><td>Dice: «¿Y si se me pasa el tiempo?».</td><td>Inquietud por el plazo; no sabe que puede reenviar el código.</td><td class="fig">1</td><td>Mostrar «Reenviar código» desde el principio, con un texto tranquilizador.</td></tr>
+        <tr><th scope="row">«Cita guardada» (V1)</th><td>Mira la pantalla y pregunta: «¿Ya está? ¿Cómo sé que ha quedado?».</td><td>Solo hay un icono verde y un botón «OK»: no se entiende que se guardó.</td><td class="fig">3</td><td>Rediseñar la pantalla: título, datos de la cita y botón «Mis citas».</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h5>3 · Registro de iteración</h5>
+    <p>Para demostrar la iteración, guarda cada versión descartada con su motivo y su evidencia.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Registro de iteración de dos pantallas del flujo «Pedir cita» (datos ficticios de ejemplo).</caption>
+      <thead>
+        <tr><th scope="col">Cambio</th><th scope="col">Qué cambia</th><th scope="col">Por qué</th><th scope="col">Evidencia que se guarda</th><th scope="col">Resultado en la siguiente prueba</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">V1 → V2 · «Cita guardada»</th><td>De un icono verde y un botón «OK» a un título «Cita guardada», un recuadro con médico, día y hora, y el botón «Mis citas».</td><td>Hallazgo de gravedad 3: no entendió que la cita se había guardado.</td><td>Foto del boceto V1, nota literal del observador y hoja V2.</td><td>Explica con sus palabras que la cita está guardada.</td></tr>
+        <tr><th scope="row">V2 → V3 · «Identificarse»</th><td>Se añade la frase «Escribe el número de este móvil; te enviaremos un código por SMS».</td><td>Hallazgo de gravedad 2: no sabía qué teléfono escribir.</td><td>Foto de la hoja V2, nota del observador y hoja V3.</td><td>Escribe el número del móvil sin dudar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h5>4 · Probar con personas mayores: consentimiento y trato</h5>
+    <ul>
+      <li><strong>Consentimiento informado.</strong> Antes de empezar, explica en lenguaje llano qué se hará, cuánto durará, qué se anotará y que participar es voluntario y se puede parar en cualquier momento sin consecuencias.</li>
+      <li><strong>Datos personales.</strong> Anota con un código («P1»), no con el nombre. Si grabas audio, vídeo o fotos, son datos personales: pide permiso expreso y di qué harás con ellos y cuándo se borrarán.</li>
+      <li><strong>Datos ficticios.</strong> El prototipo usa datos inventados; nunca pidas ni uses su número de teléfono real.</li>
+      <li><strong>Ritmo y trato.</strong> Sin prisa, con frases claras y sin infantilizar. Recuerda que se prueba el diseño, no a la persona: si se equivoca, el fallo es del diseño. Al terminar, díselo.</li>
+      <li><strong>Condiciones.</strong> Un lugar cómodo y conocido si es posible, con buena luz, su móvil y sus gafas, y la letra grande activada si la usa. Sesión corta, con pausas, y puede venir acompañada si lo prefiere.</li>
+    </ul>
+
+    <h5>5 · Qué entregar a desarrollo</h5>
+    <p>La cláusula 7.4.5 de la norma pide comunicar la solución a quienes la van a implementar. Un prototipo no es una especificación: hay que completarlo.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Entregables para desarrollo del flujo «Pedir cita» de Mari Carmen y para qué sirve cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Entregable</th><th scope="col">Para qué lo usa desarrollo</th><th scope="col">Ejemplo en el caso de Mari Carmen</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Flujos y casos de uso</th><td>Saber qué debe hacer el sistema, también en los casos alternativos.</td><td>Caso de uso «Pedir cita» con sus alternativas (código caducado, hueco ocupado, salida a mitad).</td></tr>
+        <tr><th scope="row">Pantallas con todos sus estados</th><td>Implementar cada situación: normal, error, vacío y cargando.</td><td>«Cita guardada», «Código caducado», «Hueco ocupado» y «Solicitud guardada, pendiente de confirmar».</td></tr>
+        <tr><th scope="row">Microtextos</th><td>Usar las palabras exactas, sin improvisar mensajes.</td><td>La tabla de mensajes en lenguaje claro.</td></tr>
+        <tr><th scope="row">Valores de diseño</th><td>Reproducir colores, tamaños y separaciones medidos.</td><td>Texto #211C16 sobre #FDFBF6 (16,3:1), texto base ≥ 18 px, botones ≥ 44 px.</td></tr>
+        <tr><th scope="row">Criterios de aceptación</th><td>Saber cuándo una pantalla está terminada y es correcta.</td><td>La tabla de trazabilidad con criterios de eficacia, eficiencia y satisfacción.</td></tr>
+        <tr><th scope="row">Decisiones descartadas</th><td>No repetir errores ya resueltos.</td><td>«Cita guardada» con solo un icono verde: descartada y por qué.</td></tr>
+      </tbody>
+    </table>
     </div>
 
     <h4>Tres consejos prácticos desde hoy</h4>
     <ul>
       <li><strong>Empieza en papel, hoy mismo.</strong> No abras una herramienta de diseño hasta que el flujo en papel convenza.</li>
       <li><strong>Guarda lo que descartes.</strong> Los prototipos tirados son la prueba de tu iteración, y se valoran.</li>
-      <li><strong>Prueba la alta fidelidad en un móvil real.</strong> Es donde estará la mitad de tus usuarios.</li>
+      <li><strong>Prueba la alta fidelidad en un móvil real.</strong> Es el soporte que casi todo el mundo tiene a mano.</li>
     </ul>
 
     <div class="box key">
@@ -450,7 +581,19 @@
     </details>
     <details class="check">
       <summary>8. ¿Por qué hay que probar el prototipo en el móvil?</summary>
-      <p>Porque la mitad de los hogares en España usa solo móvil (INE 2025). Probar únicamente en portátil engaña: el dedo, el tamaño y el contexto cambian todo. <em>(Ver 2.3)</em></p>
+      <p>Porque el móvil está en prácticamente todos los hogares y uno de cada seis no tiene ordenador (INE 2025). Probar únicamente en portátil engaña: el dedo, el tamaño y el contexto cambian todo. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: rellena la ficha de prototipo para la duda «¿encuentra Mari Carmen el botón Reenviar código cuando el código caduca?».</summary>
+      <p>Fidelidad <strong>media</strong> (wireframe enlazado) con la pantalla alternativa de código caducado; alcance <strong>vertical</strong> (identificarse y su alternativa); tarea: «pide una cita con tu médico de familia», con un código que caduca; participante del perfil de Mari Carmen; criterio de éxito de ejemplo: la mayoría de las participantes reenvían el código sin ayuda y sin volver al inicio, con un umbral provisional como el de RU-01 (al menos 4 de 5); si falla, se recoloca o se renombra el botón antes de añadir estilo. <em>(Ver 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. Ejercicio de aplicación: en una prueba en papel, el facilitador dice «Ahora pulsa el botón Pedir cita». ¿Qué falla y cómo se reformula?</summary>
+      <p>Falla porque da la solución: se pierde justo lo que se quería saber, si la persona descubre sola qué tocar. Se reformula con una consigna basada en el objetivo: «Imagina que quieres pedir cita con tu médico de familia. Haz lo que harías normalmente y di en voz alta lo que piensas». Si se atasca, solo se pregunta «¿qué esperas que pase si tocas ahí?». <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. Ejercicio de aplicación: clasifica como wireframe, mockup o prototipo y por su fidelidad: a) cuatro hojas dibujadas a mano que una persona cambia al «tocar»; b) pantallas grises enlazadas; c) imágenes con colores y tipografía finales, sin enlaces.</summary>
+      <p>a) <strong>Prototipo de baja fidelidad</strong>: es interactivo gracias a la persona que cambia las hojas. b) <strong>Wireframe enlazado</strong>, es decir, un prototipo de media fidelidad. c) <strong>Mockup</strong> de alta fidelidad visual: es estático, así que sirve para valorar la apariencia pero no para probar un flujo hasta que se enlace. <em>(Ver 1.5)</em></p>
     </details>
   </section>
 
@@ -484,6 +627,18 @@
       <dd>Técnica en la que las pantallas se dibujan en papel y una persona del equipo simula el sistema cambiando las hojas.</dd>
       <dt>Mago de Oz</dt>
       <dd>Técnica en la que el usuario cree interactuar con un sistema real, pero una persona simula las respuestas. Útil para ideas aún no construidas.</dd>
+      <dt>Mockup (maqueta visual)</dt>
+      <dd>Representación estática de la apariencia final de una pantalla: colores, tipografía e imágenes. Si se le añaden enlaces, se convierte en una maqueta interactiva.</dd>
+      <dt>Ficha de prototipo</dt>
+      <dd>Documento de siete campos (pregunta, fidelidad, alcance, tarea, participante, criterio de éxito y qué hacer si falla) que se rellena antes de construir un prototipo.</dd>
+      <dt>Pensar en voz alta</dt>
+      <dd>Técnica de prueba en la que la participante va diciendo lo que piensa mientras realiza la tarea, para que el equipo vea sus dudas.</dd>
+      <dt>Consentimiento informado</dt>
+      <dd>Permiso voluntario de la participante, dado después de saber qué se hará, cuánto durará, qué se anotará y que puede parar cuando quiera.</dd>
+      <dt>Hallazgo</dt>
+      <dd>Problema de diseño observado en una prueba, anotado con lo que hizo o dijo la persona, su gravedad y la decisión que provoca.</dd>
+      <dt>Registro de iteración</dt>
+      <dd>Tabla que documenta cada cambio entre versiones del prototipo: qué cambia, por qué, qué evidencia se guarda y qué resultado dio.</dd>
       <dt>Maqueta interactiva</dt>
       <dd>Prototipo de alta fidelidad con pantallas enlazadas que simulan la interacción sin código de producción.</dd>
     </dl>
@@ -502,6 +657,9 @@
         <li>Puede ser <strong>de usar y tirar</strong> (se desecha) o <strong>evolutivo</strong> (crece hasta el producto); no conviene confundirlos.</li>
         <li>Se prueba sin programar con <strong>prototipado en papel</strong> y <strong>Mago de Oz</strong>; para media y alta, herramientas de wireframe y maquetado.</li>
         <li>Prototipar es <strong>preguntar barato</strong>: define la duda antes de empezar y prueba en el contexto real (móvil), según el INE 2025.</li>
+        <li>Un <strong>wireframe</strong> representa la estructura, un <strong>mockup</strong> la apariencia y un <strong>prototipo</strong> el comportamiento; cada prototipo se prepara con una <strong>ficha</strong> de siete campos.</li>
+        <li>Una prueba en papel necesita roles (facilitador, «ordenador» y observador), una consigna sin sesgo, un registro de hallazgos y un registro de iteración que guarde lo descartado.</li>
+        <li>Probar con personas mayores exige consentimiento informado, datos ficticios, buen trato y cuidado con los datos personales; y a desarrollo se le entregan flujos, estados, microtextos, valores medidos, criterios de aceptación y decisiones descartadas.</li>
         <li>En tu proyecto es la <strong>entrega central de la Actividad C</strong> (baja, media y alta), con evidencia de iteración, y pasa a evaluarse en el Tema 4.</li>
         <li>Los dos casos de estudio ilustran que el prototipo vertical de la tarea más arriesgada vale más que el mapa completo: para <strong>Marta</strong> el flujo de pago y validación probado en móvil al sol; para <strong>Mari Carmen</strong> el paso del código SMS y la pantalla de confirmación probados con sus condiciones reales de uso.</li>
       </ul>
@@ -523,14 +681,15 @@
     </ol>
     <p>Normas técnicas:</p>
     <ol class="refs" start="8">
-      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
-      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción hombre-sistema. Parte 210: Diseño centrado en el operador humano para los sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN 301&nbsp;549:2022 (EN 301 549 V3.2.1). <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG 2.1 nivel AA).</li>
     </ol>
     <p>Datos y recursos en línea:</p>
     <ol class="refs" start="10">
-      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025. <a href="https://www.ine.es/">ine.es</a>.</li>
       <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
       <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
+      <li>Herramientas de prototipado citadas como ejemplo: Figma <a href="https://www.figma.com">figma.com</a> · Penpot <a href="https://penpot.app">penpot.app</a> · Balsamiq <a href="https://balsamiq.com">balsamiq.com</a>.</li>
     </ol>
   </section>
 

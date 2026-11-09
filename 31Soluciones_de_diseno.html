@@ -64,12 +64,18 @@
     <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
     <p>Estos apuntes abren el <strong>Tema 3 (Proceso iterativo de diseño)</strong> y son la continuación directa del Tema 2. Allí investigamos el <strong>contexto de uso</strong> (Actividad A) y especificamos los <strong>requisitos de usuario</strong> (Actividad B). Ahora, por fin, diseñamos.</p>
     <p>Damos por sabido el ciclo del DCH: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. Si ese esquema no te suena, vuelve un momento a los apuntes anteriores antes de seguir.</p>
+    <div class="box curio">
+      <span class="label">Qué necesitas recordar</span>
+      <p><strong>Del Tema 1:</strong> la diferencia entre modelo del diseñador, imagen del sistema y modelo mental; las siete etapas de la acción de Norman y los abismos de ejecución y de evaluación; los límites de la memoria de trabajo; y la economía del error (corregir pronto es barato, corregir tarde es caro).</p>
+      <p><strong>Del Tema 2:</strong> el contexto de uso de la Actividad A con sus personas (Mari Carmen, primaria, y Joaquín, secundario), los escenarios y el análisis de tareas (HTA); y la Actividad B de este caso: los requisitos R-01 a R-05, los objetivos de calidad de uso RU-01 a RU-03 (con umbrales provisionales) y los conflictos C-01 a C-03 que quedaron abiertos.</p>
+    </div>
     <p>El objetivo de hoy es doble: <strong>entender qué es la Actividad C</strong> (producir soluciones de diseño) y conocer las <strong>leyes cognitivas</strong> que convierten una pantalla bonita en una pantalla que la gente puede usar.</p>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
     <ul>
       <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
       <li>Las cajas <strong>«¿Sabías que?»</strong> añaden contexto e historia para fijar la memoria.</li>
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
+      <li>Los apartados <strong>«Ejemplo resuelto»</strong> muestran, completo, un artefacto del caso de Mari Carmen para que veas cómo se hace.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
     <div class="box key">
@@ -86,7 +92,7 @@
   </div>
 
   <section id="de-analizar" aria-labelledby="de-analizar-h">
-    <h3 id="de-analizar-h"><span class="num" aria-hidden="true">3.1</span>De analizar a diseñar: dónde estamos en el ciclo</h3>
+    <h3 id="de-analizar-h"><span class="num" aria-hidden="true">1.1</span>De analizar a diseñar: dónde estamos en el ciclo</h3>
 
     <p>Hasta ahora hemos hecho un trabajo de <strong>análisis</strong>: entender el problema. Sabemos <strong>quién</strong> usará el sistema, <strong>para qué</strong>, <strong>con qué</strong> y <strong>dónde</strong> (Actividad A), y hemos traducido eso en <strong>requisitos verificables</strong> (Actividad B).</p>
     <p>El Tema 3 da el salto que el ingeniero novel desea hacer desde el minuto uno: <strong>proponer soluciones</strong>. Pero ahora llegamos con red. No diseñamos al azar; diseñamos para cumplir unos requisitos que ya hemos justificado.</p>
@@ -95,6 +101,17 @@
     <h4>El lugar exacto de la Actividad C</h4>
     <p>La norma <strong>ISO 9241-210</strong> ordena el proceso en cuatro actividades en bucle. La C, «producir soluciones de diseño que satisfagan los requisitos», ocupa el centro: recibe de la B y entrega a la D para que se evalúe.</p>
     <p>Si la evaluación detecta problemas (y casi siempre los detecta), se vuelve a la C, o incluso a la B o a la A. Por eso el diseño <strong>no es una línea recta, sino una rueda</strong> que gira hasta que el sistema cumple los requisitos.</p>
+
+    <h4>Qué dice la norma: ISO 9241-210:2019</h4>
+    <p>La edición vigente es la de <strong>2019</strong> (confirmada en 2025), adoptada en España como UNE-EN ISO 9241-210:2019. Las letras <strong>A, B, C y D</strong> son las etiquetas que usa esta asignatura para las cuatro actividades; en la norma son las cláusulas <strong>7.2</strong> (contexto de uso), <strong>7.3</strong> (requisitos de usuario), <strong>7.4</strong> (soluciones de diseño) y <strong>7.5</strong> (evaluación). Antes de ellas, la norma exige <strong>planificar</strong> el proceso (cláusula 6), y todo se sostiene en seis principios (cláusula 5):</p>
+    <ol>
+      <li>El diseño parte de una comprensión explícita de las personas usuarias, sus tareas y sus entornos.</li>
+      <li>Las personas usuarias participan durante todo el diseño y el desarrollo.</li>
+      <li>El diseño se dirige y se refina mediante evaluación centrada en el usuario.</li>
+      <li>El proceso es iterativo.</li>
+      <li>El diseño aborda la experiencia de usuario completa, no solo la pantalla.</li>
+      <li>El equipo reúne habilidades y perspectivas multidisciplinares.</li>
+    </ol>
 
     <figure class="diagram">
       <svg viewBox="0 0 740 290" role="img" aria-labelledby="cyc-title cyc-desc" xmlns="http://www.w3.org/2000/svg" font-family="Atkinson Hyperlegible, system-ui, sans-serif">
@@ -159,9 +176,25 @@
   </section>
 
   <section id="que-es" aria-labelledby="que-es-h">
-    <h3 id="que-es-h"><span class="num" aria-hidden="true">3.2</span>¿Qué es la Actividad C? Generar soluciones de diseño</h3>
+    <h3 id="que-es-h"><span class="num" aria-hidden="true">1.2</span>¿Qué es la Actividad C? Generar soluciones de diseño</h3>
 
-    <p>La <strong>ISO 9241-210</strong> describe esta actividad como «producir <strong>soluciones de diseño</strong> que tengan en cuenta el contexto de uso y los requisitos de usuario». La palabra importante está en plural: <strong>soluciones</strong>.</p>
+    <p>La <strong>ISO 9241-210:2019</strong> (cláusula 7.4) llama a esta actividad <strong>producir soluciones de diseño</strong> que satisfagan los requisitos de usuario, a partir del contexto de uso ya especificado. La palabra importante está en plural: <strong>soluciones</strong>.</p>
+
+    <h4>Las tareas de la cláusula 7.4 y dónde se trabajan en estos apuntes</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las cuatro tareas de la cláusula 7.4 de la ISO 9241-210:2019 y su correspondencia con los tres diseños del Tema 3.</caption>
+      <thead>
+        <tr><th scope="col">Cláusula</th><th scope="col">Qué pide la norma</th><th scope="col">Dónde se trabaja</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">7.4.2</th><td>Diseñar las tareas de la persona, la interacción persona-sistema y la interfaz para cumplir los requisitos, atendiendo a toda la experiencia de usuario.</td><td>Diseño de la actividad (tareas e interacción) y diseño de la información (interfaz).</td></tr>
+        <tr><th scope="row">7.4.3</th><td>Hacer más concretas las soluciones mediante simulaciones, maquetas y prototipos.</td><td>Diseño del prototipo.</td></tr>
+        <tr><th scope="row">7.4.4</th><td>Modificar las soluciones según la evaluación centrada en el usuario y su retroalimentación.</td><td>La iteración con la Actividad D (Tema 4) y el bucle de esta actividad.</td></tr>
+        <tr><th scope="row">7.4.5</th><td>Comunicar la solución a quienes deben implementarla.</td><td>La entrega del proyecto: flujos, etiquetas y decisiones justificadas y rastreables.</td></tr>
+      </tbody>
+    </table>
+    </div>
     <p>No se trata de acertar a la primera con la pantalla definitiva. Se trata de <strong>generar varias alternativas</strong>, hacerlas tangibles y dejar que la evaluación decida cuál sobrevive. El diseño es exploración antes que compromiso.</p>
     <p>Por eso esta actividad produce <strong>prototipos</strong>: versiones provisionales y deliberadamente incompletas del sistema, hechas para <strong>pensar y probar</strong>, no para entregar al cliente.</p>
 
@@ -177,9 +210,9 @@
   </section>
 
   <section id="tres-disenos" aria-labelledby="tres-disenos-h">
-    <h3 id="tres-disenos-h"><span class="num" aria-hidden="true">3.3</span>Las tres caras del diseño en el Tema 3</h3>
+    <h3 id="tres-disenos-h"><span class="num" aria-hidden="true">1.3</span>Las tres caras del diseño en el Tema 3</h3>
 
-    <p>El plan docente desglosa este tema en tres diseños que se encadenan. No son fases estancas, pero conviene presentarlas por separado para tener el mapa completo.</p>
+    <p>El plan docente desglosa este tema en tres diseños. En estos apuntes se presentan <strong>de forma secuencial</strong> (actividad → información → prototipo) porque así se aprenden mejor; pero en el proyecto se aplican <strong>de forma iterativa</strong>: un boceto en papel (prototipo) ya obliga a decidir el flujo y la presentación, y cada evaluación te devuelve a cualquiera de los tres.</p>
 
     <ol class="pillars" role="list">
       <li><b>1 · Diseño de la actividad</b> Decide <strong>cómo interactuará la persona con el sistema</strong>: qué tareas realiza, en qué pasos, con qué flujo. Es el «guion» de la interacción. Aquí enlaza directamente con las <strong>siete etapas de la acción</strong> de Norman que viste en el Tema 1.</li>
@@ -187,7 +220,7 @@
       <li><b>3 · Diseño del prototipo</b> Materializa lo anterior en un artefacto que se puede ver y tocar, con un <strong>nivel de detalle creciente</strong> (de baja a alta fidelidad). Es la práctica central del tema: <strong>prototipado</strong>.</li>
     </ol>
 
-    <p>Fíjate en el orden lógico: primero <strong>qué hace</strong> la persona (actividad), luego <strong>qué ve</strong> para hacerlo (información) y por último <strong>en qué soporte</strong> lo probamos (prototipo).</p>
+    <p>Fíjate en el orden de estudio: primero <strong>qué hace</strong> la persona (actividad), luego <strong>qué ve</strong> para hacerlo (información) y por último <strong>en qué soporte</strong> lo probamos (prototipo). Es un orden para aprender, no un procedimiento de «cascada»: al proyectar, los tres diseños avanzan juntos y se corrigen entre sí.</p>
     <p>Las tres caras comparten una exigencia común: respetar las <strong>capacidades y los límites de la mente humana</strong>. Y para eso necesitamos un cuerpo de conocimiento concreto: las leyes cognitivas.</p>
 
     <div class="box key">
@@ -197,15 +230,16 @@
   </section>
 
   <section id="leyes" aria-labelledby="leyes-h">
-    <h3 id="leyes-h"><span class="num" aria-hidden="true">3.4</span>Diseñar con la mente del usuario: las leyes cognitivas</h3>
+    <h3 id="leyes-h"><span class="num" aria-hidden="true">1.4</span>Diseñar con la mente del usuario: las leyes cognitivas</h3>
 
     <p>Una interfaz no se usa con las manos: se usa con el <strong>cerebro</strong>. Los ojos perciben, la mente decide y la memoria recuerda. Si el diseño ignora cómo funcionan esos tres procesos, fracasa por mucho que «se vea bonito».</p>
     <p>Las <strong>leyes cognitivas</strong> son regularidades, medidas en psicología experimental, sobre cómo percibimos, decidimos y recordamos. No son opiniones de diseñador: son <strong>hechos sobre las personas</strong> que el ingeniero usa como restricciones de diseño.</p>
-    <p>Veremos cinco que conviene tener siempre presentes. Las tres primeras gobiernan la <strong>percepción y la organización</strong>; las dos siguientes, la <strong>decisión y la memoria</strong>; la última, la <strong>respuesta del sistema</strong>.</p>
+    <p>Veremos cinco que conviene tener siempre presentes, cada una sobre un proceso distinto: la <strong>Gestalt</strong> gobierna la percepción; la <strong>ley de Hick</strong>, la decisión; la <strong>ley de Fitts</strong>, el movimiento hacia el objetivo; la <strong>ley de Miller</strong>, la memoria de trabajo; y los <strong>tiempos de respuesta</strong>, la espera ante el sistema.</p>
 
     <h4>Los principios de la Gestalt: el ojo agrupa solo</h4>
     <p>La psicología de la Gestalt descubrió que <strong>percibimos conjuntos, no piezas sueltas</strong>. El ojo organiza lo que ve de forma automática, siguiendo unos principios predecibles. El diseño de la información los usa para que la pantalla «se lea sola».</p>
     <ul class="laws" role="list">
+      <li><b>Figura-fondo</b> Lo primero que hace el ojo es separar qué es objeto (figura) y qué es trasfondo (fondo). Si un panel emergente no se distingue del fondo, la persona no sabe dónde actuar.</li>
       <li><b>Proximidad</b> Lo que está cerca se percibe como un grupo. Separar un botón de su etiqueta, o juntar campos que no se relacionan, rompe la lectura.</li>
       <li><b>Semejanza</b> Lo que comparte color, forma o tamaño se percibe como del mismo tipo. Por eso todos los enlaces deben parecerse entre sí, y los botones de acción también.</li>
       <li><b>Cierre y continuidad</b> La mente completa figuras incompletas y sigue líneas. Un buen <em>layout</em> aprovecha esto para guiar la mirada sin recargar la pantalla.</li>
@@ -215,21 +249,28 @@
 
     <h4>La ley de Hick: cuantas más opciones, más se tarda en decidir</h4>
     <p>La <strong>ley de Hick (o de Hick–Hyman)</strong> establece que el <strong>tiempo de decisión crece</strong> con el número y la complejidad de las opciones disponibles. Más alternativas no es más libertad: es más esfuerzo y más errores.</p>
-    <p>Su forma típica relaciona el tiempo de reacción con el logaritmo del número de opciones, aproximadamente <em>T = a + b · log₂(n + 1)</em>. La idea para el diseño es simple: <strong>menos opciones a la vez, mejor</strong>.</p>
+    <p>Su forma típica relaciona el tiempo de reacción con el logaritmo del número de opciones, aproximadamente <em>T = a + b · log₂(n + 1)</em>, donde <em>a</em> y <em>b</em> son constantes que se miden para cada situación. Matiz importante: la ley se formuló para opciones igual de probables y bien presentadas; en una lista larga y desordenada interviene además la búsqueda visual, que añade tiempo. La idea para el diseño es simple: <strong>menos opciones a la vez, mejor</strong>.</p>
     <p>De ahí nacen recursos como <strong>agrupar</strong> el menú en categorías, ocultar lo avanzado tras un «más opciones» (revelación progresiva) o reducir un formulario a lo imprescindible. Cada opción que quitas acelera la decisión.</p>
 
     <h4>La ley de Fitts: los objetivos grandes y cercanos se aciertan antes</h4>
     <p>La <strong>ley de Fitts</strong> mide el <strong>tiempo para alcanzar un objetivo</strong> con un puntero o un dedo. Depende de dos cosas: la <strong>distancia</strong> hasta el objetivo y su <strong>tamaño</strong>. Más lejos y más pequeño, más tiempo y más fallos.</p>
     <p>Su consecuencia es contundente: los controles importantes deben ser <strong>grandes</strong> y estar <strong>cerca</strong> de donde la mano ya está. En móvil, un botón diminuto en una esquina es un castigo; un botón ancho al alcance del pulgar es un acierto.</p>
-    <p>De aquí salen reglas concretas: <strong>áreas táctiles amplias</strong>, botones de acción destacados, y aprovechar los bordes y esquinas de la pantalla (que actúan como objetivos «infinitamente grandes» porque el cursor no se pasa de largo).</p>
+    <p>Su formulación habitual es <em>T = a + b · log₂(2D / W)</em>, con <em>D</em> la distancia hasta el objetivo y <em>W</em> su anchura: duplicar la distancia o reducir el tamaño a la mitad cuesta el mismo tiempo extra. De aquí salen reglas concretas: <strong>áreas táctiles amplias</strong> y botones de acción destacados.</p>
+    <p>Con <strong>ratón</strong>, además, los bordes y esquinas de la pantalla actúan como objetivos «infinitamente grandes» porque el cursor no se pasa de largo. Con <strong>pantalla táctil</strong> eso no ocurre: lo que cuenta es la zona que alcanza el pulgar con una mano, y las esquinas superiores son precisamente las más difíciles de alcanzar.</p>
 
     <h4>La ley de Miller y la carga cognitiva: la memoria de trabajo es pequeña</h4>
-    <p>George Miller observó que la <strong>memoria de trabajo</strong> humana maneja a la vez solo unos pocos elementos, el famoso <strong>7 ± 2</strong>. Es un dato que ya apareció en el Tema 1 al hablar de los límites cognitivos.</p>
-    <p>La lección no es «pon siete cosas como máximo», sino algo más fino: <strong>no obligues a la persona a recordar</strong> lo que el sistema puede mostrar. Reconocer es fácil; recordar, costoso.</p>
+    <p>George Miller observó que la <strong>memoria de trabajo</strong> humana maneja a la vez solo unos pocos elementos, el famoso <strong>7 ± 2</strong>. Es un dato que ya apareció en el Tema 1 al hablar de los límites cognitivos. Estudios posteriores (Cowan) lo sitúan más abajo, en torno a <strong>4 bloques</strong> con sentido: razón de más para no cargar la memoria.</p>
+    <p>La lección no es «pon siete cosas como máximo», sino algo más fino: <strong>no obligues a la persona a recordar</strong> lo que el sistema puede mostrar. Reconocer es fácil; recordar, costoso. Este principio, <em>reconocer antes que recordar</em>, es una de las heurísticas de usabilidad de Nielsen y se apoya en los límites de la memoria de trabajo que describió Miller.</p>
     <p>De ahí dos tácticas: el <strong>agrupamiento</strong> (partir la información en bloques con sentido, como un número de cuenta separado por tramos) y reducir la <strong>carga cognitiva</strong>, es decir, todo el esfuerzo mental que el diseño impone sin necesidad.</p>
+    <p>John Sweller distingue tres tipos de carga, y la distinción sirve para decidir qué quitar y qué conservar:</p>
+    <ul class="laws" role="list">
+      <li><b>Intrínseca</b> La complejidad propia de la tarea. No se elimina, se reparte en pasos manejables. Ejemplo: elegir día y hora de una cita.</li>
+      <li><b>Extrínseca</b> La que añade el diseño sin necesidad: etiquetas crípticas, pantallas recargadas, tener que recordar un dato que el sistema ya conoce. <strong>Es la que hay que eliminar.</strong> Ejemplo: pedirle a Mari Carmen el código de su centro de salud.</li>
+      <li><b>Pertinente</b> El esfuerzo útil, el que ayuda a construir un modelo mental correcto. Se favorece con una estructura coherente y mensajes que expliquen qué ha pasado. Ejemplo: ver siempre «Mis citas» en el mismo sitio.</li>
+    </ul>
 
     <h4>Los tiempos de respuesta: la máquina también tiene que ser puntual</h4>
-    <p>Ben Shneiderman recopiló cómo influye la <strong>velocidad de respuesta del sistema</strong> en la experiencia. Hay tres umbrales que conviene memorizar, porque marcan la diferencia entre fluidez y frustración.</p>
+    <p>La investigación sobre cómo influye la <strong>velocidad de respuesta del sistema</strong> en la experiencia (Miller, 1968; Card y colaboradores, 1991) y que popularizó Jakob Nielsen distingue tres umbrales que conviene memorizar, porque marcan la diferencia entre fluidez y frustración.</p>
     <ul class="laws" role="list">
       <li><b>Hasta ~0,1 s</b> La respuesta se siente <strong>instantánea</strong>: el usuario percibe que manipula el objeto directamente.</li>
       <li><b>Hasta ~1 s</b> Se mantiene el <strong>flujo de pensamiento</strong>, aunque se nota el retardo. No suele hacer falta avisar.</li>
@@ -241,10 +282,32 @@
       <span class="label">Idea clave</span>
       <p>Cinco leyes para no olvidar: <strong>Gestalt</strong> (el ojo agrupa), <strong>Hick</strong> (menos opciones, decisión más rápida), <strong>Fitts</strong> (objetivos grandes y cercanos), <strong>Miller</strong> (memoria de trabajo pequeña: reconocer &gt; recordar) y <strong>tiempos de respuesta</strong> (0,1 s / 1 s / 10 s). Son restricciones de ingeniería, no gustos.</p>
     </div>
+
+    <h4>Principios y heurísticas: la otra mitad de la caja de herramientas</h4>
+    <p>Las leyes miden cómo funcionan las personas. Los <strong>principios y heurísticas</strong> son reglas de diseño que condensan décadas de experiencia: los de Norman, las diez heurísticas de usabilidad de Nielsen y las ocho reglas de oro de Shneiderman. Se solapan mucho, y la tabla los agrupa por la idea de fondo, con un ejemplo en la app de cita médica de Mari Carmen y la ley cognitiva con la que se relacionan.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Principios de Norman, heurísticas de Nielsen y reglas de oro de Shneiderman agrupadas por idea, con ejemplo del caso de Mari Carmen.</caption>
+      <thead>
+        <tr><th scope="col">Idea de fondo</th><th scope="col">Cómo la formulan los autores</th><th scope="col">Ejemplo en la app de Mari Carmen</th><th scope="col">Ley relacionada</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Informar de lo que ocurre</th><td>Retroalimentación (Norman) · visibilidad del estado del sistema (Nielsen 1) · retroalimentación informativa (Shneiderman 3)</td><td>Tras confirmar, aparece «Cita guardada» con médico, día y hora.</td><td>Tiempos de respuesta</td></tr>
+        <tr><th scope="row">Impedir el error</th><td>Restricciones (Norman) · prevención de errores (Nielsen 5) · prevenir errores (Shneiderman 5)</td><td>El calendario solo muestra los huecos libres: no se puede elegir uno ocupado.</td><td>Hick</td></tr>
+        <tr><th scope="row">No cargar la memoria</th><td>Reconocer antes que recordar (Nielsen 6) · reducir la carga de memoria a corto plazo (Shneiderman 8)</td><td>El sistema ya conoce su centro de salud y no se lo pregunta.</td><td>Miller</td></tr>
+        <tr><th scope="row">Hablar el lenguaje de la persona</th><td>Coincidencia entre el sistema y el mundo real (Nielsen 2)</td><td>«Tu número de teléfono» en lugar de una sigla como «CIP».</td><td>Carga extrínseca</td></tr>
+        <tr><th scope="row">Dejar el control en manos de la persona</th><td>Control y libertad del usuario (Nielsen 3) · permitir deshacer (Shneiderman 6) · mantener el control (Shneiderman 7)</td><td>Puede cancelar o cambiar la cita desde «Mis citas».</td><td>Abismo de ejecución</td></tr>
+        <tr><th scope="row">Ser coherente</th><td>Consistencia (Norman) · consistencia y estándares (Nielsen 4) · buscar la consistencia (Shneiderman 1)</td><td>Todas las acciones positivas usan el mismo botón, con el mismo color y tamaño.</td><td>Gestalt (semejanza)</td></tr>
+        <tr><th scope="row">Cerrar el diálogo</th><td>Diálogos con cierre (Shneiderman 4)</td><td>La última pantalla deja claro que el trámite ha terminado.</td><td>Abismo de evaluación</td></tr>
+        <tr><th scope="row">Mostrar solo lo necesario</th><td>Diseño estético y minimalista (Nielsen 8)</td><td>El inicio ofrece solo «Pedir cita» y «Mis citas».</td><td>Hick</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Quedan fuera de la tabla las heurísticas sobre flexibilidad y eficiencia para personas expertas (Nielsen 7), ayuda a reconocer y recuperarse de errores (Nielsen 9) y ayuda y documentación (Nielsen 10), porque su peso en la app de Mari Carmen es menor; en otro sistema podrían ser decisivas. Una precisión sobre Shneiderman: en las ediciones recientes su segunda regla es buscar la usabilidad universal, que es en el fondo lo que esta asignatura llama diseño para todos; en la edición de 2006 de la bibliografía esa regla era la de ofrecer atajos a las personas usuarias frecuentes, equivalente a la heurística 7 de Nielsen.</p>
   </section>
 
   <section id="iteracion" aria-labelledby="iteracion-h">
-    <h3 id="iteracion-h"><span class="num" aria-hidden="true">3.5</span>Por qué se diseña en bucle (y barato primero)</h3>
+    <h3 id="iteracion-h"><span class="num" aria-hidden="true">1.5</span>Por qué se diseña en bucle (y barato primero)</h3>
 
     <p>El nombre del tema lo dice: <strong>proceso iterativo</strong> de diseño. Iterar significa diseñar, probar, aprender del fallo y volver a diseñar. No es un defecto del método: es su mayor virtud.</p>
     <p>La razón es la misma economía que vimos en el Tema 1. Encontrar un problema en un <strong>boceto en papel</strong> cuesta una goma de borrar; encontrarlo en el <strong>código ya programado</strong> cuesta rehacer el trabajo de semanas.</p>
@@ -264,7 +327,7 @@
   </div>
 
   <section id="cotidiano" aria-labelledby="cotidiano-h">
-    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">4.1</span>Las leyes cognitivas que ya sufres</h3>
+    <h3 id="cotidiano-h"><span class="num" aria-hidden="true">2.1</span>Las leyes cognitivas que ya sufres</h3>
 
     <p>Las leyes que acabamos de ver no son teoría de laboratorio: explican los errores de diseño de las apps que ya conoces. Cada una se puede ver en los dos casos de estudio.</p>
 
@@ -272,7 +335,7 @@
     <p>Si la pantalla de inicio de la app muestra a Mari Carmen ocho opciones —pedir cita, mis citas, mis recetas, mis resultados, mis documentos, mis datos, contacto, ayuda—, su cerebro tiene que <strong>buscar entre demasiadas alternativas</strong> antes de encontrar la que necesita. Viola la ley de Hick. La solución: en la pantalla de inicio, solo «Pedir cita» y «Mis citas» —las únicas funciones que usa— en botones grandes. El resto, bajo un acceso secundario.</p>
 
     <h4>Fitts en la app de transporte de Marta</h4>
-    <p>Si el botón de «Confirmar pago» aparece en la esquina superior derecha de la pantalla, Marta debe recolocar la mano o usar el índice mientras sostiene la mochila. La ley de Fitts predice exactamente ese coste: <strong>lejos y pequeño = lento y con errores en la parada</strong>. La solución: botón de «Confirmar» ancho, centrado, en la zona inferior de la pantalla, al alcance del pulgar.</p>
+    <p>Si el botón de «Pagar y subir» aparece en la esquina superior derecha de la pantalla, Marta debe recolocar la mano o usar el índice mientras sostiene la mochila. La ley de Fitts predice exactamente ese coste: <strong>lejos y pequeño = lento y con errores en la parada</strong>. La solución: botón de «Pagar y subir» ancho, centrado, en la zona inferior de la pantalla, al alcance del pulgar.</p>
 
     <h4>Gestalt en el formulario de cita de Mari Carmen</h4>
     <p>Si la etiqueta «Fecha» está visualmente más cerca del campo de «Hora» que del suyo, la proximidad engaña a Mari Carmen y escribe donde no es. El error le parece suyo; es del diseño. La solución: cada etiqueta y su campo en el mismo recuadro, con espacio generoso entre pares distintos.</p>
@@ -290,7 +353,7 @@
   </section>
 
   <section id="anclaje" aria-labelledby="anclaje-h">
-    <h3 id="anclaje-h"><span class="num" aria-hidden="true">4.2</span>Anclaje real: un tercio de España sin destrezas básicas (INE)</h3>
+    <h3 id="anclaje-h"><span class="num" aria-hidden="true">2.2</span>Anclaje real: un tercio de España sin destrezas básicas (INE)</h3>
 
     <p>Podría parecer que reducir la carga cognitiva es un lujo para gente cómoda. Los datos del <strong>INE</strong> dicen lo contrario: para una parte enorme de la población, es la diferencia entre poder o no poder completar una gestión.</p>
 
@@ -299,32 +362,55 @@
       <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> (INE, año 2025):</p>
       <div class="table-scroll">
       <table>
-        <caption>Indicadores de destrezas y contexto digital en España. Fuente: INE, datos publicados el 20 de noviembre de 2025.</caption>
+        <caption>Indicadores de destrezas y contexto digital en España. Habilidades y Administración: población de 16 a 74 años; equipamiento: hogares con algún miembro de esa edad. Fuente: INE, Encuesta TIC en Hogares, año 2025.</caption>
         <thead>
           <tr><th scope="col">Indicador (España, 2025)</th><th scope="col">Valor</th></tr>
         </thead>
         <tbody>
           <tr><td>Personas de 16 a 74 años con habilidades digitales básicas o avanzadas</td><td class="fig">66,5 %</td></tr>
-          <tr><td>De ellas, con habilidades solo básicas</td><td class="fig">27,3 %</td></tr>
-          <tr><td>Hogares que disponen únicamente de teléfono móvil</td><td class="fig">50,3 %</td></tr>
-          <tr><td>Personas que se relacionaron con la Administración por Internet</td><td class="fig">80,7 %</td></tr>
+          <tr><td>Personas con habilidades solo básicas (sobre el total de 16 a 74 años)</td><td class="fig">27,3 %</td></tr>
+          <tr><td>Personas con habilidades bajas o inferiores</td><td class="fig">29,8 %</td></tr>
+          <tr><td>Personas que no usaron Internet en los últimos tres meses</td><td class="fig">3,7 %</td></tr>
+          <tr><td>Hogares con teléfono móvil y sin teléfono fijo</td><td class="fig">50,3 %</td></tr>
+          <tr><td>Hogares con algún tipo de ordenador</td><td class="fig">83,8 %</td></tr>
+          <tr><td>Personas que contactaron con la Administración por Internet (últimos 12 meses)</td><td class="fig">80,7 %</td></tr>
         </tbody>
       </table>
       </div>
     </div>
 
-    <p>La lectura es incómoda. Si el 66,5 % alcanza un nivel básico o superior, <strong>cerca de un tercio de la población no llega ni al básico</strong>. Para esas personas, cada opción de más y cada espera sin aviso es una barrera real.</p>
-    <p>Súmale que la mitad de los hogares usa <strong>solo el móvil</strong>: pantalla pequeña, una mano, a menudo en movimiento. Ese contexto castiga sin piedad los objetivos diminutos (Fitts) y los menús sobrecargados (Hick).</p>
-    <p>Y si <strong>ocho de cada diez personas</strong> hacen trámites con la Administración por Internet, diseñar con alta carga cognitiva no produce «una mala experiencia»: produce <strong>ciudadanía que no consigue su cita médica</strong> o su ayuda. Mari Carmen —78 años, municipio rural, competencia digital básica— es exactamente ese perfil: una persona que necesita la app porque el teléfono del centro da comunicando, y que se rinde si el flujo le impone demasiadas opciones, tiempos que caducan o confirmaciones ambiguas.</p>
+    <p>La lectura es incómoda. Si el 66,5 % alcanza un nivel básico o superior, <strong>cerca de un tercio de la población no llega ni al básico</strong> (un 29,8 % con habilidades bajas o inferiores y un 3,7 % que ni siquiera usó Internet en los últimos tres meses). Para esas personas, cada opción de más y cada espera sin aviso es una barrera real.</p>
+    <p>Súmale el contexto de uso. El móvil está en prácticamente todos los hogares (la mitad ni siquiera conserva teléfono fijo), pero no es el único dispositivo: el 83,8 % dispone de ordenador, así que alrededor de <strong>uno de cada seis hogares no lo tiene</strong>. Para esas personas el móvil lo es todo: pantalla pequeña, una mano, a menudo en movimiento. Ese contexto castiga sin piedad los objetivos diminutos (Fitts) y los menús sobrecargados (Hick).</p>
+    <p>Y si <strong>ocho de cada diez personas de 16 a 74 años</strong> contactaron con la Administración por Internet en el último año, diseñar con alta carga cognitiva no produce «una mala experiencia»: produce <strong>ciudadanía que no consigue su cita médica</strong> o su ayuda.</p>
+    <p>Mari Carmen —78 años, municipio rural, competencia digital básica— queda <strong>fuera del rango de edad de la encuesta</strong> (16 a 74 años): estas cifras no la describen a ella, describen el entorno en el que se mueve; los indicadores de las personas de 75 o más años hay que consultarlos aparte en el INE. Lo que sí ilustra es el riesgo: alguien que necesita la app porque el teléfono del centro da comunicando, y que se rinde si el flujo le impone demasiadas opciones, tiempos que caducan o confirmaciones ambiguas.</p>
+
+    <h4>Diseñar para personas mayores: qué recoge el W3C</h4>
+    <p>El proyecto europeo WAI-AGE, del W3C, revisó la literatura sobre personas mayores y la web y concluyó que las pautas WCAG ya cubren buena parte de sus necesidades: lo que ayuda a una persona con discapacidad ayuda también a una persona mayor. Estos son los cambios frecuentes con la edad y su traducción en decisiones para la app de Mari Carmen.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Cambios frecuentes con la edad según el W3C-WAI y decisiones de diseño derivadas para la app de cita médica.</caption>
+      <thead>
+        <tr><th scope="col">Ámbito</th><th scope="col">Cambio frecuente</th><th scope="col">Decisión de diseño en la app</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Visión</th><td>Menor capacidad de enfocar de cerca, menor sensibilidad al contraste y cambios en la percepción del color.</td><td>Texto grande, contraste ≥ 4,5:1, información nunca solo en color y sin colores fluorescentes.</td></tr>
+        <tr><th scope="row">Destreza</th><td>Menor control motor fino (por ejemplo, por artrosis o temblor): cuesta pulsar objetivos pequeños.</td><td>Botones grandes y separados (Fitts); sin gestos complejos como arrastrar o pellizcar.</td></tr>
+        <tr><th scope="row">Cognición</th><td>Memoria a corto plazo más limitada, más dificultad para concentrarse y más distracción ante el movimiento o el contenido irrelevante.</td><td>Un objetivo por pantalla, sin animaciones ni publicidad, y sin obligar a recordar datos (Miller).</td></tr>
+        <tr><th scope="row">Cambios en pantalla</th><td>Los cambios pequeños pueden pasar inadvertidos («ceguera al cambio»).</td><td>Lo importante, como «Cita guardada», ocupa la pantalla y se dice con texto.</td></tr>
+        <tr><th scope="row">Tiempos</th><td>Los límites de tiempo penalizan a quien necesita más para leer o decidir.</td><td>Tiempos generosos y reenvío del código SMS sin reiniciar el proceso (WCAG, criterio 2.2.1, tiempo ajustable).</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Una cautela necesaria: envejecer no es uniforme. La tabla describe riesgos frecuentes, no rasgos que tenga cada persona mayor ni, en concreto, Mari Carmen. Por eso se prueba con personas reales de ese perfil (Tema 4) y no se da nada por supuesto.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Respetar las leyes cognitivas no es estética: es <strong>inclusión</strong>. Con un tercio de la población por debajo del nivel digital básico y la mitad de los hogares solo con móvil, reducir opciones, agrandar objetivos y descargar la memoria es lo que separa un servicio usable de uno que excluye.</p>
+      <p>Respetar las leyes cognitivas no es estética: es <strong>inclusión</strong>. Con un tercio de la población por debajo del nivel digital básico y uno de cada seis hogares sin ordenador, reducir opciones, agrandar objetivos y descargar la memoria es lo que separa un servicio usable de uno que excluye.</p>
     </div>
   </section>
 
   <section id="fidelidad" aria-labelledby="fidelidad-h">
-    <h3 id="fidelidad-h"><span class="num" aria-hidden="true">4.3</span>Niveles de fidelidad del prototipo: papel, esqueleto, casi real</h3>
+    <h3 id="fidelidad-h"><span class="num" aria-hidden="true">2.3</span>Niveles de fidelidad del prototipo: papel, esqueleto, casi real</h3>
 
     <p>La práctica del Tema 3 es <strong>prototipar en tres niveles de fidelidad</strong>. «Fidelidad» mide cuánto se parece el prototipo al producto final. Cada nivel sirve para responder preguntas distintas.</p>
 
@@ -336,14 +422,14 @@
       </thead>
       <tbody>
         <tr><th scope="row">Baja fidelidad</th><td>Bocetos en papel, sin color ni detalle</td><td>¿La idea y el flujo tienen sentido?</td><td>¿Es posible preparar y validar el billete en 2 pasos desde la pantalla de inicio?</td><td>¿El flujo de pedir cita tiene 4 pasos o menos? ¿Dónde aparece la confirmación?</td></tr>
-        <tr><th scope="row">Media fidelidad</th><td><em>Wireframes</em>: estructura digital en gris, sin estilo final</td><td>¿La organización y la navegación funcionan?</td><td>¿El botón de «Confirmar» está en la zona del pulgar? (Fitts) ¿Cuántas opciones hay en inicio? (Hick)</td><td>¿La etiqueta de cada campo está visualmente unida a su input? (Gestalt) ¿El resumen de cita ocupa una pantalla entera?</td></tr>
-        <tr><th scope="row">Alta fidelidad</th><td>Casi como el producto real, interactivo y con estilo</td><td>¿Los detalles de uso y la apariencia convencen?</td><td>¿La confirmación de validación es visible al sol? (contraste AA) ¿Responde en &lt; 0,1 s? (tiempos)</td><td>¿El texto «Cita guardada» es legible a 18 px con las gafas puestas? ¿El código SMS aparece agrupado? (Miller)</td></tr>
+        <tr><th scope="row">Media fidelidad</th><td><em>Wireframes</em>: estructura digital en gris, sin estilo final</td><td>¿La organización y la navegación funcionan?</td><td>¿El botón «Pagar y subir» está en la zona del pulgar? (Fitts) ¿Cuántas opciones hay en inicio? (Hick)</td><td>¿La etiqueta de cada campo está visualmente unida a su input? (Gestalt) ¿El resumen de cita ocupa una pantalla entera?</td></tr>
+        <tr><th scope="row">Alta fidelidad</th><td>Casi como el producto real, interactivo y con estilo</td><td>¿Los detalles de uso y la apariencia convencen?</td><td>¿La confirmación es legible al sol? (contraste ≥ 4,5:1, comprobado en un móvil real) ¿Responde en &lt; 0,1 s? (tiempos)</td><td>¿El texto «Cita guardada» es legible a 18 px (criterio de diseño del proyecto) con las gafas puestas? ¿El código SMS aparece agrupado? (Miller)</td></tr>
       </tbody>
     </table>
     </div>
 
     <p>La regla de oro es <strong>subir de fidelidad solo cuando toca</strong>. Pintar colores y tipografías sobre una idea de navegación que aún no funciona es trabajo tirado.</p>
-    <p>Y en cada nivel reaparecen las leyes cognitivas: en papel ya decides la <strong>agrupación</strong> (Gestalt) y el <strong>número de opciones</strong> (Hick); en alta fidelidad afinas <strong>tamaños táctiles</strong> (Fitts) y <strong>tiempos de respuesta</strong>.</p>
+    <p>Y en cada nivel reaparecen las leyes cognitivas, con un reparto que se mantiene en los cuatro apuntes: en <strong>papel</strong> decides el flujo, el <strong>número de opciones</strong> (Hick) y la <strong>agrupación</strong> en bruto (Gestalt); en <strong>wireframe</strong> compruebas la estructura, la <strong>ubicación</strong> de los controles en la zona del pulgar (Fitts), las agrupaciones (Gestalt, Miller) y los flujos alternativos; en <strong>alta fidelidad</strong> afinas lo medible: <strong>tamaños táctiles reales</strong> (Fitts), <strong>tiempos de respuesta</strong>, contraste y reflujo.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -352,7 +438,7 @@
   </section>
 
   <section id="proyecto" aria-labelledby="proyecto-h">
-    <h3 id="proyecto-h"><span class="num" aria-hidden="true">4.4</span>Tu proyecto: la Actividad C como entrega de prototipos</h3>
+    <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la Actividad C como entrega de prototipos</h3>
 
     <p>Esta es la transferencia más directa. Tu <strong>proyecto de la asignatura sigue el proceso de la ISO 9241-210</strong>, y la Actividad C es donde el equipo, por fin, produce diseño tangible a partir de los requisitos ya entregados.</p>
     <p>La práctica del tema, <strong>prototipado de baja, media y alta fidelidad</strong>, es exactamente lo que tendrás que evidenciar. No basta con presentar la pantalla final: hay que mostrar la <strong>evolución</strong> y las decisiones por el camino.</p>
@@ -365,17 +451,44 @@
         <tr><th scope="col">Diseño</th><th scope="col">Qué tendrás que entregar</th><th scope="col">Apoyo cognitivo</th><th scope="col">Ejemplo Caso A (Marta)</th><th scope="col">Ejemplo Caso B (Mari Carmen)</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Actividad</th><td>Flujo de tareas y modelo de interacción</td><td>Etapas de la acción · Hick</td><td>Flujo de 2 pasos: preparar billete → validar. Sin ramificaciones innecesarias.</td><td>Flujo de 4 pasos: identificarse → elegir cita → confirmar → ver confirmación. Sin opciones secundarias en pantalla.</td></tr>
-        <tr><th scope="row">Información</th><td>Organización y jerarquía de la pantalla</td><td>Gestalt · Miller</td><td>Botón único centrado en inicio. Estado «Billete listo» en verde grande.</td><td>Médico, fecha y hora en un recuadro destacado. Código SMS agrupado en bloques de 3 dígitos.</td></tr>
-        <tr><th scope="row">Prototipo</th><td>Prototipos de baja, media y alta fidelidad</td><td>Fitts · tiempos de respuesta</td><td>Baja: croquis en papel del flujo. Alta: botón en zona del pulgar, contraste AA al sol, confirmación en &lt; 0,1 s.</td><td>Baja: boceto del flujo de confirmación. Alta: texto ≥ 18 px, reflujo al 200 % sin pérdida, confirmación persistente sin conexión.</td></tr>
+        <tr><th scope="row">Actividad</th><td>Flujo de tareas y modelo de interacción</td><td>Etapas de la acción · Hick</td><td>Flujo de 2 pasos: pagar (un toque en «Pagar y subir») → validar (acercar el móvil). Sin ramificaciones innecesarias.</td><td>Flujo de 4 pasos: identificarse (incluye el código SMS) → elegir cita (médico y hueco en el calendario) → confirmar → ver confirmación. Lo secundario, oculto tras «Otras especialidades» y accesos secundarios.</td></tr>
+        <tr><th scope="row">Información</th><td>Organización y jerarquía de la pantalla</td><td>Gestalt · Miller</td><td>Botón único «Pagar y subir», centrado en inicio. Estado «Billete listo» en verde grande, con texto.</td><td>Los cuatro datos (médico, fecha, hora y centro) en un recuadro, con fecha y hora en grande: la jerarquía visual que resuelve el conflicto C-02. Código SMS agrupado en bloques de 3 dígitos.</td></tr>
+        <tr><th scope="row">Prototipo</th><td>Prototipos de baja, media y alta fidelidad</td><td>Fitts · tiempos de respuesta</td><td>Baja: croquis en papel del flujo. Alta: botón en zona del pulgar, contraste AA al sol, confirmación en &lt; 0,1 s.</td><td>Baja: boceto del flujo de confirmación. Alta: texto ≥ 18 px (criterio del proyecto), texto ampliable al 200 % y reflujo a 320 px sin pérdida, confirmación persistente sin conexión.</td></tr>
       </tbody>
     </table>
     </div>
 
     <div class="box curio">
       <span class="label">Las leyes cognitivas en los dos casos</span>
-      <p>Los dos casos exigen las mismas leyes pero con énfasis distinto. Para Marta, <strong>Fitts</strong> y <strong>Hick</strong> son críticos: botón al alcance del pulgar y mínimo de opciones cuando el bus ya se ve llegar. Para Mari Carmen, <strong>Miller</strong> y <strong>Gestalt</strong> son los que marcan la diferencia: código agrupado para copiar sin error, etiquetas pegadas a sus campos y confirmación explícita en texto. El nivel AA de WCAG —contraste, reflujo, alternativas textuales— es obligatorio para los dos.</p>
+      <p>Los dos casos exigen las mismas leyes pero con énfasis distinto. Para Marta, <strong>Fitts</strong> y <strong>Hick</strong> son críticos: botón al alcance del pulgar y mínimo de opciones cuando el bus ya se ve llegar. Para Mari Carmen, <strong>Miller</strong> y <strong>Gestalt</strong> son los que marcan la diferencia: código agrupado para copiar sin error, etiquetas pegadas a sus campos y confirmación explícita en texto. El nivel AA de WCAG —contraste, cambio de tamaño del texto, reflujo, alternativas textuales— es obligatorio para los dos.</p>
     </div>
+
+    <h4>Ejemplo resuelto: trazabilidad de las decisiones del caso de Mari Carmen</h4>
+    <p>«Trazabilidad» significa poder recorrer una decisión en los dos sentidos: del requisito a la prueba y de la prueba de vuelta al requisito. Se anota con cuatro columnas: el <strong>requisito</strong> (R), la <strong>decisión</strong> de diseño (D), su <strong>fundamento</strong> (F: ley, principio o criterio WCAG) y el <strong>criterio de prueba</strong> (P). Los requisitos de la tabla son los del catálogo de la Actividad B de este caso (R-01 a R-05), con sus objetivos de calidad de uso RU-01 a RU-03. Los umbrales son <strong>provisionales</strong>, como se indicó allí: no tienen base empírica y se confirmarán en una prueba piloto. Los criterios WCAG son los de la versión 2.1 nivel AA, que es la referencia legal vigente (EN 301 549 V3.2.1); la versión 2.2 llegará con la EN 301 549 V4.1.1 cuando se cite en el Diario Oficial de la UE. En tu proyecto, la tabla se construye con tus propios requisitos.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Trazabilidad requisito → decisión → fundamento → criterio de prueba en el caso de Mari Carmen (requisitos y umbrales de la Actividad B).</caption>
+      <thead>
+        <tr><th scope="col">R · Requisito</th><th scope="col">D · Decisión de diseño</th><th scope="col">F · Fundamento</th><th scope="col">P · Criterio de prueba</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">R-01 · Conservar el estado de la solicitud si sale de la aplicación o se interrumpe la conexión, para retomarla sin repetir pasos.</th><td>Cada paso se guarda al completarse; al volver (del SMS o tras un corte) la app retoma el punto exacto. Flujo de 4 pasos; «Medicina de familia» por defecto y calendario con solo huecos libres.</td><td>Prevenir errores · visibilidad del estado · Hick (menos pasos que repetir).</td><td>Prueba: interrumpe el flujo (sale a leer un SMS) y lo retoma sin repetir pasos. RU-01: al menos 4 de 5 participantes completan la tarea sin ayuda (provisional). RU-02: en menos de 5 minutos (provisional).</td></tr>
+        <tr><th scope="row">R-02 · Mostrar en texto médico, fecha, hora y centro, accesible desde el inicio sin volver al flujo ni tener conexión activa.</th><td>Pantalla «Cita guardada» en texto con los cuatro datos, fecha y hora en grande (jerarquía que resuelve C-02); copia guardada en el móvil y accesible desde «Mis citas».</td><td>Abismo de evaluación · no solo color (WCAG 1.4.1) · jerarquía visual.</td><td>Inspección: la pantalla muestra los cuatro datos. Prueba: localiza la confirmación en «Mis citas» tras cerrar y reabrir la app sin conexión. RU-03: certeza de al menos 4 sobre 5 y 0 llamadas de confirmación (provisional).</td></tr>
+        <tr><th scope="row">R-03 · Cumplir los criterios A y AA de WCAG y ser compatible con letra extragrande y con ampliación al 200 %.</th><td>Texto base ≥ 18 px (criterio del proyecto), #211C16 sobre #FDFBF6, y diseño que no oculta nada al ampliar ni exige desplazamiento horizontal.</td><td>WCAG 1.4.3, 1.4.4 y 1.4.10 · cambios de visión con la edad (W3C).</td><td>Auditoría WCAG 2.1 AA y prueba con el dispositivo en letra extragrande, con el texto al 200 % y a 320 px de ancho.</td></tr>
+        <tr><th scope="row">R-04 · Si el código SMS caduca, poder pedir uno nuevo sin perder los datos ni volver al inicio.</th><td>Código agrupado («847 209»), botón «Reenviar código» y estado conservado mientras se sale a leer el mensaje.</td><td>Miller · tiempo ajustable (WCAG, criterio 2.2.1) · conflicto C-01 con la normativa del SMS.</td><td>Prueba: espera a que caduque el código y solicita el reenvío; comprueba que el formulario conserva los datos.</td></tr>
+        <tr><th scope="row">R-05 · Recuperar el estado de la solicitud cuando se restablezca la conexión.</th><td>Se conservan los datos; sin conexión, «Solicitud guardada, pendiente de confirmar» y, al reconectar, «Cita guardada» con actualización automática (C-03).</td><td>Visibilidad del estado · recuperación de errores (Nielsen 1 y 9).</td><td>Prueba técnica: se simula la pérdida de cobertura durante la solicitud y se comprueba que el estado se recupera al reconectar.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h4>Cómo redactar un criterio de prueba</h4>
+    <p>La norma ISO 9241-11 define la usabilidad con tres dimensiones, que sirven para escribir criterios medibles:</p>
+    <ul class="laws" role="list">
+      <li><b>Eficacia</b> ¿Logra la persona su objetivo, de forma completa y exacta? Se mide con tasas de tareas completadas.</li>
+      <li><b>Eficiencia</b> ¿Con qué recursos lo logra? Se mide con tiempo, número de pasos o de errores.</li>
+      <li><b>Satisfacción</b> ¿Le resulta cómodo y aceptable? Se mide preguntando o observando.</li>
+    </ul>
+    <p>Un buen criterio responde a cuatro preguntas: <strong>quién</strong> (participantes de este perfil), <strong>qué</strong> (qué tarea), <strong>cuánto</strong> (umbral) y <strong>en qué condiciones</strong> (dispositivo, entorno). Leído al revés, un criterio incumplido te dice qué decisión revisar: si en papel 3 de cada 10 personas no encuentran «Mis citas», se revisa la decisión de la fila de R-01 antes de pasar a wireframes.</p>
 
     <h4>Tres consecuencias prácticas desde hoy</h4>
     <ul>
@@ -391,7 +504,7 @@
   </section>
 
   <section id="retos" aria-labelledby="retos-h">
-    <h3 id="retos-h"><span class="num" aria-hidden="true">4.5</span>Retos de diseño para esta semana</h3>
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de diseño para esta semana</h3>
 
     <p>El diseño se aprende diseñando y criticando. Prueba estos retos antes de la próxima sesión.</p>
 
@@ -412,7 +525,7 @@
   </section>
 
   <section id="entorno" aria-labelledby="entorno-h">
-    <h3 id="entorno-h"><span class="num" aria-hidden="true">4.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
+    <h3 id="entorno-h"><span class="num" aria-hidden="true">2.6</span>Por qué te concierne como ingeniero o ingeniera</h3>
 
     <p>El plan docente lo deja claro: una competencia de la titulación es <strong>diseñar y evaluar interfaces persona-computador que garanticen la accesibilidad y la usabilidad</strong> (CI17), asegurando la calidad del software (CG03), y saber <strong>transmitir esas soluciones</strong> con claridad (CB04).</p>
     <p>Entre los resultados de aprendizaje, el plan pide expresamente <strong>aplicar la formación teórica y práctica para abordar el desarrollo de interfaces de usuario</strong>. La Actividad C es donde esa competencia deja de ser teoría y se convierte en producto.</p>
@@ -435,35 +548,47 @@
 
     <details class="check">
       <summary>1. ¿Qué actividad del DCH es «producir soluciones de diseño» y qué posición ocupa?</summary>
-      <p>Es la <strong>Actividad C</strong>, la <strong>tercera</strong> del ciclo iterativo (A → B → C → D). Recibe los requisitos de la B y entrega prototipos a la D para que se evalúen. <em>(Ver 3.1 y 3.2)</em></p>
+      <p>Es la <strong>Actividad C</strong>, la <strong>tercera</strong> del ciclo iterativo (A → B → C → D). Recibe los requisitos de la B y entrega prototipos a la D para que se evalúen. <em>(Ver 1.1 y 1.2)</em></p>
     </details>
     <details class="check">
       <summary>2. ¿Por qué se habla de «soluciones» en plural?</summary>
-      <p>Porque el diseño es <strong>exploración antes que compromiso</strong>: se generan varias alternativas, se hacen tangibles con prototipos y la evaluación decide cuál sobrevive. No se busca acertar a la primera. <em>(Ver 3.2)</em></p>
+      <p>Porque el diseño es <strong>exploración antes que compromiso</strong>: se generan varias alternativas, se hacen tangibles con prototipos y la evaluación decide cuál sobrevive. No se busca acertar a la primera. <em>(Ver 1.2)</em></p>
     </details>
     <details class="check">
       <summary>3. ¿Cuáles son los tres diseños del Tema 3 y en qué orden?</summary>
-      <p><strong>Diseño de la actividad</strong> (cómo se interactúa), <strong>diseño de la información</strong> (cómo se presenta) y <strong>diseño del prototipo</strong> (cómo se materializa y prueba). Primero qué hace la persona, luego qué ve, por último en qué soporte se prueba. <em>(Ver 3.3)</em></p>
+      <p><strong>Diseño de la actividad</strong> (cómo se interactúa), <strong>diseño de la información</strong> (cómo se presenta) y <strong>diseño del prototipo</strong> (cómo se materializa y prueba). Primero qué hace la persona, luego qué ve, por último en qué soporte se prueba. <em>(Ver 1.3)</em></p>
     </details>
     <details class="check">
       <summary>4. Enuncia la ley de Hick y su consecuencia de diseño.</summary>
-      <p>El <strong>tiempo de decisión crece</strong> con el número y la complejidad de las opciones. Consecuencia: <strong>menos opciones a la vez</strong> (agrupar, revelación progresiva, formularios mínimos). <em>(Ver 3.4)</em></p>
+      <p>El <strong>tiempo de decisión crece</strong> con el número y la complejidad de las opciones. Consecuencia: <strong>menos opciones a la vez</strong> (agrupar, revelación progresiva, formularios mínimos). <em>(Ver 1.4)</em></p>
     </details>
     <details class="check">
       <summary>5. ¿De qué dependen el tiempo y los errores según la ley de Fitts?</summary>
-      <p>De la <strong>distancia</strong> al objetivo y de su <strong>tamaño</strong>. Más lejos y más pequeño, más tiempo y más fallos. Por eso los controles importantes deben ser grandes, cercanos y aprovechar bordes y esquinas. <em>(Ver 3.4)</em></p>
+      <p>De la <strong>distancia</strong> al objetivo y de su <strong>tamaño</strong>. Más lejos y más pequeño, más tiempo y más fallos. Por eso los controles importantes deben ser grandes, cercanos y aprovechar bordes y esquinas. <em>(Ver 1.4)</em></p>
     </details>
     <details class="check">
       <summary>6. ¿Qué dice la ley de Miller y qué táctica de diseño se deriva?</summary>
-      <p>Que la <strong>memoria de trabajo</strong> maneja pocos elementos (7 ± 2). La lección: no obligar a recordar lo que se puede mostrar (reconocer &gt; recordar) y usar el <strong>agrupamiento</strong> para reducir la carga cognitiva. <em>(Ver 3.4)</em></p>
+      <p>Que la <strong>memoria de trabajo</strong> maneja pocos elementos (7 ± 2). La lección: no obligar a recordar lo que se puede mostrar (reconocer &gt; recordar, heurística de Nielsen) y usar el <strong>agrupamiento</strong> para reducir la carga cognitiva. <em>(Ver 1.4)</em></p>
     </details>
     <details class="check">
       <summary>7. ¿Cuáles son los tres umbrales de tiempo de respuesta?</summary>
-      <p>Hasta <strong>~0,1 s</strong> se siente instantáneo; hasta <strong>~1 s</strong> se mantiene el flujo de pensamiento; a partir de <strong>~10 s</strong> se pierde la atención y son obligatorios los indicadores de progreso. <em>(Ver 3.4)</em></p>
+      <p>Hasta <strong>~0,1 s</strong> se siente instantáneo; hasta <strong>~1 s</strong> se mantiene el flujo de pensamiento; a partir de <strong>~10 s</strong> se pierde la atención y son obligatorios los indicadores de progreso. <em>(Ver 1.4)</em></p>
     </details>
     <details class="check">
       <summary>8. ¿Para qué sirve cada nivel de fidelidad del prototipo?</summary>
-      <p><strong>Baja</strong> (papel): validar idea y flujo. <strong>Media</strong> (wireframe): comprobar estructura y navegación. <strong>Alta</strong> (casi real): afinar detalles y apariencia. Solo se sube de fidelidad cuando lo anterior ya funciona. <em>(Ver 4.3)</em></p>
+      <p><strong>Baja</strong> (papel): validar idea y flujo. <strong>Media</strong> (wireframe): comprobar estructura y navegación. <strong>Alta</strong> (casi real): afinar detalles y apariencia. Solo se sube de fidelidad cuando lo anterior ya funciona. <em>(Ver 2.3)</em></p>
+    </details>
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: la pantalla de inicio de la app de Mari Carmen muestra ocho opciones del mismo tamaño y, al pedir cita, el botón «Aceptar» lleva a una pantalla en blanco. Nombra dos leyes o principios incumplidos y propón una decisión para cada uno.</summary>
+      <p><strong>Hick:</strong> demasiadas opciones a la vez. Decisión: mostrar solo «Pedir cita» y «Mis citas» en botones grandes y dejar el resto en un acceso secundario (revelación progresiva). <strong>Retroalimentación y abismo de evaluación:</strong> la pantalla en blanco no dice si la cita se guardó. Decisión: mostrar «Cita guardada» con médico, día y hora en texto. Además, que las ocho opciones tengan el mismo tamaño elimina la jerarquía visual (Gestalt y jerarquía, que se desarrollan en el diseño de la información). <em>(Ver 1.4 y 2.1)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. Ejercicio de aplicación: una fila de trazabilidad dice «R-02: mostrar en texto médico, fecha, hora y centro. D: mostrar un icono verde». ¿Qué falla y cómo la corriges?</summary>
+      <p>La decisión transmite la información solo con color: incumple el criterio WCAG 1.4.1 y no cierra bien el abismo de evaluación. Corrección: título «Cita guardada» con médico, día, hora y centro en texto, además del icono. Criterio de prueba posible: tras confirmar, la persona explica con sus palabras qué ha pasado sin releer, y la pantalla se entiende en escala de grises. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. Ejercicio de aplicación: redacta un criterio de prueba medible para «si el código SMS caduca, Mari Carmen debe poder continuar sin reiniciar» e indica qué dimensiones de la ISO 9241-11 mide.</summary>
+      <p>Ejemplo: «Al menos 4 de cada 5 participantes de este perfil (70 o más años, con letra extragrande), con un móvil real, piden un código nuevo y terminan la cita sin volver al inicio, con un solo intento adicional». Mide <strong>eficacia</strong> (terminan la tarea) y <strong>eficiencia</strong> (un solo intento adicional). El umbral es provisional, como los de RU-01 a RU-03: lo fija el equipo tras una prueba piloto. <em>(Ver 2.4)</em></p>
     </details>
   </section>
 
@@ -492,7 +617,7 @@
       <dt>Leyes cognitivas</dt>
       <dd>Regularidades medidas sobre cómo las personas perciben, deciden y recuerdan; el diseñador las usa como restricciones de diseño.</dd>
       <dt>Principios de la Gestalt</dt>
-      <dd>Reglas de percepción (proximidad, semejanza, cierre, continuidad, región común) según las cuales el ojo agrupa automáticamente lo que ve.</dd>
+      <dd>Reglas de percepción (figura-fondo, proximidad, semejanza, cierre y continuidad, región común) según las cuales el ojo agrupa automáticamente lo que ve.</dd>
       <dt>Ley de Hick</dt>
       <dd>(Hick–Hyman) El tiempo de decisión crece con el número y la complejidad de las opciones. Implica reducir y agrupar opciones.</dd>
       <dt>Ley de Fitts</dt>
@@ -500,13 +625,23 @@
       <dt>Ley de Miller (7 ± 2)</dt>
       <dd>La memoria de trabajo maneja a la vez solo unos pocos elementos. Implica favorecer el reconocimiento sobre el recuerdo y agrupar la información.</dd>
       <dt>Carga cognitiva</dt>
-      <dd>Esfuerzo mental que un diseño impone al usuario. Reducirla es objetivo central del diseño de la información.</dd>
+      <dd>Esfuerzo mental que un diseño impone al usuario. Reducirla es objetivo central del diseño de la información. Sweller distingue la carga intrínseca (propia de la tarea), la extrínseca (añadida por el diseño, que hay que eliminar) y la pertinente (esfuerzo útil para comprender).</dd>
       <dt>Tiempos de respuesta</dt>
       <dd>Umbrales de velocidad del sistema que marcan la experiencia: ~0,1 s (instantáneo), ~1 s (flujo) y ~10 s (pérdida de atención).</dd>
       <dt>Revelación progresiva</dt>
       <dd>Mostrar primero lo esencial y ocultar lo avanzado hasta que se necesite, para reducir opciones y carga cognitiva.</dd>
+      <dt>Heurísticas de usabilidad</dt>
+      <dd>Reglas generales de diseño, como las diez de Nielsen o las ocho reglas de oro de Shneiderman, que condensan la experiencia acumulada sobre qué hace usable una interfaz.</dd>
+      <dt>Trazabilidad</dt>
+      <dd>Capacidad de recorrer cada decisión de diseño hacia atrás (hasta el requisito y el contexto) y hacia delante (hasta el criterio de prueba).</dd>
+      <dt>Criterio de prueba</dt>
+      <dd>Condición medible que indica si una decisión de diseño cumple su requisito: quién, qué tarea, qué umbral y en qué condiciones.</dd>
+      <dt>Eficacia, eficiencia y satisfacción</dt>
+      <dd>Las tres dimensiones de la usabilidad en la ISO 9241-11: lograr el objetivo de forma completa y exacta, con los recursos adecuados y con comodidad y aceptación.</dd>
+      <dt>Ceguera al cambio</dt>
+      <dd>Dificultad para notar cambios pequeños en pantalla, más frecuente con la edad. Obliga a que los cambios importantes sean evidentes y se expresen también en texto.</dd>
       <dt>ISO 9241-210</dt>
-      <dd>Norma del proceso de Diseño Centrado en lo Humano; su tercera actividad es producir soluciones de diseño. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
+      <dd>Norma del proceso de Diseño Centrado en lo Humano; sus actividades son contexto de uso (7.2), requisitos (7.3), soluciones de diseño (7.4) y evaluación (7.5). Versión vigente: 2019 (UNE-EN ISO 9241-210:2019). Las letras A-D son las de esta asignatura.</dd>
     </dl>
   </section>
 
@@ -522,7 +657,9 @@
         <li>Se diseña respetando las <strong>leyes cognitivas</strong>: <strong>Gestalt</strong>, <strong>Hick</strong>, <strong>Fitts</strong>, <strong>Miller</strong> y los <strong>tiempos de respuesta</strong>.</li>
         <li>Son <strong>restricciones de ingeniería</strong>, no gustos: dan argumentos para defender o rechazar un diseño.</li>
         <li>El proceso es <strong>iterativo</strong>: equivocarse <strong>pronto y barato</strong> en baja fidelidad evita el error caro en producción.</li>
-        <li>Los datos del <strong>INE 2025</strong> lo justifican: un tercio de la población no alcanza el nivel digital básico y la mitad de los hogares solo usa móvil; reducir la carga cognitiva es inclusión.</li>
+        <li>Cada decisión debe tener <strong>trazabilidad</strong>: requisito → decisión → fundamento (ley, principio o WCAG) → criterio de prueba medible (eficacia, eficiencia, satisfacción).</li>
+        <li>A las leyes se suman los <strong>principios y heurísticas</strong> de Norman, Nielsen y Shneiderman, y, para personas mayores, los cambios frecuentes de visión, destreza y cognición que recoge el W3C.</li>
+        <li>Los datos del <strong>INE 2025</strong> lo justifican: un tercio de la población de 16 a 74 años no alcanza el nivel digital básico y uno de cada seis hogares no tiene ordenador; reducir la carga cognitiva es inclusión.</li>
         <li>En tu proyecto, la Actividad C es la entrega de <strong>prototipos</strong> (baja, media y alta fidelidad), evidenciando la <strong>iteración</strong> y manteniendo el nivel <strong>AA de WCAG</strong>.</li>
         <li>Los dos casos de estudio ilustran que las mismas leyes tienen énfasis distinto: en <strong>Marta</strong> (transporte), Fitts y Hick son críticos —botón al alcance del pulgar, dos pasos máximo—; en <strong>Mari Carmen</strong> (cita médica), Miller y Gestalt son los que marcan la diferencia —código agrupado, etiquetas unidas a sus campos, confirmación explícita en texto—.</li>
       </ul>
@@ -544,13 +681,16 @@
     </ol>
     <p>Normas técnicas:</p>
     <ol class="refs" start="8">
-      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción persona-sistema. Parte 210: Diseño centrado en el operador humano para sistemas interactivos</em> (ISO 9241-210:2019).</li>
+      <li>UNE-EN ISO 9241-210:2019. <em>Ergonomía de la interacción hombre-sistema. Parte 210: Diseño centrado en el operador humano para los sistemas interactivos</em> (ISO 9241-210:2019).</li>
       <li>UNE-EN ISO 9241-11. <em>Definición de usabilidad: eficacia, eficiencia y satisfacción en un contexto de uso especificado</em> (ISO 9241-11:2018).</li>
-      <li>UNE-EN 301&nbsp;549. <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG nivel AA).</li>
+      <li>UNE-EN 301&nbsp;549:2022 (EN 301 549 V3.2.1). <em>Requisitos de accesibilidad para productos y servicios TIC</em> (remite a las WCAG 2.1 nivel AA).</li>
     </ol>
     <p>Datos y recursos en línea:</p>
     <ol class="refs" start="11">
-      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025. <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Cowan, N. «The magical number 4 in short-term memory». <em>Behavioral and Brain Sciences</em>, 24(1), 2001.</li>
+      <li>Sweller, J. «Cognitive load during problem solving: effects on learning». <em>Cognitive Science</em>, 12(2), 1988.</li>
+      <li>W3C Web Accessibility Initiative. <em>Older Users and Web Accessibility</em> (proyecto WAI-AGE). <a href="https://www.w3.org/WAI/older-users/">w3.org/WAI/older-users</a>.</li>
       <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
       <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
     </ol>
