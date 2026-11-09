@@ -226,6 +226,32 @@
     <p>En la edición revisada de su libro (2013), Norman precisa dos términos que a menudo se confunden. Una <strong>affordance</strong> es la relación entre las propiedades de un objeto y las capacidades de quien lo usa: una pantalla táctil «permite» tocar. Un <strong>signifier</strong> (señalizador) es el indicio <em>perceptible</em> que comunica dónde y cómo actuar.</p>
     <p>En una pantalla casi todo se puede tocar, así que lo que decide si la persona descubre qué hacer son los signifiers: la forma de botón, una etiqueta con verbo, el contraste, la sombra o la posición. Ejemplo: un texto «Pedir cita» sin recuadro tiene affordance (se puede tocar) pero no signifier; con recuadro, color y un verbo, <strong>se ve</strong> que es pulsable. Los signifiers estrechan el abismo de ejecución; la retroalimentación estrecha el de evaluación.</p>
 
+    <h4>La realimentación en tres momentos</h4>
+    <p>Nielsen lo llama <strong>visibilidad del estado del sistema</strong> y Shneiderman, <strong>retroalimentación informativa</strong>: tras cada acción, el sistema dice qué ha ocurrido. Una acción bien respondida tiene tres momentos. La <strong>recepción</strong>: el control cambia al pulsarse y, hasta ~0,1 s, la respuesta se siente instantánea. El <strong>progreso</strong>: si la acción tarda ~1 s o más, un indicador muestra que el sistema trabaja (hacia ~10 s se pierde la atención). El <strong>resultado</strong>: un mensaje que dice qué ha pasado y qué hacer después.</p>
+    <p>Ejemplo con Mari Carmen: al pulsar «Pedir cita», el botón se hunde (recepción); aparece «Enviando…» con un indicador (progreso); y al terminar, «Cita guardada — martes, 10:00 h, Dr. Ramos, centro de salud» (resultado). En ningún momento mira una pantalla muda.</p>
+
+    <h4>Los estados de un control: definir todas las respuestas</h4>
+    <p>Un control no es un dibujo fijo: es un <strong>conjunto de estados</strong>, cada uno con su respuesta. Definirlos todos forma parte de diseñar la actividad, porque cada estado responde a la pregunta «¿qué ha pasado?».</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Estados de un control y qué le dice cada uno a la persona.</caption>
+      <thead>
+        <tr><th scope="col">Estado</th><th scope="col">Cuándo</th><th scope="col">Qué le dice a la persona</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Reposo</th><td>Disponible, sin interacción</td><td>«Esto es accionable»: el signifier debe ser claro</td></tr>
+        <tr><th scope="row">Apuntado (hover)</th><td>Puntero encima</td><td>«Reacciono, soy interactivo»</td></tr>
+        <tr><th scope="row">Foco</th><td>Navegación por teclado</td><td>«Estás aquí»: nunca eliminarlo</td></tr>
+        <tr><th scope="row">Pulsado (activo)</th><td>Durante la acción</td><td>«He recibido tu pulsación»: cierra el primer abismo</td></tr>
+        <tr><th scope="row">Deshabilitado</th><td>No disponible ahora</td><td>«No puedes usarlo aún» y, si es posible, por qué</td></tr>
+        <tr><th scope="row">Cargando</th><td>Procesando la acción</td><td>«Estoy trabajando, espera»: sin esto se vuelve a pulsar</td></tr>
+        <tr><th scope="row">Éxito o error</th><td>Resultado de la acción</td><td>«Salió bien o mal» y qué hacer: no solo con color</td></tr>
+        <tr><th scope="row">Vacío</th><td>Sin datos todavía</td><td>«No hay nada todavía»: orientación</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Regla práctica: <strong>no entregues un control sin sus estados</strong>. Los más olvidados son el de foco y el de cargando. A desarrollo hay que entregarle siempre, como mínimo, el estado normal, el de error, el vacío y el de cargando (ver el apunte del prototipo).</p>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>Toda acción recorre siete etapas en dos mitades: <strong>ejecución</strong> (planear, especificar, ejecutar) y <strong>evaluación</strong> (percibir, interpretar, comparar). El diseño de la actividad debe estrechar el <strong>abismo de ejecución</strong> (saber qué hacer) y el <strong>abismo de evaluación</strong> (saber qué ha pasado).</p>
@@ -714,6 +740,10 @@
       <dd>Principio del RGPD: solo se recogen los datos necesarios para la finalidad. En diseño, cada dato que se pide debe justificarse.</dd>
       <dt>Flujo de tareas</dt>
       <dd>Mapa de los pasos y decisiones de una tarea, útil para detectar pasos sobrantes o callejones sin salida.</dd>
+      <dt>Estado de un control</dt>
+      <dd>Cada una de las situaciones en las que puede estar un control (reposo, apuntado, foco, pulsado, deshabilitado, cargando, éxito o error, vacío), con su propia respuesta visible.</dd>
+      <dt>Realimentación en tres momentos</dt>
+      <dd>Recepción (el control cambia al pulsarse), progreso (un indicador si tarda) y resultado (qué ha pasado y qué hacer después).</dd>
     </dl>
   </section>
 
@@ -734,6 +764,7 @@
         <li>El <strong>INE 2025</strong> muestra qué actividades importan: acceder a información (62,6 %), pedir cita (61,9 %) y solicitar documentación (42,3 %), como porcentaje de la población de 16 a 74 años.</li>
         <li>En tu proyecto es el <strong>primer paso de la Actividad C</strong>: justificar el comportamiento antes de dibujar pantallas.</li>
         <li>Los dos casos de estudio ilustran qué abismo es más crítico para cada persona: para <strong>Marta</strong> (transporte), el abismo de <strong>ejecución</strong> —saber qué tocar bajo presión, flujo de 2 pasos—; para <strong>Mari Carmen</strong> (cita médica), el abismo de <strong>evaluación</strong> —saber que la cita quedó guardada, realimentación explícita y persistente—.</li>
+        <li>Cada control es un <strong>conjunto de estados</strong> con su respuesta, y la realimentación tiene <strong>tres momentos</strong>: recepción, progreso y resultado.</li>
       </ul>
     </div>
   </section>

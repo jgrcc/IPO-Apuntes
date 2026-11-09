@@ -285,6 +285,22 @@
       <span class="label">Idea clave</span>
       <p>La información debe poder <strong>percibirla todo el mundo</strong>. Las WCAG AA lo concretan: <strong>contraste ≥ 4,5:1</strong>, <strong>nunca solo el color</strong> y <strong>texto legible</strong>. No es un extra: es la condición para que la jerarquía visual le sirva a alguien más que a ti.</p>
     </div>
+  
+    <h4>Foco, teclado y movimiento: la accesibilidad de la interfaz interactiva</h4>
+    <p>Además de percibirse, la interfaz tiene que poder <strong>usarse</strong> sin ratón y sin sobresaltos. Tres decisiones que se toman ya en el diseño:</p>
+    <ul>
+      <li><b>Foco visible siempre.</b> Nunca elimines el indicador de foco «porque afea»: es la brújula de quien navega con teclado, conmutador o ayuda técnica (WCAG 2.4.7, nivel AA).</li>
+      <li><b>Operable por teclado.</b> Toda acción posible con ratón o gesto debe tener un equivalente por teclado, con un orden de tabulación con sentido (WCAG 2.1.1, nivel A).</li>
+      <li><b>Movimiento responsable.</b> Una animación nunca debe ser imprescindible para entender qué ha pasado; conviene respetar la preferencia del sistema de reducir el movimiento (<em>prefers-reduced-motion</em>). Es buena práctica y se relaciona con el criterio 2.3.3, que es de nivel AAA, por encima del umbral AA del proyecto.</li>
+    </ul>
+    <p>Estas comprobaciones se aplican a <strong>todos los estados</strong> del control: el contraste de texto (≥ 4,5:1) y de componentes (≥ 3:1) se mide también en el estado deshabilitado y en el de foco, no solo en el de reposo.</p>
+
+    <h4>Color como sistema e iconografía</h4>
+    <p>El color funciona como un sistema cuando se usa con coherencia: uno para la acción principal, otro para el peligro, siempre acompañados de texto, icono o forma (nunca el único canal). Los <strong>iconos</strong> van siempre con etiqueta de texto: un icono solo es ambiguo, y su nombre accesible debe decir lo mismo que la etiqueta.</p>
+
+    <h4>Diseño emocional: la estética genera confianza</h4>
+    <p>Norman (<em>El diseño emocional</em>) sostiene que lo que se percibe como bello tiende a percibirse como <strong>más usable</strong>. Distingue tres niveles: <strong>visceral</strong> (la primera impresión; lo cuidado inspira confianza antes de usarlo), <strong>conductual</strong> (la experiencia de uso: que funcione bien y sin fricción) y <strong>reflexivo</strong> (el significado y el recuerdo: cómo me hace sentir y qué cuento de ello).</p>
+    <p>La trampa es la contraria: <strong>la estética nunca va antes que el comportamiento</strong>. Un sistema bonito que esconde el foco o no da realimentación traiciona la confianza que su aspecto prometía.</p>
   </section>
 
   <!-- ============ PARTE 2 ============ -->
@@ -763,6 +779,10 @@
       <dd>Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia del INE; la edición citada es la de 2020.</dd>
       <dt>WCAG nivel AA</dt>
       <dd>Pautas de accesibilidad del contenido web, nivel de cumplimiento exigible; a ellas remite la EN 301 549. Umbral del proyecto. Versión vigente: 2.1 (EN 301 549 V3.2.1); la 2.2 llegará con la V4.1.1 cuando se cite en el Diario Oficial de la UE.</dd>
+      <dt>Foco visible</dt>
+      <dd>Indicador de qué elemento está activo al navegar con teclado u otra ayuda técnica. No debe eliminarse nunca (WCAG 2.4.7, nivel AA).</dd>
+      <dt>Diseño emocional</dt>
+      <dd>Enfoque de Norman según el cual lo bello se percibe como más usable; distingue los niveles visceral, conductual y reflexivo. La estética nunca va antes que el comportamiento.</dd>
     </dl>
   </section>
 
@@ -784,6 +804,7 @@
         <li>El <strong>INE</strong> lo justifica: 4,32 millones de personas con discapacidad, un tercio de la población de 16 a 74 años sin nivel digital básico y uno de cada seis hogares sin ordenador.</li>
         <li>En tu proyecto es la <strong>segunda decisión de la Actividad C</strong>: estructura, agrupaciones y jerarquía de cada pantalla, con su comprobación de accesibilidad.</li>
         <li>Los dos casos de estudio ilustran retos distintos del mismo diseño: para <strong>Marta</strong>, jerarquía fuerte que comunica «listo» en un segundo de escaneo bajo presión; para <strong>Mari Carmen</strong>, agrupaciones claras, etiquetas en lenguaje de usuario y confirmación explícita sin depender del color —requisitos que coinciden con WCAG AA y también protegen a Joaquín (secundario).</li>
+        <li>La interfaz también debe <strong>poder usarse</strong>: foco visible siempre, operable por teclado y movimiento responsable, comprobando el contraste en <strong>todos los estados</strong>; y la estética genera confianza, pero nunca va antes que el comportamiento.</li>
       </ul>
     </div>
   </section>
