@@ -41,6 +41,7 @@
           <li class="lvl2"><a href="#aloud">Pensar en voz alta (Thinking Aloud), en la práctica</a></li>
           <li class="lvl2"><a href="#sesion">Cómo transcurre una sesión: presencial y remota</a></li>
           <li class="lvl2"><a href="#caso">Un test de principio a fin (ejemplo didáctico)</a></li>
+          <li class="lvl2"><a href="#decision">Del resultado a la decisión: la siguiente vuelta del ciclo</a></li>
         </ol>
       </li>
       <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
@@ -49,7 +50,7 @@
           <li class="lvl2"><a href="#herramientas">Herramientas para test remotos</a></li>
           <li class="lvl2"><a href="#coste">Anclaje real: por qué el test remoto importa (INE)</a></li>
           <li class="lvl2"><a href="#proyecto">Tu proyecto: el test que cierra la evaluación</a></li>
-          <li class="lvl2"><a href="#retos">Retos de test para esta semana</a></li>
+          <li class="lvl2"><a href="#retos">Retos de test</a></li>
           <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
         </ol>
       </li>
@@ -67,13 +68,30 @@
     <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
     <p>Cerramos el Tema 4 con la tercera familia de métodos de evaluación: el <strong>test con usuarios</strong>. Ya vimos la indagación (preguntar y observar) y la inspección (el experto revisa sin usuarios). Ahora llega la prueba de fuego.</p>
     <p>El test es la familia que aporta la <strong>evidencia más directa</strong>: personas reales intentando completar tareas reales mientras observamos y <strong>medimos</strong>. Si la inspección decía qué problemas eran posibles, el test confirma cuáles son de verdad.</p>
-    <p>Hoy nos centramos en cuatro cosas: las <strong>métricas</strong> (cómo se mide la usabilidad), <strong>cómo se diseña, desarrolla y evalúa</strong> un test, la escala <strong>SUS</strong> en detalle, y las <strong>herramientas</strong> para hacer tests a distancia.</p>
+    <p>Estos apuntes se centran en cuatro cosas: las <strong>métricas</strong> (cómo se mide la usabilidad), <strong>cómo se diseña, desarrolla y evalúa</strong> un test, la escala <strong>SUS</strong> en detalle, y las <strong>herramientas</strong> para hacer tests a distancia.</p>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en tablas, en un diagrama accesible y en preguntas de autocomprobación.</p>
     <ul>
       <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible; las <strong>«¿Sabías que?»</strong> añaden contexto.</li>
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
+    
+    <div class="box key">
+      <span class="label">Un ciclo, no una escalera</span>
+      <p>El test es la última familia que se estudia, pero <strong>no cierra el DCH</strong>: sus hallazgos se devuelven a la Actividad C (cláusula 7.4.4 de la ISO 9241-210) o, si lo que falla es un requisito o la comprensión del contexto, a la B o a la A. El ciclo se repite hasta que se cumplen los criterios de prueba de los requisitos. Estudiamos A, B, C y D en orden; un proyecto real las enlaza en <strong>bucle</strong>.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Cómo estudiar con estos apuntes</span>
+      <ol>
+        <li><b>Primera lectura.</b> Quédate con las tres fases del test, las tres dimensiones de la usabilidad y la fórmula del SUS.</li>
+        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen y de Marta, tapa los resultados e intenta priorizar tú los problemas.</li>
+        <li><b>Autoevaluación.</b> Calcula a mano un SUS y responde los ejercicios de aplicación antes de abrir la solución.</li>
+        <li><b>Ficha de repaso.</b> Rellena de memoria la tabla «decisión tras evaluar» del apartado 1.9.</li>
+        <li><b>Proyecto.</b> Usa la plantilla de informe del apunte de introducción al Tema 4 (apartado 2.4) y rellena la sección de resultados con tus datos.</li>
+      </ol>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>El <strong>test con usuarios</strong> (o test de usabilidad) consiste en pedir a <strong>personas reales</strong> que realicen <strong>tareas concretas</strong> mientras observamos y <strong>medimos</strong> qué ocurre. Es la fuente de evidencia más directa de la evaluación: muestra los problemas <em>reales</em>, no solo los posibles.</p>
@@ -100,7 +118,7 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>No hacen falta multitudes. Una idea muy difundida en usabilidad sostiene que con observar a unas <strong>cinco personas</strong> por perfil aflora ya la mayor parte de los problemas graves. Es más rentable hacer <strong>varios tests pequeños</strong> e ir corrigiendo entre uno y otro que un único test enorme al final. Es la filosofía «hazlo tú mismo» que Steve Krug defiende en <em>Rocket Surgery Made Easy</em>.</p>
+      <p>No hacen falta multitudes. Una idea muy difundida en usabilidad (Nielsen y Landauer) sostiene que con observar a unas <strong>cinco personas</strong> por perfil aflora ya la mayor parte de los problemas graves. Es más rentable hacer <strong>varios tests pequeños</strong> e ir corrigiendo entre uno y otro que un único test enorme al final. Steve Krug, en <em>Rocket Surgery Made Easy</em>, defiende una filosofía parecida («hazlo tú mismo»): rondas pequeñas y frecuentes, con muy pocas personas cada vez.</p>
     </div>
   </section>
 
@@ -211,7 +229,7 @@
 
     <h4>Fase 1 · Diseñar el test</h4>
     <p>Aquí decides todo lo importante. Define los <strong>objetivos</strong> (¿qué quieres averiguar?), elige a los <strong>participantes</strong> (perfiles reales, en torno a cinco por perfil) y redacta las <strong>tareas</strong>.</p>
-    <p>Las tareas son lo más delicado. Deben ser <strong>realistas, concretas y medibles</strong>, con un <strong>criterio de éxito</strong> claro. Y se piden como un encargo («pide una cita con el Dr. Gómez para el jueves»), nunca como una pista («usa el calendario para…»).</p>
+    <p>Las tareas son lo más delicado. Deben ser <strong>realistas, concretas y medibles</strong>, con un <strong>criterio de éxito</strong> claro. Y se piden como un encargo («pide una cita con el Dr. Ramos para el martes»), nunca como una pista («usa el calendario para…»).</p>
     <p>Decide también qué <strong>métricas</strong> recogerás y haz siempre una <strong>prueba piloto</strong> con una persona antes de empezar: descubrirás tareas mal redactadas o instrucciones confusas a tiempo de corregirlas.</p>
 
     <h4>Fase 2 · Desarrollar (conducir) la sesión</h4>
@@ -231,7 +249,7 @@
   <section id="sus" aria-labelledby="sus-h">
     <h3 id="sus-h"><span class="num" aria-hidden="true">1.4</span>El SUS en detalle</h3>
 
-    <p>La métrica de satisfacción más usada del mundo es el <strong>SUS</strong> (<em>System Usability Scale</em>, «escala de usabilidad del sistema»), un cuestionario breve creado por John Brooke en 1996. Es rápido, fiable y sirve para casi cualquier sistema.</p>
+    <p>Una de las métricas de satisfacción más usadas es el <strong>SUS</strong> (<em>System Usability Scale</em>, «escala de usabilidad del sistema»), un cuestionario breve creado por John Brooke en 1996. Es rápido, fiable y sirve para casi cualquier sistema.</p>
     <p>Consta de <strong>10 afirmaciones</strong> que la persona valora tras usar el sistema, en una escala de <strong>1 («totalmente en desacuerdo») a 5 («totalmente de acuerdo»)</strong>. Su truco está en que las afirmaciones <strong>alternan tono positivo y negativo</strong>, lo que obliga a leer cada una y evita responder en piloto automático.</p>
 
     <h4>Las 10 afirmaciones</h4>
@@ -357,7 +375,7 @@
 
     <h4>Una sesión moderada, paso a paso</h4>
     <ol class="cycle" role="list">
-      <li><b>Bienvenida y consentimiento</b> Recibes a la persona, explicas el propósito y firmáis el consentimiento. Dejas claro: «evaluamos el sistema, no a ti; no hay respuestas malas».</li>
+      <li><b>Bienvenida y consentimiento</b> Recibes a la persona, explicas el propósito en lenguaje llano y recoges su consentimiento informado (por escrito o, si lo prefiere, de forma oral y anotada). Dejas claro: «evaluamos el sistema, no a ti; no hay respuestas malas».</li>
       <li><b>Calentamiento</b> Dos o tres preguntas de contexto para romper el hielo.</li>
       <li><b>Instrucciones</b> Explicas el pensar en voz alta y lo modelas con un ejemplo.</li>
       <li><b>Tareas, una a una</b> Entregas cada tarea, observas y sondas sin guiar; tras cada una, la pregunta de facilidad (SEQ).</li>
@@ -381,79 +399,122 @@
   </section>
 
   <section id="caso" aria-labelledby="caso-h">
-    <h3 id="caso-h"><span class="num" aria-hidden="true">1.8</span>Un test de principio a fin (ejemplo didáctico)</h3>
+    <h3 id="caso-h"><span class="num" aria-hidden="true">1.8</span>Un test de principio a fin (ejemplo resuelto)</h3>
 
-    <p>Juntemos todo lo anterior en un caso completo, sobre la <strong>app de cita médica</strong> que venimos usando. Verás de un vistazo cómo encajan participantes, tareas, preguntas, métricas y resultados.</p>
+    <p>Juntemos todo lo anterior en un caso completo sobre la <strong>app de cita médica</strong> de Mari Carmen. El test <strong>ejecuta el plan de evaluación</strong> derivado de la trazabilidad de la Actividad C (ver apartado 2.4 del apunte de introducción al Tema 4): cada tarea comprueba un requisito (R-0x) y cada criterio de éxito sale de un objetivo (RU-0x).</p>
     <p><strong>(Ejemplo didáctico. Los números de resultados son ficticios, para ilustrar.)</strong></p>
 
     <h4>Objetivo y participantes</h4>
-    <p><strong>Objetivo:</strong> comprobar si personas reales consiguen <strong>pedir, consultar y anular</strong> una cita en el prototipo, con qué dificultad y con qué satisfacción.</p>
-    <p><strong>Participantes:</strong> 5 personas del perfil real (no compañeros de clase): dos estudiantes que usan solo el móvil (entre ellas Marta), una persona cuidadora que gestiona las citas de un familiar y dos personas mayores con baja confianza digital (entre ellas Don Ernesto). Sesiones de unos 30 minutos, cada una en <strong>su propio móvil</strong>.</p>
+    <p><strong>Objetivo:</strong> comprobar si personas reales consiguen <strong>pedir una cita, retomarla cuando caduca el código y localizarla después sin conexión</strong>, con qué dificultad y con qué satisfacción (R-01, R-02 y R-04; objetivos RU-01 y RU-03).</p>
+    <p><strong>Participantes:</strong> 5 personas del <strong>perfil de Mari Carmen</strong> (70 o más años, competencia digital básica, letra extragrande, idealmente en entorno rural), <strong>no compañeros de clase</strong>; si se puede, una persona con baja visión que use ampliación (perfil de Joaquín) para comprobar R-03. Sesiones de 30 a 40 minutos, con su propio móvil y en un lugar conocido. Se anota con códigos (P1 a P5) y con datos ficticios en el prototipo.</p>
 
     <h4>Las tareas</h4>
-    <p>Tres tareas, formuladas como encargos (sin pistas) y con un criterio de éxito claro:</p>
+    <p>Tres tareas formuladas como encargos (sin pistas) y con un criterio de éxito claro, cada una ligada a un requisito:</p>
     <div class="table-scroll">
     <table class="data">
-      <caption>Tareas del test y su criterio de éxito. Ejemplo didáctico.</caption>
+      <caption>Tareas del test, criterio de éxito y requisito que comprueban.</caption>
       <thead>
-        <tr><th scope="col">Tarea (encargo al participante)</th><th scope="col">Criterio de éxito</th></tr>
+        <tr><th scope="col">Tarea (encargo al participante)</th><th scope="col">Criterio de éxito</th><th scope="col">Requisito</th></tr>
       </thead>
       <tbody>
-        <tr><td>T1. «Pide una cita con tu médico de cabecera para la semana que viene.»</td><td>Llega a la pantalla «Cita confirmada» con médico y fecha correctos.</td></tr>
-        <tr><td>T2. «Comprueba a qué hora es tu próxima cita.»</td><td>Localiza y dice en voz alta la hora correcta.</td></tr>
-        <tr><td>T3. «Anula la cita que acabas de pedir.»</td><td>Llega a la confirmación de anulación.</td></tr>
-      </tbody>
+        <tr><th scope="row">T1. «Pide una cita con tu médico de familia para el martes.»</th><td>Llega a «Cita guardada — martes, 10:00 h, Dr. Ramos, centro de salud» sin ayuda. RU-01: al menos 4 de 5 (provisional)</td><td>R-01</td></tr>
+        <tr><th scope="row">T2. «Has salido a leer el SMS y el código ha caducado. Sigue con la cita.»</th><td>Pide el reenvío del código sin perder los datos ni volver al inicio</td><td>R-04</td></tr>
+        <tr><th scope="row">T3. «Cierra la aplicación y mira cuándo es tu cita, sin conexión.»</th><td>Localiza médico, día, hora y centro en «Mis citas»</td><td>R-02</td></tr>
+        </tbody>
     </table>
     </div>
 
     <h4>Las preguntas</h4>
-    <p>Las preguntas cambian según el momento de la sesión:</p>
     <ul>
-      <li><strong>Antes (calentamiento, tras el consentimiento):</strong> «¿Cómo pides cita médica habitualmente?», «¿Sueles hacer gestiones con el móvil?». Rompen el hielo y dan contexto, sin condicionar.</li>
-      <li><strong>Durante (sondas de pensar en voz alta, neutrales):</strong> «¿Qué estás intentando hacer ahora?», «¿Qué esperabas que pasara?», «¿Qué harías a continuación?». Nunca «pulsa ahí».</li>
-      <li><strong>Después de cada tarea (facilidad, SEQ):</strong> «Del 1 (muy difícil) al 7 (muy fácil), ¿cómo de fácil te ha resultado esta tarea?».</li>
-      <li><strong>Al final (post-test):</strong> las 10 afirmaciones del <strong>SUS</strong> y dos preguntas abiertas: «¿Qué es lo que más te ha costado?» y «¿Qué cambiarías?».</li>
+      <li><b>Antes (calentamiento, tras el consentimiento):</b> «¿Cómo pide usted cita médica habitualmente?». Rompe el hielo y da contexto, sin condicionar.</li>
+      <li><b>Durante (pensar en voz alta, sondas neutrales):</b> «¿Qué está intentando hacer ahora?», «¿Qué esperaba que pasara?». Nunca «pulse ahí».</li>
+      <li><b>Después de cada tarea (SEQ):</b> «Del 1 (muy difícil) al 7 (muy fácil), ¿cómo de fácil le ha resultado esta tarea?».</li>
+      <li><b>Al final:</b> las 10 afirmaciones del SUS y las preguntas de RU-03: «¿Sabe si la cita ha quedado guardada?» y «Si esto fuera de verdad, ¿llamaría para confirmarlo?».</li>
     </ul>
 
     <h4>Las métricas</h4>
-    <p>Para cada tarea se recogen métricas de las tres dimensiones; el SUS se pasa una sola vez, al final:</p>
-    <ul>
-      <li><strong>Eficacia:</strong> tasa de éxito (cuántos de los 5 la completan) y nº de errores.</li>
-      <li><strong>Eficiencia:</strong> tiempo en tarea.</li>
-      <li><strong>Satisfacción:</strong> facilidad por tarea (SEQ, 1–7) y, global, el <strong>SUS</strong> (0–100).</li>
-    </ul>
+    <p><strong>Eficacia:</strong> tasa de éxito y errores. <strong>Eficiencia:</strong> tiempo en tarea. <strong>Satisfacción:</strong> SEQ por tarea y SUS global (0–100). Además, la <strong>certeza</strong> y las <strong>llamadas de confirmación</strong> de RU-03.</p>
 
     <h4>Posibles resultados</h4>
-    <p>Tras las cinco sesiones, los datos podrían quedar así:</p>
     <div class="table-scroll">
     <table class="data">
-      <caption>Resultados (ficticios) por tarea. Ejemplo didáctico.</caption>
+      <caption>Resultados (ficticios) por tarea del test de «Pedir cita».</caption>
       <thead>
-        <tr><th scope="col">Tarea</th><th scope="col">Éxito</th><th scope="col">Tiempo medio</th><th scope="col">Errores</th><th scope="col">SEQ (1–7)</th></tr>
+        <tr><th scope="col">Tarea</th><th scope="col">Éxito</th><th scope="col">Tiempo medio</th><th scope="col">Errores</th><th scope="col">Facilidad (SEQ 1–7)</th></tr>
       </thead>
       <tbody>
-        <tr><td>T1 · Pedir cita</td><td class="c">5/5</td><td class="c">1 m 40 s</td><td class="c">2</td><td class="c">5,8</td></tr>
-        <tr><td>T2 · Ver próxima cita</td><td class="c">3/5</td><td class="c">1 m 10 s</td><td class="c">4</td><td class="c">3,4</td></tr>
-        <tr><td>T3 · Anular cita</td><td class="c">2/5</td><td class="c">2 m 20 s</td><td class="c">6</td><td class="c">2,6</td></tr>
-      </tbody>
+        <tr><th scope="row">T1 · Pedir cita</th><td>4/5</td><td>2 m 10 s</td><td>3</td><td>5,6</td></tr>
+        <tr><th scope="row">T2 · Código caducado</th><td>2/5</td><td>3 m 05 s</td><td>6</td><td>3,2</td></tr>
+        <tr><th scope="row">T3 · Ver la cita sin conexión</th><td>3/5</td><td>1 m 20 s</td><td>4</td><td>3,8</td></tr>
+        </tbody>
     </table>
     </div>
-    <p>Y la satisfacción global: <strong>SUS = 62</strong>, por debajo de la media de referencia (≈ 68). Hay margen de mejora.</p>
+    <p>Satisfacción global: <strong>SUS = 62</strong>, por debajo de la media de referencia (≈ 68). Además, 3 de 5 personas dicen que llamarían para confirmar la cita.</p>
 
     <h4>Qué nos dicen y qué hacer</h4>
-    <p>Leídos juntos, los números cuentan una historia clara, que se prioriza por <strong>frecuencia y gravedad</strong>:</p>
-    <ol class="cycle" role="list">
-      <li><b>Anular cita es el gran problema (grave y frecuente)</b> Solo 2 de 5 lo logran, en mucho tiempo y con muchos errores. La opción está escondida en un submenú. <em>Recomendación:</em> mover «Anular» a la propia pantalla de la cita.</li>
-      <li><b>Consultar la próxima cita confunde (media)</b> 3 de 5 y SEQ bajo: «próxima cita» no se distingue de «historial». <em>Recomendación:</em> etiquetar con claridad «Tu próxima cita» y destacarla.</li>
-      <li><b>Pedir cita funciona bien (mantener)</b> 5 de 5 y SEQ alto; los 2 errores eran menores. La tarea principal está resuelta.</li>
-    </ol>
-    <p>Fíjate en cómo encaja todo: las <strong>tareas</strong> definieron qué medir; las <strong>métricas</strong> mostraron dónde duele; las <strong>preguntas</strong> (SEQ y abiertas) explicaron el porqué; y el <strong>SUS</strong> dio una nota global comparable para el próximo rediseño. Eso es un test de usabilidad completo.</p>
+    <p>Los números se leen junto con lo que dijo la gente y se priorizan por <strong>frecuencia</strong> (cuántas personas) y <strong>gravedad</strong> (cuánto daño):</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Priorización de problemas por frecuencia y gravedad (escala del proyecto: 1 = molestia menor; 2 = enlentece o confunde; 3 = impide completar la tarea o deja una duda grave).</caption>
+      <thead>
+        <tr><th scope="col">Problema</th><th scope="col">Frecuencia</th><th scope="col">Gravedad</th><th scope="col">Decisión</th><th scope="col">Vuelve a</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">H1 · «Reenviar código» está escondido tras la cuenta atrás (2 de 5 no logran pedirlo)</th><td>3 de 5</td><td>3</td><td>Mostrar siempre el botón (R-04)</td><td>Actividad C</td></tr>
+        <tr><th scope="row">H2 · «Mis citas» no distingue «próxima cita» de «historial»</th><td>3 de 5</td><td>2</td><td>Etiquetar «Tu próxima cita» y destacarla (R-02)</td><td>Actividad C</td></tr>
+        <tr><th scope="row">H3 · 3 de 5 llamarían igualmente para confirmar (RU-03 no se cumple)</th><td>3 de 5</td><td>3</td><td>Entrevistar para entender el porqué; revisar la pantalla final y, si persiste, el objetivo RU-03</td><td>D → C o B</td></tr>
+        <tr><th scope="row">H4 · Pedir cita funciona (T1: 4 de 5)</th><td>—</td><td>—</td><td>Mantener; RU-01 se cumple (provisional)</td><td>Sin cambios</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Fíjate en cómo encaja todo: las tareas salen de los <strong>requisitos</strong>; las métricas muestran dónde duele; las preguntas explican el porqué; y cada problema se devuelve a la <strong>actividad de la que procede</strong>. Esto es un test completo y el comienzo de la siguiente vuelta del ciclo.</p>
 
+    <h4>Ejemplo resuelto: el mismo método con Marta</h4>
+    <p>Con la app de transporte de <strong>Marta</strong> el test cambia en las tareas y en las condiciones: una sola tarea crítica, medida con cronómetro, de pie, con una mano y con luz directa.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Test del flujo «Pagar y subir» de Marta (datos ficticios).</caption>
+      <thead>
+        <tr><th scope="col">Elemento</th><th scope="col">Contenido</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Participantes</th><td>5 personas que usan el autobús a diario y solo el móvil, en la parada, con su propio móvil</td></tr>
+        <tr><th scope="row">Tarea</th><td>«Paga el billete y valida antes de subir al autobús.»</td></tr>
+        <tr><th scope="row">Criterio de éxito</th><td>Billete validado visible en pantalla en ≤ 30 s con una sola mano</td></tr>
+        <tr><th scope="row">Resultados</th><td>Éxito 3/5; tiempo medio 41 s; SEQ 4,4; SUS 71 (por encima de 68)</td></tr>
+        <tr><th scope="row">H1 · gravedad 3 · 3 de 5</th><td>No ven el verde de «Billete listo» al sol → mejorar contraste y añadir texto y tic</td></tr>
+        <tr><th scope="row">H2 · gravedad 3 · 2 de 5</th><td>«Pagar y subir» queda fuera del alcance del pulgar → botón ≥ 44 px en la zona del pulgar</td></tr>
+        <tr><th scope="row">Decisión</th><td>Ambos hallazgos vuelven a la Actividad C; se repite el test en la parada con la nueva versión</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Un SUS alto (71) con un éxito de 3/5 no es una contradicción: el SUS mide satisfacción <strong>percibida</strong> y no sustituye a la eficacia. Por eso se miden las tres dimensiones.</p>
+  </section>
+
+  <section id="decision" aria-labelledby="decision-h">
+    <h3 id="decision-h"><span class="num" aria-hidden="true">1.9</span>Del resultado a la decisión: la siguiente vuelta del ciclo</h3>
+    <p>Un test no termina cuando se calculan los números: termina cuando se <strong>decide qué hacer</strong>. La norma ISO 9241-210 (edición de 2019) pide evaluar el diseño respecto a los requisitos (7.5) y modificar las soluciones a partir de esa evaluación (7.4.4). La decisión depende de <strong>de dónde procede</strong> cada problema.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Decisión tras evaluar: qué ha pasado y a dónde se vuelve.</caption>
+      <thead>
+        <tr><th scope="col">Qué muestra la evaluación</th><th scope="col">Decisión</th><th scope="col">Actividad</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Se cumplen los criterios de prueba (RU-01 a RU-03)</th><td>Documentar en el informe y pasar al siguiente requisito o a la entrega</td><td>—</td></tr>
+        <tr><th scope="row">Un problema de aspecto, comportamiento o realimentación</th><td>Rediseñar, volver a prototipar y volver a probar</td><td>C (7.4.4)</td></tr>
+        <tr><th scope="row">El criterio estaba mal formulado o los umbrales no son realistas</th><td>Revisar el requisito o el objetivo medible</td><td>B</td></tr>
+        <tr><th scope="row">Se descubre algo del contexto o de las personas que no se conocía</th><td>Volver a indagar y actualizar el contexto de uso</td><td>A</td></tr>
+        <tr><th scope="row">Hay conflicto entre requisitos (por ejemplo, C-01, C-02 o C-03)</th><td>Tomar una decisión de compromiso y justificarla</td><td>B o C</td></tr>
+        </tbody>
+    </table>
+    </div>
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>Un test completo enlaza <strong>objetivo → participantes → tareas (con criterio de éxito) → preguntas (antes, durante, SEQ, SUS) → métricas → resultados priorizados → recomendaciones</strong>. Las métricas dicen <em>dónde</em> falla; las preguntas, <em>por qué</em>; el SUS da una nota global para comparar.</p>
+      <p>El DCH es un <strong>ciclo</strong>: el resultado de un test no es una nota, es una decisión sobre a qué actividad volver. Se repite hasta que los criterios de prueba (RU-01 a RU-03) se cumplen o se decide, con justificación, aceptar el compromiso.</p>
     </div>
   </section>
+
 
   <!-- ============ PARTE 2 ============ -->
   <div class="part" id="parte2">
@@ -509,7 +570,7 @@
 
     <div class="box challenge">
       <span class="label">Reto · privacidad ante todo</span>
-      <p>Antes de grabar a nadie con cualquiera de estas herramientas, recuerda el <strong>consentimiento informado</strong> y la protección de datos (RGPD): explica qué se graba, para qué y cuánto tiempo se conserva, y pide permiso por escrito. Investigar con personas conlleva responsabilidad legal, no solo ética.</p>
+      <p>Antes de grabar a nadie con cualquiera de estas herramientas, recuerda el <strong>consentimiento informado</strong> y la protección de datos (RGPD): explica qué se graba, para qué y cuánto tiempo se conserva, y pide permiso expreso (por escrito, o registrado en la propia grabación si la persona lo prefiere). Investigar con personas conlleva responsabilidad legal, no solo ética.</p>
     </div>
   </section>
 
@@ -519,11 +580,11 @@
     <p>El test remoto no es solo una comodidad: a menudo es la <strong>única forma</strong> de evaluar con usuarios reales, en su dispositivo y su contexto. Los datos oficiales lo explican.</p>
 
     <div class="box real">
-      <span class="label">Dato real · Fuente INE 2025</span>
-      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (datos de 2025, publicados el 20 de noviembre de 2025):</p>
+      <span class="label">Dato real · Fuente INE · Encuesta TIC-H</span>
+      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (edición más reciente disponible al redactar estos apuntes; consulta los valores vigentes en ine.es):</p>
       <div class="table-scroll">
       <table>
-        <caption>Por qué conviene testar en el dispositivo real del usuario. INE, 2025.</caption>
+        <caption>Por qué conviene testar en el dispositivo real del usuario. INE, Encuesta TIC-H.</caption>
         <thead>
           <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
         </thead>
@@ -537,12 +598,12 @@
     </div>
 
     <p>Lee el primer dato: <strong>la mitad de los hogares</strong> solo tiene móvil. <strong>Marta</strong> está en ese 50,3 %: si el equipo testa la app de transporte solo en un portátil de laboratorio, nunca descubrirá que el botón queda fuera de la zona del pulgar ni que el contraste falla bajo luz directa. El test moderado con su propio móvil, de pie si es posible, es el único que genera evidencia real de su contexto.</p>
-    <p>El test remoto no moderado resuelve otra dimensión: la persona usa <strong>su propio teléfono</strong>, en su entorno habitual. <strong>Mari Carmen</strong>, en su municipio rural de menos de 1.000 habitantes, no puede desplazarse a Cáceres para una sesión de laboratorio; un test remoto moderado por videollamada la alcanza en su cocina, en su silla, con sus gafas puestas: exactamente el contexto donde la app tiene que funcionar.</p>
+    <p>El test remoto no moderado resuelve otra dimensión: la persona usa <strong>su propio teléfono</strong>, en su entorno habitual. <strong>Mari Carmen</strong>, en su municipio rural, no puede desplazarse a la ciudad para una sesión de laboratorio; una sesión moderada en su entorno la alcanza en su cocina, con sus gafas puestas: exactamente el contexto donde la app tiene que funcionar. Ojo con el matiz: su cobertura es irregular (es el origen de R-05) y su competencia digital, básica; una <strong>videollamada</strong> puede fallar o resultar ajena a ella, así que conviene tener un <strong>plan B</strong> (visita a su domicilio o al consultorio local, con su propio móvil).</p>
     <p>Y para una región dispersa como <strong>Extremadura</strong>, lo remoto añade otra ventaja sistemática: alcanzas a personas de pueblos alejados sin pedirles que se desplacen. Más diversidad de usuarios, menos barreras, más representatividad de la muestra.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>El test remoto permite evaluar en el <strong>dispositivo y el contexto reales</strong> del usuario. Importa porque, según el INE (2025), <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil. Además, llega a la población <strong>dispersa</strong> de Extremadura sin desplazamientos.</p>
+      <p>El test remoto permite evaluar en el <strong>dispositivo y el contexto reales</strong> del usuario. Importa porque, según el INE (Encuesta TIC-H), <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil. Además, llega a la población <strong>dispersa</strong> de Extremadura sin desplazamientos.</p>
     </div>
   </section>
 
@@ -555,8 +616,8 @@
     <h4>Una receta mínima viable</h4>
     <ul>
       <li><strong>Diseña</strong> 3–4 tareas realistas con criterio de éxito. Caso A: «Paga el billete y valida antes de subir al autobús» — éxito: billete validado en pantalla en ≤ 30 s con una mano. Caso B: «Pide una cita con el Dr. Ramos para el martes» — éxito: llega a «Cita guardada» con médico y fecha correctos, sin pedir ayuda.</li>
-      <li><strong>Recluta</strong> a 5 personas del perfil real. Para Marta: jóvenes que usan solo el móvil, mejor con prisa simulada. Para Mari Carmen: personas mayores de 70 años con competencia digital básica, idealmente en entorno rural, con el zoom del móvil activado.</li>
-      <li><strong>Conduce</strong> las sesiones con pensar en voz alta. Para Marta: en su propio móvil, de pie si es posible, con brillo al máximo. Para Mari Carmen: remoto moderado por videollamada, en su dispositivo habitual, con sus gafas puestas.</li>
+      <li><strong>Recluta</strong> a 5 personas del perfil real. Para Marta: personas que usan solo el móvil y el autobús a diario, mejor con prisa simulada. Para Mari Carmen: personas mayores de 70 años con competencia digital básica, idealmente en entorno rural, con el zoom del móvil activado.</li>
+      <li><strong>Conduce</strong> las sesiones con pensar en voz alta. Para Marta: en su propio móvil, de pie si es posible, con brillo al máximo. Para Mari Carmen: moderado en su entorno habitual (en persona, o remoto por videollamada si su cobertura y su comodidad lo permiten), en su propio móvil y con sus gafas puestas.</li>
       <li><strong>Mide</strong> tasa de éxito, tiempo por tarea y pasa el <strong>SUS</strong> al final. Añade para Mari Carmen la pregunta cualitativa: «¿Necesitaría llamar a alguien para confirmar que la cita quedó guardada?».</li>
       <li><strong>Analiza</strong> y lleva al informe los hallazgos priorizados. Si Marta no completa en 30 s: problema de Fitts o de flujo. Si Mari Carmen llama igualmente: la pantalla de confirmación no cierra el abismo de evaluación.</li>
     </ul>
@@ -574,7 +635,7 @@
   </section>
 
   <section id="retos" aria-labelledby="retos-h">
-    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de test para esta semana</h3>
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de test</h3>
 
     <p>Tres retos para practicar la mirada y la mano de quien testa.</p>
 
@@ -640,7 +701,24 @@
     </details>
     <details class="check">
       <summary>8. ¿Por qué importa el test remoto según el INE?</summary>
-      <p>Porque permite evaluar en el dispositivo y contexto reales. En 2025, <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil; testar solo en un portátil de laboratorio ignora ese contexto. Además llega a la población dispersa de Extremadura. <em>(Ver 2.3)</em></p>
+      <p>Porque permite evaluar en el dispositivo y contexto reales. En la edición de referencia de la encuesta, <strong>el 50,3 % de los hogares solo tiene móvil</strong> y el 10,7 % accede a Internet solo por móvil; testar solo en un portátil de laboratorio ignora ese contexto. Además llega a la población dispersa de Extremadura. <em>(Ver 2.3)</em></p>
+    </details>
+  
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: calcula el SUS de una persona que responde (ítems 1 a 10): 4, 2, 4, 1, 5, 2, 4, 2, 4, 1.</summary>
+      <p>Impares (1, 3, 5, 7, 9): respuesta − 1 → 3, 3, 4, 3, 3 = 16. Pares (2, 4, 6, 8, 10): 5 − respuesta → 3, 4, 3, 3, 4 = 17. Suma = 33; × 2,5 = <strong>82,5</strong>. Supera la media de referencia (≈ 68). <em>(Ver 1.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. Marta completa el pago en 52 s con una mano. Su SEQ es 6 y el SUS del grupo es 78. ¿Se cumple el requisito? ¿Qué hay que revisar?</summary>
+      <p>No: el criterio de éxito es <strong>≤ 30 s con una sola mano</strong>, y la eficiencia es una dimensión distinta de la satisfacción. Un SUS alto y una facilidad percibida buena no compensan una tarea que supera el tiempo. Hay que mirar dónde se pierden los segundos (¿botón fuera del pulgar?, ¿espera sin indicador?) y volver a la Actividad C. <em>(Ver 1.2 y 1.8)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. En un test, 3 de 5 personas mayores no saben si la cita está guardada. Prioriza el problema y decide a qué actividad vuelve.</summary>
+      <p>Frecuencia alta (3 de 5) y gravedad <strong>3</strong> (deja una duda grave; RU-03 no se cumple). Se devuelve a la <strong>Actividad C</strong> (rediseñar la pantalla final con médico, día y hora, R-02) y, mientras no se entienda por qué siguen dudando, se añade una entrevista (indagación) que puede cuestionar el objetivo RU-03 (B) o el contexto (A). <em>(Ver 1.9)</em></p>
+    </details>
+    <details class="check">
+      <summary>12. ¿Por qué el test no cierra el DCH?</summary>
+      <p>Porque sus hallazgos se devuelven a A, B o C y el ciclo se repite hasta cumplir los criterios de prueba. La cláusula 7.5 (evaluación) alimenta la 7.4.4 (modificar las soluciones). <em>(Ver 1.9)</em></p>
     </details>
   </section>
 
@@ -680,7 +758,11 @@
       <dd>Ensayo del test con una persona antes de empezar, para detectar tareas mal redactadas o instrucciones confusas.</dd>
       <dt>Consentimiento informado</dt>
       <dd>Permiso que la persona da, conociendo qué se graba y para qué, antes de participar. Requisito ético y legal (RGPD).</dd>
-    </dl>
+      <dt>Ciclo iterativo (DCH)</dt>
+      <dd>Repetición de las actividades A a D hasta cumplir los requisitos. El resultado de un test se devuelve a la actividad de la que procede el problema (A, B o C).</dd>
+        <dt>Priorización por frecuencia y gravedad</dt>
+      <dd>Orden en que se arreglan los problemas: cuántas personas los sufren y cuánto daño hacen (escala del proyecto: 1 = molestia menor; 2 = enlentece o confunde; 3 = impide completar la tarea o deja una duda grave).</dd>
+      </dl>
   </section>
 
   <!-- ============ RESUMEN ============ -->
@@ -696,12 +778,14 @@
         <li>Regla durante la sesión: <strong>pensar en voz alta</strong> y <strong>no guiar</strong>; el atasco del usuario es el dato más valioso.</li>
         <li>El <strong>SUS</strong>: 10 afirmaciones (1–5, tono alternado), impares «− 1», pares «5 −», suma × 2,5 → 0–100 de satisfacción. Media ≈ <strong>68</strong>; no es porcentaje ni mide eficacia.</li>
         <li>El <strong>test remoto</strong> (moderado o no moderado) evalúa en el dispositivo y contexto reales; herramientas como Lookback, UserTesting, Maze o Lyssna, o Zoom/Meet gratis.</li>
-        <li>Importa según el <strong>INE 2025</strong>: <strong>50,3 %</strong> de hogares solo con móvil; además, alcanza a la población dispersa de Extremadura.</li>
+        <li>Importa según el <strong>INE (Encuesta TIC-H)</strong>: <strong>50,3 %</strong> de hogares solo con móvil; además, alcanza a la población dispersa de Extremadura.</li>
         <li>En tu proyecto, el test cierra la Actividad D: ~5 participantes, tareas con criterio de éxito, medir <strong>éxito + tiempo + SUS</strong> y llevarlo al informe.</li>
         <li>Los dos casos de estudio ilustran por qué el test es irreemplazable: la inspección detectó que el botón de <strong>Marta</strong> podría estar mal ubicado; el test confirma si de verdad falla bajo presión en el andén. La inspección detectó que la pantalla de <strong>Mari Carmen</strong> podría no cerrar el abismo de evaluación; el test confirma si, con la confirmación explícita, deja de llamar a su hija. Sin personas reales en su contexto real, esas preguntas no tienen respuesta.</li>
+        <li>El test <strong>ejecuta el plan de evaluación</strong> derivado de la trazabilidad: cada tarea comprueba un requisito (R-0x) y cada criterio de éxito sale de un objetivo (RU-0x). Los problemas se priorizan por frecuencia y gravedad (1 a 3) y se devuelven a la actividad de la que proceden.</li>
+        <li>El DCH es un <strong>ciclo</strong>: el test no lo cierra, lo hace girar (cláusulas 7.5 y 7.4.4 de la ISO 9241-210).</li>
       </ul>
     </div>
-    <p>Con esta sesión cerramos las tres familias de evaluación —indagación, inspección y test— y, con ellas, la Actividad D y el ciclo del Diseño Centrado en lo Humano.</p>
+    <p>Con este apunte se completan las tres familias de evaluación —indagación, inspección y test— y con ellas la Actividad D. Pero el ciclo del Diseño Centrado en lo Humano <strong>no termina aquí</strong>: lo que revela el test se devuelve a A, B o C y el ciclo vuelve a girar (apartado 1.9).</p>
   </section>
 
   <!-- ============ REFERENCIAS ============ -->
@@ -712,7 +796,7 @@
       <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
       <li>Krug, S. <em>Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems</em>. New Riders, 2010. (Tests pequeños y «hazlo tú mismo».)</li>
       <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Evaluación con usuarios y métricas.)</li>
-      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. Morgan Kaufmann (edición más reciente).</li>
       <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
       <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006.</li>
       <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
@@ -726,7 +810,7 @@
     <p>Instrumento y datos citados:</p>
     <ol class="refs" start="11">
       <li>Brooke, J. «SUS: A quick and dirty usability scale». En <em>Usability Evaluation in Industry</em>, 1996. (Origen de la escala SUS; citado como referencia del instrumento.)</li>
-      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (publicada el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, edición más reciente. <a href="https://www.ine.es/">ine.es</a>.</li>
       <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> (test de usabilidad y test remoto) · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
     </ol>
     <p class="lead" style="font-size:.92rem;">Nota: las herramientas comerciales mencionadas (Lookback, UserTesting, Maze, Lyssna, Optimal Workshop, Loop11, Hotjar, Zoom, Google Meet) se citan a título informativo, sin relación con la asignatura; conviene consultar sus condiciones y precios actuales.</p>
@@ -737,7 +821,7 @@
 <footer>
   <div class="wrap">
     <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>El test con usuarios (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
-    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+    <p>Escuela Politécnica · Universidad de Extremadura. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
   </div>
 </footer>
 

@@ -38,6 +38,7 @@
           <li class="lvl2"><a href="#familias">Las tres familias de métodos: indagación, inspección y test</a></li>
           <li class="lvl2"><a href="#formativa-sumativa">Evaluar para mejorar y evaluar para decidir</a></li>
           <li class="lvl2"><a href="#antipatron">El antipatrón: confundir «me gusta» con «funciona»</a></li>
+          <li class="lvl2"><a href="#bucle">El bucle en la práctica: de cada hallazgo a la actividad a la que vuelve</a></li>
         </ol>
       </li>
       <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
@@ -46,7 +47,7 @@
           <li class="lvl2"><a href="#elegir">Una primera guía para elegir el método</a></li>
           <li class="lvl2"><a href="#coste">Anclaje real: por qué evaluar no es opcional en España (INE)</a></li>
           <li class="lvl2"><a href="#proyecto">Tu proyecto: la Actividad D y el informe de evaluación</a></li>
-          <li class="lvl2"><a href="#retos">Retos de evaluación para esta semana</a></li>
+          <li class="lvl2"><a href="#retos">Retos de evaluación</a></li>
           <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
         </ol>
       </li>
@@ -64,7 +65,7 @@
     <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
     <p>Estos apuntes abren el <strong>Tema 4 (Evaluación de sistemas)</strong> y cierran el recorrido por el ciclo del <strong>Diseño Centrado en lo Humano (DCH)</strong>. En el Tema 3 produjiste soluciones de diseño y prototipos. Aquí toca la pregunta que decide si ese trabajo sirve: <strong>¿funciona de verdad?</strong></p>
     <p>Damos por sabido el ciclo del DCH: <strong>contexto de uso → requisitos → soluciones de diseño → evaluación</strong>, e iterar. La evaluación es esa cuarta actividad, la <strong>Actividad D</strong>. Si el esquema no te suena, vuelve un momento al Tema 1 antes de seguir.</p>
-    <p>El objetivo de hoy es modesto pero decisivo: <strong>entender qué es evaluar en DCH y conocer las tres familias de métodos</strong> que verás en este tema. No vamos a aplicar todavía cada técnica en detalle; eso llega en las sesiones siguientes y en el laboratorio.</p>
+    <p>El objetivo de estos apuntes es modesto pero decisivo: <strong>entender qué es evaluar en DCH y conocer las tres familias de métodos</strong> que verás en este tema. No vamos a aplicar todavía cada técnica en detalle; eso llega en las sesiones siguientes y en el laboratorio.</p>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en una tabla, en un diagrama accesible y en preguntas de autocomprobación.</p>
     <ul>
       <li>Las cajas <strong>«Idea clave»</strong> condensan lo imprescindible si vas con prisa.</li>
@@ -72,6 +73,23 @@
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
+    
+    <div class="box key">
+      <span class="label">Un ciclo, no una escalera</span>
+      <p>Estos apuntes presentan las actividades del DCH <strong>en orden</strong> —A (contexto de uso), B (requisitos), C (soluciones de diseño) y D (evaluación)— porque así se explican y se aprenden. Pero el DCH es un <strong>proceso cíclico</strong>: la norma pide repetir las actividades hasta que el diseño cumple los requisitos, y cada hallazgo de la evaluación puede devolverte a C, a B o incluso a A. La Actividad D es la última que estudias, <strong>no la última que haces</strong>.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Cómo estudiar con estos apuntes</span>
+      <ol>
+        <li><b>Primera lectura.</b> Lee solo las cajas «Idea clave» y el «Resumen: ideas clave». Si puedes explicar cada una con tus palabras, tienes el esqueleto.</li>
+        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen y de Marta, tapa la columna de la derecha e intenta resolver tú primero.</li>
+        <li><b>Autoevaluación.</b> Responde «Comprueba tu comprensión» y los ejercicios de aplicación antes de abrir cada solución.</li>
+        <li><b>Ficha de repaso.</b> Rellena de memoria la tabla del apartado 1.6 (qué hallazgo devuelve a qué actividad) y el glosario.</li>
+        <li><b>Proyecto.</b> Usa la plantilla del apartado 2.4 para planificar y escribir tu informe de evaluación.</li>
+      </ol>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>La <strong>Actividad D — «evaluar el diseño respecto a los requisitos»</strong> es la cuarta y última del ciclo DCH… que no es el final, sino la que decide <strong>si hay que volver a empezar</strong>. Comprueba con evidencia si el sistema cumple lo que se especificó en las Actividades A y B. La norma de referencia para el proceso es la <strong>ISO 9241-210</strong>, la misma que ya conoces.</p>
@@ -89,7 +107,7 @@
     <h3 id="del-prototipo-h"><span class="num" aria-hidden="true">1.1</span>Del prototipo a la prueba: por qué el ciclo se cierra evaluando</h3>
 
     <p>En el Tema 3 aprendiste a <strong>producir soluciones de diseño</strong>: bocetos, prototipos de baja, media y alta fidelidad. Era la Actividad C del DCH. Pero un prototipo es una <strong>hipótesis</strong>, no una verdad.</p>
-    <p>Tú crees que tu pantalla se entiende. Crees que el botón está donde la gente lo busca. Crees que la tarea se completa sin errores. Esas tres creencias pueden ser ciertas… o no. La única forma de saberlo es <strong>comprobarlo</strong>. El equipo que diseñó la app de transporte de <strong>Marta</strong> cree que el botón «Confirmar pago» es visible de un vistazo y que la confirmación se lee al sol. El equipo de la app de cita médica de <strong>Mari Carmen</strong> cree que cuatro pasos son suficientes y que la pantalla «Cita guardada» la tranquiliza. Ambos equipos pueden tener razón. Pero sin evaluar con Marta en el andén y con Mari Carmen en la mesa de la cocina, esas creencias siguen siendo solo hipótesis.</p>
+    <p>Tú crees que tu pantalla se entiende. Crees que el botón está donde la gente lo busca. Crees que la tarea se completa sin errores. Esas tres creencias pueden ser ciertas… o no. La única forma de saberlo es <strong>comprobarlo</strong>. El equipo que diseñó la app de transporte de <strong>Marta</strong> cree que el botón «Pagar y subir» es visible de un vistazo y que la confirmación se lee al sol. El equipo de la app de cita médica de <strong>Mari Carmen</strong> cree que cuatro pasos son suficientes y que la pantalla «Cita guardada» la tranquiliza. Ambos equipos pueden tener razón. Pero sin evaluar con Marta en el andén y con Mari Carmen en la mesa de la cocina, esas creencias siguen siendo solo hipótesis.</p>
     <p>Esa comprobación tiene un nombre técnico: <strong>evaluar el diseño</strong>. Es la Actividad D, y por eso le dedicamos el arranque del Tema 4.</p>
 
     <h4>Evaluar cierra el ciclo… y lo reabre</h4>
@@ -115,6 +133,24 @@
     <p>No es una opinión. Es una <strong>actividad de ingeniería</strong>: parte de objetivos concretos, aplica un método, recoge datos y produce hallazgos que cualquiera del equipo pueda revisar.</p>
     <p>Y como toda pieza de ingeniería de este proceso, termina por escrito. El resultado de evaluar es un <strong>informe técnico de evaluación</strong>: qué se probó, cómo, qué falló y qué se recomienda. Es uno de los resultados de aprendizaje del tema.</p>
 
+    
+    <h4>Dónde está la evaluación en la norma</h4>
+    <p>La ISO 9241-210 (edición de 2019) organiza las actividades del DCH en su cláusula 7. La evaluación es la <strong>cláusula 7.5</strong>. Fíjate en que la 7.4.4 del Tema 3 («modificar las soluciones según la evaluación y la retroalimentación del usuario») es el <strong>lado de la Actividad C que recibe los hallazgos de la D</strong>: la norma ya prevé el bucle.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las cuatro actividades del DCH en la ISO 9241-210:2019 y dónde se estudia cada una.</caption>
+      <thead>
+        <tr><th scope="col">Cláusula</th><th scope="col">Actividad</th><th scope="col">Qué pide la norma</th><th scope="col">Dónde se estudia</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">7.2</th><td>A · Contexto de uso</td><td>Comprender y especificar el contexto de uso</td><td>Tema 2</td></tr>
+        <tr><th scope="row">7.3</th><td>B · Requisitos de usuario</td><td>Especificar los requisitos de usuario</td><td>Tema 2</td></tr>
+        <tr><th scope="row">7.4</th><td>C · Soluciones de diseño</td><td>Producir soluciones de diseño: 7.4.2 diseñar tareas, interacción e interfaz; 7.4.3 hacerlas concretas (prototipos); 7.4.4 modificarlas según la evaluación; 7.4.5 comunicarlas a quien las implementa</td><td>Tema 3</td></tr>
+        <tr><th scope="row">7.5</th><td>D · Evaluación</td><td>Evaluar el diseño respecto a los requisitos</td><td>Tema 4 (estos apuntes)</td></tr>
+        </tbody>
+    </table>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>Evaluar (Actividad D) = comprobar si el diseño cumple los <strong>requisitos</strong> midiendo <strong>eficacia, eficiencia y satisfacción</strong> con usuarios y tareas reales, y dejarlo por escrito en un <strong>informe de evaluación</strong>. Norma del proceso: <strong>ISO 9241-210</strong>; vara de medir: <strong>ISO 9241-11</strong>.</p>
@@ -122,7 +158,7 @@
 
     <div class="box curio">
       <span class="label">¿Sabías que?</span>
-      <p>La idea de que basta con <strong>poca gente</strong> para encontrar la mayoría de los problemas de usabilidad se popularizó en los años 90: con observar a unas cinco personas usando el sistema aparecen ya la mayor parte de los fallos graves. Evaluar bien no exige laboratorios caros ni cientos de participantes; exige método y observar a las personas adecuadas. Es la filosofía «hazlo tú mismo» de Steve Krug en <em>Rocket Surgery Made Easy</em>.</p>
+      <p>La idea de que basta con <strong>poca gente</strong> para encontrar la mayoría de los problemas de usabilidad se popularizó en los años 90 con los trabajos de Nielsen y Landauer: con unas cinco personas por perfil aparecen ya la mayor parte de los fallos graves. Steve Krug, en <em>Rocket Surgery Made Easy</em>, defiende una filosofía parecida («hazlo tú mismo»): pruebas pequeñas y frecuentes, con muy pocas personas por ronda. Evaluar bien no exige laboratorios caros ni cientos de participantes; exige método y observar a las personas adecuadas.</p>
     </div>
   </section>
 
@@ -191,7 +227,7 @@
 
     <ol class="pillars" role="list">
       <li><b>Métodos de indagación — preguntar y observar</b> Se recoge lo que los usuarios <strong>dicen y hacen</strong> en situaciones reales o cercanas a las reales. Incluye <strong>entrevistas</strong>, <strong>observación</strong>, <strong>cuestionarios</strong> y diarios. Sirven sobre todo para entender necesidades, expectativas y satisfacción. Son el puente natural con la Actividad A que ya estudiaste. Ej.: entrevistar a <strong>Mari Carmen</strong> tras usar el prototipo de cita médica para entender si la pantalla «Cita guardada» la tranquilizó o siguió llamando a su hija para confirmar.</li>
-      <li><b>Métodos de inspección — el experto revisa</b> Una persona con criterio examina la interfaz <strong>sin usuarios</strong>, comparándola con reglas conocidas. Los más habituales son la <strong>evaluación heurística</strong> (contrastar la interfaz con un conjunto de principios de usabilidad) y el <strong>recorrido cognitivo</strong> (seguir, paso a paso, si una persona nueva entendería cada acción). Son rápidos y baratos, pero no sustituyen a probar con gente. Ej.: revisar la pantalla de confirmación de pago de <strong>Marta</strong> comprobando si el contraste del «Billete listo» supera 4,5:1 y si el botón «Subir» es el único elemento prominente (heurística de jerarquía visual + WCAG AA).</li>
+      <li><b>Métodos de inspección — el experto revisa</b> Una persona con criterio examina la interfaz <strong>sin usuarios</strong>, comparándola con reglas conocidas. Los más habituales son la <strong>evaluación heurística</strong> (contrastar la interfaz con un conjunto de principios de usabilidad) y el <strong>recorrido cognitivo</strong> (seguir, paso a paso, si una persona nueva entendería cada acción). Son rápidos y baratos, pero no sustituyen a probar con gente. Ej.: revisar la pantalla de confirmación de pago de <strong>Marta</strong> comprobando si el contraste del «Billete listo» supera 4,5:1 y si el botón «Pagar y subir» es el único elemento prominente (jerarquía visual, S15 + WCAG AA).</li>
       <li><b>Métodos de test — el usuario realiza tareas</b> Usuarios reales intentan <strong>completar tareas</strong> mientras alguien observa y mide. El método central es el <strong>test de usabilidad</strong>, casi siempre con la técnica de <strong>pensar en voz alta</strong> (la persona verbaliza lo que intenta y lo que no entiende). Es la familia que produce la evidencia más directa de lo que ocurre de verdad. Ej.: pedir a <strong>Mari Carmen</strong> que pida una cita médica con el prototipo sin dar ninguna instrucción, y observar si se atasca en el paso del código SMS o si llega a la pantalla de confirmación sin ayuda.</li>
     </ol>
 
@@ -240,7 +276,46 @@
       <span class="label">Idea clave</span>
       <p>Tres trampas frecuentes: <strong>preguntar «¿te gusta?» en vez de pedir una tarea</strong>, <strong>evaluar solo con el propio equipo</strong> y <strong>guiar al usuario</strong> durante la prueba. Las tres buscan aprobación, no evidencia. La Actividad D existe para impedirlo.</p>
     </div>
+  
   </section>
+
+  <section id="bucle" aria-labelledby="bucle-h">
+    <h3 id="bucle-h"><span class="num" aria-hidden="true">1.6</span>El bucle en la práctica: de cada hallazgo a la actividad a la que vuelve</h3>
+
+    <p>Decir que el DCH es «iterativo» se queda corto si no se ve cómo se itera. La regla es sencilla: <strong>cada hallazgo se pregunta de qué actividad procede</strong>. Un problema de aspecto o de comportamiento vuelve a la Actividad C; uno de formulación (¿medimos lo correcto?) vuelve a la B; y uno de comprensión del entorno (¿conocíamos de verdad a la persona y su contexto?) vuelve a la A.</p>
+
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué hallazgo de la evaluación devuelve a qué actividad del ciclo (ejemplos de los dos casos).</caption>
+      <thead>
+        <tr><th scope="col">Hallazgo de la evaluación (ejemplo)</th><th scope="col">Vuelve a…</th><th scope="col">Qué se rehace</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Mari Carmen no sabe si la cita quedó guardada (la pantalla muestra solo «Cita guardada»)</th><td>C · 7.4.4</td><td>Rediseñar la pantalla final con médico, día y hora (R-02) y repetir el prototipo y la prueba</td></tr>
+        <tr><th scope="row">Marta no ve el «Billete listo» al sol (contraste insuficiente)</th><td>C · alta fidelidad</td><td>Corregir color y tamaño (≥ 4,5:1 y botón en la zona del pulgar) y volver a probar al sol</td></tr>
+        <tr><th scope="row">Mari Carmen llama a su hija aunque la pantalla es clara, y no sabe por qué</th><td>D · indagación → A o B</td><td>Entrevistarla (D) y, si hace falta, revisar el contexto (A) o la formulación del objetivo RU-03 (B)</td></tr>
+        <tr><th scope="row">Se descubre que en su municipio la cobertura es irregular y se pierde la solicitud</th><td>A → B → C</td><td>Actualizar el contexto de uso (A), añadir o revisar el requisito R-05 (B) y rediseñar (C)</td></tr>
+        <tr><th scope="row">Todos los criterios de prueba se cumplen</th><td>Cierre de la vuelta</td><td>Se documenta en el informe; el ciclo se reabrirá en la siguiente versión del sistema</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>Ejemplo resuelto: una vuelta completa del ciclo con Mari Carmen</h4>
+    <ol>
+      <li><b>Actividad C (prototipo en papel).</b> V1 de la pantalla final: un icono verde y un botón «OK».</li>
+      <li><b>Evaluación formativa (prueba en papel entre compañeros).</b> Hallazgo de gravedad 3: la participante no entiende que la cita se ha guardado.</li>
+      <li><b>Vuelta a C (7.4.4).</b> V2: título «Cita guardada», un recuadro con médico, día y hora y el botón «Mis citas». Se guarda la foto de V1 y la nota del observador como evidencia.</li>
+      <li><b>Actividad D (test con usuarios).</b> Con cinco personas del perfil: ¿llegan a «Cita guardada» sin ayuda y explican con sus palabras que está guardada? Criterio de prueba: al menos 4 de 5 (objetivo RU-01, provisional).</li>
+      <li><b>Decisión.</b> Si se cumple, se documenta y se pasa al siguiente requisito; si no, el hallazgo indica a qué actividad se vuelve (tabla anterior).</li>
+    </ol>
+    <p>Mismo recorrido con Marta: V1 con «Billete listo» en verde claro → hallazgo en la prueba al sol → V2 con contraste ≥ 4,5:1 y botón «Pagar y subir» en la zona del pulgar → nuevo test en el andén con el criterio «pagar y validar en menos de 30 s con una sola mano».</p>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La evaluación no pone fin al DCH: <strong>lo hace girar</strong>. Cada hallazgo se etiqueta con la actividad a la que devuelve (A, B o C) y el ciclo se repite hasta que se cumplen los criterios de prueba de los requisitos. Para decidir si parar, se usan los objetivos medibles de la Actividad B (RU-01 a RU-03).</p>
+    </div>
+  </section>
+
 
   <!-- ============ PARTE 2 ============ -->
   <div class="part" id="parte2">
@@ -256,7 +331,7 @@
 
     <div class="table-scroll">
     <table class="data">
-      <caption>La misma pantalla, dos veredictos: opinión frente a evaluación. Aplicado a los dos casos de estudio.</caption>
+      <caption>La misma pantalla, dos veredictos: opinión frente a evaluación. Aplicado a los dos casos de estudio (datos de ejemplo, ficticios).</caption>
       <thead>
         <tr><th scope="col">Caso</th><th scope="col">Veredicto «me gusta» (opinión)</th><th scope="col">Veredicto «funciona» (evaluación)</th><th scope="col">Qué revela solo el segundo</th></tr>
       </thead>
@@ -264,14 +339,14 @@
         <tr>
           <th scope="row">Caso A · Marta<br>Pantalla de confirmación de pago</th>
           <td>«El diseño es limpio y el verde queda bien.»</td>
-          <td>Marta tarda 8 segundos en encontrar el botón «Subir» bajo el sol de la parada. En 2 de 5 intentos no ve la confirmación verde y vuelve a la pantalla anterior.</td>
-          <td>El contraste no supera 4,5:1 al sol. El botón no está en la zona del pulgar. El requisito «≤ 30 s con una mano» no se cumple.</td>
+          <td>Marta tarda 8 segundos en encontrar el botón «Pagar y subir» bajo el sol de la parada. En 2 de 5 intentos no ve la confirmación verde y vuelve a la pantalla anterior.</td>
+          <td>El contraste no supera 4,5:1 al sol. El botón no está en la zona del pulgar. El requisito de Marta («pagar y validar en menos de 30 s con una sola mano») no se cumple.</td>
         </tr>
         <tr>
           <th scope="row">Caso B · Mari Carmen<br>Pantalla «Cita guardada»</th>
           <td>«Es sencillo, con letra grande. Me parece bien.»</td>
           <td>Mari Carmen llega a la pantalla de confirmación pero no sabe si la cita quedó guardada o si tiene que pulsar algo más. En 3 de 5 intentos llama a su hija para confirmar.</td>
-          <td>El mensaje «Cita guardada» no cierra el abismo de evaluación para su perfil. El requisito «confirmación que no necesita ayuda» no se cumple.</td>
+          <td>Una versión mínima del mensaje («Cita guardada» sin médico, día ni hora) no cierra el abismo de evaluación para su perfil: no se cumple el objetivo RU-03 (certeza y ninguna llamada de confirmación). La versión de la Actividad C incluye los cuatro datos (R-02).</td>
         </tr>
       </tbody>
     </table>
@@ -308,7 +383,7 @@
           <th scope="row">Detectar problemas pronto y barato</th>
           <td>Inspección (evaluación heurística)</td>
           <td>No</td>
-          <td>Revisar si el botón «Confirmar» cumple Fitts y si el contraste del «Billete listo» supera 4,5:1.</td>
+          <td>Revisar si el botón «Pagar y subir» cumple Fitts y si el contraste del «Billete listo» supera 4,5:1.</td>
           <td>Revisar si la etiqueta «Fecha» está pegada a su campo (proximidad) y si el flujo de código SMS tiene ruta de recuperación visible.</td>
         </tr>
         <tr>
@@ -330,7 +405,7 @@
           <td>Inspección guiada por norma (WCAG, EN 301 549)</td>
           <td>No (pero conviene complementar)</td>
           <td>Verificar contraste ≥ 4,5:1 (1.4.3) y alternativa textual al tic de validación (1.1.1).</td>
-          <td>Verificar reflujo al 200 % sin pérdida (1.4.10), texto ≥ 18 px (1.4.4) y no depender solo del color en campos obligatorios (1.4.1).</td>
+          <td>Verificar la ampliación del texto al 200 % (1.4.4), el reflujo a 320 px (1.4.10), el texto base ≥ 18 px (criterio del proyecto) y no depender solo del color en campos obligatorios (1.4.1).</td>
         </tr>
       </tbody>
     </table>
@@ -350,11 +425,11 @@
     <p>Quizá pienses que tus futuros usuarios se parecen a ti: jóvenes, con soltura digital. Los datos oficiales dicen lo contrario, y por eso no puedes fiarte de tu propia intuición: tienes que <strong>evaluar con gente distinta de ti</strong>.</p>
 
     <div class="box real">
-      <span class="label">Dato real · Fuente INE 2025</span>
-      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (datos del año 2025, publicados el 20 de noviembre de 2025):</p>
+      <span class="label">Dato real · Fuente INE · Encuesta TIC-H</span>
+      <p>Según la <strong>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</strong> del INE (edición más reciente disponible al redactar estos apuntes; consulta los valores vigentes en ine.es):</p>
       <div class="table-scroll">
       <table>
-        <caption>Datos que motivan la evaluación de la usabilidad y la accesibilidad. INE, 2025.</caption>
+        <caption>Datos que motivan la evaluación de la usabilidad y la accesibilidad. INE, Encuesta TIC-H.</caption>
         <thead>
           <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
         </thead>
@@ -367,13 +442,13 @@
       </div>
     </div>
 
-    <p>Lee bien el primer dato. Que el <strong>66,5 %</strong> tenga habilidades digitales básicas o avanzadas significa que, aproximadamente, <strong>una de cada tres personas no llega ni al nivel básico</strong>. No son un caso raro: son millones de usuarios. <strong>Mari Carmen</strong> —78 años, municipio rural, competencia digital básica— es exactamente ese perfil. Si el equipo de la app de cita médica solo la evalúa con sus compañeros de clase, nunca descubrirá que el código SMS la bloquea o que la pantalla de confirmación no le transmite certeza.</p>
+    <p>Lee bien el primer dato. Que el <strong>66,5 %</strong> tenga habilidades digitales básicas o avanzadas significa que, aproximadamente, <strong>una de cada tres personas no llega ni al nivel básico</strong>. No son un caso raro: son millones de usuarios. <strong>Mari Carmen</strong> —78 años, municipio rural, competencia digital básica— se parece a ese grupo. Una advertencia de rigor: la encuesta cubre de 16 a 74 años, de modo que Mari Carmen queda fuera del rango; las cifras describen el entorno, no a ella. Si el equipo de la app de cita médica solo la evalúa con sus compañeros de clase, nunca descubrirá que el código SMS la bloquea o que la pantalla de confirmación no le transmite certeza.</p>
     <p>Y, a la vez, el <strong>80,7 %</strong> usa servicios públicos por Internet. Es decir: una población enorme y muy diversa <strong>está obligada</strong> a usar sistemas digitales, tenga o no destreza para ello. Pedir cita médica online no es opcional para muchos usuarios rurales como Mari Carmen: el consultorio físico está lejos o cerrado. Un flujo que falla para ella no es una mala experiencia: es una barrera de acceso al sistema sanitario.</p>
     <p>La conclusión es directa: si diseñas pensando solo en usuarios como tú, dejas fuera a una parte gigantesca de la población. La única forma de saber si tu sistema sirve a quien no se te parece es <strong>evaluarlo con personas reales y diversas</strong>. <strong>Marta</strong> y <strong>Mari Carmen</strong> son distintas entre sí en edad, contexto y competencia digital, y distintas de quien diseña. Evaluar con los dos perfiles, no solo con uno, es lo que garantiza que el sistema sirve al espectro real de usuarios.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>En España, según el INE (2025), <strong>una de cada tres personas no alcanza el nivel básico de habilidades digitales</strong> y, sin embargo, el <strong>80,7 %</strong> usa la Administración por Internet. Diseñar «para alguien como yo» excluye a millones. Evaluar con usuarios diversos no es un lujo: es la garantía de que el sistema sirve.</p>
+      <p>En España, según el INE (Encuesta TIC-H), <strong>una de cada tres personas no alcanza el nivel básico de habilidades digitales</strong> y, sin embargo, el <strong>80,7 %</strong> usa la Administración por Internet. Diseñar «para alguien como yo» excluye a millones. Evaluar con usuarios diversos no es un lujo: es la garantía de que el sistema sirve.</p>
     </div>
   </section>
 
@@ -395,7 +470,51 @@
 
     <div class="box curio">
       <span class="label">La evaluación en los dos casos de estudio</span>
-      <p>Para la app de <strong>Marta</strong>, el informe de evaluación debería incluir: inspección del contraste y Fitts en la pantalla de pago; test con al menos cinco personas del perfil (jóvenes con movilidad reducida momentánea, de pie, con luz directa); métricas de eficacia (¿completó el pago?) y eficiencia (¿en menos de 30 s con una mano?). Para la app de <strong>Mari Carmen</strong>: inspección de reflujo al 200 %, tamaño de texto y flujo de código SMS; test con personas mayores de 70 años en entorno rural; métrica de satisfacción específica (¿necesitó llamar a alguien para confirmar?). Evaluar con el perfil equivocado —jóvenes con soltura digital en ambos casos— produciría un informe técnicamente correcto y completamente inútil para saber si el sistema funciona para quien lo necesita.</p>
+      <p>Para la app de <strong>Marta</strong>, el informe de evaluación debería incluir: inspección del contraste y de la ley de Fitts en la pantalla de pago; test con cinco personas del perfil (usuarias del autobús que solo usan el móvil, de pie, con una mano y con luz directa); métricas de eficacia (¿completó el pago?) y eficiencia (¿en menos de 30 s con una mano?). Para la app de <strong>Mari Carmen</strong>: inspección de la ampliación del texto al 200 % (WCAG 1.4.4), del reflujo a 320 px (1.4.10), del tamaño de texto (≥ 18 px, criterio del proyecto) y del flujo del código SMS; test con personas mayores de 70 años en entorno rural; métrica de satisfacción específica (¿necesitó llamar a alguien para confirmar?). Evaluar con el perfil equivocado —jóvenes con soltura digital en ambos casos— produciría un informe técnicamente correcto y completamente inútil para saber si el sistema funciona para quien lo necesita.</p>
+    </div>
+
+    
+    <h4>Ejemplo resuelto: el plan de evaluación sale de la trazabilidad</h4>
+    <p>En el Tema 3 anotaste, para cada decisión, un <strong>criterio de prueba</strong> (quién, qué tarea, cuánto y en qué condiciones). La Actividad D no inventa nada: <strong>ejecuta esos criterios</strong>. La tabla muestra el plan de evaluación del caso de Mari Carmen, más un requisito de Marta.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Plan de evaluación de la Actividad D derivado de la trazabilidad de la Actividad C (caso de Mari Carmen y requisito de Marta).</caption>
+      <thead>
+        <tr><th scope="col">Requisito</th><th scope="col">Criterio de prueba (quién · qué · cuánto · condiciones)</th><th scope="col">Familia de método</th><th scope="col">Evidencia que se guarda</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">R-01 · Conservar el estado</th><td>5 personas del perfil interrumpen el flujo (salen a leer un SMS) y lo retoman sin repetir pasos; al menos 4 de 5 sin ayuda (RU-01, provisional)</td><td>Test</td><td>Notas del observador y hoja de registro</td></tr>
+        <tr><th scope="row">R-02 · Cita en texto con los cuatro datos</th><td>Localizan la confirmación en «Mis citas» al reabrir la app sin conexión; certeza ≥ 4 sobre 5 y 0 llamadas de confirmación (RU-03, provisional)</td><td>Test + indagación</td><td>Respuestas a la pregunta «¿necesitarías llamar?» y tiempos</td></tr>
+        <tr><th scope="row">R-03 · WCAG A y AA, letra extragrande, 200 %</th><td>Auditoría WCAG 2.1 AA y prueba con letra extragrande, texto al 200 % y 320 px de ancho</td><td>Inspección</td><td>Lista de verificación firmada y capturas</td></tr>
+        <tr><th scope="row">R-04 · Reenvío del código</th><td>Esperan a que caduque el código, piden el reenvío y comprueban que el formulario conserva los datos</td><td>Test</td><td>Registro de hallazgos con gravedad</td></tr>
+        <tr><th scope="row">R-05 · Recuperar el estado</th><td>Se simula la pérdida de cobertura durante la solicitud y se comprueba que se recupera al reconectar</td><td>Test técnico</td><td>Registro de la simulación</td></tr>
+        <tr><th scope="row">Marta · pagar y validar en < 30 s con una mano</th><td>5 personas del perfil, de pie, con luz directa y su propio móvil; tasa de éxito y tiempo</td><td>Test + inspección (contraste)</td><td>Tiempos, errores y medidas de contraste</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Los umbrales (4 de 5, 0 llamadas, 30 s) son provisionales y no tienen base empírica: se fijan en la Actividad B y se ajustan con una prueba piloto.</p>
+
+    <h4>Plantilla del informe de evaluación</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Plantilla del informe técnico de evaluación.</caption>
+      <thead>
+        <tr><th scope="col">Apartado</th><th scope="col">Qué incluye</th><th scope="col">Pregunta que responde</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1 · Objetivo y requisitos evaluados</th><td>Qué se evalúa y respecto a qué requisitos (R-0x) y objetivos (RU-0x)</td><td>¿Con qué vara medimos?</td></tr>
+        <tr><th scope="row">2 · Métodos</th><td>Al menos uno de cada familia y por qué</td><td>¿Cómo lo comprobamos?</td></tr>
+        <tr><th scope="row">3 · Participantes y condiciones</th><td>Perfil, número, dispositivo, entorno y consentimiento</td><td>¿Quién y dónde?</td></tr>
+        <tr><th scope="row">4 · Resultados</th><td>Métricas y observaciones, con la tabla de resultados</td><td>¿Qué ocurrió?</td></tr>
+        <tr><th scope="row">5 · Hallazgos priorizados</th><td>Problema, evidencia, gravedad (1 a 3) y frecuencia</td><td>¿Qué falla y qué urge?</td></tr>
+        <tr><th scope="row">6 · Recomendaciones</th><td>Qué cambiar y a qué actividad vuelve (A, B o C)</td><td>¿Qué hacemos ahora?</td></tr>
+        <tr><th scope="row">7 · Limitaciones</th><td>Qué no se pudo comprobar</td><td>¿Cuánto fiarse?</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="box real">
+      <span class="label">Extracto de informe (datos ficticios)</span>
+      <p><b>Hallazgo H-1 · Gravedad 3 · 3 de 5 participantes.</b> Al llegar a «Cita guardada», tres personas no saben si la cita está guardada y buscan el teléfono del centro. Evidencia: notas del observador P2, P4 y P5. Requisito afectado: R-02 (RU-03 no se cumple). <b>Recomendación:</b> mostrar médico, día y hora en un recuadro y añadir el botón «Mis citas»; volver a la Actividad C (7.4.4) y repetir la prueba.</p>
     </div>
 
     <div class="box key">
@@ -405,7 +524,7 @@
   </section>
 
   <section id="retos" aria-labelledby="retos-h">
-    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de evaluación para esta semana</h3>
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de evaluación</h3>
 
     <p>Tres retos breves para empezar a mirar con ojos de evaluador. No hace falta material: solo método y honestidad.</p>
 
@@ -467,11 +586,28 @@
     </details>
     <details class="check">
       <summary>7. ¿Qué nos dicen los datos del INE sobre la necesidad de evaluar?</summary>
-      <p>Que no se puede diseñar «para alguien como yo». En 2025, solo el <strong>66,5 %</strong> de la población de 16 a 74 años tiene habilidades digitales básicas o avanzadas (≈ 1 de cada 3 no llega al nivel básico) y, a la vez, el <strong>80,7 %</strong> usa la Administración por Internet. Hay que evaluar con usuarios diversos. <em>(Ver 2.3)</em></p>
+      <p>Que no se puede diseñar «para alguien como yo». En la edición de referencia de la encuesta, solo el <strong>66,5 %</strong> de la población de 16 a 74 años tiene habilidades digitales básicas o avanzadas (≈ 1 de cada 3 no llega al nivel básico) y, a la vez, el <strong>80,7 %</strong> usa la Administración por Internet. Hay que evaluar con usuarios diversos. <em>(Ver 2.3)</em></p>
     </details>
     <details class="check">
       <summary>8. ¿Cómo se concreta la Actividad D en tu proyecto?</summary>
       <p>Como una <strong>evaluación de usabilidad</strong> obligatoria: aplicar <strong>al menos un método de cada tipo</strong> con rigor, medir respecto a los requisitos, realizar una <strong>evaluación de accesibilidad obligatoria</strong> conforme a <strong>WCAG nivel AA</strong> (como en el Tema 1) y entregar un <strong>informe técnico de evaluación</strong> comprensible. Detectar el problema y comunicarlo valen lo mismo. <em>(Ver 2.4)</em></p>
+    </details>
+  
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: clasifica este hallazgo. Marta paga el billete pero no está segura de que se haya validado porque el verde apenas se distingue del fondo al sol. ¿Qué actividad se reabre y con qué criterio se vuelve a probar?</summary>
+      <p>Se reabre la <strong>Actividad C</strong> (7.4.4): es un problema de contraste y de realimentación del diseño, no de contexto ni de requisitos. Se corrige el contraste (≥ 4,5:1) y se añade texto y tic a «Billete listo»; se vuelve a probar en el móvil, de pie y al sol, con el criterio «pagar y validar en menos de 30 s con una sola mano». <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. Ejercicio de aplicación: Mari Carmen completa la tarea con la pantalla final bien diseñada, pero cuatro de cinco participantes llaman igualmente al centro para confirmar. ¿A qué actividades puede devolver este hallazgo?</summary>
+      <p>A la <strong>D</strong> (indagación: entrevistar para entender el porqué) y, según lo que se descubra, a la <strong>B</strong> (¿está bien formulado el objetivo RU-03?) o a la <strong>A</strong> (¿falta confianza en el medio digital en ese contexto?). La evaluación no siempre manda a C: a veces cuestiona lo que creíamos saber. <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. Ejercicio de aplicación: escribe el criterio de prueba de R-04 con sus cuatro preguntas.</summary>
+      <p><strong>Quién:</strong> cinco personas del perfil de Mari Carmen. <strong>Qué:</strong> pedir el reenvío cuando el código caduca. <strong>Cuánto:</strong> al menos 4 de 5 lo logran sin perder los datos (umbral provisional). <strong>Condiciones:</strong> su móvil, letra extragrande y espera real hasta que caduque el código. <em>(Ver 2.4)</em></p>
+    </details>
+    <details class="check">
+      <summary>12. ¿Por qué decimos que el DCH es un ciclo y no una escalera?</summary>
+      <p>Porque la norma pide <strong>repetir</strong> las actividades hasta cumplir los requisitos: la evaluación (7.5) devuelve hallazgos a la 7.4.4 y, según su origen, también a la B o a la A. Presentamos A, B, C y D en orden para aprenderlas, pero en un proyecto real se enlazan en bucle. <em>(Ver 1.6)</em></p>
     </details>
   </section>
 
@@ -509,7 +645,15 @@
       <dd>Pautas de Accesibilidad para el Contenido Web (Web Content Accessibility Guidelines). Su nivel AA es la referencia exigida por la normativa europea y por el proyecto de la asignatura.</dd>
       <dt>ISO 9241-210</dt>
       <dd>Norma del proceso de Diseño Centrado en lo Humano; su cuarta actividad es evaluar el diseño respecto a los requisitos. Versión vigente: 2019 (UNE-EN ISO 9241-210:2019).</dd>
-    </dl>
+      <dt>Ciclo iterativo (DCH)</dt>
+      <dd>Repetición de las actividades A a D hasta que el diseño cumple los requisitos. Cada hallazgo de la evaluación se devuelve a la actividad de la que procede (A, B o C).</dd>
+        <dt>Criterio de prueba</dt>
+      <dd>Condición medible para dar por cumplida una decisión de diseño: responde a quién, qué tarea, cuánto (umbral) y en qué condiciones. La Actividad D ejecuta los criterios anotados en la trazabilidad de la C.</dd>
+        <dt>Hallazgo</dt>
+      <dd>Problema detectado al evaluar, anotado con la evidencia (lo que hizo o dijo la persona), su gravedad y la decisión que provoca.</dd>
+        <dt>Cláusula 7.5 (ISO 9241-210)</dt>
+      <dd>Cláusula de la edición de 2019 que describe la evaluación del diseño; su resultado alimenta la 7.4.4 (modificar las soluciones).</dd>
+      </dl>
   </section>
 
   <!-- ============ RESUMEN ============ -->
@@ -524,10 +668,12 @@
         <li>Hay <strong>tres familias de métodos</strong>: <strong>indagación</strong> (preguntar y observar), <strong>inspección</strong> (un experto revisa) y <strong>test</strong> (el usuario realiza tareas). Se combinan.</li>
         <li>La evaluación puede ser <strong>formativa</strong> (mejorar durante el diseño) o <strong>sumativa</strong> (decidir al final).</li>
         <li>El gran error es confundir <strong>«me gusta» con «funciona»</strong>: hay que pedir tareas, no opiniones, y no guiar al usuario.</li>
-        <li>Los datos del <strong>INE 2025</strong> lo justifican: solo el <strong>66,5 %</strong> tiene habilidades digitales básicas o avanzadas y el <strong>80,7 %</strong> usa la e-Administración. Diseñar «para alguien como yo» excluye a millones.</li>
+        <li>Los datos del <strong>INE (Encuesta TIC-H)</strong> lo justifican: solo el <strong>66,5 %</strong> tiene habilidades digitales básicas o avanzadas y el <strong>80,7 %</strong> usa la e-Administración. Diseñar «para alguien como yo» excluye a millones.</li>
         <li>En tu proyecto es una <strong>evaluación de usabilidad</strong> obligatoria con revisión de accesibilidad <strong>WCAG AA</strong> y un <strong>informe técnico</strong>; evaluar es además una obligación legal (Directiva 2019/882, EN 301 549).</li>
         <li>En las próximas sesiones desarrollaremos por separado los métodos de <strong>indagación, inspección y test</strong>.</li>
         <li>Los dos casos de estudio ilustran que evaluar con el perfil equivocado produce resultados inútiles: la app de <strong>Marta</strong> debe probarse en móvil, de pie y bajo presión; la de <strong>Mari Carmen</strong>, con personas mayores de 70 años en entorno rural y con el zoom activado. Sin esas condiciones, los problemas reales no aparecen.</li>
+        <li>El DCH es un <strong>proceso cíclico</strong>: aunque se estudie A → B → C → D, cada hallazgo devuelve a la actividad de la que procede (A, B o C) y el ciclo se repite hasta cumplir los criterios de prueba (cláusulas 7.4.4 y 7.5 de la ISO 9241-210).</li>
+        <li>El plan de evaluación sale de la <strong>trazabilidad</strong>: cada requisito tiene un criterio de prueba (quién, qué, cuánto y en qué condiciones) y el informe de evaluación sigue una plantilla fija.</li>
       </ul>
     </div>
   </section>
@@ -537,7 +683,7 @@
     <h2 id="refs-h"><span class="num" aria-hidden="true">·</span>Referencias y recursos</h2>
     <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
     <ol class="refs">
-      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. Morgan Kaufmann (edición más reciente).</li>
       <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023.</li>
       <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
       <li>Krug, S. <em>No me hagas pensar. Actualización</em>. 3.ª ed. Anaya Multimedia, 2015.</li>
@@ -554,7 +700,7 @@
     </ol>
     <p>Datos y recursos en línea:</p>
     <ol class="refs" start="12">
-      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, año 2025 (datos publicados el 20 de noviembre de 2025). <a href="https://www.ine.es/">ine.es</a>.</li>
+      <li>Instituto Nacional de Estadística (INE). <em>Encuesta sobre Equipamiento y Uso de TIC en los Hogares</em>, edición más reciente. <a href="https://www.ine.es/">ine.es</a>.</li>
       <li>Nielsen Norman Group <a href="https://www.nngroup.com/">nngroup.com</a> · Asociación para la Interacción Persona-Ordenador (AIPO) <a href="http://www.aipo.es">aipo.es</a>.</li>
       <li>World Wide Web Consortium (W3C) <a href="http://www.w3.org">w3.org</a> · Web Accessibility Initiative (WAI) <a href="http://www.w3.org/wai">w3.org/wai</a>.</li>
       <li>Recopilación bibliográfica de HCI <a href="http://www.hcibib.org">hcibib.org</a>.</li>
@@ -566,7 +712,7 @@
 <footer>
   <div class="wrap">
     <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>La evaluación del diseño (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
-    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+    <p>Escuela Politécnica · Universidad de Extremadura. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
   </div>
 </footer>
 

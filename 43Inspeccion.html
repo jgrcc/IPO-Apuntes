@@ -37,6 +37,8 @@
           <li class="lvl2"><a href="#como">Cómo se inspecciona, paso a paso</a></li>
           <li class="lvl2"><a href="#metodos">Los métodos, uno a uno</a></li>
           <li class="lvl2"><a href="#vs-test">Inspección y test: rápido frente a real</a></li>
+          <li class="lvl2"><a href="#ciclo">La inspección dentro del ciclo y de la norma</a></li>
+          <li class="lvl2"><a href="#accesibilidad">La inspección de accesibilidad en profundidad</a></li>
         </ol>
       </li>
       <li><a href="#parte2">Parte 2 · Transferencia al mundo real</a>
@@ -45,7 +47,7 @@
           <li class="lvl2"><a href="#mini">Una mini-evaluación heurística</a></li>
           <li class="lvl2"><a href="#coste">Anclaje real: a quién protege la inspección de accesibilidad (INE)</a></li>
           <li class="lvl2"><a href="#proyecto">Tu proyecto: la inspección como método obligatorio</a></li>
-          <li class="lvl2"><a href="#retos">Retos de inspección para esta semana</a></li>
+          <li class="lvl2"><a href="#retos">Retos de inspección</a></li>
           <li class="lvl2"><a href="#entorno">Por qué te concierne como ingeniero o ingeniera</a></li>
         </ol>
       </li>
@@ -61,9 +63,9 @@
 
   <section id="como-usar" aria-labelledby="como-usar-h">
     <h2 id="como-usar-h"><span class="num" aria-hidden="true">·</span>Cómo usar estos apuntes</h2>
-    <p>En la sesión anterior vimos la primera familia de métodos de evaluación, la <strong>indagación</strong> (preguntar y observar a personas). Hoy entramos en la segunda: la <strong>inspección</strong>.</p>
+    <p>La primera familia de métodos de evaluación es la <strong>indagación</strong> (preguntar y observar a personas). Estos apuntes desarrollan la segunda: la <strong>inspección</strong>.</p>
     <p>Damos por sabido el mapa de las tres familias —indagación, inspección y test— y el ciclo del DCH (<strong>contexto → requisitos → diseño → evaluación</strong>, e iterar). Si no te suena, vuelve a la introducción del Tema 4.</p>
-    <p>El objetivo de hoy: entender qué es inspeccionar, cómo se hace y cuáles son sus tres métodos principales. Verás que la inspección tiene una virtud enorme: es <strong>rápida y barata</strong>, porque <strong>no necesita usuarios</strong>.</p>
+    <p>El objetivo de estos apuntes: entender qué es inspeccionar, cómo se hace y cuáles son sus tres métodos principales. Verás que la inspección tiene una virtud enorme: es <strong>rápida y barata</strong>, porque <strong>no necesita usuarios</strong>.</p>
     <p>Como siempre, seguimos el <strong>Diseño Universal para el Aprendizaje (DUA)</strong>: la misma idea aparece en prosa, en cajas, en fichas-resumen, en un diagrama accesible y en preguntas de autocomprobación.</p>
     <ul>
       <li>Cada método trae una <strong>ficha-resumen</strong> con sus características: si necesita usuarios, cuántos evaluadores, qué materiales, en qué fase sirve, etc.</li>
@@ -71,6 +73,23 @@
       <li>Las cajas <strong>«Dato real»</strong> y <strong>«Reto»</strong> conectan la teoría con tu proyecto y tu vida.</li>
       <li>El <a href="#glosario">glosario</a> recoge cada término técnico que aparece en negrita.</li>
     </ul>
+    
+    <div class="box key">
+      <span class="label">Un ciclo, no una escalera</span>
+      <p>Las actividades del DCH se explican <strong>en orden</strong> (A, B, C y D), pero el DCH es un <strong>proceso cíclico</strong>: la inspección es la forma más barata de cerrar una vuelta, porque detecta problemas posibles <strong>sin usuarios</strong> y los devuelve enseguida a la Actividad C (cláusula 7.4.4 de la ISO 9241-210). Después se vuelve a inspeccionar la nueva versión, y el ciclo se repite hasta cumplir los requisitos.</p>
+    </div>
+
+    <div class="box key">
+      <span class="label">Cómo estudiar con estos apuntes</span>
+      <ol>
+        <li><b>Primera lectura.</b> Quédate con los cinco pasos de una inspección, los tres métodos y las cajas «Idea clave».</li>
+        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen y de Marta, tapa la solución, haz tú la inspección y compara.</li>
+        <li><b>Autoevaluación.</b> Responde las preguntas de comprobación y los ejercicios de aplicación antes de abrir la solución.</li>
+        <li><b>Ficha de repaso.</b> Aprende de memoria la escala de gravedad (1 a 3) y qué criterio WCAG corresponde a cada comprobación.</li>
+        <li><b>Proyecto.</b> Haz una evaluación heurística y una inspección de accesibilidad de tu prototipo y anota cada hallazgo con su requisito (R-0x).</li>
+      </ol>
+    </div>
+
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>Los <strong>métodos de inspección</strong> son aquellos en los que una <strong>persona experta examina la interfaz</strong> comparándola con reglas conocidas, <strong>sin usuarios</strong>. Son rápidos y económicos: detectan muchos problemas <em>posibles</em> en poco tiempo. Su límite es que no sustituyen a probar con gente real.</p>
@@ -150,7 +169,7 @@
       <figcaption>Los cinco pasos de una inspección, del alcance al informe. El mismo procedimiento sirve para la evaluación heurística, el recorrido cognitivo o la inspección de accesibilidad; lo que cambia son los criterios que se aplican en el paso 2. La descripción completa está disponible para lectores de pantalla.</figcaption>
     </figure>
 
-    <p>El paso que más cuesta aprender es el <strong>4, valorar la gravedad</strong>. No todos los problemas pesan igual: un texto con una errata molesta poco; un botón de pago que no se entiende puede arruinar la tarea. Conviene <strong>clasificar cada hallazgo</strong> (por ejemplo: cosmético, menor, grave, catastrófico) para saber qué arreglar primero.</p>
+    <p>El paso que más cuesta aprender es el <strong>4, valorar la gravedad</strong>. No todos los problemas pesan igual: un texto con una errata molesta poco; un botón de pago que no se entiende puede arruinar la tarea. Conviene <strong>clasificar cada hallazgo</strong> con una escala fija para saber qué arreglar primero. En el proyecto se usa la escala de tres niveles del Tema 3: <strong>1</strong> = molestia menor; <strong>2</strong> = enlentece o confunde; <strong>3</strong> = impide completar la tarea o deja una duda grave. (La escala clásica de Nielsen va de 0 a 4, de «no es un problema» a «catastrófico»; no equivale punto por punto a la nuestra, que es más simple.)</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -347,6 +366,222 @@
     </div>
   </section>
 
+  <section id="ciclo" aria-labelledby="ciclo-h">
+    <h3 id="ciclo-h"><span class="num" aria-hidden="true">1.5</span>La inspección dentro del ciclo y de la norma</h3>
+    <p>La ISO 9241-210 (edición de 2019) pide, en la <strong>cláusula 7.5</strong>, evaluar el diseño respecto a los requisitos, y en la <strong>7.4.4</strong> modificar las soluciones a partir de esa evaluación. La inspección es la forma más barata de ejecutar esa 7.5 y de alimentar esa 7.4.4: <strong>un experto revisa, encuentra y devuelve</strong>.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Qué puede y qué no puede confirmar la inspección, y a dónde devuelve sus hallazgos.</caption>
+      <thead>
+        <tr><th scope="col">Pregunta</th><th scope="col">¿Responde la inspección?</th><th scope="col">Cómo se completa</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">¿Hay problemas posibles de usabilidad o accesibilidad?</th><td>Sí, rápido y sin usuarios</td><td>Hallazgos con gravedad que vuelven a la Actividad C (7.4.4)</td></tr>
+        <tr><th scope="row">¿Cumple la norma (WCAG 2.1 AA, EN 301 549)?</th><td>Sí, con herramientas y revisión manual</td><td>Es el requisito mínimo R-03 del proyecto</td></tr>
+        <tr><th scope="row">¿Falla de verdad a una persona real?</th><td>No: solo lo sugiere</td><td>Test con usuarios (Actividad D)</td></tr>
+        <tr><th scope="row">¿Por qué lo vive así?</th><td>No</td><td>Indagación (entrevista y observación)</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Por eso la inspección se hace <strong>varias veces</strong>: una al terminar cada prototipo (baja o media fidelidad, para corregir pronto), otra con la alta fidelidad y otra tras cada rediseño. Es una pieza del <strong>ciclo</strong>, no un trámite final.</p>
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La inspección señala <strong>dónde mirar</strong>; no demuestra que algo falle a una persona. Sus hallazgos, con gravedad (1 a 3) y el requisito afectado (R-0x), vuelven a la Actividad C y se repiten en cada iteración.</p>
+    </div>
+  </section>
+
+  <section id="accesibilidad" aria-labelledby="accesibilidad-h">
+    <h3 id="accesibilidad-h"><span class="num" aria-hidden="true">1.6</span>La inspección de accesibilidad en profundidad</h3>
+
+    <p>La inspección de conformidad aplica el mismo procedimiento de cinco pasos de 1.2; lo que cambia es el <strong>criterio</strong>: una norma concreta, las WCAG 2.1 de nivel AA. Este apartado reúne la cadena normativa, los principios, los criterios que más se inspeccionan, las herramientas y las dos metodologías del W3C que ayudan a organizar el trabajo: <strong>WAI Easy Checks</strong> y <strong>WCAG-EM</strong>.</p>
+
+    <h4>De la ley a la pantalla</h4>
+    <p>La accesibilidad digital es una obligación verificable. Esta es la cadena que conecta la ley con lo que inspeccionas:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>La cadena normativa de la accesibilidad, de la ley a la pantalla.</caption>
+      <thead>
+        <tr><th scope="col">Nivel</th><th scope="col">Qué es</th><th scope="col">Qué exige</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Directiva (UE) 2019/882</th><td>Acta Europea de Accesibilidad</td><td>Obliga a muchos productos y servicios digitales a ser accesibles</td></tr>
+        <tr><th scope="row">Legislación española</th><td>Ley 11/2023 y Real Decreto 1112/2018</td><td>Trasponen y concretan la exigencia para productos, servicios y sector público</td></tr>
+        <tr><th scope="row">EN 301 549</th><td>Norma técnica europea de requisitos TIC</td><td>Para web y aplicaciones remite a las WCAG, nivel AA</td></tr>
+        <tr><th scope="row">WCAG 2.1</th><td>Pautas del W3C/WAI, con niveles A, AA y AAA</td><td>El umbral del proyecto es el nivel AA</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>Los cuatro principios POUR</h4>
+    <p>Los criterios de las WCAG se agrupan en cuatro principios: <strong>Perceptible</strong> (P), <strong>Operable</strong> (O), <strong>Comprensible</strong> (U, de <em>Understandable</em>) y <strong>Robusto</strong> (R): de ahí el acrónimo POUR.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los cuatro principios POUR y ejemplos de comprobación.</caption>
+      <thead>
+        <tr><th scope="col">Principio</th><th scope="col">Idea</th><th scope="col">Se comprueba, por ejemplo…</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Perceptible</th><td>La información se puede percibir por algún sentido</td><td>Contraste ≥ 4,5:1, textos alternativos, no solo color</td></tr>
+        <tr><th scope="row">Operable</th><td>Se puede manejar por distintas vías</td><td>Todo accesible con teclado, foco visible, sin trampas de tiempo</td></tr>
+        <tr><th scope="row">Comprensible</th><td>Se entienden la interfaz y su comportamiento</td><td>Lenguaje claro, errores explicados con solución, etiquetas claras</td></tr>
+        <tr><th scope="row">Robusto</th><td>Funciona con distintas tecnologías de apoyo</td><td>Marcado correcto, etiqueta de cada campo, lectores de pantalla</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>Qué criterios se inspeccionan y cómo</h4>
+    <p>La lista mínima de 2.2 se amplía con estos criterios. Cada fila puede salir «cumple» o «no cumple», con su evidencia (ratio medido, captura o ruta en las herramientas de desarrollo).</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Criterios WCAG 2.1 (A y AA) que conviene inspeccionar y cómo se comprueba cada uno.</caption>
+      <thead>
+        <tr><th scope="col">Criterio</th><th scope="col">Principio</th><th scope="col">Qué se comprueba y cómo</th><th scope="col">Ejemplo de fallo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1.1.1 Contenido no textual</th><td>P</td><td>Cada imagen informativa tiene texto alternativo; el decorativo, vacío (herramienta + revisión)</td><td>Imagen de la cita sin descripción</td></tr>
+        <tr><th scope="row">1.3.1 Información y relaciones</th><td>P</td><td>Encabezados, listas y regiones reales, no solo negrita (árbol de accesibilidad)</td><td>Título «Tu cita» en negrita pero sin encabezado</td></tr>
+        <tr><th scope="row">1.4.1 Uso del color</th><td>P</td><td>No se transmite información solo con color (escala de grises)</td><td>Error en rojo y nada más</td></tr>
+        <tr><th scope="row">1.4.3 Contraste</th><td>P</td><td>Texto ≥ 4,5:1 (herramienta)</td><td>Fecha gris claro: 3,1:1</td></tr>
+        <tr><th scope="row">1.4.4 Cambio de tamaño del texto</th><td>P</td><td>Ampliar al 200 % sin perder contenido ni funciones</td><td>Texto superpuesto al ampliar</td></tr>
+        <tr><th scope="row">1.4.10 Reflujo</th><td>P</td><td>A 320 px de ancho, sin desplazamiento horizontal</td><td>Formulario que obliga a desplazarse de lado</td></tr>
+        <tr><th scope="row">1.4.11 Contraste no textual</th><td>P</td><td>Bordes e iconos de controles ≥ 3:1</td><td>Borde de campo casi invisible</td></tr>
+        <tr><th scope="row">2.1.1 Teclado</th><td>O</td><td>Todo es operable con teclado (manual)</td><td>«Confirmar» no recibe foco con Tab</td></tr>
+        <tr><th scope="row">2.2.1 Tiempo ajustable</th><td>O</td><td>Se puede ampliar, desactivar o avisar antes de que expire</td><td>Código que caduca sin reenvío</td></tr>
+        <tr><th scope="row">2.2.2 Pausar, detener, ocultar</th><td>O</td><td>El contenido que se mueve solo tiene pausa</td><td>Carrusel automático sin pausa</td></tr>
+        <tr><th scope="row">2.3.1 Umbral de destellos</th><td>O</td><td>Nada parpadea más de 3 veces por segundo</td><td>Fondo animado que parpadea</td></tr>
+        <tr><th scope="row">2.4.1 Saltar bloques</th><td>O</td><td>Un enlace al contenido principal al tabular</td><td>Decenas de tabulaciones por el menú</td></tr>
+        <tr><th scope="row">2.4.3 Orden del foco</th><td>O</td><td>La tabulación sigue el orden visual</td><td>El foco salta al pie antes de «Enviar»</td></tr>
+        <tr><th scope="row">2.4.7 Foco visible</th><td>O</td><td>El foco se ve en todo momento</td><td>«outline: none» sin alternativa</td></tr>
+        <tr><th scope="row">3.2.1 y 3.2.2 Cambios de contexto</th><td>U</td><td>Nada se dispara solo al enfocar o escribir</td><td>Un desplegable que envía el formulario</td></tr>
+        <tr><th scope="row">3.3.1, 3.3.2 y 3.3.3 Errores y etiquetas</th><td>U</td><td>Error identificado en texto, instrucción visible y sugerencia de corrección</td><td>Solo «Formato incorrecto»</td></tr>
+        <tr><th scope="row">4.1.2 Nombre, función, valor</th><td>R</td><td>Cada componente tiene nombre y rol accesibles (DevTools)</td><td>Un div con clic que actúa como botón</td></tr>
+        <tr><th scope="row">1.2.1 y 1.2.2 Multimedia</th><td>P</td><td>Transcripción del audio y subtítulos del vídeo</td><td>Demo sin subtítulos</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>Herramientas: automáticas y manuales</h4>
+    <p>Las herramientas automáticas dan un <strong>primer barrido</strong> rápido y detectan lo medible: contraste insuficiente, imágenes sin texto alternativo y campos sin etiqueta asociada. No lo detectan todo: el orden de la tabulación, la calidad del texto alternativo, el «no solo color» y la visibilidad real del foco se revisan <strong>a mano</strong>. Una página puede pasar el comprobador automático y seguir siendo inutilizable con un lector de pantalla.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Herramientas de apoyo a la inspección de accesibilidad.</caption>
+      <thead>
+        <tr><th scope="col">Herramienta</th><th scope="col">Qué hace</th><th scope="col">Detecta</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">WAVE</th><td>Extensión del navegador que superpone los errores sobre la página</td><td>Texto alternativo ausente, contraste, campos sin etiqueta</td></tr>
+        <tr><th scope="row">Axe DevTools</th><td>Extensión con informe que asocia cada error a su criterio WCAG</td><td>ARIA incorrecto, nombre y rol</td></tr>
+        <tr><th scope="row">Lighthouse</th><td>Auditoría integrada en el navegador (puntuación de 0 a 100)</td><td>Puntuación global, encabezados, enlaces</td></tr>
+        <tr><th scope="row">WebAIM Contrast Checker</th><td>Calcula el ratio exacto entre dos colores</td><td>Cumplimiento AA y AAA por tamaño de texto</td></tr>
+        <tr><th scope="row">DevTools · Accesibilidad</th><td>Muestra el árbol de accesibilidad</td><td>Nombre y rol de cada elemento</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>WAI Easy Checks: un primer filtro de 30 minutos</h4>
+    <p><strong>WAI Easy Checks</strong> es una guía del W3C con diez comprobaciones básicas, agrupadas por principio POUR. No es una evaluación de conformidad: es un primer filtro para detectar barreras evidentes. Puede hacerlo cualquier miembro del equipo en unos 30 minutos y sin herramientas especiales, al inicio de la revisión o al recibir un prototipo nuevo.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Las diez comprobaciones de WAI Easy Checks, agrupadas por principio, y cómo se hacen.</caption>
+      <thead>
+        <tr><th scope="col">Comprobación</th><th scope="col">Principio</th><th scope="col">Qué se mira</th><th scope="col">Cómo se hace</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Título de la página</th><td>P</td><td>¿La pestaña describe el contenido?</td><td>Barra del navegador</td></tr>
+        <tr><th scope="row">Alternativas de las imágenes</th><td>P</td><td>¿Hay texto alternativo que describa la función?</td><td>DevTools · atributo alt</td></tr>
+        <tr><th scope="row">Encabezados</th><td>U</td><td>¿La jerarquía h1 → h2 → h3 es real?</td><td>HeadingsMap · DevTools</td></tr>
+        <tr><th scope="row">Contraste</th><td>P</td><td>¿Texto ≥ 4,5:1 (grande ≥ 3:1)?</td><td>WebAIM Contrast Checker</td></tr>
+        <tr><th scope="row">Cambio de tamaño del texto</th><td>P</td><td>Al 200 %, ¿el contenido fluye sin superponerse?</td><td>Ctrl y + hasta el 200 %</td></tr>
+        <tr><th scope="row">Teclado y foco visible</th><td>O</td><td>¿Se llega a todo con Tab y el foco se ve?</td><td>Solo teclado</td></tr>
+        <tr><th scope="row">Formularios, etiquetas y errores</th><td>U</td><td>¿Cada campo tiene etiqueta y los errores salen en texto?</td><td>Árbol de accesibilidad</td></tr>
+        <tr><th scope="row">Contenido en movimiento o parpadeante</th><td>O</td><td>¿Lo animado tiene pausa y respeta la preferencia de menos movimiento?</td><td>Revisión visual</td></tr>
+        <tr><th scope="row">Alternativas multimedia</th><td>P</td><td>¿Hay subtítulos o transcripción?</td><td>Reproducir sin sonido</td></tr>
+        <tr><th scope="row">Estructura básica</th><td>R</td><td>¿El idioma está declarado y la estructura es lógica?</td><td>DevTools · elemento html</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Como complemento, conviene declarar el idioma de la página (<code>lang="es"</code>) y pasar un barrido automático (WAVE, Axe o Lighthouse) antes de la revisión manual.</p>
+
+    <h4>WCAG-EM: la evaluación formal</h4>
+    <p><strong>WCAG-EM</strong> (<em>Website Accessibility Conformance Evaluation Methodology</em>) es la metodología del W3C para evaluar sitios completos y emitir una <strong>declaración de conformidad</strong>. Es el estándar profesional y se usa, por ejemplo, en auditorías externas de cumplimiento legal.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Los cinco pasos de WCAG-EM.</caption>
+      <thead>
+        <tr><th scope="col">Paso</th><th scope="col">Qué se hace</th><th scope="col">Pregunta que responde</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1 · Definir el alcance</th><td>Versión de WCAG, nivel (AA), tecnologías, entornos de usuario y partes excluidas</td><td>¿Qué se evaluará exactamente?</td></tr>
+        <tr><th scope="row">2 · Explorar el sitio</th><td>Estructura, procesos clave (pedir cita, pagar), tecnologías y estados de la interfaz</td><td>¿Cómo funciona?</td></tr>
+        <tr><th scope="row">3 · Seleccionar la muestra</th><td>Muestra estructurada (páginas del proceso principal) más aleatoria</td><td>¿Qué páginas evaluar?</td></tr>
+        <tr><th scope="row">4 · Evaluar la muestra</th><td>Comprobar cada página contra todos los criterios elegidos y documentar evidencias</td><td>¿Cumple? (el núcleo del trabajo)</td></tr>
+        <tr><th scope="row">5 · Redactar el informe</th><td>Hallazgos estructurados, declaración de conformidad si corresponde y recomendaciones priorizadas</td><td>¿Qué se concluye y se recomienda?</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h4>Easy Checks y WCAG-EM: cuándo cada uno</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Easy Checks frente a WCAG-EM.</caption>
+      <thead>
+        <tr><th scope="col">Aspecto</th><th scope="col">WAI Easy Checks</th><th scope="col">WCAG-EM</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Qué es</th><td>Diez comprobaciones básicas: un primer filtro</td><td>Metodología formal de evaluación de conformidad</td></tr>
+        <tr><th scope="row">Cuándo</th><td>Al inicio de la revisión o al recibir un prototipo nuevo</td><td>Cuando se necesita una declaración de conformidad (servicios públicos, licitaciones)</td></tr>
+        <tr><th scope="row">Quién</th><td>Cualquier miembro del equipo</td><td>Evaluadores especializados, internos o auditoría externa</td></tr>
+        <tr><th scope="row">Duración</th><td>Unos 30 minutos</td><td>Días</td></tr>
+        <tr><th scope="row">Resultado</th><td>Detecta barreras evidentes; no es declaración de conformidad</td><td>Informe auditable y declaración de conformidad</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Se usan <strong>en secuencia</strong>: primero Easy Checks para quitar lo obvio y después, si hace falta conformidad formal, WCAG-EM. Para el proyecto, ninguno sustituye a la <strong>inspección WCAG 2.1 AA</strong> (requisito R-03) ni a la lista mínima de 2.2: Easy Checks es un buen primer paso y WCAG-EM, la referencia profesional.</p>
+
+    <h4>Ejemplo resuelto: Easy Checks sobre «Cita guardada»</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Easy Checks aplicados a la pantalla «Cita guardada» de Mari Carmen (resultados ficticios).</caption>
+      <thead>
+        <tr><th scope="col">Comprobación</th><th scope="col">Resultado</th><th scope="col">Hallazgo y gravedad</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Título de la página</th><td>✓</td><td>Dice «Cita guardada · Centro de salud»</td></tr>
+        <tr><th scope="row">Alternativas de las imágenes</th><td>✓</td><td>El icono decorativo tiene alt vacío</td></tr>
+        <tr><th scope="row">Contraste</th><td>✗</td><td>Fecha en gris: 3,1:1 (gravedad 3, R-03)</td></tr>
+        <tr><th scope="row">Cambio de tamaño del texto</th><td>✗</td><td>Al 200 % el recuadro tapa el botón «Mis citas» (gravedad 2, R-03)</td></tr>
+        <tr><th scope="row">Teclado y foco visible</th><td>✗</td><td>«Mis citas» no muestra foco (gravedad 2)</td></tr>
+        <tr><th scope="row">Formularios, etiquetas y errores</th><td>✓</td><td>Todos los campos con etiqueta visible</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Tres de seis comprobaciones fallan y alimentan el informe de conformidad: cada fallo se anota con su criterio, evidencia, gravedad y requisito, y vuelve a la Actividad C.</p>
+
+    <h4>Ejemplo resuelto: alcance de una evaluación WCAG-EM</h4>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Alcance de una evaluación WCAG-EM de la app de Mari Carmen (ejemplo).</caption>
+      <thead>
+        <tr><th scope="col">Elemento</th><th scope="col">Contenido</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Alcance</th><td>WCAG 2.1 nivel AA; web móvil de la app; Chrome y un lector de pantalla; sin multimedia</td></tr>
+        <tr><th scope="row">Procesos clave</th><td>Pedir cita (cuatro pasos), «Mis citas» y reenvío del código</td></tr>
+        <tr><th scope="row">Muestra</th><td>Estructurada: las seis pantallas de «Pedir cita» y «Cita guardada». Aleatoria: dos pantallas más, por ejemplo Ayuda y Perfil</td></tr>
+        <tr><th scope="row">Evidencias</th><td>Capturas del contraste, ruta en DevTools y grabación del recorrido con teclado</td></tr>
+        <tr><th scope="row">Informe</th><td>Tabla de no conformidades (criterio, principio, evidencia, gravedad 1–3 y recomendación) y declaración de conformidad solo si procede</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="box key">
+      <span class="label">Idea clave</span>
+      <p>La inspección de accesibilidad se organiza en dos niveles: <strong>Easy Checks</strong> (primer filtro rápido, cualquier miembro del equipo) y <strong>WCAG-EM</strong> (evaluación formal de conformidad). Ambas se apoyan en herramientas automáticas y en revisión manual, y ninguna sustituye a probar con personas.</p>
+    </div>
+  </section>
+
+
+
   <!-- ============ PARTE 2 ============ -->
   <div class="part" id="parte2">
     <span class="tag">Parte 2 de 2</span>
@@ -381,7 +616,7 @@
         <tr><th scope="col">Heurística</th><th scope="col">Indicio de que SÍ se cumple</th><th scope="col">Indicio de que NO se cumple</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>1. Visibilidad del estado</strong></td><td>Al pulsar «Confirmar» aparece «Guardando tu cita…» y luego «Cita confirmada».</td><td>Pulsas «Confirmar» y la pantalla queda igual; no sabes si ha funcionado.</td></tr>
+        <tr><td><strong>1. Visibilidad del estado</strong></td><td>Al pulsar «Confirmar» aparece «Guardando tu cita…» y luego «Cita guardada».</td><td>Pulsas «Confirmar» y la pantalla queda igual; no sabes si ha funcionado.</td></tr>
         <tr><td><strong>2. Mundo real</strong></td><td>Dice «Elige día y hora» y «Tu médico de cabecera».</td><td>Dice «Seleccione slot del recurso asignado».</td></tr>
         <tr><td><strong>3. Control y libertad</strong></td><td>Hay un «Volver» y puedes cambiar la hora antes de confirmar.</td><td>En el paso 3 no hay forma de volver al 2 sin empezar de cero.</td></tr>
         <tr><td><strong>4. Consistencia</strong></td><td>El botón principal se llama «Confirmar» en todas las pantallas.</td><td>Se llama «Aceptar» en una pantalla y «Enviar» en la siguiente.</td></tr>
@@ -402,14 +637,14 @@
     <table class="data">
       <caption>Hallazgos de mini-evaluaciones en los dos casos de estudio, con su gravedad. Ejemplo didáctico.</caption>
       <thead>
-        <tr><th scope="col">Caso</th><th scope="col">Hallazgo</th><th scope="col">Heurística incumplida</th><th scope="col">Gravedad</th></tr>
+        <tr><th scope="col">Caso</th><th scope="col">Hallazgo</th><th scope="col">Criterio incumplido</th><th scope="col">Gravedad</th></tr>
       </thead>
       <tbody>
-        <tr><td>Caso B · Mari Carmen</td><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>Grave</td></tr>
-        <tr><td>Caso B · Mari Carmen</td><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>Grave</td></tr>
-        <tr><td>Caso A · Marta</td><td>El botón «Confirmar pago» está en la esquina superior derecha, lejos de la zona del pulgar</td><td>3 · Control y libertad + 8 · Estético y minimalista</td><td>Grave</td></tr>
-        <tr><td>Caso A · Marta</td><td>La confirmación de validación solo usa color verde, sin texto ni icono adicional</td><td>4 · Consistencia (no solo color, WCAG AA)</td><td>Grave</td></tr>
-        <tr><td>Caso B · Mari Carmen</td><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia</td><td>Menor</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>3</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>3</td></tr>
+        <tr><td>Caso A · Marta</td><td>El botón «Pagar y subir» está en la esquina superior derecha, lejos de la zona del pulgar</td><td>Ley de Fitts y criterio del proyecto (objetivo ≥ 44 px, zona del pulgar). No es una heurística de Nielsen</td><td>3</td></tr>
+        <tr><td>Caso A · Marta</td><td>La confirmación «Billete listo» solo usa el color verde, sin texto ni icono adicional</td><td>WCAG 1.4.1 (no solo color), en la inspección de conformidad</td><td>3</td></tr>
+        <tr><td>Caso B · Mari Carmen</td><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia y estándares</td><td>1</td></tr>
       </tbody>
     </table>
     </div>
@@ -418,12 +653,64 @@
 
     <div class="box curio">
       <span class="label">La inspección en los dos casos</span>
-      <p>Para la app de <strong>Marta</strong>, la inspección heurística prioriza la zona del pulgar (Fitts + heurística 3) y el contraste al sol (WCAG AA + heurística 4). Para la app de <strong>Mari Carmen</strong>, prioriza la visibilidad del estado tras confirmar (heurística 1) y los mensajes de error en lenguaje claro (heurística 9). La inspección de accesibilidad añade la verificación del reflujo al 200 % (WCAG 1.4.10) para Joaquín. En diez minutos por caso, sin usuarios, el equipo tiene la lista de qué corregir antes del test.</p>
+      <p>Para la app de <strong>Marta</strong>, la inspección prioriza la zona del pulgar (ley de Fitts, criterio del proyecto: objetivo ≥ 44 px) y el contraste al sol (WCAG 1.4.3 y 1.4.1). Para la app de <strong>Mari Carmen</strong>, prioriza la visibilidad del estado tras confirmar (heurística 1) y los mensajes de error en lenguaje claro (heurística 9). La inspección de accesibilidad añade la verificación de la ampliación del texto al 200 % (WCAG 1.4.4) y del reflujo a 320 px (1.4.10) para Joaquín. En diez minutos por caso, sin usuarios, el equipo tiene la lista de qué corregir antes del test.</p>
     </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
       <p>Una evaluación heurística produce, en poco tiempo, una <strong>lista de hallazgos con la heurística que incumplen y su gravedad</strong>. Es material directo para rediseñar. Lo que no confirma es cuáles fallarán de verdad: para eso está el test.</p>
+    </div>
+  
+    <h4>Ejemplo resuelto: informe de inspección de la pantalla «Cita guardada»</h4>
+    <p>Cada hallazgo se anota con su <strong>evidencia</strong>, el <strong>criterio</strong> que incumple, su <strong>gravedad</strong> (1 a 3), el <strong>requisito</strong> afectado y la recomendación, indicando a qué actividad vuelve. Esto es lo que debe llevar tu informe.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Extracto del informe de inspección de la pantalla «Cita guardada» (caso de Mari Carmen, datos ficticios).</caption>
+      <thead>
+        <tr><th scope="col">Hallazgo</th><th scope="col">Evidencia</th><th scope="col">Criterio incumplido</th><th scope="col">Gravedad</th><th scope="col">Requisito</th><th scope="col">Recomendación y a dónde vuelve</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">H-1 · No muestra médico, día ni hora</th><td>La pantalla solo dice «Cita guardada»</td><td>1 · Visibilidad del estado; abismo de evaluación</td><td>3</td><td>R-02</td><td>Mostrar los cuatro datos en un recuadro, con fecha y hora en grande · vuelve a la C (7.4.4)</td></tr>
+        <tr><th scope="row">H-2 · El estado «guardada» se marca solo con un icono verde</th><td>Captura de la pantalla en escala de grises</td><td>WCAG 1.4.1 (no solo color)</td><td>3</td><td>R-02, R-03</td><td>Añadir el texto «Cita guardada» y un icono con etiqueta · vuelve a la C</td></tr>
+        <tr><th scope="row">H-3 · Texto base de 14 px</th><td>Medida en la maqueta</td><td>Criterio del proyecto (≥ 18 px) y WCAG 1.4.4</td><td>2</td><td>R-03</td><td>Subir a ≥ 18 px y probar al 200 % · vuelve a la C</td></tr>
+        <tr><th scope="row">H-4 · «Reenviar código» queda oculto tras la cuenta atrás</th><td>Recorrido de la tarea paso a paso</td><td>Nielsen 3 y 9 (control y recuperación)</td><td>2</td><td>R-04</td><td>Mostrar siempre el botón, deshabilitado con aviso · vuelve a la C</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <h4>Ejemplo resuelto: recorrido cognitivo de «pagar y validar» (Marta)</h4>
+    <p>El recorrido cognitivo se hace paso a paso, con las cuatro preguntas del método. Solo hace falta anotar dónde la respuesta es «no» o «dudoso».</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Recorrido cognitivo de la tarea de Marta «pagar y validar» (cuatro preguntas por paso).</caption>
+      <thead>
+        <tr><th scope="col">Paso</th><th scope="col">¿Buscará el efecto correcto?</th><th scope="col">¿Verá que la acción está disponible?</th><th scope="col">¿La asociará con su meta?</th><th scope="col">¿Notará el progreso?</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1 · Abre la app</th><td>Sí: quiere subir al autobús</td><td>Sí: «Pagar y subir» es el único botón destacado</td><td>Sí: el texto nombra la meta</td><td>—</td></tr>
+        <tr><th scope="row">2 · Pulsa «Pagar y subir»</th><td>Sí</td><td>Dudoso si el botón queda fuera de la zona del pulgar</td><td>Sí</td><td>No: el pago tarda y no hay indicador (gravedad 3)</td></tr>
+        <tr><th scope="row">3 · Acerca el móvil al validador</th><td>Sí</td><td>Sí</td><td>Dudoso: «Billete listo» solo en verde al sol</td><td>No si no ve el verde (gravedad 3)</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <p>Resultado: dos problemas de gravedad 3 (falta de indicador de progreso y verde no distinguible al sol) que vuelven a la Actividad C antes de ningún test con personas.</p>
+    <h4>Ejemplo resuelto: la inspección de accesibilidad como lista de comprobación</h4>
+    <p>La inspección de conformidad se apoya en una lista mínima y en el criterio WCAG exacto: cada fila es una comprobación que puede salir «cumple» o «no cumple».</p>
+    <div class="table-scroll">
+    <table class="data">
+      <caption>Lista mínima de inspección de accesibilidad (WCAG 2.1 AA) ligada al requisito R-03.</caption>
+      <thead>
+        <tr><th scope="col">Comprobación</th><th scope="col">Criterio WCAG</th><th scope="col">Cómo se hace</th><th scope="col">Caso</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Contraste de texto ≥ 4,5:1</th><td>1.4.3</td><td>Herramienta de contraste sobre cada pareja de colores</td><td>«Billete listo» de Marta; texto de Mari Carmen</td></tr>
+        <tr><th scope="row">No solo color</th><td>1.4.1</td><td>Ver la pantalla en escala de grises</td><td>Confirmación de Marta; campos obligatorios</td></tr>
+        <tr><th scope="row">Texto al 200 %</th><td>1.4.4</td><td>Ampliar el texto al doble sin perder contenido ni funciones</td><td>Letra extragrande de Mari Carmen y zoom de Joaquín</td></tr>
+        <tr><th scope="row">Reflujo a 320 px</th><td>1.4.10</td><td>Reducir la ventana a 320 px: sin desplazamiento horizontal</td><td>Joaquín (baja visión)</td></tr>
+        <tr><th scope="row">Contraste de componentes ≥ 3:1</th><td>1.4.11</td><td>Medir bordes e iconos de los controles</td><td>Botones y campos</td></tr>
+        <tr><th scope="row">Tiempo ajustable</th><td>2.2.1</td><td>Comprobar que se puede reenviar el código sin reiniciar</td><td>R-04 de Mari Carmen</td></tr>
+        <tr><th scope="row">Errores identificados y con sugerencia</th><td>3.3.1 y 3.3.3</td><td>Provocar cada error y leer el mensaje</td><td>Código caducado, hueco ocupado</td></tr>
+        </tbody>
+    </table>
     </div>
   </section>
 
@@ -442,15 +729,16 @@
           <tr><th scope="col">Indicador</th><th scope="col">Valor</th></tr>
         </thead>
         <tbody>
-          <tr><td>Personas de 6 o más años con alguna discapacidad o limitación</td><td class="fig">4,38 millones</td></tr>
-          <tr><td>Prevalencia (personas con discapacidad por cada mil habitantes)</td><td class="fig">≈ 95 ‰</td></tr>
+          <tr><td>Personas residentes en hogares con alguna discapacidad o limitación</td><td class="fig">4,38 millones</td></tr>
+          <tr><td>De ellas, personas de 6 o más años</td><td class="fig">4,32 millones</td></tr>
+          <tr><td>Prevalencia (personas con discapacidad por cada mil habitantes)</td><td class="fig">≈ 95 ‰ (sobre los 4,38 millones)</td></tr>
           <tr><td>Hogares con al menos una persona con discapacidad</td><td class="fig">1 de cada 5</td></tr>
         </tbody>
       </table>
       </div>
     </div>
 
-    <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % porque tiene baja visión: si la inspección no verifica el criterio WCAG 1.4.10 (reflujo), la pantalla «Cita guardada» de <strong>Mari Carmen</strong> —que Joaquín también usa— le resulta inutilizable aunque el flujo funcione bien para todos los demás.</p>
+    <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % porque tiene baja visión: si la inspección no verifica los criterios WCAG 1.4.4 (texto al 200 %) y 1.4.10 (reflujo a 320 px), la pantalla «Cita guardada» de <strong>Mari Carmen</strong> —que Joaquín también usa— le resulta inutilizable aunque el flujo funcione bien para todos los demás.</p>
     <p>Cuando una inspección detecta que el contraste del «Billete listo» de la app de <strong>Marta</strong> es de 2,1:1 en lugar de 4,5:1, está evitando que ese problema llegue al test, donde el fallo con luz solar cuesta sesiones enteras. Ese es el valor de inspeccionar primero: limpiar lo que el experto puede ver sin necesitar a nadie.</p>
     <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: el contraste alto que protege a Joaquín es el mismo que Marta necesita al sol en el andén. Inspeccionar la accesibilidad es diseñar para todos.</p>
 
@@ -468,9 +756,9 @@
 
     <h4>Qué encaja bien</h4>
     <ul>
-      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común. Para la app de <strong>Marta</strong>: revisar heurísticas 1 (visibilidad del estado en &lt; 0,1 s), 3 (botón «Confirmar» en zona del pulgar) y 8 (pantalla de inicio sin opciones superfluas). Para la de <strong>Mari Carmen</strong>: revisar heurísticas 1 (pantalla «Cita guardada» clara), 9 (mensajes de error en lenguaje llano) y 6 (sin exigir recordar el código del centro).</li>
+      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común. Para la app de <strong>Marta</strong>: revisar heurísticas 1 (visibilidad del estado en &lt; 0,1 s) y 8 (pantalla de inicio sin opciones superfluas), y aparte la ley de Fitts (botón «Pagar y subir» ≥ 44 px en la zona del pulgar, criterio del proyecto). Para la de <strong>Mari Carmen</strong>: revisar heurísticas 1 (pantalla «Cita guardada» clara), 9 (mensajes de error en lenguaje llano) y 6 (sin exigir recordar el código del centro).</li>
       <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez. Para Marta: ¿sabría que el botón de inicio es el pago? Para Mari Carmen: ¿en el paso del código SMS, vería el botón «Reenviar» sin reiniciar?</li>
-      <li>La <strong>inspección de accesibilidad obligatoria</strong>: contraste ≥ 4,5:1 (Marta bajo el sol, Joaquín con baja visión), reflujo al 200 % sin pérdida (Joaquín, WCAG 1.4.10), no solo color en la confirmación de Mari Carmen (WCAG 1.4.1).</li>
+      <li>La <strong>inspección de accesibilidad obligatoria</strong>: contraste ≥ 4,5:1 (Marta bajo el sol, Joaquín con baja visión), ampliación al 200 % sin pérdida (WCAG 1.4.4) y reflujo a 320 px (1.4.10), por Joaquín, no solo color en la confirmación de Mari Carmen (WCAG 1.4.1).</li>
     </ul>
     <p>Sea cual sea, documenta cada hallazgo con su <strong>gravedad</strong> y su recomendación en el <strong>informe de evaluación</strong>. Una inspección sin informe no sirve: el valor está en comunicar qué arreglar y por qué.</p>
 
@@ -481,13 +769,13 @@
   </section>
 
   <section id="retos" aria-labelledby="retos-h">
-    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de inspección para esta semana</h3>
+    <h3 id="retos-h"><span class="num" aria-hidden="true">2.5</span>Retos de inspección</h3>
 
     <p>Tres retos breves para afinar el ojo del evaluador. Sin usuarios: solo tú, una interfaz y los criterios.</p>
 
     <div class="box challenge">
       <span class="label">Reto 1 · Caza heurística</span>
-      <p>Elige una web o app y recórrela con las 10 heurísticas de Nielsen al lado. Anota cada incumplimiento indicando la heurística y una gravedad (cosmético, menor, grave). Tendrás tu primera tabla de hallazgos.</p>
+      <p>Elige una web o app y recórrela con las 10 heurísticas de Nielsen al lado. Anota cada incumplimiento indicando la heurística y una gravedad de la escala del proyecto (1, 2 o 3). Tendrás tu primera tabla de hallazgos.</p>
     </div>
     <div class="box challenge">
       <span class="label">Reto 2 · Ojos de novato</span>
@@ -549,6 +837,36 @@
       <summary>8. ¿Cómo encaja la inspección en tu proyecto?</summary>
       <p>Es obligatoria: la Actividad D pide al menos un método de cada familia. Lo más asequible es una <strong>evaluación heurística</strong> en equipo, e incluye además la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo). Todo, documentado con gravedad y recomendaciones en el informe. <em>(Ver 2.4)</em></p>
     </details>
+  
+    <details class="check">
+      <summary>9. Ejercicio de aplicación: clasifica y puntúa este hallazgo: «En la pantalla de Marta, el verde de “Billete listo” no se distingue del fondo al sol y no hay texto». ¿Qué criterio incumple y a qué actividad vuelve?</summary>
+      <p>Incumple <strong>WCAG 1.4.1</strong> (no solo color) y <strong>1.4.3</strong> (contraste ≥ 4,5:1). Gravedad <strong>3</strong>: deja una duda grave sobre si el billete está validado. Vuelve a la <strong>Actividad C</strong> (7.4.4): añadir texto y tic y corregir el contraste. <em>(Ver 1.5 y 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>10. «El botón “Pagar y subir” está arriba a la derecha». ¿Qué heurística de Nielsen incumple?</summary>
+      <p>Ninguna: es un problema de la <strong>ley de Fitts</strong> y del criterio del proyecto (objetivo ≥ 44 px en la zona del pulgar), no de las 10 heurísticas. Se anota con ese criterio. Una heurística no sirve para todo: hay que elegir el criterio adecuado a cada hallazgo. <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>11. ¿Con qué dos criterios WCAG distintos se comprueban la ampliación del texto al 200 % y el reflujo? ¿Para quién importa en el caso de estudio?</summary>
+      <p><strong>1.4.4</strong> (cambio de tamaño del texto hasta el 200 %) y <strong>1.4.10</strong> (reflujo a 320 px, equivale a ampliar al 400 %). Importan para <strong>Mari Carmen</strong> (letra extragrande) y para <strong>Joaquín</strong> (baja visión, zoom al 200 %). <em>(Ver 2.2)</em></p>
+    </details>
+    <details class="check">
+      <summary>12. ¿Por qué la inspección se repite en cada iteración y no se hace una sola vez al final?</summary>
+      <p>Porque el DCH es un <strong>ciclo</strong>: cada rediseño puede introducir problemas nuevos y la inspección es la forma más barata de detectarlos. Sus hallazgos vuelven a la Actividad C (7.4.4) y el ciclo se repite hasta cumplir los requisitos. <em>(Ver 1.5)</em></p>
+    </details>
+  
+    <details class="check">
+      <summary>13. ¿En qué se diferencian WAI Easy Checks y WCAG-EM y cuándo se usa cada uno?</summary>
+      <p><strong>Easy Checks</strong> son diez comprobaciones básicas, de unos 30 minutos y al alcance de cualquier miembro del equipo; sirven de primer filtro. <strong>WCAG-EM</strong> es la metodología formal de cinco pasos para evaluar un sitio completo y emitir una declaración de conformidad. Se usan en secuencia. <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>14. ¿Por qué una página puede pasar el comprobador automático y seguir siendo inaccesible?</summary>
+      <p>Porque las herramientas solo detectan lo medible (contraste, texto alternativo ausente, campos sin etiqueta). El orden de tabulación, la calidad del texto alternativo, el «no solo color» y la visibilidad del foco requieren revisión manual. <em>(Ver 1.6)</em></p>
+    </details>
+    <details class="check">
+      <summary>15. Clasifica estos fallos por principio POUR: (a) fecha en gris claro; (b) «Confirmar» sin foco con Tab; (c) error que solo dice «Formato incorrecto»; (d) un div con clic sin rol de botón.</summary>
+      <p>(a) <strong>Perceptible</strong> (1.4.3); (b) <strong>Operable</strong> (2.1.1 y 2.4.7); (c) <strong>Comprensible</strong> (3.3.1 y 3.3.3); (d) <strong>Robusto</strong> (4.1.2). <em>(Ver 1.6)</em></p>
+    </details>
   </section>
 
   <!-- ============ GLOSARIO ============ -->
@@ -564,7 +882,7 @@
       <dt>Las 10 heurísticas de Nielsen</dt>
       <dd>Conjunto clásico de diez principios de usabilidad (Nielsen Norman Group) usado como criterio en la evaluación heurística.</dd>
       <dt>Gravedad (de un hallazgo)</dt>
-      <dd>Valoración de cuánto perjudica un problema (por ejemplo: cosmético, menor, grave, catastrófico). Sirve para priorizar qué se arregla antes.</dd>
+      <dd>Valoración de cuánto perjudica un problema En el proyecto: 1 = molestia menor; 2 = enlentece o confunde; 3 = impide completar la tarea o deja una duda grave. Sirve para priorizar qué se arregla antes.</dd>
       <dt>Recorrido cognitivo</dt>
       <dd>Método de inspección en el que el evaluador simula a un usuario nuevo y recorre una tarea paso a paso, comprobando si sabría qué hacer en cada uno. Se centra en la facilidad de aprendizaje.</dd>
       <dt>Inspección de conformidad</dt>
@@ -579,7 +897,19 @@
       <dd>Conjunto alternativo de ocho principios de diseño de interfaces, con ideas que se solapan con las heurísticas de Nielsen.</dd>
       <dt>Actividad D (DCH)</dt>
       <dd>Cuarta actividad del ciclo del DCH (ISO 9241-210): evaluar el diseño respecto a los requisitos. La inspección es una de sus tres familias de métodos.</dd>
-    </dl>
+      <dt>Ciclo iterativo (DCH)</dt>
+      <dd>Repetición de las actividades A a D hasta cumplir los requisitos. La inspección se repite en cada iteración y devuelve sus hallazgos a la Actividad C.</dd>
+        <dt>Escala de gravedad del proyecto</dt>
+      <dd>1 = molestia menor; 2 = enlentece o confunde; 3 = impide completar la tarea o deja una duda grave.</dd>
+        <dt>POUR</dt>
+      <dd>Los cuatro principios de las WCAG: Perceptible, Operable, Comprensible y Robusto.</dd>
+        <dt>WAI Easy Checks</dt>
+      <dd>Guía del W3C con diez comprobaciones básicas de accesibilidad: un primer filtro rápido, no una evaluación de conformidad.</dd>
+        <dt>WCAG-EM</dt>
+      <dd>Metodología del W3C de cinco pasos para evaluar la conformidad de un sitio completo con las WCAG y emitir una declaración de conformidad.</dd>
+        <dt>No conformidad</dt>
+      <dd>Incumplimiento de un criterio de la norma, documentado con criterio, principio POUR, evidencia, gravedad y recomendación.</dd>
+      </dl>
   </section>
 
   <!-- ============ RESUMEN ============ -->
@@ -597,7 +927,11 @@
         <li>En tu proyecto la inspección es <strong>obligatoria</strong>; la más asequible es la heurística, e incluye la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo), documentada en el informe.</li>
         <li>Profesionalmente, la inspección de accesibilidad es <strong>obligatoria por ley</strong> (Directiva 2019/882, EN 301 549) y cubre las competencias CI17, CG03, CB03 y CB04.</li>
         <li>En la próxima sesión cerramos las familias con el <strong>test con usuarios</strong>.</li>
-        <li>Los dos casos ilustran el valor de inspeccionar antes del test: la heurística detecta el botón de <strong>Marta</strong> fuera de la zona del pulgar y el mensaje de error ininteligible de <strong>Mari Carmen</strong> en minutos y sin usuarios; la inspección WCAG verifica el contraste al sol (Marta) y el reflujo al 200 % para Joaquín antes de que ningún participante real fracase por ello.</li>
+        <li>Los dos casos ilustran el valor de inspeccionar antes del test: la heurística detecta el botón de <strong>Marta</strong> fuera de la zona del pulgar y el mensaje de error ininteligible de <strong>Mari Carmen</strong> en minutos y sin usuarios; la inspección WCAG verifica el contraste al sol (Marta) y la ampliación al 200 % y el reflujo a 320 px para Joaquín antes de que ningún participante real fracase por ello.</li>
+        <li>La inspección corresponde a la cláusula <strong>7.5</strong> de la ISO 9241-210 y alimenta la <strong>7.4.4</strong>: el DCH es un <strong>ciclo</strong> y se inspecciona en cada iteración.</li>
+        <li>No todo hallazgo es una heurística de Nielsen: la zona del pulgar es <strong>Fitts</strong> (≥ 44 px) y el «solo color» es <strong>WCAG 1.4.1</strong>. La ampliación al 200 % es <strong>1.4.4</strong> y el reflujo a 320 px es <strong>1.4.10</strong>.</li>
+        <li>La inspección de accesibilidad se apoya en la cadena <strong>Directiva 2019/882 → EN 301 549 → WCAG 2.1 AA</strong>, se organiza con los cuatro principios <strong>POUR</strong> y combina herramientas automáticas con revisión manual.</li>
+        <li><strong>WAI Easy Checks</strong> es el primer filtro (diez comprobaciones, unos 30 minutos) y <strong>WCAG-EM</strong> la evaluación formal de conformidad en cinco pasos; ninguno sustituye a la inspección WCAG 2.1 AA del proyecto ni a probar con personas.</li>
       </ul>
     </div>
   </section>
@@ -608,7 +942,7 @@
     <p>Bibliografía del plan docente en la que se apoyan estos apuntes:</p>
     <ol class="refs">
       <li>Preece, J. et&nbsp;al. <em>Interaction Design: Beyond Human-Computer Interaction</em>. 6.ª ed. Wiley, 2023. (Métodos de inspección: evaluación heurística y recorrido cognitivo.)</li>
-      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. 3.ª ed. Morgan Kaufmann, 2025.</li>
+      <li>Hartson, R. &amp; Pyla, P. S. <em>The UX Book: Agile UX Design for a Quality User Experience</em>. Morgan Kaufmann (edición más reciente).</li>
       <li>Dix, A. et&nbsp;al. <em>Human-Computer Interaction</em>. 3.ª ed. Prentice-Hall, 2004.</li>
       <li>Shneiderman, B. <em>Diseño de interfaces de usuario</em>. 4.ª ed. Pearson, 2006. (Las ocho reglas de oro.)</li>
       <li>Cooper, A. et&nbsp;al. <em>About Face: The Essentials of Interaction Design</em>. 4.ª ed. Wiley, 2014.</li>
@@ -633,7 +967,7 @@
 <footer>
   <div class="wrap">
     <p>Material de apoyo docente · Tema 4 «Evaluación de sistemas» · Concepto: <em>Los métodos de inspección (Actividad D del DCH)</em> · Asignatura <em>Diseño e Interacción en Sistemas de Información</em> (501282).</p>
-    <p>Escuela Politécnica · Universidad de Extremadura · Curso 2026/2027. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
+    <p>Escuela Politécnica · Universidad de Extremadura. Documento elaborado bajo los principios del Diseño Universal para el Aprendizaje (DUA) y conforme a WCAG&nbsp;2.1 nivel AA.</p>
   </div>
 </footer>
 
