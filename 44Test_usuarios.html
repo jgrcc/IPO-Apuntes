@@ -85,7 +85,7 @@
       <span class="label">Cómo estudiar con estos apuntes</span>
       <ol>
         <li><b>Primera lectura.</b> Quédate con las tres fases del test, las tres dimensiones de la usabilidad y la fórmula del SUS.</li>
-        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen y de Marta, tapa los resultados e intenta priorizar tú los problemas.</li>
+        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen —el caso principal— y, como complemento, de Marta, tapa los resultados e intenta priorizar tú los problemas.</li>
         <li><b>Autoevaluación.</b> Calcula a mano un SUS y responde los ejercicios de aplicación antes de abrir la solución.</li>
         <li><b>Ficha de repaso.</b> Rellena de memoria la tabla «decisión tras evaluar» del apartado 1.9.</li>
         <li><b>Proyecto.</b> Usa la plantilla de informe del apunte de introducción al Tema 4 (apartado 2.4) y rellena la sección de resultados con tus datos.</li>
@@ -173,8 +173,8 @@
 
     <h4>Dos consejos sobre métricas</h4>
     <ul>
-      <li><strong>Define el éxito antes.</strong> Cada tarea necesita un criterio claro de «completada». Para la tarea de <strong>Marta</strong>: «billete validado visible en pantalla en menos de 30 s con una mano». Para la de <strong>Mari Carmen</strong>: «llega a la pantalla "Cita guardada" con médico y fecha correctos sin pedir ayuda». Sin ese criterio, no hay eficacia medible.</li>
-      <li><strong>No midas por medir.</strong> Elige pocas métricas que respondan a tus preguntas. Para Marta, el tiempo en tarea y la tasa de éxito bajo presión son las más reveladoras. Para Mari Carmen, la métrica de satisfacción más reveladora es una pregunta cualitativa: «¿necesitaría llamar a alguien para confirmar que la cita quedó guardada?».</li>
+      <li><strong>Define el éxito antes.</strong> Cada tarea necesita un criterio claro de «completada». Para la tarea de <strong>Mari Carmen</strong>: «llega a la pantalla "Cita guardada" con médico y fecha correctos sin pedir ayuda». Para la de <strong>Marta</strong> (caso complementario): «billete validado visible en pantalla en menos de 30 s con una mano». Sin ese criterio, no hay eficacia medible.</li>
+      <li><strong>No midas por medir.</strong> Elige pocas métricas que respondan a tus preguntas. Para Mari Carmen, la métrica de satisfacción más reveladora es una pregunta cualitativa: «¿necesitaría llamar a alguien para confirmar que la cita quedó guardada?», junto con la tasa de éxito sin ayuda. Para Marta (caso complementario), el tiempo en tarea y la tasa de éxito bajo presión son las más reveladoras.</li>
     </ul>
 
     <div class="box key">
@@ -469,7 +469,7 @@
     </div>
     <p>Fíjate en cómo encaja todo: las tareas salen de los <strong>requisitos</strong>; las métricas muestran dónde duele; las preguntas explican el porqué; y cada problema se devuelve a la <strong>actividad de la que procede</strong>. Esto es un test completo y el comienzo de la siguiente vuelta del ciclo.</p>
 
-    <h4>Ejemplo resuelto: el mismo método con Marta</h4>
+    <h4>Ejemplo complementario: el mismo método con Marta</h4>
     <p>Con la app de transporte de <strong>Marta</strong> el test cambia en las tareas y en las condiciones: una sola tarea crítica, medida con cronómetro, de pie, con una mano y con luz directa.</p>
     <div class="table-scroll">
     <table class="data">
@@ -597,7 +597,7 @@
       </div>
     </div>
 
-    <p>Lee el primer dato: <strong>la mitad de los hogares</strong> solo tiene móvil. <strong>Marta</strong> está en ese 50,3 %: si el equipo testa la app de transporte solo en un portátil de laboratorio, nunca descubrirá que el botón queda fuera de la zona del pulgar ni que el contraste falla bajo luz directa. El test moderado con su propio móvil, de pie si es posible, es el único que genera evidencia real de su contexto.</p>
+    <p>Lee el primer dato: <strong>la mitad de los hogares</strong> solo tiene móvil. <strong>Marta</strong> está en ese 50,3 %, y <strong>Mari Carmen</strong> también usa su propio móvil (aunque, con 78 años, queda fuera del rango de edad de la encuesta): si el equipo testa la app de cita médica solo en un portátil de laboratorio, nunca descubrirá que el código SMS obliga a salir de la app, que el teclado tapa el campo ni cómo se comporta con el zoom activado; y en la de transporte, que el botón queda fuera de la zona del pulgar o que el contraste falla bajo luz directa. El test moderado con su propio móvil, en su entorno, es el único que genera evidencia real de su contexto.</p>
     <p>El test remoto no moderado resuelve otra dimensión: la persona usa <strong>su propio teléfono</strong>, en su entorno habitual. <strong>Mari Carmen</strong>, en su municipio rural, no puede desplazarse a la ciudad para una sesión de laboratorio; una sesión moderada en su entorno la alcanza en su cocina, con sus gafas puestas: exactamente el contexto donde la app tiene que funcionar. Ojo con el matiz: su cobertura es irregular (es el origen de R-05) y su competencia digital, básica; una <strong>videollamada</strong> puede fallar o resultar ajena a ella, así que conviene tener un <strong>plan B</strong> (visita a su domicilio o al consultorio local, con su propio móvil).</p>
     <p>Y para una región dispersa como <strong>Extremadura</strong>, lo remoto añade otra ventaja sistemática: alcanzas a personas de pueblos alejados sin pedirles que se desplacen. Más diversidad de usuarios, menos barreras, más representatividad de la muestra.</p>
 
@@ -615,22 +615,22 @@
 
     <h4>Una receta mínima viable</h4>
     <ul>
-      <li><strong>Diseña</strong> 3–4 tareas realistas con criterio de éxito. Caso A: «Paga el billete y valida antes de subir al autobús» — éxito: billete validado en pantalla en ≤ 30 s con una mano. Caso B: «Pide una cita con el Dr. Ramos para el martes» — éxito: llega a «Cita guardada» con médico y fecha correctos, sin pedir ayuda.</li>
-      <li><strong>Recluta</strong> a 5 personas del perfil real. Para Marta: personas que usan solo el móvil y el autobús a diario, mejor con prisa simulada. Para Mari Carmen: personas mayores de 70 años con competencia digital básica, idealmente en entorno rural, con el zoom del móvil activado.</li>
-      <li><strong>Conduce</strong> las sesiones con pensar en voz alta. Para Marta: en su propio móvil, de pie si es posible, con brillo al máximo. Para Mari Carmen: moderado en su entorno habitual (en persona, o remoto por videollamada si su cobertura y su comodidad lo permiten), en su propio móvil y con sus gafas puestas.</li>
-      <li><strong>Mide</strong> tasa de éxito, tiempo por tarea y pasa el <strong>SUS</strong> al final. Añade para Mari Carmen la pregunta cualitativa: «¿Necesitaría llamar a alguien para confirmar que la cita quedó guardada?».</li>
-      <li><strong>Analiza</strong> y lleva al informe los hallazgos priorizados. Si Marta no completa en 30 s: problema de Fitts o de flujo. Si Mari Carmen llama igualmente: la pantalla de confirmación no cierra el abismo de evaluación.</li>
+      <li><strong>Diseña</strong> 2–3 tareas realistas con criterio de éxito. Caso principal (Mari Carmen): «Pide una cita con el Dr. Ramos para el martes» — éxito: llega a «Cita guardada» con médico y fecha correctos, sin pedir ayuda. Caso complementario (Marta): «Paga el billete y valida antes de subir al autobús» — éxito: billete validado en pantalla en ≤ 30 s con una mano.</li>
+      <li><strong>Recluta</strong> a al menos 5 personas del perfil real (más una persona aparte para la <strong>prueba piloto</strong>), anota su procedencia y justifica cualquier desviación del perfil. Para Mari Carmen: personas mayores de 70 años con competencia digital básica, idealmente en entorno rural, con el zoom del móvil activado. Para Marta (caso complementario): personas que usan solo el móvil y el autobús a diario, mejor con prisa simulada.</li>
+      <li><strong>Conduce</strong> las sesiones con pensar en voz alta. Para Mari Carmen: moderado en su entorno habitual (en persona, o remoto por videollamada si su cobertura y su comodidad lo permiten), en su propio móvil y con sus gafas puestas. Para Marta (caso complementario): en su propio móvil, de pie si es posible, con brillo al máximo.</li>
+      <li><strong>Mide</strong> tasa de éxito, tiempo por tarea y pasa el <strong>SUS</strong> al final, anotando la puntuación final de cada participante (0–100) y la media del grupo. Añade para Mari Carmen la pregunta cualitativa: «¿Necesitaría llamar a alguien para confirmar que la cita quedó guardada?».</li>
+      <li><strong>Analiza</strong> y lleva al informe los hallazgos priorizados. Si Mari Carmen llama igualmente: la pantalla de confirmación no cierra el abismo de evaluación. Si Marta (caso complementario) no completa en 30 s: problema de Fitts o de flujo.</li>
     </ul>
     <p>Con eso tendrás las tres dimensiones (eficacia, eficiencia, satisfacción) cubiertas para cada perfil y una historia sólida que contar: qué probaste, con quién, qué falló y qué propones mejorar.</p>
 
     <div class="box curio">
-      <span class="label">El test en los dos casos</span>
-      <p>El test confirma lo que la inspección solo podía suponer. Para <strong>Marta</strong>: ¿el botón de pago en la zona del pulgar resuelve el problema de Fitts bajo presión real, o sigue siendo demasiado pequeño con la mano sudada en el andén? Para <strong>Mari Carmen</strong>: ¿la pantalla «Cita guardada» en texto grande y explícito elimina la llamada a su hija, o persiste la ansiedad aunque el diseño cumpla WCAG? Solo la persona real, realizando la tarea real, en su contexto real, da la respuesta. Eso es lo que hace el test irreemplazable.</p>
+      <span class="label">El test en el caso principal y en el complementario</span>
+      <p>El test confirma lo que la inspección solo podía suponer. Para <strong>Mari Carmen</strong>: ¿la pantalla «Cita guardada» en texto grande y explícito elimina la llamada a su hija, o persiste la ansiedad aunque el diseño cumpla WCAG? Para <strong>Marta</strong>, en el caso complementario: ¿el botón de pago en la zona del pulgar resuelve el problema de Fitts bajo presión real, o sigue siendo demasiado pequeño con la mano sudada en el andén? Solo la persona real, realizando la tarea real, en su contexto real, da la respuesta. Eso es lo que hace el test irreemplazable.</p>
     </div>
 
     <div class="box key">
       <span class="label">Idea clave</span>
-      <p>En tu proyecto, el test es <strong>obligatorio</strong> y cierra la Actividad D. Receta mínima: 3–4 tareas con criterio de éxito, ~5 participantes reales, sesiones con pensar en voz alta sin guiar, y medir <strong>éxito + tiempo + SUS</strong>. Todo, al informe con hallazgos priorizados.</p>
+      <p>En tu proyecto, el test es <strong>obligatorio</strong> y cierra la Actividad D. Receta mínima: 2–3 tareas con criterio de éxito, al menos 5 participantes reales, sesiones con pensar en voz alta sin guiar, y medir <strong>éxito + tiempo + SUS</strong>. Todo, al informe con hallazgos priorizados.</p>
     </div>
   </section>
 
@@ -709,8 +709,8 @@
       <p>Impares (1, 3, 5, 7, 9): respuesta − 1 → 3, 3, 4, 3, 3 = 16. Pares (2, 4, 6, 8, 10): 5 − respuesta → 3, 4, 3, 3, 4 = 17. Suma = 33; × 2,5 = <strong>82,5</strong>. Supera la media de referencia (≈ 68). <em>(Ver 1.4)</em></p>
     </details>
     <details class="check">
-      <summary>10. Marta completa el pago en 52 s con una mano. Su SEQ es 6 y el SUS del grupo es 78. ¿Se cumple el requisito? ¿Qué hay que revisar?</summary>
-      <p>No: el criterio de éxito es <strong>≤ 30 s con una sola mano</strong>, y la eficiencia es una dimensión distinta de la satisfacción. Un SUS alto y una facilidad percibida buena no compensan una tarea que supera el tiempo. Hay que mirar dónde se pierden los segundos (¿botón fuera del pulgar?, ¿espera sin indicador?) y volver a la Actividad C. <em>(Ver 1.2 y 1.8)</em></p>
+      <summary>10. De cinco personas del perfil de Mari Carmen, tres completan la solicitud de cita sin ayuda; el tiempo medio es de 3 min 40 s y el SUS del grupo es 74. El objetivo RU-01 pide al menos 4 de 5 sin ayuda y RU-02, menos de 5 minutos. ¿Se cumple? ¿Qué hay que revisar?</summary>
+      <p><strong>RU-01 no se cumple</strong> (3 de 5 no llega a 4 de 5), aunque RU-02 sí (3 min 40 s es menos de 5 minutos) y el SUS (74, por encima de la media de referencia ≈ 68) sea bueno: la satisfacción percibida no compensa una tarea que no se completa, y las dimensiones se interpretan por separado. Hay que mirar quiénes no la completaron y dónde se atascaron (¿código SMS caducado?, ¿confirmación ambigua?) y volver a la Actividad C. En el caso complementario ocurriría lo mismo con Marta: 52 s con una mano y SUS 78 no cumplen el criterio de eficiencia (≤ 30 s). <em>(Ver 1.2 y 1.8)</em></p>
     </details>
     <details class="check">
       <summary>11. En un test, 3 de 5 personas mayores no saben si la cita está guardada. Prioriza el problema y decide a qué actividad vuelve.</summary>
@@ -780,7 +780,7 @@
         <li>El <strong>test remoto</strong> (moderado o no moderado) evalúa en el dispositivo y contexto reales; herramientas como Lookback, UserTesting, Maze o Lyssna, o Zoom/Meet gratis.</li>
         <li>Importa según el <strong>INE (Encuesta TIC-H)</strong>: <strong>50,3 %</strong> de hogares solo con móvil; además, alcanza a la población dispersa de Extremadura.</li>
         <li>En tu proyecto, el test cierra la Actividad D: ~5 participantes, tareas con criterio de éxito, medir <strong>éxito + tiempo + SUS</strong> y llevarlo al informe.</li>
-        <li>Los dos casos de estudio ilustran por qué el test es irreemplazable: la inspección detectó que el botón de <strong>Marta</strong> podría estar mal ubicado; el test confirma si de verdad falla bajo presión en el andén. La inspección detectó que la pantalla de <strong>Mari Carmen</strong> podría no cerrar el abismo de evaluación; el test confirma si, con la confirmación explícita, deja de llamar a su hija. Sin personas reales en su contexto real, esas preguntas no tienen respuesta.</li>
+        <li>El caso principal y el complementario ilustran por qué el test es irreemplazable: la inspección detectó que la pantalla de <strong>Mari Carmen</strong> podría no cerrar el abismo de evaluación; el test confirma si, con la confirmación explícita, deja de llamar a su hija. La inspección detectó que el botón de <strong>Marta</strong> podría estar mal ubicado; el test confirma si de verdad falla bajo presión en el andén. Sin personas reales en su contexto real, esas preguntas no tienen respuesta.</li>
         <li>El test <strong>ejecuta el plan de evaluación</strong> derivado de la trazabilidad: cada tarea comprueba un requisito (R-0x) y cada criterio de éxito sale de un objetivo (RU-0x). Los problemas se priorizan por frecuencia y gravedad (1 a 3) y se devuelven a la actividad de la que proceden.</li>
         <li>El DCH es un <strong>ciclo</strong>: el test no lo cierra, lo hace girar (cláusulas 7.5 y 7.4.4 de la ISO 9241-210).</li>
       </ul>

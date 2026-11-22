@@ -83,7 +83,7 @@
       <span class="label">Cómo estudiar con estos apuntes</span>
       <ol>
         <li><b>Primera lectura.</b> Quédate con los cinco pasos de una inspección, los tres métodos y las cajas «Idea clave».</li>
-        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen y de Marta, tapa la solución, haz tú la inspección y compara.</li>
+        <li><b>Segunda lectura, con papel.</b> En los ejemplos resueltos de Mari Carmen —el caso principal— y, como complemento, de Marta, tapa la solución, haz tú la inspección y compara.</li>
         <li><b>Autoevaluación.</b> Responde las preguntas de comprobación y los ejercicios de aplicación antes de abrir la solución.</li>
         <li><b>Ficha de repaso.</b> Aprende de memoria la escala de gravedad (1 a 3) y qué criterio WCAG corresponde a cada comprobación.</li>
         <li><b>Proyecto.</b> Haz una evaluación heurística y una inspección de accesibilidad de tu prototipo y anota cada hallazgo con su requisito (R-0x).</li>
@@ -632,28 +632,29 @@
     <p>Fíjate en el método: no se trata de opinar, sino de <strong>buscar un indicio observable</strong> para cada heurística. Si lo encuentras del lado «no se cumple», tienes un hallazgo.</p>
 
     <h4>De los indicios a los hallazgos priorizados</h4>
-    <p>Cada incumplimiento detectado se anota como hallazgo y se le asigna una <strong>gravedad</strong>, para saber qué arreglar primero. La tabla incluye hallazgos de los dos casos de estudio:</p>
+    <p>Cada incumplimiento detectado se anota como hallazgo y se le asigna una <strong>gravedad</strong>, para saber qué arreglar primero. La tabla incluye hallazgos del caso principal y del complementario:</p>
     <div class="table-scroll">
     <table class="data">
-      <caption>Hallazgos de mini-evaluaciones en los dos casos de estudio, con su gravedad. Ejemplo didáctico.</caption>
+      <caption>Hallazgos de mini-evaluaciones del caso principal (Mari Carmen) y del complementario (Marta), con su gravedad. Ejemplo didáctico.</caption>
       <thead>
         <tr><th scope="col">Caso</th><th scope="col">Hallazgo</th><th scope="col">Criterio incumplido</th><th scope="col">Gravedad</th></tr>
       </thead>
       <tbody>
-        <tr><td>Caso B · Mari Carmen</td><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>3</td></tr>
-        <tr><td>Caso B · Mari Carmen</td><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>3</td></tr>
-        <tr><td>Caso A · Marta</td><td>El botón «Pagar y subir» está en la esquina superior derecha, lejos de la zona del pulgar</td><td>Ley de Fitts y criterio del proyecto (objetivo ≥ 44 px, zona del pulgar). No es una heurística de Nielsen</td><td>3</td></tr>
-        <tr><td>Caso A · Marta</td><td>La confirmación «Billete listo» solo usa el color verde, sin texto ni icono adicional</td><td>WCAG 1.4.1 (no solo color), en la inspección de conformidad</td><td>3</td></tr>
-        <tr><td>Caso B · Mari Carmen</td><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia y estándares</td><td>1</td></tr>
+        <tr><td>Caso principal · Mari Carmen</td><td>Al pulsar «Confirmar» no pasa nada visible durante varios segundos</td><td>1 · Visibilidad del estado</td><td>3</td></tr>
+<tr><td>Caso principal · Mari Carmen</td><td>El mensaje de cita errónea dice «Petición rechazada (cód. 42)»</td><td>9 · Recuperarse de errores</td><td>3</td></tr>
+<tr><td>Caso principal · Mari Carmen</td><td>El botón se llama «Enviar» aquí y «Confirmar» en la pantalla previa</td><td>4 · Consistencia y estándares</td><td>1</td></tr>
+<tr><td>Caso complementario · Marta</td><td>El botón «Pagar y subir» está en la esquina superior derecha, lejos de la zona del pulgar</td><td>Ley de Fitts y criterio del proyecto (objetivo ≥ 44 px, zona del pulgar). No es una heurística de Nielsen</td><td>3</td></tr>
+<tr><td>Caso complementario · Marta</td><td>La confirmación «Billete listo» solo usa el color verde, sin texto ni icono adicional</td><td>WCAG 1.4.1 (no solo color), en la inspección de conformidad</td><td>3</td></tr>
+
       </tbody>
     </table>
     </div>
-    <p>En diez minutos y sin molestar a nadie tienes una <strong>lista de problemas con nombre y gravedad</strong>, lista para llevar al equipo. Eso es una evaluación heurística aplicada a dos casos reales.</p>
+    <p>En diez minutos y sin molestar a nadie tienes una <strong>lista de problemas con nombre y gravedad</strong>, lista para llevar al equipo. Eso es una evaluación heurística aplicada a un caso principal y a uno complementario.</p>
     <p>Y observa el límite: no sabes <em>aún</em> si esos problemas hacen fracasar a un usuario real. Eso lo dirá el test. La inspección ha hecho su trabajo: señalar dónde mirar, y en qué caso mirarlo primero.</p>
 
     <div class="box curio">
-      <span class="label">La inspección en los dos casos</span>
-      <p>Para la app de <strong>Marta</strong>, la inspección prioriza la zona del pulgar (ley de Fitts, criterio del proyecto: objetivo ≥ 44 px) y el contraste al sol (WCAG 1.4.3 y 1.4.1). Para la app de <strong>Mari Carmen</strong>, prioriza la visibilidad del estado tras confirmar (heurística 1) y los mensajes de error en lenguaje claro (heurística 9). La inspección de accesibilidad añade la verificación de la ampliación del texto al 200 % (WCAG 1.4.4) y del reflujo a 320 px (1.4.10) para Joaquín. En diez minutos por caso, sin usuarios, el equipo tiene la lista de qué corregir antes del test.</p>
+      <span class="label">La inspección en el caso principal y en el complementario</span>
+      <p>Para la app de <strong>Mari Carmen</strong> (caso principal), la inspección prioriza la visibilidad del estado tras confirmar (heurística 1), los mensajes de error en lenguaje claro (heurística 9) y que no haya que recordar el código (heurística 6). La inspección de accesibilidad añade la verificación de la ampliación del texto al 200 % (WCAG 1.4.4) y del reflujo a 320 px (1.4.10) para Joaquín, y de que el estado «guardada» no dependa solo del color (1.4.1). Para la app de <strong>Marta</strong> (caso complementario), prioriza la zona del pulgar (ley de Fitts, criterio del proyecto: objetivo ≥ 44 px) y el contraste al sol (WCAG 1.4.3 y 1.4.1). En diez minutos por caso, sin usuarios, el equipo tiene la lista de qué corregir antes del test.</p>
     </div>
 
     <div class="box key">
@@ -677,7 +678,25 @@
         </tbody>
     </table>
     </div>
-    <h4>Ejemplo resuelto: recorrido cognitivo de «pagar y validar» (Marta)</h4>
+    <h4>Ejemplo resuelto: recorrido cognitivo de «pedir cita» (Mari Carmen)</h4>
+    <p>El recorrido cognitivo se hace paso a paso, con las cuatro preguntas del método. Solo hace falta anotar dónde la respuesta es «no» o «dudoso».</p>
+    <div class="table-scroll">
+      <table class="data">
+        <caption>Recorrido cognitivo de la tarea de Mari Carmen «pedir cita» (cuatro preguntas por paso).</caption>
+        <thead>
+          <tr><th scope="col">Paso</th><th scope="col">¿Buscará el efecto correcto?</th><th scope="col">¿Verá que la acción está disponible?</th><th scope="col">¿La asociará con su meta?</th><th scope="col">¿Notará el progreso?</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">1 · Se identifica con su teléfono</th><td>Sí: quiere pedir cita</td><td>Sí: un único campo, el teléfono</td><td>Sí</td><td>—</td></tr>
+          <tr><th scope="row">2 · Escribe el código SMS</th><td>Sí</td><td>Dudoso: el teclado tapa el campo y no ve «Reenviar código»</td><td>Sí</td><td>No: no ve cuánto tiempo queda para que el código caduque (gravedad 2)</td></tr>
+          <tr><th scope="row">3 · Elige el hueco con el Dr. Ramos</th><td>Sí</td><td>Sí</td><td>Sí: ve «Dr. Ramos» y «martes»</td><td>—</td></tr>
+          <tr><th scope="row">4 · Pulsa «Confirmar»</th><td>Sí</td><td>Sí: es el único botón destacado</td><td>Sí</td><td>No: no aparece ningún indicador de que se está guardando (gravedad 3)</td></tr>
+          <tr><th scope="row">5 · Lee «Cita guardada»</th><td>Sí</td><td>—</td><td>Dudoso: faltan médico, día y hora</td><td>No: no sabe si la cita quedó guardada (gravedad 3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Resultado: dos problemas de gravedad 3 (falta de indicador de progreso al confirmar y confirmación sin los cuatro datos) y uno de gravedad 2 (código que caduca sin aviso ni «Reenviar» visible), que vuelven a la Actividad C antes de ningún test con personas (R-02 y R-04).</p>
+    <h4>Ejemplo complementario: recorrido cognitivo de «pagar y validar» (Marta)</h4>
     <p>El recorrido cognitivo se hace paso a paso, con las cuatro preguntas del método. Solo hace falta anotar dónde la respuesta es «no» o «dudoso».</p>
     <div class="table-scroll">
     <table class="data">
@@ -702,8 +721,8 @@
         <tr><th scope="col">Comprobación</th><th scope="col">Criterio WCAG</th><th scope="col">Cómo se hace</th><th scope="col">Caso</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Contraste de texto ≥ 4,5:1</th><td>1.4.3</td><td>Herramienta de contraste sobre cada pareja de colores</td><td>«Billete listo» de Marta; texto de Mari Carmen</td></tr>
-        <tr><th scope="row">No solo color</th><td>1.4.1</td><td>Ver la pantalla en escala de grises</td><td>Confirmación de Marta; campos obligatorios</td></tr>
+        <tr><th scope="row">Contraste de texto ≥ 4,5:1</th><td>1.4.3</td><td>Herramienta de contraste sobre cada pareja de colores</td><td>Fecha y texto de «Cita guardada» de Mari Carmen; «Billete listo» de Marta</td></tr>
+        <tr><th scope="row">No solo color</th><td>1.4.1</td><td>Ver la pantalla en escala de grises</td><td>Estado «guardada» de Mari Carmen; campos obligatorios; confirmación de Marta</td></tr>
         <tr><th scope="row">Texto al 200 %</th><td>1.4.4</td><td>Ampliar el texto al doble sin perder contenido ni funciones</td><td>Letra extragrande de Mari Carmen y zoom de Joaquín</td></tr>
         <tr><th scope="row">Reflujo a 320 px</th><td>1.4.10</td><td>Reducir la ventana a 320 px: sin desplazamiento horizontal</td><td>Joaquín (baja visión)</td></tr>
         <tr><th scope="row">Contraste de componentes ≥ 3:1</th><td>1.4.11</td><td>Medir bordes e iconos de los controles</td><td>Botones y campos</td></tr>
@@ -739,8 +758,8 @@
     </div>
 
     <p>Léelo despacio. <strong>4,38 millones de personas</strong> —casi una de cada diez— tienen alguna discapacidad. Y en <strong>uno de cada cinco hogares</strong> vive alguien que la tiene. No es una minoría lejana: es gente de tu calle, de tu familia. <strong>Joaquín</strong>, persona secundaria de la app de cita médica, amplía el zoom al 200 % porque tiene baja visión: si la inspección no verifica los criterios WCAG 1.4.4 (texto al 200 %) y 1.4.10 (reflujo a 320 px), la pantalla «Cita guardada» de <strong>Mari Carmen</strong> —que Joaquín también usa— le resulta inutilizable aunque el flujo funcione bien para todos los demás.</p>
-    <p>Cuando una inspección detecta que el contraste del «Billete listo» de la app de <strong>Marta</strong> es de 2,1:1 en lugar de 4,5:1, está evitando que ese problema llegue al test, donde el fallo con luz solar cuesta sesiones enteras. Ese es el valor de inspeccionar primero: limpiar lo que el experto puede ver sin necesitar a nadie.</p>
-    <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: el contraste alto que protege a Joaquín es el mismo que Marta necesita al sol en el andén. Inspeccionar la accesibilidad es diseñar para todos.</p>
+    <p>Cuando una inspección detecta que el contraste de la fecha de «Cita guardada» en la app de <strong>Mari Carmen</strong> es de 3,1:1 en lugar de 4,5:1 (o el del «Billete listo» de Marta, de 2,1:1), está evitando que ese problema llegue al test, donde el fallo cuesta sesiones enteras con personas que ya tienen dudas. Ese es el valor de inspeccionar primero: limpiar lo que el experto puede ver sin necesitar a nadie.</p>
+    <p>Y recuerda que la accesibilidad no solo beneficia a quien tiene una discapacidad permanente: el contraste alto que protege a Joaquín es el mismo que Mari Carmen necesita con poca luz en casa y que Marta necesita al sol en el andén. Inspeccionar la accesibilidad es diseñar para todos.</p>
 
     <div class="box key">
       <span class="label">Idea clave</span>
@@ -752,13 +771,13 @@
     <h3 id="proyecto-h"><span class="num" aria-hidden="true">2.4</span>Tu proyecto: la inspección como método obligatorio</h3>
 
     <p>Recuerda que la Actividad D de tu proyecto pide aplicar <strong>al menos un método de cada familia</strong>: indagación, inspección y test. La inspección es, por tanto, una pieza que tienes que incluir sí o sí.</p>
-    <p>Lo bueno: es la más asequible para empezar. Una <strong>evaluación heurística</strong> con tu equipo, repartiéndoos las pantallas y poniendo en común los hallazgos, es barata, rápida y muy formativa.</p>
+    <p>Lo bueno: es la más asequible para empezar. Una <strong>evaluación heurística</strong> con tu equipo, repartiéndoos las pantallas y poniendo en común los hallazgos, es barata, rápida y muy formativa. En el proyecto, la inspección la hacen <strong>al menos tres evaluadores</strong> del equipo, cada uno por su cuenta antes de la puesta en común, y la revisión de accesibilidad se hace con los criterios de <strong>WAI Easy Checks</strong>, de forma manual y automática (referencia WCAG 2.1 AA).</p>
 
     <h4>Qué encaja bien</h4>
     <ul>
-      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común. Para la app de <strong>Marta</strong>: revisar heurísticas 1 (visibilidad del estado en &lt; 0,1 s) y 8 (pantalla de inicio sin opciones superfluas), y aparte la ley de Fitts (botón «Pagar y subir» ≥ 44 px en la zona del pulgar, criterio del proyecto). Para la de <strong>Mari Carmen</strong>: revisar heurísticas 1 (pantalla «Cita guardada» clara), 9 (mensajes de error en lenguaje llano) y 6 (sin exigir recordar el código del centro).</li>
-      <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez. Para Marta: ¿sabría que el botón de inicio es el pago? Para Mari Carmen: ¿en el paso del código SMS, vería el botón «Reenviar» sin reiniciar?</li>
-      <li>La <strong>inspección de accesibilidad obligatoria</strong>: contraste ≥ 4,5:1 (Marta bajo el sol, Joaquín con baja visión), ampliación al 200 % sin pérdida (WCAG 1.4.4) y reflujo a 320 px (1.4.10), por Joaquín, no solo color en la confirmación de Mari Carmen (WCAG 1.4.1).</li>
+      <li>Una <strong>evaluación heurística</strong> del prototipo con las 10 heurísticas, cada miembro por su cuenta y luego en común. Para la app de <strong>Mari Carmen</strong>: revisar heurísticas 1 (pantalla «Cita guardada» clara), 9 (mensajes de error en lenguaje llano) y 6 (sin exigir recordar el código del centro). Para la de <strong>Marta</strong> (caso complementario): revisar heurísticas 1 (visibilidad del estado en &lt; 0,1 s) y 8 (pantalla de inicio sin opciones superfluas), y aparte la ley de Fitts (botón «Pagar y subir» ≥ 44 px en la zona del pulgar, criterio del proyecto).</li>
+      <li>Un <strong>recorrido cognitivo</strong> de la tarea principal, poniéndoos en la piel de alguien que llega por primera vez. Para Mari Carmen: ¿en el paso del código SMS, vería el botón «Reenviar» sin reiniciar? Para Marta (caso complementario): ¿sabría que el botón de inicio es el pago?</li>
+      <li>La <strong>inspección de accesibilidad obligatoria</strong>: contraste ≥ 4,5:1 (la fecha de Mari Carmen, Joaquín con baja visión, Marta bajo el sol), ampliación al 200 % sin pérdida (WCAG 1.4.4) y reflujo a 320 px (1.4.10), por Joaquín, no solo color en la confirmación de Mari Carmen (WCAG 1.4.1).</li>
     </ul>
     <p>Sea cual sea, documenta cada hallazgo con su <strong>gravedad</strong> y su recomendación en el <strong>informe de evaluación</strong>. Una inspección sin informe no sirve: el valor está en comunicar qué arreglar y por qué.</p>
 
@@ -839,8 +858,8 @@
     </details>
   
     <details class="check">
-      <summary>9. Ejercicio de aplicación: clasifica y puntúa este hallazgo: «En la pantalla de Marta, el verde de “Billete listo” no se distingue del fondo al sol y no hay texto». ¿Qué criterio incumple y a qué actividad vuelve?</summary>
-      <p>Incumple <strong>WCAG 1.4.1</strong> (no solo color) y <strong>1.4.3</strong> (contraste ≥ 4,5:1). Gravedad <strong>3</strong>: deja una duda grave sobre si el billete está validado. Vuelve a la <strong>Actividad C</strong> (7.4.4): añadir texto y tic y corregir el contraste. <em>(Ver 1.5 y 2.2)</em></p>
+      <summary>9. Ejercicio de aplicación: clasifica y puntúa este hallazgo: «En la pantalla de Mari Carmen, la fecha de la cita está en gris claro sobre blanco (3,1:1) y el estado “guardada” se marca solo con un icono verde, sin texto». ¿Qué criterios incumple y a qué actividad vuelve?</summary>
+      <p>Incumple <strong>WCAG 1.4.3</strong> (contraste ≥ 4,5:1 en el texto de la fecha) y <strong>1.4.1</strong> (no solo color en el estado). Gravedad <strong>3</strong>: Mari Carmen —y Joaquín con el zoom— pueden no leer la fecha ni saber si la cita está guardada (R-02 y R-03). Vuelve a la <strong>Actividad C</strong> (7.4.4): oscurecer el texto y añadir texto al estado. El razonamiento es el mismo en el caso complementario: el verde de «Billete listo» de Marta, indistinguible al sol y sin texto. <em>(Ver 1.5 y 2.2)</em></p>
     </details>
     <details class="check">
       <summary>10. «El botón “Pagar y subir” está arriba a la derecha». ¿Qué heurística de Nielsen incumple?</summary>
@@ -927,7 +946,7 @@
         <li>En tu proyecto la inspección es <strong>obligatoria</strong>; la más asequible es la heurística, e incluye la <strong>inspección de accesibilidad WCAG AA</strong> (requisito mínimo), documentada en el informe.</li>
         <li>Profesionalmente, la inspección de accesibilidad es <strong>obligatoria por ley</strong> (Directiva 2019/882, EN 301 549) y cubre las competencias CI17, CG03, CB03 y CB04.</li>
         <li>En la próxima sesión cerramos las familias con el <strong>test con usuarios</strong>.</li>
-        <li>Los dos casos ilustran el valor de inspeccionar antes del test: la heurística detecta el botón de <strong>Marta</strong> fuera de la zona del pulgar y el mensaje de error ininteligible de <strong>Mari Carmen</strong> en minutos y sin usuarios; la inspección WCAG verifica el contraste al sol (Marta) y la ampliación al 200 % y el reflujo a 320 px para Joaquín antes de que ningún participante real fracase por ello.</li>
+        <li>El caso principal y el complementario ilustran el valor de inspeccionar antes del test: la heurística detecta el mensaje de error ininteligible de <strong>Mari Carmen</strong> y el botón de <strong>Marta</strong> fuera de la zona del pulgar en minutos y sin usuarios; la inspección WCAG verifica el contraste de la fecha, la ampliación al 200 % y el reflujo a 320 px para Mari Carmen y Joaquín, y el contraste al sol de Marta, antes de que ningún participante real fracase por ello.</li>
         <li>La inspección corresponde a la cláusula <strong>7.5</strong> de la ISO 9241-210 y alimenta la <strong>7.4.4</strong>: el DCH es un <strong>ciclo</strong> y se inspecciona en cada iteración.</li>
         <li>No todo hallazgo es una heurística de Nielsen: la zona del pulgar es <strong>Fitts</strong> (≥ 44 px) y el «solo color» es <strong>WCAG 1.4.1</strong>. La ampliación al 200 % es <strong>1.4.4</strong> y el reflujo a 320 px es <strong>1.4.10</strong>.</li>
         <li>La inspección de accesibilidad se apoya en la cadena <strong>Directiva 2019/882 → EN 301 549 → WCAG 2.1 AA</strong>, se organiza con los cuatro principios <strong>POUR</strong> y combina herramientas automáticas con revisión manual.</li>
